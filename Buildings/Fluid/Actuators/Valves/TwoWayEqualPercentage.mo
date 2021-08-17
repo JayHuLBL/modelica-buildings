@@ -2,7 +2,7 @@ within Buildings.Fluid.Actuators.Valves;
 model TwoWayEqualPercentage
   "Two way valve with equal percentage flow characteristics"
   extends BaseClasses.PartialTwoWayValveKv(
-    phi=max(0, if homotopyInitialization then
+    phi=max(0.1*l, if homotopyInitialization then
         homotopy(actual=Buildings.Fluid.Actuators.BaseClasses.equalPercentage(
         y_actual,
         R,
@@ -39,6 +39,21 @@ as the regularization near the origin.
 </p>
 </html>", revisions="<html>
 <ul>
+<li>
+June 10, 2021, by Michael Wetter:<br/>
+Changed implementation of the filter and changed the parameter <code>order</code> to a constant
+as most users need not change this value.<br/>
+This is for
+<a href=\"https://github.com/ibpsa/modelica-ibpsa/issues/1498\">#1498</a>.
+</li>
+<li>
+August 7, 2020, by Ettore Zanetti:<br/>
+changed the computation of <code>phi</code> using
+<code>max(0.1*l, . )</code> to avoid
+phi=0.
+See <a href=\"https://github.com/ibpsa/modelica-ibpsa/issues/1376\">
+issue 1376</a>.
+</li>
 <li>
 February 21, 2020, by Michael Wetter:<br/>
 Changed icon to display its operating state.<br/>
