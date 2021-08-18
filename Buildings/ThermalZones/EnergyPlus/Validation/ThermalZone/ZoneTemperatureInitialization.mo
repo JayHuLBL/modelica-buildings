@@ -1,7 +1,7 @@
 within Buildings.ThermalZones.EnergyPlus.Validation.ThermalZone;
 model ZoneTemperatureInitialization
   "This example tests whether the zone mean air temperature is initialized correctly in EnergyPlus"
-  extends Buildings.ThermalZones.EnergyPlus.Examples.SingleFamilyHouse.Unconditioned(
+  extends Buildings.ThermalZones.EnergyPlus.Validation.ThermalZone.OneZone(
     zon(
       T_start=303.15));
   Buildings.ThermalZones.EnergyPlus.OutputVariable TRad(
@@ -20,8 +20,7 @@ initialized correctly by EnergyPlus.
 </p>
 </html>",
       revisions="<html>
-<ul>
-<li>
+<ul><li>
 May 19, 2020, by Michael Wetter:<br/>
 First implementation.
 </li>

@@ -17,10 +17,13 @@ SET /A errno=0
 SET SRCS=pythonInterpreter.c
 SET LIBS=pythonInterpreter.lib
 
+REM SET MOD_DLL=ModelicaBuildingsPython2.7.dll
+REM SET MOD_LIB=ModelicaBuildingsPython2.7.lib
 SET MOD_DLL=ModelicaBuildingsPython3.6.dll
 SET MOD_LIB=ModelicaBuildingsPython3.6.lib
 
 SET DUMMY_SRC=dummy.c
+REM SET DUMMY_DLL=python2.7.dll
 SET DUMMY_DLL=python3.6.dll
 
 REM The first parameter is the architecture flag (x86 or x64).
@@ -83,6 +86,7 @@ IF %ARCH%==x64 (
 ECHO DLL will be saved in: %BINDIR%.
 
 SET PYTHONInc=%PYTHONHOME%\include
+REM SET PYTHONLibs=%PYTHONHOME%\libs\python27.lib
 SET PYTHONLibs=%PYTHONHOME%\libs\python36.lib
 
 CALL %CLPATH%

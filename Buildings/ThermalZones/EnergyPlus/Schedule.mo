@@ -1,8 +1,7 @@
 within Buildings.ThermalZones.EnergyPlus;
-block Schedule
+model Schedule
   "Block to write to an EnergyPlus schedule"
   extends Buildings.ThermalZones.EnergyPlus.BaseClasses.PartialEnergyPlusObject;
-  extends Buildings.ThermalZones.EnergyPlus.BaseClasses.Synchronize.ObjectSynchronizer;
   parameter String name
     "Name of schedule";
   parameter Buildings.ThermalZones.EnergyPlus.Types.Units unit
@@ -14,75 +13,40 @@ block Schedule
   Modelica.Blocks.Interfaces.RealOutput y
     "Value written to EnergyPlus (use for direct dependency of Actuators and Schedules)"
     annotation (Placement(transformation(extent={{100,-20},{140,20}}),iconTransformation(extent={{100,-20},{140,20}})));
-
 protected
-  constant Integer nParOut=0
-    "Number of parameter values retrieved from EnergyPlus";
-  constant Integer nInp=1
-    "Number of inputs";
-  constant Integer nOut=0
-    "Number of outputs";
-  constant Integer nDer=0
-    "Number of derivatives";
-  constant Integer nY=nOut+nDer+1
-    "Size of output vector of exchange function";
-  parameter Integer nObj(
-    fixed=false,
-    start=0)
-    "Total number of Spawn objects in building";
-  final parameter String unitString=Buildings.ThermalZones.EnergyPlus.BaseClasses.getUnitAsString(unit)
-    "Unit as a string";
-  Buildings.ThermalZones.EnergyPlus.BaseClasses.SpawnExternalObject adapter=Buildings.ThermalZones.EnergyPlus.BaseClasses.SpawnExternalObject(
+  constant String modelicaNameInputVariable=getInstanceName()
+    "Name of this instance"
+    annotation (HideResult=true);
+  Buildings.ThermalZones.EnergyPlus.BaseClasses.FMUInputVariableClass adapter=Buildings.ThermalZones.EnergyPlus.BaseClasses.FMUInputVariableClass(
     objectType=2,
-    startTime=startTime,
     modelicaNameBuilding=modelicaNameBuilding,
-    modelicaInstanceName=modelicaInstanceName,
+    modelicaNameInputVariable=modelicaNameInputVariable,
     idfName=idfName,
     weaName=weaName,
-    relativeSurfaceTolerance=relativeSurfaceTolerance,
-    epName=name,
+    name=name,
+    componentType="",
+    controlType="",
+    unit=Buildings.ThermalZones.EnergyPlus.BaseClasses.getUnitAsString(unit),
     usePrecompiledFMU=usePrecompiledFMU,
     fmuName=fmuName,
     buildingsLibraryRoot=Buildings.ThermalZones.EnergyPlus.BaseClasses.buildingsLibraryRoot,
-    logLevel=logLevel,
-    printUnit=false,
-    jsonName="schedules",
-    jsonKeysValues="        \"name\": \""+name+"\",
-        \"unit\": \""+unitString+"\",
-        \"fmiName\": \""+name+"_"+modelicaInstanceName+"\"",
-    parOutNames=fill("",nParOut),
-    parOutUnits=fill("",nParOut),
-    nParOut=nParOut,
-    inpNames={modelicaInstanceName},
-    inpUnits={unitString},
-    nInp=nInp,
-    outNames=fill("",nOut),
-    outUnits=fill("",nOut),
-    nOut=nOut,
-    derivatives_structure=fill(fill(nDer,2),nDer),
-    nDer=nDer,
-    derivatives_delta=fill(0,nDer))
+    logLevel=logLevel)
     "Class to communicate with EnergyPlus";
-  Real yEP[nY]
-    "Output of exchange function";
-
 initial equation
   assert(
     not usePrecompiledFMU,
     "Use of pre-compiled FMU is not supported for block Schedule.");
-  nObj=Buildings.ThermalZones.EnergyPlus.BaseClasses.initialize(
+  Buildings.ThermalZones.EnergyPlus.BaseClasses.inputVariableInitialize(
     adapter=adapter,
-    isSynchronized=building.isSynchronized);
-
+    startTime=time);
 equation
-  yEP=Buildings.ThermalZones.EnergyPlus.BaseClasses.exchange(
-    adapter=adapter,
-    initialCall=false,
-    nY=nY,
-    u={u,round(time,1E-3)},
-    dummy=nObj);
-  y=yEP[1];
-  nObj=synBui.synchronize.done;
+  y=Buildings.ThermalZones.EnergyPlus.BaseClasses.inputVariableExchange(
+    adapter,
+    initial(),
+    u,
+    round(
+      time,
+      1E-3));
   annotation (
     defaultComponentName="sch",
     Icon(
@@ -178,11 +142,6 @@ will cause the value to be sent to EnergyPlus without any unit conversion.
 </html>",
       revisions="<html>
 <ul>
-<li>
-February 18, 2021, by Michael Wetter:<br/>
-Refactor synchronization of constructors.<br/>
-This is for <a href=\"https://github.com/lbl-srg/modelica-buildings/issues/2360\">#2360</a>.
-</li>
 <li>
 November 8, 2019, by Michael Wetter:<br/>
 First implementation.

@@ -1,10 +1,7 @@
 within Buildings.Controls.OBC.Shade;
-package Validation
-  "Collection of validation models"
-  annotation (
-    preferredView="info",
-    Documentation(
-      info="<html>
+package Validation "Collection of validation models"
+
+annotation (preferredView="info", Documentation(info="<html>
 <p>
 This package contains validation models for the classes in
 <a href=\"modelica://Buildings.Controls.OBC.Shade\">
@@ -19,8 +16,7 @@ solutions. These model outputs are stored as reference data and
 used for continuous validation whenever models in the library change.
 </p>
 </html>"),
-    Icon(
-      graphics={
+  Icon(graphics={
         Rectangle(
           lineColor={200,200,200},
           fillColor={248,248,248},

@@ -19,18 +19,11 @@ Documentation(info="<html>
 This function computes the log mean temperature difference of a heat exchanger.
 </p>
 <p>
-Note that the implementation requires the temperature differences <i>T<sub>a1</sub> - T<sub>b2</sub></i> and
-<i>T<sub>b1</sub> - T<sub>a2</sub></i> to be not equal to each other.
+Note that the implementation requires the temperature differences to be non-zero.
 </p>
 </html>",
 revisions="<html>
 <ul>
-<li>
-November 30, 2020, by Michael Wetter:<br/>
-Updated documentation.<br/>
-This is for
-<a href=\"https://github.com/lbl-srg/modelica-buildings/issues/2268\">#2268</a>.
-</li>
 <li>
 May 28, 2010, by Michael Wetter:<br/>
 First implementation.

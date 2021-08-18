@@ -8,11 +8,11 @@ model FanCoil2PipeCooling
     final have_heaPor=false,
     final have_fluPor=false,
     final have_fan=true,
-    final have_heaWat=false,
-    final have_chiWat=true,
+    final have_watHea=false,
+    final have_watCoo=true,
     final have_QReq_flow=true,
-    allowFlowReversal=false,
-    allowFlowReversalLoa=true,
+    final allowFlowReversal=false,
+    final allowFlowReversalLoa=true,
     final have_chaOve=false,
     final have_eleHea=false,
     final have_eleCoo=false,
@@ -28,22 +28,14 @@ model FanCoil2PipeCooling
   parameter Modelica.SIunits.Time Ti(
     min=Modelica.Constants.small)=10
     "Time constant of integrator block";
-  parameter Modelica.SIunits.PressureDifference dpLoa_nominal(displayUnit="Pa")=
-     250
-    "Load side pressure drop"
-    annotation(Dialog(group="Nominal condition"));
+  parameter Boolean use_inputFilter=true
+    "= true, if fan speed is filtered with a 2nd order CriticalDamping filter"
+    annotation (Dialog(tab="Dynamics",group="Filtered speed"));
+  parameter Modelica.SIunits.Time riseTime=30
+    "Rise time of the filter (time to reach 99.6 % of the speed)"
+    annotation (Dialog(tab="Dynamics",group="Filtered speed",enable=use_inputFilter));
   final parameter hexConfiguration hexConCoo=hexConfiguration.CounterFlow
     "Cooling heat exchanger configuration";
-  parameter Boolean have_speVar=true
-    "Set to true for a variable speed fan (otherwise fan is always on)"
-    annotation (Evaluate=true, Dialog(group="Configuration"));
-  parameter Modelica.SIunits.HeatFlowRate QRooHea_flow_nominal(
-    min=0)=0
-    "Nominal heating load (for room air temperature prediction)"
-    annotation (Dialog(group="Nominal condition"));
-  parameter Modelica.SIunits.Temperature TRooHea_nominal=21.1 + 273.15
-    "Room temperature at heating nominal conditions (for room air temperature prediction)"
-    annotation (Dialog(group="Nominal condition"));
   Buildings.Controls.OBC.CDL.Continuous.PIDWithReset con(
     final k=k,
     final Ti=Ti,
@@ -54,29 +46,30 @@ model FanCoil2PipeCooling
   Buildings.Fluid.Movers.FlowControlled_m_flow fan(
     redeclare final package Medium=Medium2,
     final allowFlowReversal=allowFlowReversalLoa,
-    final m_flow_nominal=mLoaCoo_flow_nominal,
-    redeclare final Fluid.Movers.Data.Generic per,
+    m_flow_nominal=mLoaCoo_flow_nominal,
+    redeclare Fluid.Movers.Data.Generic per,
     nominalValuesDefineDefaultPressureCurve=true,
-    energyDynamics=Modelica.Fluid.Types.Dynamics.FixedInitial,
-    use_inputFilter=false,
-    final dp_nominal=dpLoa_nominal)
+    final energyDynamics=energyDynamics,
+    final massDynamics=massDynamics,
+    final tau=tau,
+    final use_inputFilter=use_inputFilter,
+    final riseTime=riseTime,
+    dp_nominal=200)
     "Fan"
-    annotation (Placement(transformation(extent={{50,-10},{30,10}})));
-  Fluid.HeatExchangers.WetCoilEffectivenessNTU hexWetNtu(
+    annotation (Placement(transformation(extent={{90,-10},{70,10}})));
+  Buildings.Fluid.HeatExchangers.DryCoilEffectivenessNTU hex(
     redeclare final package Medium1=Medium1,
     redeclare final package Medium2=Medium2,
     final configuration=hexConCoo,
     final m1_flow_nominal=mChiWat_flow_nominal,
     final m2_flow_nominal=mLoaCoo_flow_nominal,
     final dp1_nominal=0,
-    final dp2_nominal=0,
-    use_Q_flow_nominal=true,
+    dp2_nominal=200,
     final Q_flow_nominal=QCoo_flow_nominal,
     final T_a1_nominal=T_aChiWat_nominal,
     final T_a2_nominal=T_aLoaCoo_nominal,
     final allowFlowReversal1=allowFlowReversal,
-    final allowFlowReversal2=allowFlowReversalLoa,
-    final w_a2_nominal=w_aLoaCoo_nominal)
+    final allowFlowReversal2=allowFlowReversalLoa)
     "Cooling coil"
     annotation (Placement(transformation(extent={{-80,4},{-60,-16}})));
   Buildings.Controls.OBC.CDL.Continuous.Gain gaiMasFlo(
@@ -84,12 +77,12 @@ model FanCoil2PipeCooling
     "Scale water flow rate"
     annotation (Placement(transformation(extent={{40,210},{60,230}})));
   Modelica.Blocks.Sources.RealExpression Q_flowCoo(
-    final y=hexWetNtu.Q2_flow)
+    y=hex.Q2_flow)
     annotation (Placement(transformation(extent={{120,190},{140,210}})));
   Buildings.Controls.OBC.CDL.Continuous.Gain gaiFloNom2(
     k=mLoaCoo_flow_nominal)
     "Scale air flow rate"
-    annotation (Placement(transformation(extent={{52,170},{72,190}})));
+    annotation (Placement(transformation(extent={{40,170},{60,190}})));
   Fluid.Sources.Boundary_pT sinAir(
     redeclare package Medium=Medium2,
     use_T_in=false,
@@ -103,10 +96,9 @@ model FanCoil2PipeCooling
     "Source for return air"
     annotation (Placement(transformation(extent={{10,-10},{-10,10}},rotation=0,origin={112,0})));
   Buildings.Experimental.DHC.Loads.SimpleRoomODE TLoaODE(
-    TOutHea_nominal=273.15 - 5,
-    final TIndHea_nominal=TRooHea_nominal,
-    final QHea_flow_nominal=QRooHea_flow_nominal)
-    "Predicted room air temperature"
+    TOutHea_nominal=273.15-5,
+    TIndHea_nominal=T_aLoaHea_nominal,
+    QHea_flow_nominal=QHea_flow_nominal)
     annotation (Placement(transformation(extent={{-10,30},{10,50}})));
   Buildings.Controls.OBC.CDL.Continuous.Gain gaiHeaFlo(
     k=1/QCoo_flow_nominal)
@@ -114,50 +106,33 @@ model FanCoil2PipeCooling
   Buildings.Controls.OBC.CDL.Continuous.Gain gaiHeaFlo1(
     k=1/QCoo_flow_nominal)
     annotation (Placement(transformation(extent={{-10,-10},{10,10}},rotation=90,origin={0,190})));
-  Buildings.Controls.OBC.CDL.Continuous.GreaterThreshold greThr(
-    t=1E-4,
-    h=0.5E-4)
+  Buildings.Controls.OBC.CDL.Continuous.GreaterThreshold greThr
     "Reset when demand rises from zero"
     annotation (Placement(transformation(extent={{-50,190},{-30,210}})));
-  Fluid.FixedResistances.PressureDrop resLoa(
-    redeclare final package Medium = Medium2,
-    final m_flow_nominal=mLoaCoo_flow_nominal,
-    final dp_nominal=dpLoa_nominal)
-    "Load side pressure drop"
-    annotation (Placement(transformation(extent={{80,-10},{60,10}})));
-  Buildings.Controls.OBC.CDL.Continuous.Sources.Constant one(k=1)
-    "One constant"
-    annotation (Placement(transformation(extent={{-10,130},{10,150}})));
-  Buildings.Controls.OBC.CDL.Logical.Sources.Constant con1(k=have_speVar)
-    annotation (Placement(transformation(extent={{-50,150},{-30,170}})));
-  Buildings.Controls.OBC.CDL.Logical.Switch swi
-    "Logical switch"
-    annotation (Placement(transformation(extent={{26,170},{46,190}})));
 equation
   connect(gaiFloNom2.y,fan.m_flow_in)
-    annotation (Line(points={{74,180},{80,180},{80,20},{40,20},{40,12}},
-                                                        color={0,0,127}));
+    annotation (Line(points={{62,180},{80,180},{80,12}},color={0,0,127}));
   connect(con.y,gaiMasFlo.u)
     annotation (Line(points={{12,220},{38,220}},color={0,0,127}));
-  connect(fan.P,mulPFan.u)
-    annotation (Line(points={{29,9},{20,9},{20,140},{158,140}},color={0,0,127}));
-  connect(fan.port_b, hexWetNtu.port_a2)
-    annotation (Line(points={{30,0},{-60,0}}, color={0,127,255}));
-  connect(hexWetNtu.port_b2, sinAir.ports[1])
-    annotation (Line(points={{-80,0},{-100,0}}, color={0,127,255}));
+  connect(fan.P,scaPFan.u)
+    annotation (Line(points={{69,9},{60,9},{60,140},{158,140}},color={0,0,127}));
+  connect(fan.port_b,hex.port_a2)
+    annotation (Line(points={{70,0},{-60,0}},color={0,127,255}));
+  connect(hex.port_b2,sinAir.ports[1])
+    annotation (Line(points={{-80,0},{-100,0}},color={0,127,255}));
   connect(Q_flowCoo.y,TLoaODE.QAct_flow)
     annotation (Line(points={{141,200},{150,200},{150,160},{-20,160},{-20,32},{-12,32}},color={0,0,127}));
   connect(TLoaODE.TAir,retAir.T_in)
     annotation (Line(points={{12,40},{140,40},{140,4},{124,4}},color={0,0,127}));
-  connect(gaiMasFlo.y,mulMasFloReqChiWat.u)
+  connect(gaiMasFlo.y,scaMasFloReqChiWat.u)
     annotation (Line(points={{62,220},{100,220},{100,80},{158,80}},color={0,0,127}));
-  connect(mulQReqCoo_flow.y,TLoaODE.QReq_flow)
+  connect(scaQReqCoo_flow.y,TLoaODE.QReq_flow)
     annotation (Line(points={{-158,60},{-100,60},{-100,40},{-12,40}},color={0,0,127}));
-  connect(Q_flowCoo.y,mulQActCoo_flow.u)
+  connect(Q_flowCoo.y,scaQActCoo_flow.u)
     annotation (Line(points={{141,200},{158,200}},color={0,0,127}));
   connect(TSetCoo,TLoaODE.TSet)
     annotation (Line(points={{-220,180},{-120,180},{-120,48},{-12,48}},color={0,0,127}));
-  connect(mulQReqCoo_flow.y,gaiHeaFlo.u)
+  connect(scaQReqCoo_flow.y,gaiHeaFlo.u)
     annotation (Line(points={{-158,60},{-100,60},{-100,220},{-90,220}},color={0,0,127}));
   connect(gaiHeaFlo.y,con.u_s)
     annotation (Line(points={{-66,220},{-12,220}},color={0,0,127}));
@@ -165,26 +140,18 @@ equation
     annotation (Line(points={{0,208},{0,202},{6.66134e-16,202}},color={0,0,127}));
   connect(Q_flowCoo.y,gaiHeaFlo1.u)
     annotation (Line(points={{141,200},{150,200},{150,160},{0,160},{0,178},{-8.88178e-16,178}},color={0,0,127}));
+  connect(con.y,gaiFloNom2.u)
+    annotation (Line(points={{12,220},{20,220},{20,180},{38,180}},color={0,0,127}));
+  connect(retAir.ports[1],fan.port_a)
+    annotation (Line(points={{102,0},{90,0}},color={0,127,255}));
   connect(greThr.y,con.trigger)
     annotation (Line(points={{-28,200},{-6,200},{-6,208}},color={255,0,255}));
   connect(gaiHeaFlo.y,greThr.u)
     annotation (Line(points={{-66,220},{-60,220},{-60,200},{-52,200}},color={0,0,127}));
-  connect(mulChiWatFloInl.port_b, hexWetNtu.port_a1) annotation (Line(points={{
-          -160,-180},{-100,-180},{-100,-12},{-80,-12}}, color={0,127,255}));
-  connect(hexWetNtu.port_b1, mulChiWatFloOut.port_a) annotation (Line(points={{
-          -60,-12},{-40,-12},{-40,-180},{160,-180}}, color={0,127,255}));
-  connect(retAir.ports[1], resLoa.port_a)
-    annotation (Line(points={{102,0},{80,0}}, color={0,127,255}));
-  connect(resLoa.port_b, fan.port_a)
-    annotation (Line(points={{60,0},{50,0}}, color={0,127,255}));
-  connect(gaiFloNom2.u, swi.y)
-    annotation (Line(points={{50,180},{48,180}}, color={0,0,127}));
-  connect(con.y, swi.u1) annotation (Line(points={{12,220},{20,220},{20,188},{24,
-          188}}, color={0,0,127}));
-  connect(con1.y, swi.u2) annotation (Line(points={{-28,160},{-24,160},{-24,168},
-          {16,168},{16,180},{24,180}}, color={255,0,255}));
-  connect(one.y, swi.u3) annotation (Line(points={{12,140},{18,140},{18,172},{24,
-          172}}, color={0,0,127}));
+  connect(scaChiWatFloInl.port_b,hex.port_a1)
+    annotation (Line(points={{-160,-180},{-100,-180},{-100,-12},{-80,-12}},color={0,127,255}));
+  connect(hex.port_b1,scaChiWatFloOut.port_a)
+    annotation (Line(points={{-60,-12},{-40,-12},{-40,-180},{160,-180}},color={0,127,255}));
   annotation (
     Documentation(
       info="<html>

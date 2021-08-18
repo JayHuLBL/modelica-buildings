@@ -2,28 +2,23 @@ within Buildings.Examples.DualFanDualDuct.Controls;
 block CoolingCoilTemperatureSetpoint "Set point scheduler for cooling coil"
   extends Modelica.Blocks.Icons.Block;
   import Buildings.Examples.VAVReheat.Controls.OperationModes;
-  parameter Modelica.SIunits.Temperature TOn(displayUnit="degC")
-    "Setpoint during on";
-  parameter Modelica.SIunits.Temperature TOff(displayUnit="degC")
-    "Setpoint during off";
+  parameter Modelica.SIunits.Temperature TOn "Setpoint during on";
+  parameter Modelica.SIunits.Temperature TOff "Setpoint during off";
   Modelica.Blocks.Sources.RealExpression TSetPoi(
-     y(final unit="K", displayUnit="degC")=if (mode.y == Integer(OperationModes.occupied) or
+     y=if (mode.y == Integer(OperationModes.occupied) or
            mode.y == Integer(OperationModes.unoccupiedPreCool) or
            mode.y == Integer(OperationModes.safety)) then TOn else TOff)
     "Air temperature setpoint"
     annotation (Placement(transformation(extent={{-20,-10},{0,10}})));
   VAVReheat.Controls.ControlBus controlBus
-    annotation (Placement(transformation(extent={{-10,-90},{10,-70}})));
+    annotation (Placement(transformation(extent={{-28,-90},{-8,-70}})));
   Modelica.Blocks.Routing.IntegerPassThrough mode
     annotation (Placement(transformation(extent={{40,-90},{60,-70}})));
-  Modelica.Blocks.Interfaces.RealOutput TSet(
-    final unit="K",
-    displayUnit="degC")
-    "Temperature set point"
+  Modelica.Blocks.Interfaces.RealOutput TSet "Temperature set point"
     annotation (Placement(transformation(extent={{100,-10},{120,10}})));
 equation
   connect(controlBus.controlMode, mode.u) annotation (Line(
-      points={{0,-80},{38,-80}},
+      points={{-18,-80},{38,-80}},
       color={255,204,51},
       thickness=0.5,
       smooth=Smooth.None), Text(
@@ -40,5 +35,9 @@ equation
         Text(
           extent={{44,16},{90,-18}},
           lineColor={0,0,255},
-          textString="TSetCoo")}));
+          textString="TSetCoo"),
+        Text(
+          extent={{-88,22},{-20,-26}},
+          lineColor={0,0,255},
+          textString="TSetHea")}));
 end CoolingCoilTemperatureSetpoint;

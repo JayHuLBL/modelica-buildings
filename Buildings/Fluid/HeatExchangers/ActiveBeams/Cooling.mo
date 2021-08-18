@@ -70,9 +70,7 @@ model Cooling "Active beam unit for cooling"
   // Diagnostics
   parameter Boolean show_T = false
     "= true, if actual temperature at port is computed"
-    annotation(
-      Dialog(tab="Advanced", group="Diagnostics"),
-      HideResult=true);
+    annotation(Dialog(tab="Advanced",group="Diagnostics"));
 
   // Ports
   Modelica.Fluid.Interfaces.FluidPort_a watCoo_a(
@@ -299,16 +297,10 @@ DOE(2015) EnergyPlus documentation v8.4.0 - Engineering Reference.
 </html>", revisions="<html>
 <ul>
 <li>
-March 30, 2021, by Michael Wetter:<br/>
-Added annotation <code>HideResult=true</code>.<br/>
-This is for
-<a href=\"https://github.com/ibpsa/modelica-ibpsa/issues/1459\">IBPSA, #1459</a>.
-</li>
-<li>
 April 14, 2020, by Michael Wetter:<br/>
 Changed <code>homotopyInitialization</code> to a constant.<br/>
 This is for
-<a href=\"https://github.com/ibpsa/modelica-ibpsa/issues/1341\">IBPSA, #1341</a>.
+<a href=\"https://github.com/ibpsa/modelica-ibpsa/issues/1341\">Buildings, #1341</a>.
 </li>
 <li>
 January 18, 2019, by Jianjun Hu:<br/>

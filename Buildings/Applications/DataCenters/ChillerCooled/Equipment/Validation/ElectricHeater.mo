@@ -47,7 +47,5 @@ April 11, 2017 by Yangyang Fu:<br/>
 First implementation.
 </li>
 </ul>
-</html>"),
-    Diagram(coordinateSystem(extent={{-100,-100},{120,100}})),
-    Icon(coordinateSystem(extent={{-100,-100},{100,100}})));
+</html>"));
 end ElectricHeater;

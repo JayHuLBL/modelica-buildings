@@ -3,7 +3,5 @@ Pulse
 PulseNegativeStartTime
 PulsePositiveStartTime
 SampleTrigger
-SampleTriggerNegativeStartTime
-SampleTriggerPositiveStartTime
 TimeTable
 TimeTableNegativeStartTime

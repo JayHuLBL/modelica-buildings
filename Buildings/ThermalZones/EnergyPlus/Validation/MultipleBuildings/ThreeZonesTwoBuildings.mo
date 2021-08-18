@@ -6,7 +6,7 @@ model ThreeZonesTwoBuildings
     "Medium model";
   model OneZoneBuilding
     "Model with a building with one zone"
-    extends Buildings.ThermalZones.EnergyPlus.Examples.SingleFamilyHouse.Unconditioned;
+    extends Buildings.ThermalZones.EnergyPlus.Validation.ThermalZone.OneZone;
     extends Modelica.Blocks.Icons.Block;
     annotation (
       Icon(

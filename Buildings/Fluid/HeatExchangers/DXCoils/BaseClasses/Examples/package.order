@@ -9,6 +9,7 @@ DryWetSelector
 EvaporationFlowReversal
 EvaporationPulse
 InputPower
+NominalCondition
 SensibleHeatRatio
 SpeedSelect
 SpeedShift

@@ -6,7 +6,6 @@ function getUnitAsString
     "Unit as enumeration value";
   output String unitAsString
     "String representation of the unit";
-
 algorithm
   unitAsString :=
     if unit == Types.Units.Normalized then

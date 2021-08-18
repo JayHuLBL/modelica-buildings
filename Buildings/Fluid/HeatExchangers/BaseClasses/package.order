@@ -20,11 +20,6 @@ PipeManifoldFixedResistance
 PipeManifoldFlowDistributor
 PipeManifoldNoResistance
 RayleighNumber
-WetCoilDryRegime
-WetCoilDryWetRegime
-WetCoilUARated
-WetCoilWetRegime
-determineWaterIndex
 dynamicViscosityWater
 epsilon_C
 epsilon_ntuZ

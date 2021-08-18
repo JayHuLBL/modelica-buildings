@@ -1,12 +1,10 @@
 within Buildings.ThermalZones.EnergyPlus;
 model Building
-  "Model that declares a building to which EnergyPlus objects belong to"
+  "Model that declares a building to which thermal zones belong to"
   extends Modelica.Blocks.Icons.Block;
   final constant String modelicaNameBuilding=getInstanceName()
     "Name of this instance"
     annotation (HideResult=true);
-  constant Real relativeSurfaceTolerance(min=1E-20) = 1E-6
-    "Relative tolerance of surface temperature calculations";
   parameter String idfName
     "Name of the IDF file"
     annotation (Evaluate=true);
@@ -37,16 +35,7 @@ model Building
   BoundaryConditions.WeatherData.Bus weaBus if showWeatherData
     "Weather data bus"
     annotation (Placement(transformation(extent={{90,-10},{110,10}})));
-  BaseClasses.Synchronize.SynchronizeConnector synchronize
-    "Connector that synchronizes all Spawn objects of this buildings"
-    annotation (HideResult=true);
-  Real isSynchronized
-    "Flag used to synchronize Spawn objects"
-    annotation (HideResult=true);
-
 protected
-  Real synchronization_done=synchronize.done
-    "Intermediate variable as acausal connectors cannot be used in the algorithm section";
   Linux64Binaries linux64Binaries if generatePortableFMU
     "Record with binaries";
   record Linux64Binaries
@@ -65,14 +54,9 @@ protected
     final computeWetBulbTemperature=computeWetBulbTemperature) if showWeatherData
     "Weather data reader"
     annotation (Placement(transformation(extent={{-10,-10},{10,10}})));
-
 equation
-  synchronize.do=0;
   connect(weaDat.weaBus,weaBus)
     annotation (Line(points={{10,0},{100,0}},color={255,204,51},thickness=0.5),Text(string="%second",index=1,extent={{6,3},{6,3}},horizontalAlignment=TextAlignment.Left));
-
-algorithm
-  isSynchronized := synchronization_done;
   annotation (
     defaultComponentName="building",
     defaultComponentPrefixes="inner",
@@ -81,7 +65,7 @@ Your model is using an outer \"building\" component to declare building-level pa
 an inner \"building\" component is not defined.
 Drag one instance of Buildings.ThermalZones.EnergyPlus.Building into your model,
 above all declarations of Buildings.ThermalZones.EnergyPlus.ThermalZone,
-to specify building-level parameters. This instance must have the name \"building\".",
+to specify building-level parameters.",
     Icon(
       graphics={
         Bitmap(
@@ -125,9 +109,8 @@ to specify building-level parameters. This instance must have the name \"buildin
 Model that declares building-level specifications for Spawn of EnergyPlus.
 </p>
 <p>
-This model is used to configure EnergyPlus.
-Each EnergyPlus idf file must have one instance of this model, and the
-instance name must be <code>building</code>.
+Each EnergyPlus idf file must have one instance of this model, which
+is used to configure EnergyPlus.
 The instance must be placed in the model hierarchy at the same or at a higher level
 than the EnergyPlus objects that are related to the EnergyPlus idf file specified in
 this model through the parameter <code>idfName</code>.
@@ -145,11 +128,6 @@ extension <code>.mos</code> replaced with <code>.epw</code>.
 </html>",
       revisions="<html>
 <ul>
-<li>
-February 18, 2021, by Michael Wetter:<br/>
-Refactor synchronization of constructors.<br/>
-This is for <a href=\"https://github.com/lbl-srg/modelica-buildings/issues/2360\">#2360</a>.
-</li>
 <li>
 January 28, 2020, by Michael Wetter:<br/>
 First implementation.

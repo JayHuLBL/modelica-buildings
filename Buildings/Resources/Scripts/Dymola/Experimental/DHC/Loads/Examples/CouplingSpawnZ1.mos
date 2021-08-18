@@ -46,9 +46,9 @@ createPlot(
     subPlot=3
 );
 plotExpression(
-    apply(CouplingSpawnZ1.bui.terUni.facMul*CouplingSpawnZ1.bui.terUni.QHea_flow_nominal),
+    apply(CouplingSpawnZ1.bui.terUni.facSca*CouplingSpawnZ1.bui.terUni.QHea_flow_nominal),
     false,
-    "facMul*QHea_flow_nominal",
+    "facSca*QHea_flow_nominal",
     2);
 createPlot(
     id=3,
@@ -70,7 +70,8 @@ createPlot(
     subPlot=3
 );
 plotExpression(
-    apply(CouplingSpawnZ1.bui.terUni.facMul*CouplingSpawnZ1.bui.terUni.QCoo_flow_nominal),
+    apply(CouplingSpawnZ1.bui.terUni.facSca*CouplingSpawnZ1.bui.terUni.QCoo_flow_nominal),
     false,
-    "facMul*QCoo_flow_nominal",
+    "facSca*QCoo_flow_nominal",
     3);
+

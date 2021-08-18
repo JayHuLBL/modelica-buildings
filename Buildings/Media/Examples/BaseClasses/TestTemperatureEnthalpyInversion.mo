@@ -14,8 +14,7 @@ equation
     if (time>0.1) then
     assert(abs(T-T0)<tol, "Error in implementation of functions.\n"
        + "   T0 = " + String(T0) + "\n"
-       + "   T  = " + String(T) + "\n"
-       + "   Absolute error: " + String(abs(T-T0)) + " K");
+       + "   T  = " + String(T));
     end if;
     annotation (preferredView="info", Documentation(info="<html>
 This model computes <code>h=f(T0)</code> and
@@ -24,10 +23,6 @@ Hence, it checks whether the function <code>T_phX</code> is
 implemented correctly.
 </html>", revisions="<html>
 <ul>
-<li>
-March 24, 2020 by Kathryn Hinkelman:<br/>
-Expanded the assert message to include absolute error value.
-</li>
 <li>
 September 16, 2019 by Yangyang Fu:<br/>
 Added a parameter <code>tol</code> to control numerical errors.

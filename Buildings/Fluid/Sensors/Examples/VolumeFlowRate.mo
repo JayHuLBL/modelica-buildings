@@ -26,8 +26,7 @@ model VolumeFlowRate "Test model for the volume flow rate sensor"
     annotation (Placement(transformation(extent={{-90,-2},{-70,18}})));
   Buildings.Fluid.Sensors.VolumeFlowRate senDyn(
     redeclare package Medium = Medium,
-    m_flow_nominal=10,
-    tau=1)
+    m_flow_nominal=10)
     "Sensor configured to use a dynamic model for the density"
     annotation (Placement(transformation(extent={{-10,-10},{10,10}})));
   Buildings.Fluid.Sensors.VolumeFlowRate senSteSta(
