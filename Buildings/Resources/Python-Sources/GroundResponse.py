@@ -47,7 +47,8 @@ def doStep(dblInp, state):
         p_Int = ident_set(101343.01, 10)
         x_Int = ident_set(10.5, 10)
         T_Int = ident_set(15.06+273.15, 10)
-        ToModelica = T_toModelica + p_Int + x_Int + T_Int
+        TOUGH_successed = [1]
+        ToModelica = T_toModelica + p_Int + x_Int + T_Int + TOUGH_successed
     else:
         # Use the python object
         tLast = state['tLast']
@@ -114,8 +115,14 @@ def doStep(dblInp, state):
             # Output to Modelica simulation
             T_toModelica = mesh_to_mesh(toughLayers, modelicaLayers, T_tough, 'To2Mo')
 
+            # Final time check
+            if (data['finalTime'] < tim):
+                TOUGH_successed = [0]
+            else:
+                TOUGH_successed = [1]
+
             # Outputs to Modelica
-            ToModelica = T_toModelica + data['p_Int'] + data['x_Int'] + data['T_Int']
+            ToModelica = T_toModelica + data['p_Int'] + data['x_Int'] + data['T_Int'] + TOUGH_successed
 
             # Update state
             state = {'tLast': tim, 'Q': Q, 'T_tough': T_tough}
@@ -367,10 +374,14 @@ def extract_data(outFile):
             p_Int.append(float(temp[-3].strip()))
             x_Int.append(float(temp[-2].strip()))
             T_Int.append(float(temp[-1].strip())+273.15)
+        if count == 43:
+            temp = line.split()
+            finalTime = float(temp[-1].strip())
     data = {
         'T_Bor': T_Bor,
         'p_Int': p_Int,
         'x_Int': x_Int,
-        'T_Int': T_Int
+        'T_Int': T_Int,
+        'finalTime': finalTime
     }
     return data
