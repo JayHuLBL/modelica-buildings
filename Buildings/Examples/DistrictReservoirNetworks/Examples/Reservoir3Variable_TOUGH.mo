@@ -43,6 +43,10 @@ model Reservoir3Variable_TOUGH
     startTime=-270*24*3600)
                   "Sine source block"
     annotation (Placement(transformation(extent={{-160,-440},{-140,-420}})));
+
+// initial equation
+//   borFie.toughRes.yCheTou = 1;
+
 equation
   connect(Tml5.T, conMaiPum.TMix[1]) annotation (Line(points={{86.6,-100},{28,
           -100},{28,-182},{-36,-182},{-36,-225.333},{-22,-225.333}}, color={0,0,127},
@@ -99,7 +103,7 @@ equation
           __Dymola_Commands(file="modelica://Buildings/Resources/Scripts/Dymola/Examples/DistrictReservoirNetworks/Examples/Reservoir3Variable_TOUGH.mos"
         "Simulate and plot"),
     experiment(
-      StopTime=31536000,
+      StopTime=18000,
       __Dymola_NumberOfIntervals=8760,
       Tolerance=1e-06,
       __Dymola_Algorithm="Radau"));

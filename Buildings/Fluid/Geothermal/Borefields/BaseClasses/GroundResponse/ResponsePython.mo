@@ -51,10 +51,15 @@ model ResponsePython
     annotation (Placement(transformation(extent={{100,-80},{140,-40}}),
       iconTransformation(extent={{100,-70},{120,-50}})));
 
+  Modelica.Blocks.Interfaces.RealOutput yCheTou
+    "Check if TOUGH simulation is successful" annotation (Placement(
+        transformation(extent={{100,-110},{140,-70}}), iconTransformation(
+          extent={{100,-100},{120,-80}})));
+
   Buildings.Utilities.IO.Python36.Real_Real pyt(
     moduleName="GroundResponse",
     functionName="doStep",
-    nDblRea=nSeg+3*nInt,
+    nDblRea=nSeg + 3*nInt + 1,
     nDblWri=2*nSeg+2,
     samplePeriod=samplePeriod,
     flag=flag,
@@ -64,7 +69,6 @@ model ResponsePython
     annotation (Placement(transformation(extent={{-20,-10},{0,10}})));
   Modelica.Blocks.Sources.Clock clock
     annotation (Placement(transformation(extent={{-80,-60},{-60,-40}})));
-
 
 equation
   connect(pyt.yR[1:nSeg], TBorWal)
@@ -87,7 +91,8 @@ equation
                                               color={0,0,127}));
   connect(pyt.yR[nSeg+2*nInt+1:nSeg+3*nInt], TInt)
     annotation (Line(points={{41,0},{60,0},{60,-60},{120,-60}}, color={0,0,127}));
-
+  connect(pyt.yR[nSeg+3*nInt+1], yCheTou) annotation (Line(points={{41,0},{60,0},{60,-90},{
+          120,-90}}, color={0,0,127}));
 annotation (defaultComponentName="toughRes",
 Icon(coordinateSystem(preserveAspectRatio=false), graphics={
         Rectangle(
