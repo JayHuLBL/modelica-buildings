@@ -55,12 +55,6 @@ model OneUTubeWithTough
     "Temperature at the interested points" annotation (Placement(transformation(
           extent={{100,-100},{120,-80}}), iconTransformation(extent={{100,-90},
             {120,-70}})));
-  Buildings.Controls.OBC.CDL.Continuous.LessThreshold lesThr(t=0.5)
-    annotation (Placement(transformation(extent={{40,-26},{60,-6}})));
-  Buildings.Controls.OBC.CDL.Discrete.TriggeredSampler triSam
-    annotation (Placement(transformation(extent={{190,10},{210,30}})));
-  Buildings.Controls.OBC.CDL.Continuous.Sources.Sine sin1(freqHz=1/3600)
-    annotation (Placement(transformation(extent={{140,10},{160,30}})));
 protected
   Modelica.Blocks.Math.Sum QTotSeg_flow(final nin=nSeg, final k=ones(nSeg))
     "Total heat flow rate for all segments of this borehole"
@@ -78,9 +72,9 @@ equation
   else
     toughSuccess=false;
   end if;
-//   if (time >= 5) then
-//     assert(toughSuccess, "TOUGH simulation did not finish successfully!", AssertionLevel.error);
-//   end if;
+   if (time >= 5) then
+     assert(toughSuccess, "TOUGH simulation did not finish successfully!", AssertionLevel.error);
+   end if;
   connect(QBorHol.Q_flow, QTotSeg_flow.u) annotation (Line(points={{-10,-10},{-60,
           -10},{-60,80},{-42,80}}, color={0,0,127}));
   connect(QTotSeg_flow.y, gaiQ_flow.u)
@@ -95,12 +89,6 @@ equation
           {110,-72}}, color={0,0,127}));
   connect(toughRes.TInt, TInt) annotation (Line(points={{29,46},{36,46},{36,-90},
           {110,-90}}, color={0,0,127}));
-  connect(toughRes.yCheTou, lesThr.u) annotation (Line(points={{29,43},{34,43},
-          {34,-16},{38,-16}}, color={0,0,127}));
-  connect(sin1.y, triSam.u)
-    annotation (Line(points={{162,20},{188,20}}, color={0,0,127}));
-  connect(lesThr.y, triSam.trigger) annotation (Line(points={{62,-16},{200,-16},
-          {200,8.2}}, color={255,0,255}));
   annotation (
   defaultComponentName="borFie",
   Documentation(info="<html>
