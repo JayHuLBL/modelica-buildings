@@ -18,7 +18,7 @@ model OneUTubeWithTough
           borCon=Buildings.Fluid.Geothermal.Borefields.Types.BoreholeConfiguration.SingleUTube,
           cooBor={{6*mod((i - 1), 20),6*floor((i - 1)/
           20)} for i in 1:400})),
-    toughRes(samplePeriod=1800,flag=1));
+    toughRes(samplePeriod=900, flag=1));
 
 //   parameter Modelica.SIunits.Length xBorFie = 120 "Borefield length"
 //     annotation(Dialog(tab="Borefield"));
@@ -55,6 +55,12 @@ model OneUTubeWithTough
     "Temperature at the interested points" annotation (Placement(transformation(
           extent={{100,-100},{120,-80}}), iconTransformation(extent={{100,-90},
             {120,-70}})));
+  Buildings.Controls.OBC.CDL.Continuous.LessThreshold lesThr(t=0.5)
+    annotation (Placement(transformation(extent={{40,-26},{60,-6}})));
+  Buildings.Controls.OBC.CDL.Discrete.TriggeredSampler triSam
+    annotation (Placement(transformation(extent={{190,10},{210,30}})));
+  Buildings.Controls.OBC.CDL.Continuous.Sources.Sine sin1(freqHz=1/3600)
+    annotation (Placement(transformation(extent={{140,10},{160,30}})));
 protected
   Modelica.Blocks.Math.Sum QTotSeg_flow(final nin=nSeg, final k=ones(nSeg))
     "Total heat flow rate for all segments of this borehole"
@@ -72,9 +78,9 @@ equation
   else
     toughSuccess=false;
   end if;
-  if (time >= 5) then
-    assert(toughSuccess, "TOUGH simulation did not finish successfully!", AssertionLevel.error);
-  end if;
+//   if (time >= 5) then
+//     assert(toughSuccess, "TOUGH simulation did not finish successfully!", AssertionLevel.error);
+//   end if;
   connect(QBorHol.Q_flow, QTotSeg_flow.u) annotation (Line(points={{-10,-10},{-60,
           -10},{-60,80},{-42,80}}, color={0,0,127}));
   connect(QTotSeg_flow.y, gaiQ_flow.u)
@@ -83,12 +89,18 @@ equation
     annotation (Line(points={{41,80},{110,80}}, color={0,0,127}));
   connect(QTotSeg_flow.y, Q_flow_single) annotation (Line(points={{-19,80},{0,
           80},{0,100},{110,100}}, color={0,0,127}));
-  connect(toughRes.pInt, pInt) annotation (Line(points={{29,52},{36,52},{36,-60},
+  connect(toughRes.pInt, pInt) annotation (Line(points={{29,54},{36,54},{36,-60},
           {110,-60}}, color={0,0,127}));
-  connect(toughRes.xInt, xInt) annotation (Line(points={{29,48},{36,48},{36,-72},
+  connect(toughRes.xInt, xInt) annotation (Line(points={{29,50},{36,50},{36,-72},
           {110,-72}}, color={0,0,127}));
-  connect(toughRes.TInt, TInt) annotation (Line(points={{29,44},{36,44},{36,-90},
+  connect(toughRes.TInt, TInt) annotation (Line(points={{29,46},{36,46},{36,-90},
           {110,-90}}, color={0,0,127}));
+  connect(toughRes.yCheTou, lesThr.u) annotation (Line(points={{29,43},{34,43},
+          {34,-16},{38,-16}}, color={0,0,127}));
+  connect(sin1.y, triSam.u)
+    annotation (Line(points={{162,20},{188,20}}, color={0,0,127}));
+  connect(lesThr.y, triSam.trigger) annotation (Line(points={{62,-16},{200,-16},
+          {200,8.2}}, color={255,0,255}));
   annotation (
   defaultComponentName="borFie",
   Documentation(info="<html>

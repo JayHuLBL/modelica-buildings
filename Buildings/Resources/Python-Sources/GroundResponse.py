@@ -48,7 +48,8 @@ def doStep(dblInp, state):
         x_Int = ident_set(10.5, 10)
         T_Int = ident_set(15.06+273.15, 10)
         TOUGH_successed = [1]
-        ToModelica = T_toModelica + p_Int + x_Int + T_Int + TOUGH_successed
+        finalTime = [tim]
+        ToModelica = T_toModelica + p_Int + x_Int + T_Int + TOUGH_successed + finalTime
     else:
         # Use the python object
         tLast = state['tLast']
@@ -116,13 +117,13 @@ def doStep(dblInp, state):
             T_toModelica = mesh_to_mesh(toughLayers, modelicaLayers, T_tough, 'To2Mo')
 
             # Final time check
-            if (data['finalTime'] < tim):
+            if (abs(tim - data['finalTime']) > 5):
                 TOUGH_successed = [0]
             else:
                 TOUGH_successed = [1]
 
             # Outputs to Modelica
-            ToModelica = T_toModelica + data['p_Int'] + data['x_Int'] + data['T_Int'] + TOUGH_successed
+            ToModelica = T_toModelica + data['p_Int'] + data['x_Int'] + data['T_Int'] + TOUGH_successed + [data['finalTime']]
 
             # Update state
             state = {'tLast': tim, 'Q': Q, 'T_tough': T_tough}
