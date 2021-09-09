@@ -344,7 +344,7 @@ def update_writeincon(infile, preTim, curTim, boreholeTem, heatFlux, T_out):
             fout.write(tempStr.strip() + os.linesep)
         # assign heat flux to each segment
         elif (count >= 42 and count <= 72):
-            tempStr = '% 10.3f' % heatFlux[count-44]
+            tempStr = '% 10.3f' % heatFlux[count-42]
             fout.write(tempStr.strip() + os.linesep)
         elif (count == 74):
             tempStr = '% 10.3f' % (T_out - 273.15)
@@ -386,3 +386,22 @@ def extract_data(outFile):
         'finalTime': finalTime
     }
     return data
+
+# if __name__=="__main__":
+
+#     # Find the depth of each layer
+#     meshFile = os.path.join('ToughFiles', 'MESH')
+#     toughLayers = find_layer_depth(meshFile)
+
+#     add_grid_boundary(toughLayers)
+
+#     # Find Modelica layers
+#     modelicaLayers = modelica_mesh()
+#     Q = [-444.61816,239.92366,-222.92314,25.714117,-96.02927,-47.98254,-202.431,-71.61211,-93.86344,303.3468]
+
+#     Q_toTough = mesh_to_mesh(toughLayers, modelicaLayers, Q, 'Q_Mo2To')
+#     print(toughLayers)
+#     print(Q_toTough)
+#     T_out=273.15+5
+#     T_tough=[1,2,3,4,5,6,7,8,9,10,1,2,3,4,5,6,7,8,9,10,1,2,3,4,5,6,7,8,9,10,10]
+#     update_writeincon('writeincon.inp', 10, 100, T_tough, Q_toTough, T_out)
