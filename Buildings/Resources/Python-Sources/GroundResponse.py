@@ -181,7 +181,7 @@ def initialize_gener(toughLayesr, Q, fileName):
     with open(fileName, 'w') as f:
         f.write("GENER" + os.linesep)
         for i in range(0, len(Q)):
-            f.write("%s  1sou 1" % toughLayesr[i]['layer'] + "                         HEAT %10.3e" % Q[i] + os.linesep)
+            f.write("%s 1sou 1" % toughLayesr[i]['layer'] + "                         HEAT %10.3e" % Q[i] + os.linesep)
         f.write("+++" + os.linesep)
         f.write("         1         2         3         4         5         6         7         8" + os.linesep)
         f.write("         9        10        11        12        13        14        15        16" + os.linesep)
@@ -217,8 +217,13 @@ def find_layer_depth(fileName):
     z = []
     dz.append(1)
     z.append(-1.5)
+    for line in fin:
+        count += 1
+        if count == 2:
+            strSet = line.split()
+            break
     layers.append(
-        {'layer': 'A4m',
+        {'layer': strSet[0],
          'z': z[0],
          'dz': dz[0]
         }
