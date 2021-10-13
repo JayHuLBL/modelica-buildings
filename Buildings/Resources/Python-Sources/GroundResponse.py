@@ -78,6 +78,8 @@ def doStep(dblInp, state):
             # `writeincon` to generate input files for TOUGH simulation.
             if not os.path.exists('GENER'):
                 # create initial 'GENER' file
+                for i in range(31):
+                    Q_toTough[i] = 100
                 initialize_gener(toughLayers, Q_toTough, 'GENER')
                 # update existing 'INFILE'
                 update_infile(tLast, tim, 'INFILE', 'newINFILE')
