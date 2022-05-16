@@ -40,24 +40,9 @@ def doStep(dblInp, state):
         # Copy files in the folder 'TougFiles', which includes the initial temperature of
         # simulation domain, template files for TOUGH simulation, and utility programs
         copy_files(os.path.join(py_dir, 'ToughFiles'), tou_tmp)
-
-        testFile = os.path.join(py_dir, 'toughTemp/Tmp_text.txt')
-        with open(testFile, 'w') as test:
-            for i in range(0, len(toughLayers)):
-                test.write("%s" % toughLayers[i]['layer'] + "   z: %10.5f" % toughLayers[i]['z'] + "   dz: %10.5f" % toughLayers[i]['dz'] + os.linesep)
-            for j in range(0, len(modelicaLayers)):
-                test.write("%s" % modelicaLayers[i] + os.linesep)
-
-
-
-
         # Initialize the state
         T_tough_start = mesh_to_mesh(toughLayers, modelicaLayers, T_start, 'T_Mo2To')
-
         state = {'tLast': tim, 'Q': Q, 'T_tough': T_tough_start}
-
-
-
         T_toModelica = T_start
         p_Int = ident_set(101343.01, 10)
         x_Int = ident_set(10.5, 10)
