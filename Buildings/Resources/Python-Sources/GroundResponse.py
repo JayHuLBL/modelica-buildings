@@ -78,8 +78,6 @@ def doStep(dblInp, state):
             # `writeincon` to generate input files for TOUGH simulation.
             if not os.path.exists('GENER'):
                 # create initial 'GENER' file
-                for i in range(31):
-                    Q_toTough[i] = 100
                 initialize_gener(toughLayers, Q_toTough, 'GENER')
                 # update existing 'INFILE'
                 update_infile(tLast, tim, 'INFILE', 'newINFILE')
@@ -183,7 +181,7 @@ def initialize_gener(toughLayesr, Q, fileName):
     with open(fileName, 'w') as f:
         f.write("GENER" + os.linesep)
         for i in range(0, len(Q)):
-            f.write("%s 1sou 1" % toughLayesr[i]['layer'] + "                         HEAT %10.3e" % Q[i] + os.linesep)
+            f.write("%s  1sou 1" % toughLayesr[i]['layer'] + "                         HEAT %10.3e" % Q[i] + os.linesep)
         f.write("+++" + os.linesep)
         f.write("         1         2         3         4         5         6         7         8" + os.linesep)
         f.write("         9        10        11        12        13        14        15        16" + os.linesep)
@@ -198,7 +196,7 @@ def update_infile(preTim, curTim, infile, outfile):
     count = 0
     for line in fin:
         count += 1
-        if count == 182:
+        if count == 31:
             endStr=line[20:]
             staStr='%10.1f%10.1f' % (preTim, curTim)
             fout.write(staStr + endStr)
@@ -219,13 +217,8 @@ def find_layer_depth(fileName):
     z = []
     dz.append(1)
     z.append(-1.5)
-    for line in fin:
-        count += 1
-        if count == 2:
-            strSet = line.split()
-            break
     layers.append(
-        {'layer': strSet[0],
+        {'layer': 'A4m',
          'z': z[0],
          'dz': dz[0]
         }
