@@ -1,7 +1,7 @@
 within Buildings.Examples.DistrictReservoirNetworks.Networks;
 model SwitchBoxBorehole
   extends Modelica.Blocks.Icons.Block;
-  parameter Modelica.SIunits.MassFlowRate m_flow_nominal
+  parameter Modelica.Units.SI.MassFlowRate m_flow_nominal
     "Nominal mass flow rate";
   TJunction splSup1(
     redeclare package Medium = MediumInSwitch,

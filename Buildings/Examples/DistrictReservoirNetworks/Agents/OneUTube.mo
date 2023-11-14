@@ -19,11 +19,11 @@ model OneUTube "Borefield model containing single U-tube boreholes"
           borCon=Buildings.Fluid.Geothermal.Borefields.Types.BoreholeConfiguration.SingleUTube,
           cooBor={{6*mod((i - 1), 20),6*floor((i - 1)/20)} for i in 1:400})));
 
-//    parameter Modelica.SIunits.Length xBorFie = 120 "Borefield length"
+//    parameter Modelica.Units.SI.Length xBorFie = 120 "Borefield length"
 //      annotation(Dialog(tab="Borefield"));
-//    parameter Modelica.SIunits.Length yBorFie = 120 "Borefield width"
+//    parameter Modelica.Units.SI.Length yBorFie = 120 "Borefield width"
 //      annotation(Dialog(tab="Borefield"));
-//    parameter Modelica.SIunits.Length dBorHol = 6 "Distance between two boreholes"
+//    parameter Modelica.Units.SI.Length dBorHol = 6 "Distance between two boreholes"
 //      annotation(Dialog(tab="Borefield"));
 //    final parameter Integer nXBorHol = integer((xBorFie+dBorHol)/dBorHol)
 //      "Number of boreholes in x-direction"

@@ -6,10 +6,10 @@ block ConstraintViolation
   parameter Real uMin "Minimum value for input";
   parameter Real uMax "Maximum value for input";
 
-  Modelica.SIunits.Time t(final start=0, final fixed=true) "Integral of violated time";
+  Modelica.Units.SI.Time t(final start=0, final fixed=true) "Integral of violated time";
 
 protected
-  parameter Modelica.SIunits.Time t0(fixed=false)
+  parameter Modelica.Units.SI.Time t0(fixed=false)
     "First sample time instant";
 
   Boolean vioMin "Flag, true if minimum is violated";

@@ -5,7 +5,7 @@ model BorefieldsWithToughNoCheckGround
 
   package Medium = Buildings.Media.Water;
 
-  parameter Modelica.SIunits.Temperature TGro = 283.15
+  parameter Modelica.Units.SI.Temperature TGro = 283.15
     "Ground temperature";
 
   Buildings.Controls.OBC.CDL.Continuous.Sources.Sine floRat(freqHz=1/21600,
@@ -132,7 +132,7 @@ equation
   connect(watTem.y,sou1. T_in) annotation (Line(points={{-128,-20},{-110,-20},{
           -110,-26},{-94,-26}},
                            color={0,0,127}));
-annotation (__Dymola_Commands(file="Resources/Scripts/Dymola/Fluid/Geothermal/Borefields/Examples/BorefieldsWithTough.mos"
+annotation (__Dymola_Commands(file="Resources/Scripts/Dymola/Fluid/Geothermal/Borefields/Examples/BorefieldsWithToughNoCheckGround.mos"
         "Simulate and plot"),
   Documentation(info="<html>
 <p>

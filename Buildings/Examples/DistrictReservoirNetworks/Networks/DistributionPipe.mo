@@ -4,9 +4,9 @@ model DistributionPipe "DHC distribution pipe"
     final dp_nominal=R*length);
 
   parameter Real R(unit="Pa/m") "Pressure drop per meter at m_flow_nominal";
-  final parameter Modelica.SIunits.Length length = 100 "Lenght of pipe";
+  final parameter Modelica.Units.SI.Length length = 100 "Lenght of pipe";
 
-  final parameter Modelica.SIunits.PressureDifference dpStraightPipe_nominal(displayUnit="Pa")=
+  final parameter Modelica.Units.SI.PressureDifference dpStraightPipe_nominal(displayUnit="Pa")=
       Modelica.Fluid.Pipes.BaseClasses.WallFriction.QuadraticTurbulent.pressureLoss_m_flow(
       m_flow=m_flow_nominal,
       rho_a=rho_default,
@@ -19,11 +19,11 @@ model DistributionPipe "DHC distribution pipe"
       m_flow_small=m_flow_small)
     "Pressure loss of a straight pipe at m_flow_nominal";
 
-  final parameter Modelica.SIunits.Length diameter(fixed=false, start=0.2, min=0.01) "Pipe diameter";
-  final parameter Modelica.SIunits.Velocity v_nominal = m_flow_nominal/(rho_default*ARound)
+  final parameter Modelica.Units.SI.Length diameter(fixed=false, start=0.2, min=0.01) "Pipe diameter";
+  final parameter Modelica.Units.SI.Velocity v_nominal = m_flow_nominal/(rho_default*ARound)
     "Flow velocity (assuming a round cross section area)";
 protected
-  parameter Modelica.SIunits.Area ARound = diameter^2*Modelica.Constants.pi/4
+  parameter Modelica.Units.SI.Area ARound = diameter^2*Modelica.Constants.pi/4
      "Cross sectional area (assuming a round cross section area)";
 
   parameter Medium.ThermodynamicState state_default=
@@ -32,10 +32,10 @@ protected
       p=Medium.p_default,
       X=Medium.X_default[1:Medium.nXi]) "Default state";
 
-  parameter Modelica.SIunits.Density rho_default = Medium.density(state_default)
+  parameter Modelica.Units.SI.Density rho_default = Medium.density(state_default)
     "Density at nominal condition";
 
-  parameter Modelica.SIunits.DynamicViscosity mu_default = Medium.dynamicViscosity(
+  parameter Modelica.Units.SI.DynamicViscosity mu_default = Medium.dynamicViscosity(
       state_default)
     "Dynamic viscosity at nominal condition";
 

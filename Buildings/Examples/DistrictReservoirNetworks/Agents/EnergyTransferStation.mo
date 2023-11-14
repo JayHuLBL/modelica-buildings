@@ -8,69 +8,69 @@ model EnergyTransferStation
   parameter Real gaiCoo(min=0) = 1 "Gain to scale cooling load";
   parameter Real gaiHea(min=0) = gaiCoo "Gain to scale heating load";
   parameter Real gaiHotWat(min=0) = gaiHea "Gain to scale hot water load";
-//  parameter Modelica.SIunits.Temperature TColMin = 273.15+8
+//  parameter Modelica.Units.SI.Temperature TColMin = 273.15+8
 //    "Minimum temperature of district cold water supply";
-//  parameter Modelica.SIunits.Temperature THotMax = 273.15+18
+//  parameter Modelica.Units.SI.Temperature THotMax = 273.15+18
 //    "Maximum temperature of district hot water supply";
-  final parameter Modelica.SIunits.TemperatureDifference dTCooCon_nominal(
+  final parameter Modelica.Units.SI.TemperatureDifference dTCooCon_nominal(
     min=0.5,
     displayUnit="K") = 4
     "Temperature difference condenser of the chiller (positive)"
     annotation(Dialog(group="Design parameter"));
-  final parameter Modelica.SIunits.TemperatureDifference dTHeaEva_nominal(
+  final parameter Modelica.Units.SI.TemperatureDifference dTHeaEva_nominal(
     max=-0.5,
     displayUnit="K") = -4
     "Temperature difference evaporator of the heat pump for space heating (negative)"
     annotation(Dialog(group="Design parameter"));
-  final parameter Modelica.SIunits.TemperatureDifference dTCooEva_nominal=-4
+  final parameter Modelica.Units.SI.TemperatureDifference dTCooEva_nominal=-4
     "Temperature difference evaporator of the chiller";
   parameter String filNam "Name of data file with heating and cooling load"
    annotation (Dialog(
     loadSelector(filter="Load file (*.mos)",
                  caption="Select load file")));
-  final parameter Modelica.SIunits.HeatFlowRate QCoo_flow_nominal(max=-Modelica.Constants.eps)=
+  final parameter Modelica.Units.SI.HeatFlowRate QCoo_flow_nominal(max=-Modelica.Constants.eps)=
        scaFacLoa*gaiCoo*
     Buildings.Experimental.DHC.Loads.BaseClasses.getPeakLoad(
     string="#Peak space cooling load", filNam=filNam) "Design heat flow rate"
     annotation (Dialog(group="Design parameter"));
-  final parameter Modelica.SIunits.HeatFlowRate QHea_flow_nominal(min=Modelica.Constants.eps)=
+  final parameter Modelica.Units.SI.HeatFlowRate QHea_flow_nominal(min=Modelica.Constants.eps)=
        scaFacLoa*gaiHea*
     Buildings.Experimental.DHC.Loads.BaseClasses.getPeakLoad(
     string="#Peak space heating load", filNam=filNam) "Design heat flow rate"
     annotation (Dialog(group="Design parameter"));
-  final parameter Modelica.SIunits.HeatFlowRate QHotWat_flow_nominal(min=
+  final parameter Modelica.Units.SI.HeatFlowRate QHotWat_flow_nominal(min=
         Modelica.Constants.eps) = scaFacLoa*
     gaiHotWat*
     Buildings.Experimental.DHC.Loads.BaseClasses.getPeakLoad(
     string="#Peak water heating load", filNam=filNam)
     "Design heat flow rate for domestic hot water"
     annotation (Dialog(group="Design parameter"));
-  final parameter Modelica.SIunits.Temperature TChiSup_nominal = 273.15 + 18
+  final parameter Modelica.Units.SI.Temperature TChiSup_nominal = 273.15 + 18
     "Chilled water leaving temperature at the evaporator"
      annotation (Dialog(group="Nominal conditions"));
-  final parameter Modelica.SIunits.Temperature THeaSup_nominal = 273.15+38
+  final parameter Modelica.Units.SI.Temperature THeaSup_nominal = 273.15+38
     "Supply temperature space heating system at TOut_nominal"
     annotation (Dialog(group="Nominal conditions"));
-  final parameter Modelica.SIunits.Temperature THeaRet_nominal = 273.15+34
+  final parameter Modelica.Units.SI.Temperature THeaRet_nominal = 273.15+34
     "Return temperature space heating system at TOut_nominal"
     annotation (Dialog(group="Nominal conditions"));
-//  parameter Modelica.SIunits.Temperature TOut_nominal
+//  parameter Modelica.Units.SI.Temperature TOut_nominal
 //    "Outside design temperature for heating"
 //    annotation (Dialog(group="Nominal conditions"));
-  final parameter Modelica.SIunits.TemperatureDifference dTHotWatCon_nominal(min=0)=63-15
+  final parameter Modelica.Units.SI.TemperatureDifference dTHotWatCon_nominal(min=0)=63-15
     "Temperature difference condenser of hot water heat pump";
-  parameter Modelica.SIunits.Pressure dp_nominal(displayUnit="Pa")=50000
+  parameter Modelica.Units.SI.Pressure dp_nominal(displayUnit="Pa")=50000
     "Pressure difference at nominal flow rate (for each flow leg)"
     annotation(Dialog(group="Design parameter"));
-  final parameter Modelica.SIunits.MassFlowRate mCooCon_flow_nominal(min=0)=
+  final parameter Modelica.Units.SI.MassFlowRate mCooCon_flow_nominal(min=0)=
     -QCoo_flow_nominal/cp_default/dTCooCon_nominal
     "Design mass flow rate for cooling at district side"
     annotation(Dialog(group="Design parameter"));
-  final parameter Modelica.SIunits.MassFlowRate mHeaEva_flow_nominal(min=0)=
+  final parameter Modelica.Units.SI.MassFlowRate mHeaEva_flow_nominal(min=0)=
     -QHea_flow_nominal/cp_default/dTHeaEva_nominal
     "Design mass flow rate for space heating at district side"
     annotation(Dialog(group="Design parameter"));
-  final parameter Modelica.SIunits.MassFlowRate mHotWatEva_flow_nominal(min=0)=
+  final parameter Modelica.Units.SI.MassFlowRate mHotWatEva_flow_nominal(min=0)=
     QHotWat_flow_nominal/cp_default/dTHotWatCon_nominal
     "Design mass flow rate for domestic hot water at district side"
     annotation(Dialog(group="Design parameter"));
@@ -174,7 +174,7 @@ model EnergyTransferStation
     "Mixing volume to break algebraic loops and to emulate the delay of the substation"
     annotation (Placement(transformation(extent={{250,10},{270,30}})));
 
-  final parameter Modelica.SIunits.SpecificHeatCapacity cp_default=
+  final parameter Modelica.Units.SI.SpecificHeatCapacity cp_default=
     Medium.specificHeatCapacityCp(Medium.setState_pTX(
       p = Medium.p_default,
       T = Medium.T_default,
@@ -262,11 +262,11 @@ model EnergyTransferStation
   Modelica.Blocks.Math.Add3 sumPPum "Sum for pump power"
     annotation (Placement(transformation(extent={{120,120},{140,140}})));
   Buildings.Utilities.Diagnostics.AssertEquality assEqu1(threShold=0.001*
-        QHea_flow_nominal,                                             message="Heat pump for hot water does not meet load")
+        QHotWat_flow_nominal,                                             message="Heat pump for hot water does not meet load")
     "Tests whether load is met"
     annotation (Placement(transformation(extent={{100,-60},{120,-40}})));
   Buildings.Utilities.Diagnostics.AssertEquality assEqu2(threShold=0.001*
-        QHotWat_flow_nominal,                                          message="Heat pump for space heating does not meet load")
+        QHea_flow_nominal,                                          message="Heat pump for space heating does not meet load")
     "Tests whether load is met"
     annotation (Placement(transformation(extent={{60,250},{80,270}})));
   Buildings.Fluid.HeatExchangers.HeaterCooler_u hex(
@@ -290,7 +290,7 @@ protected
     T=Medium.T_default,
     p=Medium.p_default,
     X=Medium.X_default[1:Medium.nXi]) "Medium state at default properties";
-  final parameter Modelica.SIunits.SpecificHeatCapacity cp_default_check=
+  final parameter Modelica.Units.SI.SpecificHeatCapacity cp_default_check=
     Medium.specificHeatCapacityCp(sta_default)
     "Specific heat capacity of the fluid";
   Modelica.Blocks.Sources.CombiTimeTable loa(
@@ -431,24 +431,24 @@ equation
           -62},{-92,403},{-157,403}},  color={0,0,127}));
   connect(TSetHotWat.y, heaPumHotWat.TSet) annotation (Line(points={{-119,-30},{
           8,-30},{8,-73},{18,-73}},   color={0,0,127}));
-  connect(volMix_a.ports[1], port_a) annotation (Line(points={{-263,10},{
-          -263,0},{-280,0}}, color={0,127,255}));
-  connect(pumHea.port_a, volMix_a.ports[2]) annotation (Line(points={{30,
-          300},{30,300},{-242,300},{-242,2},{-262,2},{-262,0},{-262,6},{-261,
-          6},{-261,10}}, color={0,127,255}));
+  connect(volMix_a.ports[1], port_a) annotation (Line(points={{-261.5,10},{-261.5,
+          0},{-280,0}},      color={0,127,255}));
+  connect(pumHea.port_a, volMix_a.ports[2]) annotation (Line(points={{30,300},{30,
+          300},{-242,300},{-242,2},{-262,2},{-262,0},{-262,6},{-260.5,6},{-260.5,
+          10}},          color={0,127,255}));
   connect(pumHotWat.port_a, volMix_a.ports[3]) annotation (Line(
-      points={{30,0},{-94,0},{-258,0},{-259,0},{-259,10}},
+      points={{30,0},{-94,0},{-258,0},{-259.5,0},{-259.5,10}},
       color={0,127,255},
       thickness=0.5));
-  connect(heaPum.port_b2, volMix_b.ports[1]) annotation (Line(points={{22,
-          216},{18,216},{18,180},{200,180},{200,6},{257,6},{257,10},{257,
-          10}}, color={0,127,255}));
+  connect(heaPum.port_b2, volMix_b.ports[1]) annotation (Line(points={{22,216},{
+          18,216},{18,180},{200,180},{200,6},{257,6},{257,10},{258.5,10}},
+                color={0,127,255}));
   connect(heaPumHotWat.port_b2, volMix_b.ports[2]) annotation (Line(
-      points={{20,-88},{10,-88},{10,-120},{259,-120},{259,10}},
+      points={{20,-88},{10,-88},{10,-120},{259.5,-120},{259.5,10}},
       color={0,127,255},
       thickness=0.5));
-  connect(port_b, volMix_b.ports[3]) annotation (Line(points={{280,0},{
-          261,0},{261,10}}, color={0,127,255}));
+  connect(port_b, volMix_b.ports[3]) annotation (Line(points={{280,0},{260.5,0},
+          {260.5,10}},      color={0,127,255}));
   connect(deMul.y2[1], QHea_flow) annotation (Line(points={{-157,410},{
           242,410},{242,140},{290,140}},  color={0,0,127}));
   connect(deMul.y3[1], QHotWat_flow) annotation (Line(points={{-157,403},{-157,404},
@@ -475,14 +475,14 @@ equation
           {-80,-224},{220,-224},{220,200},{290,200}},
                       color={0,0,127}));
   connect(senTem1.port_b, volMix_a.ports[4]) annotation (Line(
-      points={{0,-340},{0,-200},{-228,-200},{-228,10},{-257,10}},
+      points={{0,-340},{0,-200},{-228,-200},{-228,10},{-258.5,10}},
       color={0,127,255},
       thickness=0.5));
   connect(deMul.y1[1], coolingLoadInPositive.u) annotation (Line(points={{-157,
           417},{-140,417},{-140,440},{-240,440},{-240,-394},{-182,-394}},
                   color={0,0,127}));
   connect(senTem.port_a, volMix_b.ports[4]) annotation (Line(points={{-182,-340},
-          {-200,-340},{-200,-240},{260,-240},{260,-146},{263,-146},{263,10}},
+          {-200,-340},{-200,-240},{260,-240},{260,-146},{261.5,-146},{261.5,10}},
         color={0,127,255}));
   connect(senTem.port_b, pumChi.port_a)
     annotation (Line(points={{-162,-340},{-130,-340}}, color={0,127,255}));

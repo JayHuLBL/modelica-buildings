@@ -3,7 +3,7 @@ model NoGroundCheck
   "Response model without checking the temperature and pressure in the interested points"
 
   parameter Integer nSeg=10 "Total number of segments";
-  parameter Modelica.SIunits.Time samplePeriod=60 "Sample period of component"
+  parameter Modelica.Units.SI.Time samplePeriod=60 "Sample period of component"
     annotation(Dialog(group="Sampling"));
   parameter Integer flag=0
     "Flag for double values (0: use current value, 1: use average over interval, 2: use integral over interval)"
@@ -30,7 +30,7 @@ model NoGroundCheck
     annotation (Placement(transformation(extent={{100,-20},{140,20}}),
       iconTransformation(extent={{100,-10},{120,10}})));
 
-  Buildings.Utilities.IO.Python36.Real_Real pyt(
+  Buildings.Utilities.IO.Python_3_8.Real_Real pyt(
     moduleName="GroundResponse",
     functionName="doStep",
     nDblRea=nSeg,
@@ -41,7 +41,7 @@ model NoGroundCheck
     annotation (Placement(transformation(extent={{20,-10},{40,10}})));
   Modelica.Blocks.Routing.Multiplex mul(final n=2*nSeg+1) "Multiplex"
     annotation (Placement(transformation(extent={{-20,-10},{0,10}})));
-  Modelica.Blocks.Sources.Clock clock
+  Modelica.Blocks.Sources.ContinuousClock clock
     annotation (Placement(transformation(extent={{-80,-60},{-60,-40}})));
 
 equation

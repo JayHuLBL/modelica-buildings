@@ -563,7 +563,7 @@ equation
   connect(tempAfterPlantSecondSide.port_a, plant.port_b2) annotation (Line(
         points={{-160,-270},{-152,-270},{-152,-250}},color={0,127,255}));
   connect(tempAfterPlantSecondSide.port_b, sewageSourceAtConstTemp.ports[1])
-    annotation (Line(points={{-172,-270},{-180,-270},{-180,-238}},color={0,
+    annotation (Line(points={{-172,-270},{-180,-270},{-180,-241}},color={0,
           127,255}));
   connect(mFlowInputPlant.y, pumpSecondarySidePlant.m_flow_in) annotation (
       Line(points={{-116.8,-230},{-122,-230},{-122,-224},{-200,-224},{-200,-210},
@@ -582,7 +582,7 @@ equation
                                                               color={0,127,
           255}));
   connect(pumpSecondarySidePlant.port_a, sewageSourceAtConstTemp.ports[2])
-    annotation (Line(points={{-180,-220},{-180,-242}},
+    annotation (Line(points={{-180,-220},{-180,-239}},
                                                      color={0,127,255}));
   connect(res.port_b, pumpMainRLTN.port_a)
     annotation (Line(points={{80,-340},{80,-360}}, color={0,127,255}));
@@ -688,37 +688,40 @@ equation
   connect(res6.port_b, res2.port_a)
     annotation (Line(points={{80,-200},{80,-182}}, color={0,127,255}));
   connect(pumpSecondarySidePlant.P, EPumPla.u[1]) annotation (Line(points={{-189,
-          -199},{-189,-150},{-186,-150},{-186,-149.9},{-154,-149.9}},
+          -199},{-189,-150},{-186,-150},{-186,-153.05},{-154,-153.05}},
                                                                color={0,0,127}));
-  connect(pumpPrimarySidePlant.P, EPumPla.u[2]) annotation (Line(points={{-131,-199},
-          {-131,-174},{-164,-174},{-164,-154.1},{-154,-154.1}},
+  connect(pumpPrimarySidePlant.P, EPumPla.u[2]) annotation (Line(points={{-131,
+          -199},{-131,-174},{-164,-174},{-164,-150.95},{-154,-150.95}},
                                                          color={0,0,127}));
   connect(proOff.PPum, EPumPro.u[1]) annotation (Line(points={{-220.714,8.57143},
-          {-264,8.57143},{-264,291.5},{246,291.5}}, color={0,0,127}));
+          {-264,8.57143},{-264,286.25},{246,286.25}},
+                                                    color={0,0,127}));
   connect(proApa.PPum, EPumPro.u[2]) annotation (Line(points={{220.714,206.571},
-          {234,206.571},{234,290.1},{246,290.1}}, color={0,0,127}));
+          {234,206.571},{234,286.95},{246,286.95}},
+                                                  color={0,0,127}));
   connect(proHos.PPum, EPumPro.u[3]) annotation (Line(points={{220.714,-5.42857},
-          {236,-5.42857},{236,288.7},{246,288.7}}, color={0,0,127}));
+          {236,-5.42857},{236,287.65},{246,287.65}},
+                                                   color={0,0,127}));
   connect(proOff.PCom, EHeaPum.u[1]) annotation (Line(points={{-220.714,11.4286},
-          {-260,11.4286},{-260,270.8},{246,270.8}}, color={0,0,127}));
+          {-260,11.4286},{-260,266.6},{246,266.6}}, color={0,0,127}));
   connect(proApa.PCom, EHeaPum.u[2]) annotation (Line(points={{220.714,209.429},
           {230,209.429},{230,210},{238,210},{238,268},{246,268}}, color={0,0,
           127}));
   connect(proHos.PCom, EHeaPum.u[3]) annotation (Line(points={{220.714,-2.57143},
-          {242,-2.57143},{242,265.2},{246,265.2}}, color={0,0,127}));
+          {242,-2.57143},{242,269.4},{246,269.4}}, color={0,0,127}));
   connect(EPumDis.u[1], pumpMainRLTN.P)
-    annotation (Line(points={{106,-387.9},{71,-387.9},{71,-381}},
+    annotation (Line(points={{106,-391.05},{71,-391.05},{71,-381}},
                                                              color={0,0,127}));
   connect(EBorFie.u[1], borFie.Q_flow) annotation (Line(points={{-38,-460},{-52,
           -460},{-52,-448},{-13,-448}}, color={0,0,127}));
   connect(switchBoxProsumerWithPumps.PPum, EPumPro.u[4]) annotation (Line(
-        points={{-150,10.8333},{-150,287.3},{246,287.3}},
+        points={{-150,10.8333},{-150,288.35},{246,288.35}},
         color={0,0,127}));
   connect(switchBoxProsumerWithPumps1.PPum, EPumPro.u[5]) annotation (Line(
         points={{150,147.167},{150,146},{164,146},{164,290},{246,290},{246,
-          285.9}},                                              color={0,0,127}));
+          289.05}},                                             color={0,0,127}));
   connect(switchBoxProsumerWithPumps2.PPum, EPumPro.u[6]) annotation (Line(
-        points={{150,-62.8333},{150,-76},{166,-76},{166,284.5},{246,284.5}},
+        points={{150,-62.8333},{150,-76},{166,-76},{166,289.75},{246,289.75}},
         color={0,0,127}));
   connect(heatFromToPlantPrimarySide.y, EPlant.u[1])
     annotation (Line(points={{-99,-250},{-66,-250}}, color={0,0,127}));
@@ -729,17 +732,17 @@ equation
   connect(EProsumer3.u[1], heatFromToNetwrokProsumer3.y)
     annotation (Line(points={{182,-100},{199,-100}}, color={0,0,127}));
   connect(heatFromToNetwrokProsumer1.y, ESumProsumers.u[1]) annotation (Line(
-        points={{-159,-80},{-132,-80},{-132,-110},{288,-110},{288,-111.2}},
+        points={{-159,-80},{-132,-80},{-132,-110},{288,-110},{288,-115.4}},
         color={0,0,127}));
   connect(heatFromToNetwrokProsumer3.y, ESumProsumers.u[2]) annotation (Line(
         points={{199,-100},{194,-100},{194,-114},{288,-114}},
                               color={0,0,127}));
   connect(heatFromToNetwrokProsumer2.y, ESumProsumers.u[3]) annotation (Line(
         points={{199,100},{190,100},{190,60},{276,60},{276,-118},{288,-118},{
-          288,-116.8}},                                           color={0,0,
+          288,-112.6}},                                           color={0,0,
           127}));
   connect(EHeaPum.y, EEleTot.u[1]) annotation (Line(points={{259.02,268},{266,
-          268},{266,282.1},{284,282.1}},
+          268},{266,278.95},{284,278.95}},
                                       color={0,0,127}));
   connect(EEleTot.y, pri.x[1])
     annotation (Line(points={{297.02,280},{350,280}}, color={0,0,127}));
@@ -756,31 +759,33 @@ equation
   connect(splSup10.port_3, splSup9.port_3)
     annotation (Line(points={{-70,-410},{70,-410}}, color={0,127,255}));
   connect(pumpBHS.P, EPumDis.u[2]) annotation (Line(points={{39,-431},{18,-431},
-          {18,-422},{100,-422},{100,-392.1},{106,-392.1}}, color={0,0,127}));
+          {18,-422},{100,-422},{100,-388.95},{106,-388.95}},
+                                                           color={0,0,127}));
   connect(Tml1.T, TVio.u[1]) annotation (Line(points={{-86.6,-300},{-292,-300},
-          {-292,333.36},{324,333.36}},color={0,0,127}));
+          {-292,328.32},{324,328.32}},color={0,0,127}));
   connect(Tml2.T, TVio.u[2]) annotation (Line(points={{-86.6,-94},{-282,-94},{
-          -282,331.68},{324,331.68}},
+          -282,329.16},{324,329.16}},
                                  color={0,0,127}));
   connect(Tml3.T, TVio.u[3]) annotation (Line(points={{4.44089e-16,244.6},{
           4.44089e-16,330},{324,330}},
                            color={0,0,127}));
   connect(Tml4.T, TVio.u[4]) annotation (Line(points={{86.6,118},{304,118},{304,
-          328.32},{324,328.32}}, color={0,0,127}));
+          330.84},{324,330.84}}, color={0,0,127}));
   connect(Tml5.T, TVio.u[5]) annotation (Line(points={{86.6,-100},{140,-100},{
-          140,-132},{310,-132},{310,326.64},{324,326.64}},
+          140,-132},{310,-132},{310,331.68},{324,331.68}},
                                                        color={0,0,127}));
   connect(TVio.y, pri1.x[1])
     annotation (Line(points={{337.02,330},{350,330}}, color={0,0,127}));
   connect(EPumPro.y, EPumTot.u[1]) annotation (Line(points={{259.02,288},{266,
-          288},{266,310.8},{284,310.8}}, color={0,0,127}));
+          288},{266,306.6},{284,306.6}}, color={0,0,127}));
   connect(EPumDis.y, EPumTot.u[2]) annotation (Line(points={{119.02,-390},{268,
           -390},{268,308},{284,308}}, color={0,0,127}));
   connect(EPumPla.y, EPumTot.u[3]) annotation (Line(points={{-140.98,-152},{
-          -132,-152},{-132,-88},{-270,-88},{-270,328},{270,328},{270,305.2},{
-          284,305.2}}, color={0,0,127}));
+          -132,-152},{-132,-88},{-270,-88},{-270,328},{270,328},{270,309.4},{
+          284,309.4}}, color={0,0,127}));
   connect(EPumTot.y, EEleTot.u[2]) annotation (Line(points={{297.02,308},{300,
-          308},{300,294},{276,294},{276,277.9},{284,277.9}}, color={0,0,127}));
+          308},{300,294},{276,294},{276,281.05},{284,281.05}},
+                                                             color={0,0,127}));
   annotation (Diagram(
         coordinateSystem(preserveAspectRatio=false, extent={{-320,-480},{380,360}})),
     experiment(StopTime=31536000, __Dymola_NumberOfIntervals=8760),

@@ -1,13 +1,13 @@
 within Buildings.Examples.DistrictReservoirNetworks.Agents.Controls;
 block HeatingCurve "Reset of heating supply and return set point temperatures"
   extends Modelica.Blocks.Icons.Block;
-  parameter Modelica.SIunits.Temperature THeaSup_nominal
+  parameter Modelica.Units.SI.Temperature THeaSup_nominal
     "Supply temperature space heating system at TOut_nominal"
     annotation (Dialog(group="Nominal conditions"));
-  parameter Modelica.SIunits.Temperature THeaRet_nominal
+  parameter Modelica.Units.SI.Temperature THeaRet_nominal
     "Return temperature space heating system at TOut_nominal"
     annotation (Dialog(group="Nominal conditions"));
-  parameter Modelica.SIunits.Temperature THeaSupZer
+  parameter Modelica.Units.SI.Temperature THeaSupZer
     "Minimum supply and return water temperature at zero load"
     annotation (Dialog(group="Nominal conditions"));
   Buildings.Controls.OBC.CDL.Interfaces.RealInput u(min=0, unit="1")

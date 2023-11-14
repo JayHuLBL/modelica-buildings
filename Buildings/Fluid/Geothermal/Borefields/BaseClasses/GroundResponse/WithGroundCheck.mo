@@ -4,7 +4,7 @@ model WithGroundCheck
 
   parameter Integer nSeg=10 "Total number of segments";
   parameter Integer nInt=10 "NUmber of points in the ground to be investigated";
-  parameter Modelica.SIunits.Time samplePeriod=60 "Sample period of component"
+  parameter Modelica.Units.SI.Time samplePeriod=60 "Sample period of component"
     annotation(Dialog(group="Sampling"));
   parameter Integer flag=0
     "Flag for double values (0: use current value, 1: use average over interval, 2: use integral over interval)"
@@ -59,7 +59,7 @@ model WithGroundCheck
     annotation (Placement(transformation(extent={{100,-110},{140,-70}}),
         iconTransformation(extent={{100,-100},{120,-80}})));
 
-  Buildings.Utilities.IO.Python36.Real_Real pyt(
+  Buildings.Utilities.IO.Python_3_8.Real_Real pyt(
     moduleName="GroundResponse",
     functionName="doStep",
     nDblRea=nSeg + 3*nInt + 2,
@@ -70,7 +70,7 @@ model WithGroundCheck
     annotation (Placement(transformation(extent={{20,-10},{40,10}})));
   Modelica.Blocks.Routing.Multiplex mul(final n=2*nSeg+2)       "Multiplex"
     annotation (Placement(transformation(extent={{-20,-10},{0,10}})));
-  Modelica.Blocks.Sources.Clock clock
+  Modelica.Blocks.Sources.ContinuousClock clock
     annotation (Placement(transformation(extent={{-80,-60},{-60,-40}})));
 
 equation

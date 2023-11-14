@@ -6,7 +6,7 @@ model OneUTubeWithToughCheckGround
     redeclare Buildings.Fluid.Geothermal.Borefields.BaseClasses.Boreholes.OneUTube borHol, toughRes(
         samplePeriod=samplePeriod));
 
-  parameter Modelica.SIunits.Time samplePeriod=30 "Sample period of component";
+  parameter Modelica.Units.SI.Time samplePeriod=30 "Sample period of component";
   annotation (
   defaultComponentName="borFie",
   Documentation(info="<html>

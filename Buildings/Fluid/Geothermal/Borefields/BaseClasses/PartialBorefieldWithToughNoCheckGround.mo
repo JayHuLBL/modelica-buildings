@@ -40,23 +40,23 @@ partial model PartialBorefieldWithToughNoCheckGround
     annotation (choicesAllMatching=true,Placement(transformation(extent={{-80,-80},{-60,-60}})));
 
   // Temperature gradient in undisturbed soil
-  parameter Modelica.SIunits.Temperature TExt0_start=283.15
+  parameter Modelica.Units.SI.Temperature TExt0_start=283.15
     "Initial far field temperature"
     annotation (Dialog(tab="Initialization", group="Soil"));
-  parameter Modelica.SIunits.Temperature TExt_start[nSeg]=
+  parameter Modelica.Units.SI.Temperature TExt_start[nSeg]=
     {if z[i] >= z0 then TExt0_start + (z[i] - z0)*dT_dz else TExt0_start for i in 1:nSeg}
     "Temperature of the undisturbed ground"
     annotation (Dialog(tab="Initialization", group="Soil"));
 
-  parameter Modelica.SIunits.Temperature TGro_start[nSeg]=TExt_start
+  parameter Modelica.Units.SI.Temperature TGro_start[nSeg]=TExt_start
     "Start value of grout temperature"
     annotation (Dialog(tab="Initialization", group="Filling material"));
 
-  parameter Modelica.SIunits.Temperature TFlu_start[nSeg]=TGro_start
+  parameter Modelica.Units.SI.Temperature TFlu_start[nSeg]=TGro_start
     "Start value of fluid temperature"
     annotation (Dialog(tab="Initialization"));
 
-  parameter Modelica.SIunits.Height z0=10
+  parameter Modelica.Units.SI.Height z0=10
     "Depth below which the temperature gradient starts"
     annotation (Dialog(tab="Initialization", group="Temperature profile"));
   parameter Real dT_dz(final unit="K/m", min=0) = 0.01
@@ -101,7 +101,7 @@ partial model PartialBorefieldWithToughNoCheckGround
   GroundResponse.NoGroundCheck toughRes(nSeg=nSeg)
     annotation (Placement(transformation(extent={{8,40},{28,60}})));
 protected
-  parameter Modelica.SIunits.Height z[nSeg]={borFieDat.conDat.hBor/nSeg*(i - 0.5) for i in 1:nSeg}
+  parameter Modelica.Units.SI.Height z[nSeg]={borFieDat.conDat.hBor/nSeg*(i - 0.5) for i in 1:nSeg}
     "Distance from the surface to the considered segment";
 
   Buildings.Fluid.BaseClasses.MassFlowRateMultiplier masFloDiv(
@@ -157,7 +157,7 @@ equation
           {40,20},{58,20}}, color={0,0,127}));
   connect(TBorHol_start.y, toughRes.TBorWal_start)
     annotation (Line(points={{-19,20},{0,20},{0,44},{7,44}}, color={0,0,127}));
-  connect(QBorHol.Q_flow, toughRes.QBor_flow) annotation (Line(points={{-10,-10},
+  connect(QBorHol.Q_flow, toughRes.QBor_flow) annotation (Line(points={{-11,-10},
           {-60,-10},{-60,56},{7,56}}, color={0,0,127}));
   annotation (
     Icon(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,100}}),
