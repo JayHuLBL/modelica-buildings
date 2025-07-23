@@ -5,13 +5,6 @@ block SystemRequests
   parameter Real thrTemDif(
     final unit="K",
     final quantity="TemperatureDifference")=3
-<<<<<<< HEAD
-    "Threshold difference between zone temperature and cooling setpoint for generating 3 cooling SAT reset requests";
-  parameter Real twoTemDif(
-    final unit="K",
-    final quantity="TemperatureDifference")=2
-    "Threshold difference between zone temperature and cooling setpoint for generating 2 cooling SAT reset requests";
-=======
     "Threshold difference between zone temperature and cooling setpoint for generating 3 cooling SAT reset requests"
     annotation (__cdl(ValueInReference=true));
   parameter Real twoTemDif(
@@ -19,34 +12,21 @@ block SystemRequests
     final quantity="TemperatureDifference")=2
     "Threshold difference between zone temperature and cooling setpoint for generating 2 cooling SAT reset requests"
     annotation (__cdl(ValueInReference=true));
->>>>>>> master
   parameter Real durTimTem(
     final unit="s",
     final quantity="Time")=120
     "Duration time of zone temperature exceeds setpoint"
-<<<<<<< HEAD
-    annotation(Dialog(group="Duration times"));
-=======
     annotation (__cdl(ValueInReference=true), Dialog(group="Duration times"));
->>>>>>> master
   parameter Real durTimFlo(
     final unit="s",
     final quantity="Time")=60
     "Duration time of airflow rate less than setpoint"
-<<<<<<< HEAD
-    annotation(Dialog(group="Duration times"));
-=======
     annotation (__cdl(ValueInReference=true), Dialog(group="Duration times"));
->>>>>>> master
   parameter Real dTHys(
     final unit="K",
     final quantity="TemperatureDifference")=0.25
     "Near zero temperature difference, below which the difference will be seen as zero"
-<<<<<<< HEAD
-    annotation (Dialog(tab="Advanced"));
-=======
     annotation (__cdl(ValueInReference=false), Dialog(tab="Advanced"));
->>>>>>> master
   parameter Real floHys(
     final quantity="VolumeFlowRate",
     final unit="m3/s")
@@ -63,11 +43,7 @@ block SystemRequests
     final unit="s",
     final quantity="Time")=120
     "Sample period of component, set to the same value as the trim and respond that process yPreSetReq"
-<<<<<<< HEAD
-    annotation (Dialog(tab="Advanced"));
-=======
     annotation (__cdl(ValueInReference=false), Dialog(tab="Advanced"));
->>>>>>> master
 
   Buildings.Controls.OBC.CDL.Interfaces.BooleanInput uAftSup
     "After suppression period due to the setpoint change"
@@ -125,46 +101,26 @@ block SystemRequests
         iconTransformation(extent={{100,-80},{140,-40}})));
 
 protected
-<<<<<<< HEAD
-  Buildings.Controls.OBC.CDL.Continuous.GreaterThreshold greThr1(
-=======
   Buildings.Controls.OBC.CDL.Reals.GreaterThreshold greThr1(
->>>>>>> master
     final t=thrTemDif,
     final h=dTHys)
     "Check if zone temperature is greater than cooling setpoint by threshold"
     annotation (Placement(transformation(extent={{-60,110},{-40,130}})));
-<<<<<<< HEAD
-  Buildings.Controls.OBC.CDL.Continuous.GreaterThreshold greThr2(
-=======
   Buildings.Controls.OBC.CDL.Reals.GreaterThreshold greThr2(
->>>>>>> master
     final t=twoTemDif,
     final h=dTHys)
     "Check if zone temperature is greater than cooling setpoint by threshold"
     annotation (Placement(transformation(extent={{-60,70},{-40,90}})));
-<<<<<<< HEAD
-  Buildings.Controls.OBC.CDL.Continuous.GreaterThreshold greThr3(
-=======
   Buildings.Controls.OBC.CDL.Reals.GreaterThreshold greThr3(
->>>>>>> master
     final t=0.95,
     final h=damPosHys)
     "Check if damper position is greater than 0.95"
     annotation (Placement(transformation(extent={{-120,-180},{-100,-160}})));
-<<<<<<< HEAD
-  Buildings.Controls.OBC.CDL.Continuous.GreaterThreshold greThr(
-    final t=0.95, final h=looHys)
-    "Check if cooling loop signal is greater than 0.95"
-    annotation (Placement(transformation(extent={{-60,20},{-40,40}})));
-  Buildings.Controls.OBC.CDL.Continuous.GreaterThreshold greThr4(
-=======
   Buildings.Controls.OBC.CDL.Reals.GreaterThreshold greThr(
     final t=0.95, final h=looHys)
     "Check if cooling loop signal is greater than 0.95"
     annotation (Placement(transformation(extent={{-60,20},{-40,40}})));
   Buildings.Controls.OBC.CDL.Reals.GreaterThreshold greThr4(
->>>>>>> master
     final t=floHys,
     final h=0.5*floHys)
     "Check if discharge airflow setpoint is greater than 0"
@@ -175,20 +131,6 @@ protected
   Buildings.Controls.OBC.CDL.Conversions.BooleanToInteger booToInt1
     "Convert boolean to integer"
     annotation (Placement(transformation(extent={{40,-180},{60,-160}})));
-<<<<<<< HEAD
-  Buildings.Controls.OBC.CDL.Continuous.MultiplyByParameter gai1(
-    final k=0.5)
-    "50% of setpoint"
-    annotation (Placement(transformation(extent={{-100,-80},{-80,-60}})));
-  Buildings.Controls.OBC.CDL.Continuous.MultiplyByParameter gai2(
-    final k=0.7)
-    "70% of setpoint"
-    annotation (Placement(transformation(extent={{-100,-120},{-80,-100}})));
-  Buildings.Controls.OBC.CDL.Continuous.Subtract sub2
-    "Calculate difference between zone temperature and cooling setpoint"
-    annotation (Placement(transformation(extent={{-100,110},{-80,130}})));
-  Buildings.Controls.OBC.CDL.Continuous.Subtract sub3
-=======
   Buildings.Controls.OBC.CDL.Reals.MultiplyByParameter gai1(
     final k=0.5)
     "50% of setpoint"
@@ -201,7 +143,6 @@ protected
     "Calculate difference between zone temperature and cooling setpoint"
     annotation (Placement(transformation(extent={{-100,110},{-80,130}})));
   Buildings.Controls.OBC.CDL.Reals.Subtract sub3
->>>>>>> master
     "Calculate difference between zone temperature and cooling setpoint"
     annotation (Placement(transformation(extent={{-100,70},{-80,90}})));
   Buildings.Controls.OBC.CDL.Logical.And and1
@@ -253,17 +194,10 @@ protected
   Buildings.Controls.OBC.CDL.Logical.TrueDelay tim3(
     final delayTime=durTimFlo) "Check if it is more than threshold time"
     annotation (Placement(transformation(extent={{-60,-160},{-40,-140}})));
-<<<<<<< HEAD
-  Buildings.Controls.OBC.CDL.Continuous.Greater greEqu(final h=floHys)
-    "Check if discharge airflow is less than 50% of setpoint"
-    annotation (Placement(transformation(extent={{-60,-80},{-40,-60}})));
-  Buildings.Controls.OBC.CDL.Continuous.Greater greEqu1(final h=floHys)
-=======
   Buildings.Controls.OBC.CDL.Reals.Greater greEqu(final h=floHys)
     "Check if discharge airflow is less than 50% of setpoint"
     annotation (Placement(transformation(extent={{-60,-80},{-40,-60}})));
   Buildings.Controls.OBC.CDL.Reals.Greater greEqu1(final h=floHys)
->>>>>>> master
     "Check if discharge airflow is less than 70% of setpoint"
     annotation (Placement(transformation(extent={{-60,-120},{-40,-100}})));
   Buildings.Controls.OBC.CDL.Logical.And and5

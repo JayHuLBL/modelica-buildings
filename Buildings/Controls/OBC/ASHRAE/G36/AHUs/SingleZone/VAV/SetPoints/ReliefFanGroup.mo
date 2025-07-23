@@ -788,13 +788,10 @@ is above Stage 0.
 </html>", revisions="<html>
 <ul>
 <li>
-<<<<<<< HEAD
-=======
 March 5, 2024, by Michael Wetter:<br/>
 Corrected wrong use of <code>displayUnit</code>.
 </li>
 <li>
->>>>>>> master
 July 15, 2021, by Jianjun Hu:<br/>
 First implementation.
 </li>

@@ -7,11 +7,7 @@ model SystemRequests
     final looHys=0.01,
     final damPosHys=0.01) "Block outputs system requests"
     annotation (Placement(transformation(extent={{60,-10},{80,10}})));
-<<<<<<< HEAD
-  Buildings.Controls.OBC.CDL.Continuous.Sources.Sine sine(
-=======
   Buildings.Controls.OBC.CDL.Reals.Sources.Sin sine(
->>>>>>> master
     final freqHz=1/7200,
     final offset=296.15) "Generate data for setpoint"
     annotation (Placement(transformation(extent={{-60,30},{-40,50}})));
@@ -19,47 +15,27 @@ model SystemRequests
     final samplePeriod=1800)
     "Cooling setpoint temperature"
     annotation (Placement(transformation(extent={{-20,30},{0,50}})));
-<<<<<<< HEAD
-  Buildings.Controls.OBC.CDL.Continuous.Sources.Sine TZon(
-=======
   Buildings.Controls.OBC.CDL.Reals.Sources.Sin TZon(
->>>>>>> master
     final freqHz=1/7200,
     final amplitude=2,
     final offset=299.15) "Zone temperature"
     annotation (Placement(transformation(extent={{-60,-10},{-40,10}})));
-<<<<<<< HEAD
-  Buildings.Controls.OBC.CDL.Continuous.Sources.Ramp uCoo(
-=======
   Buildings.Controls.OBC.CDL.Reals.Sources.Ramp uCoo(
->>>>>>> master
     final height=0.9,
     final duration=7200,
     final offset=0.1) "Cooling loop signal"
     annotation (Placement(transformation(extent={{-20,-30},{0,-10}})));
-<<<<<<< HEAD
-  Buildings.Controls.OBC.CDL.Continuous.Sources.Ramp disAirSet(
-=======
   Buildings.Controls.OBC.CDL.Reals.Sources.Ramp disAirSet(
->>>>>>> master
     final height=0.9,
     final duration=7200,
     final offset=0.1) "Discharge airflow rate setpoint"
     annotation (Placement(transformation(extent={{-60,-50},{-40,-30}})));
-<<<<<<< HEAD
-  Buildings.Controls.OBC.CDL.Continuous.Sources.Ramp disAirRate(
-=======
   Buildings.Controls.OBC.CDL.Reals.Sources.Ramp disAirRate(
->>>>>>> master
     final duration=7200,
     final offset=0.1,
     final height=0.3) "Discharge airflow rate"
     annotation (Placement(transformation(extent={{-20,-70},{0,-50}})));
-<<<<<<< HEAD
-  Buildings.Controls.OBC.CDL.Continuous.Sources.Ramp damPos(
-=======
   Buildings.Controls.OBC.CDL.Reals.Sources.Ramp damPos(
->>>>>>> master
     final duration=7200,
     final height=0.7,
     final offset=0.3) "Damper position"
