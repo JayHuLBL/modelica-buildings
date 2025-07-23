@@ -31,7 +31,7 @@ model NoGroundCheck
       iconTransformation(extent={{100,-10},{120,10}})));
 
   Buildings.Utilities.IO.Python_3_8.Real_Real pyt(
-    moduleName="GroundResponse",
+    moduleName="tough-modelica_usingFile",
     functionName="doStep",
     nDblRea=nSeg,
     nDblWri=2*nSeg+1,
