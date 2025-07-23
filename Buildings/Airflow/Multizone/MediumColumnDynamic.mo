@@ -98,13 +98,6 @@ equation
         Text(
           extent={{24,-78},{106,-100}},
           textColor={0,0,127},
-<<<<<<< HEAD
-          textString="Bottom"),
-        Text(
-          extent={{32,104},{98,70}},
-          textColor={0,0,127},
-          textString="Top"),
-=======
           textString="Bottom",
           fontSize=36),
         Text(
@@ -112,7 +105,6 @@ equation
           textColor={0,0,127},
           textString="Top",
           fontSize=36),
->>>>>>> master
         Text(
           extent={{42,26},{94,-10}},
           textColor={0,0,127},
@@ -170,15 +162,12 @@ at the top of the column.
 revisions="<html>
 <ul>
 <li>
-<<<<<<< HEAD
-=======
 February 27, 2024, by Michael Wetter:<br/>
 Removed wrong annotation that used a non-existent parameter.<br/>
 This is for
 <a href=\"https://github.com/ibpsa/modelica-ibpsa/issues/1842\">#1842</a>.
 </li>
 <li>
->>>>>>> master
 March 7, 2022, by Michael Wetter:<br/>
 Set <code>final massDynamics=energyDynamics</code>.<br/>
 This is for

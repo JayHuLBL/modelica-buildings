@@ -370,13 +370,8 @@ This is for
 <li>
 July 21, 2020, by Kun Zhang:<br/>
 Replaced the internal gain block from BaseClasses by directly using the block
-<<<<<<< HEAD
-<a href=\"modelica://Buildings.Controls.OBC.CDL.Continuous.Sources.TimeTable\">
-Buildings.Controls.OBC.CDL.Continuous.Sources.TimeTable</a>.
-=======
 <a href=\"modelica://Buildings.Controls.OBC.CDL.Reals.Sources.TimeTable\">
 Buildings.Controls.OBC.CDL.Reals.Sources.TimeTable</a>.
->>>>>>> master
 </li>
 <li>
 June 21, 2017, by Michael Wetter:<br/>

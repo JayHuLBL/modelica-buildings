@@ -20,11 +20,6 @@ partial model DoorDiscretized
 
   input Modelica.Units.SI.Length dh=hOpe/nCom "Height of each compartment";
 protected
-<<<<<<< HEAD
-  parameter Modelica.Units.SI.Length dh=hOpe/nCom "Height of each compartment";
-
-=======
->>>>>>> master
   parameter Medium.ThermodynamicState sta_default=Medium.setState_pTX(
       T=Medium.T_default,
       p=Medium.p_default,

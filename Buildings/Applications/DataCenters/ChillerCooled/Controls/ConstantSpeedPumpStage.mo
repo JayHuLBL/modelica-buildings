@@ -40,21 +40,13 @@ model ConstantSpeedPumpStage "Staging control for constant speed pumps"
         rotation=-90,
         origin={-40,10})));
   Modelica.StateGraph.InitialStep off(nIn=1, nOut=1)
-<<<<<<< HEAD
-                                             "Free cooling mode"
-=======
     "Free cooling mode"
->>>>>>> master
     annotation (Placement(transformation(
         extent={{-10,10},{10,-10}},
         rotation=-90,
         origin={-40,70})));
   Modelica.StateGraph.StepWithSignal twoOn(nIn=1, nOut=1)
-<<<<<<< HEAD
-                                           "Two chillers are commanded on"
-=======
     "Two chillers are commanded on"
->>>>>>> master
     annotation (Placement(transformation(
         extent={{-10,10},{10,-10}},
         rotation=-90,

@@ -103,13 +103,6 @@ equation
         Text(
           extent={{24,-78},{106,-100}},
           textColor={0,0,127},
-<<<<<<< HEAD
-          textString="Bottom"),
-        Text(
-          extent={{32,104},{98,70}},
-          textColor={0,0,127},
-          textString="Top"),
-=======
           textString="Bottom",
           fontSize=36),
         Text(
@@ -117,7 +110,6 @@ equation
           textColor={0,0,127},
           textString="Top",
           fontSize=36),
->>>>>>> master
         Text(
           extent={{36,26},{88,-10}},
           textColor={0,0,127},

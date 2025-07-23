@@ -2220,13 +2220,7 @@ Buildings/Fluid/Movers/Validation/ControlledFlowMachineDynamic.mo
 Buildings/Fluid/Movers/Validation/FlowControlled_dp.mo
 Buildings/Fluid/Movers/Validation/FlowControlled_dpSystem.mo
 Buildings/Fluid/Movers/Validation/FlowControlled_m_flow.mo
-<<<<<<< HEAD
-Buildings/Fluid/Movers/Validation/NegativePressureOrFlow.mo
-Buildings/Fluid/Movers/Validation/PowerExact.mo
-Buildings/Fluid/Movers/Validation/PowerSimplified.mo
-=======
 Buildings/Fluid/Movers/Validation/PressureCurve.mo
->>>>>>> master
 Buildings/Fluid/Movers/Validation/PumpCurveConstruction.mo
 Buildings/Fluid/Movers/Validation/PumpCurveDerivatives.mo
 Buildings/Fluid/Movers/Validation/Pump_stratos.mo
@@ -2577,16 +2571,12 @@ Buildings/Resources/Data/Fluid/FixedResistances/Validation/PlugFlowPipes/PipeDat
 Buildings/Resources/Data/Fluid/Geothermal/Borefields/HeatTransfer/Validation/Analytic_20Years.txt
 Buildings/Resources/Data/Fluid/Geothermal/Borefields/HeatTransfer/Validation/Beier_Smith_Spitler_2011_SandBox.txt
 Buildings/Resources/Data/Fluid/Geothermal/Borefields/HeatTransfer/Validation/Cimmino_Bernier_2015_SmallScale.txt
-<<<<<<< HEAD
-Buildings/Resources/Data/Utilities/IO/Files/Examples/CSVReader/Data.txt
-=======
 Buildings/Resources/Data/Fluid/HeatPumps/ModularReversible/BaseClasses/LargeScaleWaterToWaterDeclarations.xlsx
 Buildings/Resources/Data/Fluid/HeatPumps/Validation/MeasuredHeatPumpData.txt
 Buildings/Resources/Data/Fluid/SolarCollectors/Validation/FlatPlate/TRNSYSAnnualData.txt
 Buildings/Resources/Data/Utilities/IO/Files/Examples/CSVReader/Data.txt
 Buildings/Resources/Data/schedule.txt
 Buildings/Resources/Data/scheduleWindows.txt
->>>>>>> master
 Buildings/Resources/Documentation/userGuide/source/_static/lbl-logo.png
 Buildings/Resources/Images/Airflow/Multizone/BaseClasses/windPressureLowRise.odp
 Buildings/Resources/Images/Airflow/Multizone/BaseClasses/windPressureLowRise.png
@@ -2830,17 +2820,8 @@ Buildings/Resources/Images/Fluid/Movers/UsersGuide/2013-IBPSA-Wetter.pdf
 Buildings/Resources/Images/Fluid/Movers/UsersGuide/fanSpeedFiltered.png
 Buildings/Resources/Images/Fluid/Movers/UsersGuide/fanSpeedFiltered.svg
 Buildings/Resources/Images/Fluid/Movers/UsersGuide/pumpCurve.png
-<<<<<<< HEAD
-Buildings/Resources/Images/Fluid/Movers/Validation/NegativePressureOrFlow.png
-Buildings/Resources/Images/Fluid/Movers/Validation/NegativePressureOrFlow.svg
-Buildings/Resources/Images/Fluid/Movers/Validation/PowerExact.png
-Buildings/Resources/Images/Fluid/Movers/Validation/PowerExact.svg
-Buildings/Resources/Images/Fluid/Movers/Validation/PowerSimplified.png
-Buildings/Resources/Images/Fluid/Movers/Validation/PowerSimplified.svg
-=======
 Buildings/Resources/Images/Fluid/Movers/Validation/PumpValidationHead.png
 Buildings/Resources/Images/Fluid/Movers/Validation/PumpValidationPower.png
->>>>>>> master
 Buildings/Resources/Images/Fluid/Sensors/onePortHex.png
 Buildings/Resources/Images/Fluid/Sensors/onePortHex.tiff
 Buildings/Resources/Images/Fluid/Sensors/twoPortHex.png
@@ -2931,11 +2912,7 @@ Buildings/Resources/Images/Utilities/Math/Functions/Examples/cubicHermite.png
 Buildings/Resources/Images/Utilities/Math/Functions/SmoothExponentialXPower.png
 Buildings/Resources/Images/Utilities/Math/int.pdf
 Buildings/Resources/Images/Utilities/Math/int.png
-<<<<<<< HEAD
-Buildings/Resources/Scripts/Dymola/Airflow/Multizone/BaseClasses/Examples/Interpolate.mos
-=======
 Buildings/Resources/Python-Sources/MakeORCFluidRecord.py
->>>>>>> master
 Buildings/Resources/Scripts/Dymola/Airflow/Multizone/BaseClasses/Examples/PowerLaw.mos
 Buildings/Resources/Scripts/Dymola/Airflow/Multizone/BaseClasses/Examples/PowerLawFixedM.mos
 Buildings/Resources/Scripts/Dymola/Airflow/Multizone/BaseClasses/Examples/WindPressureLowRise.mos
@@ -3614,13 +3591,7 @@ Buildings/Resources/Scripts/Dymola/Fluid/Movers/Validation/ControlledFlowMachine
 Buildings/Resources/Scripts/Dymola/Fluid/Movers/Validation/FlowControlled_dp.mos
 Buildings/Resources/Scripts/Dymola/Fluid/Movers/Validation/FlowControlled_dpSystem.mos
 Buildings/Resources/Scripts/Dymola/Fluid/Movers/Validation/FlowControlled_m_flow.mos
-<<<<<<< HEAD
-Buildings/Resources/Scripts/Dymola/Fluid/Movers/Validation/NegativePressureOrFlow.mos
-Buildings/Resources/Scripts/Dymola/Fluid/Movers/Validation/PowerExact.mos
-Buildings/Resources/Scripts/Dymola/Fluid/Movers/Validation/PowerSimplified.mos
-=======
 Buildings/Resources/Scripts/Dymola/Fluid/Movers/Validation/PressureCurve.mos
->>>>>>> master
 Buildings/Resources/Scripts/Dymola/Fluid/Movers/Validation/PumpCurveConstruction.mos
 Buildings/Resources/Scripts/Dymola/Fluid/Movers/Validation/PumpCurveDerivatives.mos
 Buildings/Resources/Scripts/Dymola/Fluid/Movers/Validation/Pump_stratos.mos
@@ -3858,58 +3829,6 @@ Buildings/Resources/bin/ConvertWeatherData.jar
 Buildings/Resources/src/ThermalZones/ISO13790/Validation/BESTEST/ASHRAE140_data.dat
 Buildings/Resources/src/ThermalZones/ISO13790/Validation/BESTEST/simulateAndPlot.py
 Buildings/Resources/src/convertEPW/Makefile
-<<<<<<< HEAD
-Buildings/Resources/src/convertEPW/doc/ConvertWeatherData.html
-Buildings/Resources/src/convertEPW/doc/allclasses-index.html
-Buildings/Resources/src/convertEPW/doc/allclasses.html
-Buildings/Resources/src/convertEPW/doc/allpackages-index.html
-Buildings/Resources/src/convertEPW/doc/constant-values.html
-Buildings/Resources/src/convertEPW/doc/deprecated-list.html
-Buildings/Resources/src/convertEPW/doc/element-list
-Buildings/Resources/src/convertEPW/doc/help-doc.html
-Buildings/Resources/src/convertEPW/doc/index-all.html
-Buildings/Resources/src/convertEPW/doc/index.html
-Buildings/Resources/src/convertEPW/doc/jquery/external/jquery/jquery.js
-Buildings/Resources/src/convertEPW/doc/jquery/images/ui-bg_glass_55_fbf9ee_1x400.png
-Buildings/Resources/src/convertEPW/doc/jquery/images/ui-bg_glass_65_dadada_1x400.png
-Buildings/Resources/src/convertEPW/doc/jquery/images/ui-bg_glass_75_dadada_1x400.png
-Buildings/Resources/src/convertEPW/doc/jquery/images/ui-bg_glass_75_e6e6e6_1x400.png
-Buildings/Resources/src/convertEPW/doc/jquery/images/ui-bg_glass_95_fef1ec_1x400.png
-Buildings/Resources/src/convertEPW/doc/jquery/images/ui-bg_highlight-soft_75_cccccc_1x100.png
-Buildings/Resources/src/convertEPW/doc/jquery/images/ui-icons_222222_256x240.png
-Buildings/Resources/src/convertEPW/doc/jquery/images/ui-icons_2e83ff_256x240.png
-Buildings/Resources/src/convertEPW/doc/jquery/images/ui-icons_454545_256x240.png
-Buildings/Resources/src/convertEPW/doc/jquery/images/ui-icons_888888_256x240.png
-Buildings/Resources/src/convertEPW/doc/jquery/images/ui-icons_cd0a0a_256x240.png
-Buildings/Resources/src/convertEPW/doc/jquery/jquery-3.5.1.js
-Buildings/Resources/src/convertEPW/doc/jquery/jquery-ui.css
-Buildings/Resources/src/convertEPW/doc/jquery/jquery-ui.js
-Buildings/Resources/src/convertEPW/doc/jquery/jquery-ui.min.css
-Buildings/Resources/src/convertEPW/doc/jquery/jquery-ui.min.js
-Buildings/Resources/src/convertEPW/doc/jquery/jquery-ui.structure.css
-Buildings/Resources/src/convertEPW/doc/jquery/jquery-ui.structure.min.css
-Buildings/Resources/src/convertEPW/doc/jquery/jszip-utils/dist/jszip-utils-ie.js
-Buildings/Resources/src/convertEPW/doc/jquery/jszip-utils/dist/jszip-utils-ie.min.js
-Buildings/Resources/src/convertEPW/doc/jquery/jszip-utils/dist/jszip-utils.js
-Buildings/Resources/src/convertEPW/doc/jquery/jszip-utils/dist/jszip-utils.min.js
-Buildings/Resources/src/convertEPW/doc/jquery/jszip/dist/jszip.js
-Buildings/Resources/src/convertEPW/doc/jquery/jszip/dist/jszip.min.js
-Buildings/Resources/src/convertEPW/doc/member-search-index.js
-Buildings/Resources/src/convertEPW/doc/member-search-index.zip
-Buildings/Resources/src/convertEPW/doc/overview-tree.html
-Buildings/Resources/src/convertEPW/doc/package-search-index.js
-Buildings/Resources/src/convertEPW/doc/package-search-index.zip
-Buildings/Resources/src/convertEPW/doc/package-summary.html
-Buildings/Resources/src/convertEPW/doc/package-tree.html
-Buildings/Resources/src/convertEPW/doc/resources/glass.png
-Buildings/Resources/src/convertEPW/doc/resources/x.png
-Buildings/Resources/src/convertEPW/doc/script.js
-Buildings/Resources/src/convertEPW/doc/search.js
-Buildings/Resources/src/convertEPW/doc/stylesheet.css
-Buildings/Resources/src/convertEPW/doc/type-search-index.js
-Buildings/Resources/src/convertEPW/doc/type-search-index.zip
-=======
->>>>>>> master
 Buildings/Resources/src/convertEPW/src/ConvertWeatherData.java
 Buildings/Resources/src/convertEPW/src/Makefile
 Buildings/Resources/src/convertEPW/src/Manifest.txt
