@@ -179,12 +179,6 @@ equation
   connect(cooModCon.y, cooTowSpeCon.cooMod) annotation (Line(points={{-191,110},
           {-186,110},{-186,182.444},{-172,182.444}}, color={255,127,0}));
   connect(weaBus.TWetBul, cooModCon.TWetBul) annotation (Line(
-<<<<<<< HEAD
-      points={{-328,-20},{-340,-20},{-340,200},{-224,200},{-224,114},{-214,114}},
-      color={255,204,51},
-      thickness=0.5));
-
-=======
       points={{-327.95,-19.95},{-340,-19.95},{-340,200},{-224,200},{-224,114},{
           -214,114}},
       color={255,204,51},
@@ -195,7 +189,6 @@ equation
           12},{74,12},{74,4},{62,4}}, color={0,0,127}));
   connect(plaOn.y, priPumCon.on) annotation (Line(points={{-138,240},{-136,240},
           {-136,210},{-190,210},{-190,30},{-174,30}}, color={255,0,255}));
->>>>>>> master
   annotation (Diagram(coordinateSystem(preserveAspectRatio=false,
     extent={{-360,-200},{320,260}})),
     __Dymola_Commands(file=
@@ -284,8 +277,6 @@ are not implemented in this example.
 </html>", revisions="<html>
 <ul>
 <li>
-<<<<<<< HEAD
-=======
 September 3, 2024, by Jianjun Hu:<br/>
 Added plant on signal to control the pump speed.
 This is for
@@ -297,7 +288,6 @@ Corrected control to avoid cooling tower pumps to operate when plant is off, bec
 shut-off valves are off when plant is off.
 </li>
 <li>
->>>>>>> master
 November 1, 2021, by Michael Wetter:<br/>
 Corrected weather data bus connection which was structurally incorrect
 and did not parse in OpenModelica.<br/>

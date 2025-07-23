@@ -21,24 +21,6 @@ protected
       cliCon.TSurAmp/freq*(cos(freq*(cliCon.sinPha/secInDay - day)) - cos(freq*
       (cliCon.sinPha/secInDay - (day + 1)))) for day in 1:Year}
     "Daily mean air temperature (surface = 0 from uncorrected climatic constants)";
-<<<<<<< HEAD
-  parameter Modelica.Units.SI.Temperature TSurDayMea[Year]={if TAirDayMea[day]
-       > TFre then (TFre + (TAirDayMea[day] - TFre)*nFacTha) else (TFre + (
-      TAirDayMea[day] - TFre)*nFacFre) for day in 1:Year}
-    "Daily mean corrected surface temperature";
-  parameter Real C1 = sum({TSurDayMea[day] * cos(freq * day) for day in 1:Year});
-  parameter Real C2 = sum({TSurDayMea[day] * sin(freq * day) for day in 1:Year});
-
-  parameter Modelica.Units.SI.Temperature corTSurMea=sum(TSurDayMea)/Year
-    "Mean annual surface temperature";
-  parameter Modelica.Units.SI.TemperatureDifference corTSurAmp=2/Year .* (C1^2
-       + C2^2)^0.5 "Surface temperature amplitude";
-  parameter Modelica.Units.SI.Duration corSinPha(displayUnit="d") = (
-    Modelica.Math.atan(C2/C1) + pi/2)*secInDay/freq
-    "Phase lag of soil surface temperature";
-
-algorithm
-=======
 
   Modelica.Units.SI.TemperatureDifference corTSurAmp
     "Surface temperature amplitude";
@@ -62,7 +44,6 @@ algorithm
   C2 :=sum({TSurDayMea[day]*sin(freq*day) for day in 1:Year});
   corSinPha :=(Modelica.Math.atan(C2/C1) + pi/2)*secInDay/freq;
   corTSurAmp:=2/Year .* (C1^2 + C2^2)^0.5;
->>>>>>> master
   // Analytical mean by integrating undisturbed soil temperature formula
   corCliCon := ClimaticConstants.Generic(
     TSurMea = corTSurMea,
@@ -72,8 +53,6 @@ algorithm
   annotation (Documentation(revisions="<html>
 <ul>
 <li>
-<<<<<<< HEAD
-=======
 August 30, 2024, by Michael Wetter:<br/>
 Removed wrong <code>parameter</code> declaration on a protected variable which causes an error in
 Dymola 2025x beta1.<br/>
@@ -81,7 +60,6 @@ This is for
 <a href=\"https://github.com/lbl-srg/modelica-buildings/issues/3978\">#3978</a>.
 </li>
 <li>
->>>>>>> master
 October 17, 2021, by Baptiste Ravache:<br/>
 Declare record parameters to avoid translation error in OpenModelica.<br/>
 This is for

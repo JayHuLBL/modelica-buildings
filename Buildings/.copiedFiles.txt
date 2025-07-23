@@ -3,7 +3,6 @@
 Buildings/Airflow/Multizone/BaseClasses/Door.mo
 Buildings/Airflow/Multizone/BaseClasses/DoorDiscretized.mo
 Buildings/Airflow/Multizone/BaseClasses/ErrorControl.mo
-Buildings/Airflow/Multizone/BaseClasses/Examples/Interpolate.mo
 Buildings/Airflow/Multizone/BaseClasses/Examples/PowerLaw.mo
 Buildings/Airflow/Multizone/BaseClasses/Examples/PowerLawFixedM.mo
 Buildings/Airflow/Multizone/BaseClasses/Examples/WindPressureLowRise.mo
@@ -15,7 +14,6 @@ Buildings/Airflow/Multizone/BaseClasses/PowerLawResistanceParameters.mo
 Buildings/Airflow/Multizone/BaseClasses/TwoWayFlowElement.mo
 Buildings/Airflow/Multizone/BaseClasses/TwoWayFlowElementBuoyancy.mo
 Buildings/Airflow/Multizone/BaseClasses/ZonalFlow.mo
-Buildings/Airflow/Multizone/BaseClasses/interpolate.mo
 Buildings/Airflow/Multizone/BaseClasses/package.mo
 Buildings/Airflow/Multizone/BaseClasses/package.order
 Buildings/Airflow/Multizone/BaseClasses/powerLaw.mo

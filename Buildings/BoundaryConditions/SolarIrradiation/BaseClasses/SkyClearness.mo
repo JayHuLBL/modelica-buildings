@@ -66,11 +66,6 @@ is such that the regularization is usually not triggered.
 </html>", revisions="<html>
 <ul>
 <li>
-<<<<<<< HEAD
-September 6, 2021, by Ettore Zanetti:<br/>
-Changed <code>lat</code> from being a parameter to an input from weather bus.<br/>
-Changed input connector <code>HGloHor</code> to <code>HDirHor</code>.<br/>
-=======
 March 4, 2024, by Michael Wetter:<br/>
 Corrected <code>displayUnit</code>.<br/>
 This is for
@@ -80,7 +75,6 @@ This is for
 September 6, 2021, by Ettore Zanetti:<br/>
 Changed <code>lat</code> from being a parameter to an input from weather bus.<br/>
 Changed input connector <code>HGloHor</code> to <code>HDirNor</code>.<br/>
->>>>>>> master
 This is for
 <a href=\"https://github.com/ibpsa/modelica-ibpsa/issues/1477\">IBPSA, #1477</a>.
 </li>
@@ -125,11 +119,7 @@ First implementation.
         Text(
           extent={{-48,54},{-100,66}},
           textColor={0,0,127},
-<<<<<<< HEAD
-          textString="HGloHor"),
-=======
           textString="HDirNor"),
->>>>>>> master
         Text(
           extent={{-48,-66},{-100,-54}},
           textColor={0,0,127},

@@ -28,14 +28,6 @@ model IntegratedPrimaryLoadSide
   parameter Boolean addPowerToMedium = true
     "Set to false to avoid any power (=heat and flow work) being added to medium (may give simpler equations)"
     annotation (Dialog(group="Pump"));
-<<<<<<< HEAD
-  parameter Modelica.Units.SI.Time riseTimePump=30
-    "Rise time of the filter (time to reach 99.6 % of an opening step)"
-    annotation (Dialog(
-      tab="Dynamics",
-      group="Filtered speed",
-      enable=use_inputFilter));
-=======
   parameter Boolean use_riseTime=true
     "Set to true to continuously change motor speed"
     annotation(Dialog(tab="Dynamics", group="Motor speed"));
@@ -45,7 +37,6 @@ model IntegratedPrimaryLoadSide
       tab="Dynamics",
       group="Motor speed",
       enable=use_riseTime));
->>>>>>> master
   parameter Modelica.Blocks.Types.Init initPum = initValve
     "Type of initialization (no init/steady state/initial state/initial output)"
     annotation(Dialog(tab="Dynamics", group="Motor speed",enable=use_riseTime));
@@ -83,12 +74,8 @@ model IntegratedPrimaryLoadSide
     final per=perPum,
     addPowerToMedium=addPowerToMedium,
     final energyDynamics=energyDynamics,
-<<<<<<< HEAD
-    final use_inputFilter=use_inputFilter,
-=======
     final use_riseTime=use_riseTime,
     final use_strokeTime=use_strokeTime,
->>>>>>> master
     final init=initPum,
     final tau=tauPump,
     final allowFlowReversal=allowFlowReversal2,

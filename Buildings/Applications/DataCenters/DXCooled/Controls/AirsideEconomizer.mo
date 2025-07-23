@@ -48,11 +48,7 @@ protected
   Buildings.Controls.OBC.CDL.Integers.Equal ecoOff
     "Determine if airside economizer is off"
     annotation (Placement(transformation(extent={{-40,-70},{-20,-50}})));
-<<<<<<< HEAD
-  Buildings.Controls.OBC.CDL.Continuous.Switch switch1
-=======
   Buildings.Controls.OBC.CDL.Reals.Switch switch1
->>>>>>> master
     "Switch to select control output"
     annotation (Placement(transformation(extent={{40,-10},{60,10}})));
 

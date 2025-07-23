@@ -49,11 +49,7 @@ protected
   Buildings.Controls.OBC.CDL.Integers.Equal freCoo
     "Determine if free cooling is on"
     annotation (Placement(transformation(extent={{-40,-60},{-20,-40}})));
-<<<<<<< HEAD
-  Buildings.Controls.OBC.CDL.Continuous.Switch switch1
-=======
   Buildings.Controls.OBC.CDL.Reals.Switch switch1
->>>>>>> master
     "Switch to select control output"
     annotation (Placement(transformation(extent={{60,-10},{80,10}})));
   Buildings.Controls.OBC.CDL.Reals.Sources.Constant const(final k=0)

@@ -1,17 +1,7 @@
 within Buildings.BoundaryConditions.WeatherData.BaseClasses;
 block ConvertTime
   "Converts the simulation time to calendar time in scale of 1 year (365 days), or a multiple of a year"
-<<<<<<< HEAD
-  extends Modelica.Blocks.Icons.Block;
-
-  parameter Modelica.Units.SI.Time weaDatStaTim(displayUnit="d")
-    "Start time of weather data";
-  parameter Modelica.Units.SI.Time weaDatEndTim(displayUnit="d")
-    "End time of weather data";
-
-=======
   extends PartialConvertTime;
->>>>>>> master
   Modelica.Blocks.Interfaces.RealInput modTim(
     final quantity="Time",
     final unit="s") "Simulation time"
@@ -24,18 +14,6 @@ block ConvertTime
 protected
   constant Modelica.Units.SI.Time shiftSolarRad=1800
     "Number of seconds for the shift for solar radiation calculation";
-<<<<<<< HEAD
-  parameter Modelica.Units.SI.Time lenWea=weaDatEndTim - weaDatStaTim
-    "Length of weather data";
-
-  parameter Boolean canRepeatWeatherFile = abs(mod(lenWea, 365*24*3600)) < 1E-2
-    "=true, if the weather file can be repeated, since it has the length of a year or a multiple of it";
-
-  discrete Modelica.Units.SI.Time tNext(start=0, fixed=true)
-    "Start time of next period";
-=======
-
->>>>>>> master
 
 equation
   calTim = calTimAux;

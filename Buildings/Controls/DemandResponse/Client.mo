@@ -4,12 +4,6 @@ model Client "Demand response client"
 
   final parameter Modelica.Units.SI.Time tPeriod=24*3600
     "Period, generally one day";
-<<<<<<< HEAD
-  final parameter Modelica.Units.SI.Time tSample=tPeriod/nSam
-    "Sample period, generally 900 or 3600 seconds";
-=======
-
->>>>>>> master
   parameter Integer nSam
     "Number of samples in a day. For 1 hour sampling, set to 24";
   parameter Integer nPre(min=1) = 1
@@ -69,14 +63,6 @@ model Client "Demand response client"
     annotation (Placement(transformation(extent={{100,40},{120,60}})));
 
 protected
-<<<<<<< HEAD
-  Modelica.StateGraph.InitialStep initialStep(nIn=0, nOut=1)
-    annotation (Placement(transformation(extent={{-80,70},{-60,90}})));
-  inner Modelica.StateGraph.StateGraphRoot stateGraphRoot
-    annotation (Placement(transformation(extent={{60,60},{80,80}})));
-  Modelica.StateGraph.Transition transition
-    annotation (Placement(transformation(extent={{-40,70},{-20,90}})));
-=======
   OBC.CDL.Reals.Multiply she "Outputs load taking shed signal into account"
     annotation (Placement(transformation(extent={{30,20},{50,40}})));
   OBC.CDL.Routing.RealExtractor extIndRea
@@ -84,52 +70,14 @@ protected
   OBC.CDL.Integers.Sources.Constant conInt(k=1)
     "Outputs 1 to extract the first signal of the demand prediction array"
     annotation (Placement(transformation(extent={{-32,20},{-12,40}})));
->>>>>>> master
   BaseClasses.BaselinePrediction comBasLin(
     final nSam=nSam,
     final nHis=nHis,
     final nPre=nPre,
-<<<<<<< HEAD
-    final predictionModel=predictionModel,
-    nIn=3,
-    nOut=1)
-           "Baseline prediction"
-    annotation (Placement(transformation(extent={{20,40},{40,60}})));
-  Modelica.StateGraph.Transition t1 "State transition" annotation (Placement(
-        transformation(
-        extent={{10,-10},{-10,10}},
-        rotation=90,
-        origin={60,20})));
-  BaseClasses.NormalOperation norOpe(nOut=2, nIn=1)
-                                             "Normal operation"
-    annotation (Placement(transformation(extent={{40,-40},{20,-20}})));
-  Modelica.StateGraph.TransitionWithSignal
-                                 t2(enableTimer=false) "State transition"
-                       annotation (Placement(transformation(
-        extent={{10,-10},{-10,10}},
-        rotation=270,
-        origin={10,20})));
-  Modelica.StateGraph.TransitionWithSignal t3 "State transition"
-                       annotation (Placement(transformation(
-        extent={{10,10},{-10,-10}},
-        origin={-2,-30})));
-  BaseClasses.ShedOperation she(nIn=1, nOut=1)
-                                "Operation during load shedding"
-    annotation (Placement(transformation(extent={{-10,-40},{-30,-20}})));
-  Modelica.StateGraph.TransitionWithSignal
-                                 t4(enableTimer=false) "State transition"
-                       annotation (Placement(transformation(
-        extent={{10,-10},{-10,10}},
-        rotation=270,
-        origin={-40,10})));
-  Modelica.Blocks.Sources.SampleTrigger tri(period=tSample) "Sample trigger"
-    annotation (Placement(transformation(extent={{-90,10},{-70,30}})));
-=======
     final predictionModel=predictionModel)
            "Baseline prediction"
     annotation (Placement(transformation(extent={{-60,60},{-40,80}})));
 
->>>>>>> master
   Modelica.Blocks.Logical.Switch switch
     "Switch to select normal or shedded load"
     annotation (Placement(transformation(extent={{68,-10},{88,10}})));

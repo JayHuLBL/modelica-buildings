@@ -1,9 +1,5 @@
 within Buildings.Controls.DemandResponse.BaseClasses;
 block BaselinePrediction "Predicts the baseline consumption"
-<<<<<<< HEAD
-  extends Buildings.Controls.DemandResponse.BaseClasses.PartialDemandResponse(nIn=1,
-      nOut=1);
-=======
   extends Modelica.Blocks.Icons.DiscreteBlock;
 
   parameter Integer nSam
@@ -14,7 +10,6 @@ block BaselinePrediction "Predicts the baseline consumption"
 
   parameter Buildings.Controls.Predictors.Types.PredictionModel predictionModel
     "Load prediction model";
->>>>>>> master
 
   parameter Integer nHis(min=1) = 10 "Number of history terms to be stored";
 

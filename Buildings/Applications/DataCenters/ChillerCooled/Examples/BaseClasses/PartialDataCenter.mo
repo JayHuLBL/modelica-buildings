@@ -321,11 +321,7 @@ equation
             color={0,127,255},
             thickness=0.5));
   connect(weaBus.TWetBul, cooTow[i].TAir) annotation (Line(
-<<<<<<< HEAD
-      points={{-328,-20},{-340,-20},{-340,200},{32,200},{32,144},{22,144}},
-=======
       points={{-327.95,-19.95},{-340,-19.95},{-340,200},{32,200},{32,144},{22,144}},
->>>>>>> master
       color={255,204,51},
       thickness=0.5), Text(
       string="%first",
@@ -534,8 +530,6 @@ equation
       extent={{6,3},{6,3}},
       horizontalAlignment=TextAlignment.Left));
 
-<<<<<<< HEAD
-=======
   connect(chiOnSta.u, chiOn.y) annotation (Line(points={{-102,128},{-106,128},{-106,
           140},{-109,140}}, color={255,0,255}));
   connect(chiOnSta.y, plaOn.u1) annotation (Line(points={{-89.1,128},{-84,128},
@@ -559,7 +553,6 @@ equation
           {-136,210},{-190,210},{-190,4},{-170,4}}, color={255,0,255}));
   connect(plaOn.y, CWPumCon.on) annotation (Line(points={{-138,240},{-136,240},
           {-136,210},{-190,210},{-190,70},{-174,70}}, color={255,0,255}));
->>>>>>> master
   annotation (Diagram(coordinateSystem(preserveAspectRatio=false,
     extent={{-360,-200},{160,260}})),
     Documentation(info="<html>
@@ -576,8 +569,6 @@ Taylor, S. T. (2014). How to design &amp; control waterside economizers. ASHRAE 
 </html>", revisions="<html>
 <ul>
 <li>
-<<<<<<< HEAD
-=======
 September 3, 2024, by Jianjun Hu:<br/>
 Added plant on signal to control the pump speed.
 This is for
@@ -594,7 +585,6 @@ Corrected control to avoid cooling tower pumps to operate when plant is off, bec
 shut-off valves are off when plant is off.
 </li>
 <li>
->>>>>>> master
 November 1, 2021, by Michael Wetter:<br/>
 Corrected weather data bus connection which was structurally incorrect
 and did not parse in OpenModelica.<br/>

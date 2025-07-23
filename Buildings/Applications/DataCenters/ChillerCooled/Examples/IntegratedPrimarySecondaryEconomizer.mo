@@ -172,12 +172,6 @@ equation
   connect(priPumSpe.y, chiWSE.yPum) annotation (Line(points={{-83,32},{-20,32},
           {-20,26.5},{-1.5,26.5}}, color={0,0,127}));
   connect(weaBus.TWetBul, cooModCon.TWetBul) annotation (Line(
-<<<<<<< HEAD
-      points={{-328,-20},{-340,-20},{-340,200},{-218,200},{-218,114},{-210,114}},
-      color={255,204,51},
-      thickness=0.5));
-
-=======
       points={{-327.95,-19.95},{-340,-19.95},{-340,200},{-218,200},{-218,114},{
           -210,114}},
       color={255,204,51},
@@ -185,7 +179,6 @@ equation
 
   connect(plaOn.y, PriPumCon.on) annotation (Line(points={{-138,240},{-136,240},
           {-136,210},{-190,210},{-190,32},{-174,32}}, color={255,0,255}));
->>>>>>> master
   annotation (Diagram(coordinateSystem(preserveAspectRatio=false,
     extent={{-360,-200},{320,260}})),
   __Dymola_Commands(file=
@@ -280,8 +273,6 @@ differential pressure reset control are not implemented in this example.
 </html>", revisions="<html>
 <ul>
 <li>
-<<<<<<< HEAD
-=======
 September 3, 2024, by Jianjun Hu:<br/>
 Added plant on signal to pumps control.
 This is for
@@ -293,7 +284,6 @@ Corrected control to avoid cooling tower pumps to operate when plant is off, bec
 shut-off valves are off when plant is off.
 </li>
 <li>
->>>>>>> master
 November 1, 2021, by Michael Wetter:<br/>
 Corrected weather data bus connection which was structurally incorrect
 and did not parse in OpenModelica.<br/>

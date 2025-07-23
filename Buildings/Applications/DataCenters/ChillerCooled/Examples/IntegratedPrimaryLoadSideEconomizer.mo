@@ -230,14 +230,11 @@ are not implemented in this example.
 </html>", revisions="<html>
 <ul>
 <li>
-<<<<<<< HEAD
-=======
 November 16, 2022, by Michael Wetter:<br/>
 Corrected control to avoid cooling tower pumps to operate when plant is off, because
 shut-off valves are off when plant is off.
 </li>
 <li>
->>>>>>> master
 November 1, 2021, by Michael Wetter:<br/>
 Corrected weather data bus connection which was structurally incorrect
 and did not parse in OpenModelica.<br/>
