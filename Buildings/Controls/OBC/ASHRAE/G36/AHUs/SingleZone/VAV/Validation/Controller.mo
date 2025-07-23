@@ -1,6 +1,7 @@
 within Buildings.Controls.OBC.ASHRAE.G36.AHUs.SingleZone.VAV.Validation;
 model Controller "Validation of the top-level controller"
   Buildings.Controls.OBC.ASHRAE.G36.AHUs.SingleZone.VAV.Controller conVAV(
+<<<<<<< HEAD
     final eneStd=Buildings.Controls.OBC.ASHRAE.G36.Types.EnergyStandard.ASHRAE90_1_2016,
     final venStd=Buildings.Controls.OBC.ASHRAE.G36.Types.VentilationStandard.ASHRAE62_1_2016,
     final ecoHigLimCon=Buildings.Controls.OBC.ASHRAE.G36.Types.ControlEconomizer.FixedDryBulb,
@@ -9,6 +10,22 @@ model Controller "Validation of the top-level controller"
     final have_winSen=true,
     final have_CO2Sen=false,
     final buiPreCon=Buildings.Controls.OBC.ASHRAE.G36.Types.BuildingPressureControlTypes.ReliefDamper,
+=======
+    final eneStd=Buildings.Controls.OBC.ASHRAE.G36.Types.EnergyStandard.ASHRAE90_1,
+
+    final venStd=Buildings.Controls.OBC.ASHRAE.G36.Types.VentilationStandard.ASHRAE62_1,
+
+    final ecoHigLimCon=Buildings.Controls.OBC.ASHRAE.G36.Types.ControlEconomizer.FixedDryBulb,
+
+    final ashCliZon=Buildings.Controls.OBC.ASHRAE.G36.Types.ASHRAEClimateZone.Zone_1A,
+
+    final freSta=Buildings.Controls.OBC.ASHRAE.G36.Types.FreezeStat.No_freeze_stat,
+
+    final have_winSen=true,
+    final have_CO2Sen=false,
+    final buiPreCon=Buildings.Controls.OBC.ASHRAE.G36.Types.PressureControl.ReliefDamper,
+
+>>>>>>> master
     final VAreBreZon_flow=0.015,
     final VPopBreZon_flow=0.0075,
     final kHea=1,
@@ -26,7 +43,11 @@ model Controller "Validation of the top-level controller"
     final relDam_max=0.6) "Validate the cooling case"
     annotation (Placement(transformation(extent={{20,0},{60,80}})));
 
+<<<<<<< HEAD
   Buildings.Controls.OBC.CDL.Continuous.Sources.Ramp TZon(
+=======
+  Buildings.Controls.OBC.CDL.Reals.Sources.Ramp TZon(
+>>>>>>> master
     final duration=86400,
     final height=6,
     final offset=273.15 + 16)
@@ -36,6 +57,7 @@ model Controller "Validation of the top-level controller"
     final occupancy=3600*{4,20})
     "Occupancy schedule"
     annotation (Placement(transformation(extent={{-140,130},{-120,150}})));
+<<<<<<< HEAD
   Buildings.Controls.OBC.CDL.Continuous.Sources.Constant TOut(
     final k=273.15 +17)
     "Outdoor air dry bulb temperature"
@@ -53,6 +75,25 @@ model Controller "Validation of the top-level controller"
     "Cooling setpoint adjustment"
     annotation (Placement(transformation(extent={{-140,-30},{-120,-10}})));
   Buildings.Controls.OBC.CDL.Continuous.Sources.Sine heaSetAdj(
+=======
+  Buildings.Controls.OBC.CDL.Reals.Sources.Constant TOut(
+    final k=273.15 +17)
+    "Outdoor air dry bulb temperature"
+    annotation (Placement(transformation(extent={{-180,190},{-160,210}})));
+  Buildings.Controls.OBC.CDL.Reals.Sources.Constant cooDowTim(
+    final k=1800)
+    "Cooling down time"
+    annotation (Placement(transformation(extent={{-140,170},{-120,190}})));
+  Buildings.Controls.OBC.CDL.Reals.Sources.Constant warUpTim(
+    final k=1800)
+    "Warm-up time"
+    annotation (Placement(transformation(extent={{-180,150},{-160,170}})));
+  Buildings.Controls.OBC.CDL.Reals.Sources.Sin cooSetAdj(
+    final freqHz=1/28800)
+    "Cooling setpoint adjustment"
+    annotation (Placement(transformation(extent={{-150,-30},{-130,-10}})));
+  Buildings.Controls.OBC.CDL.Reals.Sources.Sin heaSetAdj(
+>>>>>>> master
     final freqHz=1/28800,
     final amplitude=0.5)
     "Heating setpoint adjustment"
@@ -62,6 +103,7 @@ model Controller "Validation of the top-level controller"
     final shift=1200)
     "Generate signal indicating window status"
     annotation (Placement(transformation(extent={{-180,-10},{-160,10}})));
+<<<<<<< HEAD
   Buildings.Controls.OBC.CDL.Continuous.Sources.Constant zerAdj(
     final k=0)
     "Zero adjustment"
@@ -72,6 +114,18 @@ model Controller "Validation of the top-level controller"
   Buildings.Controls.OBC.CDL.Continuous.Switch swi2
     "Switch to zero adjustment when window is open"
     annotation (Placement(transformation(extent={{-80,-26},{-60,-6}})));
+=======
+  Buildings.Controls.OBC.CDL.Reals.Sources.Constant zerAdj(
+    final k=0)
+    "Zero adjustment"
+    annotation (Placement(transformation(extent={{-150,10},{-130,30}})));
+  Buildings.Controls.OBC.CDL.Reals.Switch swi1
+    "Switch to zero adjustment when window is open"
+    annotation (Placement(transformation(extent={{-70,-56},{-50,-36}})));
+  Buildings.Controls.OBC.CDL.Reals.Switch swi2
+    "Switch to zero adjustment when window is open"
+    annotation (Placement(transformation(extent={{-70,-26},{-50,-6}})));
+>>>>>>> master
   Buildings.Controls.OBC.CDL.Logical.Sources.Pulse occSta(
     final period=28800,
     final width=0.95)
@@ -89,34 +143,55 @@ model Controller "Validation of the top-level controller"
   Buildings.Controls.OBC.CDL.Logical.Not not1
     "Logical not"
     annotation (Placement(transformation(extent={{-80,-130},{-60,-110}})));
+<<<<<<< HEAD
   Buildings.Controls.OBC.CDL.Continuous.Sources.Ramp mixTem(
+=======
+  Buildings.Controls.OBC.CDL.Reals.Sources.Ramp mixTem(
+>>>>>>> master
     final height=-5,
     final offset=273.15 + 8,
     final duration=3600)
     "Mixed air temperature"
     annotation (Placement(transformation(extent={{-140,-150},{-120,-130}})));
+<<<<<<< HEAD
   Buildings.Controls.OBC.CDL.Continuous.Sources.Ramp outDam(
+=======
+  Buildings.Controls.OBC.CDL.Reals.Sources.Ramp outDam(
+>>>>>>> master
     final height=0.6,
     final offset=0.2,
     final duration=86400)
     "Outdoor damper position"
     annotation (Placement(transformation(extent={{-180,-170},{-160,-150}})));
+<<<<<<< HEAD
   Buildings.Controls.OBC.CDL.Continuous.Sources.Ramp cooCoi(
+=======
+  Buildings.Controls.OBC.CDL.Reals.Sources.Ramp cooCoi(
+>>>>>>> master
     final height=-0.3,
     final offset=0.96,
     final duration=86400,
     startTime=1000) "Cooling coil position"
     annotation (Placement(transformation(extent={{-140,-190},{-120,-170}})));
+<<<<<<< HEAD
   Buildings.Controls.OBC.CDL.Continuous.Sources.Constant heaCoi(
     final k=0)
     "Heating coil position"
     annotation (Placement(transformation(extent={{-180,-210},{-160,-190}})));
   Buildings.Controls.OBC.CDL.Continuous.Sources.Ramp TSup(
+=======
+  Buildings.Controls.OBC.CDL.Reals.Sources.Constant heaCoi(
+    final k=0)
+    "Heating coil position"
+    annotation (Placement(transformation(extent={{-180,-210},{-160,-190}})));
+  Buildings.Controls.OBC.CDL.Reals.Sources.Ramp TSup(
+>>>>>>> master
     final height=2,
     final duration=86400,
     final offset=273.15 + 22.5)
     "Terminal unit discharge air temperature"
     annotation (Placement(transformation(extent={{-140,-110},{-120,-90}})));
+<<<<<<< HEAD
   Buildings.Controls.OBC.CDL.Continuous.Sources.Constant THeaSetOcc(
     final k=293.15)
     "Occupied heating setpoint"
@@ -130,10 +205,30 @@ model Controller "Validation of the top-level controller"
     "Unoccupied heating setpoint"
     annotation (Placement(transformation(extent={{-140,50},{-120,70}})));
   Buildings.Controls.OBC.CDL.Continuous.Sources.Constant TCooSetUno(
+=======
+  Buildings.Controls.OBC.CDL.Reals.Sources.Constant THeaSetOcc(
+    final k=293.15)
+    "Occupied heating setpoint"
+    annotation (Placement(transformation(extent={{-140,90},{-120,110}})));
+  Buildings.Controls.OBC.CDL.Reals.Sources.Constant TCooSetOcc(
+    final k=297.15)
+    "Occupied cooling setpoint"
+    annotation (Placement(transformation(extent={{-180,70},{-160,90}})));
+  Buildings.Controls.OBC.CDL.Reals.Sources.Constant THeaSetUno(
+    final k=285.15)
+    "Unoccupied heating setpoint"
+    annotation (Placement(transformation(extent={{-140,50},{-120,70}})));
+  Buildings.Controls.OBC.CDL.Reals.Sources.Constant TCooSetUno(
+>>>>>>> master
     final k=303.15)
     "Unoccupied cooling setpoint"
     annotation (Placement(transformation(extent={{-180,30},{-160,50}})));
 
+<<<<<<< HEAD
+=======
+  CDL.Logical.Not                        not2 "Logical not"
+    annotation (Placement(transformation(extent={{-120,-10},{-100,10}})));
+>>>>>>> master
 equation
   connect(TZon.y, conVAV.TZon) annotation (Line(points={{-158,120},{-36,120},{
           -36,66},{18,66}}, color={0,0,127}));
@@ -149,6 +244,7 @@ equation
           -28,146},{-28,69},{18,69}}, color={0,0,127}));
   connect(occSch.occupied, conVAV.u1Occ) annotation (Line(points={{-119,134},{-32,
           134},{-32,71},{18,71}}, color={255,0,255}));
+<<<<<<< HEAD
   connect(winSta.y,swi2. u2)
     annotation (Line(points={{-158,0},{-100,0},{-100,-16},{-82,-16}},
           color={255,0,255}));
@@ -166,6 +262,19 @@ equation
   connect(swi2.y, conVAV.cooSetAdj) annotation (Line(points={{-58,-16},{-40,-16},
           {-40,54},{18,54}},color={0,0,127}));
   connect(swi1.y, conVAV.heaSetAdj) annotation (Line(points={{-58,-46},{-36,-46},
+=======
+  connect(zerAdj.y,swi2. u1)
+    annotation (Line(points={{-128,20},{-90,20},{-90,-8},{-72,-8}},  color={0,0,127}));
+  connect(zerAdj.y,swi1. u1)
+    annotation (Line(points={{-128,20},{-90,20},{-90,-38},{-72,-38}}, color={0,0,127}));
+  connect(cooSetAdj.y,swi2. u3)
+    annotation (Line(points={{-128,-20},{-110,-20},{-110,-24},{-72,-24}}, color={0,0,127}));
+  connect(heaSetAdj.y,swi1. u3)
+    annotation (Line(points={{-158,-40},{-110,-40},{-110,-54},{-72,-54}}, color={0,0,127}));
+  connect(swi2.y, conVAV.cooSetAdj) annotation (Line(points={{-48,-16},{-40,-16},
+          {-40,54},{18,54}},color={0,0,127}));
+  connect(swi1.y, conVAV.heaSetAdj) annotation (Line(points={{-48,-46},{-36,-46},
+>>>>>>> master
           {-36,52},{18,52}},color={0,0,127}));
   connect(occSta.y, conVAV.u1OccSen) annotation (Line(points={{-118,-60},{-32,-60},
           {-32,49},{18,49}}, color={255,0,255}));
@@ -173,8 +282,11 @@ equation
           {-28,-80},{-28,46},{18,46}}, color={255,127,0}));
   connect(demLimLev.y, conVAV.uHeaDemLimLev) annotation (Line(points={{-158,-80},
           {-28,-80},{-28,44},{18,44}}, color={255,127,0}));
+<<<<<<< HEAD
   connect(winSta.y, conVAV.u1Win) annotation (Line(points={{-158,0},{-100,0},{-100,
           33},{18,33}}, color={255,0,255}));
+=======
+>>>>>>> master
   connect(freRes.y, not1.u)
     annotation (Line(points={{-158,-120},{-82,-120}},  color={255,0,255}));
   connect(not1.y, conVAV.u1SofSwiRes) annotation (Line(points={{-58,-120},{-20,
@@ -198,6 +310,17 @@ equation
   connect(conVAV.ySupFan, conVAV.uSupFan_actual) annotation (Line(points={{62,
           44},{70,44},{70,-20},{0,-20},{0,6},{18,6}}, color={0,0,127}));
 
+<<<<<<< HEAD
+=======
+  connect(winSta.y, not2.u)
+    annotation (Line(points={{-158,0},{-122,0}}, color={255,0,255}));
+  connect(not2.y, swi1.u2) annotation (Line(points={{-98,0},{-80,0},{-80,-46},{
+          -72,-46}}, color={255,0,255}));
+  connect(not2.y, swi2.u2) annotation (Line(points={{-98,0},{-80,0},{-80,-16},{
+          -72,-16}}, color={255,0,255}));
+  connect(not2.y, conVAV.u1Win) annotation (Line(points={{-98,0},{-80,0},{-80,
+          33},{18,33}}, color={255,0,255}));
+>>>>>>> master
 annotation (experiment(StopTime=86400, Tolerance=1e-06),
   __Dymola_Commands(file="modelica://Buildings/Resources/Scripts/Dymola/Controls/OBC/ASHRAE/G36/AHUs/SingleZone/VAV/Validation/Controller.mos"
     "Simulate and plot"),

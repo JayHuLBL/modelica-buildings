@@ -1,6 +1,9 @@
 compareVars :=
   {
+    "wetBulPhi.TDryBul",
+    "wetBulPhi.phi",
     "wetBulPhi.TWetBul",
+<<<<<<< HEAD
     "wetBulPhi_BuiLib.TWetBul",
     "sub.y",
     "phi.y",
@@ -8,4 +11,9 @@ compareVars :=
     "wetBulXi.TWetBul",
     "sub1.y",
     "phi.y"
+=======
+    "wetBulPhi1.TDryBul",
+    "wetBulPhi1.phi",
+    "wetBulPhi1.TWetBul"
+>>>>>>> master
   };

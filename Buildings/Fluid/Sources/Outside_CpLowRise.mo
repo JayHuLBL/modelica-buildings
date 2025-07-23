@@ -119,7 +119,11 @@ where
 </p>
 
 <p>
+<<<<<<< HEAD
 This model differs from <a href=\"Buildings.Fluid.Sources.Outside_CpData\">
+=======
+This model differs from <a href=\"modelica://Buildings.Fluid.Sources.Outside_CpData\">
+>>>>>>> master
 Buildings.Fluid.Sources.Outside_CpData</a> by the calculation of the wind pressure coefficient C<sub>p,act</sub>.
 The wind pressure coefficient is defined by an equation in stead of a user-defined table.
 This model is only suited for low-rise rectangular buildings.
@@ -153,6 +157,15 @@ Gaithersburg, MD.
 revisions="<html>
 <ul>
 <li>
+<<<<<<< HEAD
+=======
+April 4, 2023, by Michael Wetter:<br/>
+Removed use of non-existent parameter in annotation.<br/>
+This is for
+<a href=\"https://github.com/ibpsa/modelica-ibpsa/issues/1724\">IBPSA, #1724</a>.
+</li>
+<li>
+>>>>>>> master
 February 2, 2022, by Michael Wetter:<br/>
 Revised implementation.<br/>
 This is for
@@ -173,11 +186,15 @@ First implementation.
 </li>
 </ul>
 </html>"),
+<<<<<<< HEAD
     Icon(graphics={Text(
           visible=use_Cp_in,
           extent={{-140,92},{-92,62}},
           textColor={0,0,255},
           textString="C_p"),
+=======
+    Icon(graphics={
+>>>>>>> master
           Text(
           visible=use_C_in,
           extent={{-154,-28},{-102,-62}},

@@ -1,0 +1,18 @@
+<<<<<<< HEAD:Buildings/Experimental/DHC/Loads/BaseClasses/Controls/package.mo
+within Buildings.Experimental.DHC.Loads.BaseClasses;
+=======
+within Buildings.DHC.Loads.BaseClasses;
+>>>>>>> master:Buildings/DHC/Loads/BaseClasses/Controls/package.mo
+package Controls "Package of control sequences for DHC systems"
+  extends Modelica.Icons.VariantsPackage;
+
+  annotation (
+    preferredView="info",
+    Documentation(
+      info="<html>
+<p>
+This package contains control sequences used in district heating and
+cooling systems.
+</p>
+</html>"));
+end Controls;

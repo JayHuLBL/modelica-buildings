@@ -12,6 +12,10 @@ compareVars :=
     "ala.VHotDucDis_flow",
     "ala.yColFloSenAla",
     "ala.yHotFloSenAla",
+<<<<<<< HEAD
+=======
+    "ala.uOpeMod",
+>>>>>>> master
     "ala.uCooDam",
     "ala.uHeaDam",
     "ala.yColLeaDamAla",
@@ -25,6 +29,10 @@ compareVars :=
     "ala1.VHeaMax_flow",
     "ala1.VDis_flow",
     "ala1.yFloSenAla",
+<<<<<<< HEAD
+=======
+    "ala1.uOpeMod",
+>>>>>>> master
     "ala1.uCooDam",
     "ala1.uHeaDam",
     "ala1.yLeaDamAla"

@@ -1,7 +1,19 @@
+<<<<<<< HEAD
+=======
+<<<<<<<< HEAD:Buildings/Controls/OBC/ASHRAE/G36/Generic/Validation/TrimAndRespond.mo
+within Buildings.Controls.OBC.ASHRAE.G36.Generic.Validation;
+model TrimAndRespond "Model validates the trim and respond block"
+  Buildings.Controls.OBC.ASHRAE.G36.Generic.TrimAndRespond trimRespondLogic(
+========
+>>>>>>> master
 within Buildings.Obsolete.Controls.OBC.ASHRAE.G36_PR1.Generic.SetPoints.Validation;
 model TrimAndRespond "Model validates the trim and respond block"
   Buildings.Obsolete.Controls.OBC.ASHRAE.G36_PR1.Generic.SetPoints.TrimAndRespond
     trimRespondLogic(
+<<<<<<< HEAD
+=======
+>>>>>>>> master:Buildings/Obsolete/Controls/OBC/ASHRAE/G36_PR1/Generic/SetPoints/Validation/TrimAndRespond.mo
+>>>>>>> master
     final iniSet=120,
     final minSet=37,
     final maxSet=370,
@@ -12,8 +24,17 @@ model TrimAndRespond "Model validates the trim and respond block"
     final resAmo=15,
     final maxRes=37) "Block implementing trim and respond logic"
     annotation (Placement(transformation(extent={{70,60},{90,80}})));
+<<<<<<< HEAD
   Buildings.Obsolete.Controls.OBC.ASHRAE.G36_PR1.Generic.SetPoints.TrimAndRespond
     trimRespondLogic1(
+=======
+<<<<<<<< HEAD:Buildings/Controls/OBC/ASHRAE/G36/Generic/Validation/TrimAndRespond.mo
+  Buildings.Controls.OBC.ASHRAE.G36.Generic.TrimAndRespond trimRespondLogic1(
+========
+  Buildings.Obsolete.Controls.OBC.ASHRAE.G36_PR1.Generic.SetPoints.TrimAndRespond
+    trimRespondLogic1(
+>>>>>>>> master:Buildings/Obsolete/Controls/OBC/ASHRAE/G36_PR1/Generic/SetPoints/Validation/TrimAndRespond.mo
+>>>>>>> master
     final iniSet=120,
     final minSet=37,
     final maxSet=370,
@@ -24,8 +45,17 @@ model TrimAndRespond "Model validates the trim and respond block"
     final resAmo=-15,
     final maxRes=-37) "Block implementing trim and respond logic"
     annotation (Placement(transformation(extent={{70,10},{90,30}})));
+<<<<<<< HEAD
   Buildings.Obsolete.Controls.OBC.ASHRAE.G36_PR1.Generic.SetPoints.TrimAndRespond
     trimRespondLogic2(
+=======
+<<<<<<<< HEAD:Buildings/Controls/OBC/ASHRAE/G36/Generic/Validation/TrimAndRespond.mo
+  Buildings.Controls.OBC.ASHRAE.G36.Generic.TrimAndRespond trimRespondLogic2(
+========
+  Buildings.Obsolete.Controls.OBC.ASHRAE.G36_PR1.Generic.SetPoints.TrimAndRespond
+    trimRespondLogic2(
+>>>>>>>> master:Buildings/Obsolete/Controls/OBC/ASHRAE/G36_PR1/Generic/SetPoints/Validation/TrimAndRespond.mo
+>>>>>>> master
     final iniSet=120,
     final minSet=37,
     final maxSet=370,
@@ -39,6 +69,7 @@ model TrimAndRespond "Model validates the trim and respond block"
   Buildings.Controls.OBC.CDL.Logical.Sources.Constant con(
     final k=true) "Logic true indicating device ON"
     annotation (Placement(transformation(extent={{20,80},{40,100}})));
+<<<<<<< HEAD
   Buildings.Controls.OBC.CDL.Continuous.Sources.Sine sine(
     final amplitude=6,
     final freqHz=1/5400) "Block generates sine signal"
@@ -51,6 +82,20 @@ model TrimAndRespond "Model validates the trim and respond block"
     freqHz=1/5400) "Block generates sine signal"
     annotation (Placement(transformation(extent={{-88,-90},{-68,-70}})));
   Buildings.Controls.OBC.CDL.Continuous.Abs abs1
+=======
+  Buildings.Controls.OBC.CDL.Reals.Sources.Sin sine(
+    final amplitude=6,
+    final freqHz=1/5400) "Block generates sine signal"
+    annotation (Placement(transformation(extent={{-80,40},{-60,60}})));
+  Buildings.Controls.OBC.CDL.Reals.Abs abs
+    "Block generates absolute value of input"
+    annotation (Placement(transformation(extent={{-52,40},{-32,60}})));
+  Buildings.Controls.OBC.CDL.Reals.Sources.Sin sine1(
+    final amplitude=6,
+    freqHz=1/5400) "Block generates sine signal"
+    annotation (Placement(transformation(extent={{-88,-90},{-68,-70}})));
+  Buildings.Controls.OBC.CDL.Reals.Abs abs1
+>>>>>>> master
     "Block generates absolute value of input"
     annotation (Placement(transformation(extent={{-10,-90},{10,-70}})));
   Buildings.Controls.OBC.CDL.Logical.Sources.Pulse booPul(
@@ -59,18 +104,35 @@ model TrimAndRespond "Model validates the trim and respond block"
     annotation (Placement(transformation(extent={{-88,-20},{-68,0}})));
   Buildings.Controls.OBC.CDL.Logical.Not not1 "Logical not"
     annotation (Placement(transformation(extent={{20,-20},{40,0}})));
+<<<<<<< HEAD
   Buildings.Controls.OBC.CDL.Continuous.Switch swi "Switch between two Real signals"
     annotation (Placement(transformation(extent={{-48,-50},{-28,-30}})));
   Buildings.Controls.OBC.CDL.Continuous.Sources.Constant con1(final k=0)
     "Zero request when device is OFF"
     annotation (Placement(transformation(extent={{-88,-50},{-68,-30}})));
   Buildings.Controls.OBC.CDL.Continuous.Round round2(final n=0)
+=======
+<<<<<<<< HEAD:Buildings/Controls/OBC/ASHRAE/G36/Generic/Validation/TrimAndRespond.mo
+  Buildings.Controls.OBC.CDL.Continuous.Switch swi "Switch between two Real signals"
+========
+  Buildings.Controls.OBC.CDL.Reals.Switch swi "Switch between two Real signals"
+>>>>>>>> master:Buildings/Obsolete/Controls/OBC/ASHRAE/G36_PR1/Generic/SetPoints/Validation/TrimAndRespond.mo
+    annotation (Placement(transformation(extent={{-48,-50},{-28,-30}})));
+  Buildings.Controls.OBC.CDL.Reals.Sources.Constant con1(final k=0)
+    "Zero request when device is OFF"
+    annotation (Placement(transformation(extent={{-88,-50},{-68,-30}})));
+  Buildings.Controls.OBC.CDL.Reals.Round round2(final n=0)
+>>>>>>> master
     "Round real number to given digits"
     annotation (Placement(transformation(extent={{-20,40},{0,60}})));
   Buildings.Controls.OBC.CDL.Conversions.RealToInteger reaToInt1
     "Convert real to integer"
     annotation (Placement(transformation(extent={{20,40},{40,60}})));
+<<<<<<< HEAD
   Buildings.Controls.OBC.CDL.Continuous.Round round1(final n=0)
+=======
+  Buildings.Controls.OBC.CDL.Reals.Round round1(final n=0)
+>>>>>>> master
     "Round real number to given digits"
     annotation (Placement(transformation(extent={{20,-90},{40,-70}})));
   Buildings.Controls.OBC.CDL.Conversions.RealToInteger reaToInt2
@@ -121,13 +183,31 @@ equation
     annotation (Line(points={{42,50},{60,50},{60,12},{68,12}}, color={255,127,0}));
 
 annotation (experiment(StopTime=7200.0, Tolerance=1e-06),
+<<<<<<< HEAD
   __Dymola_Commands(file="modelica://Buildings/Resources/Scripts/Dymola/Obsolete/Controls/OBC/ASHRAE/G36_PR1/Generic/SetPoints/Validation/TrimAndRespond.mos"
+=======
+<<<<<<<< HEAD:Buildings/Controls/OBC/ASHRAE/G36/Generic/Validation/TrimAndRespond.mo
+  __Dymola_Commands(file="modelica://Buildings/Resources/Scripts/Dymola/Controls/OBC/ASHRAE/G36/Generic/Validation/TrimAndRespond.mos"
+========
+  __Dymola_Commands(file="modelica://Buildings/Resources/Scripts/Dymola/Obsolete/Controls/OBC/ASHRAE/G36_PR1/Generic/SetPoints/Validation/TrimAndRespond.mos"
+>>>>>>>> master:Buildings/Obsolete/Controls/OBC/ASHRAE/G36_PR1/Generic/SetPoints/Validation/TrimAndRespond.mo
+>>>>>>> master
     "Simulate and plot"),
     Documentation(info="<html>
 <p>
 This example validates
+<<<<<<< HEAD
 <a href=\"modelica://Buildings.Obsolete.Controls.OBC.ASHRAE.G36_PR1.Generic.SetPoints.TrimAndRespond\">
 Buildings.Obsolete.Controls.OBC.ASHRAE.G36_PR1.Generic.SetPoints.TrimAndRespond</a>.
+=======
+<<<<<<<< HEAD:Buildings/Controls/OBC/ASHRAE/G36/Generic/Validation/TrimAndRespond.mo
+<a href=\"modelica://Buildings.Controls.OBC.ASHRAE.G36.Generic.TrimAndRespond\">
+Buildings.Controls.OBC.ASHRAE.G36.Generic.TrimAndRespond</a>.
+========
+<a href=\"modelica://Buildings.Obsolete.Controls.OBC.ASHRAE.G36_PR1.Generic.SetPoints.TrimAndRespond\">
+Buildings.Obsolete.Controls.OBC.ASHRAE.G36_PR1.Generic.SetPoints.TrimAndRespond</a>.
+>>>>>>>> master:Buildings/Obsolete/Controls/OBC/ASHRAE/G36_PR1/Generic/SetPoints/Validation/TrimAndRespond.mo
+>>>>>>> master
 </p>
 </html>", revisions="<html>
 <ul>

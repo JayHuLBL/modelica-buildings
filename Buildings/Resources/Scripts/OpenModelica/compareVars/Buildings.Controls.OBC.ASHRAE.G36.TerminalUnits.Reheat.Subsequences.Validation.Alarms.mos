@@ -4,6 +4,10 @@ compareVars :=
     "ala.VActSet_flow",
     "ala.yLowFloAla",
     "ala.u1Fan",
+<<<<<<< HEAD
+=======
+    "ala.uOpeMod",
+>>>>>>> master
     "ala.uDam",
     "ala.uVal",
     "ala.TSup",

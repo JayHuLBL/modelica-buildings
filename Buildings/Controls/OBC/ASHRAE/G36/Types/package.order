@@ -1,9 +1,19 @@
 ASHRAEClimateZone
+<<<<<<< HEAD
 BuildingPressureControlTypes
 ControlEconomizer
 EnergyStandard
 FreezeStat
 OutdoorAirSection
+=======
+ControlEconomizer
+CoolingCoil
+EnergyStandard
+FreezeStat
+HeatingCoil
+OutdoorAirSection
+PressureControl
+>>>>>>> master
 Title24ClimateZone
 VentilationStandard
 DemandLimitLevels

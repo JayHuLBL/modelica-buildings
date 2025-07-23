@@ -4,6 +4,10 @@ model Guideline36Winter
   extends Buildings.Air.Systems.SingleZone.VAV.Examples.OptimalStart.Guideline36Spring;
 
   annotation (experiment(
+<<<<<<< HEAD
+=======
+      StartTime=0,
+>>>>>>> master
       StopTime=604800,
       Tolerance=1e-06),
       __Dymola_Commands(file="modelica://Buildings/Resources/Scripts/Dymola/Air/Systems/SingleZone/VAV/Examples/OptimalStart/Guideline36Winter.mos"

@@ -7,21 +7,39 @@ block Controller "Single zone VAV AHU economizer control sequence"
     "Economizer high limit control device";
   parameter Buildings.Controls.OBC.ASHRAE.G36.Types.ASHRAEClimateZone ashCliZon=Buildings.Controls.OBC.ASHRAE.G36.Types.ASHRAEClimateZone.Not_Specified
     "ASHRAE climate zone"
+<<<<<<< HEAD
     annotation (Dialog(enable=eneStd==Buildings.Controls.OBC.ASHRAE.G36.Types.EnergyStandard.ASHRAE90_1_2016));
   parameter Buildings.Controls.OBC.ASHRAE.G36.Types.Title24ClimateZone tit24CliZon=Buildings.Controls.OBC.ASHRAE.G36.Types.Title24ClimateZone.Not_Specified
     "California Title 24 climate zone"
     annotation (Dialog(enable=eneStd==Buildings.Controls.OBC.ASHRAE.G36.Types.EnergyStandard.California_Title_24_2016));
   parameter Boolean have_heaCoi=true
     "True if the air handling unit has heating coil";
+=======
+    annotation (__cdl(ValueInReference=false),
+                Dialog(enable=eneStd==Buildings.Controls.OBC.ASHRAE.G36.Types.EnergyStandard.ASHRAE90_1));
+  parameter Buildings.Controls.OBC.ASHRAE.G36.Types.Title24ClimateZone tit24CliZon=Buildings.Controls.OBC.ASHRAE.G36.Types.Title24ClimateZone.Not_Specified
+    "California Title 24 climate zone"
+    annotation (__cdl(ValueInReference=false),
+                Dialog(enable=eneStd==Buildings.Controls.OBC.ASHRAE.G36.Types.EnergyStandard.California_Title_24));
+  parameter Boolean have_heaCoi=true
+    "True if the air handling unit has heating coil"
+    annotation (__cdl(ValueInReference=false));
+>>>>>>> master
   parameter Real uMin(
     final min=0.1,
     final max=0.9,
     final unit="1") = 0.1
+<<<<<<< HEAD
     "Lower limit of controller output at which the dampers are at their limits";
+=======
+    "Lower limit of controller output at which the dampers are at their limits"
+    annotation (__cdl(ValueInReference=false));
+>>>>>>> master
   parameter Real uMax(
     final min=0.1,
     final max=1,
     final unit="1") = 0.9
+<<<<<<< HEAD
     "Upper limit of controller output at which the dampers are at their limits";
   parameter Buildings.Controls.OBC.CDL.Types.SimpleController controllerTypeMod=
     Buildings.Controls.OBC.CDL.Types.SimpleController.PI
@@ -29,18 +47,39 @@ block Controller "Single zone VAV AHU economizer control sequence"
     annotation(Dialog(group="Modulation"));
   parameter Real kMod(final unit="1/K")=1 "Gain of modulation controller"
     annotation(Dialog(group="Modulation"));
+=======
+    "Upper limit of controller output at which the dampers are at their limits"
+    annotation (__cdl(ValueInReference=false));
+  parameter Buildings.Controls.OBC.CDL.Types.SimpleController controllerTypeMod=
+    Buildings.Controls.OBC.CDL.Types.SimpleController.PI
+    "Type of controller"
+    annotation (__cdl(ValueInReference=false), Dialog(group="Modulation"));
+  parameter Real kMod(final unit="1/K")=1
+    "Gain of modulation controller"
+    annotation (__cdl(ValueInReference=false), Dialog(group="Modulation"));
+>>>>>>> master
   parameter Real TiMod(
     final unit="s",
     final quantity="Time")=300
     "Time constant of modulation controller integrator block"
+<<<<<<< HEAD
     annotation (Dialog(group="Modulation",
+=======
+    annotation (__cdl(ValueInReference=false),
+                Dialog(group="Modulation",
+>>>>>>> master
       enable=controllerTypeMod == Buildings.Controls.OBC.CDL.Types.SimpleController.PI
           or controllerTypeMod == Buildings.Controls.OBC.CDL.Types.SimpleController.PID));
   parameter Real TdMod(
     final unit="s",
     final quantity="Time")=0.1
     "Time constant of derivative block for modulation controller"
+<<<<<<< HEAD
     annotation (Dialog(group="Modulation",
+=======
+    annotation (__cdl(ValueInReference=false),
+                Dialog(group="Modulation",
+>>>>>>> master
       enable=controllerTypeMod == Buildings.Controls.OBC.CDL.Types.SimpleController.PD
           or controllerTypeMod == Buildings.Controls.OBC.CDL.Types.SimpleController.PID));
 
@@ -49,51 +88,99 @@ block Controller "Single zone VAV AHU economizer control sequence"
     final displayUnit="K",
     final quantity="TemperatureDifference")=1
     "Delta between the temperature hysteresis high and low limit"
+<<<<<<< HEAD
     annotation(Dialog(tab="Advanced", group="Hysteresis"));
+=======
+    annotation (__cdl(ValueInReference=false),
+                Dialog(tab="Advanced", group="Hysteresis"));
+>>>>>>> master
 
   parameter Real delEntHys(
     final unit="J/kg",
     final quantity="SpecificEnergy")=1000
     "Delta between the enthalpy hysteresis high and low limits"
+<<<<<<< HEAD
     annotation(Dialog(tab="Advanced", group="Hysteresis",
                       enable = ecoHigLimCon == Buildings.Controls.OBC.ASHRAE.G36.Types.ControlEconomizer.DifferentialEnthalpyWithFixedDryBulb
                                or ecoHigLimCon == Buildings.Controls.OBC.ASHRAE.G36.Types.ControlEconomizer.FixedEnthalpyWithFixedDryBulb));
   parameter Real floHys=0.01
     "Near zero flow rate, below which the flow rate or difference will be seen as zero"
     annotation (Dialog(tab="Advanced", group="Hysteresis"));
+=======
+    annotation (__cdl(ValueInReference=false),
+                Dialog(tab="Advanced", group="Hysteresis",
+                       enable = ecoHigLimCon == Buildings.Controls.OBC.ASHRAE.G36.Types.ControlEconomizer.DifferentialEnthalpyWithFixedDryBulb
+                                or ecoHigLimCon == Buildings.Controls.OBC.ASHRAE.G36.Types.ControlEconomizer.FixedEnthalpyWithFixedDryBulb));
+  parameter Real floHys(
+    final unit="m3/s",
+    final quantity="VolumeFlowRate")=0.01
+    "Near zero flow rate, below which the flow rate or difference will be seen as zero"
+    annotation (__cdl(ValueInReference=false), Dialog(tab="Advanced", group="Hysteresis"));
+>>>>>>> master
 
   parameter Real supFanSpe_min(
     final min=0,
     final max=1,
     final unit="1") = 0.1 "Minimum supply fan operation speed"
+<<<<<<< HEAD
     annotation(Dialog(tab="Commissioning", group="Damper position limits"));
   parameter Real supFanSpe_max(
     final min=0,
     final max=1,
     final unit="1") = 0.9 "Maximum supply fan operation speed"
     annotation(Dialog(tab="Commissioning", group="Damper position limits"));
+=======
+    annotation (__cdl(ValueInReference=false), Dialog(tab="Commissioning", group="Damper position limits"));
+  parameter Real supFanSpe_max(
+    final min=0,
+    final max=1,
+    final unit="1") = 0.9
+    "Maximum supply fan operation speed"
+    annotation (__cdl(ValueInReference=false),
+                Dialog(tab="Commissioning", group="Damper position limits"));
+>>>>>>> master
   parameter Real VOutMin_flow(
     final unit="m3/s",
     final quantity="VolumeFlowRate")=1.0
     "Calculated minimum outdoor airflow rate"
+<<<<<<< HEAD
     annotation(Dialog(tab="Commissioning", group="Damper position limits"));
+=======
+    annotation (__cdl(ValueInReference=false),
+                Dialog(tab="Commissioning", group="Damper position limits"));
+>>>>>>> master
   parameter Real VOutDes_flow(
     final unit="m3/s",
     final quantity="VolumeFlowRate")=2.0
     "Calculated design outdoor airflow rate"
+<<<<<<< HEAD
     annotation(Dialog(tab="Commissioning", group="Damper position limits"));
+=======
+    annotation (__cdl(ValueInReference=false),
+                Dialog(tab="Commissioning", group="Damper position limits"));
+>>>>>>> master
   parameter Real outDamMinFloMinSpe(
     final min=outDamPhy_min,
     final max=outDamPhy_max,
     final unit="1") = 0.4
     "Outdoor air damper position to supply minimum outdoor airflow at minimum fan speed"
+<<<<<<< HEAD
     annotation(Dialog(tab="Commissioning", group="Damper position limits"));
+=======
+    annotation (__cdl(ValueInReference=false),
+                Dialog(tab="Commissioning", group="Damper position limits"));
+>>>>>>> master
   parameter Real outDamMinFloMaxSpe(
     final min=outDamPhy_min,
     final max=outDamPhy_max,
     final unit="1") = 0.3
     "Outdoor air damper position to supply minimum outdoor airflow at maximum fan speed"
+<<<<<<< HEAD
     annotation(Dialog(tab="Commissioning", group="Damper position limits"));
+=======
+    annotation (__cdl(ValueInReference=false),
+                Dialog(tab="Commissioning", group="Damper position limits"));
+>>>>>>> master
   parameter Real outDamDesFloMinSpe(
     final min=outDamMinFloMinSpe,
     final max=outDamPhy_max,
@@ -105,31 +192,56 @@ block Controller "Single zone VAV AHU economizer control sequence"
     final max=outDamPhy_max,
     final unit="1") = 0.8
     "Outdoor air damper position to supply design outdoor airflow at maximum fan speed"
+<<<<<<< HEAD
     annotation(Dialog(tab="Commissioning", group="Damper position limits"));
+=======
+    annotation (__cdl(ValueInReference=false),
+                Dialog(tab="Commissioning", group="Damper position limits"));
+>>>>>>> master
   parameter Real outDamPhy_max(
     final min=0,
     final max=1,
     final unit="1") = 1
     "Physically fixed maximum position of the outdoor air damper"
+<<<<<<< HEAD
     annotation(Dialog(tab="Commissioning", group="Physical damper position limits"));
+=======
+    annotation (__cdl(ValueInReference=false),
+                Dialog(tab="Commissioning", group="Physical damper position limits"));
+>>>>>>> master
   parameter Real outDamPhy_min(
     final min=0,
     final max=1,
     final unit="1") = 0
     "Physically fixed minimum position of the outdoor air damper"
+<<<<<<< HEAD
     annotation(Dialog(tab="Commissioning", group="Physical damper position limits"));
+=======
+    annotation (__cdl(ValueInReference=false),
+                Dialog(tab="Commissioning", group="Physical damper position limits"));
+>>>>>>> master
   parameter Real retDamPhy_max(
     final min=0,
     final max=1,
     final unit="1") = 1
     "Physically fixed maximum position of the return air damper"
+<<<<<<< HEAD
     annotation(Dialog(tab="Commissioning", group="Physical damper position limits"));
+=======
+    annotation (__cdl(ValueInReference=false),
+                Dialog(tab="Commissioning", group="Physical damper position limits"));
+>>>>>>> master
   parameter Real retDamPhy_min(
     final min=0,
     final max=1,
     final unit="1") = 0
     "Physically fixed minimum position of the return air damper"
+<<<<<<< HEAD
     annotation(Dialog(tab="Commissioning", group="Physical damper position limits"));
+=======
+    annotation (__cdl(ValueInReference=false),
+                Dialog(tab="Commissioning", group="Physical damper position limits"));
+>>>>>>> master
 
   Buildings.Controls.OBC.CDL.Interfaces.RealInput TOut(
     final unit="K",
@@ -157,7 +269,11 @@ block Controller "Single zone VAV AHU economizer control sequence"
   Buildings.Controls.OBC.CDL.Interfaces.RealInput hAirRet(
     final unit="J/kg",
     final quantity="SpecificEnergy")
+<<<<<<< HEAD
     if (eneStd == Buildings.Controls.OBC.ASHRAE.G36.Types.EnergyStandard.ASHRAE90_1_2016
+=======
+    if (eneStd == Buildings.Controls.OBC.ASHRAE.G36.Types.EnergyStandard.ASHRAE90_1
+>>>>>>> master
      and ecoHigLimCon == Buildings.Controls.OBC.ASHRAE.G36.Types.ControlEconomizer.DifferentialEnthalpyWithFixedDryBulb)
     "Return air enthalpy"
     annotation (Placement(transformation(extent={{-180,90},{-140,130}}),
@@ -276,10 +392,13 @@ block Controller "Single zone VAV AHU economizer control sequence"
     final ashCliZon=ashCliZon,
     final tit24CliZon=tit24CliZon) "High limits"
     annotation (Placement(transformation(extent={{-40,-40},{-20,-20}})));
+<<<<<<< HEAD
   Buildings.Controls.OBC.CDL.Continuous.AddParameter addPar(final p=-1)
    if eneStd == Buildings.Controls.OBC.ASHRAE.G36.Types.EnergyStandard.Not_Specified
     "Dummy block"
     annotation (Placement(transformation(extent={{-40,-120},{-20,-100}})));
+=======
+>>>>>>> master
 equation
   connect(u1SupFan, enaDis.u1SupFan) annotation (Line(points={{-160,-90},{-120,-90},
           {-120,-70},{18,-70}}, color={255,0,255}));
@@ -337,10 +456,13 @@ equation
           {-52,-24},{-42,-24}}, color={0,0,127}));
   connect(hAirRet, ecoHigLim.hRet) annotation (Line(points={{-160,110},{-56,110},
           {-56,-36},{-42,-36}}, color={0,0,127}));
+<<<<<<< HEAD
   connect(TOut, addPar.u) annotation (Line(points={{-160,220},{-68,220},{-68,-110},
           {-42,-110}}, color={0,0,127}));
   connect(addPar.y, enaDis.TCut) annotation (Line(points={{-18,-110},{0,-110},{0,
           -63},{18,-63}}, color={0,0,127}));
+=======
+>>>>>>> master
 annotation (defaultComponentName = "conEco",
         Icon(coordinateSystem(extent={{-100,-200},{100,200}}),
              graphics={Rectangle(

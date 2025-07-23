@@ -17,9 +17,14 @@ partial model DoorDiscretized
   Modelica.Units.SI.Velocity vTop "Velocity at top of opening from A to B";
   Modelica.Units.SI.Velocity vBot "Velocity at bottom of opening from A to B";
 
+
+  input Modelica.Units.SI.Length dh=hOpe/nCom "Height of each compartment";
 protected
+<<<<<<< HEAD
   parameter Modelica.Units.SI.Length dh=hOpe/nCom "Height of each compartment";
 
+=======
+>>>>>>> master
   parameter Medium.ThermodynamicState sta_default=Medium.setState_pTX(
       T=Medium.T_default,
       p=Medium.p_default,
@@ -28,11 +33,11 @@ protected
   parameter Modelica.Units.SI.Density rho_default=Medium.density(sta_default)
     "Density, used to compute fluid volume";
 
-  parameter Real hAg[nCom](each unit="m2/s2")=
+  input Real hAg[nCom](each unit="m2/s2")=
     {Modelica.Constants.g_n*(hA - (i - 0.5)*dh) for i in 1:nCom}
     "Product g*h_i for each compartment";
 
-  parameter Real hBg[nCom](each unit="m2/s2")=
+  input Real hBg[nCom](each unit="m2/s2")=
     {Modelica.Constants.g_n*(hB - (i - 0.5)*dh) for i in 1:nCom}
     "Product g*h_i for each compartment";
   Modelica.Units.SI.AbsolutePressure pA[nCom](each nominal=101325)
@@ -117,6 +122,11 @@ using the model for a door that can be open or closed.
 </html>",
 revisions="<html>
 <ul>
+<li>
+October 29, 2024, by Klaas De Jonge:<br/>
+Unprotected <code>dh</code> and changed prefixes of <code>dh</code>,<code>hAg</code> and <code>hBg</code> to <code>input</code>.<br/>
+This is for <a href=\"https://github.com/ibpsa/modelica-ibpsa/issues/1935\">#1935</a>.
+</li>
 <li>
 January 8, 2019, by Michael Wetter:<br/>
 Moved parameter <code>CD</code> from

@@ -6,7 +6,11 @@ package BaseClasses "Base classes for package Data"
   Documentation(info="<html>
 This package contains the common parameters that are used
 to specify the heat pump models in
+<<<<<<< HEAD
 <a href=\"Buildings.Fluid.HeatPumps.Data.EquationFitReversible\">
+=======
+<a href=\"modelica://Buildings.Fluid.HeatPumps.Data.EquationFitReversible\">
+>>>>>>> master
 Buildings.Fluid.HeatPumps.Data.EquationFitReversible</a>.
 </html>", revisions="<html>
 <ul>

@@ -1,9 +1,17 @@
 compareVars :=
   {
+    "dewBulPhi.TDryBul",
+    "dewBulPhi.phi",
     "dewBulPhi.TDewPoi",
+<<<<<<< HEAD
     "TDewPoi.T",
     "dewBulPhi1.TDewPoi",
     "TDewPoi1.T",
     "sub.y",
     "sub1.y"
+=======
+    "dewBulPhi1.TDryBul",
+    "dewBulPhi1.phi",
+    "dewBulPhi1.TDewPoi"
+>>>>>>> master
   };

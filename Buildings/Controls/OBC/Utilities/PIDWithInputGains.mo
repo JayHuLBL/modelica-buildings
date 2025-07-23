@@ -62,6 +62,7 @@ block PIDWithInputGains
   Buildings.Controls.OBC.CDL.Interfaces.BooleanInput trigger
     "Resets the controller output when trigger becomes true"
     annotation (Placement(transformation(extent={{-20,-20},{20,20}},rotation=90,origin={-160,-220}),iconTransformation(extent={{-20,-20},{20,20}},rotation=90,origin={-60,-120})));
+<<<<<<< HEAD
   Buildings.Controls.OBC.CDL.Continuous.Subtract controlError
     "Control error (set point - measurement)"
     annotation (Placement(transformation(extent={{-200,-16},{-180,4}})));
@@ -69,10 +70,20 @@ block PIDWithInputGains
     "Proportional action"
     annotation (Placement(transformation(extent={{-50,130},{-30,150}})));
   Buildings.Controls.OBC.CDL.Continuous.IntegratorWithReset I(
+=======
+  Buildings.Controls.OBC.CDL.Reals.Subtract controlError
+    "Control error (set point - measurement)"
+    annotation (Placement(transformation(extent={{-200,-16},{-180,4}})));
+  Buildings.Controls.OBC.CDL.Reals.Multiply P
+    "Proportional action"
+    annotation (Placement(transformation(extent={{-50,130},{-30,150}})));
+  Buildings.Controls.OBC.CDL.Reals.IntegratorWithReset I(
+>>>>>>> master
     final k=1,
     final y_start=xi_start) if with_I
     "Integral term"
     annotation (Placement(transformation(extent={{-50,-10},{-30,10}})));
+<<<<<<< HEAD
   Buildings.Controls.OBC.CDL.Continuous.Derivative D(
     final y_start=yd_start) if with_D
     "Derivative term"
@@ -90,10 +101,30 @@ block PIDWithInputGains
     "I error (after anti-windup compensation)"
     annotation (Placement(transformation(extent={{-100,-10},{-80,10}})));
   Buildings.Controls.OBC.CDL.Continuous.Limiter lim(
+=======
+  Buildings.Controls.OBC.CDL.Reals.Derivative D(
+    final y_start=yd_start) if with_D
+    "Derivative term"
+    annotation (Placement(transformation(extent={{-50,60},{-30,80}})));
+  Buildings.Controls.OBC.CDL.Reals.Subtract errP
+    "P error"
+    annotation (Placement(transformation(extent={{-140,130},{-120,150}})));
+  Buildings.Controls.OBC.CDL.Reals.Subtract errD if with_D
+    "D error"
+    annotation (Placement(transformation(extent={{-140,60},{-120,80}})));
+  Buildings.Controls.OBC.CDL.Reals.Subtract errI1 if with_I
+    "I error (before anti-windup compensation)"
+    annotation (Placement(transformation(extent={{-140,-4},{-120,16}})));
+  Buildings.Controls.OBC.CDL.Reals.Subtract errI2 if with_I
+    "I error (after anti-windup compensation)"
+    annotation (Placement(transformation(extent={{-100,-10},{-80,10}})));
+  Buildings.Controls.OBC.CDL.Reals.Limiter lim(
+>>>>>>> master
     final uMax=yMax,
     final uMin=yMin)
     "Limiter"
     annotation (Placement(transformation(extent={{120,80},{140,100}})));
+<<<<<<< HEAD
   Buildings.Controls.OBC.CDL.Continuous.Divide antWinGai2 "Outputs of anti-windup compensation"
     annotation (Placement(transformation(extent={{100,-30},{80,-10}})));
   Buildings.Controls.OBC.CDL.Continuous.Divide gaiI if with_I "Gain of the integral term"
@@ -105,6 +136,20 @@ block PIDWithInputGains
     "Product of k and Td"
     annotation (Placement(transformation(extent={{-200,150},{-180,170}})));
   Buildings.Controls.OBC.CDL.Continuous.GreaterThreshold greThrkTd(
+=======
+  Buildings.Controls.OBC.CDL.Reals.Divide antWinGai2 if with_I
+    "Outputs of anti-windup compensation"
+    annotation (Placement(transformation(extent={{100,-30},{80,-10}})));
+  Buildings.Controls.OBC.CDL.Reals.Divide gaiI if with_I "Gain of the integral term"
+    annotation (Placement(transformation(extent={{-200,116},{-180,136}})));
+  Buildings.Controls.OBC.CDL.Reals.Multiply errIWithGai if with_I
+    "I error (after multiplying with the gain of the integral term)"
+    annotation (Placement(transformation(extent={{-84,28},{-64,48}})));
+  Buildings.Controls.OBC.CDL.Reals.Multiply mulkTd if with_D
+    "Product of k and Td"
+    annotation (Placement(transformation(extent={{-200,150},{-180,170}})));
+  Buildings.Controls.OBC.CDL.Reals.GreaterThreshold greThrkTd(
+>>>>>>> master
     t=1E-6,
     h=1E-6/2)
     if with_D
@@ -124,11 +169,16 @@ protected
   final parameter Boolean with_D=controllerType == Buildings.Controls.OBC.CDL.Types.SimpleController.PD or controllerType == Buildings.Controls.OBC.CDL.Types.SimpleController.PID
     "Boolean flag to enable derivative action"
     annotation (Evaluate=true,HideResult=true);
+<<<<<<< HEAD
   Buildings.Controls.OBC.CDL.Continuous.Sources.Constant Dzero(
+=======
+  Buildings.Controls.OBC.CDL.Reals.Sources.Constant Dzero(
+>>>>>>> master
     final k=0) if not with_D
     "Zero input signal"
     annotation (Evaluate=true,HideResult=true,Placement(transformation(extent={{-50,90},
             {-30,110}})));
+<<<<<<< HEAD
   Buildings.Controls.OBC.CDL.Continuous.Sources.Constant Izero(
     final k=0) if not with_I
     "Zero input signal"
@@ -157,6 +207,36 @@ protected
     "Signal for y_reset"
     annotation (Placement(transformation(extent={{-140,-84},{-120,-64}})));
   Buildings.Controls.OBC.CDL.Continuous.Subtract addRes if with_I
+=======
+  Buildings.Controls.OBC.CDL.Reals.Sources.Constant Izero(
+    final k=0) if not with_I
+    "Zero input signal"
+    annotation (Placement(transformation(extent={{-50,20},{-30,40}})));
+  Buildings.Controls.OBC.CDL.Reals.MultiplyByParameter uS_revAct(
+    final k=revAct/r) "Set point multiplied by reverse action sign"
+    annotation (Placement(transformation(extent={{-200,30},{-180,50}})));
+  Buildings.Controls.OBC.CDL.Reals.MultiplyByParameter uMea_revAct(
+    final k=revAct/r)
+    "Set point multiplied by reverse action sign"
+    annotation (Placement(transformation(extent={{-200,-50},{-180,-30}})));
+  Buildings.Controls.OBC.CDL.Reals.Add addPD
+    "Outputs P and D gains added"
+    annotation (Placement(transformation(extent={{20,124},{40,144}})));
+  Buildings.Controls.OBC.CDL.Reals.Add addPID
+    "Outputs P, I and D gains added"
+    annotation (Placement(transformation(extent={{80,80},{100,100}})));
+  Buildings.Controls.OBC.CDL.Reals.Subtract antWinErr if with_I
+    "Error for anti-windup compensation"
+    annotation (Placement(transformation(extent={{160,50},{180,70}})));
+  Buildings.Controls.OBC.CDL.Reals.MultiplyByParameter antWinGai1(k=1/Ni)
+    if with_I "Gain for anti-windup compensation without the proportional gain"
+    annotation (Placement(transformation(extent={{180,-30},{160,-10}})));
+  Buildings.Controls.OBC.CDL.Reals.Sources.Constant yResSig(
+    final k=y_reset) if with_I
+    "Signal for y_reset"
+    annotation (Placement(transformation(extent={{-140,-84},{-120,-64}})));
+  Buildings.Controls.OBC.CDL.Reals.Subtract addRes if with_I
+>>>>>>> master
     "Adder for integrator reset"
     annotation (Placement(transformation(extent={{-100,-90},{-80,-70}})));
   Buildings.Controls.OBC.CDL.Logical.Sources.Constant cheYMinMax(
@@ -170,7 +250,11 @@ protected
     if with_D
     "Assertion on k and Td"
     annotation (Placement(transformation(extent={{180,160},{200,180}})));
+<<<<<<< HEAD
   Buildings.Controls.OBC.CDL.Continuous.MultiplyByParameter gaiT(final k=1/Nd) if with_D
+=======
+  Buildings.Controls.OBC.CDL.Reals.MultiplyByParameter gaiT(final k=1/Nd) if with_D
+>>>>>>> master
     "Gain to compute time constant for derivative action"
     annotation (Placement(transformation(extent={{-140,100},{-120,120}})));
 
@@ -295,28 +379,44 @@ equation
         Text(
           visible=(controllerType == Buildings.Controls.OBC.CDL.Types.SimpleController.P),
           extent={{-32,-22},{68,-62}},
+<<<<<<< HEAD
           lineColor={0,0,0},
+=======
+          textColor={0,0,0},
+>>>>>>> master
           textString="P",
           fillPattern=FillPattern.Solid,
           fillColor={175,175,175}),
         Text(
           visible=(controllerType == Buildings.Controls.OBC.CDL.Types.SimpleController.PI),
           extent={{-26,-22},{74,-62}},
+<<<<<<< HEAD
           lineColor={0,0,0},
+=======
+          textColor={0,0,0},
+>>>>>>> master
           textString="PI",
           fillPattern=FillPattern.Solid,
           fillColor={175,175,175}),
         Text(
           visible=(controllerType == Buildings.Controls.OBC.CDL.Types.SimpleController.PD),
           extent={{-16,-22},{88,-62}},
+<<<<<<< HEAD
           lineColor={0,0,0},
+=======
+          textColor={0,0,0},
+>>>>>>> master
           fillPattern=FillPattern.Solid,
           fillColor={175,175,175},
           textString="P D"),
         Text(
           visible=(controllerType == Buildings.Controls.OBC.CDL.Types.SimpleController.PID),
           extent={{-14,-22},{86,-62}},
+<<<<<<< HEAD
           lineColor={0,0,0},
+=======
+          textColor={0,0,0},
+>>>>>>> master
           textString="PID",
           fillPattern=FillPattern.Solid,
           fillColor={175,175,175}),
@@ -366,7 +466,11 @@ equation
           pattern=LinePattern.None,
           fillColor={215,215,215},
           fillPattern=FillPattern.Solid,
+<<<<<<< HEAD
           lineColor={0,0,0},
+=======
+          textColor={0,0,0},
+>>>>>>> master
           textString="PID")}),
     Documentation(
       info="<html>
@@ -407,8 +511,13 @@ where <i>y<sub>min</sub></i> and <i>y<sub>max</sub></i> are limits for the contr
 </p>
 <p>
 This block is identical to
+<<<<<<< HEAD
 <a href=\"Buildings.Controls.OBC.CDL.Continuous.PIDWithReset\">
 Buildings.Controls.OBC.CDL.Continuous.PIDWithReset</a>,
+=======
+<a href=\"modelica://Buildings.Controls.OBC.CDL.Reals.PIDWithReset\">
+Buildings.Controls.OBC.CDL.Reals.PIDWithReset</a>,
+>>>>>>> master
 except that the controller gains
 <i>k</i>, <i>T<sub>i</sub></i> and <i>T<sub>d</sub></i> are inputs rather than parameters.
 </p>
@@ -536,6 +645,7 @@ R. Montgomery and R. McDowall (2008).
 American Society of Heating Refrigerating and Air-Conditioning Engineers Inc. Atlanta, GA.
 </p>
 </html>",
+<<<<<<< HEAD
       revisions="<html>
 <ul>
 <li>
@@ -543,6 +653,21 @@ May 17, 2022, by Sen Huang:<br/>
 Changing the gains from parameters to inputs<br/>
 This is for
 <a href=\"https://github.com/lbl-srg/modelica-buildings/issues/2993\">issue 2993</a>.
+=======
+revisions="<html>
+<ul>
+<li>
+June 5, 2023, by Jianjun Hu:<br/>
+Changed the instance <code>antWinGai2</code> to be conditional.<br/>
+This is for
+<a href=\"https://github.com/lbl-srg/modelica-buildings/issues/3423\">Buildings, issue 3423</a>.
+</li>       
+<li>
+May 17, 2022, by Sen Huang:<br/>
+Changing the gains from parameters to inputs<br/>
+This is for
+<a href=\"https://github.com/lbl-srg/modelica-buildings/issues/2993\">Buildings, issue 2993</a>.
+>>>>>>> master
 </li>
 <li>
 April 30, 2021, by Michael Wetter:<br/>
@@ -551,7 +676,11 @@ when reset trigger is <code>true</code>.<br/>
 Refactored implementation to have separate blocks that show the P, I and D contribution,
 each with the control gain applied.<br/>
 This is for
+<<<<<<< HEAD
 <a href=\"https://github.com/lbl-srg/modelica-buildings/issues/2475\">issue 2475</a>.
+=======
+<a href=\"https://github.com/lbl-srg/modelica-buildings/issues/2475\">Buildings, issue 2475</a>.
+>>>>>>> master
 </li>
 </ul>
 </html>"));

@@ -5,17 +5,32 @@ block Common
   parameter Buildings.Controls.OBC.CDL.Types.SimpleController controllerType=
     Buildings.Controls.OBC.CDL.Types.SimpleController.PI
     "Type of controller"
+<<<<<<< HEAD
     annotation (Dialog(group="Controller"));
 
   parameter Real k(
     final unit="1")=0.05 "Gain of damper limit controller"
     annotation (Dialog(group="Controller"));
+=======
+    annotation (__cdl(ValueInReference=false),
+                Dialog(group="Controller"));
+
+  parameter Real k(
+    final unit="1")=0.05 "Gain of damper limit controller"
+    annotation (__cdl(ValueInReference=false),
+                Dialog(group="Controller"));
+>>>>>>> master
 
   parameter Real Ti(
     final unit="s",
     final quantity="Time")=120
     "Time constant of damper limit controller integrator block"
+<<<<<<< HEAD
     annotation (Dialog(group="Controller",
+=======
+    annotation (__cdl(ValueInReference=false),
+                Dialog(group="Controller",
+>>>>>>> master
     enable=controllerType == Buildings.Controls.OBC.CDL.Types.SimpleController.PI
         or controllerType == Buildings.Controls.OBC.CDL.Types.SimpleController.PID));
 
@@ -23,7 +38,12 @@ block Common
     final unit="s",
     final quantity="Time")=0.1
     "Time constant of damper limit controller derivative block"
+<<<<<<< HEAD
     annotation (Dialog(group="Controller",
+=======
+    annotation (__cdl(ValueInReference=false),
+                Dialog(group="Controller",
+>>>>>>> master
     enable=controllerType == Buildings.Controls.OBC.CDL.Types.SimpleController.PD
         or controllerType == Buildings.Controls.OBC.CDL.Types.SimpleController.PID));
 
@@ -32,11 +52,17 @@ block Common
     final max=yMax,
     final unit="1") = 0.5
     "Loop signal value to start decreasing the maximum return air damper position"
+<<<<<<< HEAD
     annotation (Dialog(tab="Commissioning", group="Controller"));
+=======
+    annotation (__cdl(ValueInReference=false),
+                Dialog(tab="Commissioning", group="Controller"));
+>>>>>>> master
 
   parameter Real retDamPhy_max(
     final min=0,
     final max=1,
+<<<<<<< HEAD
     final unit="1") = 1 "Physically fixed maximum position of the return air damper"
     annotation (Dialog(tab="Commissioning", group="Physical damper position limits"));
   parameter Real retDamPhy_min(
@@ -57,6 +83,33 @@ block Common
     final unit="1") = 0
     "Physically fixed minimum position of the outdoor air damper"
     annotation (Dialog(tab="Commissioning", group="Physical damper position limits"));
+=======
+    final unit="1") = 1.0
+    "Physically fixed maximum position of the return air damper"
+    annotation (__cdl(ValueInReference=false),
+                Dialog(tab="Commissioning", group="Physical damper position limits"));
+  parameter Real retDamPhy_min(
+    final min=0,
+    final max=1,
+    final unit="1") = 0.0
+    "Physically fixed minimum position of the return air damper"
+    annotation (__cdl(ValueInReference=false),
+                Dialog(tab="Commissioning", group="Physical damper position limits"));
+  parameter Real outDamPhy_max(
+    final min=0,
+    final max=1,
+    final unit="1") = 1.0
+    "Physically fixed maximum position of the outdoor air damper"
+    annotation (__cdl(ValueInReference=false),
+                Dialog(tab="Commissioning", group="Physical damper position limits"));
+  parameter Real outDamPhy_min(
+    final min=0,
+    final max=1,
+    final unit="1") = 0.0
+    "Physically fixed minimum position of the outdoor air damper"
+    annotation (__cdl(ValueInReference=false),
+                Dialog(tab="Commissioning", group="Physical damper position limits"));
+>>>>>>> master
 
   Buildings.Controls.OBC.CDL.Interfaces.RealInput VOut_flow_normalized(
    final unit="1")
@@ -116,7 +169,11 @@ block Common
     annotation (Placement(transformation(extent={{180,-160},{220,-120}}),
         iconTransformation(extent={{100,-110},{140,-70}})));
 
+<<<<<<< HEAD
   Buildings.Controls.OBC.CDL.Continuous.PIDWithReset damLimCon(
+=======
+  Buildings.Controls.OBC.CDL.Reals.PIDWithReset damLimCon(
+>>>>>>> master
     final controllerType=controllerType,
     final k=k,
     final Ti=Ti,
@@ -129,6 +186,7 @@ block Common
 protected
   parameter Real yMin=0 "Lower limit of control loop signal";
   parameter Real yMax=1 "Upper limit of control loop signal";
+<<<<<<< HEAD
   Buildings.Controls.OBC.CDL.Continuous.Sources.Constant outDamPhyPosMinSig(
     final k=outDamPhy_min)
     "Physically fixed minimum position of the outdoor air damper. This is the initial position of the economizer damper"
@@ -158,19 +216,61 @@ protected
     limit gets modulated and above which the return air damper limit gets modulated"
     annotation (Placement(transformation(extent={{-60,200},{-40,220}})));
   Buildings.Controls.OBC.CDL.Continuous.Line minOutDam(
+=======
+  Buildings.Controls.OBC.CDL.Reals.Sources.Constant outDamPhyPosMinSig(
+    final k=outDamPhy_min)
+    "Physically fixed minimum position of the outdoor air damper. This is the initial position of the economizer damper"
+    annotation (Placement(transformation(extent={{-160,70},{-140,90}})));
+  Buildings.Controls.OBC.CDL.Reals.Sources.Constant outDamPhyPosMaxSig(
+    final k=outDamPhy_max)
+    "Physically fixed maximum position of the outdoor air damper."
+    annotation (Placement(transformation(extent={{-160,30},{-140,50}})));
+  Buildings.Controls.OBC.CDL.Reals.Sources.Constant retDamPhyPosMinSig(
+    final k=retDamPhy_min)
+    "Physically fixed minimum position of the return air damper"
+    annotation (Placement(transformation(extent={{-160,-10},{-140,10}})));
+  Buildings.Controls.OBC.CDL.Reals.Sources.Constant retDamPhyPosMaxSig(
+    final k=retDamPhy_max)
+    "Physically fixed maximum position of the return air damper. This is the initial condition of the return air damper"
+    annotation (Placement(transformation(extent={{-160,-50},{-140,-30}})));
+  Buildings.Controls.OBC.CDL.Reals.Sources.Constant minSigLim(
+    final k=yMin)
+    "Equals minimum controller output signal"
+    annotation (Placement(transformation(extent={{-100,200},{-80,220}})));
+  Buildings.Controls.OBC.CDL.Reals.Sources.Constant maxSigLim(
+    final k=yMax)
+    "Equals maximum controller output signal"
+    annotation (Placement(transformation(extent={{-20,200},{0,220}})));
+  Buildings.Controls.OBC.CDL.Reals.Sources.Constant sigFraForOutDam(
+    final k=uRetDam_min) "Equals the fraction of the control loop signal below which the outdoor air damper
+    limit gets modulated and above which the return air damper limit gets modulated"
+    annotation (Placement(transformation(extent={{-60,200},{-40,220}})));
+  Buildings.Controls.OBC.CDL.Reals.Line minOutDam(
+>>>>>>> master
     final limitBelow=true,
     final limitAbove=true)
     "Linear mapping of the outdoor air damper position to the control signal"
     annotation (Placement(transformation(extent={{120,140},{140,160}})));
+<<<<<<< HEAD
   Buildings.Controls.OBC.CDL.Continuous.Line minRetDam(
+=======
+  Buildings.Controls.OBC.CDL.Reals.Line minRetDam(
+>>>>>>> master
     final limitBelow=true,
     final limitAbove=true)
     "Linear mapping of the return air damper position to the control signal"
     annotation (Placement(transformation(extent={{120,100},{140,120}})));
+<<<<<<< HEAD
   Buildings.Controls.OBC.CDL.Continuous.Switch retDamPosMinSwitch
     "A switch to deactivate the return air damper minimal outdoor airflow control"
     annotation (Placement(transformation(extent={{40,-30},{60,-10}})));
   Buildings.Controls.OBC.CDL.Continuous.Switch outDamPosMaxSwitch
+=======
+  Buildings.Controls.OBC.CDL.Reals.Switch retDamPosMinSwitch
+    "A switch to deactivate the return air damper minimal outdoor airflow control"
+    annotation (Placement(transformation(extent={{40,-30},{60,-10}})));
+  Buildings.Controls.OBC.CDL.Reals.Switch outDamPosMaxSwitch
+>>>>>>> master
     "A switch to deactivate the outdoor air damper minimal outdoor airflow control"
     annotation (Placement(transformation(extent={{40,10},{60,30}})));
   Buildings.Controls.OBC.CDL.Logical.Not not1 "Logical not block"
@@ -412,6 +512,15 @@ src=\"modelica://Buildings/Resources/Images/Controls/OBC/ASHRAE/G36/AHUs/MultiZo
 </html>", revisions="<html>
 <ul>
 <li>
+<<<<<<< HEAD
+=======
+March 1, 2023, by Michael Wetter:<br/>
+Changed constants from <code>0</code> to <code>0.0</code> and <code>1</code> to <code>1.0</code>.<br/>
+This is for
+<a href=\"https://github.com/lbl-srg/modelica-buildings/pull/3267#issuecomment-1450587671\">#3267</a>.
+</li>
+<li>
+>>>>>>> master
 July 10, 2020, by Antoine Gautier:<br/>
 Changed default value of integral time for minimum outdoor air control.
 Set <code>yMin</code> to 0.<br/>

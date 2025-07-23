@@ -1,0 +1,8 @@
+<<<<<<< HEAD:Buildings/Obsolete/Examples/VAVReheat/package.order
+Guideline36
+=======
+PI
+PID
+>>>>>>> master:Buildings/Controls/OBC/Utilities/PIDWithAutotuning/AutoTuner/AMIGO/package.order
+Validation
+BaseClasses

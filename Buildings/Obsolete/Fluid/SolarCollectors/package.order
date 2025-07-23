@@ -1,0 +1,13 @@
+<<<<<<< HEAD:Buildings/Experimental/DHC/Loads/package.order
+Combined
+=======
+UsersGuide
+ASHRAE93
+EN12975
+Controls
+Data
+Types
+Examples
+Validation
+>>>>>>> master:Buildings/Obsolete/Fluid/SolarCollectors/package.order
+BaseClasses

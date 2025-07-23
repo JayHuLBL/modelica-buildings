@@ -1,15 +1,28 @@
 within Buildings.Controls.OBC.CDL.Routing;
+<<<<<<< HEAD
 block RealVectorFilter
   "Filter a real vector of based on a boolean mask"
+=======
+block RealVectorFilter "Filter a real vector of based on a boolean mask"
+
+>>>>>>> master
   parameter Integer nin "Size of input vector";
   parameter Integer nout "Size of output vector";
   parameter Boolean msk[nin]=fill(true,nin) "Array mask";
 
+<<<<<<< HEAD
   Interfaces.RealInput u[nin]
     "Connector of Real input signal"
     annotation (Placement(transformation(extent={{-140,-20},{-100,20}})));
   Interfaces.RealOutput y[nout]
     "Connector of Real output signals"
+=======
+  Buildings.Controls.OBC.CDL.Interfaces.RealInput u[nin]
+    "Input signals from which values are extracted"
+    annotation (Placement(transformation(extent={{-140,-20},{-100,20}})));
+  Buildings.Controls.OBC.CDL.Interfaces.RealOutput y[nout]
+    "Output with extracted input signals"
+>>>>>>> master
     annotation (Placement(transformation(extent={{100,-20},{140,20}})));
 
 protected
@@ -18,8 +31,13 @@ protected
 
 initial equation
   assert(nout==sum({if msk[i] then 1 else 0 for i in 1:nin}),
+<<<<<<< HEAD
     "The size of the output vector does not match the
     size of included elements in the mask.");
+=======
+    "In " + getInstanceName() + ": The size of the output vector does not
+    match the size of included elements in the mask.");
+>>>>>>> master
 equation
   y = u[mskId];
   annotation (

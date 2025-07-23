@@ -1,11 +1,20 @@
+<<<<<<<< HEAD:Buildings/Controls/OBC/ASHRAE/G36/Generic/Validation/package.mo
 within Buildings.Controls.OBC.ASHRAE.G36.Generic;
+========
+within Buildings.Controls.OBC.ASHRAE.G36.AHUs.MultiZone.VAV;
+>>>>>>>> master:Buildings/Controls/OBC/ASHRAE/G36/AHUs/MultiZone/VAV/Validation/package.mo
 package Validation "Collection of validation models"
 
 annotation (preferredView="info", Documentation(info="<html>
 <p>
 This package contains validation models for the classes in
+<<<<<<<< HEAD:Buildings/Controls/OBC/ASHRAE/G36/Generic/Validation/package.mo
 <a href=\"modelica://Buildings.Controls.OBC.ASHRAE.G36.Generic\">
 Buildings.Controls.OBC.ASHRAE.G36.Generic</a>.
+========
+<a href=\"modelica://Buildings.Controls.OBC.ASHRAE.G36.AHUs.MultiZone\">
+Buildings.Controls.OBC.ASHRAE.G36.AHUs.MultiZone</a>.
+>>>>>>>> master:Buildings/Controls/OBC/ASHRAE/G36/AHUs/MultiZone/VAV/Validation/package.mo
 </p>
 <p>
 Note that most validation models contain simple input data

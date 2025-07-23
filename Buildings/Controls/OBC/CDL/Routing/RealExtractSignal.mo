@@ -7,10 +7,17 @@ block RealExtractSignal
     "Number of outputs";
   parameter Integer extract[nout]=1:nout
     "Extracting vector";
+<<<<<<< HEAD
   Interfaces.RealInput u[nin]
     "Real input signals"
     annotation (Placement(transformation(extent={{-140,-20},{-100,20}})));
   Interfaces.RealOutput y[nout]
+=======
+  Buildings.Controls.OBC.CDL.Interfaces.RealInput u[nin]
+    "Real input signals"
+    annotation (Placement(transformation(extent={{-140,-20},{-100,20}})));
+  Buildings.Controls.OBC.CDL.Interfaces.RealOutput y[nout]
+>>>>>>> master
     "Real signals extracted from the input vector with the extraction scheme specified by the integer vector"
     annotation (Placement(transformation(extent={{100,-20},{140,20}})));
 

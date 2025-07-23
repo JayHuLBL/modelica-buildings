@@ -6,14 +6,22 @@ record Generic
   constant Integer nCha = 6 "Number of coefficients for charging characteristic curve";
   constant Integer nDisCha = 6 "Number of coefficients for discharging characteristic curve";
 
+<<<<<<< HEAD
   parameter Modelica.Units.SI.SpecificEnergy Hf = 333550 "Fusion of heat of ice";
+=======
+  parameter Modelica.Units.SI.SpecificEnergy Hf = 333550 "Heat of fusion for water";
+>>>>>>> master
   parameter Modelica.Units.SI.Temperature TFre = 273.15
     "Freezing temperature of water or the latent energy storage material";
 
   parameter Modelica.Units.SI.Mass mIce_max "Maximum mass of ice in the tank";
 
   parameter Real coeCha[nCha] "Coefficients for charging curve";
+<<<<<<< HEAD
   parameter Real coeDisCha[nDisCha] "Coeffcients for discharging curve";
+=======
+  parameter Real coeDisCha[nDisCha] "Coefficients for discharging curve";
+>>>>>>> master
   parameter Real dtCha "Time step of curve fitting data";
   parameter Real dtDisCha "Time step of curve fitting data";
 
@@ -30,7 +38,11 @@ First implementation.
 <p>
 Performance data for ice tank charging and discharging curves.
 See
+<<<<<<< HEAD
 <a href=\"Buildings.Fluid.Storage.Ice.Tank\">Buildings.Fluid.Storage.Ice.Tank</a>
+=======
+<a href=\"modelica://Buildings.Fluid.Storage.Ice.Tank\">Buildings.Fluid.Storage.Ice.Tank</a>
+>>>>>>> master
 for the definition of the charging and discharging coefficients.
 </p>
 </html>"));

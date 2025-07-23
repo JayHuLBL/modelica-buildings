@@ -45,8 +45,13 @@ model WetCoilCounterFlowLowWaterFlowRate
     annotation (Placement(transformation(extent={{90,10},{70,30}})));
   Buildings.Fluid.Sources.MassFlowSource_T sou_a(
     use_Xi_in=false,
+<<<<<<< HEAD
     X={0.01,0.99},
     m_flow=0.3*mAir_flow_nominal,
+=======
+    X={0.0086,1 - 0.0086},
+    m_flow=mAir_flow_nominal,
+>>>>>>> master
     use_T_in=false,
     T=285.15,
     nPorts=1,
@@ -61,7 +66,11 @@ model WetCoilCounterFlowLowWaterFlowRate
     nPorts=1)
     "sink for air"
     annotation (Placement(transformation(extent={{-60,-50},{-40,-30}})));
+<<<<<<< HEAD
   Controls.OBC.CDL.Continuous.Sources.Ramp ram(
+=======
+  Controls.OBC.CDL.Reals.Sources.Ramp ram(
+>>>>>>> master
     height=-mWat_flow_nominal,
     duration=1800,
     offset=mWat_flow_nominal,
@@ -116,8 +125,13 @@ equation
     Icon(coordinateSystem(preserveAspectRatio=false)),
     Diagram(coordinateSystem(preserveAspectRatio=false)),
     experiment(
+<<<<<<< HEAD
       StopTime=3600,
       Tolerance=1e-06),
+=======
+      StopTime=5000,
+      Tolerance=1e-6),
+>>>>>>> master
     __Dymola_Commands(file="modelica://Buildings/Resources/Scripts/Dymola/Fluid/HeatExchangers/Validation/WetCoilCounterFlowLowWaterFlowRate.mos"
         "Simulate and plot"),
     Documentation(info="<html>
@@ -129,6 +143,15 @@ The validation verifies that the outlet temperatures approach the inlet temperat
 </html>", revisions="<html>
 <ul>
 <li>
+<<<<<<< HEAD
+=======
+July 5, 2022, by Antoine Gautier:<br/>
+Modify air source boundary condition so air enters coil at 99.5% relative humidity.<br/>
+This is for
+<a href=\"https://github.com/lbl-srg/modelica-buildings/issues/3065\">issue 3065</a>.
+</li>
+<li>
+>>>>>>> master
 May 26, 2022, by Michael Wetter:<br/>
 First implementation.<br/>
 This is for

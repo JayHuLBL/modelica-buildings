@@ -12,6 +12,10 @@ compareVars :=
     "ala.VHotDucDis_flow",
     "ala.yColFloSenAla",
     "ala.yHotFloSenAla",
+<<<<<<< HEAD
+=======
+    "ala.uOpeMod",
+>>>>>>> master
     "ala.uCooDam",
     "ala.uHeaDam",
     "ala.yColLeaDamAla",

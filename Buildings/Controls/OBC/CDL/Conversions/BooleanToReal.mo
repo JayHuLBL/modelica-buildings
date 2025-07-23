@@ -1,15 +1,20 @@
 within Buildings.Controls.OBC.CDL.Conversions;
 block BooleanToReal
   "Convert Boolean to Real signal"
-  parameter Real realTrue=1
+  parameter Real realTrue=1.0
     "Output signal for true Boolean input";
-  parameter Real realFalse=0
+  parameter Real realFalse=0.0
     "Output signal for false Boolean input";
-  Interfaces.BooleanInput u
-    "Connector of Boolean input signal"
+  Buildings.Controls.OBC.CDL.Interfaces.BooleanInput u
+    "Boolean signal to be converted to a Real signal"
     annotation (Placement(transformation(extent={{-140,-20},{-100,20}})));
+<<<<<<< HEAD
   Interfaces.RealOutput y
     "Connector of Real output signal"
+=======
+  Buildings.Controls.OBC.CDL.Interfaces.RealOutput y
+    "Converted input signal as a Real"
+>>>>>>> master
     annotation (Placement(transformation(extent={{100,-20},{140,20}})));
 
 equation
@@ -40,7 +45,11 @@ and <code>realTrue</code> and <code>realFalse</code> are parameters.
 May 17, 2022, by Hongxiang Fu:<br/>
 Corrected documentation texts where the variables were described with wrong types.<br/>
 This is for
+<<<<<<< HEAD
 <a href=\"https://github.com/lbl-srg/modelica-buildings/issues/3016\">#3016</a>.
+=======
+<a href=\"https://github.com/lbl-srg/modelica-buildings/issues/3016\">Buildings, issue 3016</a>.
+>>>>>>> master
 </li>
 <li>
 April 10, 2017, by Jianjun Hu:<br/>
@@ -57,7 +66,6 @@ Modelica Standard Library.
         Rectangle(
           extent={{-100,100},{100,-100}},
           fillColor={210,210,210},
-          lineThickness=5.0,
           fillPattern=FillPattern.Solid,
           borderPattern=BorderPattern.Raised),
         Ellipse(

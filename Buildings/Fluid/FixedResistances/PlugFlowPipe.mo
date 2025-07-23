@@ -64,7 +64,11 @@ model PlugFlowPipe
 <li>
 October 05, 2021, by Baptiste Ravache:<br/>
 Made model symmetrical and extends from
+<<<<<<< HEAD
 <a href=\"Buildings.Fluid.Interfaces.PartialTwoPortInterface\">
+=======
+<a href=\"modelica://Buildings.Fluid.Interfaces.PartialTwoPortInterface\">
+>>>>>>> master
 Buildings.Fluid.Interfaces.PartialTwoPortInterface</a>.
 </li>
 <li>

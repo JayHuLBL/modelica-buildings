@@ -1,5 +1,6 @@
 compareVars :=
   {
+<<<<<<< HEAD
     "damValFan.VPri_flow",
     "damValFan.VActCooMax_flow",
     "damValFan.VActMin_flow",
@@ -17,6 +18,8 @@ compareVars :=
     "damValFan.yVal",
     "damValFan.THeaDisSet",
     "damValFan.y1Fan",
+=======
+>>>>>>> master
     "damValFan1.VPri_flow",
     "damValFan1.VActCooMax_flow",
     "damValFan1.VActMin_flow",

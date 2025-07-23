@@ -8,19 +8,29 @@ model PartialEffectivenessNTU
       Q2_flow = -Q1_flow,
       mWat1_flow = 0,
       mWat2_flow = 0);
-  import con = Buildings.Fluid.Types.HeatExchangerConfiguration;
-  import flo = Buildings.Fluid.Types.HeatExchangerFlowRegime;
 
-  parameter con configuration "Heat exchanger configuration"
+  parameter Buildings.Fluid.Types.HeatExchangerConfiguration configuration "Heat exchanger configuration"
     annotation (Evaluate=true);
+
+  constant Boolean use_dynamicFlowRegime = false
+    "If true, flow regime is determined using actual flow rates";
+  // This switch is declared as a constant instead of a parameter
+  //   as users typically need not to change this setting,
+  //   and setting it true may generate events.
+  //   See discussions in https://github.com/ibpsa/modelica-ibpsa/pull/1683
 
   parameter Boolean use_Q_flow_nominal = true
     "Set to true to specify Q_flow_nominal and temperatures, or to false to specify effectiveness"
     annotation (Evaluate=true,
                 Dialog(group="Nominal thermal performance"));
 
+<<<<<<< HEAD
   parameter Modelica.Units.SI.HeatFlowRate Q_flow_nominal(fixed=
         use_Q_flow_nominal)
+=======
+  parameter Modelica.Units.SI.HeatFlowRate Q_flow_nominal(
+    fixed=use_Q_flow_nominal)
+>>>>>>> master
     "Nominal heat flow rate (positive for heat transfer from 1 to 2)"
     annotation (Dialog(group="Nominal thermal performance", enable=
           use_Q_flow_nominal));
@@ -54,7 +64,7 @@ protected
      p=Medium1.p_default,
      X=Medium1.X_default[1:Medium1.nXi]) "Default state for medium 1";
   final parameter Medium2.ThermodynamicState sta2_default = Medium2.setState_pTX(
-     T=Medium1.T_default,
+     T=Medium2.T_default,
      p=Medium2.p_default,
      X=Medium2.X_default[1:Medium2.nXi]) "Default state for medium 2";
 
@@ -78,15 +88,15 @@ protected
     "Nominal temperature at port b1";
   parameter Modelica.Units.SI.Temperature T_b2_nominal(fixed=false)
     "Nominal temperature at port b2";
-  parameter flo flowRegime_nominal(fixed=false)
+  parameter Buildings.Fluid.Types.HeatExchangerFlowRegime flowRegime_nominal(fixed=false)
     "Heat exchanger flow regime at nominal flow rates";
-  flo flowRegime(fixed=false, start=flowRegime_nominal)
+  Buildings.Fluid.Types.HeatExchangerFlowRegime flowRegime(fixed=false, start=flowRegime_nominal)
     "Heat exchanger flow regime";
 initial equation
-  assert(m1_flow_nominal > 0,
+  assert(m1_flow_nominal > Modelica.Constants.eps,
     "m1_flow_nominal must be positive, m1_flow_nominal = " + String(
     m1_flow_nominal));
-  assert(m2_flow_nominal > 0,
+  assert(m2_flow_nominal > Modelica.Constants.eps,
     "m2_flow_nominal must be positive, m2_flow_nominal = " + String(
     m2_flow_nominal));
 
@@ -124,22 +134,22 @@ initial equation
     "\n  CMin_flow_nominal = " + String(CMin_flow_nominal) +
     "\n  CMax_flow_nominal = " + String(CMax_flow_nominal));
   // Assign the flow regime for the given heat exchanger configuration and capacity flow rates
-  if (configuration == con.CrossFlowStream1MixedStream2Unmixed) then
-    flowRegime_nominal = if (C1_flow_nominal < C2_flow_nominal) then flo.CrossFlowCMinMixedCMaxUnmixed
-       else flo.CrossFlowCMinUnmixedCMaxMixed;
-  elseif (configuration == con.CrossFlowStream1UnmixedStream2Mixed) then
-    flowRegime_nominal = if (C1_flow_nominal < C2_flow_nominal) then flo.CrossFlowCMinUnmixedCMaxMixed
-       else flo.CrossFlowCMinMixedCMaxUnmixed;
-  elseif (configuration == con.ParallelFlow) then
-    flowRegime_nominal = flo.ParallelFlow;
-  elseif (configuration == con.CounterFlow) then
-    flowRegime_nominal = flo.CounterFlow;
-  elseif (configuration == con.CrossFlowUnmixed) then
-    flowRegime_nominal = flo.CrossFlowUnmixed;
+  if (configuration == Buildings.Fluid.Types.HeatExchangerConfiguration.CrossFlowStream1MixedStream2Unmixed) then
+    flowRegime_nominal = if (C1_flow_nominal < C2_flow_nominal) then Buildings.Fluid.Types.HeatExchangerFlowRegime.CrossFlowCMinMixedCMaxUnmixed
+       else Buildings.Fluid.Types.HeatExchangerFlowRegime.CrossFlowCMinUnmixedCMaxMixed;
+  elseif (configuration == Buildings.Fluid.Types.HeatExchangerConfiguration.CrossFlowStream1UnmixedStream2Mixed) then
+    flowRegime_nominal = if (C1_flow_nominal < C2_flow_nominal) then Buildings.Fluid.Types.HeatExchangerFlowRegime.CrossFlowCMinUnmixedCMaxMixed
+       else Buildings.Fluid.Types.HeatExchangerFlowRegime.CrossFlowCMinMixedCMaxUnmixed;
+  elseif (configuration == Buildings.Fluid.Types.HeatExchangerConfiguration.ParallelFlow) then
+    flowRegime_nominal = Buildings.Fluid.Types.HeatExchangerFlowRegime.ParallelFlow;
+  elseif (configuration == Buildings.Fluid.Types.HeatExchangerConfiguration.CounterFlow) then
+    flowRegime_nominal = Buildings.Fluid.Types.HeatExchangerFlowRegime.CounterFlow;
+  elseif (configuration == Buildings.Fluid.Types.HeatExchangerConfiguration.CrossFlowUnmixed) then
+    flowRegime_nominal = Buildings.Fluid.Types.HeatExchangerFlowRegime.CrossFlowUnmixed;
   else
     // Invalid flow regime. Assign a value to flowRegime_nominal, and stop with an assert
-    flowRegime_nominal = flo.CrossFlowUnmixed;
-    assert(configuration >= con.ParallelFlow and configuration <= con.CrossFlowStream1UnmixedStream2Mixed,
+    flowRegime_nominal = Buildings.Fluid.Types.HeatExchangerFlowRegime.CrossFlowUnmixed;
+    assert(configuration >= Buildings.Fluid.Types.HeatExchangerConfiguration.ParallelFlow and configuration <= Buildings.Fluid.Types.HeatExchangerConfiguration.CrossFlowStream1UnmixedStream2Mixed,
       "Invalid heat exchanger configuration.");
   end if;
   // The equation sorter of Dymola 7.3 does not guarantee that the above assert is tested prior to the
@@ -153,19 +163,33 @@ initial equation
   UA_nominal = NTU_nominal*CMin_flow_nominal;
 equation
   // Assign the flow regime for the given heat exchanger configuration and capacity flow rates
-  if (configuration == con.ParallelFlow) then
-    flowRegime = if (C1_flow*C2_flow >= 0) then flo.ParallelFlow else flo.CounterFlow;
-  elseif (configuration == con.CounterFlow) then
-    flowRegime = if (C1_flow*C2_flow >= 0) then flo.CounterFlow else flo.ParallelFlow;
-  elseif (configuration == con.CrossFlowUnmixed) then
-    flowRegime = flo.CrossFlowUnmixed;
-  elseif (configuration == con.CrossFlowStream1MixedStream2Unmixed) then
-    flowRegime = if (C1_flow < C2_flow) then flo.CrossFlowCMinMixedCMaxUnmixed
-       else flo.CrossFlowCMinUnmixedCMaxMixed;
+  if use_dynamicFlowRegime then
+    if (configuration == Buildings.Fluid.Types.HeatExchangerConfiguration.ParallelFlow) then
+      flowRegime = if (C1_flow*C2_flow >= 0) then Buildings.Fluid.Types.HeatExchangerFlowRegime.ParallelFlow else Buildings.Fluid.Types.HeatExchangerFlowRegime.CounterFlow;
+    elseif (configuration == Buildings.Fluid.Types.HeatExchangerConfiguration.CounterFlow) then
+      flowRegime = if (C1_flow*C2_flow >= 0) then Buildings.Fluid.Types.HeatExchangerFlowRegime.CounterFlow else Buildings.Fluid.Types.HeatExchangerFlowRegime.ParallelFlow;
+    elseif (configuration == Buildings.Fluid.Types.HeatExchangerConfiguration.CrossFlowUnmixed) then
+      flowRegime = Buildings.Fluid.Types.HeatExchangerFlowRegime.CrossFlowUnmixed;
+    elseif (configuration == Buildings.Fluid.Types.HeatExchangerConfiguration.CrossFlowStream1MixedStream2Unmixed) then
+      flowRegime = if (C1_flow < C2_flow) then Buildings.Fluid.Types.HeatExchangerFlowRegime.CrossFlowCMinMixedCMaxUnmixed
+         else Buildings.Fluid.Types.HeatExchangerFlowRegime.CrossFlowCMinUnmixedCMaxMixed;
+    else
+      // have ( configuration == Buildings.Fluid.Types.HeatExchangerConfiguration.CrossFlowStream1UnmixedStream2Mixed)
+      flowRegime = if (C1_flow < C2_flow) then Buildings.Fluid.Types.HeatExchangerFlowRegime.CrossFlowCMinUnmixedCMaxMixed
+         else Buildings.Fluid.Types.HeatExchangerFlowRegime.CrossFlowCMinMixedCMaxUnmixed;
+    end if;
   else
-    // have ( configuration == con.CrossFlowStream1UnmixedStream2Mixed)
-    flowRegime = if (C1_flow < C2_flow) then flo.CrossFlowCMinUnmixedCMaxMixed
-       else flo.CrossFlowCMinMixedCMaxUnmixed;
+    flowRegime = flowRegime_nominal;
+    assert(noEvent(m1_flow > -0.1 * m1_flow_nominal)
+       and noEvent(m2_flow > -0.1 * m2_flow_nominal),
+"*** Warning in " + getInstanceName() +
+      ": The flow direction reversed.
+      However, because the constant use_dynamicFlowRegime is set to false,
+      the model does not change equations based on the actual flow regime.
+      To switch equations based on the actual flow regime during the simulation,
+      set the constant use_dynamicFlowRegime=true.
+      Note that this can lead to slow simulation because of events.",
+      level = AssertionLevel.warning);
   end if;
 
   // Effectiveness
@@ -214,11 +238,49 @@ Buildings.Fluid.Types.HeatExchangerConfiguration</a>
 are supported.
 </p>
 <p>
+By default, the flow regime, such as counter flow or parallel flow,
+is kept constant based on the parameter value <code>configuration</code>.
+If a flow reverses direction, it is not changed, e.g.,
+a heat exchanger does not change from counter flow to parallel flow
+if one flow changes direction.
+To dynamically change the flow regime,
+set the constant <code>use_dynamicFlowRegime</code> to
+<code>true</code>.
+However, <code>use_dynamicFlowRegime=true</code>
+can cause slower simulation due to events.
+</p>
+<p>
 Models that extend from this partial model need to provide an assignment
 for <code>UA</code>.
 </p>
 </html>", revisions="<html>
 <ul>
+<li>
+February 7, 2025, by Jelger Jansen:<br/>
+Removed <code>import</code> statement.
+This is for
+<a href=\"https://github.com/ibpsa/modelica-ibpsa/issues/1961\">IBPSA, #1961</a>.
+</li>
+<li>
+February 3, 2023, by Jianjun Hu:<br/>
+Added <code>noEvent()</code> in the assertion function to avoid Optimica to not converge.<br/>
+This is for
+<a href=\"https://github.com/ibpsa/modelica-ibpsa/issues/1690\">issue 1690</a>.
+</li>
+<li>
+January 24, 2023, by Hongxiang Fu:<br/>
+Set <code>flowRegime</code> to be equal to <code>flowRegime_nominal</code>
+by default. Added an assertion warning to inform the user about how to change
+this behaviour if the flow direction does need to change.<br/>
+This is for
+<a href=\"https://github.com/ibpsa/modelica-ibpsa/issues/1682\">issue 1682</a>.
+</li>
+<li>
+November 11, 2023, by Michael Wetter:<br/>
+Corrected wrong temperature in assignment of <code>sta2_default</code>.<br/>
+This is for
+<a href=\"https://github.com/lbl-srg/modelica-buildings/issues/3151\">Buildings, issue 3151</a>.
+</li>
 <li>
 February 25, 2021 by Baptiste Ravache:<br/>
 Added a warning for when Q_flow_nominal is specified with the wrong sign.

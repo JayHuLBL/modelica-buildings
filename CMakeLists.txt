@@ -6,7 +6,11 @@
 ##################################################################
 cmake_policy(SET CMP0048 NEW)
 
+<<<<<<< HEAD
 set(ENERGYPLUS_VERSION "9_6_0")
+=======
+set(ENERGYPLUS_VERSION "24_2_0")
+>>>>>>> master
 
 project( Modelica-Buildings
   DESCRIPTION "Modelica Buildings Library"

@@ -3,7 +3,12 @@ block DamperValves
   "Output signals for controlling constant-volume parallel fan-powered terminal unit"
 
   parameter Real dTDisZonSetMax(unit="K")=11
+<<<<<<< HEAD
     "Zone maximum discharge air temperature above heating setpoint";
+=======
+    "Zone maximum discharge air temperature above heating setpoint"
+    annotation (__cdl(ValueInReference=true));
+>>>>>>> master
   parameter Real VMin_flow(
     final quantity="VolumeFlowRate",
     final unit="m3/s")
@@ -15,6 +20,7 @@ block DamperValves
   parameter Buildings.Controls.OBC.CDL.Types.SimpleController controllerTypeVal=
     Buildings.Controls.OBC.CDL.Types.SimpleController.PI
     "Type of controller"
+<<<<<<< HEAD
     annotation(Dialog(group="Valve"));
   parameter Real kVal(unit="1/K")=0.5
     "Gain of controller for valve control"
@@ -22,10 +28,21 @@ block DamperValves
   parameter Real TiVal(unit="s")=300
     "Time constant of integrator block for valve control"
     annotation(Dialog(group="Valve",
+=======
+    annotation (__cdl(ValueInReference=false), Dialog(group="Valve"));
+  parameter Real kVal(unit="1/K")=0.5
+    "Gain of controller for valve control"
+    annotation (__cdl(ValueInReference=false), Dialog(group="Valve"));
+  parameter Real TiVal(unit="s")=300
+    "Time constant of integrator block for valve control"
+    annotation (__cdl(ValueInReference=false),
+                Dialog(group="Valve",
+>>>>>>> master
     enable=controllerTypeVal == Buildings.Controls.OBC.CDL.Types.SimpleController.PI
         or controllerTypeVal == Buildings.Controls.OBC.CDL.Types.SimpleController.PID));
   parameter Real TdVal(unit="s")=0.1
     "Time constant of derivative block for valve control"
+<<<<<<< HEAD
     annotation (Dialog(group="Valve",
       enable=controllerTypeVal == Buildings.Controls.OBC.CDL.Types.SimpleController.PD
           or controllerTypeVal == Buildings.Controls.OBC.CDL.Types.SimpleController.PID));
@@ -60,6 +77,43 @@ block DamperValves
   parameter Real floHys(unit="m3/s")=0.01
     "Hysteresis for checking airflow rate"
     annotation (Dialog(tab="Advanced"));
+=======
+    annotation (__cdl(ValueInReference=false),
+                Dialog(group="Valve",
+      enable=controllerTypeVal == Buildings.Controls.OBC.CDL.Types.SimpleController.PD
+          or controllerTypeVal == Buildings.Controls.OBC.CDL.Types.SimpleController.PID));
+  parameter Buildings.Controls.OBC.CDL.Types.SimpleController controllerTypeDam=
+    Buildings.Controls.OBC.CDL.Types.SimpleController.PI
+    "Type of controller"
+    annotation (__cdl(ValueInReference=false), Dialog(group="Damper"));
+  parameter Real kDam(unit="1")=0.5
+    "Gain of controller for damper control"
+    annotation (__cdl(ValueInReference=false), Dialog(group="Damper"));
+  parameter Real TiDam(unit="s")=300
+    "Time constant of integrator block for damper control"
+    annotation (__cdl(ValueInReference=false),
+                Dialog(group="Damper",
+    enable=(controllerTypeDam == Buildings.Controls.OBC.CDL.Types.SimpleController.PI
+         or controllerTypeDam == Buildings.Controls.OBC.CDL.Types.SimpleController.PID)));
+  parameter Real TdDam(unit="s")=0.1
+    "Time constant of derivative block for damper control"
+    annotation (__cdl(ValueInReference=false),
+                Dialog(group="Damper",
+      enable=(controllerTypeDam == Buildings.Controls.OBC.CDL.Types.SimpleController.PD
+           or controllerTypeDam == Buildings.Controls.OBC.CDL.Types.SimpleController.PID)));
+  parameter Real dTHys(unit="K")=0.25
+    "Temperature difference hysteresis below which the temperature difference will be seen as zero"
+    annotation (__cdl(ValueInReference=false), Dialog(tab="Advanced"));
+  parameter Real looHys(unit="1")=0.05
+    "Loop output hysteresis below which the output will be seen as zero"
+    annotation (__cdl(ValueInReference=false), Dialog(tab="Advanced"));
+  parameter Real floHys(unit="m3/s")=0.01
+    "Hysteresis for checking airflow rate"
+    annotation (__cdl(ValueInReference=false), Dialog(tab="Advanced"));
+  parameter Real iniDam(unit="1")=0.01
+    "Initial damper position when the damper control is enabled"
+    annotation (__cdl(ValueInReference=false), Dialog(tab="Advanced"));
+>>>>>>> master
 
   Buildings.Controls.OBC.CDL.Interfaces.IntegerInput oveFloSet
     "Index of overriding flow setpoint, 1: set to zero; 2: set to cooling maximum; 3: set to minimum flow; 4: set to heating maximum"
@@ -105,6 +159,13 @@ block DamperValves
     final quantity="VolumeFlowRate") "Active primary minimum airflow rate"
     annotation (Placement(transformation(extent={{-360,10},{-320,50}}),
         iconTransformation(extent={{-140,-20},{-100,20}})));
+<<<<<<< HEAD
+=======
+  Buildings.Controls.OBC.CDL.Interfaces.BooleanInput u1Fan
+    "AHU supply fan status"
+    annotation (Placement(transformation(extent={{-360,-20},{-320,20}}),
+        iconTransformation(extent={{-140,-40},{-100,0}})));
+>>>>>>> master
   Buildings.Controls.OBC.CDL.Interfaces.RealInput TSupSet(
     final unit="K",
     final displayUnit="degC",
@@ -155,7 +216,11 @@ block DamperValves
     final max=1,
     final unit="1")
     "VAV damper commanded position"
+<<<<<<< HEAD
     annotation (Placement(transformation(extent={{320,-20},{360,20}}),
+=======
+    annotation (Placement(transformation(extent={{320,-40},{360,0}}),
+>>>>>>> master
         iconTransformation(extent={{100,70},{140,110}})));
   Buildings.Controls.OBC.CDL.Interfaces.RealOutput THeaDisSet(
     final unit="K",
@@ -176,6 +241,7 @@ block DamperValves
     annotation (Placement(transformation(extent={{320,-260},{360,-220}}),
         iconTransformation(extent={{100,-210},{140,-170}})));
 
+<<<<<<< HEAD
   Buildings.Controls.OBC.CDL.Logical.And and4 "Logical and"
     annotation (Placement(transformation(extent={{-60,120},{-40,140}})));
   Buildings.Controls.OBC.CDL.Continuous.Line lin
@@ -194,23 +260,56 @@ block DamperValves
     final k=1) "Constant one"
     annotation (Placement(transformation(extent={{-220,200},{-200,220}})));
   Buildings.Controls.OBC.CDL.Continuous.GreaterThreshold greThr1(
+=======
+protected
+  Buildings.Controls.OBC.CDL.Logical.And and4 "Logical and"
+    annotation (Placement(transformation(extent={{-60,120},{-40,140}})));
+  Buildings.Controls.OBC.CDL.Reals.Line lin
+    "Active airflow setpoint for cooling"
+    annotation (Placement(transformation(extent={{-160,170},{-140,190}})));
+  Buildings.Controls.OBC.CDL.Reals.Switch swi
+    "Output active cooling airflow according to cooling control signal"
+    annotation (Placement(transformation(extent={{100,160},{120,180}})));
+  Buildings.Controls.OBC.CDL.Reals.Switch swi5
+    "Airflow setpoint when it is in cooling state"
+    annotation (Placement(transformation(extent={{20,190},{40,210}})));
+  Buildings.Controls.OBC.CDL.Reals.Sources.Constant conZer(
+    final k=0) "Constant zero"
+    annotation (Placement(transformation(extent={{-280,200},{-260,220}})));
+  Buildings.Controls.OBC.CDL.Reals.Sources.Constant conOne(
+    final k=1) "Constant one"
+    annotation (Placement(transformation(extent={{-220,200},{-200,220}})));
+  Buildings.Controls.OBC.CDL.Reals.GreaterThreshold greThr1(
+>>>>>>> master
     final t=looHys,
     final h=0.5*looHys)
     "Check if it is cooling state"
     annotation (Placement(transformation(extent={{-220,140},{-200,160}})));
+<<<<<<< HEAD
   Buildings.Controls.OBC.CDL.Continuous.GreaterThreshold greThr(
+=======
+  Buildings.Controls.OBC.CDL.Reals.GreaterThreshold greThr(
+>>>>>>> master
     final t=dTHys,
     final h=0.5*dTHys)
     "Check if supply air temperature is greater than room temperature"
     annotation (Placement(transformation(extent={{-120,60},{-100,80}})));
+<<<<<<< HEAD
   Buildings.Controls.OBC.CDL.Continuous.Subtract sub2
     "Calculate temperature difference between AHU supply air and room "
     annotation (Placement(transformation(extent={{-160,60},{-140,80}})));
   Buildings.Controls.OBC.CDL.Continuous.GreaterThreshold greThr2(
+=======
+  Buildings.Controls.OBC.CDL.Reals.Subtract sub2
+    "Calculate temperature difference between AHU supply air and room "
+    annotation (Placement(transformation(extent={{-160,60},{-140,80}})));
+  Buildings.Controls.OBC.CDL.Reals.GreaterThreshold greThr2(
+>>>>>>> master
     final t=looHys,
     final h=0.5*looHys)
     "Check if it is heating state"
     annotation (Placement(transformation(extent={{-260,-140},{-240,-120}})));
+<<<<<<< HEAD
   Buildings.Controls.OBC.CDL.Continuous.Sources.Constant conZer3(
     final k=0)
     "Constant zero"
@@ -227,6 +326,24 @@ block DamperValves
     "Discharge air temperature for heating"
     annotation (Placement(transformation(extent={{-120,-70},{-100,-50}})));
   Buildings.Controls.OBC.CDL.Continuous.PIDWithReset conVal(
+=======
+  Buildings.Controls.OBC.CDL.Reals.Sources.Constant conZer3(
+    final k=0)
+    "Constant zero"
+    annotation (Placement(transformation(extent={{-260,-30},{-240,-10}})));
+  Buildings.Controls.OBC.CDL.Reals.AddParameter addPar(
+    final p=dTDisZonSetMax)
+    "Maximum heating discharge temperature"
+    annotation (Placement(transformation(extent={{-260,-100},{-240,-80}})));
+  Buildings.Controls.OBC.CDL.Reals.Sources.Constant conHal(
+    final k=1)
+    "Constant real value"
+    annotation (Placement(transformation(extent={{-180,-100},{-160,-80}})));
+  Buildings.Controls.OBC.CDL.Reals.Line conTDisHeaSet
+    "Discharge air temperature for heating"
+    annotation (Placement(transformation(extent={{-120,-70},{-100,-50}})));
+  Buildings.Controls.OBC.CDL.Reals.PIDWithReset conVal(
+>>>>>>> master
     final controllerType=controllerTypeVal,
     final k=kVal,
     final Ti=TiVal,
@@ -237,7 +354,11 @@ block DamperValves
     u_m(final unit="K", displayUnit="degC"))
     "Hot water valve controller"
     annotation (Placement(transformation(extent={{-60,-100},{-40,-80}})));
+<<<<<<< HEAD
   Buildings.Controls.OBC.CDL.Continuous.Switch swi1
+=======
+  Buildings.Controls.OBC.CDL.Reals.Switch swi1
+>>>>>>> master
     "Hot water valve position, close the valve when the zone is not in heating state"
     annotation (Placement(transformation(extent={{100,-140},{120,-120}})));
   Buildings.Controls.OBC.CDL.Integers.Sources.Constant unOcc(
@@ -247,6 +368,7 @@ block DamperValves
   Buildings.Controls.OBC.CDL.Integers.Equal isUno
     "Output true if the operation mode is unoccupied"
     annotation (Placement(transformation(extent={{100,-200},{120,-180}})));
+<<<<<<< HEAD
   Buildings.Controls.OBC.CDL.Continuous.Switch swi2 "Hot water valve position"
     annotation (Placement(transformation(extent={{280,-120},{300,-100}})));
   Buildings.Controls.OBC.CDL.Continuous.Sources.Constant nomFlow(final k=
@@ -261,12 +383,28 @@ block DamperValves
     "Normalized discharge volume flow rate"
     annotation (Placement(transformation(extent={{220,80},{240,100}})));
   Buildings.Controls.OBC.CDL.Continuous.PIDWithReset conDam(
+=======
+  Buildings.Controls.OBC.CDL.Reals.Switch swi2 "Hot water valve position"
+    annotation (Placement(transformation(extent={{280,-120},{300,-100}})));
+  Buildings.Controls.OBC.CDL.Reals.Sources.Constant nomFlow(
+    final k=VCooMax_flow)
+    "Nominal volume flow rate"
+    annotation (Placement(transformation(extent={{160,110},{180,130}})));
+  Buildings.Controls.OBC.CDL.Reals.Divide VDisSet_flowNor
+    "Normalized setpoint for discharge volume flow rate"
+    annotation (Placement(transformation(extent={{220,140},{240,160}})));
+  Buildings.Controls.OBC.CDL.Reals.Divide VDis_flowNor
+    "Normalized discharge volume flow rate"
+    annotation (Placement(transformation(extent={{220,80},{240,100}})));
+  Buildings.Controls.OBC.CDL.Reals.PIDWithReset conDam(
+>>>>>>> master
     final controllerType=controllerTypeDam,
     final k=kDam,
     final Ti=TiDam,
     final Td=TdDam,
     final yMax=1,
     final yMin=0,
+<<<<<<< HEAD
     final y_reset=0) if not have_preIndDam
     "Damper position controller"
     annotation (Placement(transformation(extent={{260,140},{280,160}})));
@@ -279,6 +417,14 @@ block DamperValves
   Buildings.Controls.OBC.CDL.Logical.Not not1 "Not in unoccupied mode"
     annotation (Placement(transformation(extent={{180,30},{200,50}})));
   Buildings.Controls.OBC.CDL.Continuous.Less les(
+=======
+    final y_reset=iniDam)
+    "Damper position controller"
+    annotation (Placement(transformation(extent={{260,140},{280,160}})));
+  Buildings.Controls.OBC.CDL.Reals.Switch swi3 "Air damper position"
+    annotation (Placement(transformation(extent={{280,-30},{300,-10}})));
+  Buildings.Controls.OBC.CDL.Reals.Less les(
+>>>>>>> master
     final h=floHys)
     "Check if the discharge airflow rate is less than minimum outdoor airflow setpoint"
     annotation (Placement(transformation(extent={{-260,-310},{-240,-290}})));
@@ -288,10 +434,17 @@ block DamperValves
     annotation (Placement(transformation(extent={{-200,-310},{-180,-290}})));
   Buildings.Controls.OBC.CDL.Logical.Latch lat "Hold fan On status"
     annotation (Placement(transformation(extent={{-100,-310},{-80,-290}})));
+<<<<<<< HEAD
   Buildings.Controls.OBC.CDL.Continuous.MultiplyByParameter gai1(
     final k=1.1) "Gain factor"
     annotation (Placement(transformation(extent={{-260,-380},{-240,-360}})));
   Buildings.Controls.OBC.CDL.Continuous.Greater gre
+=======
+  Buildings.Controls.OBC.CDL.Reals.MultiplyByParameter gai1(
+    final k=1.1) "Gain factor"
+    annotation (Placement(transformation(extent={{-260,-380},{-240,-360}})));
+  Buildings.Controls.OBC.CDL.Reals.Greater gre
+>>>>>>> master
     "Check if the discharge airflow rate is greater than minimum outdoor airflow setpoint by 10%"
     annotation (Placement(transformation(extent={{-200,-350},{-180,-330}})));
   Buildings.Controls.OBC.CDL.Logical.TrueDelay truDel1(
@@ -328,7 +481,12 @@ block DamperValves
   Buildings.Controls.OBC.CDL.Integers.Sources.Constant conInt2(final k=3)
     "Constant 3"
     annotation (Placement(transformation(extent={{-140,250},{-120,270}})));
+<<<<<<< HEAD
   Buildings.Controls.OBC.CDL.Conversions.BooleanToReal zerFlo(final realTrue=0)
+=======
+  Buildings.Controls.OBC.CDL.Conversions.BooleanToReal zerFlo(
+    final realTrue=0)
+>>>>>>> master
     "Force zone airflow setpoint to zero"
     annotation (Placement(transformation(extent={{-20,350},{0,370}})));
   Buildings.Controls.OBC.CDL.Conversions.BooleanToReal cooMax(
@@ -339,6 +497,7 @@ block DamperValves
     final realTrue=VMin_flow)
     "Force zone airflow setpoint to zone minimum flow"
     annotation (Placement(transformation(extent={{-20,270},{0,290}})));
+<<<<<<< HEAD
   Buildings.Controls.OBC.CDL.Continuous.Add add2 "Add up two inputs"
     annotation (Placement(transformation(extent={{60,290},{80,310}})));
   Buildings.Controls.OBC.CDL.Continuous.Add add1 "Add up inputs"
@@ -347,6 +506,19 @@ block DamperValves
     "Airflow setpoint after considering override"
     annotation (Placement(transformation(extent={{160,240},{180,260}})));
   Buildings.Controls.OBC.CDL.Logical.Or3 or3
+=======
+  Buildings.Controls.OBC.CDL.Reals.Add add2 "Add up two inputs"
+    annotation (Placement(transformation(extent={{60,290},{80,310}})));
+  Buildings.Controls.OBC.CDL.Reals.Add add1 "Add up inputs"
+    annotation (Placement(transformation(extent={{100,330},{120,350}})));
+  Buildings.Controls.OBC.CDL.Reals.Switch swi4
+    "Airflow setpoint after considering override"
+    annotation (Placement(transformation(extent={{160,240},{180,260}})));
+  Buildings.Controls.OBC.CDL.Logical.Or or3
+    "Check if the airflow setpoint should be overrided"
+    annotation (Placement(transformation(extent={{20,220},{40,240}})));
+  Buildings.Controls.OBC.CDL.Logical.Or or2
+>>>>>>> master
     "Check if the airflow setpoint should be overrided"
     annotation (Placement(transformation(extent={{100,240},{120,260}})));
 
@@ -441,6 +613,7 @@ equation
   connect(nomFlow.y, VDis_flowNor.u2) annotation (Line(points={{182,120},{200,120},
           {200,84},{218,84}},   color={0,0,127}));
   connect(swi3.y, yDam)
+<<<<<<< HEAD
     annotation (Line(points={{302,0},{340,0}},   color={0,0,127}));
   connect(isUno.y, swi3.u2) annotation (Line(points={{122,-190},{140,-190},{140,
           0},{278,0}},   color={255,0,255}));
@@ -458,6 +631,17 @@ equation
           {178,40}},  color={255,0,255}));
   connect(not1.y, conDam.trigger) annotation (Line(points={{202,40},{264,40},{264,
           138}},     color={255,0,255}));
+=======
+    annotation (Line(points={{302,-20},{340,-20}}, color={0,0,127}));
+  connect(isUno.y, swi3.u2) annotation (Line(points={{122,-190},{140,-190},{140,
+          -20},{278,-20}}, color={255,0,255}));
+  connect(conZer3.y, swi3.u1) annotation (Line(points={{-238,-20},{40,-20},{40,
+          -12},{278,-12}}, color={0,0,127}));
+  connect(conDam.y, swi3.u3) annotation (Line(points={{282,150},{300,150},{300,
+          60},{220,60},{220,-28},{278,-28}}, color={0,0,127}));
+  connect(VDis_flowNor.y, conDam.u_m)
+    annotation (Line(points={{242,90},{270,90},{270,138}}, color={0,0,127}));
+>>>>>>> master
   connect(VOAMin_flow, les.u2)
     annotation (Line(points={{-340,-308},{-262,-308}}, color={0,0,127}));
   connect(les.y, truDel7.u)
@@ -514,25 +698,45 @@ equation
   connect(zerFlo.y,add1. u1) annotation (Line(points={{2,360},{60,360},{60,346},
           {98,346}}, color={0,0,127}));
   connect(forZerFlo.y,or3. u1) annotation (Line(points={{-58,360},{-40,360},{-40,
+<<<<<<< HEAD
           258},{98,258}}, color={255,0,255}));
   connect(forCooMax.y,or3. u2) annotation (Line(points={{-58,320},{-40,320},{-40,
           250},{98,250}}, color={255,0,255}));
   connect(forMinFlo.y,or3. u3) annotation (Line(points={{-58,280},{-40,280},{-40,
           242},{98,242}},color={255,0,255}));
+=======
+          230},{18,230}}, color={255,0,255}));
+  connect(forCooMax.y,or3. u2) annotation (Line(points={{-58,320},{-40,320},{-40,
+          222},{18,222}}, color={255,0,255}));
+>>>>>>> master
   connect(add1.y, swi4.u1) annotation (Line(points={{122,340},{140,340},{140,258},
           {158,258}}, color={0,0,127}));
   connect(add2.y,add1. u2) annotation (Line(points={{82,300},{90,300},{90,334},{
           98,334}}, color={0,0,127}));
   connect(minFlo.y,add2. u2) annotation (Line(points={{2,280},{40,280},{40,294},
           {58,294}}, color={0,0,127}));
+<<<<<<< HEAD
   connect(or3.y, swi4.u2)
     annotation (Line(points={{122,250},{158,250}}, color={255,0,255}));
+=======
+>>>>>>> master
   connect(swi.y, swi4.u3) annotation (Line(points={{122,170},{140,170},{140,242},
           {158,242}}, color={0,0,127}));
   connect(swi4.y, VPri_flow_Set)
     annotation (Line(points={{182,250},{340,250}}, color={0,0,127}));
   connect(swi4.y, VDisSet_flowNor.u1) annotation (Line(points={{182,250},{200,250},
           {200,156},{218,156}}, color={0,0,127}));
+<<<<<<< HEAD
+=======
+  connect(u1Fan, conDam.trigger)
+    annotation (Line(points={{-340,0},{264,0},{264,138}}, color={255,0,255}));
+  connect(or2.y, swi4.u2)
+    annotation (Line(points={{122,250},{158,250}}, color={255,0,255}));
+  connect(or3.y, or2.u2) annotation (Line(points={{42,230},{80,230},{80,242},{98,
+          242}}, color={255,0,255}));
+  connect(forMinFlo.y, or2.u1) annotation (Line(points={{-58,280},{-40,280},{-40,
+          250},{98,250}}, color={255,0,255}));
+>>>>>>> master
 annotation (
   defaultComponentName="damValFan",
   Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-320,-400},{320,400}}),
@@ -544,7 +748,11 @@ annotation (
           fillPattern=FillPattern.Solid,
           pattern=LinePattern.None),
         Text(
+<<<<<<< HEAD
           extent={{-152,238},{-24,216}},
+=======
+          extent={{-182,238},{-54,216}},
+>>>>>>> master
           textColor={0,0,127},
           fillColor={215,215,215},
           fillPattern=FillPattern.Solid,
@@ -634,6 +842,7 @@ annotation (
           pattern=LinePattern.Dash,
           textString="TZon"),
         Text(
+<<<<<<< HEAD
           visible=not have_preIndDam,
           extent={{-11.5,4.5},{11.5,-4.5}},
           textColor={0,0,127},
@@ -642,6 +851,8 @@ annotation (
           rotation=90,
           textString="VDis_flow"),
         Text(
+=======
+>>>>>>> master
           extent={{68,96},{98,86}},
           textColor={0,0,127},
           pattern=LinePattern.Dash,
@@ -723,7 +934,16 @@ annotation (
           extent={{-96,196},{-64,184}},
           textColor={255,127,27},
           pattern=LinePattern.Dash,
+<<<<<<< HEAD
           textString="oveFloSet")}),
+=======
+          textString="oveFloSet"),
+        Text(
+          extent={{-100,-14},{-68,-24}},
+          textColor={255,0,255},
+          pattern=LinePattern.Dash,
+          textString="u1Fan")}),
+>>>>>>> master
   Documentation(info="<html>
 <p>
 This sequence sets the fan status, damper and valve position for constant-volume
@@ -817,6 +1037,19 @@ when <code>oveFloSet</code> equals to 3, force the zone airflow setpoint
 </html>", revisions="<html>
 <ul>
 <li>
+<<<<<<< HEAD
+=======
+August 24, 2023, by Jianjun Hu:<br/>
+Added AHU supply fan status for damper position reset.<br/>
+This is for <a href=\"https://github.com/lbl-srg/modelica-buildings/issues/3257\">issue 3257</a>.
+</li>
+<li>
+January 12, 2023, by Jianjun Hu:<br/>
+Removed the parameter <code>have_preIndDam</code> to exclude the option of using pressure independant damper.<br/>
+This is for <a href=\"https://github.com/lbl-srg/modelica-buildings/issues/3139\">issue 3139</a>.
+</li>
+<li>
+>>>>>>> master
 August 1, 2020, by Jianjun Hu:<br/>
 First implementation.
 </li>

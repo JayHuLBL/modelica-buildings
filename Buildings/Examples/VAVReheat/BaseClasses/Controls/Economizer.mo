@@ -52,7 +52,11 @@ block Economizer "Controller for economizer"
         iconTransformation(extent={{200,60},{240,100}})));
   Modelica.Blocks.Math.Gain gain(k=1/VOut_flow_min) "Normalize mass flow rate"
     annotation (Placement(transformation(extent={{-60,-70},{-40,-50}})));
+<<<<<<< HEAD
   Buildings.Controls.OBC.CDL.Continuous.PID conV_flow(
+=======
+  Buildings.Controls.OBC.CDL.Reals.PID conV_flow(
+>>>>>>> master
     controllerType=controllerType,
     k=k,
     Ti=Ti,
@@ -65,7 +69,11 @@ block Economizer "Controller for economizer"
     annotation (Placement(transformation(extent={{-60,-30},{-40,-10}})));
   Modelica.Blocks.Sources.Constant closed(k=0) "Signal to close OA damper"
     annotation (Placement(transformation(extent={{30,30},{50,50}})));
+<<<<<<< HEAD
   Buildings.Controls.OBC.CDL.Continuous.PID yOATFre(
+=======
+  Buildings.Controls.OBC.CDL.Reals.PID yOATFre(
+>>>>>>> master
     controllerType=controllerType,
     k=k,
     Ti=Ti,
@@ -75,13 +83,21 @@ block Economizer "Controller for economizer"
     reverseActing=false) if have_frePro
     "Controller of outdoor damper to track freeze temperature setpoint"
     annotation (Placement(transformation(extent={{-30,70},{-10,90}})));
+<<<<<<< HEAD
   Buildings.Controls.OBC.CDL.Continuous.Min minFrePro
+=======
+  Buildings.Controls.OBC.CDL.Reals.Min minFrePro
+>>>>>>> master
     "Takes lower signal (limits damper opening for freeze protection)"
     annotation (Placement(transformation(extent={{80,4},{100,24}})));
   Modelica.Blocks.Sources.Constant TFre(k=TFreSet)
     "Setpoint for freeze protection"
     annotation (Placement(transformation(extent={{-60,70},{-40,90}})));
+<<<<<<< HEAD
   Buildings.Controls.OBC.CDL.Continuous.Subtract invSig
+=======
+  Buildings.Controls.OBC.CDL.Reals.Subtract invSig
+>>>>>>> master
     "Invert control signal for interlocked damper"
     annotation (Placement(transformation(extent={{170,-10},{190,10}})));
   Modelica.Blocks.Logical.Hysteresis hysLoc(final uLow=0, final uHigh=dTLock)
@@ -89,12 +105,17 @@ block Economizer "Controller for economizer"
     annotation (Placement(transformation(extent={{-30,110},{-10,130}})));
   Modelica.Blocks.Math.Feedback feedback
     annotation (Placement(transformation(extent={{-90,110},{-70,130}})));
+<<<<<<< HEAD
   Buildings.Controls.OBC.CDL.Continuous.Switch swiOA
+=======
+  Buildings.Controls.OBC.CDL.Reals.Switch swiOA
+>>>>>>> master
     "Switch to close outdoor air damper"
     annotation (Placement(transformation(extent={{90,110},{110,130}})));
   Modelica.Blocks.Sources.Constant one(k=1) if not have_frePro
     "Fill value in case freeze protection is disabled"
     annotation (Placement(transformation(extent={{-60,10},{-40,30}})));
+<<<<<<< HEAD
   Buildings.Controls.OBC.CDL.Continuous.Switch swiModClo
     "Switch between modulating or closing outdoor air damper"
     annotation (Placement(transformation(extent={{130,-10},{150,10}})));
@@ -102,6 +123,15 @@ block Economizer "Controller for economizer"
     "Select larger of the outdoor damper signals"
     annotation (Placement(transformation(extent={{40,-10},{60,10}})));
   Buildings.Controls.OBC.CDL.Continuous.Sources.Constant conOne(
+=======
+  Buildings.Controls.OBC.CDL.Reals.Switch swiModClo
+    "Switch between modulating or closing outdoor air damper"
+    annotation (Placement(transformation(extent={{130,-10},{150,10}})));
+  Buildings.Controls.OBC.CDL.Reals.Max maxOutDam
+    "Select larger of the outdoor damper signals"
+    annotation (Placement(transformation(extent={{40,-10},{60,10}})));
+  Buildings.Controls.OBC.CDL.Reals.Sources.Constant conOne(
+>>>>>>> master
     final k=1)
     "Constant 1"
     annotation (Placement(transformation(extent={{100,70},{120,90}})));

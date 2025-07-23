@@ -25,13 +25,21 @@ block Supply "Supply air set point for single zone VAV system"
     displayUnit="degC",
     final quantity="ThermodynamicTemperature")=294.15
     "Minimum supply temperature when it is in deadband state"
+<<<<<<< HEAD
     annotation (Dialog(group="Temperatures"));
+=======
+    annotation (__cdl(ValueInReference=true), Dialog(group="Temperatures"));
+>>>>>>> master
   parameter Real TSupDea_max(
     final unit="K",
     displayUnit="degC",
     final quantity="ThermodynamicTemperature")=297.15
     "Maximum supply temperature when it is in deadband state"
+<<<<<<< HEAD
     annotation (Dialog(group="Temperatures"));
+=======
+    annotation (__cdl(ValueInReference=true), Dialog(group="Temperatures"));
+>>>>>>> master
   parameter Real maxHeaSpe(
     final min=0,
     final max=1,
@@ -50,126 +58,210 @@ block Supply "Supply air set point for single zone VAV system"
     final unit="1")
     "Minimum fan speed"
     annotation (Dialog(group="Speed"));
+<<<<<<< HEAD
   parameter Real looHys(
     final unit="1")=0.01
     "Loop output hysteresis below which the output will be seen as zero"
     annotation (Dialog(tab="Advanced"));
+=======
+>>>>>>> master
   parameter Real temPoiOne(
     final unit="1",
     final min=0,
     final max=1)=0.5
     "Point 1 on x-axis of control map for temperature control, when it is in heating state"
+<<<<<<< HEAD
     annotation (Dialog(tab="Advanced", group="Temperatures"));
+=======
+    annotation (__cdl(ValueInReference=true),
+                Dialog(tab="Advanced", group="Temperatures"));
+>>>>>>> master
   parameter Real temPoiTwo(
     final unit="1",
     final min=0,
     final max=1)=0.25
     "Point 2 on x-axis of control map for temperature control, when it is in cooling state"
+<<<<<<< HEAD
     annotation (Dialog(tab="Advanced", group="Temperatures"));
+=======
+    annotation (__cdl(ValueInReference=true),
+                Dialog(tab="Advanced", group="Temperatures"));
+>>>>>>> master
   parameter Real temPoiThr(
     final unit="1",
     final min=0,
     final max=1)=0.5
     "Point 3 on x-axis of control map for temperature control, when it is in cooling state"
+<<<<<<< HEAD
     annotation (Dialog(tab="Advanced", group="Temperatures"));
+=======
+    annotation (__cdl(ValueInReference=true),
+                Dialog(tab="Advanced", group="Temperatures"));
+>>>>>>> master
   parameter Real temPoiFou(
     final unit="1",
     final min=0,
     final max=1)=0.75
     "Point 4 on x-axis of control map for temperature control, when it is in cooling state"
+<<<<<<< HEAD
     annotation (Dialog(tab="Advanced", group="Temperatures"));
+=======
+    annotation (__cdl(ValueInReference=true),
+                Dialog(tab="Advanced", group="Temperatures"));
+>>>>>>> master
   parameter Real spePoiOne(
     final unit="1",
     final min=0,
     final max=1)=0.5
     "Point 1 on x-axis of control map for speed control, when it is in heating state"
+<<<<<<< HEAD
     annotation (Dialog(tab="Advanced", group="Speed"));
+=======
+    annotation (__cdl(ValueInReference=true),
+                Dialog(tab="Advanced", group="Speed"));
+>>>>>>> master
   parameter Real spePoiTwo(
     final unit="1",
     final min=0,
     final max=1)=0.25
     "Point 2 on x-axis of control map for speed control, when it is in cooling state"
+<<<<<<< HEAD
     annotation (Dialog(tab="Advanced", group="Speed"));
+=======
+    annotation (__cdl(ValueInReference=true),
+                Dialog(tab="Advanced", group="Speed"));
+>>>>>>> master
   parameter Real spePoiThr(
     final unit="1",
     final min=0,
     final max=1)=0.5
     "Point 3 on x-axis of control map for speed control, when it is in cooling state"
+<<<<<<< HEAD
     annotation (Dialog(tab="Advanced", group="Speed"));
+=======
+    annotation (__cdl(ValueInReference=true),
+                Dialog(tab="Advanced", group="Speed"));
+>>>>>>> master
   parameter Real spePoiFou(
     final unit="1",
     final min=0,
     final max=1)=0.75
     "Point 4 on x-axis of control map for speed control, when it is in cooling state"
+<<<<<<< HEAD
     annotation (Dialog(tab="Advanced", group="Speed"));
 
   Buildings.Controls.OBC.CDL.Interfaces.IntegerInput uOpeMod
     "AHU operation mode status signal"
     annotation (Placement(transformation(extent={{-220,290},{-180,330}}),
+=======
+    annotation (__cdl(ValueInReference=true),
+                Dialog(tab="Advanced", group="Speed"));
+
+  Buildings.Controls.OBC.CDL.Interfaces.IntegerInput uOpeMod
+    "AHU operation mode status signal"
+    annotation (Placement(transformation(extent={{-160,110},{-120,150}}),
+>>>>>>> master
         iconTransformation(extent={{-140,70},{-100,110}})));
   Buildings.Controls.OBC.CDL.Interfaces.RealInput TZon(
     final unit="K",
     displayUnit="degC",
     final quantity="ThermodynamicTemperature")
     "Zone temperature"
+<<<<<<< HEAD
     annotation (Placement(transformation(extent={{-220,220},{-180,260}}),
+=======
+    annotation (Placement(transformation(extent={{-160,50},{-120,90}}),
+>>>>>>> master
         iconTransformation(extent={{-140,44},{-100,84}})));
   Buildings.Controls.OBC.CDL.Interfaces.RealInput TOut(
     final unit="K",
     displayUnit="degC",
     final quantity="ThermodynamicTemperature") "Outdoor air temperature"
+<<<<<<< HEAD
     annotation (Placement(transformation(extent={{-220,140},{-180,180}}),
+=======
+    annotation (Placement(transformation(extent={{-160,10},{-120,50}}),
+>>>>>>> master
         iconTransformation(extent={{-140,20},{-100,60}})));
   Buildings.Controls.OBC.CDL.Interfaces.RealInput uHea(
     final min=0,
     final max=1,
     final unit="1")
     "Heating control signal"
+<<<<<<< HEAD
     annotation (Placement(transformation(extent={{-220,80},{-180,120}}),
+=======
+    annotation (Placement(transformation(extent={{-160,-30},{-120,10}}),
+>>>>>>> master
         iconTransformation(extent={{-140,-10},{-100,30}})));
   Buildings.Controls.OBC.CDL.Interfaces.RealInput uCoo(
     final min=0,
     final max=1,
     final unit="1")
     "Cooling control signal"
+<<<<<<< HEAD
     annotation (Placement(transformation(extent={{-220,10},{-180,50}}),
+=======
+    annotation (Placement(transformation(extent={{-160,-60},{-120,-20}}),
+>>>>>>> master
         iconTransformation(extent={{-140,-40},{-100,0}})));
   Buildings.Controls.OBC.CDL.Interfaces.RealInput TCooSet(
     final unit="K",
     displayUnit="degC",
     final quantity="ThermodynamicTemperature")
     "Cooling setpoints for zone temperature"
+<<<<<<< HEAD
     annotation (Placement(transformation(extent={{-220,-120},{-180,-80}}),
+=======
+    annotation (Placement(transformation(extent={{-160,-100},{-120,-60}}),
+>>>>>>> master
         iconTransformation(extent={{-140,-80},{-100,-40}})));
   Buildings.Controls.OBC.CDL.Interfaces.RealInput THeaSet(
     final unit="K",
     displayUnit="degC",
     final quantity="ThermodynamicTemperature")
     "Heating setpoints for zone temperature"
+<<<<<<< HEAD
     annotation (Placement(transformation(extent={{-220,-160},{-180,-120}}),
+=======
+    annotation (Placement(transformation(extent={{-160,-130},{-120,-90}}),
+>>>>>>> master
         iconTransformation(extent={{-140,-110},{-100,-70}})));
   Buildings.Controls.OBC.CDL.Interfaces.RealOutput y(
     final min=0,
     final max=1,
     final unit="1") "Fan speed"
+<<<<<<< HEAD
     annotation (Placement(transformation(extent={{180,320},{220,360}}),
         iconTransformation(extent={{100,60},{140,100}})));
   Buildings.Controls.OBC.CDL.Interfaces.BooleanOutput y1SupFan
     "Supply fan commanded status"
     annotation (Placement(transformation(extent={{180,280},{220,320}}),
+=======
+    annotation (Placement(transformation(extent={{120,110},{160,150}}),
+        iconTransformation(extent={{100,60},{140,100}})));
+  Buildings.Controls.OBC.CDL.Interfaces.BooleanOutput y1SupFan
+    "Supply fan commanded status"
+    annotation (Placement(transformation(extent={{120,70},{160,110}}),
+>>>>>>> master
         iconTransformation(extent={{100,20},{140,60}})));
   Buildings.Controls.OBC.CDL.Interfaces.RealOutput TSupHeaEcoSet(
     final unit="K",
     displayUnit="degC",
     final quantity="ThermodynamicTemperature")
     "Temperature setpoint for heating coil and for economizer"
+<<<<<<< HEAD
     annotation (Placement(transformation(extent={{180,-220},{220,-180}}),
+=======
+    annotation (Placement(transformation(extent={{120,-60},{160,-20}}),
+>>>>>>> master
         iconTransformation(extent={{100,-20},{140,20}})));
   Buildings.Controls.OBC.CDL.Interfaces.RealOutput TSupCooSet(
     final unit="K",
     displayUnit="degC",
     final quantity="ThermodynamicTemperature")
     "Cooling supply air temperature setpoint"
+<<<<<<< HEAD
     annotation (Placement(transformation(extent={{180,-300},{220,-260}}),
         iconTransformation(extent={{100,-80},{140,-40}})));
 
@@ -475,6 +567,95 @@ equation
           {18,-18}}, color={0,0,127}));
   connect(gre.y, cooFan.u2)
     annotation (Line(points={{42,-10},{98,-10}}, color={255,0,255}));
+=======
+    annotation (Placement(transformation(extent={{120,-130},{160,-90}}),
+        iconTransformation(extent={{100,-80},{140,-40}})));
+
+protected
+  Buildings.Controls.OBC.CDL.Reals.Sources.Constant fanOff(
+    final k=0)
+    "Fan off status"
+    annotation (Placement(transformation(extent={{-20,150},{0,170}})));
+  Buildings.Controls.OBC.CDL.Reals.Switch fanSpe "Supply fan speed"
+    annotation (Placement(transformation(extent={{40,120},{60,140}})));
+  Buildings.Controls.OBC.CDL.Reals.LimitSlewRate ramLim(
+    final raisingSlewRate=1/600,
+    final Td=60)
+    "Prevent changes in fan speed of more than 10% per minute"
+    annotation (Placement(transformation(extent={{80,120},{100,140}})));
+  Buildings.Controls.OBC.CDL.Integers.Sources.Constant unoMod(
+    final k=Buildings.Controls.OBC.ASHRAE.G36.Types.OperationModes.unoccupied)
+    "Unoccupied mode index"
+    annotation (Placement(transformation(extent={{-100,90},{-80,110}})));
+  Buildings.Controls.OBC.CDL.Integers.Equal isUnoMod
+    "Check if it is in unoccupied mode"
+    annotation (Placement(transformation(extent={{-40,120},{-20,140}})));
+  Buildings.Controls.OBC.CDL.Logical.Not not1
+    "Supply fan status"
+    annotation (Placement(transformation(extent={{40,80},{60,100}})));
+  Buildings.Controls.OBC.ASHRAE.G36.AHUs.SingleZone.VAV.SetPoints.SupplyFan supFanSpe(
+    final TSupDew_max=TSupDew_max,
+    final maxHeaSpe=maxHeaSpe,
+    final maxCooSpe=maxCooSpe,
+    final minSpe=minSpe,
+    final spePoiOne=spePoiOne,
+    final spePoiTwo=spePoiTwo,
+    final spePoiThr=spePoiThr,
+    final spePoiFou=spePoiFou)
+    "Supply fan speed setpoint"
+    annotation (Placement(transformation(extent={{-40,-10},{-20,10}})));
+  Buildings.Controls.OBC.ASHRAE.G36.AHUs.SingleZone.VAV.SetPoints.SupplyTemperature supTemSet(
+    final TSup_max=TSup_max,
+    final TSup_min=TSup_min,
+    final TSupDea_min=TSupDea_min,
+    final TSupDea_max=TSupDea_max,
+    final temPoiOne=temPoiOne,
+    final temPoiTwo=temPoiTwo,
+    final temPoiThr=temPoiThr,
+    final temPoiFou=temPoiFou)
+    "Supply temperature setpoint"
+    annotation (Placement(transformation(extent={{0,-90},{20,-70}})));
+
+equation
+  connect(isUnoMod.y, fanSpe.u2)
+    annotation (Line(points={{-18,130},{38,130}}, color={255,0,255}));
+  connect(fanOff.y, fanSpe.u1) annotation (Line(points={{2,160},{20,160},{20,138},
+          {38,138}}, color={0,0,127}));
+  connect(fanSpe.y, ramLim.u)
+    annotation (Line(points={{62,130},{78,130}}, color={0,0,127}));
+  connect(ramLim.y, y)
+    annotation (Line(points={{102,130},{140,130}}, color={0,0,127}));
+  connect(isUnoMod.y, not1.u) annotation (Line(points={{-18,130},{0,130},{0,90},
+          {38,90}}, color={255,0,255}));
+  connect(not1.y, y1SupFan)
+    annotation (Line(points={{62,90},{140,90}}, color={255,0,255}));
+  connect(TZon, supFanSpe.TZon) annotation (Line(points={{-140,70},{-70,70},{-70,
+          8},{-42,8}}, color={0,0,127}));
+  connect(TOut, supFanSpe.TOut) annotation (Line(points={{-140,30},{-80,30},{-80,
+          3},{-42,3}}, color={0,0,127}));
+  connect(uHea, supFanSpe.uHea) annotation (Line(points={{-140,-10},{-80,-10},{-80,
+          -4},{-42,-4},{-42,-3}}, color={0,0,127}));
+  connect(uCoo, supFanSpe.uCoo) annotation (Line(points={{-140,-40},{-70,-40},{-70,
+          -8},{-42,-8}}, color={0,0,127}));
+  connect(supFanSpe.y, fanSpe.u3) annotation (Line(points={{-18,0},{20,0},{20,122},
+          {38,122}}, color={0,0,127}));
+  connect(TCooSet, supTemSet.TCooSet) annotation (Line(points={{-140,-80},{-100,
+          -80},{-100,-72},{-2,-72}}, color={0,0,127}));
+  connect(THeaSet, supTemSet.THeaSet) annotation (Line(points={{-140,-110},{-50,
+          -110},{-50,-77},{-2,-77}}, color={0,0,127}));
+  connect(uHea, supTemSet.uHea) annotation (Line(points={{-140,-10},{-80,-10},{-80,
+          -83},{-2,-83}}, color={0,0,127}));
+  connect(uCoo, supTemSet.uCoo) annotation (Line(points={{-140,-40},{-70,-40},{-70,
+          -88},{-2,-88}}, color={0,0,127}));
+  connect(supTemSet.TSupHeaEcoSet, TSupHeaEcoSet) annotation (Line(points={{22,-80},
+          {60,-80},{60,-40},{140,-40}}, color={0,0,127}));
+  connect(supTemSet.TSupCooSet, TSupCooSet) annotation (Line(points={{22,-87},{60,
+          -87},{60,-110},{140,-110}}, color={0,0,127}));
+  connect(uOpeMod, isUnoMod.u1)
+    annotation (Line(points={{-140,130},{-42,130}}, color={255,127,0}));
+  connect(unoMod.y, isUnoMod.u2) annotation (Line(points={{-78,100},{-60,100},{-60,
+          122},{-42,122}}, color={255,127,0}));
+>>>>>>> master
 annotation (defaultComponentName = "setPoiVAV",
   Icon(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,100}}),
     graphics={
@@ -601,20 +782,33 @@ annotation (defaultComponentName = "setPoiVAV",
           fillColor={0,0,0},
           fillPattern=FillPattern.Solid,
           textString="y1SupFan")}),
+<<<<<<< HEAD
   Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-180,-380},{180,380}})),
+=======
+  Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-120,-140},{120,180}})),
+>>>>>>> master
   Documentation(info="<html>
 <p>
 Block that outputs the set points for the supply air temperature for
 cooling, heating and economizer control, and the fan speed for a single zone VAV system.
 The implementation is according to the Section 5.18.4 of ASHRAE Guideline 36, May 2020.
 </p> 
+<<<<<<< HEAD
 
 <h4>Fan speed setpoint</h4>
 <p>
+=======
+<h4>Fan speed setpoint</h4>
+<p>
+The speed setpoint is calculated in
+<a href=\"modelica://Buildings.Controls.OBC.ASHRAE.G36.AHUs.SingleZone.VAV.SetPoints.SupplyFan\">
+Buildings.Controls.OBC.ASHRAE.G36.AHUs.SingleZone.VAV.SetPoints.SupplyFan</a>.
+>>>>>>> master
 The supply fan shall run whenever the unit is in any mode other than unoccupied mode.
 Also, a ramp function should be applied to prevent changes in fan speed of more
 than 10% per minute.
 </p>
+<<<<<<< HEAD
 <h5>Minimum, medium, and maximum fan speeds shall be as follows:</h5>
 <ol>
 <li>
@@ -680,18 +874,24 @@ The figure below shows the sequence.
 src=\"modelica://Buildings/Resources/Images/Controls/OBC/ASHRAE/G36/AHUs/SingleZone/VAV/SetPoints/Supply_Speed.png\"/>
 </p>
 
+=======
+>>>>>>> master
 <h4>Supply temperature setpoints</h4>
 <p>
 The output <code>TSupCooSet</code> is to be used to control the cooling coil,
 and the output
 <code>TSupHeaEcoSet</code> is to be used to control the heating coil and the
 economizer dampers.
+<<<<<<< HEAD
 </p>
 <p>
+=======
+>>>>>>> master
 When it is in deadband state, the output <code>TSupCooSet</code> and <code>TSupHeaEcoSet</code>
 shall be average of the zone heating setpoint <code>THeaSet</code> and the zone
 cooling setpoint <code>TCooSet</code> but shall be no lower than <code>TSupDea_min</code>,
 21 &deg;C (70 &deg;F),
+<<<<<<< HEAD
 and no higher than <code>TSupDea_max</code>, 24 &deg;C (75 &deg;F),
 </p>
 <h5>Control mapping</h5>
@@ -739,6 +939,13 @@ src=\"modelica://Buildings/Resources/Images/Controls/OBC/ASHRAE/G36/AHUs/SingleZ
 
 
 
+=======
+and no higher than <code>TSupDea_max</code>, 24 &deg;C (75 &deg;F).
+The temperature setpoints are calculated in
+<a href=\"modelica://Buildings.Controls.OBC.ASHRAE.G36.AHUs.SingleZone.VAV.SetPoints.SupplyTemperature\">
+Buildings.Controls.OBC.ASHRAE.G36.AHUs.SingleZone.VAV.SetPoints.SupplyTemperature</a>.
+</p>
+>>>>>>> master
 <p>
 Note that the inputs <code>uHea</code> and <code>uCoo</code> must be computed
 based on the same temperature sensors and control loops.
@@ -746,6 +953,15 @@ based on the same temperature sensors and control loops.
 </html>", revisions="<html>
 <ul>
 <li>
+<<<<<<< HEAD
+=======
+June 30, 2025, by Jianjun Hu:<br/>
+Improved setpoints calculation to avoid discontinuity.
+This is for
+<a href=\"https://github.com/lbl-srg/modelica-buildings/issues/4282\">issue 4282</a>.
+</li>
+<li>
+>>>>>>> master
 August 1, 2020, by Jianjun Hu:<br/>
 First implementation.
 </li>

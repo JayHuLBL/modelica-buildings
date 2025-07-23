@@ -4,11 +4,17 @@ block ReliefFan "Sequence for control of relief fan in AHU"
   parameter Real relFanSpe_min(
     final min=0,
     final max=1)= 0.1
+<<<<<<< HEAD
     "Relief fan minimum speed";
+=======
+    "Relief fan minimum speed"
+    annotation (__cdl(ValueInReference=false));
+>>>>>>> master
   parameter Real dpBuiSet(
     final unit="Pa",
     final quantity="PressureDifference",
     final max=30) = 12
+<<<<<<< HEAD
     "Building static pressure difference relative to ambient (positive to pressurize the building)";
   parameter Real k(
     final unit="1") = 1
@@ -19,6 +25,22 @@ block ReliefFan "Sequence for control of relief fan in AHU"
     annotation (Dialog(tab="Advanced"));
 
   Buildings.Controls.OBC.CDL.Interfaces.RealInput dpBui(
+=======
+    "Building static pressure difference relative to ambient (positive to pressurize the building)"
+    annotation (__cdl(ValueInReference=true));
+  parameter Real k(
+    final unit="1") = 1
+    "Gain, normalized using dpBuiSet"
+    annotation (__cdl(ValueInReference=false),
+                Dialog(group="Pressure controller"));
+  parameter Real hys = 0.005
+    "Hysteresis for checking the controller output value"
+    annotation (__cdl(ValueInReference=false),
+                Dialog(tab="Advanced"));
+
+  Buildings.Controls.OBC.CDL.Interfaces.RealInput dpBui(
+    final unit="Pa",
+>>>>>>> master
     displayUnit="Pa",
     final quantity="PressureDifference")
     "Building static pressure difference, relative to ambient (positive if pressurized)"
@@ -29,16 +51,25 @@ block ReliefFan "Sequence for control of relief fan in AHU"
     annotation (Placement(transformation(extent={{-280,12},{-240,52}}),
         iconTransformation(extent={{-140,-50},{-100,-10}})));
   Buildings.Controls.OBC.CDL.Interfaces.RealOutput yDpBui(
+<<<<<<< HEAD
+=======
+    final unit="Pa",
+>>>>>>> master
     displayUnit="Pa",
     final quantity="PressureDifference")
     "Building static pressure difference, relative to ambient (positive if pressurized)"
     annotation (Placement(transformation(extent={{220,120},{260,160}}),
         iconTransformation(extent={{100,60},{140,100}})));
+<<<<<<< HEAD
   Buildings.Controls.OBC.CDL.Interfaces.RealOutput yDam(
     final unit="1",
     final min=0,
     final max=1)
     "Damper commanded position"
+=======
+  Buildings.Controls.OBC.CDL.Interfaces.BooleanOutput y1RelDam
+    "True: 2-position relief damper commanded open"
+>>>>>>> master
     annotation (Placement(transformation(extent={{220,20},{260,60}}),
         iconTransformation(extent={{100,10},{140,50}})));
   Buildings.Controls.OBC.CDL.Interfaces.RealOutput yRelFan(
@@ -52,6 +83,7 @@ block ReliefFan "Sequence for control of relief fan in AHU"
     annotation (Placement(transformation(extent={{220,-120},{260,-80}}),
         iconTransformation(extent={{100,-100},{140,-60}})));
 
+<<<<<<< HEAD
   Buildings.Controls.OBC.CDL.Continuous.MovingAverage movMea(
     final delta=300)
     "Average building static pressure measurement"
@@ -68,17 +100,43 @@ block ReliefFan "Sequence for control of relief fan in AHU"
     "Constant one"
     annotation (Placement(transformation(extent={{-180,160},{-160,180}})));
   Buildings.Controls.OBC.CDL.Continuous.PID conP(
+=======
+  Buildings.Controls.OBC.CDL.Reals.MovingAverage movMea(
+    final delta=300)
+    "Average building static pressure measurement"
+    annotation (Placement(transformation(extent={{-220,130},{-200,150}})));
+  Buildings.Controls.OBC.CDL.Reals.Sources.Constant dpBuiSetPoi(
+    final k=dpBuiSet)
+    "Building pressure setpoint"
+    annotation (Placement(transformation(extent={{-220,70},{-200,90}})));
+  Buildings.Controls.OBC.CDL.Reals.Divide div1
+    "Normalized the control error"
+    annotation (Placement(transformation(extent={{-180,100},{-160,120}})));
+  Buildings.Controls.OBC.CDL.Reals.Sources.Constant conOne(
+    final k=1)
+    "Constant one"
+    annotation (Placement(transformation(extent={{-180,160},{-160,180}})));
+  Buildings.Controls.OBC.CDL.Reals.PID conP(
+>>>>>>> master
     final controllerType=Buildings.Controls.OBC.CDL.Types.SimpleController.P,
     final k=k,
     final reverseActing=false)
     "Building static pressure controller"
     annotation (Placement(transformation(extent={{-140,160},{-120,180}})));
+<<<<<<< HEAD
   Buildings.Controls.OBC.CDL.Continuous.GreaterThreshold greThr(
+=======
+  Buildings.Controls.OBC.CDL.Reals.GreaterThreshold greThr(
+>>>>>>> master
     final t=0.05,
     final h=hys)
     "Check if the controller output is greater than threshold"
     annotation (Placement(transformation(extent={{-80,50},{-60,70}})));
+<<<<<<< HEAD
   Buildings.Controls.OBC.CDL.Continuous.LessThreshold lesThr(
+=======
+  Buildings.Controls.OBC.CDL.Reals.LessThreshold lesThr(
+>>>>>>> master
     final t=0.005,
     final h=hys)
     "Check if the controller output is near zero"
@@ -93,7 +151,11 @@ block ReliefFan "Sequence for control of relief fan in AHU"
   Buildings.Controls.OBC.CDL.Logical.Latch lat
     "Enable damper"
     annotation (Placement(transformation(extent={{40,30},{60,50}})));
+<<<<<<< HEAD
   Buildings.Controls.OBC.CDL.Continuous.GreaterThreshold greThr2(
+=======
+  Buildings.Controls.OBC.CDL.Reals.GreaterThreshold greThr2(
+>>>>>>> master
     final t=relFanSpe_min + 0.15,
     final h=hys)
     "Check if the controller output is greater than minimum speed plus threshold"
@@ -102,7 +164,11 @@ block ReliefFan "Sequence for control of relief fan in AHU"
     final t=420)
     "Check if the controller output has been greater than threshold for sufficient long time"
     annotation (Placement(transformation(extent={{-40,-110},{-20,-90}})));
+<<<<<<< HEAD
   Buildings.Controls.OBC.CDL.Continuous.LessThreshold lesThr3(
+=======
+  Buildings.Controls.OBC.CDL.Reals.LessThreshold lesThr3(
+>>>>>>> master
     final t=relFanSpe_min,
     final h=hys)
     "Check if the controller output is less than minimum speed"
@@ -123,11 +189,16 @@ block ReliefFan "Sequence for control of relief fan in AHU"
   Buildings.Controls.OBC.CDL.Conversions.BooleanToReal booToRea2
     "Convert boolean to real"
     annotation (Placement(transformation(extent={{100,-70},{120,-50}})));
+<<<<<<< HEAD
   Buildings.Controls.OBC.CDL.Continuous.Multiply pro1 "Relief fan speed"
     annotation (Placement(transformation(extent={{160,-50},{180,-30}})));
   Buildings.Controls.OBC.CDL.Conversions.BooleanToReal booToRea1
     "Convert boolean to real"
     annotation (Placement(transformation(extent={{160,30},{180,50}})));
+=======
+  Buildings.Controls.OBC.CDL.Reals.Multiply pro1 "Relief fan speed"
+    annotation (Placement(transformation(extent={{160,-50},{180,-30}})));
+>>>>>>> master
 
 equation
   connect(dpBui, movMea.u)
@@ -182,14 +253,22 @@ equation
           -34},{158,-34}}, color={0,0,127}));
   connect(movMea.y, yDpBui)
     annotation (Line(points={{-198,140},{240,140}}, color={0,0,127}));
+<<<<<<< HEAD
   connect(relDam.y, booToRea1.u)
     annotation (Line(points={{122,40},{158,40}}, color={255,0,255}));
   connect(booToRea1.y, yDam)
     annotation (Line(points={{182,40},{240,40}}, color={0,0,127}));
+=======
+>>>>>>> master
   connect(pro1.y, yRelFan)
     annotation (Line(points={{182,-40},{240,-40}}, color={0,0,127}));
   connect(relFan.y, y1RelFan) annotation (Line(points={{62,-60},{80,-60},{80,-100},
           {240,-100}},color={255,0,255}));
+<<<<<<< HEAD
+=======
+  connect(relDam.y, y1RelDam)
+    annotation (Line(points={{122,40},{240,40}}, color={255,0,255}));
+>>>>>>> master
 annotation (defaultComponentName="relFanCon",
  Icon(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,100}}),
                          graphics={
@@ -218,6 +297,7 @@ annotation (defaultComponentName="relFanCon",
           textColor={0,0,127},
           textString="yDpBui"),
         Text(
+<<<<<<< HEAD
           extent={{60,38},{100,22}},
           textColor={0,0,127},
           textString="yDam"),
@@ -225,6 +305,15 @@ annotation (defaultComponentName="relFanCon",
           extent={{56,-70},{98,-90}},
           textColor={255,0,255},
           textString="y1RelFan")}),
+=======
+          extent={{56,-70},{98,-90}},
+          textColor={255,0,255},
+          textString="y1RelFan"),
+        Text(
+          extent={{56,42},{98,22}},
+          textColor={255,0,255},
+          textString="y1RelDam")}),
+>>>>>>> master
  Diagram(coordinateSystem(preserveAspectRatio=false,
           extent={{-240,-220},{220,220}})),
 Documentation(info="<html>
@@ -270,6 +359,19 @@ by 5 minutes, shut off the relief fan.
 </html>", revisions="<html>
 <ul>
 <li>
+<<<<<<< HEAD
+=======
+March 5, 2024, by Michael Wetter:<br/>
+Corrected wrong use of <code>displayUnit</code>.
+</li>
+<li>
+September 18, 2023, by Jianjun Hu:<br/>
+Changed damper position output from the real to boolean.<br/>
+This is for
+<a href=\"https://github.com/lbl-srg/modelica-buildings/issues/3526\">issue 3526</a>.
+</li>
+<li>
+>>>>>>> master
 September 20, 2022, by Jianjun Hu:<br/>
 First implementation.
 </li>

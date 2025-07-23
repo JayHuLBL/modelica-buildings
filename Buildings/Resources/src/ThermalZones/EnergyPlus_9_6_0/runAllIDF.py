@@ -45,7 +45,11 @@ def _simulate(case):
     building(
       idfName=Modelica.Utilities.Files.loadResource(
         \"file:///{idf_full_name}\")))"""
+<<<<<<< HEAD
   model = f"Buildings.ThermalZones.EnergyPlus_9_6_0.Validation.OutputVariable.OneEnvironmentOutputVariable{modifier}"
+=======
+  model = f"Buildings.Obsolete.ThermalZones.EnergyPlus_9_6_0.Validation.OutputVariable.OneEnvironmentOutputVariable{modifier}"
+>>>>>>> master
   mo_text = f"""
   model {mo_name}
     extends {model};

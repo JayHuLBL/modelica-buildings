@@ -2,6 +2,7 @@ within ;
 package Buildings "Library with models for building energy and control systems"
   extends Modelica.Icons.Package;
 
+<<<<<<< HEAD
 package UsersGuide "User's Guide"
   extends Modelica.Icons.Information;
   class Conventions "Conventions"
@@ -11435,6 +11436,26 @@ uses(Modelica(version="4.0.0")),
 conversion(
   from(
     version={"9.0.0"},
+=======
+
+annotation (
+preferredView="info",
+version="13.0.0",
+versionDate="2025-05-29",
+dateModified="2025-05-29",
+uses(Modelica(version="4.0.0")),
+conversion(
+  noneFromVersion="12.1.0",
+  noneFromVersion="12.0.0",
+  from(
+    version={"11.0.0", "11.1.0"},
+    script="modelica://Buildings/Resources/Scripts/Conversion/ConvertBuildings_from_11_to_12.0.0.mos"),
+  from(
+    version={"10.0.0", "10.1.0", "10.1.1"},
+    script="modelica://Buildings/Resources/Scripts/Conversion/ConvertBuildings_from_10_to_11.0.0.mos"),
+  from(
+    version={"9.0.0", "9.1.0", "9.1.1", "9.1.2"},
+>>>>>>> master
     script="modelica://Buildings/Resources/Scripts/Conversion/ConvertBuildings_from_9_to_10.0.0.mos"),
   from(
     version={"8.0.0", "8.1.0", "8.1.1", "8.1.2", "8.1.3"},

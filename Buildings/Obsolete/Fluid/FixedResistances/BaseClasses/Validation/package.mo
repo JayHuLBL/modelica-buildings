@@ -1,12 +1,16 @@
+<<<<<<<< HEAD:Buildings/Obsolete/Fluid/FixedResistances/BaseClasses/Validation/package.mo
 within Buildings.Obsolete.Fluid.FixedResistances.BaseClasses;
+========
+within Buildings.Obsolete.Controls.OBC.CDL.Integers;
+>>>>>>>> master:Buildings/Obsolete/Controls/OBC/CDL/Integers/Validation/package.mo
 package Validation "Collection of validation models"
   extends Modelica.Icons.ExamplesPackage;
 
 annotation (preferredView="info", Documentation(info="<html>
 <p>
 This package contains validation models for the classes in
-<a href=\"modelica://Buildings.Fluid.FixedResistances.BaseClasses\">
-Buildings.Fluid.FixedResistances.BaseClasses</a>.
+<a href=\"modelica://Buildings.Obsolete.Controls.OBC.CDL.Integers\">
+Buildings.Obsolete.Controls.OBC.CDL.Integers</a>.
 </p>
 <p>
 Note that most validation models contain simple input data

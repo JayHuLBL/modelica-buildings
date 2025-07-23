@@ -13,9 +13,9 @@ WetCoilDiscretized
 WetCoilEffectivenessNTU
 ActiveBeams
 CoolingTowers
-DXCoils
 RadiantSlabs
 Radiators
+ThermalWheels
 Examples
 Validation
 BaseClasses

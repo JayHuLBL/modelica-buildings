@@ -1,5 +1,6 @@
 within Buildings.Controls.OBC.CDL.Routing;
 block BooleanVectorReplicator "Boolean vector signal replicator"
+<<<<<<< HEAD
   parameter Integer nin=1 "Size of input vector";
   parameter Integer nout=1 "Number of row in output";
   Interfaces.BooleanInput u[nin]
@@ -7,6 +8,17 @@ block BooleanVectorReplicator "Boolean vector signal replicator"
     annotation (Placement(transformation(extent={{-140,-20},{-100,20}})));
   Interfaces.BooleanOutput y[nout, nin]
     "Connector of Boolean matrix output signals"
+=======
+
+  parameter Integer nin=1 "Size of input vector";
+  parameter Integer nout=1 "Number of row in output";
+
+  Buildings.Controls.OBC.CDL.Interfaces.BooleanInput u[nin]
+    "Input signal to be replicated"
+    annotation (Placement(transformation(extent={{-140,-20},{-100,20}})));
+  Buildings.Controls.OBC.CDL.Interfaces.BooleanOutput y[nout, nin]
+    "Output with replicated input signal"
+>>>>>>> master
     annotation (Placement(transformation(extent={{100,-20},{140,20}})));
 
 equation

@@ -3,16 +3,28 @@ compareVars :=
     "relFanCon.u1SupFan",
     "relFanCon.dpBui",
     "relFanCon.yDpBui",
+<<<<<<< HEAD
     "relFanCon.yDam",
+=======
+    "relFanCon.y1RelDam",
+>>>>>>> master
     "relFanCon.yRelFan",
     "relFanCon1.u1SupFan",
     "relFanCon1.dpBui",
     "relFanCon1.yDpBui",
+<<<<<<< HEAD
     "relFanCon1.yDam",
+=======
+    "relFanCon1.y1RelDam",
+>>>>>>> master
     "relFanCon1.yRelFan",
     "relFanCon2.u1SupFan",
     "relFanCon2.dpBui",
     "relFanCon2.yDpBui",
+<<<<<<< HEAD
     "relFanCon2.yDam",
+=======
+    "relFanCon2.y1RelDam",
+>>>>>>> master
     "relFanCon2.yRelFan"
   };

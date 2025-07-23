@@ -70,17 +70,26 @@ block SumZone "Calculate the sum of zone level setpoints"
     annotation (Placement(transformation(extent={{220,-90},{260,-50}}),
         iconTransformation(extent={{100,-100},{140,-60}})));
 
+<<<<<<< HEAD
   Buildings.Controls.OBC.CDL.Continuous.MatrixGain groFlo(
     final K=zonGroMat)
     "Vector of total zone flow of each group"
     annotation (Placement(transformation(extent={{-140,90},{-120,110}})));
   Buildings.Controls.OBC.CDL.Continuous.MatrixGain groFlo1(
+=======
+  Buildings.Controls.OBC.CDL.Reals.MatrixGain groFlo(
+    final K=zonGroMat)
+    "Vector of total zone flow of each group"
+    annotation (Placement(transformation(extent={{-140,90},{-120,110}})));
+  Buildings.Controls.OBC.CDL.Reals.MatrixGain groFlo1(
+>>>>>>> master
     final K=zonGroMat)
     "Vector of total zone flow of each group"
     annotation (Placement(transformation(extent={{-140,30},{-120,50}})));
   Buildings.Controls.OBC.CDL.Conversions.BooleanToReal booToRea[nGro]
     "Convert boolean to real"
     annotation (Placement(transformation(extent={{-40,170},{-20,190}})));
+<<<<<<< HEAD
   Buildings.Controls.OBC.CDL.Continuous.Multiply mul[nGro]
     "Find the total flow of zone group"
     annotation (Placement(transformation(extent={{20,110},{40,130}})));
@@ -117,6 +126,44 @@ block SumZone "Calculate the sum of zone level setpoints"
     "Vector of zone outdoor air fraction"
     annotation (Placement(transformation(extent={{80,-80},{100,-60}})));
   Buildings.Controls.OBC.CDL.Continuous.MultiMax mulMax(
+=======
+  Buildings.Controls.OBC.CDL.Reals.Multiply mul[nGro]
+    "Find the total flow of zone group"
+    annotation (Placement(transformation(extent={{20,110},{40,130}})));
+  Buildings.Controls.OBC.CDL.Reals.Multiply mul1[nGro]
+    "Find the total flow of zone group"
+    annotation (Placement(transformation(extent={{20,50},{40,70}})));
+  Buildings.Controls.OBC.CDL.Reals.MultiSum mulSum(
+    final nin=nGro)
+    "Sum of the adjusted population component breathing zone flow rate"
+    annotation (Placement(transformation(extent={{80,110},{100,130}})));
+  Buildings.Controls.OBC.CDL.Reals.MultiSum mulSum1(
+    final nin=nGro)
+    "Sum of the adjusted area component breathing zone flow rate"
+    annotation (Placement(transformation(extent={{80,50},{100,70}})));
+  Buildings.Controls.OBC.CDL.Reals.MatrixGain groFlo2(
+    final K=zonGroMat)
+    "Vector of total zone flow of each group"
+    annotation (Placement(transformation(extent={{-140,-30},{-120,-10}})));
+  Buildings.Controls.OBC.CDL.Reals.Multiply mul2[nGro]
+    "Find the total flow of zone group"
+    annotation (Placement(transformation(extent={{20,-10},{40,10}})));
+  Buildings.Controls.OBC.CDL.Reals.MultiSum mulSum2(
+    final nin=nGro)
+    "Sum of the zone primary airflow rates for all zones in all zone groups that are in occupied mode"
+    annotation (Placement(transformation(extent={{80,-10},{100,10}})));
+  Buildings.Controls.OBC.CDL.Reals.Divide div1[nZon]
+    "Zone outdoor air fraction"
+    annotation (Placement(transformation(extent={{-40,-110},{-20,-90}})));
+  Buildings.Controls.OBC.CDL.Reals.MatrixGain groFlo3(
+    final K=zonGroMatTra)
+    "Vector of zones in occupied mode"
+    annotation (Placement(transformation(extent={{20,-60},{40,-40}})));
+  Buildings.Controls.OBC.CDL.Reals.Multiply mul3[nZon]
+    "Vector of zone outdoor air fraction"
+    annotation (Placement(transformation(extent={{80,-80},{100,-60}})));
+  Buildings.Controls.OBC.CDL.Reals.MultiMax mulMax(
+>>>>>>> master
     final nin=nZon)
     "Maximum zone outdoor air fraction"
     annotation (Placement(transformation(extent={{140,-80},{160,-60}})));
@@ -127,6 +174,7 @@ block SumZone "Calculate the sum of zone level setpoints"
   Buildings.Controls.OBC.CDL.Integers.Equal intEqu1[nGro]
     "Check if operation mode is occupied"
     annotation (Placement(transformation(extent={{-100,170},{-80,190}})));
+<<<<<<< HEAD
   Buildings.Controls.OBC.CDL.Continuous.Max max2[nZon] "Avoid devide by zero"
     annotation (Placement(transformation(extent={{-100,-150},{-80,-130}})));
   Buildings.Controls.OBC.CDL.Continuous.Sources.Constant neaZer[nZon](
@@ -134,6 +182,15 @@ block SumZone "Calculate the sum of zone level setpoints"
     "Near zero value"
     annotation (Placement(transformation(extent={{-160,-180},{-140,-160}})));
   Buildings.Controls.OBC.CDL.Continuous.Min min1[nZon] "Use smaller value"
+=======
+  Buildings.Controls.OBC.CDL.Reals.Max max2[nZon] "Avoid devide by zero"
+    annotation (Placement(transformation(extent={{-100,-150},{-80,-130}})));
+  Buildings.Controls.OBC.CDL.Reals.Sources.Constant neaZer[nZon](
+    final k=fill(1E-4, nZon))
+    "Near zero value"
+    annotation (Placement(transformation(extent={{-160,-180},{-140,-160}})));
+  Buildings.Controls.OBC.CDL.Reals.Min min1[nZon] "Use smaller value"
+>>>>>>> master
     annotation (Placement(transformation(extent={{-120,-104},{-100,-84}})));
 equation
   connect(uOpeMod, intEqu1.u1)

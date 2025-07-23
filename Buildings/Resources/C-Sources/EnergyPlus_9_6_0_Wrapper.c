@@ -36,6 +36,15 @@ void* allocate_Modelica_EnergyPlus_9_6_0(
   const char* idfVersion,
   const char* idfName,
   const char* epwName,
+<<<<<<< HEAD
+=======
+  int runPeriod_startDayOfYear,
+  int runPeriod_applyWeekEndHolidayRule,
+  int runPeriod_use_weatherFileDaylightSavingPeriod,
+  int runPeriod_use_weatherFileHolidaysAndSpecialDays,
+  int runPeriod_use_weatherFileRainIndicators,
+  int runPeriod_use_weatherFileSnowIndicators,
+>>>>>>> master
   double relativeSurfaceTolerance,
   const char* epName,
   int usePrecompiledFMU,
@@ -63,6 +72,19 @@ void* allocate_Modelica_EnergyPlus_9_6_0(
   const double* derivatives_delta,
   const size_t nDer){
 
+<<<<<<< HEAD
+=======
+
+    runPeriod runPer;
+    runPer.startDayOfYear = runPeriod_startDayOfYear;
+    runPer.applyWeekEndHolidayRule = runPeriod_applyWeekEndHolidayRule;
+    runPer.use_weatherFileDaylightSavingPeriod = runPeriod_use_weatherFileDaylightSavingPeriod;
+    runPer.use_weatherFileHolidaysAndSpecialDays = runPeriod_use_weatherFileHolidaysAndSpecialDays;
+    runPer.use_weatherFileRainIndicators = runPeriod_use_weatherFileRainIndicators;
+    runPer.use_weatherFileSnowIndicators = runPeriod_use_weatherFileSnowIndicators;
+
+
+>>>>>>> master
     return allocate_Spawn_EnergyPlus_9_6_0(
       objectType,
       startTime,
@@ -72,6 +94,10 @@ void* allocate_Modelica_EnergyPlus_9_6_0(
       idfVersion,
       idfName,
       epwName,
+<<<<<<< HEAD
+=======
+      &runPer,
+>>>>>>> master
       relativeSurfaceTolerance,
       epName,
       usePrecompiledFMU,
@@ -120,14 +146,13 @@ void getParameters_Modelica_EnergyPlus_9_6_0(
 
 void exchange_Modelica_EnergyPlus_9_6_0(
   void* object,
-  int initialCall,
   const double* u,
   double dummy,
   double* y){
 
     exchange_Spawn_EnergyPlus_9_6_0(
       object,
-      initialCall,
+      0, /* Argument initialCall is hard-coded to false, and can be removed when binaries need to be recompiled. */
       u,
       y);
   }

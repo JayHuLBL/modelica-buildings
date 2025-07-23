@@ -21,30 +21,50 @@ model RealExtractor
     "Extracts signal from an input signal vector when the extract index changes from out of range to within range"
     annotation (Placement(transformation(extent={{40,-80},{60,-60}})));
 
+<<<<<<< HEAD
   Buildings.Controls.OBC.CDL.Continuous.Sources.Ramp ram(
+=======
+  Buildings.Controls.OBC.CDL.Reals.Sources.Ramp ram(
+>>>>>>> master
     final height=5,
     final duration=1,
     final offset=-2)
     "Block that outputs ramp signal"
     annotation (Placement(transformation(extent={{-80,70},{-60,90}})));
+<<<<<<< HEAD
   Buildings.Controls.OBC.CDL.Continuous.Sources.Ramp ram1(
+=======
+  Buildings.Controls.OBC.CDL.Reals.Sources.Ramp ram1(
+>>>>>>> master
     final duration=1,
     final height=4,
     final offset=-1)
     "Block that outputs ramp signal"
     annotation (Placement(transformation(extent={{-80,-20},{-60,0}})));
+<<<<<<< HEAD
   Buildings.Controls.OBC.CDL.Continuous.Sources.Ramp ram2(
+=======
+  Buildings.Controls.OBC.CDL.Reals.Sources.Ramp ram2(
+>>>>>>> master
     final duration=1,
     final height=3,
     final offset=-2)
     "Block that outputs ramp signal"
     annotation (Placement(transformation(extent={{-80,-50},{-60,-30}})));
+<<<<<<< HEAD
   Buildings.Controls.OBC.CDL.Continuous.Sources.Pulse pul(
+=======
+  Buildings.Controls.OBC.CDL.Reals.Sources.Pulse pul(
+>>>>>>> master
     final amplitude=0.5,
     final period=0.2)
     "Generate pulse signal of type Real"
     annotation (Placement(transformation(extent={{-80,40},{-60,60}})));
+<<<<<<< HEAD
   Buildings.Controls.OBC.CDL.Continuous.Sources.Pulse pul1(
+=======
+  Buildings.Controls.OBC.CDL.Reals.Sources.Pulse pul1(
+>>>>>>> master
     final period=0.2,
     final amplitude=1.5,
     final offset=-0.2)

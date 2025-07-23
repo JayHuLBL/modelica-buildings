@@ -2,7 +2,10 @@ within Buildings.ThermalZones.ReducedOrder.SolarGain;
 model CorrectionGDoublePane
   "Double pane window solar correction"
   extends BaseClasses.PartialCorrectionG;
+<<<<<<< HEAD
   import con = Modelica.Units.Conversions;
+=======
+>>>>>>> master
 
   // Parameters for the transmission correction factor based on VDI 6007 Part 3
   // A0 to A6 are experimental constants VDI 6007 Part 3 page 20
@@ -42,6 +45,7 @@ protected
       XN2_diff "Energetic dregree of transmission for second pane";
   parameter Modelica.Units.SI.Emissivity a1_diff=1 - Ta1_diff - rho_1_diff
     "Degree of absorption for single pane window";
+<<<<<<< HEAD
   parameter Modelica.Units.SI.CoefficientOfHeatTransfer UWin_dimless=1
     "Auxiliary parameter for dimensionless UWin";
   parameter Real Q21_diff=a1_diff*(1 + (
@@ -49,6 +53,13 @@ protected
     "Auxiliary parameter for heat transfer of exterior pane of double pane window";
   parameter Real Q22_diff=a1_diff*(
       Ta1_diff/XN2_diff)*(1 - (UWin/UWin_dimless/7.7))
+=======
+  parameter Real Q21_diff=a1_diff*(1 + (
+      Ta1_diff*rho_1_diff/XN2_diff))*UWin/25
+    "Auxiliary parameter for heat transfer of exterior pane of double pane window";
+  parameter Real Q22_diff=a1_diff*(
+      Ta1_diff/XN2_diff)*(1 - (UWin/7.7))
+>>>>>>> master
     "Auxiliary parameter for heat transfer of interior pane of double pane window";
   parameter Real Qsek2_diff=Q21_diff + Q22_diff
     "Overall auxiliary parameter for heat transfer of double pane window";
@@ -89,8 +100,8 @@ protected
 
 equation
   for i in 1:n loop
-    Ta_dir[i]= (((((A6*con.to_deg(inc[i])+A5)*con.to_deg(inc[i])+A4)*con.to_deg(inc[i])+A3)*
-    con.to_deg(inc[i])+A2)*con.to_deg(inc[i])+A1)*con.to_deg(inc[i])+A0;
+    Ta_dir[i]= (((((A6*Modelica.Units.Conversions.to_deg(inc[i])+A5)*Modelica.Units.Conversions.to_deg(inc[i])+A4)*Modelica.Units.Conversions.to_deg(inc[i])+A3)*
+    Modelica.Units.Conversions.to_deg(inc[i])+A2)*Modelica.Units.Conversions.to_deg(inc[i])+A1)*Modelica.Units.Conversions.to_deg(inc[i])+A0;
     Tai_dir[i]= 0.907^(1/sqrt(1-(sin(inc[i])/1.515)^2));
     Ta1_dir[i]= Ta_dir[i]*Tai_dir[i];
     rho_T1_dir[i]= 1-Ta_dir[i];
@@ -130,6 +141,12 @@ equation
   </html>",
   revisions="<html>
   <ul>
+  <li>
+  February 7, 2025, by Jelger Jansen:<br/>
+  Removed <code>import</code> statement.
+  This is for
+  <a href=\"https://github.com/ibpsa/modelica-ibpsa/issues/1961\">IBPSA, #1961</a>.
+  </li>
   <li>
   September 12, 2015 by Moritz Lauster:<br/>
   Adapted to Annex 60 requirements.

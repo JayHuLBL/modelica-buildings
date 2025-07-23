@@ -22,7 +22,11 @@ model Guideline36SteadyState
       winDirSou=Buildings.BoundaryConditions.Types.DataSource.Parameter,
       HInfHorSou=Buildings.BoundaryConditions.Types.DataSource.Parameter,
       HSou=Buildings.BoundaryConditions.Types.RadiationDataSource.Input_HGloHor_HDifHor));
+<<<<<<< HEAD
   Buildings.Controls.OBC.CDL.Continuous.Sources.Constant solRad(k=0) "Solar radiation"
+=======
+  Buildings.Controls.OBC.CDL.Reals.Sources.Constant solRad(k=0) "Solar radiation"
+>>>>>>> master
     annotation (Placement(transformation(extent={{-10,10},{10,-10}},
         rotation=180,
         origin={-70,-20})));

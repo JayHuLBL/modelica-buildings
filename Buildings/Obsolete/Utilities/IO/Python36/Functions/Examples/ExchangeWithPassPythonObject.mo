@@ -1,18 +1,31 @@
+<<<<<<<< HEAD:Buildings/Obsolete/Utilities/IO/Python36/Functions/Examples/ExchangeWithPassPythonObject.mo
 within Buildings.Obsolete.Utilities.IO.Python36.Functions.Examples;
+========
+within Buildings.Utilities.IO.Python_3_8.Functions.Examples;
+>>>>>>>> master:Buildings/Utilities/IO/Python_3_8/Functions/Examples/ExchangeWithPassPythonObject.mo
 model ExchangeWithPassPythonObject
   "Test model for exchange function with memory"
   extends Modelica.Icons.Example;
 
   parameter Boolean passPythonObject = true
     "Set to true if the Python function returns and receives an object, see User's Guide";
+<<<<<<<< HEAD:Buildings/Obsolete/Utilities/IO/Python36/Functions/Examples/ExchangeWithPassPythonObject.mo
   Buildings.Obsolete.Utilities.IO.Python36.Functions.BaseClasses.PythonObject pytObj=
       Buildings.Obsolete.Utilities.IO.Python36.Functions.BaseClasses.PythonObject();
+========
+  Buildings.Utilities.IO.Python_3_8.Functions.BaseClasses.PythonObject pytObj=
+      Buildings.Utilities.IO.Python_3_8.Functions.BaseClasses.PythonObject();
+>>>>>>>> master:Buildings/Utilities/IO/Python_3_8/Functions/Examples/ExchangeWithPassPythonObject.mo
 
   parameter Real yR1[1](each fixed=false) "Real function value";
   parameter Real yR2[1](each fixed=false) "Real function value";
 
 initial equation
+<<<<<<<< HEAD:Buildings/Obsolete/Utilities/IO/Python36/Functions/Examples/ExchangeWithPassPythonObject.mo
   yR1 = Buildings.Obsolete.Utilities.IO.Python36.Functions.exchange(
+========
+  yR1 = Buildings.Utilities.IO.Python_3_8.Functions.exchange(
+>>>>>>>> master:Buildings/Utilities/IO/Python_3_8/Functions/Examples/ExchangeWithPassPythonObject.mo
     moduleName="testFunctions",
     functionName="r1_r1PassPythonObject",
     dblWri={2.0},
@@ -29,7 +42,11 @@ initial equation
 
   // Invoke the same function with the same Python object.
   // Hence, pytObj is reused.
+<<<<<<<< HEAD:Buildings/Obsolete/Utilities/IO/Python36/Functions/Examples/ExchangeWithPassPythonObject.mo
   yR2 = Buildings.Obsolete.Utilities.IO.Python36.Functions.exchange(
+========
+  yR2 = Buildings.Utilities.IO.Python_3_8.Functions.exchange(
+>>>>>>>> master:Buildings/Utilities/IO/Python_3_8/Functions/Examples/ExchangeWithPassPythonObject.mo
     moduleName="testFunctions",
     functionName="r1_r1PassPythonObject",
     dblWri=yR1,
@@ -46,7 +63,11 @@ initial equation
 
   annotation (
 experiment(Tolerance=1e-6, StopTime=1.0),
+<<<<<<<< HEAD:Buildings/Obsolete/Utilities/IO/Python36/Functions/Examples/ExchangeWithPassPythonObject.mo
 __Dymola_Commands(file="modelica://Buildings/Resources/Scripts/Dymola/Obsolete/Utilities/IO/Python36/Functions/Examples/ExchangeWithPassPythonObject.mos"
+========
+__Dymola_Commands(file="modelica://Buildings/Resources/Scripts/Dymola/Utilities/IO/Python_3_8/Functions/Examples/ExchangeWithPassPythonObject.mos"
+>>>>>>>> master:Buildings/Utilities/IO/Python_3_8/Functions/Examples/ExchangeWithPassPythonObject.mo
         "Simulate and plot"),
 Documentation(info="<html>
 <p>
@@ -61,6 +82,13 @@ the simulation if the return value is different from the expected value.
 </html>", revisions="<html>
 <ul>
 <li>
+<<<<<<<< HEAD:Buildings/Obsolete/Utilities/IO/Python36/Functions/Examples/ExchangeWithPassPythonObject.mo
+========
+January 10, 2022, by Michael Wetter:<br/>
+Updated to Python 3.8.
+</li>
+<li>
+>>>>>>>> master:Buildings/Utilities/IO/Python_3_8/Functions/Examples/ExchangeWithPassPythonObject.mo
 December 11, 2021, by Michael Wetter:<br/>
 Changed implementation to assigning parameters as opposed to variables because the
 assignment is made through impure function calls.

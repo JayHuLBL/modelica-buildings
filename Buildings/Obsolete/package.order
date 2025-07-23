@@ -1,7 +1,12 @@
 Air
 Controls
-DistrictHeatingCooling
 Fluid
+<<<<<<< HEAD
 Utilities
 Examples
+=======
+Templates
+ThermalZones
+Utilities
+>>>>>>> master
 BaseClasses

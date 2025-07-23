@@ -6,7 +6,11 @@ model SingleZoneVAVSupply_u
   inner Configuration plotConfiguration(samplePeriod=1)     "Plot configuration"
     annotation (Placement(transformation(extent={{100,60},{120,80}})));
 
+<<<<<<< HEAD
   Buildings.Controls.OBC.CDL.Continuous.Subtract heaCooConSig
+=======
+  Buildings.Controls.OBC.CDL.Reals.Subtract heaCooConSig
+>>>>>>> master
     "Add control signal for heating (with negative sign) and cooling"
     annotation (Placement(transformation(extent={{-40,40},{-20,60}})));
   Buildings.Utilities.Plotters.Scatter scaTem(
@@ -44,22 +48,30 @@ the cooling loop signal (from 0 to +1).")
     "Block that computes the setpoints for temperature and fan speed"
     annotation (Placement(transformation(extent={{0,-20},{20,0}})));
 
-  Buildings.Controls.OBC.CDL.Continuous.Sources.Constant TZon(
+  Buildings.Controls.OBC.CDL.Reals.Sources.Constant TZon(
     k = 273.15 + 28)
     "Zone air temperature"
     annotation (Placement(transformation(extent={{-80,-30},{-60,-10}})));
 
-  Buildings.Controls.OBC.CDL.Continuous.Sources.Constant TOut(k=273.15 + 22)
+  Buildings.Controls.OBC.CDL.Reals.Sources.Constant TOut(k=273.15 + 22)
     "Outdoor temperature"
     annotation (Placement(transformation(extent={{-80,-60},{-60,-40}})));
 
+<<<<<<< HEAD
   Buildings.Controls.OBC.CDL.Continuous.Sources.Ramp uHea(
+=======
+  Buildings.Controls.OBC.CDL.Reals.Sources.Ramp uHea(
+>>>>>>> master
     duration=900,
     height=-1,
     offset=1) "Heating control signal"
     annotation (Placement(transformation(extent={{-80,50},{-60,70}})));
 
+<<<<<<< HEAD
   Buildings.Controls.OBC.CDL.Continuous.Sources.Ramp uCoo(duration=900,
+=======
+  Buildings.Controls.OBC.CDL.Reals.Sources.Ramp uCoo(duration=900,
+>>>>>>> master
       startTime=2700)
     "Cooling control signal"
     annotation (Placement(transformation(extent={{-80,10},{-60,30}})));
@@ -67,11 +79,19 @@ the cooling loop signal (from 0 to +1).")
   Controls.OBC.CDL.Integers.Sources.Constant           opeMod(final k=Buildings.Controls.OBC.ASHRAE.G36.Types.OperationModes.occupied)
     "AHU operation mode is occupied"
     annotation (Placement(transformation(extent={{-40,70},{-20,90}})));
+<<<<<<< HEAD
   Controls.OBC.CDL.Continuous.Sources.Constant           TZonCooSet(final k=
         273.15 + 24)
     "Zone cooling set point"
     annotation (Placement(transformation(extent={{-80,-90},{-60,-70}})));
   Controls.OBC.CDL.Continuous.Sources.Constant           TZonHeaSet(final k=
+=======
+  Controls.OBC.CDL.Reals.Sources.Constant           TZonCooSet(final k=
+        273.15 + 24)
+    "Zone cooling set point"
+    annotation (Placement(transformation(extent={{-80,-90},{-60,-70}})));
+  Controls.OBC.CDL.Reals.Sources.Constant           TZonHeaSet(final k=
+>>>>>>> master
         273.15 + 20)
     "Zone heating set point"
     annotation (Placement(transformation(extent={{-40,-90},{-20,-70}})));
@@ -137,7 +157,11 @@ The plot will be generated in the file <code>plots.html</code>.
 </p>
 <p align=\"center\">
 <img alt=\"Image of set point reset\"
+<<<<<<< HEAD
 src=\"modelica://Buildings/Resources/Images/Obsolete/Controls/OBC/ASHRAE/G36_PR1/AHUs/VAVSingleZoneTSupSet.png\"/>
+=======
+src=\"modelica://Buildings/Resources/Images/Controls/OBC/ASHRAE/G36/AHUs/SingleZone/VAV/SetPoints/Supply_Temperature.png\"/>
+>>>>>>> master
 </p>
 </html>", revisions="<html>
 <ul>

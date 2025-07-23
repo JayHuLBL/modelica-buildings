@@ -1,11 +1,19 @@
 within Buildings.Controls.OBC.Utilities.Validation;
 model PIDWithInputGains
   "Test model for PIDWithInputGains"
+<<<<<<< HEAD
   Buildings.Controls.OBC.CDL.Continuous.Sources.Pulse pulse(
     period=0.25)
     "Setpoint"
     annotation (Placement(transformation(extent={{-30,14},{-10,34}})));
   Buildings.Controls.OBC.CDL.Continuous.Sources.Constant const(
+=======
+  Buildings.Controls.OBC.CDL.Reals.Sources.Pulse pulse(
+    period=0.25)
+    "Setpoint"
+    annotation (Placement(transformation(extent={{-30,14},{-10,34}})));
+  Buildings.Controls.OBC.CDL.Reals.Sources.Constant const(
+>>>>>>> master
     k=0.5)
     "Measured value"
     annotation (Placement(transformation(extent={{-30,-22},{-10,-2}})));
@@ -13,7 +21,11 @@ model PIDWithInputGains
     controllerType=Buildings.Controls.OBC.CDL.Types.SimpleController.PID)
     "PID controller with input gains"
     annotation (Placement(transformation(extent={{20,-30},{40,-10}})));
+<<<<<<< HEAD
   Buildings.Controls.OBC.CDL.Continuous.PIDWithReset PID(
+=======
+  Buildings.Controls.OBC.CDL.Reals.PIDWithReset PID(
+>>>>>>> master
     controllerType=Buildings.Controls.OBC.CDL.Types.SimpleController.PID,
     k=1,
     Ti=0.5,
@@ -23,7 +35,11 @@ model PIDWithInputGains
   Buildings.Controls.OBC.CDL.Logical.Sources.Pulse resSig(period=1)
     "Reset signal"
     annotation (Placement(transformation(extent={{-80,40},{-60,60}})));
+<<<<<<< HEAD
   Buildings.Controls.OBC.CDL.Continuous.Sources.Pulse k(
+=======
+  Buildings.Controls.OBC.CDL.Reals.Sources.Pulse k(
+>>>>>>> master
     amplitude=0.2,
     width=0.4,
     period=1,
@@ -31,7 +47,11 @@ model PIDWithInputGains
     offset=1)
     "Control gain signal"
     annotation (Placement(transformation(extent={{-80,0},{-60,20}})));
+<<<<<<< HEAD
   Buildings.Controls.OBC.CDL.Continuous.Sources.Pulse Ti(
+=======
+  Buildings.Controls.OBC.CDL.Reals.Sources.Pulse Ti(
+>>>>>>> master
     amplitude=0.2,
     width=0.4,
     period=1,
@@ -39,7 +59,11 @@ model PIDWithInputGains
     offset=0.5)
     "Time constant signal for the integral term"
     annotation (Placement(transformation(extent={{-80,-40},{-60,-20}})));
+<<<<<<< HEAD
   Buildings.Controls.OBC.CDL.Continuous.Sources.Pulse Td(
+=======
+  Buildings.Controls.OBC.CDL.Reals.Sources.Pulse Td(
+>>>>>>> master
     amplitude=0.1,
     width=0.4,
     period=1,
@@ -47,6 +71,7 @@ model PIDWithInputGains
     offset=0.1)
     "Time constant signal for the derivative term"
     annotation (Placement(transformation(extent={{-80,-80},{-60,-60}})));
+<<<<<<< HEAD
 
   CDL.Continuous.Abs abs1 "Absolute value of controller output"
     annotation (Placement(transformation(extent={{110,-10},{130,10}})));
@@ -65,6 +90,28 @@ model PIDWithInputGains
     "Output true if model time is below 0.6"
     annotation (Placement(transformation(extent={{140,40},{160,60}})));
   CDL.Logical.Or or2
+=======
+  Buildings.Controls.OBC.CDL.Reals.Abs abs1
+    "Absolute value of controller output"
+    annotation (Placement(transformation(extent={{110,-10},{130,10}})));
+  Buildings.Controls.OBC.CDL.Reals.Subtract sub
+    "Difference in controller output"
+    annotation (Placement(transformation(extent={{80,-10},{100,10}})));
+  Buildings.Controls.OBC.CDL.Reals.LessThreshold lesThr(t=1E-5, h=1E-4)
+    "Output true if outputs are bigger than threshold"
+    annotation (Placement(transformation(extent={{140,-10},{160,10}})));
+  Buildings.Controls.OBC.CDL.Utilities.Assert assMes(
+    message="Control outputs differ more than expected")
+    "Make sure outputs are within expected tolerance"
+    annotation (Placement(transformation(extent={{200,20},{220,40}})));
+  Buildings.Controls.OBC.CDL.Reals.Sources.CivilTime modTim
+    "Civil time"
+    annotation (Placement(transformation(extent={{80,40},{100,60}})));
+  Buildings.Controls.OBC.CDL.Reals.GreaterThreshold greThr(t=0.59)
+    "Output true if model time is below 0.6"
+    annotation (Placement(transformation(extent={{140,40},{160,60}})));
+  Buildings.Controls.OBC.CDL.Logical.Or or2
+>>>>>>> master
     "Output true either if time is bigger than 0.59, or if tolerance is maintained"
     annotation (Placement(transformation(extent={{170,20},{190,40}})));
 equation
@@ -119,8 +166,13 @@ Buildings.Controls.OBC.Utilities.PIDWithInputGains</a>.
 For <i>t &isin; [0, 0.6]</i> both PID controllers have the same gains.
 During this time, they generate the same output.
 Afterwards, the gains, and hence also their outputs, differ.
+<<<<<<< HEAD
 <a href=\"modelica://Buildings.Controls.OBC.CDL.Continuous.PIDWithReset\">
 Buildings.Controls.OBC.CDL.Continuous.PIDWithReset</a>.
+=======
+<a href=\"modelica://Buildings.Controls.OBC.CDL.Reals.PIDWithReset\">
+Buildings.Controls.OBC.CDL.Reals.PIDWithReset</a>.
+>>>>>>> master
 </p>
 </html>",
       revisions="<html>

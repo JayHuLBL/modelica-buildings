@@ -15,7 +15,11 @@ block To_quad "Block that converts energy from joule to quads"
 protected
   constant Real k = 1./1055.56e15 "Multiplier";
 
+<<<<<<< HEAD
   Buildings.Controls.OBC.CDL.Continuous.MultiplyByParameter conv(
+=======
+  Buildings.Controls.OBC.CDL.Reals.MultiplyByParameter conv(
+>>>>>>> master
     final k = k) "Unit converter"
     annotation (Placement(transformation(extent={{-10,-10},{10,10}})));
 

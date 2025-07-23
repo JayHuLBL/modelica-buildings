@@ -4,7 +4,11 @@ annotation (
 Documentation(info="<html>
 <p>
 This package contains sequences to set the minimum outdoor airflow setpoint for 
+<<<<<<< HEAD
 compliance with the ventilation rate procedure of California Title 24-2016. It is implemented
+=======
+compliance with the ventilation rate procedure of California Title 24. It is implemented
+>>>>>>> master
 according to Section 5.16.3.2 of ASHRAE Guideline G36, May 2020.
 </p>
 <ul>

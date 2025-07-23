@@ -1,5 +1,6 @@
 compareVars :=
   {
+<<<<<<< HEAD
     "dam.VActMin_flow",
     "dam.VActCooMax_flow",
     "dam.VActHeaMax_flow",
@@ -11,6 +12,8 @@ compareVars :=
     "dam.VDis_flow_Set",
     "dam.yCooDam",
     "dam.yHeaDam",
+=======
+>>>>>>> master
     "dam1.VActMin_flow",
     "dam1.VActCooMax_flow",
     "dam1.VActHeaMax_flow",

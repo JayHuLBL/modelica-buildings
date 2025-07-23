@@ -44,6 +44,10 @@ INVALID_IN_ALL=["fixme", "import \"",
                 "modelica://BuildingSystems",
 	        "modelica://IDEAS",
                 "modelica://https://",
+<<<<<<< HEAD
+=======
+                r'href=\"Buildings.',
+>>>>>>> master
                 ">>>>>>",
                 "<<<<<<"]
 
@@ -56,10 +60,18 @@ INVALID_IN_MOS=[]
 # The check for lineColor is from
 # https://github.com/modelica/ModelicaStandardLibrary/blob/master/.CI/check_deprecated_line_color.py
 INVALID_REGEXP_IN_MO=["StopTime\s*=\s*\d\s*[*]\s*\d+",
+<<<<<<< HEAD
                       "fontSize\s*=",
                       "file\s*=\s*\"Resources", # This should be file="modelica://Buildings/Resources
                       "parameter.*Boolean.*homotopyInitialization",
                       "(Text\s*\([^\).]*)lineColor"]
+=======
+                      "(Documentation\s*\(((.|\r?\n)*?))font-size\s*:",
+                      "file\s*=\s*\"Resources", # This should be file="modelica://Buildings/Resources
+                      "parameter.*Boolean.*homotopyInitialization",
+                      "(Text\s*\([^\)]*)lineColor",
+                      "(Line\s*\([^\)]*)lineThickness"]
+>>>>>>> master
 # List of strings that are required in .mo files, except in Examples
 REQUIRED_IN_MO=["documentation"]
 

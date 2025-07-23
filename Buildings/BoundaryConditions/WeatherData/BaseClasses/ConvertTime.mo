@@ -1,6 +1,7 @@
 within Buildings.BoundaryConditions.WeatherData.BaseClasses;
 block ConvertTime
   "Converts the simulation time to calendar time in scale of 1 year (365 days), or a multiple of a year"
+<<<<<<< HEAD
   extends Modelica.Blocks.Icons.Block;
 
   parameter Modelica.Units.SI.Time weaDatStaTim(displayUnit="d")
@@ -8,6 +9,9 @@ block ConvertTime
   parameter Modelica.Units.SI.Time weaDatEndTim(displayUnit="d")
     "End time of weather data";
 
+=======
+  extends PartialConvertTime;
+>>>>>>> master
   Modelica.Blocks.Interfaces.RealInput modTim(
     final quantity="Time",
     final unit="s") "Simulation time"
@@ -20,6 +24,7 @@ block ConvertTime
 protected
   constant Modelica.Units.SI.Time shiftSolarRad=1800
     "Number of seconds for the shift for solar radiation calculation";
+<<<<<<< HEAD
   parameter Modelica.Units.SI.Time lenWea=weaDatEndTim - weaDatStaTim
     "Length of weather data";
 
@@ -28,15 +33,13 @@ protected
 
   discrete Modelica.Units.SI.Time tNext(start=0, fixed=true)
     "Start time of next period";
+=======
+
+>>>>>>> master
 
 equation
-  when {initial(), canRepeatWeatherFile and modTim > pre(tNext)} then
-    // simulation time stamp went over the end time of the weather file
-    //(last time stamp of the weather file + average increment)
-    tNext = if canRepeatWeatherFile then integer(modTim/lenWea)*lenWea + lenWea else time;
-  end when;
-  calTim = if canRepeatWeatherFile then modTim - tNext + lenWea else modTim;
-
+  calTim = calTimAux;
+  modTimAux = modTim;
   assert(canRepeatWeatherFile or noEvent((time - weaDatEndTim) < shiftSolarRad),
     "In " + getInstanceName() + ": Insufficient weather data provided for the desired simulation period.
     The simulation time " + String(time) +
@@ -58,6 +61,11 @@ or a multiple of it, if this is the length of the weather file.
 </p>
 </html>", revisions="<html>
 <ul>
+<li>
+March 27, 2023, by Ettore Zanetti:<br/>
+Updated to use partial class for conversion from simulation time to calendar time.<br/>
+This is for <a href=\"https://github.com/ibpsa/modelica-ibpsa/issues/1716\">IBPSA #1716</a>.
+</li>
 <li>
 April 15, 2020, by Michael Wetter:<br/>
 Added <code>noEvent</code> to assertion to remove zero crossing function in OPTIMICA.

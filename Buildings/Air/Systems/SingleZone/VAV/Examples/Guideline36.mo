@@ -9,6 +9,7 @@ model Guideline36
     "Design value for chiller leaving water temperature";
 
   Buildings.Controls.OBC.ASHRAE.G36.AHUs.SingleZone.VAV.Controller con(
+<<<<<<< HEAD
     final VAreBreZon_flow=0.0144,
     final VPopBreZon_flow=0.0075,
     ecoHigLimCon=Buildings.Controls.OBC.ASHRAE.G36.Types.ControlEconomizer.FixedDryBulb,
@@ -17,6 +18,22 @@ model Guideline36
     have_winSen=true,
     have_CO2Sen=false,
     buiPreCon=Buildings.Controls.OBC.ASHRAE.G36.Types.BuildingPressureControlTypes.BarometricRelief,
+=======
+    eneStd=Buildings.Controls.OBC.ASHRAE.G36.Types.EnergyStandard.ASHRAE90_1,
+    venStd=Buildings.Controls.OBC.ASHRAE.G36.Types.VentilationStandard.ASHRAE62_1,
+
+    final VAreBreZon_flow=0.0144,
+    final VPopBreZon_flow=0.0075,
+    ecoHigLimCon=Buildings.Controls.OBC.ASHRAE.G36.Types.ControlEconomizer.FixedDryBulb,
+
+    ashCliZon=Buildings.Controls.OBC.ASHRAE.G36.Types.ASHRAEClimateZone.Zone_6B,
+
+    freSta=Buildings.Controls.OBC.ASHRAE.G36.Types.FreezeStat.No_freeze_stat,
+    have_winSen=true,
+    have_CO2Sen=false,
+    buiPreCon=Buildings.Controls.OBC.ASHRAE.G36.Types.PressureControl.BarometricRelief,
+
+>>>>>>> master
     have_locAdj=false,
     ignDemLim=false,
     kCoo=0.1,
@@ -34,6 +51,7 @@ model Guideline36
     have_occSen=false,
     TSup_max=343.15,
     TSup_min=286.15,
+<<<<<<< HEAD
     outDamMinFloMinSpe = 0.2304,
     outDamMinFloMaxSpe=0.02304,
     outDamDesFloMinSpe=0.4,
@@ -42,6 +60,15 @@ model Guideline36
     annotation (Placement(transformation(extent={{-120,-20},{-80,60}})));
 
   Buildings.Controls.OBC.CDL.Continuous.Hysteresis hysChiPla(
+=======
+    outDamMinFloMinSpe=0.2304,
+    outDamMinFloMaxSpe=0.02304,
+    outDamDesFloMinSpe=0.4,
+    outDamDesFloMaxSpe=0.04) "VAV controller"
+    annotation (Placement(transformation(extent={{-120,-20},{-80,60}})));
+
+  Buildings.Controls.OBC.CDL.Reals.Hysteresis hysChiPla(
+>>>>>>> master
     uLow=-1,
     uHigh=0)
     "Hysteresis with delay to switch on cooling"
@@ -52,11 +79,16 @@ model Guideline36
   Buildings.Controls.SetPoints.OccupancySchedule occSch(occupancy=3600*{8,18})
     "Occupancy schedule"
     annotation (Placement(transformation(extent={{-200,0},{-180,20}})));
+<<<<<<< HEAD
   Modelica.Blocks.Sources.BooleanConstant uWin(k=false) "Window opening signal"
+=======
+  Modelica.Blocks.Sources.BooleanConstant uWin(k=true)  "Window opening signal"
+>>>>>>> master
     annotation (Placement(transformation(extent={{-200,-90},{-180,-70}})));
   Buildings.Controls.OBC.CDL.Integers.Sources.Constant demLim(final k=0)
     "Cooling and heating demand imit level"
     annotation (Placement(transformation(extent={{-200,-30},{-180,-10}})));
+<<<<<<< HEAD
   Buildings.Controls.OBC.CDL.Continuous.Sources.Constant cooWarTim(final k=0)
     "Cooldown and warm-up time"
     annotation (Placement(transformation(extent={{-200,40},{-180,60}})));
@@ -70,6 +102,21 @@ model Guideline36
     "Unoccupied heating setpoint"
     annotation (Placement(transformation(extent={{-210,120},{-190,140}})));
   Buildings.Controls.OBC.CDL.Continuous.Sources.Constant TUnoCooSet(final k=303.15)
+=======
+  Buildings.Controls.OBC.CDL.Reals.Sources.Constant cooWarTim(final k=0)
+    "Cooldown and warm-up time"
+    annotation (Placement(transformation(extent={{-200,40},{-180,60}})));
+  Buildings.Controls.OBC.CDL.Reals.Sources.Constant TOccHeaSet(final k=293.15)
+    "Occupied heating setpoint"
+    annotation (Placement(transformation(extent={{-210,170},{-190,190}})));
+  Buildings.Controls.OBC.CDL.Reals.Sources.Constant TOccCooSet(final k=298.15)
+    "Occupied cooling setpoint"
+    annotation (Placement(transformation(extent={{-180,150},{-160,170}})));
+  Buildings.Controls.OBC.CDL.Reals.Sources.Constant TUnoHeaSet(final k=288.15)
+    "Unoccupied heating setpoint"
+    annotation (Placement(transformation(extent={{-210,120},{-190,140}})));
+  Buildings.Controls.OBC.CDL.Reals.Sources.Constant TUnoCooSet(final k=303.15)
+>>>>>>> master
     "Unoccupied cooling setpoint"
     annotation (Placement(transformation(extent={{-180,100},{-160,120}})));
   Modelica.Blocks.Sources.BooleanConstant freRes(k=true)

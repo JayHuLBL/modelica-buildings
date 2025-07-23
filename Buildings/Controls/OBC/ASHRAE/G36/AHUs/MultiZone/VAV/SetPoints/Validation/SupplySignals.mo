@@ -8,13 +8,21 @@ model SupplySignals
   Buildings.Controls.OBC.CDL.Logical.Sources.Pulse supFanSta(period=7200)
     "Supply fan status"
     annotation (Placement(transformation(extent={{-80,-10},{-60,10}})));
+<<<<<<< HEAD
   Buildings.Controls.OBC.CDL.Continuous.Sources.Pulse TSup(
+=======
+  Buildings.Controls.OBC.CDL.Reals.Sources.Pulse TSup(
+>>>>>>> master
     final amplitude=14,
     final period=7200,
     final offset=10 + 273.15)
     "Supply air temperature"
     annotation (Placement(transformation(extent={{-80,30},{-60,50}})));
+<<<<<<< HEAD
   Buildings.Controls.OBC.CDL.Continuous.Sources.Ramp TSupSet(
+=======
+  Buildings.Controls.OBC.CDL.Reals.Sources.Ramp TSupSet(
+>>>>>>> master
     final height=3,
     final duration=7200,
     final offset=15 + 273.15)
