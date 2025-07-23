@@ -4,7 +4,7 @@ model Client "Demand response client"
 
   final parameter Modelica.Units.SI.Time tPeriod=24*3600
     "Period, generally one day";
-  
+
   parameter Integer nSam
     "Number of samples in a day. For 1 hour sampling, set to 24";
   parameter Integer nPre(min=1) = 1

@@ -13,15 +13,6 @@ model Supply_T
     "Block that computes the setpoints for temperature and fan speed"
     annotation (Placement(transformation(extent={{60,-20},{80,0}})));
 
-<<<<<<< HEAD
-  Buildings.Controls.OBC.CDL.Continuous.Sources.Constant uHea(k=0)
-    "Heating control signal"
-    annotation (Placement(transformation(extent={{-40,0},{-20,20}})));
-  Buildings.Controls.OBC.CDL.Continuous.Sources.Constant uCoo(k=0.6)
-    "Cooling control signal"
-    annotation (Placement(transformation(extent={{-80,-30},{-60,-10}})));
-  Buildings.Controls.OBC.CDL.Continuous.Sources.Ramp TOut(
-=======
   Buildings.Controls.OBC.CDL.Reals.Sources.Constant uHea(k=0)
     "Heating control signal"
     annotation (Placement(transformation(extent={{-40,0},{-20,20}})));
@@ -29,20 +20,10 @@ model Supply_T
     "Cooling control signal"
     annotation (Placement(transformation(extent={{-80,-30},{-60,-10}})));
   Buildings.Controls.OBC.CDL.Reals.Sources.Ramp TOut(
->>>>>>> master
     final duration=3600,
     final height=18,
     final offset=273.15 + 10) "Outdoor air temperature"
     annotation (Placement(transformation(extent={{-80,20},{-60,40}})));
-<<<<<<< HEAD
-  Buildings.Controls.OBC.CDL.Continuous.Sources.Constant TZon(
-    final k=273.15 + 22) "Zone temperature"
-    annotation (Placement(transformation(extent={{-40,40},{-20,60}})));
-  Buildings.Controls.OBC.CDL.Continuous.Subtract dT
-    "Difference zone minus outdoor temperature"
-    annotation (Placement(transformation(extent={{60,-60},{80,-40}})));
-  Buildings.Controls.OBC.CDL.Continuous.Sources.Constant TZonCooSet(
-=======
   Buildings.Controls.OBC.CDL.Reals.Sources.Constant TZon(
     final k=273.15 + 22) "Zone temperature"
     annotation (Placement(transformation(extent={{-40,40},{-20,60}})));
@@ -50,7 +31,6 @@ model Supply_T
     "Difference zone minus outdoor temperature"
     annotation (Placement(transformation(extent={{60,-60},{80,-40}})));
   Buildings.Controls.OBC.CDL.Reals.Sources.Constant TZonCooSet(
->>>>>>> master
     final k=273.15 + 24)
     "Zone cooling set point"
     annotation (Placement(transformation(extent={{-40,-50},{-20,-30}})));
@@ -58,30 +38,13 @@ model Supply_T
     final k=Buildings.Controls.OBC.ASHRAE.G36.Types.OperationModes.occupied)
     "AHU operation mode is occupied"
     annotation (Placement(transformation(extent={{-80,60},{-60,80}})));
-<<<<<<< HEAD
-  Buildings.Controls.OBC.CDL.Continuous.Sources.Constant TZonHeaSet(
-=======
   Buildings.Controls.OBC.CDL.Reals.Sources.Constant TZonHeaSet(
->>>>>>> master
     final k=273.15 + 20)
     "Zone heating set point"
     annotation (Placement(transformation(extent={{-80,-80},{-60,-60}})));
 
 equation
   connect(uCoo.y, setPoiVAV.uCoo) annotation (Line(points={{-58,-20},{-12,-20},{
-<<<<<<< HEAD
-          -12,-12},{58,-12}},  color={0,0,127}));
-  connect(TZon.y, setPoiVAV.TZon) annotation (Line(points={{-18,50},{34,50},{34,
-          -3.6},{58,-3.6}}, color={0,0,127}));
-  connect(TOut.y, setPoiVAV.TOut) annotation (Line(points={{-58,30},{28,30},{28,
-          -6},{58,-6}},     color={0,0,127}));
-  connect(uHea.y, setPoiVAV.uHea) annotation (Line(points={{-18,10},{22,10},{22,
-          -9},{58,-9}},        color={0,0,127}));
-  connect(dT.u1, TZon.y) annotation (Line(points={{58,-44},{34,-44},{34,50},{-18,
-          50}},      color={0,0,127}));
-  connect(dT.u2, TOut.y) annotation (Line(points={{58,-56},{28,-56},{28,30},{-58,
-          30}},      color={0,0,127}));
-=======
           -12,-12},{58,-12}}, color={0,0,127}));
   connect(TZon.y, setPoiVAV.TZon) annotation (Line(points={{-18,50},{34,50},{34,
           -3.6},{58,-3.6}}, color={0,0,127}));
@@ -93,7 +56,6 @@ equation
           50}}, color={0,0,127}));
   connect(dT.u2, TOut.y) annotation (Line(points={{58,-56},{28,-56},{28,30},{-58,
           30}}, color={0,0,127}));
->>>>>>> master
   connect(opeMod.y, setPoiVAV.uOpeMod) annotation (Line(points={{-58,70},{40,70},
           {40,-1},{58,-1}}, color={255,127,0}));
   connect(TZonCooSet.y, setPoiVAV.TCooSet) annotation (Line(points={{-18,-40},{16,

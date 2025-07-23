@@ -8,11 +8,7 @@ block ReliefDamper
     "Relief-damper position that maintains a building pressure of 12 Pa while the economizer damper is fully open and the fan speed is at cooling maximum";
   parameter Real posHys=0.05
     "Hysteresis for damper position check"
-<<<<<<< HEAD
-    annotation (Dialog(tab="Advanced"));
-=======
     annotation (__cdl(ValueInReference=false), Dialog(tab="Advanced"));
->>>>>>> master
 
   Buildings.Controls.OBC.CDL.Interfaces.RealInput uOutDam_min(
     final min=0,
@@ -41,11 +37,7 @@ block ReliefDamper
       iconTransformation(extent={{100,-20},{140,20}})));
 
 protected
-<<<<<<< HEAD
-  Buildings.Controls.OBC.CDL.Continuous.GreaterThreshold greThr(
-=======
   Buildings.Controls.OBC.CDL.Reals.GreaterThreshold greThr(
->>>>>>> master
     final t=0.05,
     final h=posHys)
     "Check if the outdoor damper is open"
@@ -53,27 +45,6 @@ protected
   Buildings.Controls.OBC.CDL.Logical.And and2
     "Check if the relief damper should be open"
     annotation (Placement(transformation(extent={{-20,-50},{0,-30}})));
-<<<<<<< HEAD
-  Buildings.Controls.OBC.CDL.Continuous.Switch swi
-    "Check if relief damper should be enabled"
-    annotation (Placement(transformation(extent={{80,-50},{100,-30}})));
-  Buildings.Controls.OBC.CDL.Continuous.Sources.Constant zerDam(
-    final k=0) "Close damper when disabled"
-    annotation (Placement(transformation(extent={{-20,-110},{0,-90}})));
-  Buildings.Controls.OBC.CDL.Continuous.Sources.Constant minRel(
-    final k=relDam_min)
-    "Minimum relief damper position"
-    annotation (Placement(transformation(extent={{-100,70},{-80,90}})));
-  Buildings.Controls.OBC.CDL.Continuous.Sources.Constant maxRel(
-    final k=relDam_max)
-    "Maximum relief damper position"
-    annotation (Placement(transformation(extent={{-40,10},{-20,30}})));
-  Buildings.Controls.OBC.CDL.Continuous.Sources.Constant fulOpe(
-    final k=1)
-    "Fully open relief damper"
-    annotation (Placement(transformation(extent={{-100,10},{-80,30}})));
-  Buildings.Controls.OBC.CDL.Continuous.Line relDam(
-=======
   Buildings.Controls.OBC.CDL.Reals.Switch swi
     "Check if relief damper should be enabled"
     annotation (Placement(transformation(extent={{80,-50},{100,-30}})));
@@ -93,7 +64,6 @@ protected
     "Fully open relief damper"
     annotation (Placement(transformation(extent={{-100,10},{-80,30}})));
   Buildings.Controls.OBC.CDL.Reals.Line relDam(
->>>>>>> master
     final limitBelow=true,
     final limitAbove=true)
     "Relief damper signal is linearly proportional to the control signal between signal limits"

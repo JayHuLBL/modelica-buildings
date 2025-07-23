@@ -3,11 +3,7 @@ model Controller_Disable
   "Validation model for disabling the single zone VAV AHU economizer modulation and damper position limit control loops"
 
   Buildings.Controls.OBC.ASHRAE.G36.AHUs.SingleZone.VAV.Economizers.Controller economizer(
-<<<<<<< HEAD
-    final eneStd=Buildings.Controls.OBC.ASHRAE.G36.Types.EnergyStandard.ASHRAE90_1_2016,
-=======
     final eneStd=Buildings.Controls.OBC.ASHRAE.G36.Types.EnergyStandard.ASHRAE90_1,
->>>>>>> master
     final ecoHigLimCon=Buildings.Controls.OBC.ASHRAE.G36.Types.ControlEconomizer.FixedEnthalpyWithFixedDryBulb,
     final ashCliZon=Buildings.Controls.OBC.ASHRAE.G36.Types.ASHRAEClimateZone.Zone_1A,
     final supFanSpe_min=supFanSpe_min,
@@ -17,11 +13,7 @@ model Controller_Disable
     annotation (Placement(transformation(extent={{20,0},{40,40}})));
 
   Buildings.Controls.OBC.ASHRAE.G36.AHUs.SingleZone.VAV.Economizers.Controller economizer1(
-<<<<<<< HEAD
-    final eneStd=Buildings.Controls.OBC.ASHRAE.G36.Types.EnergyStandard.ASHRAE90_1_2016,
-=======
     final eneStd=Buildings.Controls.OBC.ASHRAE.G36.Types.EnergyStandard.ASHRAE90_1,
->>>>>>> master
     final ecoHigLimCon=Buildings.Controls.OBC.ASHRAE.G36.Types.ControlEconomizer.FixedEnthalpyWithFixedDryBulb,
     final ashCliZon=Buildings.Controls.OBC.ASHRAE.G36.Types.ASHRAEClimateZone.Zone_1A,
     final supFanSpe_min=supFanSpe_min,
@@ -77,57 +69,33 @@ protected
     final k=Buildings.Controls.OBC.ASHRAE.G36.Types.OperationModes.occupied)
      "AHU operation mode is Occupied"
     annotation (Placement(transformation(extent={{-120,-100},{-100,-80}})));
-<<<<<<< HEAD
-  Buildings.Controls.OBC.CDL.Continuous.Sources.Constant hOutBelowCutoff(
-    final k=hOutCutoff - 40000)
-    "Outdoor air enthalpy is below the cutoff"
-    annotation (Placement(transformation(extent={{-120,10},{-100,30}})));
-  Buildings.Controls.OBC.CDL.Continuous.Sources.Constant TSupSetSig(
-=======
   Buildings.Controls.OBC.CDL.Reals.Sources.Constant hOutBelowCutoff(
     final k=hOutCutoff - 40000)
     "Outdoor air enthalpy is below the cutoff"
     annotation (Placement(transformation(extent={{-120,10},{-100,30}})));
   Buildings.Controls.OBC.CDL.Reals.Sources.Constant TSupSetSig(
->>>>>>> master
     final k=TSupSet) "Heating supply air temperature setpoint"
     annotation (Placement(transformation(extent={{-80,50},{-60,70}})));
   Buildings.Controls.OBC.CDL.Integers.Sources.Constant freProSta2(
     final k=Buildings.Controls.OBC.ASHRAE.G36.Types.FreezeProtectionStages.stage2)
     "Freeze protection stage is 2"
     annotation (Placement(transformation(extent={{40,-130},{60,-110}})));
-<<<<<<< HEAD
-  Buildings.Controls.OBC.CDL.Continuous.Sources.Constant TOutBelowCutoff(
-    final k=TOutCutoff - 30)
-    "Outdoor air temperature is below the cutoff"
-    annotation (Placement(transformation(extent={{-120,110},{-100,130}})));
-  Buildings.Controls.OBC.CDL.Continuous.Sources.Ramp TSup(
-=======
   Buildings.Controls.OBC.CDL.Reals.Sources.Constant TOutBelowCutoff(
     final k=TOutCutoff - 30)
     "Outdoor air temperature is below the cutoff"
     annotation (Placement(transformation(extent={{-120,110},{-100,130}})));
   Buildings.Controls.OBC.CDL.Reals.Sources.Ramp TSup(
->>>>>>> master
     final height=4,
     final offset=TSupSet - 2,
     final duration=1800) "Supply air temperature"
     annotation (Placement(transformation(extent={{-80,90},{-60,110}})));
-<<<<<<< HEAD
-  Buildings.Controls.OBC.CDL.Continuous.Sources.Ramp VOutMinSetSig(
-=======
   Buildings.Controls.OBC.CDL.Reals.Sources.Ramp VOutMinSetSig(
->>>>>>> master
     final duration=1800,
     final offset=VOutMin_flow,
     final height=VOutDes_flow - VOutMin_flow)
     "Minimum outdoor airflow setpoint"
     annotation (Placement(transformation(extent={{-40,90},{-20,110}})));
-<<<<<<< HEAD
-  Buildings.Controls.OBC.CDL.Continuous.Sources.Ramp SupFanSpeSig(
-=======
   Buildings.Controls.OBC.CDL.Reals.Sources.Ramp SupFanSpeSig(
->>>>>>> master
     final duration=1800,
     final offset=supFanSpe_min,
     final height=supFanSpe_max - supFanSpe_min) "Supply fan speed signal"

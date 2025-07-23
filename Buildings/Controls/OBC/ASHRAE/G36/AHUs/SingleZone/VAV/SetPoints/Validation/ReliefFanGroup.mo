@@ -17,11 +17,7 @@ model ReliefFanGroup
     final period=4000)
     "Supply fan status"
     annotation (Placement(transformation(extent={{-120,130},{-100,150}})));
-<<<<<<< HEAD
-  Buildings.Controls.OBC.CDL.Continuous.Sources.Ramp dpBui(
-=======
   Buildings.Controls.OBC.CDL.Reals.Sources.Ramp dpBui(
->>>>>>> master
     final height=40,
     final offset=0,
     final duration=1800) "Building static presure"
@@ -31,21 +27,13 @@ model ReliefFanGroup
     final period=4000,
     shift=600) "Supply fan status"
     annotation (Placement(transformation(extent={{-120,90},{-100,110}})));
-<<<<<<< HEAD
-  Buildings.Controls.OBC.CDL.Continuous.GreaterThreshold greThr[4](
-=======
   Buildings.Controls.OBC.CDL.Reals.GreaterThreshold greThr[4](
->>>>>>> master
     final t=fill(0.01, 4))
     "Check if the relief fan is proven on"
     annotation (Placement(transformation(extent={{60,100},{80,120}})));
   Buildings.Controls.OBC.CDL.Logical.Pre pre[4] "Return relief fan status"
     annotation (Placement(transformation(extent={{100,100},{120,120}})));
-<<<<<<< HEAD
-  Buildings.Controls.OBC.CDL.Continuous.GreaterThreshold greThr1[4](
-=======
   Buildings.Controls.OBC.CDL.Reals.GreaterThreshold greThr1[4](
->>>>>>> master
     final t=fill(0.01, 4))
     "Check if the relief fan is proven on"
     annotation (Placement(transformation(extent={{60,0},{80,20}})));
@@ -67,11 +55,7 @@ model ReliefFanGroup
     final samplePeriod=fill(20, 4))
     "Zero order hold"
     annotation (Placement(transformation(extent={{30,0},{50,20}})));
-<<<<<<< HEAD
-  Buildings.Controls.OBC.CDL.Continuous.GreaterThreshold greThr2[4](
-=======
   Buildings.Controls.OBC.CDL.Reals.GreaterThreshold greThr2[4](
->>>>>>> master
     final t=fill(0.01, 4))
     "Check if the relief fan is proven on"
     annotation (Placement(transformation(extent={{60,-120},{80,-100}})));
@@ -81,11 +65,7 @@ model ReliefFanGroup
     final samplePeriod=fill(20, 4))
     "Zero order hold"
     annotation (Placement(transformation(extent={{30,-120},{50,-100}})));
-<<<<<<< HEAD
-  Buildings.Controls.OBC.CDL.Continuous.Sources.Ramp dpBui1(
-=======
   Buildings.Controls.OBC.CDL.Reals.Sources.Ramp dpBui1(
->>>>>>> master
     final height=-15,
     final offset=20,
     final duration=1800,

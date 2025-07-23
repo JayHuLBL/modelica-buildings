@@ -16,20 +16,12 @@ model ReliefFan "Validate model for controlling relief fan"
       final period=3600)
     "Supply fan status"
     annotation (Placement(transformation(extent={{-80,60},{-60,80}})));
-<<<<<<< HEAD
-  Buildings.Controls.OBC.CDL.Continuous.Sources.Ramp dpBui(
-=======
   Buildings.Controls.OBC.CDL.Reals.Sources.Ramp dpBui(
->>>>>>> master
     final height=40,
     final offset=0,
     final duration=1800) "Building static presure"
     annotation (Placement(transformation(extent={{-40,-20},{-20,0}})));
-<<<<<<< HEAD
-  Buildings.Controls.OBC.CDL.Continuous.Sources.Ramp dpBui1(
-=======
   Buildings.Controls.OBC.CDL.Reals.Sources.Ramp dpBui1(
->>>>>>> master
     final height=-15,
     final offset=20,
     final duration=1800,
@@ -40,11 +32,7 @@ model ReliefFan "Validate model for controlling relief fan"
     final k=true)
     "Supply fan status"
     annotation (Placement(transformation(extent={{-80,-50},{-60,-30}})));
-<<<<<<< HEAD
-  Buildings.Controls.OBC.CDL.Continuous.Sources.Ramp dpBui2(
-=======
   Buildings.Controls.OBC.CDL.Reals.Sources.Ramp dpBui2(
->>>>>>> master
     final height=3,
     final offset=11,
     final duration=1800)

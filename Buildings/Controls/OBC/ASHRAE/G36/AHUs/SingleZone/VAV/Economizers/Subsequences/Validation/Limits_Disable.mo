@@ -51,20 +51,12 @@ protected
     final quantity="VolumeFlowRate")=0.2
     "Maximum increase in airflow volume during the example simulation";
 
-<<<<<<< HEAD
-  Buildings.Controls.OBC.CDL.Continuous.Sources.Ramp SupFanSpeSig(
-=======
   Buildings.Controls.OBC.CDL.Reals.Sources.Ramp SupFanSpeSig(
->>>>>>> master
     final duration=1800,
     final offset=supFanSpe_min,
     final height=supFanSpe_max - supFanSpe_min) "Supply fan speed signal"
     annotation (Placement(transformation(extent={{-160,20},{-140,40}})));
-<<<<<<< HEAD
-  Buildings.Controls.OBC.CDL.Continuous.Sources.Ramp VOutMinSetSig(
-=======
   Buildings.Controls.OBC.CDL.Reals.Sources.Ramp VOutMinSetSig(
->>>>>>> master
     final duration=1800,
     final offset=VOutMin_flow,
     final height=VOutDes_flow - VOutMin_flow) "Constant minimum outdoor airflow setpoint"
