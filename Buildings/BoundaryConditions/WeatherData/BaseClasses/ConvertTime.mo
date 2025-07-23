@@ -15,6 +15,7 @@ protected
   constant Modelica.Units.SI.Time shiftSolarRad=1800
     "Number of seconds for the shift for solar radiation calculation";
 
+
 equation
   calTim = calTimAux;
   modTimAux = modTim;

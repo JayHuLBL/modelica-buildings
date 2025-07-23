@@ -3,14 +3,6 @@ block SupplySignals
   "Multizone VAV AHU supply air temperature control loop and coil valves position"
 
   parameter Boolean have_heaCoi=true
-<<<<<<< HEAD
-    "True: the AHU has heating coil. It could be the hot water coil, or the electric heating coil";
-  parameter Buildings.Controls.OBC.CDL.Types.SimpleController controllerType=
-      Buildings.Controls.OBC.CDL.Types.SimpleController.PI
-    "Type of controller for supply air temperature signal";
-  parameter Real kTSup(final unit="1/K")=0.05
-    "Gain of controller for supply air temperature signal";
-=======
     "True: the AHU has heating coil. It could be the hot water coil, or the electric heating coil"
     annotation (__cdl(ValueInReference=false));
   parameter Boolean have_cooCoi=true
@@ -23,40 +15,24 @@ block SupplySignals
   parameter Real kTSup(final unit="1/K")=0.05
     "Gain of controller for supply air temperature signal"
     annotation (__cdl(ValueInReference=false));
->>>>>>> master
   parameter Real TiTSup(
     final unit="s",
     final quantity="Time")=600
     "Time constant of integrator block for supply temperature control signal"
-<<<<<<< HEAD
-    annotation(Dialog(
-=======
     annotation (__cdl(ValueInReference=false),
                 Dialog(
->>>>>>> master
       enable=controllerType == Buildings.Controls.OBC.CDL.Types.SimpleController.PI
           or controllerType == Buildings.Controls.OBC.CDL.Types.SimpleController.PID));
   parameter Real TdTSup(
     final unit="s",
     final quantity="Time")=0.1
     "Time constant of derivative block for supply temperature control signal"
-<<<<<<< HEAD
-    annotation(Dialog(enable=controllerType == Buildings.Controls.OBC.CDL.Types.SimpleController.PD
-=======
     annotation(__cdl(ValueInReference=false),
                 Dialog(enable=controllerType == Buildings.Controls.OBC.CDL.Types.SimpleController.PD
->>>>>>> master
                           or controllerType == Buildings.Controls.OBC.CDL.Types.SimpleController.PID));
   parameter Real uHea_max(
     final min=-0.9,
     final unit="1")=-0.25
-<<<<<<< HEAD
-    "Upper limit of controller signal when heating coil is off. Require -1 < uHea_max < uCoo_min < 1.";
-  parameter Real uCoo_min(
-    final max=0.9,
-    final unit="1")=0.25
-    "Lower limit of controller signal when cooling coil is off. Require -1 < uHea_max < uCoo_min < 1.";
-=======
     "Upper limit of controller signal when heating coil is off. Require -1 < uHea_max < uCoo_min < 1."
     annotation (__cdl(ValueInReference=false));
   parameter Real uCoo_min(
@@ -64,7 +40,6 @@ block SupplySignals
     final unit="1")=0.25
     "Lower limit of controller signal when cooling coil is off. Require -1 < uHea_max < uCoo_min < 1."
     annotation (__cdl(ValueInReference=false));
->>>>>>> master
 
   Buildings.Controls.OBC.CDL.Interfaces.RealInput TAirSup(
     final unit="K",
@@ -92,16 +67,10 @@ block SupplySignals
   Buildings.Controls.OBC.CDL.Interfaces.RealOutput yCooCoi(
     final min=0,
     final max=1,
-<<<<<<< HEAD
-    final unit="1") "Cooling coil commanded position" annotation (Placement(
-        transformation(extent={{100,-40},{140,0}}), iconTransformation(extent={{
-            100,-80},{140,-40}})));
-=======
     final unit="1") if have_cooCoi
     "Cooling coil commanded position"
     annotation (Placement(transformation(extent={{100,-40},{140,0}}),
         iconTransformation(extent={{100,-80},{140,-40}})));
->>>>>>> master
   Buildings.Controls.OBC.CDL.Interfaces.RealOutput uTSup(
     final max=1,
     final unit="1",
@@ -110,12 +79,7 @@ block SupplySignals
     annotation (Placement(transformation(extent={{100,40},{140,80}}),
         iconTransformation(extent={{100,40},{140,80}})));
 
-<<<<<<< HEAD
-protected
-  Buildings.Controls.OBC.CDL.Continuous.PIDWithReset conTSup(
-=======
   Buildings.Controls.OBC.CDL.Reals.PIDWithReset conTSup(
->>>>>>> master
     final controllerType=controllerType,
     final k=kTSup,
     final Ti=TiTSup,
@@ -126,35 +90,6 @@ protected
     final y_reset=0)
     "Controller for supply air temperature control signal (to be used by heating coil, cooling coil and economizer)"
     annotation (Placement(transformation(extent={{-60,20},{-40,40}})));
-<<<<<<< HEAD
-  Buildings.Controls.OBC.CDL.Continuous.Switch swi
-    "Switch to select supply temperature control signal based on status of supply fan"
-    annotation (Placement(transformation(extent={{0,50},{20,70}})));
-  Buildings.Controls.OBC.CDL.Continuous.Sources.Constant uHeaMaxCon(
-    final k=uHea_max) if have_heaCoi
-    "Constant signal to map control action"
-    annotation (Placement(transformation(extent={{0,-20},{20,0}})));
-  Buildings.Controls.OBC.CDL.Continuous.Sources.Constant negOne(final k=-1)
-    if have_heaCoi
-    "Negative unity signal"
-    annotation (Placement(transformation(extent={{0,18},{20,38}})));
-  Buildings.Controls.OBC.CDL.Continuous.Sources.Constant uCooMinCon(
-    final k=uCoo_min)
-    "Constant signal to map control action"
-    annotation (Placement(transformation(extent={{0,-60},{20,-40}})));
-  Buildings.Controls.OBC.CDL.Continuous.Sources.Constant zer(final k=0)
-    "Zero control signal"
-    annotation (Placement(transformation(extent={{-60,-50},{-40,-30}})));
-  Buildings.Controls.OBC.CDL.Continuous.Sources.Constant one(final k=1)
-    "Unity signal"
-    annotation (Placement(transformation(extent={{0,-90},{20,-70}})));
-  Buildings.Controls.OBC.CDL.Continuous.Line conSigCoo(
-    final limitBelow=true,
-    final limitAbove=false)
-    "Cooling control signal"
-    annotation (Placement(transformation(extent={{60,-30},{80,-10}})));
-  Buildings.Controls.OBC.CDL.Continuous.Line conSigHea(
-=======
 
 protected
   Buildings.Controls.OBC.CDL.Reals.Switch swi
@@ -184,7 +119,6 @@ protected
     "Cooling control signal"
     annotation (Placement(transformation(extent={{60,-30},{80,-10}})));
   Buildings.Controls.OBC.CDL.Reals.Line conSigHea(
->>>>>>> master
     final limitBelow=false,
     final limitAbove=true) if have_heaCoi
     "Heating control signal"
@@ -275,12 +209,8 @@ annotation (
           extent={{62,-50},{96,-64}},
           textColor={0,0,127},
           pattern=LinePattern.Dash,
-<<<<<<< HEAD
-          textString="yCooCoi"),
-=======
           textString="yCooCoi",
           visible=have_cooCoi),
->>>>>>> master
         Text(
           extent={{-96,66},{-56,52}},
           textColor={0,0,127},

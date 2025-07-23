@@ -4,24 +4,6 @@ block Controller
 
   parameter Buildings.Controls.OBC.ASHRAE.G36.Types.OutdoorAirSection minOADes
     "Design of minimum outdoor air and economizer function";
-<<<<<<< HEAD
-  parameter Buildings.Controls.OBC.ASHRAE.G36.Types.BuildingPressureControlTypes buiPreCon
-    "Type of building pressure control system";
-  parameter Buildings.Controls.OBC.ASHRAE.G36.Types.EnergyStandard eneStd=Buildings.Controls.OBC.ASHRAE.G36.Types.EnergyStandard.Not_Specified
-    "Energy standard, ASHRAE 90.1 or Title 24";
-  parameter Buildings.Controls.OBC.ASHRAE.G36.Types.ControlEconomizer ecoHigLimCon
-    "Economizer high limit control device";
-  parameter Buildings.Controls.OBC.ASHRAE.G36.Types.ASHRAEClimateZone ashCliZon=
-    Buildings.Controls.OBC.ASHRAE.G36.Types.ASHRAEClimateZone.Not_Specified
-    "ASHRAE climate zone"
-    annotation (Dialog(enable=eneStd==Buildings.Controls.OBC.ASHRAE.G36.Types.EnergyStandard.ASHRAE90_1_2016));
-  parameter Buildings.Controls.OBC.ASHRAE.G36.Types.Title24ClimateZone tit24CliZon=
-    Buildings.Controls.OBC.ASHRAE.G36.Types.Title24ClimateZone.Not_Specified
-    "California Title 24 climate zone"
-    annotation (Dialog(enable=eneStd==Buildings.Controls.OBC.ASHRAE.G36.Types.EnergyStandard.California_Title_24_2016));
-  parameter Real aveTimRan(unit="s")=5
-    "Time horizon over which the outdoor air flow measurement is averaged";
-=======
   parameter Buildings.Controls.OBC.ASHRAE.G36.Types.PressureControl buiPreCon
     "Type of building pressure control system";
   parameter Buildings.Controls.OBC.ASHRAE.G36.Types.EnergyStandard eneStd
@@ -36,83 +18,43 @@ block Controller
     "California Title 24 climate zone"
     annotation (__cdl(ValueInReference=false),
                 Dialog(enable=eneStd==Buildings.Controls.OBC.ASHRAE.G36.Types.EnergyStandard.California_Title_24));
->>>>>>> master
 
   // Limits
   parameter Real minSpe(unit="1")=0.1
     "Minimum supply fan speed"
-<<<<<<< HEAD
-    annotation (Dialog(tab="Limits",
-=======
     annotation (__cdl(ValueInReference=false),
                 Dialog(tab="Limits",
->>>>>>> master
       enable=minOADes == Buildings.Controls.OBC.ASHRAE.G36.Types.OutdoorAirSection.DedicatedDampersAirflow
            or minOADes == Buildings.Controls.OBC.ASHRAE.G36.Types.OutdoorAirSection.DedicatedDampersPressure));
   parameter Buildings.Controls.OBC.CDL.Types.SimpleController minOAConTyp=
     Buildings.Controls.OBC.CDL.Types.SimpleController.PI
     "Type of minimum outdoor air controller"
-<<<<<<< HEAD
-    annotation (Dialog(tab="Limits", group="With AFMS",
-=======
     annotation (__cdl(ValueInReference=false),
                 Dialog(tab="Limits", group="With AFMS",
->>>>>>> master
       enable=minOADes == Buildings.Controls.OBC.ASHRAE.G36.Types.OutdoorAirSection.DedicatedDampersAirflow
            or minOADes == Buildings.Controls.OBC.ASHRAE.G36.Types.OutdoorAirSection.SingleDamper));
   parameter Real kMinOA(unit="1")=1
     "Gain of controller"
-<<<<<<< HEAD
-    annotation (Dialog(tab="Limits", group="With AFMS",
-=======
     annotation (__cdl(ValueInReference=false),
                 Dialog(tab="Limits", group="With AFMS",
->>>>>>> master
       enable=minOADes == Buildings.Controls.OBC.ASHRAE.G36.Types.OutdoorAirSection.DedicatedDampersAirflow
            or minOADes == Buildings.Controls.OBC.ASHRAE.G36.Types.OutdoorAirSection.SingleDamper));
   parameter Real TiMinOA(unit="s")=0.5
     "Time constant of integrator block"
-<<<<<<< HEAD
-    annotation (Dialog(tab="Limits", group="With AFMS",
-=======
     annotation (__cdl(ValueInReference=false),
                 Dialog(tab="Limits", group="With AFMS",
->>>>>>> master
       enable=(minOADes == Buildings.Controls.OBC.ASHRAE.G36.Types.OutdoorAirSection.DedicatedDampersAirflow
            or minOADes == Buildings.Controls.OBC.ASHRAE.G36.Types.OutdoorAirSection.SingleDamper)
            and (minOAConTyp == Buildings.Controls.OBC.CDL.Types.SimpleController.PI
            or minOAConTyp == Buildings.Controls.OBC.CDL.Types.SimpleController.PID)));
   parameter Real TdMinOA(unit="s")=0.1
     "Time constant of derivative block"
-<<<<<<< HEAD
-    annotation (Dialog(tab="Limits", group="With AFMS",
-=======
     annotation (__cdl(ValueInReference=false),
                 Dialog(tab="Limits", group="With AFMS",
->>>>>>> master
       enable=(minOADes == Buildings.Controls.OBC.ASHRAE.G36.Types.OutdoorAirSection.DedicatedDampersAirflow
            or minOADes == Buildings.Controls.OBC.ASHRAE.G36.Types.OutdoorAirSection.SingleDamper)
            and (minOAConTyp == Buildings.Controls.OBC.CDL.Types.SimpleController.PD
            or minOAConTyp == Buildings.Controls.OBC.CDL.Types.SimpleController.PID)));
-<<<<<<< HEAD
-  parameter Types.VentilationStandard venStd=Buildings.Controls.OBC.ASHRAE.G36.Types.VentilationStandard.Not_Specified
-    "Ventilation standard, ASHRAE 62.1 or Title 24"
-    annotation (Dialog(tab="Limits", group="With DP",
-      enable=minOADes == Buildings.Controls.OBC.ASHRAE.G36.Types.OutdoorAirSection.DedicatedDampersPressure));
-  parameter Boolean have_CO2Sen=false
-    "True: some zones have CO2 sensor"
-    annotation (Dialog(tab="Limits", group="With DP",
-      enable=(minOADes == Buildings.Controls.OBC.ASHRAE.G36.Types.OutdoorAirSection.DedicatedDampersPressure
-           and venStd == Buildings.Controls.OBC.ASHRAE.G36.Types.VentilationStandard.California_Title_24_2016)));
-  parameter Real dpAbsMinOutDam=5
-    "Absolute minimum pressure difference across the minimum outdoor air damper. It provides the absolute minimum outdoor airflow"
-    annotation (Dialog(tab="Limits", group="With DP",
-      enable=(venStd == Buildings.Controls.OBC.ASHRAE.G36.Types.VentilationStandard.California_Title_24_2016
-           and minOADes == Buildings.Controls.OBC.ASHRAE.G36.Types.OutdoorAirSection.DedicatedDampersPressure)));
-  parameter Real dpDesMinOutDam(unit="Pa")=20
-    "Design minimum pressure difference across the minimum outdoor air damper. It provides the design minimum outdoor airflow"
-    annotation (Dialog(tab="Limits", group="With DP",
-=======
   parameter Types.VentilationStandard venStd=Buildings.Controls.OBC.ASHRAE.G36.Types.VentilationStandard.ASHRAE62_1
     "Ventilation standard, ASHRAE 62.1 or Title 24"
     annotation (__cdl(ValueInReference=false),
@@ -134,22 +76,10 @@ block Controller
     "Design minimum pressure difference across the minimum outdoor air damper. It provides the design minimum outdoor airflow"
     annotation (__cdl(ValueInReference=false),
                 Dialog(tab="Limits", group="With DP",
->>>>>>> master
       enable=minOADes == Buildings.Controls.OBC.ASHRAE.G36.Types.OutdoorAirSection.DedicatedDampersPressure));
   parameter Buildings.Controls.OBC.CDL.Types.SimpleController dpConTyp=
     Buildings.Controls.OBC.CDL.Types.SimpleController.PID
     "Type of differential pressure setpoint controller"
-<<<<<<< HEAD
-    annotation (Dialog(tab="Limits", group="With DP",
-      enable=minOADes == Buildings.Controls.OBC.ASHRAE.G36.Types.OutdoorAirSection.DedicatedDampersPressure));
-  parameter Real kDp(unit="1")=1
-    "Gain of controller"
-    annotation (Dialog(tab="Limits", group="With DP",
-      enable=minOADes == Buildings.Controls.OBC.ASHRAE.G36.Types.OutdoorAirSection.DedicatedDampersPressure));
-  parameter Real TiDp(unit="s")=0.5
-    "Time constant of integrator block"
-    annotation (Dialog(tab="Limits", group="With DP",
-=======
     annotation (__cdl(ValueInReference=false),
                 Dialog(tab="Limits", group="With DP",
       enable=minOADes == Buildings.Controls.OBC.ASHRAE.G36.Types.OutdoorAirSection.DedicatedDampersPressure));
@@ -162,29 +92,20 @@ block Controller
     "Time constant of integrator block"
     annotation (__cdl(ValueInReference=false),
                 Dialog(tab="Limits", group="With DP",
->>>>>>> master
       enable=(minOADes == Buildings.Controls.OBC.ASHRAE.G36.Types.OutdoorAirSection.DedicatedDampersPressure)
            and (dpConTyp == Buildings.Controls.OBC.CDL.Types.SimpleController.PI
            or dpConTyp == Buildings.Controls.OBC.CDL.Types.SimpleController.PID)));
   parameter Real TdDp(unit="s")=0.1
     "Time constant of derivative block"
-<<<<<<< HEAD
-    annotation (Dialog(tab="Limits", group="With DP",
-=======
     annotation (__cdl(ValueInReference=false),
                 Dialog(tab="Limits", group="With DP",
->>>>>>> master
       enable=(minOADes == Buildings.Controls.OBC.ASHRAE.G36.Types.OutdoorAirSection.DedicatedDampersPressure)
            and (dpConTyp == Buildings.Controls.OBC.CDL.Types.SimpleController.PD
            or dpConTyp == Buildings.Controls.OBC.CDL.Types.SimpleController.PID)));
   parameter Real uRetDam_min(unit="1")=0.5
     "Loop signal value to start decreasing the maximum return air damper position"
-<<<<<<< HEAD
-    annotation (Dialog(tab="Limits", group="Common",
-=======
     annotation (__cdl(ValueInReference=false),
                 Dialog(tab="Limits", group="Common",
->>>>>>> master
       enable=minOADes == Buildings.Controls.OBC.ASHRAE.G36.Types.OutdoorAirSection.SingleDamper));
 
   // Enable
@@ -192,67 +113,16 @@ block Controller
     unit="K",
     displayUnit="K")=1
     "Delta between the temperature hysteresis high and low limit"
-<<<<<<< HEAD
-    annotation (Dialog(tab="Enable", group="Hysteresis"));
-  parameter Real delEntHis(unit="J/kg")=1000
-    "Delta between the enthalpy hysteresis high and low limits"
-    annotation (Dialog(tab="Enable", group="Hysteresis",
-=======
     annotation (__cdl(ValueInReference=false),
                 Dialog(tab="Enable", group="Hysteresis"));
   parameter Real delEntHis(unit="J/kg")=1000
     "Delta between the enthalpy hysteresis high and low limits"
     annotation (__cdl(ValueInReference=false),
                 Dialog(tab="Enable", group="Hysteresis",
->>>>>>> master
                        enable=ecoHigLimCon == Buildings.Controls.OBC.ASHRAE.G36.Types.ControlEconomizer.DifferentialEnthalpyWithFixedDryBulb
                            or ecoHigLimCon == Buildings.Controls.OBC.ASHRAE.G36.Types.ControlEconomizer.FixedEnthalpyWithFixedDryBulb));
   parameter Real retDamFulOpeTim(unit="s")=180
     "Time period to keep RA damper fully open before releasing it for minimum outdoor airflow control at disable to avoid pressure fluctuations"
-<<<<<<< HEAD
-    annotation (Dialog(tab="Enable", group="Delays"));
-  parameter Real disDel(unit="s")=15
-    "Short time delay before closing the OA damper at disable to avoid pressure fluctuations"
-    annotation (Dialog(tab="Enable", group="Delays"));
-
-  // Commissioning
-  parameter Real retDamPhy_max(unit="1")=1
-    "Physically fixed maximum position of the return air damper"
-    annotation (Dialog(tab="Commissioning", group="Limits"));
-  parameter Real retDamPhy_min(unit="1")=0
-    "Physically fixed minimum position of the return air damper"
-    annotation (Dialog(tab="Commissioning", group="Limits"));
-  parameter Real outDamPhy_max(unit="1")=1
-    "Physically fixed maximum position of the outdoor air damper"
-    annotation (Dialog(tab="Commissioning", group="Limits"));
-  parameter Real outDamPhy_min(unit="1")=0
-    "Physically fixed minimum position of the outdoor air damper"
-    annotation (Dialog(tab="Commissioning", group="Limits"));
-  parameter Real minOutDamPhy_max(unit="1")=1
-    "Physically fixed maximum position of the minimum outdoor air damper"
-    annotation (Dialog(tab="Commissioning", group="Limits",
-      enable=minOADes == Buildings.Controls.OBC.ASHRAE.G36.Types.OutdoorAirSection.DedicatedDampersAirflow));
-  parameter Real minOutDamPhy_min(unit="1")=0
-    "Physically fixed minimum position of the minimum outdoor air damper"
-    annotation (Dialog(tab="Commissioning", group="Limits",
-      enable=minOADes == Buildings.Controls.OBC.ASHRAE.G36.Types.OutdoorAirSection.DedicatedDampersAirflow));
-  parameter Real uHeaMax(unit="1")=-0.25
-    "Lower limit of controller input when outdoor damper opens (see diagram)"
-    annotation (Dialog(tab="Commissioning", group="Modulation"));
-  parameter Real uCooMin(unit="1")=+0.25
-    "Upper limit of controller input when return damper is closed (see diagram)"
-    annotation (Dialog(tab="Commissioning", group="Modulation"));
-  parameter Real uOutDamMax(unit="1")=(uHeaMax + uCooMin)/2
-    "Maximum loop signal for the OA damper to be fully open"
-    annotation (Dialog(tab="Commissioning", group="Modulation",
-      enable=buiPreCon == Buildings.Controls.OBC.ASHRAE.G36.Types.BuildingPressureControlTypes.ReliefDamper
-             or buiPreCon == Buildings.Controls.OBC.ASHRAE.G36.Types.BuildingPressureControlTypes.ReliefFan));
-  parameter Real uRetDamMin(unit="1")=(uHeaMax + uCooMin)/2
-    "Minimum loop signal for the RA damper to be fully open"
-    annotation (Dialog(tab="Commissioning", group="Modulation",
-      enable=buiPreCon == Buildings.Controls.OBC.ASHRAE.G36.Types.BuildingPressureControlTypes.ReliefDamper
-             or buiPreCon == Buildings.Controls.OBC.ASHRAE.G36.Types.BuildingPressureControlTypes.ReliefFan));
-=======
     annotation (__cdl(ValueInReference=true),
                 Dialog(tab="Enable", group="Delays"));
   parameter Real disDel(unit="s")=15
@@ -307,7 +177,6 @@ block Controller
                 Dialog(tab="Commissioning", group="Modulation",
       enable=buiPreCon == Buildings.Controls.OBC.ASHRAE.G36.Types.PressureControl.ReliefDamper
            or buiPreCon == Buildings.Controls.OBC.ASHRAE.G36.Types.PressureControl.ReliefFan));
->>>>>>> master
 
   Buildings.Controls.OBC.CDL.Interfaces.RealInput VOutMinSet_flow_normalized(
     final unit="1")
@@ -321,17 +190,6 @@ block Controller
     "Measured outdoor volumetric airflow rate, normalized by design minimum outdoor airflow rate"
     annotation (Placement(transformation(extent={{-280,170},{-240,210}}),
         iconTransformation(extent={{-140,150},{-100,190}})));
-<<<<<<< HEAD
-  Buildings.Controls.OBC.CDL.Interfaces.RealInput uSupFan_actual(final unit="1")
-    if (minOADes == Buildings.Controls.OBC.ASHRAE.G36.Types.OutdoorAirSection.DedicatedDampersAirflow
-     or minOADes == Buildings.Controls.OBC.ASHRAE.G36.Types.OutdoorAirSection.DedicatedDampersPressure)
-    "Actual supply fan speed" annotation (Placement(transformation(extent={{-280,
-            110},{-240,150}}), iconTransformation(extent={{-140,100},{-100,140}})));
-  Buildings.Controls.OBC.CDL.Interfaces.RealInput effAbsOutAir_normalized(
-    final unit="1")
-    if (minOADes == Buildings.Controls.OBC.ASHRAE.G36.Types.OutdoorAirSection.DedicatedDampersPressure
-     and venStd == Buildings.Controls.OBC.ASHRAE.G36.Types.VentilationStandard.California_Title_24_2016)
-=======
   Buildings.Controls.OBC.CDL.Interfaces.RealInput uSupFan(final unit="1")
     if (minOADes == Buildings.Controls.OBC.ASHRAE.G36.Types.OutdoorAirSection.DedicatedDampersAirflow
      or minOADes == Buildings.Controls.OBC.ASHRAE.G36.Types.OutdoorAirSection.DedicatedDampersPressure)
@@ -342,17 +200,12 @@ block Controller
     final unit="1")
     if (minOADes == Buildings.Controls.OBC.ASHRAE.G36.Types.OutdoorAirSection.DedicatedDampersPressure
      and venStd == Buildings.Controls.OBC.ASHRAE.G36.Types.VentilationStandard.California_Title_24)
->>>>>>> master
     "Effective minimum outdoor airflow setpoint, normalized by the absolute outdoor airflow rate "
     annotation (Placement(transformation(extent={{-280,80},{-240,120}}),
         iconTransformation(extent={{-140,70},{-100,110}})));
   Buildings.Controls.OBC.CDL.Interfaces.RealInput uCO2Loo_max(
     final unit="1")
-<<<<<<< HEAD
-    if (have_CO2Sen and venStd == Buildings.Controls.OBC.ASHRAE.G36.Types.VentilationStandard.California_Title_24_2016)
-=======
     if (have_CO2Sen and venStd == Buildings.Controls.OBC.ASHRAE.G36.Types.VentilationStandard.California_Title_24)
->>>>>>> master
      and minOADes == Buildings.Controls.OBC.ASHRAE.G36.Types.OutdoorAirSection.DedicatedDampersPressure
     "Maximum Zone CO2 control loop"
     annotation (Placement(transformation(extent={{-280,50},{-240,90}}),
@@ -360,11 +213,7 @@ block Controller
   Buildings.Controls.OBC.CDL.Interfaces.RealInput effDesOutAir_normalized(
     final unit="1")
     if minOADes == Buildings.Controls.OBC.ASHRAE.G36.Types.OutdoorAirSection.DedicatedDampersPressure
-<<<<<<< HEAD
-     and venStd == Buildings.Controls.OBC.ASHRAE.G36.Types.VentilationStandard.California_Title_24_2016
-=======
      and venStd == Buildings.Controls.OBC.ASHRAE.G36.Types.VentilationStandard.California_Title_24
->>>>>>> master
     "Effective minimum outdoor airflow setpoint, normalized by the design outdoor airflow rate "
     annotation (Placement(transformation(extent={{-280,20},{-240,60}}),
         iconTransformation(extent={{-140,50},{-100,90}})));
@@ -389,13 +238,8 @@ block Controller
   Buildings.Controls.OBC.CDL.Interfaces.RealInput TAirRet(
     final unit="K",
     displayUnit="degC",
-<<<<<<< HEAD
-    final quantity="ThermodynamicTemperature")
-    if ecoHigLimCon == Buildings.Controls.OBC.ASHRAE.G36.Types.ControlEconomizer.DifferentialDryBulb
-=======
     final quantity="ThermodynamicTemperature") if (ecoHigLimCon == Buildings.Controls.OBC.ASHRAE.G36.Types.ControlEconomizer.DifferentialDryBulb
      or ecoHigLimCon == Buildings.Controls.OBC.ASHRAE.G36.Types.ControlEconomizer.FixedDryBulbWithDifferentialDryBulb)
->>>>>>> master
     "Used only for fixed plus differential dry bulb temperature high limit cutoff"
     annotation (Placement(transformation(extent={{-280,-120},{-240,-80}}),
         iconTransformation(extent={{-140,-80},{-100,-40}})));
@@ -410,11 +254,7 @@ block Controller
   Buildings.Controls.OBC.CDL.Interfaces.RealInput hAirRet(
     final unit="J/kg",
     final quantity="SpecificEnergy")
-<<<<<<< HEAD
-    if (eneStd == Buildings.Controls.OBC.ASHRAE.G36.Types.EnergyStandard.ASHRAE90_1_2016
-=======
     if (eneStd == Buildings.Controls.OBC.ASHRAE.G36.Types.EnergyStandard.ASHRAE90_1
->>>>>>> master
      and ecoHigLimCon == Buildings.Controls.OBC.ASHRAE.G36.Types.ControlEconomizer.DifferentialEnthalpyWithFixedDryBulb)
     "Return air enthalpy"
     annotation (Placement(transformation(extent={{-280,-180},{-240,-140}}),
@@ -465,13 +305,7 @@ block Controller
   Buildings.Controls.OBC.CDL.Interfaces.RealOutput yRelDam(
     final min=0,
     final max=1,
-<<<<<<< HEAD
-    final unit="1")
-    if buiPreCon == Buildings.Controls.OBC.ASHRAE.G36.Types.BuildingPressureControlTypes.ReturnFanCalculatedAir
-     or buiPreCon == Buildings.Controls.OBC.ASHRAE.G36.Types.BuildingPressureControlTypes.ReturnFanMeasuredAir
-=======
     final unit="1") if buiPreCon == Buildings.Controls.OBC.ASHRAE.G36.Types.PressureControl.ReturnFanMeasuredAir
->>>>>>> master
     "Relief air damper commanded position"
     annotation (Placement(transformation(extent={{260,-20},{300,20}}),
         iconTransformation(extent={{100,-80},{140,-40}})));
@@ -540,15 +374,6 @@ block Controller
     final disDel=disDel) "Enable or disable economizer"
     annotation (Placement(transformation(extent={{20,-100},{40,-72}})));
 
-<<<<<<< HEAD
-  Buildings.Controls.OBC.ASHRAE.G36.AHUs.MultiZone.VAV.Economizers.Subsequences.Modulations.ReturnFan modRet(
-    final have_dirCon=buiPreCon == Buildings.Controls.OBC.ASHRAE.G36.Types.BuildingPressureControlTypes.ReturnFanDp,
-    final uMin=uHeaMax,
-    final uMax=uCooMin)
-    if (buiPreCon == Buildings.Controls.OBC.ASHRAE.G36.Types.BuildingPressureControlTypes.ReturnFanCalculatedAir
-     or buiPreCon == Buildings.Controls.OBC.ASHRAE.G36.Types.BuildingPressureControlTypes.ReturnFanMeasuredAir
-     or buiPreCon == Buildings.Controls.OBC.ASHRAE.G36.Types.BuildingPressureControlTypes.ReturnFanDp)
-=======
   Buildings.Controls.OBC.ASHRAE.G36.AHUs.MultiZone.VAV.Economizers.Subsequences.Modulations.ReturnFan
     modRet(
     final have_dirCon=buiPreCon == Buildings.Controls.OBC.ASHRAE.G36.Types.PressureControl.ReturnFanDp,
@@ -556,23 +381,15 @@ block Controller
     final uMin=uHeaMax,
     final uMax=uCooMin) if (buiPreCon == Buildings.Controls.OBC.ASHRAE.G36.Types.PressureControl.ReturnFanMeasuredAir
      or buiPreCon == Buildings.Controls.OBC.ASHRAE.G36.Types.PressureControl.ReturnFanDp)
->>>>>>> master
     "Modulate economizer dampers position for buildings with return fan controlling pressure"
     annotation (Placement(transformation(extent={{100,20},{120,40}})));
   Buildings.Controls.OBC.ASHRAE.G36.AHUs.MultiZone.VAV.Economizers.Subsequences.Modulations.Reliefs modRel(
     final uMin=uHeaMax,
     final uMax=uCooMin,
     final uOutDamMax=uOutDamMax,
-<<<<<<< HEAD
-    final uRetDamMin=uRetDamMin)
-    if (buiPreCon == Buildings.Controls.OBC.ASHRAE.G36.Types.BuildingPressureControlTypes.ReliefDamper
-     or buiPreCon == Buildings.Controls.OBC.ASHRAE.G36.Types.BuildingPressureControlTypes.ReliefFan
-     or buiPreCon == Buildings.Controls.OBC.ASHRAE.G36.Types.BuildingPressureControlTypes.BarometricRelief)
-=======
     final uRetDamMin=uRetDamMin) if (buiPreCon == Buildings.Controls.OBC.ASHRAE.G36.Types.PressureControl.ReliefDamper
      or buiPreCon == Buildings.Controls.OBC.ASHRAE.G36.Types.PressureControl.ReliefFan
      or buiPreCon == Buildings.Controls.OBC.ASHRAE.G36.Types.PressureControl.BarometricRelief)
->>>>>>> master
     "Modulate economizer dampers position for buildings with relief damper or fan controlling pressure"
     annotation (Placement(transformation(extent={{100,-40},{120,-20}})));
   Buildings.Controls.OBC.ASHRAE.G36.Generic.AirEconomizerHighLimits ecoHigLim(
@@ -581,38 +398,19 @@ block Controller
     final ashCliZon=ashCliZon,
     final tit24CliZon=tit24CliZon) "High limits"
     annotation (Placement(transformation(extent={{-140,-60},{-120,-40}})));
-<<<<<<< HEAD
-  Buildings.Controls.OBC.CDL.Continuous.AddParameter addPar(
-    final p=-1)
-    if eneStd == Buildings.Controls.OBC.ASHRAE.G36.Types.EnergyStandard.Not_Specified
-    "Dummy block"
-    annotation (Placement(transformation(extent={{-140,-120},{-120,-100}})));
-
-=======
->>>>>>> master
 equation
   connect(sepAFMS.VOutMinSet_flow_normalized, VOutMinSet_flow_normalized)
     annotation (Line(points={{-142,149},{-160,149},{-160,230},{-260,230}},
         color={0,0,127}));
-<<<<<<< HEAD
-  connect(sepAFMS.uSupFan_actual, uSupFan_actual) annotation (Line(points={{-142,
-          131},{-178,131},{-178,130},{-260,130}}, color={0,0,127}));
-=======
   connect(sepAFMS.uSupFan, uSupFan) annotation (Line(points={{-142,131},{-178,131},
           {-178,130},{-260,130}}, color={0,0,127}));
->>>>>>> master
   connect(sepDp.dpMinOutDam, dpMinOutDam) annotation (Line(points={{-142,83},{-184,
           83},{-184,10},{-260,10}},         color={0,0,127}));
   connect(VOutMinSet_flow_normalized, sepDp.VOutMinSet_flow_normalized)
     annotation (Line(points={{-260,230},{-160,230},{-160,81},{-142,81}},
         color={0,0,127}));
-<<<<<<< HEAD
-  connect(uSupFan_actual, sepDp.uSupFan_actual) annotation (Line(points={{-260,
-          130},{-178,130},{-178,71},{-142,71}}, color={0,0,127}));
-=======
   connect(uSupFan, sepDp.uSupFan) annotation (Line(points={{-260,130},{-178,130},
           {-178,71},{-142,71}}, color={0,0,127}));
->>>>>>> master
   connect(u1SupFan, sepAFMS.u1SupFan) annotation (Line(points={{-260,-190},{-196,
           -190},{-196,143},{-142,143}}, color={255,0,255}));
   connect(u1SupFan, sepDp.u1SupFan) annotation (Line(points={{-260,-190},{-196,-190},
@@ -728,13 +526,6 @@ equation
           160,-36},{160,160},{-172,160},{-172,73},{-142,73}}, color={0,0,127}));
   connect(sepDp.y1MinOutDam, y1MinOutDam) annotation (Line(points={{-118,88},{40,
           88},{40,100},{280,100}},                    color={255,0,255}));
-<<<<<<< HEAD
-  connect(TOut, addPar.u) annotation (Line(points={{-260,-70},{-180,-70},{-180,-110},
-          {-142,-110}}, color={0,0,127}));
-  connect(addPar.y, enaDis.TOutCut) annotation (Line(points={{-118,-110},{-30,-110},
-          {-30,-75},{18,-75}}, color={0,0,127}));
-=======
->>>>>>> master
   connect(VOut_flow_normalized, sepAFMS.VOut_flow_normalized) annotation (Line(
         points={{-260,190},{-166,190},{-166,146},{-142,146}}, color={0,0,127}));
   connect(VOut_flow_normalized, damLim.VOut_flow_normalized) annotation (Line(
@@ -745,10 +536,6 @@ equation
           88},{40,200},{280,200}}, color={255,0,255}));
   connect(damLim.yEnaMinOut, yEnaMinOut) annotation (Line(points={{-118,21},{6,21},
           {6,200},{280,200}}, color={255,0,255}));
-<<<<<<< HEAD
-=======
-
->>>>>>> master
 annotation (defaultComponentName="ecoCon",
   Icon(coordinateSystem(preserveAspectRatio=false, extent={{-100,-200},{100,200}}),
     graphics={
@@ -774,20 +561,12 @@ annotation (defaultComponentName="ecoCon",
           visible=(minOADes == Buildings.Controls.OBC.ASHRAE.G36.Types.OutdoorAirSection.DedicatedDampersAirflow
                or minOADes == Buildings.Controls.OBC.ASHRAE.G36.Types.OutdoorAirSection.SingleDamper)),
         Text(
-<<<<<<< HEAD
-          extent={{-96,128},{-22,112}},
-=======
           extent={{-96,128},{-56,112}},
->>>>>>> master
           textColor={0,0,127},
           pattern=LinePattern.Dash,
           visible=(minOADes == Buildings.Controls.OBC.ASHRAE.G36.Types.OutdoorAirSection.DedicatedDampersAirflow
                or minOADes == Buildings.Controls.OBC.ASHRAE.G36.Types.OutdoorAirSection.DedicatedDampersPressure),
-<<<<<<< HEAD
-          textString="uSupFan_actual"),
-=======
           textString="uSupFan"),
->>>>>>> master
         Text(
           extent={{-96,30},{-30,12}},
           textColor={0,0,127},
@@ -808,12 +587,8 @@ annotation (defaultComponentName="ecoCon",
           extent={{-100,-52},{-58,-66}},
           textColor={0,0,127},
           pattern=LinePattern.Dash,
-<<<<<<< HEAD
-          visible=ecoHigLimCon == Buildings.Controls.OBC.ASHRAE.G36.Types.ControlEconomizer.DifferentialDryBulb,
-=======
           visible=(ecoHigLimCon == Buildings.Controls.OBC.ASHRAE.G36.Types.ControlEconomizer.DifferentialDryBulb
                or ecoHigLimCon == Buildings.Controls.OBC.ASHRAE.G36.Types.ControlEconomizer.FixedDryBulbWithDifferentialDryBulb),
->>>>>>> master
           textString="TAirRet"),
         Text(
           extent={{-100,-82},{-58,-98}},
@@ -826,11 +601,7 @@ annotation (defaultComponentName="ecoCon",
           extent={{-98,-104},{-62,-120}},
           textColor={0,0,127},
           pattern=LinePattern.Dash,
-<<<<<<< HEAD
-          visible=(eneStd == Buildings.Controls.OBC.ASHRAE.G36.Types.EnergyStandard.ASHRAE90_1_2016
-=======
           visible=(eneStd == Buildings.Controls.OBC.ASHRAE.G36.Types.EnergyStandard.ASHRAE90_1
->>>>>>> master
                and ecoHigLimCon == Buildings.Controls.OBC.ASHRAE.G36.Types.ControlEconomizer.DifferentialEnthalpyWithFixedDryBulb),
           textString="hAirRet"),
         Text(
@@ -863,12 +634,7 @@ annotation (defaultComponentName="ecoCon",
           extent={{42,-50},{98,-66}},
           textColor={0,0,127},
           pattern=LinePattern.Dash,
-<<<<<<< HEAD
-          visible=buiPreCon == Buildings.Controls.OBC.ASHRAE.G36.Types.BuildingPressureControlTypes.ReturnFanCalculatedAir
-               or buiPreCon == Buildings.Controls.OBC.ASHRAE.G36.Types.BuildingPressureControlTypes.ReturnFanMeasuredAir,
-=======
           visible=buiPreCon == Buildings.Controls.OBC.ASHRAE.G36.Types.PressureControl.ReturnFanMeasuredAir,
->>>>>>> master
           textString="yRelDam"),
         Text(
           extent={{42,-110},{98,-126}},
@@ -886,31 +652,19 @@ annotation (defaultComponentName="ecoCon",
           pattern=LinePattern.Dash,
           textString="effAbsOutAir_normalized",
           visible=(minOADes == Buildings.Controls.OBC.ASHRAE.G36.Types.OutdoorAirSection.DedicatedDampersPressure
-<<<<<<< HEAD
-               and venStd == Buildings.Controls.OBC.ASHRAE.G36.Types.VentilationStandard.California_Title_24_2016)),
-=======
                and venStd == Buildings.Controls.OBC.ASHRAE.G36.Types.VentilationStandard.California_Title_24)),
->>>>>>> master
         Text(
           extent={{-96,80},{6,60}},
           textColor={0,0,127},
           pattern=LinePattern.Dash,
           textString="effDesOutAir_normalized",
           visible=minOADes == Buildings.Controls.OBC.ASHRAE.G36.Types.OutdoorAirSection.DedicatedDampersPressure
-<<<<<<< HEAD
-               and venStd == Buildings.Controls.OBC.ASHRAE.G36.Types.VentilationStandard.California_Title_24_2016),
-=======
                and venStd == Buildings.Controls.OBC.ASHRAE.G36.Types.VentilationStandard.California_Title_24),
->>>>>>> master
         Text(
           extent={{-96,58},{-28,40}},
           textColor={0,0,127},
           pattern=LinePattern.Dash,
-<<<<<<< HEAD
-          visible=(have_CO2Sen and venStd == Buildings.Controls.OBC.ASHRAE.G36.Types.VentilationStandard.California_Title_24_2016)
-=======
           visible=(have_CO2Sen and venStd == Buildings.Controls.OBC.ASHRAE.G36.Types.VentilationStandard.California_Title_24)
->>>>>>> master
                and minOADes == Buildings.Controls.OBC.ASHRAE.G36.Types.OutdoorAirSection.DedicatedDampersPressure,
           textString="uCO2Loo_max"),
         Text(
@@ -1002,15 +756,12 @@ for a description.
 </html>", revisions="<html>
 <ul>
 <li>
-<<<<<<< HEAD
-=======
 March 1, 2023, by Michael Wetter:<br/>
 Changed constants from <code>0</code> to <code>0.0</code> and <code>1</code> to <code>1.0</code>.<br/>
 This is for
 <a href=\"https://github.com/lbl-srg/modelica-buildings/pull/3267#issuecomment-1450587671\">#3267</a>.
 </li>
 <li>
->>>>>>> master
 August 1, 2020, by Jianjun Hu:<br/>
 Updated implementation according to ASHRAE G36 official release.
 </li>

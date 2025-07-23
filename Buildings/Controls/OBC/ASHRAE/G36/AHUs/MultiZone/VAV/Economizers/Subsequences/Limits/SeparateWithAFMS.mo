@@ -10,16 +10,6 @@ block SeparateWithAFMS
   parameter Buildings.Controls.OBC.CDL.Types.SimpleController minOAConTyp=
     Buildings.Controls.OBC.CDL.Types.SimpleController.PI
     "Type of minimum outdoor air controller"
-<<<<<<< HEAD
-    annotation (Dialog(group="Minimum OA control"));
-  parameter Real kMinOA(
-    final unit="1")=1 "Gain of controller"
-    annotation (Dialog(group="Minimum OA control"));
-  parameter Real TiMinOA(
-    final unit="s",
-    final quantity="Time")=0.5 "Time constant of integrator block"
-    annotation (Dialog(group="Minimum OA control",
-=======
     annotation (__cdl(ValueInReference=false),
                 Dialog(group="Minimum OA control"));
   parameter Real kMinOA(
@@ -31,18 +21,13 @@ block SeparateWithAFMS
     final quantity="Time")=0.5 "Time constant of integrator block"
     annotation (__cdl(ValueInReference=false),
                 Dialog(group="Minimum OA control",
->>>>>>> master
       enable=minOAConTyp == Buildings.Controls.OBC.CDL.Types.SimpleController.PI or
              minOAConTyp == Buildings.Controls.OBC.CDL.Types.SimpleController.PID));
   parameter Real TdMinOA(
     final unit="s",
     final quantity="Time")=0.1 "Time constant of derivative block"
-<<<<<<< HEAD
-    annotation (Dialog(group="Minimum OA control",
-=======
     annotation (__cdl(ValueInReference=false),
                 Dialog(group="Minimum OA control",
->>>>>>> master
       enable=minOAConTyp == Buildings.Controls.OBC.CDL.Types.SimpleController.PD or
              minOAConTyp == Buildings.Controls.OBC.CDL.Types.SimpleController.PID));
 
@@ -50,67 +35,43 @@ block SeparateWithAFMS
     final min=0,
     final max=1,
     final unit="1") = 1 "Physically fixed maximum position of the return air damper"
-<<<<<<< HEAD
-    annotation (Dialog(tab="Commissioning", group="Physical damper position limits"));
-=======
     annotation (__cdl(ValueInReference=false),
                 Dialog(tab="Commissioning", group="Physical damper position limits"));
->>>>>>> master
   parameter Real retDamPhy_min(
     final min=0,
     final max=1,
     final unit="1") = 0
     "Physically fixed minimum position of the return air damper"
-<<<<<<< HEAD
-    annotation (Dialog(tab="Commissioning", group="Physical damper position limits"));
-=======
     annotation (__cdl(ValueInReference=false),
                 Dialog(tab="Commissioning", group="Physical damper position limits"));
->>>>>>> master
   parameter Real outDamPhy_max(
     final min=0,
     final max=1,
     final unit="1") = 1
     "Physically fixed maximum position of the outdoor air damper"
-<<<<<<< HEAD
-    annotation (Dialog(tab="Commissioning", group="Physical damper position limits"));
-=======
     annotation (__cdl(ValueInReference=false),
                 Dialog(tab="Commissioning", group="Physical damper position limits"));
->>>>>>> master
   parameter Real outDamPhy_min(
     final min=0,
     final max=1,
     final unit="1") = 0
     "Physically fixed minimum position of the outdoor air damper"
-<<<<<<< HEAD
-    annotation (Dialog(tab="Commissioning", group="Physical damper position limits"));
-=======
     annotation (__cdl(ValueInReference=false),
                 Dialog(tab="Commissioning", group="Physical damper position limits"));
->>>>>>> master
   parameter Real minOutDamPhy_max(
     final min=0,
     final max=1,
     final unit="1") = 1
     "Physically fixed maximum position of the minimum outdoor air damper"
-<<<<<<< HEAD
-    annotation (Dialog(tab="Commissioning", group="Physical damper position limits"));
-=======
     annotation (__cdl(ValueInReference=false),
                 Dialog(tab="Commissioning", group="Physical damper position limits"));
->>>>>>> master
   parameter Real minOutDamPhy_min(
     final min=0,
     final max=1,
     final unit="1") = 0
     "Physically fixed minimum position of the minimum outdoor air damper"
-<<<<<<< HEAD
-    annotation (Dialog(tab="Commissioning", group="Physical damper position limits"));
-=======
     annotation (__cdl(ValueInReference=false),
                 Dialog(tab="Commissioning", group="Physical damper position limits"));
->>>>>>> master
 
   Buildings.Controls.OBC.CDL.Interfaces.RealInput VOutMinSet_flow_normalized(
     final unit="1")
@@ -136,19 +97,11 @@ block SeparateWithAFMS
     final unit="1") "Economizer outdoor air damper commanded position"
     annotation (Placement(transformation(extent={{-260,0},{-220,40}}),
         iconTransformation(extent={{-140,-80},{-100,-40}})));
-<<<<<<< HEAD
-  Buildings.Controls.OBC.CDL.Interfaces.RealInput uSupFan_actual(
-    final min=0,
-    final max=1,
-    final unit="1")
-    "Actual supply fan speed"
-=======
   Buildings.Controls.OBC.CDL.Interfaces.RealInput uSupFan(
     final min=0,
     final max=1,
     final unit="1")
     "Commanded supply fan speed"
->>>>>>> master
     annotation (Placement(transformation(extent={{-260,-60},{-220,-20}}),
         iconTransformation(extent={{-140,-110},{-100,-70}})));
   Buildings.Controls.OBC.CDL.Interfaces.RealOutput yMinOutDam(
@@ -197,8 +150,6 @@ block SeparateWithAFMS
     annotation (Placement(transformation(extent={{220,-310},{260,-270}}),
         iconTransformation(extent={{100,-110},{140,-70}})));
 
-<<<<<<< HEAD
-=======
   Buildings.Controls.OBC.CDL.Reals.PIDWithReset conMinOA(
     final controllerType=minOAConTyp,
     final k=kMinOA,
@@ -209,7 +160,6 @@ block SeparateWithAFMS
     "Minimum outdoor air flow control"
     annotation (Placement(transformation(extent={{-40,230},{-20,250}})));
 
->>>>>>> master
 protected
   Buildings.Controls.OBC.CDL.Integers.Sources.Constant conInt1(
     final k=Buildings.Controls.OBC.ASHRAE.G36.Types.OperationModes.occupied)
@@ -221,24 +171,6 @@ protected
   Buildings.Controls.OBC.CDL.Logical.And enaMinCon
     "Check if the minimum outdoor air control loop should be enabled"
     annotation (Placement(transformation(extent={{-80,150},{-60,170}})));
-<<<<<<< HEAD
-  Buildings.Controls.OBC.CDL.Continuous.PIDWithReset minOACon(
-    final controllerType=minOAConTyp,
-    final k=kMinOA,
-    final Ti=TiMinOA,
-    final Td=TdMinOA,
-    final yMax=minOutDamPhy_max,
-    final yMin=minOutDamPhy_min)
-    "Minimum outdoor air flow control"
-    annotation (Placement(transformation(extent={{-40,230},{-20,250}})));
-  Buildings.Controls.OBC.CDL.Continuous.Sources.Constant zer(
-    final k=0) "Constant"
-    annotation (Placement(transformation(extent={{120,260},{140,280}})));
-  Buildings.Controls.OBC.CDL.Continuous.Sources.Constant con(
-    final k=0.5) "Constant"
-    annotation (Placement(transformation(extent={{80,200},{100,220}})));
-  Buildings.Controls.OBC.CDL.Continuous.Line minOutDamPos(
-=======
   Buildings.Controls.OBC.CDL.Reals.Sources.Constant zer(
     final k=0) "Constant"
     annotation (Placement(transformation(extent={{120,260},{140,280}})));
@@ -246,34 +178,10 @@ protected
     final k=0.5) "Constant"
     annotation (Placement(transformation(extent={{80,200},{100,220}})));
   Buildings.Controls.OBC.CDL.Reals.Line minOutDamPos(
->>>>>>> master
     final limitBelow=true,
     final limitAbove=true)
     "Minimum outdoor air damper position"
     annotation (Placement(transformation(extent={{160,230},{180,250}})));
-<<<<<<< HEAD
-  Buildings.Controls.OBC.CDL.Continuous.Sources.Constant minOutDamPhyPosMinSig(
-    final k=minOutDamPhy_min)
-    "Physically fixed minimum position of the minimum outdoor air damper. This is the initial position of the economizer damper"
-    annotation (Placement(transformation(extent={{80,260},{100,280}})));
-  Buildings.Controls.OBC.CDL.Continuous.Sources.Constant minOutDamPhyPosMaxSig(
-    final k=minOutDamPhy_max)
-    "Physically fixed maximum position of the minimum outdoor air damper"
-    annotation (Placement(transformation(extent={{120,200},{140,220}})));
-  Buildings.Controls.OBC.CDL.Continuous.Sources.Constant one(
-    final k=1) "Constant one"
-    annotation (Placement(transformation(extent={{-200,-80},{-180,-60}})));
-  Buildings.Controls.OBC.CDL.Continuous.Sources.Constant con1(
-    final k=0.05) "Constant"
-    annotation (Placement(transformation(extent={{-160,-80},{-140,-60}})));
-  Buildings.Controls.OBC.CDL.Continuous.Sources.Constant con2(
-    final k=0.8) "Constant"
-    annotation (Placement(transformation(extent={{-200,-20},{-180,0}})));
-  Buildings.Controls.OBC.CDL.Continuous.Sources.Constant minFanSpe(
-    final k=minSpe) "Minimum fan speed"
-    annotation (Placement(transformation(extent={{-160,-20},{-140,0}})));
-  Buildings.Controls.OBC.CDL.Continuous.Line moaP(
-=======
   Buildings.Controls.OBC.CDL.Reals.Sources.Constant minOutDamPhyPosMinSig(
     final k=minOutDamPhy_min)
     "Physically fixed minimum position of the minimum outdoor air damper. This is the initial position of the economizer damper"
@@ -295,41 +203,24 @@ protected
     final k=minSpe) "Minimum fan speed"
     annotation (Placement(transformation(extent={{-160,-20},{-140,0}})));
   Buildings.Controls.OBC.CDL.Reals.Line moaP(
->>>>>>> master
     final limitBelow=true,
     final limitAbove=true)
     "Linear mapping of the supply fan speed to the control signal"
     annotation (Placement(transformation(extent={{-120,-50},{-100,-30}})));
-<<<<<<< HEAD
-  Buildings.Controls.OBC.CDL.Continuous.Less les(
-    final h=0.05)
-    "Check if economizer outdoor air damper is less than projected position"
-    annotation (Placement(transformation(extent={{-40,10},{-20,30}})));
-  Buildings.Controls.OBC.CDL.Continuous.GreaterThreshold greThr(
-=======
   Buildings.Controls.OBC.CDL.Reals.Less les(
     final h=0.05)
     "Check if economizer outdoor air damper is less than projected position"
     annotation (Placement(transformation(extent={{-40,10},{-20,30}})));
   Buildings.Controls.OBC.CDL.Reals.GreaterThreshold greThr(
->>>>>>> master
     final t=0.98,
     final h=0.01)
     "Check if the minimum outdoor air damper position is fully open"
     annotation (Placement(transformation(extent={{-40,70},{-20,90}})));
-<<<<<<< HEAD
-  Buildings.Controls.OBC.CDL.Continuous.MultiplyByParameter gai(
-    final k=1.1)
-    "Projected position with a gain factor"
-    annotation (Placement(transformation(extent={{-40,-80},{-20,-60}})));
-  Buildings.Controls.OBC.CDL.Continuous.Greater gre(
-=======
   Buildings.Controls.OBC.CDL.Reals.MultiplyByParameter gai(
     final k=1.1)
     "Projected position with a gain factor"
     annotation (Placement(transformation(extent={{-40,-80},{-20,-60}})));
   Buildings.Controls.OBC.CDL.Reals.Greater gre(
->>>>>>> master
     final h=0.05)
     "Check if the economizer outdoor air damper is greater than threshold"
     annotation (Placement(transformation(extent={{0,-50},{20,-30}})));
@@ -345,31 +236,6 @@ protected
   Buildings.Controls.OBC.CDL.Logical.Or disRetDamMin
     "Disable return air damper minimum outdoor air control"
     annotation (Placement(transformation(extent={{60,-20},{80,0}})));
-<<<<<<< HEAD
-  Buildings.Controls.OBC.CDL.Continuous.Sources.Constant outDamPhyPosMinSig(
-    final k=outDamPhy_min)
-    "Physically fixed minimum position of the outdoor air damper. This is the initial position of the economizer damper"
-    annotation (Placement(transformation(extent={{-200,-130},{-180,-110}})));
-  Buildings.Controls.OBC.CDL.Continuous.Sources.Constant outDamPhyPosMaxSig(
-    final k=outDamPhy_max)
-    "Physically fixed maximum position of the outdoor air damper."
-    annotation (Placement(transformation(extent={{-200,-170},{-180,-150}})));
-  Buildings.Controls.OBC.CDL.Continuous.Sources.Constant retDamPhyPosMinSig(
-    final k=retDamPhy_min)
-    "Physically fixed minimum position of the return air damper"
-    annotation (Placement(transformation(extent={{-200,-210},{-180,-190}})));
-  Buildings.Controls.OBC.CDL.Continuous.Sources.Constant retDamPhyPosMaxSig(
-    final k=retDamPhy_max)
-    "Physically fixed maximum position of the return air damper. This is the initial condition of the return air damper"
-    annotation (Placement(transformation(extent={{-200,-250},{-180,-230}})));
-  Buildings.Controls.OBC.CDL.Continuous.Switch retDamPosMinSwi
-    "A switch to deactivate the return air damper minimal outdoor airflow control"
-    annotation (Placement(transformation(extent={{180,-210},{200,-190}})));
-  Buildings.Controls.OBC.CDL.Continuous.Switch retDamPosMaxSwi
-    "A switch to deactivate the return air damper minimal outdoor airflow control"
-    annotation (Placement(transformation(extent={{180,-260},{200,-240}})));
-  Buildings.Controls.OBC.CDL.Continuous.Line maxRetDamPos(
-=======
   Buildings.Controls.OBC.CDL.Reals.Sources.Constant outDamPhyPosMinSig(
     final k=outDamPhy_min)
     "Physically fixed minimum position of the outdoor air damper. This is the initial position of the economizer damper"
@@ -393,22 +259,14 @@ protected
     "A switch to deactivate the return air damper minimal outdoor airflow control"
     annotation (Placement(transformation(extent={{180,-260},{200,-240}})));
   Buildings.Controls.OBC.CDL.Reals.Line maxRetDamPos(
->>>>>>> master
     final limitBelow=true,
     final limitAbove=true)
     "Maximum return air damper position"
     annotation (Placement(transformation(extent={{100,-110},{120,-90}})));
-<<<<<<< HEAD
-  Buildings.Controls.OBC.CDL.Continuous.Sources.Constant con3(
-    final k=0.5) "Constant"
-    annotation (Placement(transformation(extent={{60,-90},{80,-70}})));
-  Buildings.Controls.OBC.CDL.Continuous.Sources.Constant con4(
-=======
   Buildings.Controls.OBC.CDL.Reals.Sources.Constant con3(
     final k=0.5) "Constant"
     annotation (Placement(transformation(extent={{60,-90},{80,-70}})));
   Buildings.Controls.OBC.CDL.Reals.Sources.Constant con4(
->>>>>>> master
     final k=1) "Constant"
     annotation (Placement(transformation(extent={{0,-90},{20,-70}})));
 
@@ -419,17 +277,6 @@ equation
           72},{-162,72}}, color={255,127,0}));
   connect(intEqu.y, enaMinCon.u2) annotation (Line(points={{-138,80},{-90,80},{-90,
           152},{-82,152}}, color={255,0,255}));
-<<<<<<< HEAD
-  connect(VOutMinSet_flow_normalized, minOACon.u_s)
-    annotation (Line(points={{-240,240},{-42,240}}, color={0,0,127}));
-  connect(VOut_flow_normalized, minOACon.u_m) annotation (Line(points={{-240,200},
-          {-30,200},{-30,228}}, color={0,0,127}));
-  connect(enaMinCon.y, minOACon.trigger) annotation (Line(points={{-58,160},{-36,
-          160},{-36,228}}, color={255,0,255}));
-  connect(zer.y, minOutDamPos.x1) annotation (Line(points={{142,270},{150,270},{
-          150,248},{158,248}}, color={0,0,127}));
-  connect(minOACon.y, minOutDamPos.u)
-=======
   connect(VOutMinSet_flow_normalized,conMinOA. u_s)
     annotation (Line(points={{-240,240},{-42,240}}, color={0,0,127}));
   connect(VOut_flow_normalized,conMinOA. u_m) annotation (Line(points={{-240,200},
@@ -439,7 +286,6 @@ equation
   connect(zer.y, minOutDamPos.x1) annotation (Line(points={{142,270},{150,270},{
           150,248},{158,248}}, color={0,0,127}));
   connect(conMinOA.y, minOutDamPos.u)
->>>>>>> master
     annotation (Line(points={{-18,240},{158,240}},color={0,0,127}));
   connect(minOutDamPhyPosMinSig.y, minOutDamPos.f1) annotation (Line(points={{102,270},
           {110,270},{110,244},{158,244}},   color={0,0,127}));
@@ -451,11 +297,7 @@ equation
           -130,-32},{-122,-32}}, color={0,0,127}));
   connect(con2.y, moaP.f1) annotation (Line(points={{-178,-10},{-170,-10},{-170,
           -36},{-122,-36}}, color={0,0,127}));
-<<<<<<< HEAD
-  connect(uSupFan_actual, moaP.u)
-=======
   connect(uSupFan, moaP.u)
->>>>>>> master
     annotation (Line(points={{-240,-40},{-122,-40}}, color={0,0,127}));
   connect(con1.y, moaP.f2) annotation (Line(points={{-138,-70},{-130,-70},{-130,
           -48},{-122,-48}}, color={0,0,127}));
@@ -517,11 +359,7 @@ equation
           -240},{90,-240},{90,-96},{98,-96}}, color={0,0,127}));
   connect(retDamPhyPosMaxSig.y, retDamPosMinSwi.u3) annotation (Line(points={{-178,
           -240},{90,-240},{90,-208},{178,-208}}, color={0,0,127}));
-<<<<<<< HEAD
-  connect(minOACon.y, maxRetDamPos.u) annotation (Line(points={{-18,240},{50,240},
-=======
   connect(conMinOA.y, maxRetDamPos.u) annotation (Line(points={{-18,240},{50,240},
->>>>>>> master
           {50,-100},{98,-100}}, color={0,0,127}));
   connect(minOutDamPos.y, yMinOutDam)
     annotation (Line(points={{182,240},{240,240}}, color={0,0,127}));
@@ -568,17 +406,10 @@ annotation (
           pattern=LinePattern.Dash,
           textString="uOutDam"),
         Text(
-<<<<<<< HEAD
-          extent={{-96,-82},{-16,-98}},
-          textColor={0,0,127},
-          pattern=LinePattern.Dash,
-          textString="uSupFan_actual"),
-=======
           extent={{-100,-82},{-56,-96}},
           textColor={0,0,127},
           pattern=LinePattern.Dash,
           textString="uSupFan"),
->>>>>>> master
         Text(
           extent={{30,-78},{98,-96}},
           textColor={0,0,127},

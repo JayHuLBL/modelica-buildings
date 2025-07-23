@@ -1,8 +1,5 @@
-<<<<<<<< HEAD:Buildings/Controls/OBC/ASHRAE/G36/AHUs/MultiZone/VAV/Validation/package.mo
 within Buildings.Controls.OBC.ASHRAE.G36.AHUs.MultiZone.VAV;
-========
-within Buildings.Controls.OBC.ASHRAE.G36.AHUs.SingleZone.VAV;
->>>>>>>> master:Buildings/Controls/OBC/ASHRAE/G36/AHUs/SingleZone/VAV/Validation/package.mo
+
 package Validation "Collection of validation models"
 
   annotation (Icon(graphics={
@@ -26,13 +23,8 @@ package Validation "Collection of validation models"
 Documentation(info="<html>
 <p>
 This package contains validation models for the classes in
-<<<<<<<< HEAD:Buildings/Controls/OBC/ASHRAE/G36/AHUs/MultiZone/VAV/Validation/package.mo
 <a href=\"modelica://Buildings.Controls.OBC.ASHRAE.G36.AHUs.MultiZone\">
 Buildings.Controls.OBC.ASHRAE.G36.AHUs.MultiZone</a>.
-========
-<a href=\"modelica://Buildings.Controls.OBC.ASHRAE.G36.AHUs.SingleZone\">
-Buildings.Controls.OBC.ASHRAE.G36.AHUs.SingleZone</a>.
->>>>>>>> master:Buildings/Controls/OBC/ASHRAE/G36/AHUs/SingleZone/VAV/Validation/package.mo
 </p>
 <p>
 Note that most validation models contain simple input data

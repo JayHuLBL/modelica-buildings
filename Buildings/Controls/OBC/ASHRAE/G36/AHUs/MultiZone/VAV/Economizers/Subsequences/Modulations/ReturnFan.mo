@@ -3,32 +3,20 @@ block ReturnFan
   "Modulates dampers of economizer in buildings using return fan to control the pressure"
 
   parameter Boolean have_dirCon=true
-<<<<<<< HEAD
-    "True: the building have direct pressure control";
-=======
     "True: the building have direct pressure control"
     annotation (__cdl(ValueInReference=false));
->>>>>>> master
   parameter Real uMin(
     final max=0,
     final unit="1")=-0.25
     "Lower limit of controller input when outdoor damper opens (see diagram)"
-<<<<<<< HEAD
-    annotation (Dialog(tab="Commissioning", group="Controller"));
-=======
     annotation (__cdl(ValueInReference=false),
                 Dialog(tab="Commissioning", group="Controller"));
->>>>>>> master
   parameter Real uMax(
     final min=0,
     final unit="1")=+0.25
     "Upper limit of controller input when return damper is closed (see diagram)"
-<<<<<<< HEAD
-    annotation (Dialog(tab="Commissioning", group="Controller"));
-=======
     annotation (__cdl(ValueInReference=false),
                 Dialog(tab="Commissioning", group="Controller"));
->>>>>>> master
 
   Buildings.Controls.OBC.CDL.Interfaces.RealInput uTSup(
     final unit="1")
@@ -70,21 +58,6 @@ block ReturnFan
         iconTransformation(extent={{100,-80},{140,-40}})));
 
 protected
-<<<<<<< HEAD
-  Buildings.Controls.OBC.CDL.Continuous.Sources.Constant damMinLimSig(
-    final k=uMin)
-    "Minimal control loop signal for the relief and return air damper position"
-    annotation (Placement(transformation(extent={{-100,-30},{-80,-10}})));
-  Buildings.Controls.OBC.CDL.Continuous.Sources.Constant damMaxLimSig(
-    final k=uMax)
-    "Maximal control loop signal for the return and exhast air damper"
-    annotation (Placement(transformation(extent={{-40,-30},{-20,-10}})));
-  Buildings.Controls.OBC.CDL.Continuous.Line retDamPos(
-    final limitBelow=true,
-    final limitAbove=true) "Return air damper position"
-    annotation (Placement(transformation(extent={{40,30},{60,50}})));
-  Buildings.Controls.OBC.CDL.Continuous.Line relDamPos(
-=======
   Buildings.Controls.OBC.CDL.Reals.Sources.Constant damMinLimSig(
     final k=uMin)
     "Minimal control loop signal for the relief and return air damper position"
@@ -98,24 +71,15 @@ protected
     final limitAbove=true) "Return air damper position"
     annotation (Placement(transformation(extent={{40,30},{60,50}})));
   Buildings.Controls.OBC.CDL.Reals.Line relDamPos(
->>>>>>> master
     final limitBelow=true,
     final limitAbove=true) if not have_dirCon
     "Relief air damper position"
     annotation (Placement(transformation(extent={{40,-60},{60,-40}})));
-<<<<<<< HEAD
-  Buildings.Controls.OBC.CDL.Continuous.Sources.Constant zer(
-    final k=0) if not have_dirCon
-    "Constant zero"
-    annotation (Placement(transformation(extent={{-100,-100},{-80,-80}})));
-  Buildings.Controls.OBC.CDL.Continuous.Sources.Constant one(
-=======
   Buildings.Controls.OBC.CDL.Reals.Sources.Constant zer(
     final k=0) if not have_dirCon
     "Constant zero"
     annotation (Placement(transformation(extent={{-100,-100},{-80,-80}})));
   Buildings.Controls.OBC.CDL.Reals.Sources.Constant one(
->>>>>>> master
     final k=1) "Constant one"
     annotation (Placement(transformation(extent={{-40,-100},{-20,-80}})));
 
