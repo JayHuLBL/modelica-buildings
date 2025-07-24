@@ -1,16 +1,11 @@
 within Buildings.DHC.ETS.BaseClasses;
 model Connection2PipeLossless
   "Model of a lossless connection to a collector/distributor"
-<<<<<<< HEAD:Buildings/Experimental/DHC/EnergyTransferStations/BaseClasses/Connection2PipeLossless.mo
-  extends Buildings.Experimental.DHC.Networks.BaseClasses.PartialConnection2Pipe(
-    redeclare model Model_pipDis=Buildings.Fluid.FixedResistances.LosslessPipe,
-=======
   extends Buildings.DHC.Networks.BaseClasses.PartialConnection2Pipe(
     redeclare model Model_pipDisSup =
         Buildings.Fluid.FixedResistances.LosslessPipe,
     redeclare model Model_pipDisRet =
         Buildings.Fluid.FixedResistances.LosslessPipe,
->>>>>>> master:Buildings/DHC/ETS/BaseClasses/Connection2PipeLossless.mo
     redeclare model Model_pipCon=Buildings.Fluid.FixedResistances.LosslessPipe);
   annotation (
     Documentation(

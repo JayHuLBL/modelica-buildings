@@ -1,8 +1,4 @@
-<<<<<<< HEAD:Buildings/Experimental/DHC/Loads/BaseClasses/package.mo
-within Buildings.Experimental.DHC.Loads;
-=======
 within Buildings.DHC.ETS;
->>>>>>> master:Buildings/DHC/ETS/BaseClasses/package.mo
 package BaseClasses "Package with base classes"
   extends Modelica.Icons.BasesPackage;
 

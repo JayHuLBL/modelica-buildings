@@ -1,11 +1,7 @@
 within Buildings.DHC.ETS.BaseClasses;
 model CollectorDistributor
   "Model of a collector/distributor with zero pressure drop between connections"
-<<<<<<< HEAD:Buildings/Experimental/DHC/EnergyTransferStations/BaseClasses/CollectorDistributor.mo
-  extends Buildings.Experimental.DHC.Networks.BaseClasses.PartialDistribution2Pipe(
-=======
   extends Buildings.DHC.Networks.BaseClasses.PartialDistribution2Pipe(
->>>>>>> master:Buildings/DHC/ETS/BaseClasses/CollectorDistributor.mo
     mDis_flow_nominal=sum(
       mCon_flow_nominal),
     final mDisCon_flow_nominal=fill(

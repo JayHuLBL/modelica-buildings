@@ -15,11 +15,7 @@ block SupplyReturnTemperatureReset
 
   parameter Boolean use_TRoo_in = false
     "Get the room temperature set point from the input connector"
-<<<<<<< HEAD
-    annotation(Evaluate=true, HideResult=true);
-=======
     annotation(Evaluate=true);
->>>>>>> master
   parameter Modelica.Units.SI.Temperature TRoo=293.15
     "Fixed value of room temperature set point"
     annotation (Dialog(enable=not use_TRoo_in));

@@ -136,11 +136,7 @@ partial model PartialETS
     redeclare package Medium = MediumSer,
     m_flow(min=if allowFlowReversalSer then -Modelica.Constants.inf else 0),
     h_outflow(start=MediumSer.h_default, nominal=MediumSer.h_default))
-<<<<<<< HEAD:Buildings/Experimental/DHC/EnergyTransferStations/BaseClasses/PartialETS.mo
- if typ == TypDisSys.CombinedGeneration5
-=======
  if typ == Buildings.DHC.Types.DistrictSystemType.CombinedGeneration5
->>>>>>> master:Buildings/DHC/ETS/BaseClasses/PartialETS.mo
     "Fluid connector for ambient water service supply line"
     annotation (
       Placement(transformation(extent={{-310,-210},{-290,-190}}),
@@ -149,11 +145,7 @@ partial model PartialETS
     redeclare package Medium = MediumSer,
     m_flow(max=if allowFlowReversalSer then +Modelica.Constants.inf else 0),
     h_outflow(start=MediumSer.h_default, nominal=MediumSer.h_default))
-<<<<<<< HEAD:Buildings/Experimental/DHC/EnergyTransferStations/BaseClasses/PartialETS.mo
- if typ == TypDisSys.CombinedGeneration5
-=======
  if typ == Buildings.DHC.Types.DistrictSystemType.CombinedGeneration5
->>>>>>> master:Buildings/DHC/ETS/BaseClasses/PartialETS.mo
     "Fluid connector for ambient water service return line"
     annotation (
       Placement(transformation(extent={{290,-210},{310,-190}}),
@@ -162,13 +154,8 @@ partial model PartialETS
     redeclare package Medium = MediumSerHea_a,
     m_flow(min=if allowFlowReversalSer then -Modelica.Constants.inf else 0),
     h_outflow(start=MediumSerHea_a.h_default, nominal=MediumSerHea_a.h_default))
-<<<<<<< HEAD:Buildings/Experimental/DHC/EnergyTransferStations/BaseClasses/PartialETS.mo
- if typ <> TypDisSys.Cooling and
-    typ <> TypDisSys.CombinedGeneration5
-=======
  if typ <> Buildings.DHC.Types.DistrictSystemType.Cooling and
     typ <> Buildings.DHC.Types.DistrictSystemType.CombinedGeneration5
->>>>>>> master:Buildings/DHC/ETS/BaseClasses/PartialETS.mo
     "Fluid connector for heating service supply line"
     annotation (Placement(
       transformation(extent={{-310,-250},{-290,-230}}), iconTransformation(
@@ -177,13 +164,8 @@ partial model PartialETS
     redeclare package Medium = MediumSer,
     m_flow(max=if allowFlowReversalSer then +Modelica.Constants.inf else 0),
     h_outflow(start=MediumSer.h_default, nominal=MediumSer.h_default))
-<<<<<<< HEAD:Buildings/Experimental/DHC/EnergyTransferStations/BaseClasses/PartialETS.mo
- if typ <> TypDisSys.Cooling and
-    typ <> TypDisSys.CombinedGeneration5
-=======
  if typ <> Buildings.DHC.Types.DistrictSystemType.Cooling and
     typ <> Buildings.DHC.Types.DistrictSystemType.CombinedGeneration5
->>>>>>> master:Buildings/DHC/ETS/BaseClasses/PartialETS.mo
     "Fluid connector for heating service return line"
     annotation (Placement(
         transformation(extent={{290,-250},{310,-230}}), iconTransformation(
@@ -192,30 +174,18 @@ partial model PartialETS
     redeclare package Medium = MediumSer,
     m_flow(min=if allowFlowReversalSer then -Modelica.Constants.inf else 0),
     h_outflow(start=MediumSer.h_default, nominal=MediumSer.h_default))
-<<<<<<< HEAD:Buildings/Experimental/DHC/EnergyTransferStations/BaseClasses/PartialETS.mo
- if typ == TypDisSys.CombinedGeneration1 or
-    typ == TypDisSys.CombinedGeneration2to4 or
-    typ == TypDisSys.Cooling
-=======
  if typ == Buildings.DHC.Types.DistrictSystemType.CombinedGeneration1 or
     typ == Buildings.DHC.Types.DistrictSystemType.CombinedGeneration2to4 or
     typ == Buildings.DHC.Types.DistrictSystemType.Cooling
->>>>>>> master:Buildings/DHC/ETS/BaseClasses/PartialETS.mo
     "Fluid connector for cooling service supply line"
     annotation (Placement(transformation(extent={{-310,-290},{-290,-270}})));
   Modelica.Fluid.Interfaces.FluidPort_b port_bSerCoo(
     redeclare package Medium = MediumSer,
     m_flow(max=if allowFlowReversalSer then +Modelica.Constants.inf else 0),
     h_outflow(start=MediumSer.h_default, nominal=MediumSer.h_default))
-<<<<<<< HEAD:Buildings/Experimental/DHC/EnergyTransferStations/BaseClasses/PartialETS.mo
- if typ == TypDisSys.CombinedGeneration1 or
-    typ == TypDisSys.CombinedGeneration2to4 or
-    typ == TypDisSys.Cooling
-=======
  if typ == Buildings.DHC.Types.DistrictSystemType.CombinedGeneration1 or
     typ == Buildings.DHC.Types.DistrictSystemType.CombinedGeneration2to4 or
     typ == Buildings.DHC.Types.DistrictSystemType.Cooling
->>>>>>> master:Buildings/DHC/ETS/BaseClasses/PartialETS.mo
     "Fluid connector for cooling service return line"
     annotation (Placement(
       transformation(extent={{290,-290},{310,-270}}), iconTransformation(
