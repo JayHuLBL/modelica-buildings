@@ -209,11 +209,7 @@ revisions="<html>
 <li>
 April 29, 2022, by Jianjun Hu:<br/>
 Corrected the condition of swiching true back to false.<br/>
-<<<<<<< HEAD:Buildings/Controls/OBC/CDL/Continuous/LessThreshold.mo
-This is for <a href=\"https://github.com/lbl-srg/modelica-buildings/issues/2981\">issue 2981</a>.
-=======
 This is for <a href=\"https://github.com/lbl-srg/modelica-buildings/issues/2981\">Buildings, issue 2981</a>.
->>>>>>> master:Buildings/Controls/OBC/CDL/Reals/LessThreshold.mo
 </li>
 <li>
 February 3, 2021, by Antoine Gautier:<br/>

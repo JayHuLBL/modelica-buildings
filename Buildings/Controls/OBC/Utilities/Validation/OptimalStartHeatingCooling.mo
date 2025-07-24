@@ -23,15 +23,6 @@ model OptimalStartHeatingCooling
       displayUnit="h")=0)
     "Outdoor dry bulb temperature, base component"
     annotation (Placement(transformation(extent={{-212,70},{-192,90}})));
-<<<<<<< HEAD
-  Buildings.Controls.OBC.CDL.Continuous.MultiplyByParameter UA(k=25)
-    "Overall heat loss coefficient"
-    annotation (Placement(transformation(extent={{-100,0},{-80,20}})));
-  Buildings.Controls.OBC.CDL.Continuous.Subtract dT
-    "Temperature difference between zone and outdoor"
-    annotation (Placement(transformation(extent={{-140,0},{-120,20}})));
-  Buildings.Controls.OBC.CDL.Continuous.MultiplyByParameter QCoo(k=-4000)
-=======
   Buildings.Controls.OBC.CDL.Reals.MultiplyByParameter UA(k=25)
     "Overall heat loss coefficient"
     annotation (Placement(transformation(extent={{-100,0},{-80,20}})));
@@ -39,7 +30,6 @@ model OptimalStartHeatingCooling
     "Temperature difference between zone and outdoor"
     annotation (Placement(transformation(extent={{-140,0},{-120,20}})));
   Buildings.Controls.OBC.CDL.Reals.MultiplyByParameter QCoo(k=-4000)
->>>>>>> master
     "Heat extraction in the zone"
     annotation (Placement(transformation(extent={{-100,-40},{-80,-20}})));
   Buildings.Controls.OBC.CDL.Conversions.BooleanToReal booToRea1(
@@ -80,21 +70,13 @@ model OptimalStartHeatingCooling
     Ti=3)
     "PI control for space heating"
     annotation (Placement(transformation(extent={{180,40},{200,60}})));
-<<<<<<< HEAD
-  Buildings.Controls.OBC.CDL.Continuous.MultiplyByParameter QHea(k=2000)
-=======
   Buildings.Controls.OBC.CDL.Reals.MultiplyByParameter QHea(k=2000)
->>>>>>> master
     "Heat injection in the zone"
     annotation (Placement(transformation(extent={{-100,-110},{-80,-90}})));
   Buildings.Controls.OBC.CDL.Reals.Add TOut
     "Outdoor dry bulb temperature"
     annotation (Placement(transformation(extent={{-174,50},{-154,70}})));
-<<<<<<< HEAD
-  Buildings.Controls.OBC.CDL.Continuous.Sources.Pulse pul(
-=======
   Buildings.Controls.OBC.CDL.Reals.Sources.Pulse pul(
->>>>>>> master
     shift(
       displayUnit="d")=604800,
     amplitude=15,

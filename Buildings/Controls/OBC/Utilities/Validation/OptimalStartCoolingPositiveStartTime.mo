@@ -23,27 +23,16 @@ model OptimalStartCoolingPositiveStartTime
       displayUnit="s")=0)
     "Outdoor dry bulb temperature to test cooling system"
     annotation (Placement(transformation(extent={{-194,40},{-174,60}})));
-<<<<<<< HEAD
-  Buildings.Controls.OBC.CDL.Continuous.MultiplyByParameter UA(k=100)
-    "Overall heat loss coefficient"
-    annotation (Placement(transformation(extent={{-120,0},{-100,20}})));
-  Buildings.Controls.OBC.CDL.Continuous.Subtract dT
-=======
   Buildings.Controls.OBC.CDL.Reals.MultiplyByParameter UA(k=100)
     "Overall heat loss coefficient"
     annotation (Placement(transformation(extent={{-120,0},{-100,20}})));
   Buildings.Controls.OBC.CDL.Reals.Subtract dT
->>>>>>> master
     "Temperature difference between zone and outdoor"
     annotation (Placement(transformation(extent={{-160,0},{-140,20}})));
   Buildings.Controls.OBC.CDL.Reals.Add dTdt
     "Temperature derivative"
     annotation (Placement(transformation(extent={{-80,0},{-60,20}})));
-<<<<<<< HEAD
-  Buildings.Controls.OBC.CDL.Continuous.MultiplyByParameter QCoo(k=-2000)
-=======
   Buildings.Controls.OBC.CDL.Reals.MultiplyByParameter QCoo(k=-2000)
->>>>>>> master
     "Heat extraction in the zone"
     annotation (Placement(transformation(extent={{-120,-60},{-100,-40}})));
   Buildings.Controls.OBC.CDL.Conversions.BooleanToReal booToRea(

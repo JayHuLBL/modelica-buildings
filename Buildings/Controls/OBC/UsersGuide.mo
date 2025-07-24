@@ -175,21 +175,13 @@ have been developed in the OpenBuildingControl project, see
 <a href=\"https://obc.lbl.gov\">obc.lbl.gov</a>.
 </p>
 <p>
-<<<<<<< HEAD
-The package contains control sequences for
-=======
 This package contains control sequences for
->>>>>>> master
 </p>
 <ul>
 <li>
 HVAC airside system control
-<<<<<<< HEAD
-<a href=\"modelica://Buildings.Controls.OBC.ASHRAE.G36\">Buildings.Controls.OBC.ASHRAE.G36</a>,
-=======
 <a href=\"modelica://Buildings.Controls.OBC.ASHRAE.G36\">
 Buildings.Controls.OBC.ASHRAE.G36</a>,
->>>>>>> master
 </li>
 <li>
 radiant heating and cooling systems

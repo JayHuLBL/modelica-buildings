@@ -20,27 +20,16 @@ model OptimalStartHeating
     period=24*3600)
     "Daily schedule"
     annotation (Placement(transformation(extent={{-40,-60},{-20,-40}})));
-<<<<<<< HEAD
-  Buildings.Controls.OBC.CDL.Continuous.MultiplyByParameter UA(k=10)
-    "Overall heat loss coefficient"
-    annotation (Placement(transformation(extent={{-120,0},{-100,20}})));
-  Buildings.Controls.OBC.CDL.Continuous.Subtract dT
-=======
   Buildings.Controls.OBC.CDL.Reals.MultiplyByParameter UA(k=10)
     "Overall heat loss coefficient"
     annotation (Placement(transformation(extent={{-120,0},{-100,20}})));
   Buildings.Controls.OBC.CDL.Reals.Subtract dT
->>>>>>> master
     "Temperature difference between zone and outdoor"
     annotation (Placement(transformation(extent={{-160,0},{-140,20}})));
   Buildings.Controls.OBC.CDL.Reals.Add dTdt
     "Temperature derivative"
     annotation (Placement(transformation(extent={{-80,0},{-60,20}})));
-<<<<<<< HEAD
-  Buildings.Controls.OBC.CDL.Continuous.MultiplyByParameter QHea(k=500)
-=======
   Buildings.Controls.OBC.CDL.Reals.MultiplyByParameter QHea(k=500)
->>>>>>> master
     "Heat injection in the zone"
     annotation (Placement(transformation(extent={{-120,-60},{-100,-40}})));
   Buildings.Controls.OBC.CDL.Conversions.BooleanToReal booToRea(
@@ -56,11 +45,7 @@ model OptimalStartHeating
       displayUnit="d")=-172800)
     "Outdoor dry bulb temperature to test heating system"
     annotation (Placement(transformation(extent={{-194,40},{-174,60}})));
-<<<<<<< HEAD
-  Buildings.Controls.OBC.CDL.Continuous.PID conPID(
-=======
   Buildings.Controls.OBC.CDL.Reals.PID conPID(
->>>>>>> master
     controllerType=Buildings.Controls.OBC.CDL.Types.SimpleController.PI,
     Ti=1.5)
     "PI control for space heating"

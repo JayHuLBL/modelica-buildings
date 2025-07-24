@@ -1,9 +1,6 @@
 OptimalStart
 PIDWithInputGains
-<<<<<<< HEAD
-=======
 PIDWithAutotuning
->>>>>>> master
 SetPoints
 Validation
 BaseClasses

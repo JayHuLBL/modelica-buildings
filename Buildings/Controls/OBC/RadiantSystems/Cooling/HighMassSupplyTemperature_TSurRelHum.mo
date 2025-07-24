@@ -92,20 +92,12 @@ block HighMassSupplyTemperature_TSurRelHum
   CDL.Psychrometrics.DewPoint_TDryBulPhi dewPoi
     "Dew point temperature, used to avoid condensation"
     annotation (Placement(transformation(extent={{-80,-56},{-60,-36}})));
-<<<<<<< HEAD
-  CDL.Continuous.Hysteresis hysCoo(
-=======
   CDL.Reals.Hysteresis hysCoo(
->>>>>>> master
     uLow=0.1,
     uHigh=0.2)
     "Hysteresis to switch system on and off"
     annotation (Placement(transformation(extent={{30,-90},{50,-70}})));
-<<<<<<< HEAD
-  CDL.Continuous.PID conCoo(
-=======
   CDL.Reals.PID conCoo(
->>>>>>> master
     final controllerType=controllerType,
     final k=k,
     final Ti = Ti,
@@ -117,22 +109,14 @@ block HighMassSupplyTemperature_TSurRelHum
     annotation (Placement(transformation(extent={{-50,10},{-30,30}})));
 
 protected
-<<<<<<< HEAD
-  CDL.Continuous.Sources.Constant TSupMin(
-=======
   CDL.Reals.Sources.Constant TSupMin(
->>>>>>> master
     final k(
       final unit="K",
       displayUnit="degC") = TSupSet_min,
       y(final unit="K", displayUnit="degC"))
     "Minimum cooling supply water temperature"
     annotation (Placement(transformation(extent={{-10,-40},{10,-20}})));
-<<<<<<< HEAD
-  CDL.Continuous.Sources.Constant TSupMax(
-=======
   CDL.Reals.Sources.Constant TSupMax(
->>>>>>> master
     final k(
       final unit="K",
       displayUnit="degC") = TSupSet_max,
@@ -140,31 +124,18 @@ protected
     "Maximum cooling supply water temperature"
     annotation (Placement(transformation(extent={{-10,30},{10,50}})));
 
-<<<<<<< HEAD
-  CDL.Continuous.Sources.Constant one(final k=1) "Outputs one"
-    annotation (Placement(transformation(extent={{-10,-10},{10,10}})));
-  CDL.Continuous.Sources.Constant zero(final k=0) "Outputs zero"
-    annotation (Placement(transformation(extent={{-10,60},{10,80}})));
-
-  CDL.Continuous.Line TSupNoDewPoi(
-=======
   CDL.Reals.Sources.Constant one(final k=1) "Outputs one"
     annotation (Placement(transformation(extent={{-10,-10},{10,10}})));
   CDL.Reals.Sources.Constant zero(final k=0) "Outputs zero"
     annotation (Placement(transformation(extent={{-10,60},{10,80}})));
 
   CDL.Reals.Line TSupNoDewPoi(
->>>>>>> master
     limitBelow=false,
     limitAbove=false,
     y(final unit="K", displayUnit="degC"))
     "Set point for supply water temperature without consideration of dew point"
     annotation (Placement(transformation(extent={{30,10},{50,30}})));
-<<<<<<< HEAD
-  CDL.Continuous.Max TSupCoo
-=======
   CDL.Reals.Max TSupCoo
->>>>>>> master
     "Cooling water supply temperature"
     annotation (Placement(transformation(extent={{60,4},{80,24}})));
   CDL.Conversions.BooleanToReal booToRea(
@@ -173,11 +144,7 @@ protected
     "Pump control signal as a Real number (either 0 or 1)"
     annotation (Placement(transformation(extent={{70,-90},{90,-70}})));
 
-<<<<<<< HEAD
-  CDL.Continuous.Max TSurConMin
-=======
   CDL.Reals.Max TSurConMin
->>>>>>> master
     "Minimum allowed supply air temperature to avoid condensation"
     annotation (Placement(transformation(extent={{-80,40},{-60,60}})));
 equation

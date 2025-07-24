@@ -3,11 +3,7 @@ model HighMassSupplyTemperature_TRoom
   "Validation model for the room temperature controller"
   extends Modelica.Icons.Example;
 
-<<<<<<< HEAD
-  Controls.OBC.CDL.Continuous.Sources.TimeTable TRooMea(
-=======
   Buildings.Controls.OBC.CDL.Reals.Sources.TimeTable TRooMea(
->>>>>>> master
     table=[0,18; 1,22; 2,18],
     extrapolation=Buildings.Controls.OBC.CDL.Types.Extrapolation.HoldLastPoint,
     offset={273.15},
@@ -18,11 +14,7 @@ model HighMassSupplyTemperature_TRoom
     annotation (Placement(transformation(extent={{-10,-10},{10,10}})));
 
 protected
-<<<<<<< HEAD
-  Controls.OBC.CDL.Continuous.Sources.Constant TRooSet(final k(
-=======
   Buildings.Controls.OBC.CDL.Reals.Sources.Constant TRooSet(final k(
->>>>>>> master
       final unit="K",
       displayUnit="degC") = 293.15) "Set point temperature for room"
     annotation (Placement(transformation(extent={{-80,10},{-60,30}})));

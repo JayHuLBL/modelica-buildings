@@ -108,94 +108,55 @@ protected
     final k=1)
     "Outputs 1"
     annotation (Placement(transformation(extent={{-80,-140},{-60,-120}})));
-<<<<<<< HEAD
-  CDL.Continuous.Add TOutOffSet(
-=======
   CDL.Reals.Add TOutOffSet(
->>>>>>> master
     y(final quantity="ThermodynamicTemperature",
       final unit="K",
       displayUnit="degC"))
     "Effective outside temperature for heat transfer (takes into account zone heat gains)"
     annotation (Placement(transformation(extent={{-80,-58},{-60,-38}})));
-<<<<<<< HEAD
-  CDL.Continuous.Subtract qRelDen(
-=======
   CDL.Reals.Subtract qRelDen(
->>>>>>> master
     y(final quantity="ThermodynamicTemperature",
       final unit="K",
       displayUnit="degC"))
     "Denominator for relative heating load calculation"
     annotation (Placement(transformation(extent={{-40,74},{-20,94}})));
-<<<<<<< HEAD
-  CDL.Continuous.Subtract qRelNum(
-=======
   CDL.Reals.Subtract qRelNum(
->>>>>>> master
     y(final quantity="ThermodynamicTemperature",
       final unit="K",
       displayUnit="degC"))
     "Numerator for relative heating load calculation"
     annotation (Placement(transformation(extent={{-40,-52},{-20,-32}})));
-<<<<<<< HEAD
-  CDL.Continuous.Divide qRel "Relative heating load = Q_flow/Q_flow_nominal"
-    annotation (Placement(transformation(extent={{0,24},{20,44}})));
-  CDL.Continuous.Subtract dTFlu2_nom
-    "Heating supply minus return water temperature at nominal condition"
-    annotation (Placement(transformation(extent={{-40,150},{-20,170}})));
-  CDL.Continuous.Average TFluAve_nominal(
-=======
   CDL.Reals.Divide qRel "Relative heating load = Q_flow/Q_flow_nominal"
     annotation (Placement(transformation(extent={{0,24},{20,44}})));
   CDL.Reals.Subtract dTFlu2_nom
     "Heating supply minus return water temperature at nominal condition"
     annotation (Placement(transformation(extent={{-40,150},{-20,170}})));
   CDL.Reals.Average TFluAve_nominal(
->>>>>>> master
     y(final quantity="ThermodynamicTemperature",
       final unit="K",
       displayUnit="degC"))
     "Average heating water temperature at nominal condition"
     annotation (Placement(transformation(extent={{-40,120},{-20,140}})));
-<<<<<<< HEAD
-  CDL.Continuous.Subtract dTFluAve_nominal(
-=======
   CDL.Reals.Subtract dTFluAve_nominal(
->>>>>>> master
     y(final quantity="TemperatureDifference",
       final unit="K"))
     "Average heating water temperature minus room temperature at nominal condition"
     annotation (Placement(transformation(extent={{36,110},{56,130}})));
-<<<<<<< HEAD
-  CDL.Continuous.Divide mInv "Inverse of heat transfer exponent, y = 1/m"
-    annotation (Placement(transformation(extent={{-40,-160},{-20,-140}})));
-  CDL.Continuous.Add TAve(
-=======
   CDL.Reals.Divide mInv "Inverse of heat transfer exponent, y = 1/m"
     annotation (Placement(transformation(extent={{-40,-160},{-20,-140}})));
   CDL.Reals.Add TAve(
->>>>>>> master
     y(final quantity="ThermodynamicTemperature",
       final unit="K",
       displayUnit="degC"))
     "Average of supply and return temperature"
     annotation (Placement(transformation(extent={{-40,276},{-20,296}})));
-<<<<<<< HEAD
-  CDL.Continuous.Add TSupCur(
-=======
   CDL.Reals.Add TSupCur(
->>>>>>> master
     y(final quantity="ThermodynamicTemperature",
       final unit="K",
       displayUnit="degC"))
     "Current supply water temperature"
     annotation (Placement(transformation(extent={{42,270},{62,290}})));
-<<<<<<< HEAD
-  CDL.Continuous.Subtract TRetCur(
-=======
   CDL.Reals.Subtract TRetCur(
->>>>>>> master
     y(final quantity="ThermodynamicTemperature",
       final unit="K",
       displayUnit="degC"))
@@ -204,11 +165,7 @@ protected
   CDL.Reals.Max qRel0
     "Relative heating load, but always non-zero value"
     annotation (Placement(transformation(extent={{32,30},{52,50}})));
-<<<<<<< HEAD
-  CDL.Continuous.Multiply pro "Product used to compute q^(1/m)"
-=======
   CDL.Reals.Multiply pro "Product used to compute q^(1/m)"
->>>>>>> master
     annotation (Placement(transformation(extent={{-40,-110},{-20,-90}})));
   CDL.Reals.Exp qRaiInvM
     "Outputs qRel^(1/m)"
@@ -216,17 +173,6 @@ protected
   CDL.Reals.Log log1
     "Logarithm used for evaluation of qRel^(1/m)"
     annotation (Placement(transformation(extent={{-80,-110},{-60,-90}})));
-<<<<<<< HEAD
-  CDL.Continuous.Multiply dTQ(y(
-    final quantity="TemperatureDifference",
-    final unit="K")) "Temperature contribution due to qRel^(1/m)"
-    annotation (Placement(transformation(extent={{-80,220},{-60,240}})));
-  CDL.Continuous.Multiply dTFlu(y(
-    final quantity="TemperatureDifference",
-    final unit="K")) "Supply minus return water temperature"
-    annotation (Placement(transformation(extent={{0,220},{20,240}})));
-  CDL.Continuous.Add TOutOffSet_nominal(
-=======
   CDL.Reals.Multiply dTQ(y(
     final quantity="TemperatureDifference",
     final unit="K")) "Temperature contribution due to qRel^(1/m)"
@@ -236,17 +182,12 @@ protected
     final unit="K")) "Supply minus return water temperature"
     annotation (Placement(transformation(extent={{0,220},{20,240}})));
   CDL.Reals.Add TOutOffSet_nominal(
->>>>>>> master
     y(final quantity="ThermodynamicTemperature",
       final unit="K",
       displayUnit="degC"))
     "Effective outside temperature for heat transfer at nominal condition (takes into account zone heat gains)"
     annotation (Placement(transformation(extent={{-44,32},{-24,52}})));
-<<<<<<< HEAD
-  CDL.Continuous.MultiplyByParameter gai(
-=======
   CDL.Reals.MultiplyByParameter gai(
->>>>>>> master
     final k=0.5,
     y(final quantity="TemperatureDifference",
       final unit="K")) "Gain factor"

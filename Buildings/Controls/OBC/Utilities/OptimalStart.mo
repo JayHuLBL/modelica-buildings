@@ -92,11 +92,7 @@ block OptimalStart
     final uHigh=uHigh) if computeCooling
     "Optimal start time for cooling system"
     annotation (Placement(transformation(extent={{20,-80},{40,-60}})));
-<<<<<<< HEAD
-  Buildings.Controls.OBC.CDL.Continuous.GreaterThreshold hysSta(
-=======
   Buildings.Controls.OBC.CDL.Reals.GreaterThreshold hysSta(
->>>>>>> master
     t=60,
     h=60)
     "Hysteresis to activate the optimal start boolean output"
@@ -106,28 +102,17 @@ protected
   Buildings.Controls.OBC.CDL.Reals.Max max
     "Get the maximum optimal start time "
     annotation (Placement(transformation(extent={{100,30},{120,50}})));
-<<<<<<< HEAD
-  Buildings.Controls.OBC.CDL.Continuous.AddParameter addPar(
-=======
   Buildings.Controls.OBC.CDL.Reals.AddParameter addPar(
->>>>>>> master
     p=-tOptMax)
     "Maximum optimal start time"
     annotation (Placement(transformation(extent={{-100,-10},{-80,10}})));
   Buildings.Controls.OBC.CDL.Logical.Or or2
     "Get the optimal start boolean output"
     annotation (Placement(transformation(extent={{100,-50},{120,-30}})));
-<<<<<<< HEAD
-  Buildings.Controls.OBC.CDL.Continuous.Subtract dTHea if computeHeating
-    "Temperature difference between heating setpoint and zone temperature"
-    annotation (Placement(transformation(extent={{-80,70},{-60,90}})));
-  Buildings.Controls.OBC.CDL.Continuous.Subtract dTCoo if computeCooling
-=======
   Buildings.Controls.OBC.CDL.Reals.Subtract dTHea if computeHeating
     "Temperature difference between heating setpoint and zone temperature"
     annotation (Placement(transformation(extent={{-80,70},{-60,90}})));
   Buildings.Controls.OBC.CDL.Reals.Subtract dTCoo if computeCooling
->>>>>>> master
     "Temperature difference between zone temperature and cooling setpoint"
     annotation (Placement(transformation(extent={{-80,-60},{-60,-40}})));
   Buildings.Controls.OBC.CDL.Logical.FallingEdge falEdg

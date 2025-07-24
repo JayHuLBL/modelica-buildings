@@ -2,17 +2,10 @@ within Buildings.Controls.OBC.UnitConversions.Validation;
 model To_inH2O "Validation model for unit conversion from pascal to inch of water gauge (at 60 degF)"
   extends Modelica.Icons.Example;
 
-<<<<<<< HEAD
-  Buildings.Controls.OBC.CDL.Continuous.Subtract sub
-    "Difference between the calculated and expected conversion output"
-    annotation (Placement(transformation(extent={{20,40},{40,60}})));
-  Buildings.Controls.OBC.CDL.Continuous.Subtract sub1
-=======
   Buildings.Controls.OBC.CDL.Reals.Subtract sub
     "Difference between the calculated and expected conversion output"
     annotation (Placement(transformation(extent={{20,40},{40,60}})));
   Buildings.Controls.OBC.CDL.Reals.Subtract sub1
->>>>>>> master
     "Difference between the calculated and expected conversion output"
     annotation (Placement(transformation(extent={{20,-40},{40,-20}})));
 
