@@ -1,19 +1,6 @@
-<<<<<<< HEAD
-<<<<<<<< HEAD:Buildings/Controls/OBC/ASHRAE/G36/Generic/Validation/TrimAndRespond.mo
 within Buildings.Controls.OBC.ASHRAE.G36.Generic.Validation;
 model TrimAndRespond "Model validates the trim and respond block"
   Buildings.Controls.OBC.ASHRAE.G36.Generic.TrimAndRespond trimRespondLogic(
-========
-within Buildings.Obsolete.Controls.OBC.ASHRAE.G36_PR1.Generic.SetPoints.Validation;
-model TrimAndRespond "Model validates the trim and respond block"
-  Buildings.Obsolete.Controls.OBC.ASHRAE.G36_PR1.Generic.SetPoints.TrimAndRespond
-    trimRespondLogic(
->>>>>>>> master:Buildings/Obsolete/Controls/OBC/ASHRAE/G36_PR1/Generic/SetPoints/Validation/TrimAndRespond.mo
-=======
-within Buildings.Controls.OBC.ASHRAE.G36.Generic.Validation;
-model TrimAndRespond "Model validates the trim and respond block"
-  Buildings.Controls.OBC.ASHRAE.G36.Generic.TrimAndRespond trimRespondLogic(
->>>>>>> master
     final iniSet=120,
     final minSet=37,
     final maxSet=370,
@@ -22,21 +9,10 @@ model TrimAndRespond "Model validates the trim and respond block"
     final numIgnReq=2,
     final triAmo=-10,
     final resAmo=15,
-<<<<<<< HEAD
-    final maxRes=37) "Block implementing trim and respond logic"
-    annotation (Placement(transformation(extent={{70,60},{90,80}})));
-<<<<<<<< HEAD:Buildings/Controls/OBC/ASHRAE/G36/Generic/Validation/TrimAndRespond.mo
-  Buildings.Controls.OBC.ASHRAE.G36.Generic.TrimAndRespond trimRespondLogic1(
-========
-  Buildings.Obsolete.Controls.OBC.ASHRAE.G36_PR1.Generic.SetPoints.TrimAndRespond
-    trimRespondLogic1(
->>>>>>>> master:Buildings/Obsolete/Controls/OBC/ASHRAE/G36_PR1/Generic/SetPoints/Validation/TrimAndRespond.mo
-=======
     final maxRes=37)
     "Block implementing trim and respond logic – Case with negative trim amount"
     annotation (Placement(transformation(extent={{70,40},{90,60}})));
   Buildings.Controls.OBC.ASHRAE.G36.Generic.TrimAndRespond trimRespondLogic1(
->>>>>>> master
     final iniSet=120,
     final minSet=37,
     final maxSet=370,
@@ -45,21 +21,10 @@ model TrimAndRespond "Model validates the trim and respond block"
     final numIgnReq=2,
     final triAmo=10,
     final resAmo=-15,
-<<<<<<< HEAD
-    final maxRes=-37) "Block implementing trim and respond logic"
-    annotation (Placement(transformation(extent={{70,10},{90,30}})));
-<<<<<<<< HEAD:Buildings/Controls/OBC/ASHRAE/G36/Generic/Validation/TrimAndRespond.mo
-  Buildings.Controls.OBC.ASHRAE.G36.Generic.TrimAndRespond trimRespondLogic2(
-========
-  Buildings.Obsolete.Controls.OBC.ASHRAE.G36_PR1.Generic.SetPoints.TrimAndRespond
-    trimRespondLogic2(
->>>>>>>> master:Buildings/Obsolete/Controls/OBC/ASHRAE/G36_PR1/Generic/SetPoints/Validation/TrimAndRespond.mo
-=======
     final maxRes=-37)
     "Block implementing trim and respond logic – Case with positive trim amount"
     annotation (Placement(transformation(extent={{70,-10},{90,10}})));
   Buildings.Controls.OBC.ASHRAE.G36.Generic.TrimAndRespond trimRespondLogic2(
->>>>>>> master
     final iniSet=120,
     final minSet=37,
     final maxSet=370,
