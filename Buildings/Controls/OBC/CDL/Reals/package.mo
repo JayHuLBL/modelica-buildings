@@ -1,9 +1,5 @@
 within Buildings.Controls.OBC.CDL;
-<<<<<<< HEAD:Buildings/Controls/OBC/CDL/Continuous/package.mo
-package Continuous "Package with blocks for continuous variables"
-=======
 package Reals "Package with blocks for continuous variables"
->>>>>>> master:Buildings/Controls/OBC/CDL/Reals/package.mo
   annotation (
     Documentation(
       info="<html>

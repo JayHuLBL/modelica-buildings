@@ -1,15 +1,3 @@
-<<<<<<< HEAD:Buildings/Controls/OBC/CDL/Continuous/Divide.mo
-within Buildings.Controls.OBC.CDL.Continuous;
-block Divide "Output first input divided by second input"
-  Interfaces.RealInput u1
-    "Connector for dividend"
-    annotation (Placement(transformation(extent={{-140,40},{-100,80}})));
-  Interfaces.RealInput u2
-    "Connector for divisor"
-    annotation (Placement(transformation(extent={{-140,-80},{-100,-40}})));
-  Interfaces.RealOutput y
-    "Connector for quotient"
-=======
 within Buildings.Controls.OBC.CDL.Reals;
 block Divide "Output first input divided by second input"
   Buildings.Controls.OBC.CDL.Interfaces.RealInput u1
@@ -20,7 +8,6 @@ block Divide "Output first input divided by second input"
     annotation (Placement(transformation(extent={{-140,-80},{-100,-40}})));
   Buildings.Controls.OBC.CDL.Interfaces.RealOutput y
     "Output with the quotient"
->>>>>>> master:Buildings/Controls/OBC/CDL/Reals/Divide.mo
     annotation (Placement(transformation(extent={{100,-20},{140,20}})));
 
 equation
@@ -40,11 +27,7 @@ revisions="<html>
 <li>
 January 27, 2022, by Jianjun Hu:<br/>
 Renamed the block name from Division to Divide.<br/>
-<<<<<<< HEAD:Buildings/Controls/OBC/CDL/Continuous/Divide.mo
-This is for <a href=\"https://github.com/lbl-srg/modelica-buildings/issues/2865\">issue 2865</a>.
-=======
 This is for <a href=\"https://github.com/lbl-srg/modelica-buildings/issues/2865\">Buildings, issue 2865</a>.
->>>>>>> master:Buildings/Controls/OBC/CDL/Reals/Divide.mo
 </li>
 <li>
 March 9, 2020, by Michael Wetter:<br/>

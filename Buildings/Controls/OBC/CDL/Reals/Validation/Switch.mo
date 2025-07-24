@@ -1,22 +1,12 @@
-<<<<<<< HEAD:Buildings/Controls/OBC/CDL/Continuous/Validation/Switch.mo
-within Buildings.Controls.OBC.CDL.Continuous.Validation;
-model Switch "Validation model for the Switch block"
-  Buildings.Controls.OBC.CDL.Continuous.Sources.Ramp ramp1(
-=======
 within Buildings.Controls.OBC.CDL.Reals.Validation;
 model Switch "Validation model for the Switch block"
   Buildings.Controls.OBC.CDL.Reals.Sources.Ramp ramp1(
->>>>>>> master:Buildings/Controls/OBC/CDL/Reals/Validation/Switch.mo
     duration=5,
     offset=-1,
     height=6)
     "Block that generates ramp signal"
     annotation (Placement(transformation(extent={{-26,22},{-6,42}})));
-<<<<<<< HEAD:Buildings/Controls/OBC/CDL/Continuous/Validation/Switch.mo
-  Buildings.Controls.OBC.CDL.Continuous.Sources.Ramp ramp2(
-=======
   Buildings.Controls.OBC.CDL.Reals.Sources.Ramp ramp2(
->>>>>>> master:Buildings/Controls/OBC/CDL/Reals/Validation/Switch.mo
     duration=5,
     offset=-1,
     height=2)
@@ -27,11 +17,7 @@ model Switch "Validation model for the Switch block"
     period=2)
     "Block that outputs cyclic on and off"
     annotation (Placement(transformation(extent={{-26,-10},{-6,10}})));
-<<<<<<< HEAD:Buildings/Controls/OBC/CDL/Continuous/Validation/Switch.mo
-  Buildings.Controls.OBC.CDL.Continuous.Switch switch1
-=======
   Buildings.Controls.OBC.CDL.Reals.Switch switch1
->>>>>>> master:Buildings/Controls/OBC/CDL/Reals/Validation/Switch.mo
     "Switch between two real inputs"
     annotation (Placement(transformation(extent={{26,-10},{46,10}})));
 
@@ -47,22 +33,13 @@ equation
       StopTime=5.0,
       Tolerance=1e-06),
     __Dymola_Commands(
-<<<<<<< HEAD:Buildings/Controls/OBC/CDL/Continuous/Validation/Switch.mo
-      file="modelica://Buildings/Resources/Scripts/Dymola/Controls/OBC/CDL/Continuous/Validation/Switch.mos" "Simulate and plot"),
-=======
       file="modelica://Buildings/Resources/Scripts/Dymola/Controls/OBC/CDL/Reals/Validation/Switch.mos" "Simulate and plot"),
->>>>>>> master:Buildings/Controls/OBC/CDL/Reals/Validation/Switch.mo
     Documentation(
       info="<html>
 <p>
 Validation test for the block
-<<<<<<< HEAD:Buildings/Controls/OBC/CDL/Continuous/Validation/Switch.mo
-<a href=\"modelica://Buildings.Controls.OBC.CDL.Continuous.Switch\">
-Buildings.Controls.OBC.CDL.Continuous.Switch</a>.
-=======
 <a href=\"modelica://Buildings.Controls.OBC.CDL.Reals.Switch\">
 Buildings.Controls.OBC.CDL.Reals.Switch</a>.
->>>>>>> master:Buildings/Controls/OBC/CDL/Reals/Validation/Switch.mo
 </p>
 </html>",
       revisions="<html>

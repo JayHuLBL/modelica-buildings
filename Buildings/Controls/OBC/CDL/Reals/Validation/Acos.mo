@@ -1,18 +1,9 @@
-<<<<<<< HEAD:Buildings/Controls/OBC/CDL/Continuous/Validation/Acos.mo
-within Buildings.Controls.OBC.CDL.Continuous.Validation;
-model Acos "Validation model for the Acos block"
-  Buildings.Controls.OBC.CDL.Continuous.Acos arcCos
-    "Block that outputs the arc tangent of the input"
-    annotation (Placement(transformation(extent={{-10,-10},{10,10}})));
-  Buildings.Controls.OBC.CDL.Continuous.Sources.Ramp ramp1(
-=======
 within Buildings.Controls.OBC.CDL.Reals.Validation;
 model Acos "Validation model for the Acos block"
   Buildings.Controls.OBC.CDL.Reals.Acos arcCos
     "Block that outputs the arc tangent of the input"
     annotation (Placement(transformation(extent={{-10,-10},{10,10}})));
   Buildings.Controls.OBC.CDL.Reals.Sources.Ramp ramp1(
->>>>>>> master:Buildings/Controls/OBC/CDL/Reals/Validation/Acos.mo
     duration=1,
     offset=-1,
     height=2)
@@ -26,21 +17,12 @@ equation
 annotation (
   experiment(StopTime=1.0, Tolerance=1e-06),
   __Dymola_Commands(
-<<<<<<< HEAD:Buildings/Controls/OBC/CDL/Continuous/Validation/Acos.mo
-      file="modelica://Buildings/Resources/Scripts/Dymola/Controls/OBC/CDL/Continuous/Validation/Acos.mos" "Simulate and plot"),
-Documentation(info="<html>
-<p>
-Validation test for the block
-<a href=\"modelica://Buildings.Controls.OBC.CDL.Continuous.Acos\">
-Buildings.Controls.OBC.CDL.Continuous.Acos</a>.
-=======
       file="modelica://Buildings/Resources/Scripts/Dymola/Controls/OBC/CDL/Reals/Validation/Acos.mos" "Simulate and plot"),
 Documentation(info="<html>
 <p>
 Validation test for the block
 <a href=\"modelica://Buildings.Controls.OBC.CDL.Reals.Acos\">
 Buildings.Controls.OBC.CDL.Reals.Acos</a>.
->>>>>>> master:Buildings/Controls/OBC/CDL/Reals/Validation/Acos.mo
 </p>
 <p>
 The input <code>u</code> varies from <i>-1</i> to <i>+1</i>.

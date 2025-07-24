@@ -1,15 +1,3 @@
-<<<<<<< HEAD:Buildings/Controls/OBC/CDL/Continuous/Subtract.mo
-within Buildings.Controls.OBC.CDL.Continuous;
-block Subtract "Output the difference of the two inputs"
-  Interfaces.RealInput u1
-    "Connector of Real input signal 1"
-    annotation (Placement(transformation(extent={{-140,40},{-100,80}})));
-  Interfaces.RealInput u2
-    "Connector of Real input signal 2"
-    annotation (Placement(transformation(extent={{-140,-80},{-100,-40}})));
-  Interfaces.RealOutput y
-    "Connector of Real output signal"
-=======
 within Buildings.Controls.OBC.CDL.Reals;
 block Subtract "Output the difference of the two inputs"
   Buildings.Controls.OBC.CDL.Interfaces.RealInput u1
@@ -20,7 +8,6 @@ block Subtract "Output the difference of the two inputs"
     annotation (Placement(transformation(extent={{-140,-80},{-100,-40}})));
   Buildings.Controls.OBC.CDL.Interfaces.RealOutput y
     "Output with difference"
->>>>>>> master:Buildings/Controls/OBC/CDL/Reals/Subtract.mo
     annotation (Placement(transformation(extent={{100,-20},{140,20}})));
 
 equation

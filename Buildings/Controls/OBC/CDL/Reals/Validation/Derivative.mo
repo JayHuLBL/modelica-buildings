@@ -1,14 +1,3 @@
-<<<<<<< HEAD:Buildings/Controls/OBC/CDL/Continuous/Validation/Derivative.mo
-within Buildings.Controls.OBC.CDL.Continuous.Validation;
-model Derivative
-  "Test model for the derivative block"
-  Buildings.Controls.OBC.CDL.Continuous.Derivative der1(y_start=1)
-    "Derivative block with input gains"
-    annotation (Placement(transformation(extent={{40,40},{60,60}})));
-  Sources.Constant con(k=1) "Outputs 1"
-    annotation (Placement(transformation(extent={{-80,70},{-60,90}})));
-  Sources.Ramp ram(
-=======
 within Buildings.Controls.OBC.CDL.Reals.Validation;
 model Derivative
   "Test model for the derivative block"
@@ -18,36 +7,19 @@ model Derivative
   Reals.Sources.Constant con(k=1) "Outputs 1"
     annotation (Placement(transformation(extent={{-80,70},{-60,90}})));
   Reals.Sources.Ramp ram(
->>>>>>> master:Buildings/Controls/OBC/CDL/Reals/Validation/Derivative.mo
     height=0.09,
     duration=10,
     offset=0.01,
     startTime=5) "Ramp for time constant used in approximating derivative"
     annotation (Placement(transformation(extent={{-80,40},{-60,60}})));
-<<<<<<< HEAD:Buildings/Controls/OBC/CDL/Continuous/Validation/Derivative.mo
-  Sources.ModelTime modTim "Model time"
-    annotation (Placement(transformation(extent={{-80,0},{-60,20}})));
-  Buildings.Controls.OBC.CDL.Continuous.IntegratorWithReset intWitRes(y_start=1)
-=======
   Buildings.Controls.OBC.CDL.Reals.Sources.CivilTime modTim
     "Civil time"
     annotation (Placement(transformation(extent={{-110,0},{-90,20}})));
   Buildings.Controls.OBC.CDL.Reals.IntegratorWithReset intWitRes(y_start=1)
->>>>>>> master:Buildings/Controls/OBC/CDL/Reals/Validation/Derivative.mo
     "Integration of input"
     annotation (Placement(transformation(extent={{0,0},{20,20}})));
   Logical.Sources.Constant booSig(k=false) "Contant boolean signal"
     annotation (Placement(transformation(extent={{-40,-30},{-20,-10}})));
-<<<<<<< HEAD:Buildings/Controls/OBC/CDL/Continuous/Validation/Derivative.mo
-  Buildings.Controls.OBC.CDL.Continuous.Cos cos "Cosine of model time"
-    annotation (Placement(transformation(extent={{-40,0},{-20,20}})));
-  Buildings.Controls.OBC.CDL.Continuous.Derivative der2(y_start=0)
-    "Derivative block with input gains"
-    annotation (Placement(transformation(extent={{40,-80},{60,-60}})));
-  Sources.Constant con2(k=2) "Outputs 2"
-    annotation (Placement(transformation(extent={{-40,-72},{-20,-52}})));
-  Sources.Constant T(k=0.1) "Time constant for derivative approximation"
-=======
   Buildings.Controls.OBC.CDL.Reals.Cos cos "Cosine of model time"
     annotation (Placement(transformation(extent={{-40,0},{-20,20}})));
   Buildings.Controls.OBC.CDL.Reals.Derivative der2(y_start=0)
@@ -56,21 +28,10 @@ model Derivative
   Reals.Sources.Constant con2(k=2) "Outputs 2"
     annotation (Placement(transformation(extent={{-40,-72},{-20,-52}})));
   Reals.Sources.Constant T(k=0.1) "Time constant for derivative approximation"
->>>>>>> master:Buildings/Controls/OBC/CDL/Reals/Validation/Derivative.mo
     annotation (Placement(transformation(extent={{0,-90},{20,-70}})));
   Utilities.Assert assMes(message="Differentiated value differs more than threshold")
     "Issue an error if results differ more than a threshold"
     annotation (Placement(transformation(extent={{170,26},{190,46}})));
-<<<<<<< HEAD:Buildings/Controls/OBC/CDL/Continuous/Validation/Derivative.mo
-  Buildings.Controls.OBC.CDL.Continuous.Subtract sub
-    "Difference between original signal, and differentiated integral of that signal"
-    annotation (Placement(transformation(extent={{80,26},{100,46}})));
-  Buildings.Controls.OBC.CDL.Continuous.Abs abs "Absolute difference"
-    annotation (Placement(transformation(extent={{110,26},{130,46}})));
-  Buildings.Controls.OBC.CDL.Continuous.LessThreshold lesThr(t=0.1, h=0.01)
-    "Output true if difference is within expected accuracy"
-    annotation (Placement(transformation(extent={{140,26},{160,46}})));
-=======
   Buildings.Controls.OBC.CDL.Reals.Subtract sub
     "Difference between original signal, and differentiated integral of that signal"
     annotation (Placement(transformation(extent={{80,26},{100,46}})));
@@ -82,7 +43,6 @@ model Derivative
   Buildings.Controls.OBC.CDL.Reals.MultiplyByParameter gai(final k=1)
     "Dummy gain to avoid unit difference error"
     annotation (Placement(transformation(extent={{-80,0},{-60,20}})));
->>>>>>> master:Buildings/Controls/OBC/CDL/Reals/Validation/Derivative.mo
 equation
   connect(con.y, der1.k) annotation (Line(points={{-58,80},{-10,80},{-10,58},{38,
           58}}, color={0,0,127}));
@@ -92,11 +52,6 @@ equation
           {38,50}}, color={0,0,127}));
   connect(booSig.y, intWitRes.trigger)
     annotation (Line(points={{-18,-20},{10,-20},{10,-2}}, color={255,0,255}));
-<<<<<<< HEAD:Buildings/Controls/OBC/CDL/Continuous/Validation/Derivative.mo
-  connect(modTim.y, cos.u)
-    annotation (Line(points={{-58,10},{-42,10}}, color={0,0,127}));
-=======
->>>>>>> master:Buildings/Controls/OBC/CDL/Reals/Validation/Derivative.mo
   connect(intWitRes.u, cos.y)
     annotation (Line(points={{-2,10},{-18,10}}, color={0,0,127}));
   connect(intWitRes.y_reset_in, cos.y) annotation (Line(points={{-2,2},{-10,2},{
@@ -117,14 +72,6 @@ equation
     annotation (Line(points={{132,36},{138,36}}, color={0,0,127}));
   connect(lesThr.y, assMes.u)
     annotation (Line(points={{162,36},{168,36}}, color={255,0,255}));
-<<<<<<< HEAD:Buildings/Controls/OBC/CDL/Continuous/Validation/Derivative.mo
-  annotation (
-    experiment(
-      StopTime=10.0,
-      Tolerance=1e-06),
-    __Dymola_Commands(
-      file="modelica://Buildings/Resources/Scripts/Dymola/Controls/OBC/CDL/Continuous/Validation/Derivative.mos" "Simulate and plot"),
-=======
   connect(modTim.y, gai.u)
     annotation (Line(points={{-88,10},{-82,10}}, color={0,0,127}));
   connect(gai.y, cos.u)
@@ -135,18 +82,12 @@ equation
       Tolerance=1e-07),
     __Dymola_Commands(
       file="modelica://Buildings/Resources/Scripts/Dymola/Controls/OBC/CDL/Reals/Validation/Derivative.mos" "Simulate and plot"),
->>>>>>> master:Buildings/Controls/OBC/CDL/Reals/Validation/Derivative.mo
     Documentation(
       info="<html>
 <p>
 Validation test for the block
-<<<<<<< HEAD:Buildings/Controls/OBC/CDL/Continuous/Validation/Derivative.mo
-<a href=\"modelica://Buildings.Controls.OBC.CDL.Continuous.Derivative\">
-Buildings.Controls.OBC.CDL.Continuous.Derivative</a>.
-=======
 <a href=\"modelica://Buildings.Controls.OBC.CDL.Reals.Derivative\">
 Buildings.Controls.OBC.CDL.Reals.Derivative</a>.
->>>>>>> master:Buildings/Controls/OBC/CDL/Reals/Validation/Derivative.mo
 The model integrates a time varying signal, and the differentiates this integrated signal.
 Hence, the output <code>der1.y</code> matches the non-integrated signal <code>intWitRes.u</code>,
 within a small approximation tolerance.
@@ -168,11 +109,7 @@ Hence, there is a fast transient at the beginning, and afterwards the output mat
 May 20, 2022, by Michael Wetter:<br/>
 First implementation.<br/>
 This is for
-<<<<<<< HEAD:Buildings/Controls/OBC/CDL/Continuous/Validation/Derivative.mo
-<a href=\"https://github.com/lbl-srg/modelica-buildings/issues/3022\">issue 3022</a>.
-=======
 <a href=\"https://github.com/lbl-srg/modelica-buildings/issues/3022\">Buildings, issue 3022</a>.
->>>>>>> master:Buildings/Controls/OBC/CDL/Reals/Validation/Derivative.mo
 </li>
 </ul>
 </html>"),
@@ -189,9 +126,5 @@ This is for
           pattern=LinePattern.None,
           fillPattern=FillPattern.Solid,
           points={{-36,60},{64,0},{-36,-60},{-36,60}})}),
-<<<<<<< HEAD:Buildings/Controls/OBC/CDL/Continuous/Validation/Derivative.mo
-    Diagram(coordinateSystem(extent={{-100,-100},{200,100}})));
-=======
     Diagram(coordinateSystem(extent={{-120,-100},{200,100}})));
->>>>>>> master:Buildings/Controls/OBC/CDL/Reals/Validation/Derivative.mo
 end Derivative;

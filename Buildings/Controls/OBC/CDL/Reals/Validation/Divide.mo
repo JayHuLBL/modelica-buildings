@@ -1,12 +1,6 @@
-<<<<<<< HEAD:Buildings/Controls/OBC/CDL/Continuous/Validation/Divide.mo
-within Buildings.Controls.OBC.CDL.Continuous.Validation;
-model Divide "Validation model for the Divide block"
-  Buildings.Controls.OBC.CDL.Continuous.Divide div1
-=======
 within Buildings.Controls.OBC.CDL.Reals.Validation;
 model Divide "Validation model for the Divide block"
   Buildings.Controls.OBC.CDL.Reals.Divide div1
->>>>>>> master:Buildings/Controls/OBC/CDL/Reals/Validation/Divide.mo
     "Block that outputs first input divided by second input: u1/u2"
     annotation (Placement(transformation(extent={{-10,-10},{10,10}})));
   Buildings.Controls.OBC.CDL.Reals.Sources.Ramp ramp1(
@@ -32,22 +26,13 @@ equation
       StopTime=1.0,
       Tolerance=1e-06),
     __Dymola_Commands(
-<<<<<<< HEAD:Buildings/Controls/OBC/CDL/Continuous/Validation/Divide.mo
-      file="modelica://Buildings/Resources/Scripts/Dymola/Controls/OBC/CDL/Continuous/Validation/Divide.mos" "Simulate and plot"),
-=======
       file="modelica://Buildings/Resources/Scripts/Dymola/Controls/OBC/CDL/Reals/Validation/Divide.mos" "Simulate and plot"),
->>>>>>> master:Buildings/Controls/OBC/CDL/Reals/Validation/Divide.mo
     Documentation(
       info="<html>
 <p>
 Validation test for the block
-<<<<<<< HEAD:Buildings/Controls/OBC/CDL/Continuous/Validation/Divide.mo
-<a href=\"modelica://Buildings.Controls.OBC.CDL.Continuous.Divide\">
-Buildings.Controls.OBC.CDL.Continuous.Divide</a>.
-=======
 <a href=\"modelica://Buildings.Controls.OBC.CDL.Reals.Divide\">
 Buildings.Controls.OBC.CDL.Reals.Divide</a>.
->>>>>>> master:Buildings/Controls/OBC/CDL/Reals/Validation/Divide.mo
 </p>
 <p>
 The input <code>u1</code> varies from <i>-2</i> to <i>+2</i>, input <code>u2</code> varies from <i>+1</i> to <i>+3</i>.
@@ -58,11 +43,7 @@ revisions="<html>
 <li>
 January 27, 2022, by Jianjun Hu:<br/>
 Renamed the block name from Division to Divide.<br/>
-<<<<<<< HEAD:Buildings/Controls/OBC/CDL/Continuous/Validation/Divide.mo
-This is for <a href=\"https://github.com/lbl-srg/modelica-buildings/issues/2865\">issue 2865</a>.
-=======
 This is for <a href=\"https://github.com/lbl-srg/modelica-buildings/issues/2865\">Buildings, issue 2865</a>.
->>>>>>> master:Buildings/Controls/OBC/CDL/Reals/Validation/Divide.mo
 </li>
 <li>
 March 17, 2017, by Jianjun Hu:<br/>

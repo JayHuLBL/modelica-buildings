@@ -23,62 +23,17 @@ model WetBulb_TDryBulPhi
     annotation (Placement(transformation(extent={{-40,-30},{-20,-10}})));
   Buildings.Controls.OBC.CDL.Reals.Sources.Constant phi2(k=0.6)
     "Relative humidity"
-<<<<<<< HEAD
-    annotation (Placement(transformation(extent={{-90,6},{-70,26}})));
-  Buildings.Controls.OBC.CDL.Continuous.Sources.Constant TDryBul(
-    k=273.15+29.4)
-    "Dry bulb temperature"
-    annotation (Placement(transformation(extent={{-90,46},{-70,66}})));
-  // ============ Below blocks are from Buildings Library ============
-  Buildings.Utilities.Psychrometrics.TWetBul_TDryBulPhi wetBulPhi_BuiLib(
-    redeclare package Medium=Medium,
-    approximateWetBulb=true)
-    "Model for wet bulb temperature"
-    annotation (Placement(transformation(extent={{-10,6},{10,26}})));
-  Buildings.Utilities.Psychrometrics.TWetBul_TDryBulXi wetBulXi(
-    redeclare package Medium=Medium,
-    approximateWetBulb=true)
-    "Model for wet bulb temperature using Xi as an input, used to verify consistency with wetBulPhi"
-    annotation (Placement(transformation(extent={{-10,-34},{10,-14}})));
-  Buildings.Utilities.Psychrometrics.X_pTphi x_pTphi
-    "Computes mass fraction"
-    annotation (Placement(transformation(extent={{-32,-30},{-20,-18}})));
-  // ===================================================================
-  Buildings.Controls.OBC.CDL.Continuous.Subtract sub
-    "Wet bulb temperature difference"
-    annotation (Placement(transformation(extent={{40,6},{60,26}})));
-  Buildings.Controls.OBC.CDL.Continuous.Subtract sub1
-    "Wet bulb temperature difference"
-    annotation (Placement(transformation(extent={{40,-34},{60,-14}})));
-=======
     annotation (Placement(transformation(extent={{-40,-80},{-20,-60}})));
->>>>>>> master
 
 equation
   connect(TDryBul.y,wetBulPhi.TDryBul)
     annotation (Line(points={{-18,70},{0,70},{0,46},{18,46}}, color={0,0,127}));
   connect(phi.y,wetBulPhi.phi)
-<<<<<<< HEAD
-    annotation (Line(points={{-68,16},{-46,16},{-46,52},{-28,52},{-28,50},{-12,50}},color={0,0,127}));
-  connect(p.y,wetBulPhi_BuiLib.p)
-    annotation (Line(points={{-68,-24},{-52,-24},{-52,8},{-11,8}},color={0,0,127}));
-  connect(TDryBul.y,x_pTphi.T)
-    annotation (Line(points={{-68,56},{-40,56},{-40,-24},{-33.2,-24}},color={0,0,127}));
-  connect(wetBulPhi.TWetBul,sub.u1)
-    annotation (Line(points={{12,56},{22,56},{22,22},{38,22}},color={0,0,127}));
-  connect(wetBulPhi_BuiLib.TWetBul,sub.u2)
-    annotation (Line(points={{11,16},{28,16},{28,10},{38,10}},color={0,0,127}));
-  connect(sub1.u1,sub.u1)
-    annotation (Line(points={{38,-18},{22,-18},{22,30},{22,30},{22,22},{38,22}},color={0,0,127}));
-  connect(wetBulXi.TWetBul,sub1.u2)
-    annotation (Line(points={{11,-24},{28,-24},{28,-30},{38,-30}},color={0,0,127}));
-=======
     annotation (Line(points={{-18,20},{0,20},{0,34},{18,34}}, color={0,0,127}));
   connect(TDryBul1.y, wetBulPhi1.TDryBul) annotation (Line(points={{-18,-20},{0,
           -20},{0,-34},{18,-34}}, color={0,0,127}));
   connect(phi2.y, wetBulPhi1.phi) annotation (Line(points={{-18,-70},{0,-70},{0,
           -46},{18,-46}}, color={0,0,127}));
->>>>>>> master
   annotation (
     experiment(
       StopTime=1.0,

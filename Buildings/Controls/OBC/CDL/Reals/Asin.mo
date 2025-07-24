@@ -1,12 +1,3 @@
-<<<<<<< HEAD:Buildings/Controls/OBC/CDL/Continuous/Asin.mo
-within Buildings.Controls.OBC.CDL.Continuous;
-block Asin "Output the arc sine of the input"
-  Interfaces.RealInput u
-    "Connector of Real input signal"
-    annotation (Placement(transformation(extent={{-140,-20},{-100,20}})));
-  Interfaces.RealOutput y
-    "Connector of Real output signal"
-=======
 within Buildings.Controls.OBC.CDL.Reals;
 block Asin "Output the arc sine of the input"
   Buildings.Controls.OBC.CDL.Interfaces.RealInput u
@@ -16,7 +7,6 @@ block Asin "Output the arc sine of the input"
     final unit="rad",
     displayUnit="deg")
     "Arc sin of the input"
->>>>>>> master:Buildings/Controls/OBC/CDL/Reals/Asin.mo
     annotation (Placement(transformation(extent={{100,-20},{140,20}})));
 equation
   y = Modelica.Math.asin(u);
@@ -64,19 +54,13 @@ Documentation(info="<html>
 Block that outputs <code>y = asin(u)</code>, where <code>u</code> is an input.
 </p>
 <p align=\"center\">
-<<<<<<< HEAD:Buildings/Controls/OBC/CDL/Continuous/Asin.mo
-<img src=\"modelica://Buildings/Resources/Images/Controls/OBC/CDL/Continuous/Asin.png\"
-=======
 <img src=\"modelica://Buildings/Resources/Images/Controls/OBC/CDL/Reals/Asin.png\"
->>>>>>> master:Buildings/Controls/OBC/CDL/Reals/Asin.mo
      alt=\"asin.png\" />
 </p>
 </html>",
 revisions="<html>
 <ul>
 <li>
-<<<<<<< HEAD:Buildings/Controls/OBC/CDL/Continuous/Asin.mo
-=======
 November 8, 2024, by Michael Wetter:<br/>
 Added <code>final</code> keyword to unit declaration as block is only valid for this unit.<br/>
 Also added <code>displayUnit</code> keyword.
@@ -88,7 +72,6 @@ This is for
 <a href=\"https://github.com/lbl-srg/modelica-buildings/issues/3277\">Buildings, issue 3277</a>.
 </li>
 <li>
->>>>>>> master:Buildings/Controls/OBC/CDL/Reals/Asin.mo
 January 28, 2022, by Jianjun Hu:<br/>
 First implementation, based on the implementation of the
 Modelica Standard Library.

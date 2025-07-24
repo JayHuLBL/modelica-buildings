@@ -32,30 +32,11 @@ initial equation
 
 equation
   when initial() then
-<<<<<<< HEAD
-    t_next=
-      if not delayOnInit then
-        t_past
-      else
-        time+delayTime;
-    y=if not
-            (delayOnInit and delayTime > 0) then
-        u
-      else
-        false;
-  elsewhen u then
-    t_next=time+delayTime;
-    y=if delayTime > 0 then
-        false
-      else
-        true;
-=======
     t_next=if not delayOnInit then t_past else time+delayTime;
     y=if not (delayOnInit and delayTime > 0) then u else false;
   elsewhen u then
     t_next=time+delayTime;
     y=if delayTime > 0 then false else true;
->>>>>>> master
   elsewhen not u then
     t_next=t_past;
     y=false;

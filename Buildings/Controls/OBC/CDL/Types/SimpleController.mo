@@ -1,20 +1,9 @@
 within Buildings.Controls.OBC.CDL.Types;
 type SimpleController = enumeration(
-<<<<<<< HEAD
-    P
-  "P controller",
-    PI
-  "PI controller",
-    PD
-  "PD controller",
-    PID
-  "PID controller")
-=======
     P "P controller",
     PI "PI controller",
     PD "PD controller",
     PID "PID controller")
->>>>>>> master
   "Enumeration defining P, PI, PD, or PID simple controller type"
   annotation (Evaluate=true,Documentation(info="<html>
 <p>

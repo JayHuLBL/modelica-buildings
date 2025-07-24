@@ -1,31 +1,12 @@
 within Buildings.Controls.OBC.CDL.Logical;
 block Switch
   "Switch between two boolean signals"
-<<<<<<< HEAD
-  Interfaces.BooleanInput u1
-    "Boolean input signal"
-=======
   Buildings.Controls.OBC.CDL.Interfaces.BooleanInput u1
     "Input u1"
->>>>>>> master
     annotation (Placement(transformation(extent={{-140,60},{-100,100}})));
   Buildings.Controls.OBC.CDL.Interfaces.BooleanInput u2
     "Boolean switch input signal, if true, y=u1, else y=u3"
     annotation (Placement(transformation(extent={{-140,-20},{-100,20}})));
-<<<<<<< HEAD
-  Interfaces.BooleanInput u3
-    "Boolean input signal"
-    annotation (Placement(transformation(extent={{-140,-100},{-100,-60}})));
-  Interfaces.BooleanOutput y
-    "Booelan output signal"
-    annotation (Placement(transformation(extent={{100,-20},{140,20}})));
-
-equation
-  y=if u2 then
-      u1
-    else
-      u3;
-=======
   Buildings.Controls.OBC.CDL.Interfaces.BooleanInput u3
     "Input u3"
     annotation (Placement(transformation(extent={{-140,-100},{-100,-60}})));
@@ -35,7 +16,6 @@ equation
 
 equation
   y=if u2 then u1 else u3;
->>>>>>> master
   annotation (
     defaultComponentName="logSwi",
     Documentation(

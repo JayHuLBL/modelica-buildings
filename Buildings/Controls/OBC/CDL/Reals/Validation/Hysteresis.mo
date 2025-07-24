@@ -28,12 +28,8 @@ protected
   Buildings.Controls.OBC.CDL.Reals.Sin sin1
     "Block that outputs the sine of the input"
     annotation (Placement(transformation(extent={{-30,30},{-10,50}})));
-<<<<<<< HEAD:Buildings/Controls/OBC/CDL/Continuous/Validation/Hysteresis.mo
-  Buildings.Controls.OBC.CDL.Continuous.MultiplyByParameter gain1(final k=2.5)
-=======
   Buildings.Controls.OBC.CDL.Reals.MultiplyByParameter gain1(
     final k=2.5)
->>>>>>> master:Buildings/Controls/OBC/CDL/Reals/Validation/Hysteresis.mo
     "Block that outputs the product of a gain value with the input signal"
     annotation (Placement(transformation(extent={{10,30},{30,50}})));
   Buildings.Controls.OBC.CDL.Reals.Sources.Sin sin(

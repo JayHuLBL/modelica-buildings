@@ -1,10 +1,5 @@
 within Buildings.Controls.OBC.CDL.Routing;
-<<<<<<< HEAD
-block BooleanScalarReplicator
-  "Boolean signal replicator"
-=======
 block BooleanScalarReplicator "Boolean signal replicator"
->>>>>>> master
   parameter Integer nout=1
     "Number of outputs";
   Buildings.Controls.OBC.CDL.Interfaces.BooleanInput u

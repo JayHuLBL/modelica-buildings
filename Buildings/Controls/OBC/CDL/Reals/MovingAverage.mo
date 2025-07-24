@@ -1,8 +1,4 @@
-<<<<<<< HEAD:Buildings/Controls/OBC/CDL/Continuous/MovingAverage.mo
-within Buildings.Controls.OBC.CDL.Continuous;
-=======
 within Buildings.Controls.OBC.CDL.Reals;
->>>>>>> master:Buildings/Controls/OBC/CDL/Reals/MovingAverage.mo
 block MovingAverage "Block to output moving average"
   parameter Real delta(
     final quantity="Time",
@@ -127,19 +123,11 @@ average of a noisy measurement signal.
 </p>
 <p>
 See
-<<<<<<< HEAD:Buildings/Controls/OBC/CDL/Continuous/MovingAverage.mo
-<a href=\"modelica://Buildings.Controls.OBC.CDL.Continuous.Validation.MovingAverage\">
-Buildings.Controls.OBC.CDL.Continuous.Validation.MovingAverage</a>
-and
-<a href=\"modelica://Buildings.Controls.OBC.CDL.Continuous.Validation.MovingAverage_nonZeroStart\">
-Buildings.Controls.OBC.CDL.Continuous.Validation.MovingAverage_nonZeroStart</a>
-=======
 <a href=\"modelica://Buildings.Controls.OBC.CDL.Reals.Validation.MovingAverage\">
 Buildings.Controls.OBC.CDL.Reals.Validation.MovingAverage</a>
 and
 <a href=\"modelica://Buildings.Controls.OBC.CDL.Reals.Validation.MovingAverage_nonZeroStart\">
 Buildings.Controls.OBC.CDL.Reals.Validation.MovingAverage_nonZeroStart</a>
->>>>>>> master:Buildings/Controls/OBC/CDL/Reals/MovingAverage.mo
 for example.
 </p>
 </html>",
@@ -148,11 +136,7 @@ revisions="<html>
 <li>
 January 27, 2022, by Jianjun Hu:<br/>
 Renamed the block name from MovingMean to MovingAverage.<br/>
-<<<<<<< HEAD:Buildings/Controls/OBC/CDL/Continuous/MovingAverage.mo
-This is for <a href=\"https://github.com/lbl-srg/modelica-buildings/issues/2865\">issue 2865</a>.
-=======
 This is for <a href=\"https://github.com/lbl-srg/modelica-buildings/issues/2865\">Buildings, issue 2865</a>.
->>>>>>> master:Buildings/Controls/OBC/CDL/Reals/MovingAverage.mo
 </li>
 <li>
 November 12, 2020, by Michael Wetter:<br/>

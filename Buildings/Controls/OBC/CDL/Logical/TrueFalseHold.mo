@@ -20,54 +20,6 @@ block TrueFalseHold
     annotation (Placement(transformation(extent={{100,-20},{140,20}}),
       iconTransformation(extent={{100,-20},{140,20}})));
 protected
-<<<<<<< HEAD
-  Buildings.Controls.OBC.CDL.Logical.TrueDelay onDel1(
-    delayTime=falseHoldDuration)
-    "Output true when timer elapsed the required time"
-    annotation (Placement(transformation(extent={{-100,-40},{-80,-20}})));
-  Buildings.Controls.OBC.CDL.Logical.TrueDelay onDel2(
-    delayTime=trueHoldDuration)
-    "Output true when timer elapsed the required time"
-    annotation (Placement(transformation(extent={{20,-70},{40,-50}})));
-  inner Modelica.StateGraph.StateGraphRoot stateGraphRoot
-    "Root of state graph"
-    annotation (Placement(transformation(extent={{-160,100},{-140,120}})));
-  Modelica.StateGraph.StepWithSignal outputFalse(
-    nIn=2, nOut=1)
-    "State for which the block outputs false"
-    annotation (Placement(transformation(extent={{-60,10},{-40,30}})));
-  Modelica.StateGraph.TransitionWithSignal toTrue
-    "Transition to true"
-    annotation (Placement(transformation(extent={{-30,10},{-10,30}})));
-  CDL.Logical.Not notU
-    "Negation of input"
-    annotation (Placement(transformation(extent={{-140,60},{-120,80}})));
-  Modelica.StateGraph.StepWithSignal outputTrue(
-    nIn=2, nOut=1)
-    "State with true output signal"
-    annotation (Placement(transformation(extent={{0,10},{20,30}})));
-  Modelica.StateGraph.TransitionWithSignal toFalse
-    "Transition to false"
-    annotation (Placement(transformation(extent={{30,10},{50,30}})));
-  CDL.Logical.And and2
-    "Check for input and elapsed timer"
-    annotation (Placement(transformation(extent={{60,-70},{80,-50}})));
-  CDL.Logical.And and1
-    "Check for input and elapsed timer"
-    annotation (Placement(transformation(extent={{-50,-40},{-30,-20}})));
-  Modelica.StateGraph.InitialStep initialStep(
-    nIn=0,
-    nOut=2)
-    "Initial state"
-    annotation (Placement(transformation(extent={{-120,100},{-100,120}})));
-  Modelica.StateGraph.TransitionWithSignal toTrue1
-    "Transition to true"
-    annotation (Placement(transformation(extent={{-70,102},{-50,122}})));
-  Modelica.StateGraph.TransitionWithSignal toFalse1
-    "Transition to false"
-    annotation (Placement(transformation(extent={{-90,80},{-70,100}})));
-
-=======
   /* The following parameter is required solely as a warkaround for a bug in OCT [Modelon - 1263].
   Both Dymola and OMC can handle the initial equation pre(u)=u, which complies with MLS. */
  parameter Boolean pre_u_start=false
@@ -92,7 +44,6 @@ initial equation
   pre(not_u) = not pre_u_start;
   pre(y) = u;
   pre(not_y) = not u;
->>>>>>> master
 equation
   when initial() then
     y = u;
@@ -188,13 +139,8 @@ alt=\"Input and output of the block\"/>
       revisions="<html>
 <ul>
 <li>
-<<<<<<< HEAD
-November 12, 2020, by Michael Wetter:<br/>
-Reformulated to remove dependency to <code>Modelica.Units.SI</code>.<br/>
-=======
 January 13, 2025, by Antoine Gautier:<br/>
 Merge <code>elsewhen</code> clauses.<br/>
->>>>>>> master
 This is for
 <a href=\"https://github.com/lbl-srg/modelica-buildings/issues/4082\">Buildings, issue 4082</a>.
 </li>

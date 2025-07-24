@@ -1,11 +1,7 @@
 within Buildings.Controls.OBC.CDL.Reals.Validation;
 model AddParameter
   "Validation model for the AddParameter block"
-<<<<<<< HEAD:Buildings/Controls/OBC/CDL/Continuous/Validation/AddParameter.mo
-  Buildings.Controls.OBC.CDL.Continuous.AddParameter addPar(
-=======
   Buildings.Controls.OBC.CDL.Reals.AddParameter addPar(
->>>>>>> master:Buildings/Controls/OBC/CDL/Reals/Validation/AddParameter.mo
     p=0.5)
     "Block that outputs the sum of an input plus a parameter"
     annotation (Placement(transformation(extent={{-10,-10},{10,10}})));

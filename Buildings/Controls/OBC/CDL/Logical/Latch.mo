@@ -12,38 +12,9 @@ block Latch
     annotation (Placement(transformation(extent={{100,-20},{140,20}})));
 equation
   when initial() then
-<<<<<<< HEAD
-    //scenario = 1;
-    y=if clr then
-        false
-      else
-        u;
-  elsewhen
-          (not clr) and change(u) and
-                                     (pre(u) == false) then
-    //scenario = 2;
-    y=not clr;
-  elsewhen
-          (not clr) and change(u) and
-                                     (pre(u) == true) then
-    //scenario = 3;
-    y=if clr then
-        false
-      else
-        pre(y);
-  elsewhen change(clr) and
-                          (pre(clr) == true) and
-                                                (not u) then
-    //scenario = 4;
-    y=false;
-  elsewhen clr then
-    //scenario = 5;
-    y=false;
-=======
     y=not clr and u;
   elsewhen {clr, u} then
     y=not clr and u;
->>>>>>> master
   end when;
   annotation (
     defaultComponentName="lat",

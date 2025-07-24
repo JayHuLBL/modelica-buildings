@@ -3,19 +3,6 @@ block RealExtractor
   "Extract scalar signal out of real signal vector dependent on integer input index"
   parameter Integer nin=1
     "Number of inputs";
-<<<<<<< HEAD
-  Interfaces.IntegerInput index
-    "Index of input vector element to be extracted out"
-    annotation (Placement(transformation(origin={0,-120},extent={{-20,-20},{20,20}},rotation=90)));
-  Interfaces.RealInput u[nin]
-    "Real input signals"
-    annotation (Placement(transformation(extent={{-140,-20},{-100,20}})));
-  Interfaces.RealOutput y
-    "Real signal extracted from input vector, u[index]"
-    annotation (Placement(transformation(extent={{100,-20},{140,20}})));
-
-equation
-=======
   Buildings.Controls.OBC.CDL.Interfaces.IntegerInput index
     "Index of input vector element to be extracted out"
     annotation (Placement(transformation(origin={0,-120},extent={{-20,-20},{20,20}},rotation=90)));
@@ -27,16 +14,11 @@ equation
     annotation (Placement(transformation(extent={{100,-20},{140,20}})));
 
 algorithm
->>>>>>> master
   assert(
      index > 0 and index <= nin,
      "In " + getInstanceName() + ": The extract index is out of the range.",
      AssertionLevel.warning);
-<<<<<<< HEAD
-  y = u[min(nin, max(1, index))];
-=======
   y := u[min(nin, max(1, index))];
->>>>>>> master
 
 annotation (defaultComponentName="extIndRea",
     Icon(
@@ -158,15 +140,12 @@ then <code>y = u[nin]</code> if <code>index &gt; nin</code>, and
 revisions="<html>
 <ul>
 <li>
-<<<<<<< HEAD
-=======
 April 19, 2023, by Michael Wetter:<br/>
 Converted equation section to algorithm section.
 This works around the issue reported
 in <a href=\"https://github.com/OpenModelica/OpenModelica/issues/10580\">OpenModelica, #10580</a>.
 </li>
 <li>
->>>>>>> master
 October 14, 2022, by Jianjun Hu:<br/>
 Changed output from a specified value to the element with the nearest valid index when the index input is out of range.
 </li>

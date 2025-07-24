@@ -15,15 +15,8 @@ protected
     "Factor used for rounding";
 
 equation
-<<<<<<< HEAD:Buildings/Controls/OBC/CDL/Continuous/Round.mo
-  y=if
-      (u > 0) then
-      floor(
-        u*fac+0.5)/fac
-=======
   y=if (u > 0) then
       floor( u*fac+0.5)/fac
->>>>>>> master:Buildings/Controls/OBC/CDL/Reals/Round.mo
     else
       ceil(u*fac-0.5)/fac;
   annotation (

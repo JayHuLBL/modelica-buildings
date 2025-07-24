@@ -26,80 +26,17 @@ model DewPoint_TDryBulPhi
   Buildings.Controls.OBC.CDL.Reals.Sources.Constant phi2(
     k=0.4)
     "Relative humidity"
-<<<<<<< HEAD
-    annotation (Placement(transformation(extent={{-94,-60},{-74,-40}})));
-  // ============ Below blocks are from Buildings Library ============
-  Buildings.Utilities.Psychrometrics.TDewPoi_pW TDewPoi
-    "Dew point temperature"
-    annotation (Placement(transformation(extent={{18,4},{38,24}})));
-  Buildings.Utilities.Psychrometrics.X_pTphi X_pTphi(
-    use_p_in=false)
-    "Steam mass fraction"
-    annotation (Placement(transformation(extent={{-46,4},{-26,24}})));
-  Buildings.Utilities.Psychrometrics.pW_X humRat(
-    use_p_in=false)
-    "Water vapor pressure"
-    annotation (Placement(transformation(extent={{-12,4},{8,24}})));
-  // ===================================================================
-  Buildings.Controls.OBC.CDL.Continuous.Subtract sub
-    "Dew point temperature difference"
-    annotation (Placement(transformation(extent={{52,40},{72,60}})));
-  Buildings.Controls.OBC.CDL.Psychrometrics.DewPoint_TDryBulPhi dewBulPhi1
-    "Model for dew point temperature"
-    annotation (Placement(transformation(extent={{18,-28},{38,-8}})));
-  Buildings.Utilities.Psychrometrics.TDewPoi_pW TDewPoi1
-    "Dew point temperature"
-    annotation (Placement(transformation(extent={{20,-98},{40,-78}})));
-  Buildings.Utilities.Psychrometrics.pW_X humRat1(
-    use_p_in=false)
-    "Water vapor pressure"
-    annotation (Placement(transformation(extent={{-10,-98},{10,-78}})));
-  Buildings.Utilities.Psychrometrics.X_pTphi X_pTphi1(
-    use_p_in=false)
-    "Steam mass fraction"
-    annotation (Placement(transformation(extent={{-44,-98},{-24,-78}})));
-  Buildings.Controls.OBC.CDL.Continuous.Subtract sub1
-    "Dew point temperature difference"
-    annotation (Placement(transformation(extent={{52,-60},{72,-40}})));
-=======
     annotation (Placement(transformation(extent={{-60,-80},{-40,-60}})));
->>>>>>> master
 
 equation
   connect(TDryBul.y,dewBulPhi.TDryBul)
     annotation (Line(points={{-38,70},{0,70},{0,46},{18,46}}, color={0,0,127}));
   connect(phi.y,dewBulPhi.phi)
-<<<<<<< HEAD
-    annotation (Line(points={{-72,50},{-62,50},{-62,78},{14,78}},color={0,0,127}));
-  connect(TDryBul.y,X_pTphi.T)
-    annotation (Line(points={{-72,84},{-68,84},{-68,14},{-48,14}},color={0,0,127}));
-  connect(phi.y,X_pTphi.phi)
-    annotation (Line(points={{-72,50},{-62,50},{-62,8},{-48,8}},color={0,0,127}));
-  connect(TDewPoi.T,sub.u2)
-    annotation (Line(points={{39,14},{44,14},{44,44},{50,44}},color={0,0,127}));
-  connect(dewBulPhi.TDewPoi,sub.u1)
-    annotation (Line(points={{38,84},{42,84},{42,56},{50,56}},color={0,0,127}));
-=======
     annotation (Line(points={{-38,20},{0,20},{0,34},{18,34}}, color={0,0,127}));
->>>>>>> master
   connect(TDryBul2.y,dewBulPhi1.TDryBul)
     annotation (Line(points={{-38,-20},{0,-20},{0,-34},{18,-34}}, color={0,0,127}));
   connect(phi2.y,dewBulPhi1.phi)
-<<<<<<< HEAD
-    annotation (Line(points={{-72,-50},{-62,-50},{-62,-24},{16,-24}},color={0,0,127}));
-  connect(phi2.y,X_pTphi1.phi)
-    annotation (Line(points={{-72,-50},{-62,-50},{-62,-94},{-46,-94}},color={0,0,127}));
-  connect(X_pTphi1.X[1],humRat1.X_w)
-    annotation (Line(points={{-23,-88},{-11,-88},{-11,-88}},color={0,0,127}));
-  connect(humRat1.p_w,TDewPoi1.p_w)
-    annotation (Line(points={{11,-88},{19,-88},{19,-88}},color={0,0,127}));
-  connect(dewBulPhi1.TDewPoi,sub1.u1)
-    annotation (Line(points={{40,-18},{44,-18},{44,-44},{50,-44}},color={0,0,127}));
-  connect(TDewPoi1.T,sub1.u2)
-    annotation (Line(points={{41,-88},{46,-88},{46,-56},{50,-56}},color={0,0,127}));
-=======
     annotation (Line(points={{-38,-70},{0,-70},{0,-46},{18,-46}}, color={0,0,127}));
->>>>>>> master
   annotation (
     experiment(
       StopTime=1.0,

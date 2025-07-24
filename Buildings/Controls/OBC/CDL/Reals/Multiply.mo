@@ -1,14 +1,7 @@
-<<<<<<< HEAD:Buildings/Controls/OBC/CDL/Continuous/Multiply.mo
-within Buildings.Controls.OBC.CDL.Continuous;
-block Multiply "Output product of the two inputs"
-  Interfaces.RealInput u1
-    "Connector of Real input signal 1"
-=======
 within Buildings.Controls.OBC.CDL.Reals;
 block Multiply "Output product of the two inputs"
   Buildings.Controls.OBC.CDL.Interfaces.RealInput u1
     "Input to be multiplied"
->>>>>>> master:Buildings/Controls/OBC/CDL/Reals/Multiply.mo
     annotation (Placement(transformation(extent={{-140,40},{-100,80}})));
   Buildings.Controls.OBC.CDL.Interfaces.RealInput u2
     "Input to be multiplied"
@@ -34,11 +27,7 @@ revisions="<html>
 <li>
 January 27, 2022, by Jianjun Hu:<br/>
 Renamed the block name from Product to Multiply.<br/>
-<<<<<<< HEAD:Buildings/Controls/OBC/CDL/Continuous/Multiply.mo
-This is for <a href=\"https://github.com/lbl-srg/modelica-buildings/issues/2865\">issue 2865</a>.
-=======
 This is for <a href=\"https://github.com/lbl-srg/modelica-buildings/issues/2865\">Buildings, issue 2865</a>.
->>>>>>> master:Buildings/Controls/OBC/CDL/Reals/Multiply.mo
 </li>
 <li>
 March 2, 2020, by Michael Wetter:<br/>

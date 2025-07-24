@@ -1,12 +1,6 @@
-<<<<<<< HEAD:Buildings/Controls/OBC/CDL/Continuous/Validation/MultiplyByParameter.mo
-within Buildings.Controls.OBC.CDL.Continuous.Validation;
-model MultiplyByParameter "Validation model for the Gain block"
-  Buildings.Controls.OBC.CDL.Continuous.MultiplyByParameter gain1(k=2.5)
-=======
 within Buildings.Controls.OBC.CDL.Reals.Validation;
 model MultiplyByParameter "Validation model for the Gain block"
   Buildings.Controls.OBC.CDL.Reals.MultiplyByParameter gain1(k=2.5)
->>>>>>> master:Buildings/Controls/OBC/CDL/Reals/Validation/MultiplyByParameter.mo
     "Block that outputs the product of a gain value with the input signal"
     annotation (Placement(transformation(extent={{-10,-10},{10,10}})));
   Buildings.Controls.OBC.CDL.Reals.Sources.Ramp ramp1(
@@ -24,22 +18,13 @@ equation
       StopTime=1.0,
       Tolerance=1e-06),
     __Dymola_Commands(
-<<<<<<< HEAD:Buildings/Controls/OBC/CDL/Continuous/Validation/MultiplyByParameter.mo
-      file="modelica://Buildings/Resources/Scripts/Dymola/Controls/OBC/CDL/Continuous/Validation/MultiplyByParameter.mos" "Simulate and plot"),
-=======
       file="modelica://Buildings/Resources/Scripts/Dymola/Controls/OBC/CDL/Reals/Validation/MultiplyByParameter.mos" "Simulate and plot"),
->>>>>>> master:Buildings/Controls/OBC/CDL/Reals/Validation/MultiplyByParameter.mo
     Documentation(
       info="<html>
 <p>
 Validation test for the block
-<<<<<<< HEAD:Buildings/Controls/OBC/CDL/Continuous/Validation/MultiplyByParameter.mo
-<a href=\"modelica://Buildings.Controls.OBC.CDL.Continuous.MultiplyByParameter\">
-Buildings.Controls.OBC.CDL.Continuous.MultiplyByParameter</a>.
-=======
 <a href=\"modelica://Buildings.Controls.OBC.CDL.Reals.MultiplyByParameter\">
 Buildings.Controls.OBC.CDL.Reals.MultiplyByParameter</a>.
->>>>>>> master:Buildings/Controls/OBC/CDL/Reals/Validation/MultiplyByParameter.mo
 </p>
 <p>
 The input <code>u</code> varies from <i>0.0</i> to <i>+2</i>.
@@ -50,11 +35,7 @@ revisions="<html>
 <li>
 January 27, 2022, by Jianjun Hu:<br/>
 Renamed the block name from Gain to MultiplyByParameter.<br/>
-<<<<<<< HEAD:Buildings/Controls/OBC/CDL/Continuous/Validation/MultiplyByParameter.mo
-This is for <a href=\"https://github.com/lbl-srg/modelica-buildings/issues/2865\">issue 2865</a>.
-=======
 This is for <a href=\"https://github.com/lbl-srg/modelica-buildings/issues/2865\">Buildings, issue 2865</a>.
->>>>>>> master:Buildings/Controls/OBC/CDL/Reals/Validation/MultiplyByParameter.mo
 </li>
 <li>
 March 20, 2017, by Jianjun Hu:<br/>

@@ -1,18 +1,9 @@
-<<<<<<< HEAD:Buildings/Controls/OBC/CDL/Continuous/Validation/Asin.mo
-within Buildings.Controls.OBC.CDL.Continuous.Validation;
-model Asin "Validation model for the Asin block"
-  Buildings.Controls.OBC.CDL.Continuous.Asin arcSin
-    "Block that outputs the arc tangent of the input"
-    annotation (Placement(transformation(extent={{-10,-10},{10,10}})));
-  Buildings.Controls.OBC.CDL.Continuous.Sources.Ramp ramp1(
-=======
 within Buildings.Controls.OBC.CDL.Reals.Validation;
 model Asin "Validation model for the Asin block"
   Buildings.Controls.OBC.CDL.Reals.Asin arcSin
     "Block that outputs the arc tangent of the input"
     annotation (Placement(transformation(extent={{-10,-10},{10,10}})));
   Buildings.Controls.OBC.CDL.Reals.Sources.Ramp ramp1(
->>>>>>> master:Buildings/Controls/OBC/CDL/Reals/Validation/Asin.mo
     duration=1,
     offset=-1,
     height=2)
@@ -26,21 +17,12 @@ equation
 annotation (
   experiment(StopTime=1.0, Tolerance=1e-06),
   __Dymola_Commands(
-<<<<<<< HEAD:Buildings/Controls/OBC/CDL/Continuous/Validation/Asin.mo
-      file="modelica://Buildings/Resources/Scripts/Dymola/Controls/OBC/CDL/Continuous/Validation/Asin.mos" "Simulate and plot"),
-Documentation(info="<html>
-<p>
-Validation test for the block
-<a href=\"modelica://Buildings.Controls.OBC.CDL.Continuous.Asin\">
-Buildings.Controls.OBC.CDL.Continuous.Asin</a>.
-=======
       file="modelica://Buildings/Resources/Scripts/Dymola/Controls/OBC/CDL/Reals/Validation/Asin.mos" "Simulate and plot"),
 Documentation(info="<html>
 <p>
 Validation test for the block
 <a href=\"modelica://Buildings.Controls.OBC.CDL.Reals.Asin\">
 Buildings.Controls.OBC.CDL.Reals.Asin</a>.
->>>>>>> master:Buildings/Controls/OBC/CDL/Reals/Validation/Asin.mo
 </p>
 <p>
 The input <code>u</code> varies from <i>-1</i> to <i>+1</i>.

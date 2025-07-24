@@ -1,12 +1,6 @@
-<<<<<<< HEAD:Buildings/Controls/OBC/CDL/Continuous/Validation/LimitSlewRate.mo
-within Buildings.Controls.OBC.CDL.Continuous.Validation;
-model LimitSlewRate "Validation model for the LimitSlewRate block"
-  Buildings.Controls.OBC.CDL.Continuous.LimitSlewRate sleRatLim(
-=======
 within Buildings.Controls.OBC.CDL.Reals.Validation;
 model LimitSlewRate "Validation model for the LimitSlewRate block"
   Buildings.Controls.OBC.CDL.Reals.LimitSlewRate sleRatLim(
->>>>>>> master:Buildings/Controls/OBC/CDL/Reals/Validation/LimitSlewRate.mo
     raisingSlewRate=1/30)
     "Block that limit the increase or decrease rate of input"
     annotation (Placement(transformation(extent={{70,-10},{90,10}})));
@@ -124,22 +118,13 @@ equation
       StopTime=480,
       Tolerance=1e-06),
     __Dymola_Commands(
-<<<<<<< HEAD:Buildings/Controls/OBC/CDL/Continuous/Validation/LimitSlewRate.mo
-      file="modelica://Buildings/Resources/Scripts/Dymola/Controls/OBC/CDL/Continuous/Validation/LimitSlewRate.mos" "Simulate and plot"),
-=======
       file="modelica://Buildings/Resources/Scripts/Dymola/Controls/OBC/CDL/Reals/Validation/LimitSlewRate.mos" "Simulate and plot"),
->>>>>>> master:Buildings/Controls/OBC/CDL/Reals/Validation/LimitSlewRate.mo
     Documentation(
       info="<html>
 <p>
 Validation test for the block
-<<<<<<< HEAD:Buildings/Controls/OBC/CDL/Continuous/Validation/LimitSlewRate.mo
-<a href=\"modelica://Buildings.Controls.OBC.CDL.Continuous.LimitSlewRate\">
-Buildings.Controls.OBC.CDL.Continuous.LimitSlewRate</a>.
-=======
 <a href=\"modelica://Buildings.Controls.OBC.CDL.Reals.LimitSlewRate\">
 Buildings.Controls.OBC.CDL.Reals.LimitSlewRate</a>.
->>>>>>> master:Buildings/Controls/OBC/CDL/Reals/Validation/LimitSlewRate.mo
 </p>
 <p>
 The input <code>ramp1.u</code> varies from <i>0</i> to <i>+1.5</i>,
@@ -154,11 +139,7 @@ revisions="<html>
 <li>
 January 27, 2022, by Jianjun Hu:<br/>
 Renamed the block name from SlewRateLimiter to LimitSlewRate.<br/>
-<<<<<<< HEAD:Buildings/Controls/OBC/CDL/Continuous/Validation/LimitSlewRate.mo
-This is for <a href=\"https://github.com/lbl-srg/modelica-buildings/issues/2865\">issue 2865</a>.
-=======
 This is for <a href=\"https://github.com/lbl-srg/modelica-buildings/issues/2865\">Buildings, issue 2865</a>.
->>>>>>> master:Buildings/Controls/OBC/CDL/Reals/Validation/LimitSlewRate.mo
 </li>
 <li>
 March 29, 2017, by Jianjun Hu:<br/>

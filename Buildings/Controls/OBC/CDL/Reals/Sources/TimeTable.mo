@@ -55,15 +55,7 @@ protected
         Modelica.Blocks.Types.Extrapolation.Periodic,
     final offset=offset,
     final startTime=
-<<<<<<< HEAD:Buildings/Controls/OBC/CDL/Continuous/Sources/TimeTable.mo
-      if
-        (extrapolation == Types.Extrapolation.Periodic) then
-        t0
-      else
-        0,
-=======
       if (extrapolation == Types.Extrapolation.Periodic) then t0 else 0,
->>>>>>> master:Buildings/Controls/OBC/CDL/Reals/Sources/TimeTable.mo
     final timeScale=timeScale)
     "Time table"
     annotation (Placement(transformation(extent={{-12,-10},{8,10}})));

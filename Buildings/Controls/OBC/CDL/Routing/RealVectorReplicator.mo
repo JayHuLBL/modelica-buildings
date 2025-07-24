@@ -1,14 +1,5 @@
 within Buildings.Controls.OBC.CDL.Routing;
 block RealVectorReplicator "Real vector signal replicator"
-<<<<<<< HEAD
-  parameter Integer nin=1 "Size of input vector";
-  parameter Integer nout=1 "Number of row in output";
-  Interfaces.RealInput    u[nin]
-    "Connector of Real vector input signal"
-    annotation (Placement(transformation(extent={{-140,-20},{-100,20}})));
-  Interfaces.RealOutput    y[nout, nin]
-    "Connector of Real matrix output signals"
-=======
 
   parameter Integer nin=1 "Size of input vector";
   parameter Integer nout=1 "Number of row in output";
@@ -18,7 +9,6 @@ block RealVectorReplicator "Real vector signal replicator"
     annotation (Placement(transformation(extent={{-140,-20},{-100,20}})));
   Buildings.Controls.OBC.CDL.Interfaces.RealOutput y[nout, nin]
     "Output with replicated input signal"
->>>>>>> master
     annotation (Placement(transformation(extent={{100,-20},{140,20}})));
 
 equation

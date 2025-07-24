@@ -35,10 +35,7 @@ Multiply
 MultiplyByParameter
 PID
 PIDWithReset
-<<<<<<< HEAD:Buildings/Controls/OBC/CDL/Continuous/package.order
-=======
 Ramp
->>>>>>> master:Buildings/Controls/OBC/CDL/Reals/package.order
 Round
 Sin
 Sort

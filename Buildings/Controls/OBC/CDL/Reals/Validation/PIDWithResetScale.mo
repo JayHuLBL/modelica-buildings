@@ -37,17 +37,10 @@ model PIDWithResetScale
     y_reset=0)
     "PID controller without scaling of control input"
     annotation (Placement(transformation(extent={{0,-60},{20,-40}})));
-<<<<<<< HEAD:Buildings/Controls/OBC/CDL/Continuous/Validation/PIDWithResetScale.mo
-  Buildings.Controls.OBC.CDL.Continuous.MultiplyByParameter gai(k=1/1000)
-    "Gain to scale setpoint"
-    annotation (Placement(transformation(extent={{-40,-60},{-20,-40}})));
-  Buildings.Controls.OBC.CDL.Continuous.MultiplyByParameter gai1(k=1/1000)
-=======
   Buildings.Controls.OBC.CDL.Reals.MultiplyByParameter gai(k=1/1000)
     "Gain to scale setpoint"
     annotation (Placement(transformation(extent={{-40,-60},{-20,-40}})));
   Buildings.Controls.OBC.CDL.Reals.MultiplyByParameter gai1(k=1/1000)
->>>>>>> master:Buildings/Controls/OBC/CDL/Reals/Validation/PIDWithResetScale.mo
     "Gain to scale measured value"
     annotation (Placement(transformation(extent={{52,-90},{32,-70}})));
   Buildings.Controls.OBC.CDL.Reals.IntegratorWithReset pla2(

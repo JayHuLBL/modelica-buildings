@@ -1,8 +1,4 @@
-<<<<<<< HEAD:Buildings/Controls/OBC/CDL/Continuous/Sources/Validation/package.mo
-within Buildings.Controls.OBC.CDL.Continuous.Sources;
-=======
 within Buildings.Controls.OBC.CDL.Reals.Sources;
->>>>>>> master:Buildings/Controls/OBC/CDL/Reals/Sources/Validation/package.mo
 package Validation "Collection of models that validate the continuous sources blocks of the CDL"
   annotation (
     preferredView="info",

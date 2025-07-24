@@ -1,40 +1,3 @@
-<<<<<<< HEAD:Buildings/Controls/OBC/CDL/Continuous/Validation/MovingAverage.mo
-within Buildings.Controls.OBC.CDL.Continuous.Validation;
-model MovingAverage "Validation model for the MovingAverage block"
-  Modelica.Blocks.Sources.Sine sinInpNoDel(f=1/80) "Start from zero second"
-    annotation (Placement(transformation(extent={{-90,50},{-70,70}})));
-  Buildings.Controls.OBC.CDL.Continuous.MovingAverage movAve1(delta=100)
-    "Moving average with 100 s sliding window"
-    annotation (Placement(transformation(extent={{-40,50},{-20,70}})));
-  Buildings.Controls.OBC.CDL.Continuous.MovingAverage movAve2(delta=200)
-    "Moving average with 200 s sliding window"
-    annotation (Placement(transformation(extent={{-40,20},{-20,40}})));
-  Buildings.Controls.OBC.CDL.Continuous.MovingAverage movAve3(delta=300)
-    "Moving average with 300 s sliding window"
-    annotation (Placement(transformation(extent={{-40,-10},{-20,10}})));
-  Buildings.Controls.OBC.CDL.Continuous.MovingAverage movAve4(delta=400)
-    "Moving average with 400 s sliding window"
-    annotation (Placement(transformation(extent={{-40,-40},{-20,-20}})));
-  Buildings.Controls.OBC.CDL.Continuous.MovingAverage movAve5(delta=500)
-    "Moving average with 500 s sliding window"
-    annotation (Placement(transformation(extent={{-40,-70},{-20,-50}})));
-  Modelica.Blocks.Sources.Sine sinInp50sDel(f=1/80, startTime=50)
-    "Start from 50 seconds"
-    annotation (Placement(transformation(extent={{0,50},{20,70}})));
-  Buildings.Controls.OBC.CDL.Continuous.MovingAverage movAve6(delta=100)
-    "Moving average with 100 s sliding window"
-    annotation (Placement(transformation(extent={{60,50},{80,70}})));
-  Buildings.Controls.OBC.CDL.Continuous.MovingAverage movAve7(delta=200)
-    "Moving average with 200 s sliding window"
-    annotation (Placement(transformation(extent={{60,20},{80,40}})));
-  Modelica.Blocks.Sources.Sine sinInp100sDel(f=1/80, startTime=100)
-    "Start from 100 seconds"
-    annotation (Placement(transformation(extent={{0,-30},{20,-10}})));
-  Buildings.Controls.OBC.CDL.Continuous.MovingAverage movAve8(delta=100)
-    "Moving average with 100 s sliding window"
-    annotation (Placement(transformation(extent={{60,-30},{80,-10}})));
-  Buildings.Controls.OBC.CDL.Continuous.MovingAverage movAve9(delta=200)
-=======
 within Buildings.Controls.OBC.CDL.Reals.Validation;
 model MovingAverage "Validation model for the MovingAverage block"
   Buildings.Controls.OBC.CDL.Reals.Sources.Sin sinInpNoDel(
@@ -75,7 +38,6 @@ model MovingAverage "Validation model for the MovingAverage block"
     "Moving average with 100 s sliding window"
     annotation (Placement(transformation(extent={{60,-30},{80,-10}})));
   Buildings.Controls.OBC.CDL.Reals.MovingAverage movAve9(delta=200)
->>>>>>> master:Buildings/Controls/OBC/CDL/Reals/Validation/MovingAverage.mo
     "Moving average with 200 s sliding window"
     annotation (Placement(transformation(extent={{60,-60},{80,-40}})));
 
@@ -103,22 +65,13 @@ equation
       StopTime=900.0,
       Tolerance=1e-06),
     __Dymola_Commands(
-<<<<<<< HEAD:Buildings/Controls/OBC/CDL/Continuous/Validation/MovingAverage.mo
-      file="modelica://Buildings/Resources/Scripts/Dymola/Controls/OBC/CDL/Continuous/Validation/MovingAverage.mos" "Simulate and plot"),
-=======
       file="modelica://Buildings/Resources/Scripts/Dymola/Controls/OBC/CDL/Reals/Validation/MovingAverage.mos" "Simulate and plot"),
->>>>>>> master:Buildings/Controls/OBC/CDL/Reals/Validation/MovingAverage.mo
     Documentation(
       info="<html>
 <p>
 Validation test for the block
-<<<<<<< HEAD:Buildings/Controls/OBC/CDL/Continuous/Validation/MovingAverage.mo
-<a href=\"modelica://Buildings.Controls.OBC.CDL.Continuous.MovingAverage\">
-Buildings.Controls.OBC.CDL.Continuous.MovingAverage</a>.
-=======
 <a href=\"modelica://Buildings.Controls.OBC.CDL.Reals.MovingAverage\">
 Buildings.Controls.OBC.CDL.Reals.MovingAverage</a>.
->>>>>>> master:Buildings/Controls/OBC/CDL/Reals/Validation/MovingAverage.mo
 </p>
 <p>
 The input <code>sinInpNoDel</code>,  <code>sinInp50sDel</code>,
@@ -130,11 +83,6 @@ The input <code>sinInpNoDel</code>,  <code>sinInp50sDel</code>,
 revisions="<html>
 <ul>
 <li>
-<<<<<<< HEAD:Buildings/Controls/OBC/CDL/Continuous/Validation/MovingAverage.mo
-January 27, 2022, by Jianjun Hu:<br/>
-Renamed the block name from MovingMean to MovingAverage.<br/>
-This is for <a href=\"https://github.com/lbl-srg/modelica-buildings/issues/2865\">issue 2865</a>.
-=======
 March 17, 2023, by Michael Wetter:<br/>
 Replaced blocks from Modelica Standard Library with CDL blocks.
 </li>
@@ -142,7 +90,6 @@ Replaced blocks from Modelica Standard Library with CDL blocks.
 January 27, 2022, by Jianjun Hu:<br/>
 Renamed the block name from MovingMean to MovingAverage.<br/>
 This is for <a href=\"https://github.com/lbl-srg/modelica-buildings/issues/2865\">Buildings, issue 2865</a>.
->>>>>>> master:Buildings/Controls/OBC/CDL/Reals/Validation/MovingAverage.mo
 </li>
 <li>
 June 29, 2017, by Jianjun Hu:<br/>

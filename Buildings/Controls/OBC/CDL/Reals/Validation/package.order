@@ -40,10 +40,7 @@ PIDInitialState
 PIDScale
 PIDWithReset
 PIDWithResetScale
-<<<<<<< HEAD:Buildings/Controls/OBC/CDL/Continuous/Validation/package.order
-=======
 Ramp
->>>>>>> master:Buildings/Controls/OBC/CDL/Reals/Validation/package.order
 Round
 Sin
 Sort

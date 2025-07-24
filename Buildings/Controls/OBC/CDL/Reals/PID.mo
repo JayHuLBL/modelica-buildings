@@ -54,15 +54,9 @@ block PID
   Buildings.Controls.OBC.CDL.Interfaces.RealOutput y
     "Actuator output signal"
     annotation (Placement(transformation(extent={{220,-20},{260,20}}),iconTransformation(extent={{100,-20},{140,20}})));
-<<<<<<< HEAD:Buildings/Controls/OBC/CDL/Continuous/PID.mo
-  Buildings.Controls.OBC.CDL.Continuous.Subtract controlError "Control error (set point - measurement)"
-    annotation (Placement(transformation(extent={{-200,-16},{-180,4}})));
-  Buildings.Controls.OBC.CDL.Continuous.MultiplyByParameter P(final k=k)
-=======
   Buildings.Controls.OBC.CDL.Reals.Subtract controlError "Control error (set point - measurement)"
     annotation (Placement(transformation(extent={{-200,-16},{-180,4}})));
   Buildings.Controls.OBC.CDL.Reals.MultiplyByParameter P(final k=k)
->>>>>>> master:Buildings/Controls/OBC/CDL/Reals/PID.mo
     "Gain for proportional control action"
     annotation (Placement(transformation(extent={{-50,130},{-30,150}})));
   Buildings.Controls.OBC.CDL.Reals.IntegratorWithReset I(
@@ -70,25 +64,6 @@ block PID
     final y_start=xi_start) if with_I
     "Integral term"
     annotation (Placement(transformation(extent={{-50,-10},{-30,10}})));
-<<<<<<< HEAD:Buildings/Controls/OBC/CDL/Continuous/PID.mo
-  Buildings.Controls.OBC.CDL.Continuous.Derivative D(
-    final y_start=yd_start) if with_D
-    "Derivative term"
-    annotation (Placement(transformation(extent={{-50,60},{-30,80}})));
-  Buildings.Controls.OBC.CDL.Continuous.Subtract errP
-    "P error"
-    annotation (Placement(transformation(extent={{-140,130},{-120,150}})));
-  Buildings.Controls.OBC.CDL.Continuous.Subtract errD if with_D
-    "D error"
-    annotation (Placement(transformation(extent={{-140,60},{-120,80}})));
-  Buildings.Controls.OBC.CDL.Continuous.Subtract errI1 if with_I
-    "I error (before anti-windup compensation)"
-    annotation (Placement(transformation(extent={{-140,-4},{-120,16}})));
-  Buildings.Controls.OBC.CDL.Continuous.Subtract errI2 if with_I
-    "I error (after anti-windup compensation)"
-    annotation (Placement(transformation(extent={{-100,-10},{-80,10}})));
-  Buildings.Controls.OBC.CDL.Continuous.Limiter lim(
-=======
   Buildings.Controls.OBC.CDL.Reals.Derivative D(
     final y_start=yd_start) if with_D
     "Derivative term"
@@ -106,7 +81,6 @@ block PID
     "I error (after anti-windup compensation)"
     annotation (Placement(transformation(extent={{-100,-10},{-80,10}})));
   Buildings.Controls.OBC.CDL.Reals.Limiter lim(
->>>>>>> master:Buildings/Controls/OBC/CDL/Reals/PID.mo
     final uMax=yMax,
     final uMin=yMin)
     "Limiter"
@@ -131,29 +105,6 @@ protected
   Sources.Constant TDer(k=Td/Nd) if with_D
     "Time constant for approximation in derivative block"
     annotation (Placement(transformation(extent={{-100,80},{-80,100}})));
-<<<<<<< HEAD:Buildings/Controls/OBC/CDL/Continuous/PID.mo
-  Buildings.Controls.OBC.CDL.Continuous.Sources.Constant Dzero(
-    final k=0) if not with_D
-    "Zero input signal"
-    annotation (Evaluate=true,HideResult=true,Placement(transformation(extent={{-50,90},
-            {-30,110}})));
-  Buildings.Controls.OBC.CDL.Continuous.MultiplyByParameter uS_revAct(
-    final k=revAct/r) "Set point multiplied by reverse action sign"
-    annotation (Placement(transformation(extent={{-200,30},{-180,50}})));
-  Buildings.Controls.OBC.CDL.Continuous.MultiplyByParameter uMea_revAct(
-    final k=revAct/r) "Set point multiplied by reverse action sign"
-    annotation (Placement(transformation(extent={{-200,-50},{-180,-30}})));
-  Buildings.Controls.OBC.CDL.Continuous.Add addPD
-    "Outputs P and D gains added"
-    annotation (Placement(transformation(extent={{20,124},{40,144}})));
-  Buildings.Controls.OBC.CDL.Continuous.Add addPID
-    "Outputs P, I and D gains added"
-    annotation (Placement(transformation(extent={{80,80},{100,100}})));
-  Buildings.Controls.OBC.CDL.Continuous.Subtract antWinErr if with_I
-    "Error for anti-windup compensation"
-    annotation (Placement(transformation(extent={{160,50},{180,70}})));
-  Buildings.Controls.OBC.CDL.Continuous.MultiplyByParameter antWinGai(k=1/(k*Ni))
-=======
   Buildings.Controls.OBC.CDL.Reals.Sources.Constant Dzero(final k=0)
     if not with_D
     "Zero input signal"
@@ -175,7 +126,6 @@ protected
     "Error for anti-windup compensation"
     annotation (Placement(transformation(extent={{160,50},{180,70}})));
   Buildings.Controls.OBC.CDL.Reals.MultiplyByParameter antWinGai(k=1/(k*Ni))
->>>>>>> master:Buildings/Controls/OBC/CDL/Reals/PID.mo
     if with_I "Gain for anti-windup compensation"
     annotation (Placement(transformation(extent={{180,-30},{160,-10}})));
   Buildings.Controls.OBC.CDL.Logical.Sources.Constant cheYMinMax(
@@ -191,13 +141,8 @@ protected
     if not with_I
     "Zero input signal"
     annotation (Placement(transformation(extent={{-50,20},{-30,40}})));
-<<<<<<< HEAD:Buildings/Controls/OBC/CDL/Continuous/PID.mo
-  Buildings.Controls.OBC.CDL.Continuous.Sources.Constant con(
-    final k=0) if with_I
-=======
   Buildings.Controls.OBC.CDL.Reals.Sources.Constant con(final k=0)
     if with_I
->>>>>>> master:Buildings/Controls/OBC/CDL/Reals/PID.mo
     "Constant zero"
     annotation (Placement(transformation(extent={{-100,-50},{-80,-30}})));
   Buildings.Controls.OBC.CDL.Logical.Sources.Constant con1(final k=false)
@@ -207,12 +152,7 @@ protected
 
 equation
   connect(u_s,uS_revAct.u)
-<<<<<<< HEAD:Buildings/Controls/OBC/CDL/Continuous/PID.mo
-    annotation (Line(points={{-240,0},{-210,0},{-210,42},{-206,42},{-206,40},{
-          -202,40}},                                                color={0,0,127}));
-=======
     annotation (Line(points={{-240,0},{-210,0},{-210,40},{-202,40}},color={0,0,127}));
->>>>>>> master:Buildings/Controls/OBC/CDL/Reals/PID.mo
   connect(u_m,uMea_revAct.u)
     annotation (Line(points={{0,-220},{0,-160},{-210,-160},{-210,-40},{-202,-40}},color={0,0,127}));
   connect(D.u,errD.y)
@@ -550,29 +490,12 @@ American Society of Heating Refrigerating and Air-Conditioning Engineers Inc. At
       revisions="<html>
 <ul>
 <li>
-<<<<<<< HEAD:Buildings/Controls/OBC/CDL/Continuous/PID.mo
-May 20, 2022, by Michael Wetter:<br/>
-Refactored implementation to use new derivative block from CDL package.<br/>
-This is for
-<a href=\"https://github.com/lbl-srg/modelica-buildings/issues/3022\">issue 3022</a>.
-</li>
-<li>
-May 6, 2022, by Michael Wetter:<br/>
-Corrected wrong documentation in how the derivative of the control error is approximated.<br/>
-This is for
-<a href=\"https://github.com/lbl-srg/modelica-buildings/issues/2994\">issue 2994</a>.
-</li>
-<li>
-November 12, 2020, by Michael Wetter:<br/>
-Reformulated to remove dependency to <code>Modelica.Units.SI</code>.<br/>
-=======
 October 23, 2023, by Michael Wetter:<br/>
 Added value of control output <code>y</code> to icon.
 </li>
 <li>
 May 20, 2022, by Michael Wetter:<br/>
 Refactored implementation to use new derivative block from CDL package.<br/>
->>>>>>> master:Buildings/Controls/OBC/CDL/Reals/PID.mo
 This is for
 <a href=\"https://github.com/lbl-srg/modelica-buildings/issues/3022\">Buildings, issue 3022</a>.
 </li>

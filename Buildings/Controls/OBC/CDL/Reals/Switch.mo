@@ -1,34 +1,12 @@
-<<<<<<< HEAD:Buildings/Controls/OBC/CDL/Continuous/Switch.mo
-within Buildings.Controls.OBC.CDL.Continuous;
-block Switch
-  "Switch between two Real signals"
-  Interfaces.RealInput u1
-    "Real input signal"
-=======
 within Buildings.Controls.OBC.CDL.Reals;
 block Switch
   "Switch between two Real signals"
   Buildings.Controls.OBC.CDL.Interfaces.RealInput u1
     "Input u1"
->>>>>>> master:Buildings/Controls/OBC/CDL/Reals/Switch.mo
     annotation (Placement(transformation(extent={{-140,60},{-100,100}})));
   Buildings.Controls.OBC.CDL.Interfaces.BooleanInput u2
     "Boolean switch input signal, if true, y=u1, else y=u3"
     annotation (Placement(transformation(extent={{-140,-20},{-100,20}})));
-<<<<<<< HEAD:Buildings/Controls/OBC/CDL/Continuous/Switch.mo
-  Interfaces.RealInput u3
-    "Real input signal"
-    annotation (Placement(transformation(extent={{-140,-100},{-100,-60}})));
-  Interfaces.RealOutput y
-    "Real output signal"
-    annotation (Placement(transformation(extent={{100,-20},{140,20}})));
-
-equation
-  y=if u2 then
-      u1
-    else
-      u3;
-=======
   Buildings.Controls.OBC.CDL.Interfaces.RealInput u3
     "Input u3"
     annotation (Placement(transformation(extent={{-140,-100},{-100,-60}})));
@@ -38,7 +16,6 @@ equation
 
 equation
   y=smooth(0, if u2 then u1 else u3);
->>>>>>> master:Buildings/Controls/OBC/CDL/Reals/Switch.mo
   annotation (
     defaultComponentName="swi",
     Documentation(

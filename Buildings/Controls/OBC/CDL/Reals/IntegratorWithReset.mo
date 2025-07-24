@@ -90,12 +90,6 @@ to the value of the input signal <code>y_reset_in</code>.
       revisions="<html>
 <ul>
 <li>
-<<<<<<< HEAD:Buildings/Controls/OBC/CDL/Continuous/IntegratorWithReset.mo
-February 2, 2022, by Michael Wetter:<br/>
-Removed <code>unit=\"1\"</code> declaration for gain <code>k</code>.
-This is to avoid the warning observed in
-<a href=\"https://github.com/lbl-srg/modelica-buildings/pull/2872\">#2872</a>.
-=======
 June 8, 2023, by Michael Wetter:<br/>
 Updated documentation.
 </li>
@@ -104,7 +98,6 @@ February 2, 2022, by Michael Wetter:<br/>
 Removed <code>unit=\"1\"</code> declaration for gain <code>k</code>.
 This is to avoid the warning observed in
 <a href=\"https://github.com/lbl-srg/modelica-buildings/pull/2872\">Buildings, issue 2872</a>.
->>>>>>> master:Buildings/Controls/OBC/CDL/Reals/IntegratorWithReset.mo
 </li>
 <li>
 October 21, 2021, by Michael Wetter:<br/>

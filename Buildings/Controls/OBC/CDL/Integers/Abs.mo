@@ -9,14 +9,7 @@ block Abs
     annotation (Placement(transformation(extent={{100,-20},{140,20}})));
 
 equation
-<<<<<<< HEAD
-  y=if u >= 0 then
-      u
-    else
-      -u;
-=======
   y=if u >= 0 then u else -u;
->>>>>>> master
   annotation (
     defaultComponentName="absInt",
     Icon(

@@ -1,8 +1,4 @@
-<<<<<<< HEAD:Buildings/Controls/OBC/CDL/Continuous/LimitSlewRate.mo
-within Buildings.Controls.OBC.CDL.Continuous;
-=======
 within Buildings.Controls.OBC.CDL.Reals;
->>>>>>> master:Buildings/Controls/OBC/CDL/Reals/LimitSlewRate.mo
 block LimitSlewRate "Limit the increase or decrease rate of input"
   parameter Real raisingSlewRate(
     min=Constants.small,
@@ -87,11 +83,7 @@ revisions="<html>
 <li>
 January 27, 2022, by Jianjun Hu:<br/>
 Renamed the block name from SlewRateLimiter to LimitSlewRate.<br/>
-<<<<<<< HEAD:Buildings/Controls/OBC/CDL/Continuous/LimitSlewRate.mo
-This is for <a href=\"https://github.com/lbl-srg/modelica-buildings/issues/2865\">issue 2865</a>.
-=======
 This is for <a href=\"https://github.com/lbl-srg/modelica-buildings/issues/2865\">Buildings, issue 2865</a>.
->>>>>>> master:Buildings/Controls/OBC/CDL/Reals/LimitSlewRate.mo
 </li>
 <li>
 November 12, 2020, by Michael Wetter:<br/>

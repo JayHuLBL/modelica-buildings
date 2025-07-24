@@ -1,12 +1,6 @@
-<<<<<<< HEAD:Buildings/Controls/OBC/CDL/Continuous/Validation/Multiply.mo
-within Buildings.Controls.OBC.CDL.Continuous.Validation;
-model Multiply "Validation model for the Multiply block"
-  Buildings.Controls.OBC.CDL.Continuous.Multiply product1
-=======
 within Buildings.Controls.OBC.CDL.Reals.Validation;
 model Multiply "Validation model for the Multiply block"
   Buildings.Controls.OBC.CDL.Reals.Multiply product1
->>>>>>> master:Buildings/Controls/OBC/CDL/Reals/Validation/Multiply.mo
     "Block that outputs product of the two inputs"
     annotation (Placement(transformation(extent={{-10,-10},{10,10}})));
   Buildings.Controls.OBC.CDL.Reals.Sources.Ramp ramp1(
@@ -32,22 +26,13 @@ equation
       StopTime=1.0,
       Tolerance=1e-06),
     __Dymola_Commands(
-<<<<<<< HEAD:Buildings/Controls/OBC/CDL/Continuous/Validation/Multiply.mo
-      file="modelica://Buildings/Resources/Scripts/Dymola/Controls/OBC/CDL/Continuous/Validation/Multiply.mos" "Simulate and plot"),
-=======
       file="modelica://Buildings/Resources/Scripts/Dymola/Controls/OBC/CDL/Reals/Validation/Multiply.mos" "Simulate and plot"),
->>>>>>> master:Buildings/Controls/OBC/CDL/Reals/Validation/Multiply.mo
     Documentation(
       info="<html>
 <p>
 Validation test for the block
-<<<<<<< HEAD:Buildings/Controls/OBC/CDL/Continuous/Validation/Multiply.mo
-<a href=\"modelica://Buildings.Controls.OBC.CDL.Continuous.Multiply\">
-Buildings.Controls.OBC.CDL.Continuous.Multiply</a>.
-=======
 <a href=\"modelica://Buildings.Controls.OBC.CDL.Reals.Multiply\">
 Buildings.Controls.OBC.CDL.Reals.Multiply</a>.
->>>>>>> master:Buildings/Controls/OBC/CDL/Reals/Validation/Multiply.mo
 </p>
 <p>
 The input <code>u1</code> varies from <i>-2</i> to <i>+2</i>, input <code>u2</code> varies from <i>-1</i> to <i>+2</i>.
@@ -58,11 +43,7 @@ revisions="<html>
 <li>
 January 27, 2022, by Jianjun Hu:<br/>
 Renamed the block name from Product to Multiply.<br/>
-<<<<<<< HEAD:Buildings/Controls/OBC/CDL/Continuous/Validation/Multiply.mo
-This is for <a href=\"https://github.com/lbl-srg/modelica-buildings/issues/2865\">issue 2865</a>.
-=======
 This is for <a href=\"https://github.com/lbl-srg/modelica-buildings/issues/2865\">Buildings, issue 2865</a>.
->>>>>>> master:Buildings/Controls/OBC/CDL/Reals/Validation/Multiply.mo
 </li>
 <li>
 March 22, 2017, by Jianjun Hu:<br/>

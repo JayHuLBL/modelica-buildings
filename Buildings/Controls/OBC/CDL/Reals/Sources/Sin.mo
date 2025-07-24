@@ -88,10 +88,6 @@ Block that outputs a <code>sine</code>.
       revisions="<html>
 <ul>
 <li>
-<<<<<<< HEAD:Buildings/Controls/OBC/CDL/Continuous/Sources/Sine.mo
-November 12, 2020, by Michael Wetter:<br/>
-Reformulated to remove dependency to <code>Modelica.Units.SI</code>.<br/>
-=======
 November 8, 2024, by Michael Wetter:<br/>
 Added <code>final</code> keyword to unit declaration as block is only valid for this unit.<br/>
 Also added <code>displayUnit</code> keyword.
@@ -102,7 +98,6 @@ Renamed block from <code>Sine</code> to <code>Sin</code>
 to use consistent naming with
 <a href=\"modelica://Buildings.Controls.OBC.CDL.Reals.Sin\">
 Buildings.Controls.OBC.CDL.Reals.Sin</a>.<br/>
->>>>>>> master:Buildings/Controls/OBC/CDL/Reals/Sources/Sin.mo
 This is for
 <a href=\"https://github.com/lbl-srg/modelica-buildings/issues/3339\">Buildings, issue 3339</a>
 </li>

@@ -1,28 +1,15 @@
-<<<<<<< HEAD:Buildings/Controls/OBC/CDL/Continuous/Validation/Subtract.mo
-within Buildings.Controls.OBC.CDL.Continuous.Validation;
-model Subtract "Validation model for the Subtract block"
-  Buildings.Controls.OBC.CDL.Continuous.Subtract sub
-    "Block that outputs the difference of the two inputs"
-    annotation (Placement(transformation(extent={{-10,-10},{10,10}})));
-  Buildings.Controls.OBC.CDL.Continuous.Sources.Ramp ramp1(
-=======
 within Buildings.Controls.OBC.CDL.Reals.Validation;
 model Subtract "Validation model for the Subtract block"
   Buildings.Controls.OBC.CDL.Reals.Subtract sub
     "Block that outputs the difference of the two inputs"
     annotation (Placement(transformation(extent={{-10,-10},{10,10}})));
   Buildings.Controls.OBC.CDL.Reals.Sources.Ramp ramp1(
->>>>>>> master:Buildings/Controls/OBC/CDL/Reals/Validation/Subtract.mo
     duration=1,
     offset=-2,
     height=4)
     "Block that generates ramp signal"
     annotation (Placement(transformation(extent={{-60,10},{-40,30}})));
-<<<<<<< HEAD:Buildings/Controls/OBC/CDL/Continuous/Validation/Subtract.mo
-  Buildings.Controls.OBC.CDL.Continuous.Sources.Ramp ramp2(
-=======
   Buildings.Controls.OBC.CDL.Reals.Sources.Ramp ramp2(
->>>>>>> master:Buildings/Controls/OBC/CDL/Reals/Validation/Subtract.mo
     height=2,
     duration=1,
     offset=-0.5)
@@ -39,22 +26,13 @@ equation
       StopTime=1.0,
       Tolerance=1e-06),
     __Dymola_Commands(
-<<<<<<< HEAD:Buildings/Controls/OBC/CDL/Continuous/Validation/Subtract.mo
-      file="modelica://Buildings/Resources/Scripts/Dymola/Controls/OBC/CDL/Continuous/Validation/Subtract.mos" "Simulate and plot"),
-=======
       file="modelica://Buildings/Resources/Scripts/Dymola/Controls/OBC/CDL/Reals/Validation/Subtract.mos" "Simulate and plot"),
->>>>>>> master:Buildings/Controls/OBC/CDL/Reals/Validation/Subtract.mo
     Documentation(
       info="<html>
 <p>
 Validation test for the block
-<<<<<<< HEAD:Buildings/Controls/OBC/CDL/Continuous/Validation/Subtract.mo
-<a href=\"modelica://Buildings.Controls.OBC.CDL.Continuous.Subtract\">
-Buildings.Controls.OBC.CDL.Continuous.Subtract</a>.
-=======
 <a href=\"modelica://Buildings.Controls.OBC.CDL.Reals.Subtract\">
 Buildings.Controls.OBC.CDL.Reals.Subtract</a>.
->>>>>>> master:Buildings/Controls/OBC/CDL/Reals/Validation/Subtract.mo
 </p>
 <p>
 The input <code>u1</code> varies from <i>-2</i> to <i>+2</i>, input <code>u2</code> varies from <i>-1</i> to <i>+1</i>.

@@ -1,8 +1,4 @@
-<<<<<<< HEAD:Buildings/Controls/OBC/CDL/Continuous/Sources/package.mo
-within Buildings.Controls.OBC.CDL.Continuous;
-=======
 within Buildings.Controls.OBC.CDL.Reals;
->>>>>>> master:Buildings/Controls/OBC/CDL/Reals/Sources/package.mo
 package Sources "Package with blocks that generate source signals"
   annotation (
     Documentation(
