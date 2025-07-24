@@ -66,11 +66,7 @@ protected
   Buildings.Controls.OBC.CDL.Reals.Max max
     "Maximum between minimum flow rate and 0.001"
     annotation (Placement(transformation(extent={{-160,170},{-140,190}})));
-<<<<<<< HEAD
-  Buildings.Controls.OBC.CDL.Continuous.Subtract sub1
-=======
   Buildings.Controls.OBC.CDL.Reals.Subtract sub1
->>>>>>> master
     "Mass flow rate difference between actual and minimum value"
     annotation (Placement(transformation(extent={{-100,170},{-80,190}})));
   Buildings.Controls.OBC.CDL.Reals.Hysteresis hys(

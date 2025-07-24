@@ -18,11 +18,7 @@ model Carnot_TEva_2ndLaw
 
   final parameter Modelica.Units.SI.MassFlowRate m1_flow_nominal=-
       m2_flow_nominal/dTCon_nominal*dTEva_nominal
-<<<<<<< HEAD
-    "Nominal mass flow rate at condeser water side";
-=======
     "Nominal mass flow rate at condenser water side";
->>>>>>> master
 
   Modelica.Blocks.Sources.Constant TEvaIn(k=273.15 + 20)
     "Evaporator inlet temperature"
@@ -67,11 +63,7 @@ protected
     parameter Modelica.Units.SI.HeatFlowRate QEva_flow_nominal
       "Evaporator heat flow rate";
     parameter Modelica.Units.SI.MassFlowRate m1_flow_nominal
-<<<<<<< HEAD
-      "Nominal mass flow rate at condeser water side";
-=======
       "Nominal mass flow rate at condenser water side";
->>>>>>> master
     parameter Modelica.Units.SI.MassFlowRate m2_flow_nominal
       "Nominal mass flow rate at chilled water side";
 

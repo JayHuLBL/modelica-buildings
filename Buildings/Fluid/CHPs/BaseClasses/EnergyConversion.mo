@@ -69,11 +69,7 @@ protected
   Buildings.Controls.OBC.CDL.Reals.Sources.Constant const(final k=0)
     "Zero constant"
     annotation (Placement(transformation(extent={{-100,60},{-80,80}})));
-<<<<<<< HEAD
-  Buildings.Controls.OBC.CDL.Continuous.Switch switch
-=======
   Buildings.Controls.OBC.CDL.Reals.Switch switch
->>>>>>> master
     "Switch to zero power output if not in (normal or warm-up mode)"
     annotation (Placement(transformation(extent={{-60,90},{-40,110}})));
   Modelica.Blocks.Sources.BooleanExpression booExp(
@@ -81,21 +77,6 @@ protected
             opeMod ==CHPs.BaseClasses.Types.Mode.Normal)
     "True if active mode is (warm-up or normal)"
     annotation (Placement(transformation(extent={{-100,90},{-80,110}})));
-<<<<<<< HEAD
-  Buildings.Controls.OBC.CDL.Continuous.Switch switch2
-    "Switch between warm-up and normal value"
-    annotation (Placement(transformation(extent={{80,70},{100,90}})));
-  Buildings.Controls.OBC.CDL.Continuous.Switch switch3
-    "Switch between warm-up and normal value"
-    annotation (Placement(transformation(extent={{80,10},{100,30}})));
-  Buildings.Controls.OBC.CDL.Continuous.Switch switch4
-    "Switch between warm-up and normal value"
-    annotation (Placement(transformation(extent={{80,-50},{100,-30}})));
-  Buildings.Controls.OBC.CDL.Continuous.Switch switch5
-    "Switch between warm-up and normal value"
-    annotation (Placement(transformation(extent={{80,-110},{100,-90}})));
-  Buildings.Controls.OBC.CDL.Continuous.Sources.Constant PEleTimeDel(final k=0)
-=======
   Buildings.Controls.OBC.CDL.Reals.Switch switch2
     "Switch between warm-up and normal value"
     annotation (Placement(transformation(extent={{80,70},{100,90}})));
@@ -109,7 +90,6 @@ protected
     "Switch between warm-up and normal value"
     annotation (Placement(transformation(extent={{80,-110},{100,-90}})));
   Buildings.Controls.OBC.CDL.Reals.Sources.Constant PEleTimeDel(final k=0)
->>>>>>> master
                if per.warmUpByTimeDelay
     "Zero power output in case of warm-up by time delay"
     annotation (Placement(transformation(extent={{-20,90},{0,110}})));

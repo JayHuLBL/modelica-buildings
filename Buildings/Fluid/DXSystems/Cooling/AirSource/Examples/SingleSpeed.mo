@@ -2,46 +2,6 @@ within Buildings.Fluid.DXSystems.Cooling.AirSource.Examples;
 model SingleSpeed
   "Test model for single speed cooling DX coil"
   extends Modelica.Icons.Example;
-<<<<<<< HEAD:Buildings/Fluid/HeatExchangers/DXCoils/AirCooled/Examples/SingleSpeed.mo
-  parameter Modelica.Units.SI.MassFlowRate m_flow_nominal=datCoi.sta[datCoi.nSta].nomVal.m_flow_nominal
-    "Nominal mass flow rate";
-  parameter Modelica.Units.SI.PressureDifference dp_nominal=1000
-    "Pressure drop at m_flow_nominal";
-  Buildings.Fluid.Sources.Boundary_pT sin(
-    redeclare package Medium = Medium,
-    p(displayUnit="Pa") = 101325,
-    nPorts=1,
-    T=303.15) "Sink"
-    annotation (Placement(transformation(extent={{40,-20},{20,0}})));
-  Buildings.Fluid.Sources.Boundary_pT sou(
-    redeclare package Medium = Medium,
-    p(displayUnit="Pa") = 101325 + dp_nominal,
-    use_T_in=true,
-    nPorts=1,
-    use_p_in=true,
-    T=299.85) "Source"
-    annotation (Placement(transformation(extent={{-40,-20},{-20,0}})));
-  Modelica.Blocks.Sources.BooleanStep onOff(startTime=600)
-    "Compressor on-off signal"
-    annotation (Placement(transformation(extent={{-60,60},{-40,80}})));
-  Modelica.Blocks.Sources.Ramp TEvaIn(
-    duration=600,
-    startTime=2400,
-    height=-5,
-    offset=273.15 + 23) "Temperature"
-    annotation (Placement(transformation(extent={{-100,-40},{-80,-20}})));
-  Buildings.Fluid.HeatExchangers.DXCoils.AirCooled.SingleSpeed sinSpeDX(
-    redeclare package Medium = Medium,
-    dp_nominal=dp_nominal,
-    datCoi=datCoi,
-    T_start=datCoi.sta[1].nomVal.TEvaIn_nominal,
-    show_T=true,
-    from_dp=true,
-    energyDynamics=Modelica.Fluid.Types.Dynamics.FixedInitial)
-    "Single speed DX coil"
-    annotation (Placement(transformation(extent={{-10,0},{10,20}})));
-=======
->>>>>>> master:Buildings/Fluid/DXSystems/Cooling/AirSource/Examples/SingleSpeed.mo
 
   package Medium = Buildings.Media.Air
     "Fluid medium for the model";

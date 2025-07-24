@@ -45,11 +45,7 @@ protected
     final uHigh=0) if not warmUpByTimeDelay
     "Check if actual engine temperature is higher than the nominal value"
     annotation (Placement(transformation(extent={{-10,-10},{10,10}})));
-<<<<<<< HEAD
-  Buildings.Controls.OBC.CDL.Continuous.Subtract sub
-=======
   Buildings.Controls.OBC.CDL.Reals.Subtract sub
->>>>>>> master
  if not warmUpByTimeDelay
     "Difference between actual engine temperature and the nominal value"
     annotation (Placement(transformation(extent={{-50,-10},{-30,10}})));
@@ -58,11 +54,7 @@ protected
     final k=TEngNom)
     "Nominal engine temperature"
     annotation (Placement(transformation(extent={{-88,-30},{-68,-10}})));
-<<<<<<< HEAD
-  Buildings.Controls.OBC.CDL.Continuous.Subtract sub1
-=======
   Buildings.Controls.OBC.CDL.Reals.Subtract sub1
->>>>>>> master
  if not warmUpByTimeDelay
     "Difference between actual power output and demand"
     annotation (Placement(transformation(extent={{-50,-70},{-30,-50}})));

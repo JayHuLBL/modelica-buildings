@@ -30,17 +30,10 @@ protected
     final k=PStaBy)
     "Stand-by mode power consumption "
     annotation (Placement(transformation(extent={{-80,50},{-60,70}})));
-<<<<<<< HEAD
-  Buildings.Controls.OBC.CDL.Continuous.Switch switch
-    "Power consumption during stand-by or cool-down mode"
-    annotation (Placement(transformation(extent={{-20,20},{0,40}})));
-  Buildings.Controls.OBC.CDL.Continuous.Switch switch1 "Cool-down power consumption"
-=======
   Buildings.Controls.OBC.CDL.Reals.Switch switch
     "Power consumption during stand-by or cool-down mode"
     annotation (Placement(transformation(extent={{-20,20},{0,40}})));
   Buildings.Controls.OBC.CDL.Reals.Switch switch1 "Cool-down power consumption"
->>>>>>> master
     annotation (Placement(transformation(extent={{60,-10},{80,10}})));
   Buildings.Controls.OBC.CDL.Reals.Sources.Constant const(final k=0)
     "Zero power consumption"

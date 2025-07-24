@@ -73,11 +73,7 @@ protected
 initial algorithm
   // Verify correctness of performance curves, and write warning if error is bigger than 10%
    for iSta in 1:nSta loop
-<<<<<<< HEAD:Buildings/Fluid/HeatExchangers/DXCoils/BaseClasses/PartialCoolingCapacity.mo
-    Buildings.Fluid.HeatExchangers.DXCoils.BaseClasses.Functions.warnIfPerformanceOutOfBounds(
-=======
     Buildings.Fluid.DXSystems.Cooling.BaseClasses.Functions.warnIfPerformanceOutOfBounds(
->>>>>>> master:Buildings/Fluid/DXSystems/Cooling/BaseClasses/PartialCapacity.mo
       Buildings.Utilities.Math.Functions.biquadratic(
         a=sta[iSta].perCur.capFunT,
         x1=Modelica.Units.Conversions.to_degC(sta[iSta].nomVal.TEvaIn_nominal),
@@ -94,11 +90,7 @@ initial algorithm
          msg="Capacity as a function of normalized mass flow rate ",
          curveName="sta[" + String(iSta) + "].perCur.capFunFF");
 
-<<<<<<< HEAD:Buildings/Fluid/HeatExchangers/DXCoils/BaseClasses/PartialCoolingCapacity.mo
-    Buildings.Fluid.HeatExchangers.DXCoils.BaseClasses.Functions.warnIfPerformanceOutOfBounds(
-=======
     Buildings.Fluid.DXSystems.Cooling.BaseClasses.Functions.warnIfPerformanceOutOfBounds(
->>>>>>> master:Buildings/Fluid/DXSystems/Cooling/BaseClasses/PartialCapacity.mo
       Buildings.Utilities.Math.Functions.biquadratic(
         a=sta[iSta].perCur.EIRFunT,
         x1=Modelica.Units.Conversions.to_degC(sta[iSta].nomVal.TEvaIn_nominal),

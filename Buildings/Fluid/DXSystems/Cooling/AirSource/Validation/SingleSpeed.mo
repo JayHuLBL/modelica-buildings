@@ -3,44 +3,11 @@ model SingleSpeed
   "Validation model for single speed DX coil with PLR=1"
   extends Modelica.Icons.Example;
 
-<<<<<<< HEAD:Buildings/Fluid/HeatExchangers/DXCoils/AirCooled/Validation/SingleSpeedEnergyPlus.mo
-  parameter Modelica.Units.SI.Power Q_flow_nominal=datCoi.sta[1].nomVal.Q_flow_nominal
-    "Nominal power";
-  parameter Modelica.Units.SI.MassFlowRate m_flow_nominal=datCoi.sta[1].nomVal.m_flow_nominal
-    "Nominal mass flow rate";
-  parameter Modelica.Units.SI.PressureDifference dp_nominal=1141
-    "Pressure drop at m_flow_nominal";
-  Buildings.Fluid.Sources.Boundary_pT sin(
-    redeclare package Medium = Medium,
-    p(displayUnit="Pa") = 101325,
-    nPorts=1,
-    T=303.15) "Sink"
-    annotation (Placement(transformation(extent={{40,-20},{20,0}})));
-  Buildings.Fluid.Sources.Boundary_pT sou(
-    redeclare package Medium = Medium,
-    p(displayUnit="Pa") = 101325 + dp_nominal,
-    use_T_in=true,
-    nPorts=1,
-    use_p_in=true,
-    use_X_in=true,
-    T=299.85) "Source"
-    annotation (Placement(transformation(extent={{-40,-20},{-20,0}})));
-  Buildings.Fluid.HeatExchangers.DXCoils.AirCooled.SingleSpeed sinSpeDX(
-    redeclare package Medium = Medium,
-    dp_nominal=dp_nominal,
-    datCoi=datCoi,
-    T_start=datCoi.sta[1].nomVal.TEvaIn_nominal,
-    from_dp=true,
-    energyDynamics=Modelica.Fluid.Types.Dynamics.FixedInitial)
-    "Single speed DX coil"
-    annotation (Placement(transformation(extent={{-10,0},{10,20}})));
-=======
   package Medium = Buildings.Media.Air
     "Medium model";
 
   parameter Modelica.Units.SI.Power Q_flow_nominal=datCoi.sta[1].nomVal.Q_flow_nominal
     "Nominal power";
->>>>>>> master:Buildings/Fluid/DXSystems/Cooling/AirSource/Validation/SingleSpeed.mo
 
   parameter Modelica.Units.SI.MassFlowRate m_flow_nominal=datCoi.sta[1].nomVal.m_flow_nominal
     "Nominal mass flow rate";

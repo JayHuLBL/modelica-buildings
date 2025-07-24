@@ -150,21 +150,6 @@ The basic flow function
   m&#775; = sign(&Delta;p) k  &radic;<span style=\"text-decoration:overline;\">&nbsp;&Delta;p &nbsp;</span>,
 </p>
 <p>
-<<<<<<< HEAD
-with regularization near the origin, is used to compute the pressure drop.
-The flow coefficient
-</p>
-<p align=\"center\" style=\"font-style:italic;\">
-  k = m&#775; &frasl; &radic;<span style=\"text-decoration:overline;\">&nbsp;&Delta;p &nbsp;</span>
-</p>
-<p>
-is increased from <code>l*KV_Si</code> to <code>KV_Si</code>,
-where <code>KV_Si</code> is equal to <code>Kv</code> but in SI units.
-Therefore, the flow coefficient <code>k</code> is set to a value close to zero for negative pressure differences, thereby
-restricting reverse flow to a small value.
-The flow coefficient <code>k</code> saturates to its maximum value at the pressure <code>dpValve_closing</code>.
-For larger pressure drops, the pressure drop is a quadratic function of the flow rate.
-=======
 with regularization near the origin, is used to compute the mass flow rate
 through the fully closed and fully open valve, respectively.
 The valve is considered fully closed when subjected to a negative pressure drop,
@@ -176,7 +161,6 @@ and its flow coefficient <i>k</i> is then equal to <code>Kv_SI</code>.
 For valve positions between these two extremes, a quintic spline interpolation
 is applied to determine the mass flow rate as a function of
 the pressure drop across the valve.
->>>>>>> master
 </p>
 <h4>Typical use and important parameters</h4>
 <p>

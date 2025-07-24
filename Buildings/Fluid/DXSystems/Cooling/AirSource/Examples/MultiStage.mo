@@ -2,17 +2,12 @@ within Buildings.Fluid.DXSystems.Cooling.AirSource.Examples;
 model MultiStage
   "Test model for multi stage DX cooling coil"
   extends Modelica.Icons.Example;
-<<<<<<< HEAD:Buildings/Fluid/HeatExchangers/DXCoils/AirCooled/Examples/MultiStage.mo
-  parameter Modelica.Units.SI.MassFlowRate m_flow_nominal=datCoi.sta[datCoi.nSta].nomVal.m_flow_nominal
-    "Nominal mass flow rate";
-=======
   package Medium = Buildings.Media.Air
     "Fluid medium for the model";
 
   parameter Modelica.Units.SI.MassFlowRate m_flow_nominal=datCoi.sta[datCoi.nSta].nomVal.m_flow_nominal
     "Nominal mass flow rate";
 
->>>>>>> master:Buildings/Fluid/DXSystems/Cooling/AirSource/Examples/MultiStage.mo
   parameter Modelica.Units.SI.PressureDifference dp_nominal=1000
     "Pressure drop at m_flow_nominal";
 

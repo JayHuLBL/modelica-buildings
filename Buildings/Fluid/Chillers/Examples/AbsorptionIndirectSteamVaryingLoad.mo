@@ -75,15 +75,6 @@ model AbsorptionIndirectSteamVaryingLoad
     duration=86400,
     offset=0) "Pump flow rate"
     annotation (Placement(transformation(extent={{-100,-40},{-80,-20}})));
-<<<<<<< HEAD
-  Controls.OBC.CDL.Continuous.Divide QEva_QGen
-    "Ratio of cooling provided over required steam"
-    annotation (Placement(transformation(extent={{90,0},{110,20}})));
-  Controls.OBC.CDL.Continuous.Divide QEva_P
-    "Ratio of cooling provided over pump energy"
-    annotation (Placement(transformation(extent={{90,-30},{110,-10}})));
-  Controls.OBC.CDL.Continuous.MultiplyByParameter gai(k=-1)
-=======
   Controls.OBC.CDL.Reals.Divide QEva_QGen
     "Ratio of cooling provided over required steam"
     annotation (Placement(transformation(extent={{90,0},{110,20}})));
@@ -91,7 +82,6 @@ model AbsorptionIndirectSteamVaryingLoad
     "Ratio of cooling provided over pump energy"
     annotation (Placement(transformation(extent={{90,-30},{110,-10}})));
   Controls.OBC.CDL.Reals.MultiplyByParameter gai(k=-1)
->>>>>>> master
     "Gain to switch sign"
     annotation (Placement(transformation(extent={{52,-50},{72,-30}})));
   Controls.OBC.CDL.Reals.Sources.Constant TEnt(k=273.15 + 15)

@@ -25,18 +25,6 @@ partial model PartialElectric
     "Set point for leaving chilled water temperature (condenser water if have_switchover=true and coo=false)"
     annotation (Placement(transformation(extent={{-140,-50},{-100,-10}}),
         iconTransformation(extent={{-140,-50},{-100,-10}})));
-<<<<<<< HEAD
-
-  Modelica.Units.SI.Temperature TEvaEnt "Evaporator entering temperature";
-  Modelica.Units.SI.Temperature TEvaLvg "Evaporator leaving temperature";
-  Modelica.Units.SI.Temperature TConEnt "Condenser entering temperature";
-  Modelica.Units.SI.Temperature TConLvg "Condenser leaving temperature";
-
-  Modelica.Units.SI.Efficiency COP "Coefficient of performance";
-  Modelica.Units.SI.HeatFlowRate QCon_flow "Condenser heat input";
-  Modelica.Units.SI.HeatFlowRate QEva_flow "Evaporator heat input";
-=======
->>>>>>> master
   Modelica.Blocks.Interfaces.RealOutput P(final quantity="Power", unit="W")
     "Electric power consumed by compressor"
     annotation (Placement(transformation(extent={{100,80},{120,100}}),
@@ -76,26 +64,20 @@ partial model PartialElectric
     "Constant true signal"
     annotation (Placement(transformation(extent={{-20,-10},{-40,10}})));
 protected
-<<<<<<< HEAD
-=======
   Controls.OBC.CDL.Interfaces.BooleanInput coo_internal
     "Internal switchover signal: true for cooling, false for heating"
     annotation (Placement(transformation(extent={{-100,-20},{-60,20}}),
         iconTransformation(extent={{-140,-20},{-100,20}})));
 
->>>>>>> master
   Modelica.Units.SI.HeatFlowRate QEva_flow_ava(nominal=QEva_flow_nominal, start
       =QEva_flow_nominal) "Cooling capacity available at evaporator";
   Modelica.Units.SI.HeatFlowRate QEva_flow_set(nominal=QEva_flow_nominal, start
       =QEva_flow_nominal)
     "Cooling capacity required to cool to set point temperature";
-<<<<<<< HEAD
-=======
   Modelica.Units.SI.HeatFlowRate QCon_flow_set(
     nominal=-QEva_flow_nominal * (1 + 1 / COP_nominal * etaMotor),
     start=-QEva_flow_nominal * (1 + 1 / COP_nominal * etaMotor))
     "Heating capacity required to heat up condenser water to setpoint";
->>>>>>> master
   Modelica.Units.SI.SpecificEnthalpy hSet
     "Enthalpy setpoint for leaving chilled water";
   // Performance data
@@ -173,10 +155,6 @@ equation
     QEva_flow_ava = QEva_flow_nominal*capFunT;
     // Cooling capacity required to chill water to setpoint
     QEva_flow_set = Buildings.Utilities.Math.Functions.smoothMin(
-<<<<<<< HEAD
-      x1 = m2_flow*(hSet-inStream(port_a2.h_outflow)),
-      x2= Q_flow_small,
-=======
       x1=if coo_internal then m2_flow * (hSet - inStream(port_a2.h_outflow))
          else P * etaMotor - QCon_flow_set,
       x2=Q_flow_small,
@@ -186,7 +164,6 @@ equation
     QCon_flow_set = Buildings.Utilities.Math.Functions.smoothMax(
       x1=if coo_internal then QCon_flow else m1_flow * (hSet - inStream(port_a1.h_outflow)),
       x2=-Q_flow_small,
->>>>>>> master
       deltaX=-Q_flow_small/100);
     // Part load ratio
     PLR1 = Buildings.Utilities.Math.Functions.smoothMin(
@@ -258,17 +235,11 @@ equation
   annotation (Icon(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},
             {100,100}}),
                    graphics={
-<<<<<<< HEAD
-        Text(extent={{62,96},{112,82}},   textString="P",
-          textColor={0,0,127}),
-        Text(extent={{-94,-24},{-48,-36}},  textString="T_CHWS",
-=======
         Text(extent={{62,96},{112,82}},
           textString="P",
           textColor={0,0,127}),
         Text(extent={{-104,-16},{-58,-28}},
           textString="TSet",
->>>>>>> master
           textColor={0,0,127}),
         Rectangle(
           extent={{-99,-54},{102,-66}},
@@ -344,15 +315,11 @@ equation
           fillPattern=FillPattern.Solid),
         Text(extent={{-108,36},{-62,24}},
           textColor={0,0,127},
-<<<<<<< HEAD
-          textString="on")}),
-=======
           textString="on"),
         Text(extent={{-102,96},{-56,84}},
           textColor={0,0,127},
           visible=have_switchover,
           textString="coo")}),
->>>>>>> master
 Documentation(info="<html>
 <p>
 Base class for model of an electric chiller, based on the DOE-2.1 chiller model and the
@@ -485,8 +452,6 @@ EnergyPlus v22.1.0 Engineering Reference</a>
 revisions="<html>
 <ul>
 <li>
-<<<<<<< HEAD
-=======
 June 4, 2024, by Antoine Gautier:<br/>
 Added load limit in heating mode.<br/>
 This is for
@@ -498,7 +463,6 @@ Added optional switchover mode for heat recovery chillers.<br/>
 This is for <a href=\"https://github.com/lbl-srg/modelica-buildings/issues/3211\">#3211</a>.
 </li>
 <li>
->>>>>>> master
 November 19, 2021, by David Blum:<br/>
 Add humidity to entering condenser state calculation.<br/>
 This is for issue <a href=\"https://github.com/lbl-srg/modelica-buildings/issues/2770\">2770</a>.

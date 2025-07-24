@@ -4,9 +4,6 @@ Carnot_TEva
 Carnot_y
 ElectricEIR
 ElectricEIR_AirCooled
-<<<<<<< HEAD
-=======
 ElectricEIR_HeatRecovery
->>>>>>> master
 ElectricReformulatedEIR
 BaseClasses

@@ -25,13 +25,10 @@ model HydraulicDiameter "Fixed flow resistance with hydraulic diameter and m_flo
   parameter Real fac(min=1) = 2
     "Factor to take into account resistance of bends etc., fac=dp_nominal/dpStraightPipe_nominal";
 
-<<<<<<< HEAD
-=======
   parameter Boolean disableComputeFlowResistance=false
     "=false to disable computation of flow resistance"
     annotation(Dialog(tab="Advanced"), Evaluate=true);
 
->>>>>>> master
   final parameter Modelica.Units.SI.PressureDifference dpStraightPipe_nominal(
       displayUnit="Pa") =
     Modelica.Fluid.Pipes.BaseClasses.WallFriction.Detailed.pressureLoss_m_flow(
@@ -192,14 +189,11 @@ This leads to simpler equations.
 </html>", revisions="<html>
 <ul>
 <li>
-<<<<<<< HEAD
-=======
 May 07, 2025, by Fabian Wuelhorst and Michael Wetter:<br/>
 Add option to <code>disableComputeFlowResistance</code>.<br/>
 See <a href=\"https://github.com/ibpsa/modelica-ibpsa/issues/2001\">#2001</a>.
 </li>
 <li>
->>>>>>> master
 September 21, 2021, by Michael Wetter:<br/>
 Corrected typo in comments.<br/>
 This is for

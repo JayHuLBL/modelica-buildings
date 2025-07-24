@@ -12,24 +12,15 @@ package ElectricReformulatedEIR "Performance data for chiller ElectricReformulat
     parameter Modelica.Units.SI.Temperature TConLvgMin
       "Minimum value for leaving condenser temperature"
       annotation (Dialog(group="Performance curves"));
-<<<<<<< HEAD
-    Modelica.Units.SI.Temperature TConLvgMax
-=======
     parameter Modelica.Units.SI.Temperature TConLvgMax
->>>>>>> master
       "Maximum value for leaving condenser temperature"
       annotation (Dialog(group="Performance curves"));
 
     annotation (
       defaultComponentName="datChi",
       defaultComponentPrefixes="parameter",
-<<<<<<< HEAD
-      Documentation(info=
-                   "<html>
-=======
       Documentation(info="<html>
 <p>
->>>>>>> master
 This record is used as a template for performance data
 for the chiller model
 <a href=\"modelica://Buildings.Fluid.Chillers.ElectricReformulatedEIR\">

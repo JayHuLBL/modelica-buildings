@@ -144,46 +144,6 @@ model PartialWaterCooledDXCoil "Base class for water source DX coils"
     annotation (Placement(transformation(extent={{-50,-110},{-70,-90}})));
 
   // Components
-<<<<<<< HEAD:Buildings/Fluid/HeatExchangers/DXCoils/BaseClasses/PartialWaterCooledDXCoil.mo
-  replaceable Buildings.Fluid.HeatExchangers.DXCoils.BaseClasses.PartialDXCoil eva
-   constrainedby
-    Buildings.Fluid.HeatExchangers.DXCoils.BaseClasses.PartialDXCoil(
-    redeclare final package Medium = MediumEva,
-    final use_mCon_flow=true,
-    final dp_nominal=dpEva_nominal,
-    final allowFlowReversal=allowFlowReversalEva,
-    final show_T=false,
-    final from_dp=from_dpEva,
-    final linearizeFlowResistance=linearizeFlowResistanceEva,
-    final deltaM=deltaMEva,
-    final m_flow_small=mEva_flow_small,
-    final tau=tauEva,
-    final homotopyInitialization=homotopyInitialization,
-    final energyDynamics=energyDynamics,
-    final p_start=pEva_start,
-    final T_start=TEva_start,
-    final X_start=XEva_start,
-    final C_start=CEva_start,
-    final computeReevaporation=computeReevaporation,
-    dxCoo(redeclare final Buildings.Fluid.HeatExchangers.DXCoils.WaterCooled.Data.Generic.DXCoil datCoi=datCoi,
-          wetCoi(redeclare final Buildings.Fluid.HeatExchangers.DXCoils.BaseClasses.CoolingCapacityWaterCooled cooCap,
-                 redeclare final Buildings.Fluid.HeatExchangers.DXCoils.WaterCooled.Data.Generic.DXCoil datCoi=datCoi,
-                 appDewPt(redeclare final Buildings.Fluid.HeatExchangers.DXCoils.WaterCooled.Data.Generic.DXCoil datCoi=datCoi,
-                         uacp(redeclare final Buildings.Fluid.HeatExchangers.DXCoils.WaterCooled.Data.Generic.BaseClasses.NominalValues per))),
-          dryCoi(redeclare final Buildings.Fluid.HeatExchangers.DXCoils.BaseClasses.CoolingCapacityWaterCooled cooCap,
-                 redeclare final Buildings.Fluid.HeatExchangers.DXCoils.WaterCooled.Data.Generic.DXCoil datCoi=datCoi)),
-    eva(final nomVal=Buildings.Fluid.HeatExchangers.DXCoils.AirCooled.Data.Generic.BaseClasses.NominalValues(
-        Q_flow_nominal=datCoi.sta[nSta].nomVal.Q_flow_nominal,
-        COP_nominal=datCoi.sta[nSta].nomVal.COP_nominal,
-        SHR_nominal=datCoi.sta[nSta].nomVal.SHR_nominal,
-        m_flow_nominal=datCoi.sta[nSta].nomVal.m_flow_nominal,
-        TEvaIn_nominal=datCoi.sta[nSta].nomVal.TEvaIn_nominal,
-        TConIn_nominal=datCoi.sta[nSta].nomVal.TConIn_nominal,
-        phiIn_nominal=datCoi.sta[nSta].nomVal.phiIn_nominal,
-        p_nominal=datCoi.sta[nSta].nomVal.p_nominal,
-        tWet= datCoi.sta[nSta].nomVal.tWet,
-        gamma=datCoi.sta[nSta].nomVal.gamma))) "Direct evaporative coil"
-=======
   replaceable Buildings.Fluid.DXSystems.Cooling.BaseClasses.PartialDXCoolingCoil eva
     constrainedby
     Buildings.Fluid.DXSystems.Cooling.BaseClasses.PartialDXCoolingCoil(
@@ -228,7 +188,6 @@ model PartialWaterCooledDXCoil "Base class for water source DX coils"
           tWet=datCoi.sta[nSta].nomVal.tWet,
           gamma=datCoi.sta[nSta].nomVal.gamma)))
       "Direct evaporative coil"
->>>>>>> master:Buildings/Fluid/DXSystems/Cooling/BaseClasses/PartialWaterCooledDXCoil.mo
     annotation (Placement(transformation(extent={{-10,-10},{10,10}})));
 
   Buildings.Fluid.HeatExchangers.HeaterCooler_u watCooCon(
@@ -341,40 +300,6 @@ equation
           pattern=LinePattern.None,
           fillColor={95,95,95},
           fillPattern=FillPattern.Solid),
-<<<<<<< HEAD:Buildings/Fluid/HeatExchangers/DXCoils/BaseClasses/PartialWaterCooledDXCoil.mo
-        Rectangle(
-          extent={{-99,4},{102,-6}},
-          lineColor={0,0,255},
-          pattern=LinePattern.None,
-          fillColor={0,0,255},
-          fillPattern=FillPattern.Solid),
-        Rectangle(
-          extent={{-102,-6},{-2,4}},
-          lineColor={0,0,255},
-          pattern=LinePattern.None,
-          fillColor={255,0,0},
-          fillPattern=FillPattern.Solid),
-                                Text(
-          extent={{52,42},{96,22}},
-          textColor={0,0,127},
-          textString="QEvaLat"),Text(
-          extent={{54,72},{98,52}},
-          textColor={0,0,127},
-          textString="QEvaSen"),
-        Rectangle(
-          extent={{0,-56},{62,-66}},
-          lineColor={0,0,255},
-          pattern=LinePattern.None,
-          fillColor={0,0,255},
-          fillPattern=FillPattern.Solid),
-        Rectangle(
-          extent={{-64,-66},{0,-56}},
-          lineColor={0,0,255},
-          pattern=LinePattern.None,
-          fillColor={255,0,0},
-          fillPattern=FillPattern.Solid),
-=======
->>>>>>> master:Buildings/Fluid/DXSystems/Cooling/BaseClasses/PartialWaterCooledDXCoil.mo
                                 Text(
           extent={{54,100},{98,80}},
           textColor={0,0,127},
@@ -537,8 +462,6 @@ for an explanation of the model.
 </html>", revisions="<html>
 <ul>
 <li>
-<<<<<<< HEAD:Buildings/Fluid/HeatExchangers/DXCoils/BaseClasses/PartialWaterCooledDXCoil.mo
-=======
 April 5 , 2023, by Xing Lu:<br/>
 Changed instance name <code>dxCoo</code> in instance <code>eva</code> to
 <code>dxCoi</code>. Changed baseclass used from <code>PartialDXCoil</code> to
@@ -546,7 +469,6 @@ Changed instance name <code>dxCoo</code> in instance <code>eva</code> to
 Connect statements with references to <code>TConIn</code> changed to <code>TOut</code>.
 </li>
 <li>
->>>>>>> master:Buildings/Fluid/DXSystems/Cooling/BaseClasses/PartialWaterCooledDXCoil.mo
 March 3, 2022, by Michael Wetter:<br/>
 Moved <code>massDynamics</code> to <code>Advanced</code> tab and
 added assertion for correct combination of energy and mass dynamics.<br/>

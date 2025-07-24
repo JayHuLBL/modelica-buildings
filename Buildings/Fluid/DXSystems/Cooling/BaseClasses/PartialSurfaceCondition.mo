@@ -12,13 +12,8 @@ partial block PartialSurfaceCondition
 
   final parameter Modelica.Units.SI.MassFlowRate m_flow_small=datCoi.m_flow_small
     "Small mass flow rate for the evaporator, used for regularization";
-<<<<<<< HEAD:Buildings/Fluid/HeatExchangers/DXCoils/BaseClasses/PartialSurfaceCondition.mo
-  final parameter Modelica.Units.SI.AngularVelocity maxSpe(displayUnit="1/min")
-     = datCoi.sta[nSta].spe "Maximum rotational speed";
-=======
   final parameter Modelica.Units.SI.AngularVelocity maxSpe(displayUnit="1/min")=
        datCoi.sta[nSta].spe "Maximum rotational speed";
->>>>>>> master:Buildings/Fluid/DXSystems/Cooling/BaseClasses/PartialSurfaceCondition.mo
   Modelica.Blocks.Interfaces.RealInput speRat "Speed index"
     annotation (Placement(transformation(extent={{-120,60},{-100,80}})));
   Modelica.Blocks.Interfaces.RealInput Q_flow(

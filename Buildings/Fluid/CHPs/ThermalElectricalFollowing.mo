@@ -152,19 +152,11 @@ model ThermalElectricalFollowing "CHP model that can be thermal or electrical lo
     final yMin=0) if switchThermalElectricalFollowing
     "Cooling water outlet controller"
     annotation (Placement(transformation(extent={{-60,340},{-40,360}})));
-<<<<<<< HEAD
-  Buildings.Controls.OBC.CDL.Continuous.MultiplyByParameter elePowDem(
-    final k=per.PEleMax) if switchThermalElectricalFollowing
-    "Electric power demand if thermal following"
-    annotation (Placement(transformation(extent={{0,340},{20,360}})));
-  Buildings.Controls.OBC.CDL.Continuous.Switch swi
-=======
   Buildings.Controls.OBC.CDL.Reals.MultiplyByParameter elePowDem(
     final k=per.PEleMax) if switchThermalElectricalFollowing
     "Electric power demand if thermal following"
     annotation (Placement(transformation(extent={{0,340},{20,360}})));
   Buildings.Controls.OBC.CDL.Reals.Switch swi
->>>>>>> master
     "Switch between thermal and electrical following"
     annotation (Placement(transformation(extent={{100,250},{120,270}})));
   Buildings.Controls.OBC.CDL.Logical.Sources.Constant optFol(
@@ -174,11 +166,7 @@ model ThermalElectricalFollowing "CHP model that can be thermal or electrical lo
   Buildings.Controls.OBC.CDL.Reals.Sources.Constant zer1(
     final k=0) if not switchThermalElectricalFollowing "Constant zero"
     annotation (Placement(transformation(extent={{40,270},{60,290}})));
-<<<<<<< HEAD
-  Buildings.Controls.OBC.CDL.Continuous.MultiplyByParameter gai(final k=-1)
-=======
   Buildings.Controls.OBC.CDL.Reals.MultiplyByParameter gai(final k=-1)
->>>>>>> master
     "Heat transfer to the water control volume"
     annotation (Placement(transformation(extent={{120,-110},{140,-90}})));
   inner Modelica.StateGraph.StateGraphRoot stateGraphRoot

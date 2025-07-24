@@ -4,12 +4,8 @@ model SpaceCooling "Space cooling with DX coils"
   replaceable package Medium = Buildings.Media.Air
     "Fluid medium for the model";
 
-<<<<<<< HEAD:Buildings/Fluid/HeatExchangers/DXCoils/AirCooled/Examples/SpaceCooling.mo
-  parameter Modelica.Units.SI.Volume V=6*10*3 "Room volume";
-=======
   parameter Modelica.Units.SI.Volume V=6*10*3
     "Room volume";
->>>>>>> master:Buildings/Fluid/DXSystems/Cooling/AirSource/Examples/SpaceCooling.mo
   //////////////////////////////////////////////////////////
   // Heat recovery effectiveness
   parameter Real eps = 0.8
@@ -19,12 +15,6 @@ model SpaceCooling "Space cooling with DX coils"
   // Air temperatures at design conditions
   parameter Modelica.Units.SI.Temperature TASup_nominal=273.15 + 18
     "Nominal air temperature supplied to room";
-<<<<<<< HEAD:Buildings/Fluid/HeatExchangers/DXCoils/AirCooled/Examples/SpaceCooling.mo
-  parameter Modelica.Units.SI.Temperature TRooSet=273.15 + 24
-    "Nominal room air temperature";
-  parameter Modelica.Units.SI.Temperature TOut_nominal=273.15 + 30
-    "Design outlet air temperature";
-=======
 
   parameter Modelica.Units.SI.Temperature TRooSet=273.15 + 24
     "Nominal room air temperature";
@@ -32,7 +22,6 @@ model SpaceCooling "Space cooling with DX coils"
   parameter Modelica.Units.SI.Temperature TOut_nominal=273.15 + 30
     "Design outlet air temperature";
 
->>>>>>> master:Buildings/Fluid/DXSystems/Cooling/AirSource/Examples/SpaceCooling.mo
   parameter Modelica.Units.SI.Temperature THeaRecLvg=TOut_nominal - eps*(
       TOut_nominal - TRooSet) "Air temperature leaving the heat recovery";
 
@@ -40,18 +29,6 @@ model SpaceCooling "Space cooling with DX coils"
   // Cooling loads and air mass flow rates
   parameter Modelica.Units.SI.HeatFlowRate QRooInt_flow=1000
     "Internal heat gains of the room";
-<<<<<<< HEAD:Buildings/Fluid/HeatExchangers/DXCoils/AirCooled/Examples/SpaceCooling.mo
-  parameter Modelica.Units.SI.HeatFlowRate QRooC_flow_nominal=-QRooInt_flow -
-      10E3/30*(TOut_nominal - TRooSet) "Nominal cooling load of the room";
-  parameter Modelica.Units.SI.MassFlowRate mA_flow_nominal=1.3*
-      QRooC_flow_nominal/1006/(TASup_nominal - TRooSet)
-    "Nominal air mass flow rate, increased by factor 1.3 to allow for recovery after temperature setback";
-  parameter Modelica.Units.SI.TemperatureDifference dTFan=2
-    "Estimated temperature raise across fan that needs to be made up by the cooling coil";
-  parameter Modelica.Units.SI.HeatFlowRate QCoiC_flow_nominal=(
-      QRooC_flow_nominal + mA_flow_nominal*(TASup_nominal - THeaRecLvg - dTFan)
-      *1006)
-=======
 
   parameter Modelica.Units.SI.HeatFlowRate QRooC_flow_nominal=
      -QRooInt_flow - 10E3/30*(TOut_nominal - TRooSet)
@@ -65,7 +42,6 @@ model SpaceCooling "Space cooling with DX coils"
 
   parameter Modelica.Units.SI.HeatFlowRate QCoiC_flow_nominal=
     (QRooC_flow_nominal + mA_flow_nominal*(TASup_nominal - THeaRecLvg - dTFan)*1006)
->>>>>>> master:Buildings/Fluid/DXSystems/Cooling/AirSource/Examples/SpaceCooling.mo
     "Cooling load of coil, taking into account economizer, and increased due to latent heat removal";
 
   parameter
@@ -374,14 +350,10 @@ public
     parameter Integer nPorts=0
       "Number of ports"
       annotation(Evaluate=true, Dialog(connectorSizing=true, tab="General",group="Ports"));
-<<<<<<< HEAD:Buildings/Fluid/HeatExchangers/DXCoils/AirCooled/Examples/SpaceCooling.mo
-    final parameter Modelica.Units.SI.Volume V=6*10*3 "Room volume";
-=======
 
     final parameter Modelica.Units.SI.Volume V=6*10*3
       "Room volume";
 
->>>>>>> master:Buildings/Fluid/DXSystems/Cooling/AirSource/Examples/SpaceCooling.mo
     parameter Modelica.Units.SI.HeatFlowRate QRooInt_flow
       "Internal heat gains of the room";
 

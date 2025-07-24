@@ -8,11 +8,7 @@ model CarnotVerifyCOP
   parameter Real COP_nominal = 3 "Coefficient of performance";
 
   parameter Modelica.Units.SI.Temperature TCon_nominal=273.15 + 30
-<<<<<<< HEAD
-    "Nominal condensor temperature";
-=======
     "Nominal condenser temperature";
->>>>>>> master
   parameter Modelica.Units.SI.Temperature TEva_nominal=273.15 + 5
     "Nominal evaporator temperature";
 

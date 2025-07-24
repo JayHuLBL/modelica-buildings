@@ -66,17 +66,10 @@ model Evaporation
   ////////////////////////////////////////////////////////////////////////////////
   // Protected parameters and variables
 protected
-<<<<<<< HEAD:Buildings/Fluid/HeatExchangers/DXCoils/BaseClasses/Evaporation.mo
-  final parameter Modelica.Units.SI.HeatFlowRate QSen_flow_nominal(max=0, fixed
-      =false) "Nominal sensible heat flow rate (negative number)";
-  final parameter Modelica.Units.SI.HeatFlowRate QLat_flow_nominal(max=0, fixed
-      =false) "Nominal latent heat flow rate (negative number)";
-=======
   final parameter Modelica.Units.SI.HeatFlowRate QSen_flow_nominal(max=0, fixed=
        false) "Nominal sensible heat flow rate (negative number)";
   final parameter Modelica.Units.SI.HeatFlowRate QLat_flow_nominal(max=0, fixed=
        false) "Nominal latent heat flow rate (negative number)";
->>>>>>> master:Buildings/Fluid/DXSystems/Cooling/BaseClasses/Evaporation.mo
   final parameter Modelica.Units.SI.MassFraction XEvaIn_nominal(fixed=false)
     "Mass fraction at nominal inlet conditions";
   final parameter Modelica.Units.SI.MassFraction XEvaOut_nominal(fixed=false)

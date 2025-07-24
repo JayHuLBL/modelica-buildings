@@ -7,15 +7,10 @@ model SingleSpeedPLR
 
   parameter Modelica.Units.SI.Power Q_flow_nominal=datCoi.sta[1].nomVal.Q_flow_nominal
     "Nominal power";
-<<<<<<< HEAD:Buildings/Fluid/HeatExchangers/DXCoils/AirCooled/Validation/SingleSpeedPLREnergyPlus.mo
-  parameter Modelica.Units.SI.MassFlowRate m_flow_nominal=datCoi.sta[1].nomVal.m_flow_nominal
-    "Nominal mass flow rate";
-=======
 
   parameter Modelica.Units.SI.MassFlowRate m_flow_nominal=datCoi.sta[1].nomVal.m_flow_nominal
     "Nominal mass flow rate";
 
->>>>>>> master:Buildings/Fluid/DXSystems/Cooling/AirSource/Validation/SingleSpeedPLR.mo
   parameter Modelica.Units.SI.PressureDifference dp_nominal=1141
     "Pressure drop at m_flow_nominal";
 

@@ -51,11 +51,7 @@ equation
       color={0,0,127},
       smooth=Smooth.None));
   annotation (experiment(Tolerance=1e-6, StopTime=3600),
-<<<<<<< HEAD:Buildings/Fluid/HeatExchangers/DXCoils/BaseClasses/Examples/CoolingCapacityAirCooled.mo
-__Dymola_Commands(file="modelica://Buildings/Resources/Scripts/Dymola/Fluid/HeatExchangers/DXCoils/BaseClasses/Examples/CoolingCapacityAirCooled.mos"
-=======
 __Dymola_Commands(file="modelica://Buildings/Resources/Scripts/Dymola/Fluid/DXSystems/BaseClasses/Examples/CapacityAirSource.mos"
->>>>>>> master:Buildings/Fluid/DXSystems/BaseClasses/Examples/CapacityAirSource.mo
         "Simulate and plot"),
           Documentation(info="<html>
 <p>

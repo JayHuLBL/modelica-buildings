@@ -50,11 +50,7 @@ model PressureIndependent
     k=10,
     Ti=0.001,
     controllerType=Modelica.Blocks.Types.SimpleController.PID,
-<<<<<<< HEAD
-    initType=Modelica.Blocks.Types.Init.InitialState)
-=======
     initType=Modelica.Blocks.Types.Init.InitialOutput)
->>>>>>> master
     "Discharge flow rate controller"
     annotation (Placement(transformation(extent={{-70,-70},{-50,-50}})));
   Sensors.MassFlowRate senMasFlo(
