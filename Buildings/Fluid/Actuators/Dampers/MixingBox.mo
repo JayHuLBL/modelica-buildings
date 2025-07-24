@@ -297,15 +297,12 @@ defaultComponentName="eco",
 Documentation(revisions="<html>
 <ul>
 <li>
-<<<<<<< HEAD
-=======
 February 7, 2025, by Jelger Jansen:<br/>
 Removed <code>import</code> statement.
 This is for
 <a href=\"https://github.com/ibpsa/modelica-ibpsa/issues/1961\">IBPSA, #1961</a>.
 </li>
 <li>
->>>>>>> master
 September 21, 2021, by Michael Wetter:<br/>
 Corrected typo in comments.<br/>
 This is for

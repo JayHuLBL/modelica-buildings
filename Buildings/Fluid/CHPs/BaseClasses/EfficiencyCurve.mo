@@ -100,13 +100,5 @@ revisions="<html>
           points={{-80,90},{-88,68},{-72,68},{-80,90}},
           lineColor={192,192,192},
           fillColor={192,192,192},
-<<<<<<< HEAD
-          fillPattern=FillPattern.Solid)}),
-    Icon(graphics={Text(
-          extent={{-90,38},{90,-34}},
-          textColor={160,160,164},
-          textString="polynomial()")}));
-=======
           fillPattern=FillPattern.Solid)}));
->>>>>>> master
 end EfficiencyCurve;
