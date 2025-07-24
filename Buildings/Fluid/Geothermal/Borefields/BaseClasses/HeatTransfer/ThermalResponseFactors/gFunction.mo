@@ -35,31 +35,19 @@ protected
   Modelica.Units.SI.Time tSho[nTimSho]
     "Time vector for short time calculations";
   Modelica.Units.SI.Time tLon[nTimLon] "Time vector for long time calculations";
-<<<<<<< HEAD
-  Modelica.Units.SI.Distance dis "Separation distance between boreholes";
-  Modelica.Units.SI.Distance dis_mn "Separation distance for comparison";
-=======
   Integer n_max = max(cluSiz.*cluSiz);
   Modelica.Units.SI.Distance dis[nClu,nClu,n_max] "Separation distance between boreholes";
   Modelica.Units.SI.Distance dis_ij "Separation distance between boreholes";
   Integer wDis[nClu,nClu,n_max] "Number of occurence of separation distances";
   Integer n_dis[nClu,nClu];
->>>>>>> master
   Modelica.Units.SI.Radius rLin=0.0005*hBor
     "Radius for evaluation of same-borehole line source solutions";
   Real hSegRea[nSeg] "Real part of the FLS solution";
   Real hSegMir[2*nSeg-1] "Mirror part of the FLS solution";
   Modelica.Units.SI.Height dSeg "Buried depth of borehole segment";
-<<<<<<< HEAD
-  Integer Done[nBor, nBor] "Matrix for tracking of FLS evaluations";
-  Real A[nSeg*nBor+1, nSeg*nBor+1] "Coefficient matrix for system of equations";
-  Real B[nSeg*nBor+1] "Coefficient vector for system of equations";
-  Real X[nSeg*nBor+1] "Solution vector for system of equations";
-=======
   Real A[nSeg*nClu+1, nSeg*nClu+1] "Coefficient matrix for system of equations";
   Real B[nSeg*nClu+1] "Coefficient vector for system of equations";
   Real X[nSeg*nClu+1] "Solution vector for system of equations";
->>>>>>> master
   Real FLS "Finite line source solution";
   Real ILS "Infinite line source solution";
   Real CHS "Cylindrical heat source solution";

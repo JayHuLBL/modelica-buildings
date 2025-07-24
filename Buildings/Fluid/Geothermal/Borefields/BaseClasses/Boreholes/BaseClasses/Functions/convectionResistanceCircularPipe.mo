@@ -22,11 +22,7 @@ function convectionResistanceCircularPipe
     "Convection resistance (or conduction in fluid if no mass flow)";
 
 protected
-<<<<<<< HEAD
-  parameter Modelica.Units.SI.Radius rTub_in=rTub - eTub "Pipe inner radius";
-=======
   Modelica.Units.SI.Radius rTub_in=rTub - eTub "Pipe inner radius";
->>>>>>> master
   Modelica.Units.SI.CoefficientOfHeatTransfer h
     "Convective heat transfer coefficient of the fluid";
 

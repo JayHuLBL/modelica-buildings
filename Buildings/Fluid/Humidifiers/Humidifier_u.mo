@@ -136,8 +136,6 @@ is adiabatic. To change the enthalpy of the air, add heat flow to the connector
 revisions="<html>
 <ul>
 <li>
-<<<<<<< HEAD
-=======
 February 9, 2023, by Michael Wetter:<br/>
 Removed access to parameter <code>use_T_in</code> which does not exist
 in this model.<br/>
@@ -145,7 +143,6 @@ This is for
 <a href=\"https://github.com/ibpsa/modelica-ibpsa/issues/1697\">#1697</a>.
 </li>
 <li>
->>>>>>> master
 March 7, 2022, by Michael Wetter:<br/>
 Removed <code>massDynamics</code>.<br/>
 This is for

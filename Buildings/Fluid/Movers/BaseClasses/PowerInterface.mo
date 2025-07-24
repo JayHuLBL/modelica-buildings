@@ -39,12 +39,6 @@ model PowerInterface
     final unit="W") "Heat input from fan or pump to medium"
     annotation (Placement(transformation(extent={{100,-10},{120,10}})));
 
-<<<<<<< HEAD
-  Modelica.Units.SI.Power WHyd
-    "Hydraulic power input (converted to flow work and heat)";
-
-=======
->>>>>>> master
 protected
   Modelica.Units.SI.HeatFlowRate QThe_flow
     "Heat input from fan or pump to medium";

@@ -24,14 +24,9 @@ model FlatPlateWithTank
     sysConfig=Buildings.Fluid.SolarCollectors.Types.SystemConfiguration.Series,
     per=Buildings.Fluid.SolarCollectors.Data.GlazedFlatPlate.FP_SolahartKf(),
     nSeg=9,
-<<<<<<< HEAD
-    azi=0.3,
-    til=0.78539816339745) "Flat plate solar collector model"
-=======
     final azi=azi,
     final til=til,
     final rho=rho) "Flat plate solar collector model"
->>>>>>> master
     annotation (Placement(transformation(extent={{-2,46},{18,66}})));
 
   Buildings.BoundaryConditions.WeatherData.ReaderTMY3 weaDat(filNam=
@@ -247,8 +242,6 @@ provides a boundary condition for the outlet of the draw.
 revisions="<html>
 <ul>
 <li>
-<<<<<<< HEAD
-=======
 February 15, 2024, by Jelger Jansen:<br/>
 Refactor model.<br/>
 This is for
@@ -261,7 +254,6 @@ This is for
 <a href=\"https://github.com/lbl-srg/modelica-buildings/issues/3074\">issue 3074</a>.
 </li>
 <li>
->>>>>>> master
 September 16, 2021, by Michael Wetter:<br/>
 Removed parameter assignment for <code>lat</code>.<br/>
 This is for

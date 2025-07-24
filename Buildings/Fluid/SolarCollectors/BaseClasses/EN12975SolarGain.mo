@@ -51,15 +51,9 @@ protected
   constant Modelica.Units.SI.TemperatureDifference dTMax=1
     "Safety temperature difference to prevent TFlu > Medium.T_max";
   final parameter Modelica.Units.SI.Temperature TMedMax=Medium.T_max - dTMax
-<<<<<<< HEAD
-    "Fluid temperature above which there will be no heat gain computed to prevent TFlu > Medium.T_max";
-  final parameter Modelica.Units.SI.Temperature TMedMax2=TMedMax - dTMax
-    "Fluid temperature below which there will be no heat loss computed to prevent TFlu < Medium.T_min";
-=======
     "Fluid temperature above which there will be no heat gain computed to prevent TFlu > Medium.T_max";
   final parameter Modelica.Units.SI.Temperature TMedMax2=TMedMax - dTMax
     "Fluid temperature above which there will be no heat gain computed to prevent TFlu > Medium.T_max";
->>>>>>> master
   Real iamBea "Incidence angle modifier for director solar radiation";
   Modelica.Blocks.Interfaces.RealInput shaCoe_internal "Internally used shaCoe";
 

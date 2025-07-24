@@ -3,14 +3,6 @@ function IAM "Function for incident angle modifier"
   extends Modelica.Icons.Function;
 
   input Modelica.Units.SI.Angle incAng "Incident angle";
-<<<<<<< HEAD
-  input Real B0 "1st incident angle modifer coefficient";
-  input Real B1 "2nd incident angle modifer coefficient";
-  output Real incAngMod "Incident angle modifier coefficient";
-protected
-  constant Modelica.Units.SI.Angle incAngMin=Modelica.Constants.pi/2 - 0.1
-    "Minimum incidence angle to avoid division by zero";
-=======
   input Modelica.Units.SI.Angle[:] incAngDat "Incident angle data";
   input Real[size(incAngDat,1)] incAngModDat(
     each final min=0,
@@ -20,7 +12,6 @@ protected
   output Real incAngMod "Incident angle modifier coefficient";
 protected
   Integer i "Counter to pick the interpolation interval";
->>>>>>> master
   constant Real delta = 0.0001 "Width of the smoothing function";
 
 algorithm

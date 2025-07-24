@@ -53,18 +53,6 @@ model MoverParameter
     dp_nominal=dp_nominal)
     "Pressure drop component for avoiding singular system"
     annotation (Placement(transformation(extent={{26,-90},{46,-70}})));
-<<<<<<< HEAD
-  SpeedControlled_Nrpm pump_Nrpm(
-    redeclare package Medium = Medium,
-    use_inputFilter=false,
-    redeclare Buildings.Fluid.Movers.Data.Pumps.Wilo.Stratos25slash1to4 per(
-        speeds_rpm={0,1000,2000}, constantSpeed_rpm=2000),
-    inputType=Buildings.Fluid.Types.InputType.Constant,
-    energyDynamics=Modelica.Fluid.Types.Dynamics.SteadyState)
-    "Pump with speed input"
-    annotation (Placement(transformation(extent={{-10,30},{10,50}})));
-=======
->>>>>>> master
   parameter Modelica.Units.SI.PressureDifference dp_nominal=10000
     "Nominal pressure raise";
 equation

@@ -85,8 +85,6 @@ User's Guide</a> for more information.
       revisions="<html>
 <ul>
 <li>
-<<<<<<< HEAD
-=======
 August 26, 2024, by Michael Wetter:<br/>
 Implemented linear dynamics for change in motor speed.<br/>
 This is for <a href=\"https://github.com/lbl-srg/modelica-buildings/issues/3965\">Buildings, #3965</a> and
@@ -112,7 +110,6 @@ with the enumeration
 Buildings.Fluid.Movers.BaseClasses.Types.HydraulicEfficiencyMethod</a>.
 This is for
 <a href=\"https://github.com/lbl-srg/modelica-buildings/issues/2668\">#2668</a>.
->>>>>>> master
 March 7, 2022, by Michael Wetter:<br/>
 Set <code>final massDynamics=energyDynamics</code>.<br/>
 This is for

@@ -10,10 +10,6 @@ model Humidifier_u
     m_flow_nominal=0.5,
     mWat_flow_nominal=mWat_flow_nominal,
     dp_nominal=50,
-<<<<<<< HEAD
-    show_T=true,
-=======
->>>>>>> master
     energyDynamics=Modelica.Fluid.Types.Dynamics.FixedInitial)
     "Heater and cooler"                           annotation (Placement(
         transformation(extent={{-54,92},{-34,112}})));
@@ -66,10 +62,6 @@ model Humidifier_u
     m_flow_nominal=0.5,
     mWat_flow_nominal=mWat_flow_nominal,
     dp_nominal=50,
-<<<<<<< HEAD
-    show_T=true,
-=======
->>>>>>> master
     energyDynamics=Modelica.Fluid.Types.Dynamics.FixedInitial)
     "Heater and cooler"                           annotation (Placement(
         transformation(extent={{-54,12},{-34,32}})));
@@ -134,10 +126,6 @@ model Humidifier_u
     m_flow_nominal=0.5,
     mWat_flow_nominal=mWat_flow_nominal,
     dp_nominal=50,
-<<<<<<< HEAD
-    show_T=true,
-=======
->>>>>>> master
     energyDynamics=Modelica.Fluid.Types.Dynamics.FixedInitial)
     "Heater and cooler"                           annotation (Placement(
         transformation(extent={{-54,-110},{-34,-90}})));
@@ -164,10 +152,6 @@ model Humidifier_u
     m_flow_nominal=0.5,
     mWat_flow_nominal=mWat_flow_nominal,
     dp_nominal=50,
-<<<<<<< HEAD
-    show_T=true,
-=======
->>>>>>> master
     energyDynamics=Modelica.Fluid.Types.Dynamics.FixedInitial)
     "Heater and cooler"                           annotation (Placement(
         transformation(extent={{-54,-190},{-34,-170}})));

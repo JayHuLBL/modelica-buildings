@@ -19,11 +19,7 @@ work with a medium model from the Modelica Standard Library
 for flue gas with six components.
 </p>
 <p>
-<<<<<<< HEAD
-This medim differs from media in the Buildings library in that it sets <code>reducedX=false</code>.
-=======
 This medium differs from media in the Buildings library in that it sets <code>reducedX=false</code>.
->>>>>>> master
 </p>
 </html>",
 revisions = "<html>

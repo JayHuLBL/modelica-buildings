@@ -45,21 +45,6 @@ partial model PartialFlowMachine
     "Time constant of fluid volume for nominal flow, used if energy or mass balance is dynamic"
     annotation (Dialog(
       tab="Dynamics",
-<<<<<<< HEAD
-      group="Nominal condition",
-      enable=energyDynamics <> Modelica.Fluid.Types.Dynamics.SteadyState));
-
-  // Classes used to implement the filtered speed
-  parameter Boolean use_inputFilter=true
-    "= true, if speed is filtered with a 2nd order CriticalDamping filter"
-    annotation(Dialog(tab="Dynamics", group="Filtered speed"));
-  parameter Modelica.Units.SI.Time riseTime=30
-    "Rise time of the filter (time to reach 99.6 % of the speed)" annotation (
-      Dialog(
-      tab="Dynamics",
-      group="Filtered speed",
-      enable=use_inputFilter));
-=======
       group="Conservation equations",
       enable=energyDynamics <> Modelica.Fluid.Types.Dynamics.SteadyState));
 
@@ -74,7 +59,6 @@ partial model PartialFlowMachine
       tab="Dynamics",
       group="Motor speed",
       enable=use_riseTime));
->>>>>>> master
   parameter Modelica.Blocks.Types.Init init=Modelica.Blocks.Types.Init.InitialOutput
     "Type of initialization (no init/steady state/initial state/initial output)"
     annotation(Dialog(tab="Dynamics", group="Motor speed", enable=use_riseTime));
@@ -162,8 +146,6 @@ partial model PartialFlowMachine
   // - Copy continues in protected section
 
 protected
-<<<<<<< HEAD
-=======
   parameter Modelica.Units.SI.MassFlowRate _m_flow_nominal=
     max(eff.per.pressure.V_flow)*rho_default
     "Nominal mass flow rate";
@@ -176,7 +158,6 @@ protected
     "Start value for dp, used to avoid a warning if not set in dp, and to avoid dp.start in parameter window";
   // - End of copy
 
->>>>>>> master
   final parameter Modelica.Units.SI.VolumeFlowRate _VMachine_flow=0
     "Start value for VMachine_flow, used to avoid a warning if not specified";
 
@@ -200,18 +181,9 @@ protected
   final parameter Boolean haveVMax = eff.haveVMax
     "Flag, true if user specified data that contain V_flow_max";
 
-<<<<<<< HEAD
-  final parameter Modelica.Units.SI.VolumeFlowRate V_flow_max=if per.havePressureCurve
-       then (if haveVMax then per.pressure.V_flow[nOri] else per.pressure.V_flow[
-      nOri] - (per.pressure.V_flow[nOri] - per.pressure.V_flow[nOri - 1])/((per.pressure.dp[
-      nOri] - per.pressure.dp[nOri - 1]))*per.pressure.dp[nOri]) else
-      m_flow_nominal/rho_default "Maximum volume flow rate, used for smoothing";
-  final parameter Modelica.Units.SI.Density rho_default=Medium.density_pTX(
-=======
   final parameter Modelica.Units.SI.VolumeFlowRate V_flow_max=eff.V_flow_max;
   final parameter Modelica.Units.SI.Density rho_default=
     Medium.density_pTX(
->>>>>>> master
       p=Medium.p_default,
       T=Medium.T_default,
       X=Medium.X_default) "Default medium density";
@@ -223,12 +195,6 @@ protected
 
   final parameter Modelica.Units.SI.SpecificEnthalpy h_outflow_start=
       Medium.specificEnthalpy(sta_start) "Start value for outflowing enthalpy";
-<<<<<<< HEAD
-
-  final parameter Modelica.Units.SI.Frequency fCut=5/(2*Modelica.Constants.pi*
-      riseTime) "Cut-off frequency of filter";
-=======
->>>>>>> master
 
   Modelica.Blocks.Sources.Constant[size(stageInputs, 1)] stageValues(
     final k=stageInputs)

@@ -37,14 +37,6 @@ model FlowControlled_dp
   parameter Modelica.Units.SI.PressureDifference dp_start(
     min=0,
     displayUnit="Pa") = 0 "Initial value of pressure raise"
-<<<<<<< HEAD
-    annotation (Dialog(tab="Dynamics", group="Filtered speed"));
-
-  // For air, we set dp_nominal = 600 as default, for water we set 10000
-  parameter Modelica.Units.SI.PressureDifference dp_nominal(
-    min=0,
-    displayUnit="Pa") = if rho_default < 500 then 500 else 10000 "Nominal pressure raise, used to normalized the filter if use_inputFilter=true,
-=======
     annotation (Dialog(tab="Dynamics", group="Motor speed", enable=use_riseTime));
 
   parameter Modelica.Units.SI.MassFlowRate m_flow_nominal(
@@ -55,7 +47,6 @@ model FlowControlled_dp
   parameter Modelica.Units.SI.PressureDifference dp_nominal(
     final min=Modelica.Constants.small,
     displayUnit="Pa") = if rho_default < 500 then 500 else 10000 "Nominal pressure raise, used to normalized the filter if use_riseTime=true,
->>>>>>> master
         to set default values of constantHead and heads, and
         and for default pressure curve if not specified in record per"
     annotation (Dialog(group="Nominal condition"));
@@ -182,8 +173,6 @@ Buildings.Fluid.Movers.Validation.FlowControlled_dpSystem</a>.
       revisions="<html>
 <ul>
 <li>
-<<<<<<< HEAD
-=======
 August 26, 2024, by Michael Wetter:<br/>
 Implemented linear dynamics for change in motor speed.<br/>
 This is for <a href=\"https://github.com/lbl-srg/modelica-buildings/issues/3965\">Buildings, #3965</a> and
@@ -208,7 +197,6 @@ This is for
 <a href=\"https://github.com/lbl-srg/modelica-buildings/issues/2668\">#2668</a>.
 </li>
 <li>
->>>>>>> master
 March 7, 2022, by Michael Wetter:<br/>
 Set <code>final massDynamics=energyDynamics</code>.<br/>
 This is for

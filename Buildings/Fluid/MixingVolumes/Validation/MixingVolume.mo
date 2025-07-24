@@ -63,11 +63,7 @@ model MixingVolume "Test model for mixing volumes"
     use_portsData=false,
     energyDynamics=Modelica.Fluid.Types.Dynamics.FixedInitial)
          annotation (Placement(transformation(extent={{0,60},{20,80}})));
-<<<<<<< HEAD
-  Buildings.Utilities.Diagnostics.CheckEquality cheEqu1
-=======
   Buildings.Utilities.Diagnostics.CheckEquality cheEqu1(threShold = 10)
->>>>>>> master
     "Check for equality of results"
     annotation (Placement(transformation(extent={{156,70},{176,90}})));
   Buildings.Fluid.Sensors.EnthalpyFlowRate entFloRat(

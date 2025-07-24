@@ -17,11 +17,6 @@ partial model PartialSolarCollector "Partial model for solar collectors"
     "Surface azimuth (0 for south-facing; -90 degree for east-facing; +90 degree for west facing";
   parameter Modelica.Units.SI.Angle til(displayUnit="deg")
     "Surface tilt (0 for horizontally mounted collector)";
-<<<<<<< HEAD
-  parameter Real rho "Ground reflectance";
-  parameter Modelica.Units.SI.HeatCapacity C=385*perPar.mDry
-    "Heat capacity of solar collector without fluid (default: cp_copper*mDry*nPanels)";
-=======
   parameter Real rho(
     final min=0,
     final max=1,
@@ -35,7 +30,6 @@ partial model PartialSolarCollector "Partial model for solar collectors"
     else
       385*per.mDry+rho_default*per.V*cp_default
     "Heat capacity of solar collector with fluid";
->>>>>>> master
 
   parameter Boolean use_shaCoe_in = false
     "Enables an input connector for shaCoe"
@@ -144,14 +138,6 @@ protected
   Modelica.Blocks.Interfaces.RealInput shaCoe_internal
     "Internally used shading coefficient";
 
-<<<<<<< HEAD
-  final parameter Modelica.Units.SI.PressureDifference dp_nominal_final(
-      displayUnit="Pa") = if sysConfig == Buildings.Fluid.SolarCollectors.Types.SystemConfiguration.Series
-     then nPanels_internal*perPar.dp_nominal else perPar.dp_nominal
-    "Nominal pressure loss across the system of collectors";
-
-  parameter Modelica.Units.SI.Area TotalArea_internal=nPanels_internal*perPar.A
-=======
   final parameter Modelica.Units.SI.MassFlowRate m_flow_nominal_final(
       displayUnit="kg/s") = nPanelsPar_internal*per.mperA_flow_nominal*per.A
     "Nominal mass flow rate through the system of collectors";
@@ -161,7 +147,6 @@ protected
     "Nominal pressure loss across the system of collectors";
 
   parameter Modelica.Units.SI.Area ATot_internal=nPanels_internal*per.A
->>>>>>> master
     "Area used in the simulation";
 
   parameter Real nPanels_internal=
@@ -269,8 +254,6 @@ EnergyPlus 23.2.0 Engineering Reference</a>
 </html>", revisions="<html>
 <ul>
 <li>
-<<<<<<< HEAD
-=======
 February 4, 2025, by Jelger Jansen:<br/>
 Use <code>nPanels_internal</code> when calculating <code>nPanelsPar_internal</code> and <code>nPanelsSer_internal</code>.
 Only request <code>nPanelsPar</code> as an input for an array of collectors and 
@@ -294,7 +277,6 @@ This is for
 <a href=\"https://github.com/lbl-srg/modelica-buildings/issues/3597\">Buildings, #3597</a>.
 </li>
 <li>
->>>>>>> master
 September 16, 2021, by Michael Wetter:<br/>
 Changed <code>lat</code> from being a parameter to an input from weather bus.<br/>
 This is for

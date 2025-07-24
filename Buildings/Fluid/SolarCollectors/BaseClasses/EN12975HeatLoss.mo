@@ -3,13 +3,8 @@ block EN12975HeatLoss "Calculate the heat loss of a solar collector per EN12975"
   extends Buildings.Fluid.SolarCollectors.BaseClasses.PartialHeatLoss(
     QLos_internal = A_c/nSeg * {dT[i] * (a1 - a2 * dT[i]) for i in 1:nSeg});
 
-<<<<<<< HEAD
-  parameter Modelica.Units.SI.CoefficientOfHeatTransfer C1(final min=0)
-    "C1 from ratings data";
-=======
   parameter Modelica.Units.SI.CoefficientOfHeatTransfer a1(final min=0)
     "a1 from ratings data";
->>>>>>> master
 
   parameter Real a2(final unit = "W/(m2.K2)", final min=0)
     "a2 from ratings data";

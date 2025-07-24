@@ -8,16 +8,10 @@ model InternalResistancesTwoUTube
     "Thermal resistance between two neightbouring grout capacities, as defined by Bauer et al (2010)";
   parameter Modelica.Units.SI.ThermalResistance Rgg2_val
     "Thermal resistance between two  grout capacities opposite to each other, as defined by Bauer et al (2010)";
-<<<<<<< HEAD
-  parameter Modelica.Units.SI.HeatCapacity Co_fil=borFieDat.filDat.dFil*
-      borFieDat.filDat.cFil*hSeg*Modelica.Constants.pi*(borFieDat.conDat.rBor^2
-       - 4*borFieDat.conDat.rTub^2)
-=======
   parameter Modelica.Units.SI.HeatCapacity Co_fil=
      if borFieDat.filDat.steadyState then 0
      else borFieDat.filDat.dFil*borFieDat.filDat.cFil*hSeg*Modelica.Constants.pi*
           (borFieDat.conDat.rBor^2 - 4*borFieDat.conDat.rTub^2)
->>>>>>> master
     "Heat capacity of the whole filling material";
 
   Modelica.Thermal.HeatTransfer.Interfaces.HeatPort_a port_3
@@ -99,11 +93,7 @@ model InternalResistancesTwoUTube
   Modelica.Thermal.HeatTransfer.Components.HeatCapacitor capFil1(T(start=
           T_start, fixed=(energyDynamics == Modelica.Fluid.Types.Dynamics.FixedInitial)),
       der_T(fixed=(energyDynamics == Modelica.Fluid.Types.Dynamics.SteadyStateInitial)),
-<<<<<<< HEAD
-    C=Co_fil/4)  if dynFil "Heat capacity of the filling material"
-=======
     C=Co_fil/4)  if not borFieDat.filDat.steadyState "Heat capacity of the filling material"
->>>>>>> master
                                             annotation (Placement(transformation(extent={{-8,-8},
             {8,8}},
         rotation=90,
@@ -111,21 +101,13 @@ model InternalResistancesTwoUTube
   Modelica.Thermal.HeatTransfer.Components.HeatCapacitor capFil2(T(start=
           T_start, fixed=(energyDynamics == Modelica.Fluid.Types.Dynamics.FixedInitial)),
       der_T(fixed=(energyDynamics == Modelica.Fluid.Types.Dynamics.SteadyStateInitial)),
-<<<<<<< HEAD
-    C=Co_fil/4)  if dynFil "Heat capacity of the filling material"
-=======
     C=Co_fil/4)  if not borFieDat.filDat.steadyState "Heat capacity of the filling material"
->>>>>>> master
                                             annotation (Placement(transformation(extent={{58,8},{
             74,24}})));
   Modelica.Thermal.HeatTransfer.Components.HeatCapacitor capFil3(T(start=
           T_start, fixed=(energyDynamics == Modelica.Fluid.Types.Dynamics.FixedInitial)),
       der_T(fixed=(energyDynamics == Modelica.Fluid.Types.Dynamics.SteadyStateInitial)),
-<<<<<<< HEAD
-    C=Co_fil/4)  if dynFil "Heat capacity of the filling material"
-=======
     C=Co_fil/4)  if not borFieDat.filDat.steadyState "Heat capacity of the filling material"
->>>>>>> master
                                             annotation (Placement(transformation(extent={{-8,-8},
             {8,8}},
         rotation=90,
@@ -133,11 +115,7 @@ model InternalResistancesTwoUTube
   Modelica.Thermal.HeatTransfer.Components.HeatCapacitor capFil4(T(start=
           T_start, fixed=(energyDynamics == Modelica.Fluid.Types.Dynamics.FixedInitial)),
       der_T(fixed=(energyDynamics == Modelica.Fluid.Types.Dynamics.SteadyStateInitial)),
-<<<<<<< HEAD
-    C=Co_fil/4)  if dynFil "Heat capacity of the filling material"
-=======
     C=Co_fil/4)  if not borFieDat.filDat.steadyState "Heat capacity of the filling material"
->>>>>>> master
                                             annotation (Placement(transformation(extent={{-82,20},
             {-66,36}})));
 equation

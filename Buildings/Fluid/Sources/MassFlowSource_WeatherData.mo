@@ -8,11 +8,7 @@ model MassFlowSource_WeatherData
     annotation(Evaluate=true);
   parameter Boolean use_C_in = false
     "Get the trace substances from the input connector"
-<<<<<<< HEAD
-    annotation(Evaluate=true, HideResult=true);
-=======
     annotation(Evaluate=true);
->>>>>>> master
   parameter Modelica.Units.SI.MassFlowRate m_flow=0
     "Fixed mass flow rate going out of the fluid port"
     annotation (Dialog(enable=not use_m_flow_in));

@@ -14,12 +14,6 @@ partial model PartialInternalResistances
   parameter Modelica.Fluid.Types.Dynamics energyDynamics=Modelica.Fluid.Types.Dynamics.DynamicFreeInitial
     "Type of energy balance: dynamic (3 initialization options) or steady state"
     annotation(Evaluate=true, Dialog(tab = "Dynamics", group="Conservation equations"));
-<<<<<<< HEAD
-  parameter Boolean dynFil=true
-      "Set to false to remove the dynamics of the filling material."
-      annotation (Dialog(tab="Dynamics"));
-=======
->>>>>>> master
 
   Modelica.Thermal.HeatTransfer.Interfaces.HeatPort_a port_1
     "Thermal connection for pipe 1"

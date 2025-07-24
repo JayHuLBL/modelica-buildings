@@ -23,11 +23,7 @@ model NormalizedHeatFlowRate "Example to calculate qStar"
     height=-0.5)
                "lmtd start"
     annotation (Placement(transformation(extent={{-40,-60},{-20,-40}})));
-<<<<<<< HEAD
-  Controls.OBC.CDL.Continuous.GreaterThreshold greThr(t=0.75)
-=======
   Controls.OBC.CDL.Reals.GreaterThreshold greThr(t=0.75)
->>>>>>> master
     "Switch the change between charging and discharging mode"
     annotation (Placement(transformation(extent={{-10,30},{10,50}})));
   Controls.OBC.CDL.Logical.Not not1
@@ -65,11 +61,7 @@ equation
 info="<html>
 <p>
 This example is to validate the
-<<<<<<< HEAD
-<a href=\"Buildings.Fluid.Storage.Ice.BaseClasses.NormalizedHeatFlowRate\">
-=======
 <a href=\"modelica://Buildings.Fluid.Storage.Ice.BaseClasses.NormalizedHeatFlowRate\">
->>>>>>> master
 Buildings.Fluid.Storage.Ice.BaseClasses.NormalizedHeatFlowRate</a>.
 </p>
 </html>"));

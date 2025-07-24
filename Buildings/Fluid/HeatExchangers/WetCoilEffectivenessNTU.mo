@@ -650,8 +650,6 @@ Fuzzy identification of systems and its applications to modeling and control.
 </html>",                    revisions="<html>
 <ul>
 <li>
-<<<<<<< HEAD
-=======
 February 7, 2025, by Jelger Jansen:<br/>
 Removed <code>import</code> statement.
 This is for
@@ -672,7 +670,6 @@ This is for
 <a href=\"https://github.com/ibpsa/modelica-ibpsa/issues/1682\">issue 1682</a>.
 </li>
 <li>
->>>>>>> master
 March 3, 2022, by Michael Wetter:<br/>
 Removed <code>massDynamics</code>.<br/>
 This is for

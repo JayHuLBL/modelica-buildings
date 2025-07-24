@@ -104,15 +104,12 @@ mass transfer and pressure drop equations.
 </html>", revisions="<html>
 <ul>
 <li>
-<<<<<<< HEAD
-=======
 September 22, 2023, by Michael Wetter:<br/>
 Improved documentation.<br/>
 This is for
 <a href=\"https://github.com/ibpsa/modelica-ibpsa/issues/1796\">IBPSA, #1796</a>.
 </li>
 <li>
->>>>>>> master
 February 3, 2022, by Michael Wetter:<br/>
 If <code>allowFlowReversal==false</code>, removed <code>noEvent()</code> declaration
 for <code>sta_a</code> and for <code>sta_b</code> because the variable is either

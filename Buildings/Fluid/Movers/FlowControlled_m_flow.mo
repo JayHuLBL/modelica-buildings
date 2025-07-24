@@ -40,22 +40,14 @@ model FlowControlled_m_flow
 
   // For air, we set dp_nominal = 600 as default, for water we set 10000
   parameter Modelica.Units.SI.PressureDifference dp_nominal(
-<<<<<<< HEAD
-    min=0,
-=======
     final min=Modelica.Constants.small,
->>>>>>> master
     displayUnit="Pa") = if rho_default < 500 then 500 else 10000
     "Nominal pressure raise, used for default pressure curve if not specified in record per"
     annotation (Dialog(group="Nominal condition"));
 
   parameter Modelica.Units.SI.MassFlowRate m_flow_start(min=0) = 0
     "Initial value of mass flow rate"
-<<<<<<< HEAD
-    annotation (Dialog(tab="Dynamics", group="Filtered speed"));
-=======
     annotation (Dialog(tab="Dynamics", group="Motor speed", enable=use_riseTime));
->>>>>>> master
 
   parameter Modelica.Units.SI.MassFlowRate constantMassFlowRate=m_flow_nominal
     "Constant pump mass flow rate, used when inputType=Constant" annotation (
@@ -66,15 +58,12 @@ model FlowControlled_m_flow
       i]/per.speeds[end] for i in 1:size(per.speeds, 1)}
     "Vector of mass flow rate set points, used when inputType=Stage"
     annotation (Dialog(enable=inputType == Buildings.Fluid.Types.InputType.Stages));
-<<<<<<< HEAD
-=======
 
   parameter Modelica.Units.SI.Pressure dpMax(
     min=0,
     displayUnit="Pa") = 2*max(eff.per.pressure.dp)
    "Maximum pressure allowed to operate the model, if exceeded, the simulation stops with an error"
    annotation(Dialog(tab="Advanced"));
->>>>>>> master
 
   Modelica.Blocks.Interfaces.RealInput m_flow_in(
     final unit="kg/s",
@@ -151,8 +140,6 @@ User's Guide</a> for more information.
       revisions="<html>
 <ul>
 <li>
-<<<<<<< HEAD
-=======
 August 26, 2024, by Michael Wetter:<br/>
 Implemented linear dynamics for change in motor speed.<br/>
 This is for <a href=\"https://github.com/lbl-srg/modelica-buildings/issues/3965\">Buildings, #3965</a> and
@@ -183,7 +170,6 @@ This is for
 <a href=\"https://github.com/ibpsa/modelica-ibpsa/issues/1659\">#1659</a>.
 </li>
 <li>
->>>>>>> master
 March 7, 2022, by Michael Wetter:<br/>
 Set <code>final massDynamics=energyDynamics</code>.<br/>
 This is for

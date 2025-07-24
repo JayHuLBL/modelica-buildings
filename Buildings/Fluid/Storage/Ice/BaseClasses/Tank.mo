@@ -47,20 +47,12 @@ model Tank "Block to compute the tank heat transfer"
     final E_nominal=E_nominal) "State of charge calculation"
     annotation (Placement(transformation(extent={{30,-80},{50,-60}})));
 
-<<<<<<< HEAD
-  Controls.OBC.CDL.Continuous.LessThreshold canFreeze(
-=======
   Controls.OBC.CDL.Reals.LessThreshold canFreeze(
->>>>>>> master
     final t=per.TFre - dTSmall,
     final h=dTSmall/2)
     "Outputs true if temperatures allow ice to be produced"
     annotation (Placement(transformation(extent={{-50,0},{-30,20}})));
-<<<<<<< HEAD
-  Controls.OBC.CDL.Continuous.GreaterThreshold canMelt(
-=======
   Controls.OBC.CDL.Reals.GreaterThreshold canMelt(
->>>>>>> master
     final t=per.TFre + dTSmall,
     final h=dTSmall/2)
     "Outputs true if temperature allows tank to be melted"
@@ -145,11 +137,7 @@ and that computes the state of charge of the tank.
 </p>
 <p>
 See
-<<<<<<< HEAD
-<a href=\"Buildings.Fluid.Storage.Ice.Tank\">
-=======
 <a href=\"modelica://Buildings.Fluid.Storage.Ice.Tank\">
->>>>>>> master
 Buildings.Fluid.Storage.Ice.Tank</a>
 for the implemented equations.
 </p>

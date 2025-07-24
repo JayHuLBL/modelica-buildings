@@ -6,13 +6,7 @@ ControlledFlowMachineDynamic
 FlowControlled_dp
 FlowControlled_dpSystem
 FlowControlled_m_flow
-<<<<<<< HEAD
-NegativePressureOrFlow
-PowerExact
-PowerSimplified
-=======
 PressureCurve
->>>>>>> master
 PumpCurveConstruction
 PumpCurveDerivatives
 Pump_stratos

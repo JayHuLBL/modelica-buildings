@@ -11,10 +11,6 @@ model ASHRAEHeatLoss "Example showing the use of ASHRAEHeatLoss"
     amplitude=7.5) "Temperature of the surrounding environment"
     annotation (Placement(transformation(extent={{30,70},{50,90}})));
   Modelica.Blocks.Sources.Sine T1(
-<<<<<<< HEAD
-    f=0.1,
-=======
->>>>>>> master
     amplitude=15,
     f=0.1,
     offset=273.15 + 10) "Temperature of the first segment"

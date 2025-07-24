@@ -107,11 +107,7 @@ equation
         "Simulate and Plot"),
     Documentation(info="<html>
 <p>
-<<<<<<< HEAD
-This example is to verify the ice tank model <a href=\"Buildings.Fluid.Storage.Ice\">Buildings.Fluid.Storage.Ice</a>.
-=======
 This example is to verify the ice tank model <a href=\"modelica://Buildings.Fluid.Storage.Ice\">Buildings.Fluid.Storage.Ice</a>.
->>>>>>> master
 </p>
 </html>", revisions="<html>
 <ul>

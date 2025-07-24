@@ -54,11 +54,7 @@ block Merkel "Model for thermal performance of Merkel cooling tower"
     m_flow_nominal*cpWat_nominal*(TWatIn_nominal - TWatOut_nominal)
     "Nominal heat transfer, (negative)";
   final parameter Modelica.Units.SI.ThermalConductance UA_nominal=NTU_nominal*
-<<<<<<< HEAD
-      CMin_flow_nominal
-=======
       CMin_flow_nominal * Buildings.Utilities.Psychrometrics.Constants.cpAir/cpEqu_nominal
->>>>>>> master
     "Thermal conductance at nominal flow, used to compute heat capacity";
   final parameter Real eps_nominal=
     Q_flow_nominal/((TAirInWB_nominal - TWatIn_nominal) * CMin_flow_nominal)
@@ -134,11 +130,7 @@ protected
 
   parameter Real delta=1E-3 "Parameter used for smoothing";
 
-<<<<<<< HEAD
-  parameter Modelica.Units.SI.SpecificHeatCapacity cpe_nominal=
-=======
   parameter Modelica.Units.SI.SpecificHeatCapacity cpEqu_nominal=
->>>>>>> master
       Buildings.Fluid.HeatExchangers.CoolingTowers.BaseClasses.Functions.equivalentHeatCapacity(
       TIn=TAirInWB_nominal, TOut=TAirOutWB_nominal)
     "Specific heat capacity of the equivalent medium on medium 1 side";
@@ -148,14 +140,8 @@ protected
   parameter Modelica.Units.SI.SpecificHeatCapacity cpWat_nominal=
       Medium.specificHeatCapacityCp(staWat_default)
     "Specific heat capacity of water at nominal condition";
-<<<<<<< HEAD
-
-  parameter Modelica.Units.SI.ThermalConductance CAir_flow_nominal=
-      mAir_flow_nominal*cpe_nominal "Nominal capacity flow rate of air";
-=======
   parameter Modelica.Units.SI.ThermalConductance CAir_flow_nominal=
       mAir_flow_nominal*cpEqu_nominal "Nominal capacity flow rate of air";
->>>>>>> master
   parameter Modelica.Units.SI.ThermalConductance CWat_flow_nominal=
       m_flow_nominal*cpWat_nominal "Nominal capacity flow rate of water";
   parameter Modelica.Units.SI.ThermalConductance CMin_flow_nominal=min(

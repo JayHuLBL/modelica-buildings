@@ -90,8 +90,6 @@ EnergyPlus 23.2.0 Engineering Reference</a>
       revisions="<html>
 <ul>
 <li>
-<<<<<<< HEAD
-=======
 February 28, 2024, by Jelger Jansen:<br/>
 Refactor model.<br/>
 This is for
@@ -107,7 +105,6 @@ This is for
 <a href=\"https://github.com/lbl-srg/modelica-buildings/issues/3597\">Buildings, #3597</a>.
 </li>
 <li>
->>>>>>> master
 September 16, 2021, by Michael Wetter:<br/>
 Changed <code>lat</code> from being a parameter to an input from weather bus.<br/>
 This is for

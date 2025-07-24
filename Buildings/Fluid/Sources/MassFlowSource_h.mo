@@ -5,11 +5,7 @@ model MassFlowSource_h
 
   parameter Boolean use_m_flow_in = false
     "Get the mass flow rate from the input connector"
-<<<<<<< HEAD
-    annotation(Evaluate=true, HideResult=true, Dialog(group="Conditional inputs"));
-=======
     annotation(Evaluate=true, Dialog(group="Conditional inputs"));
->>>>>>> master
   parameter Modelica.Units.SI.MassFlowRate m_flow=0
     "Fixed mass flow rate going out of the fluid port"
     annotation (Dialog(enable=not use_m_flow_in, group="Fixed inputs"));

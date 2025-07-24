@@ -130,15 +130,6 @@ protected
     "Indicator, outputs true if in cooling mode"
     annotation (Placement(transformation(extent={{-80,-90},{-60,-70}})));
 
-<<<<<<< HEAD
-  Buildings.Controls.OBC.CDL.Utilities.Assert aleMes(
-    message="uMod cannot be -1 if reverseCycle is false.")
-      if not per.reverseCycle
-    "Generate alert message if control input is not valid"
-    annotation (Placement(transformation(extent={{-52,-90},{-32,-70}})));
-
-=======
->>>>>>> master
 equation
   connect(equFit.QSou_flow,QSou_flow)
     annotation (Line(points={{11,-2},{32,-2},{32,-88},{110,-88}}, color={0,0,127}));

@@ -42,22 +42,14 @@ model StratifiedUnloadAtMinimumTemperature
     redeclare package Medium = Medium,
     m_flow_nominal=m_flow_nominal,
     dpValve_nominal=3000,
-<<<<<<< HEAD
-    use_inputFilter=false) "Control valve at middle"
-=======
     use_strokeTime=false) "Control valve at middle"
->>>>>>> master
     annotation (Placement(transformation(extent={{132,-70},{152,-50}})));
 
   Buildings.Fluid.Actuators.Valves.TwoWayLinear valBot(
     redeclare package Medium = Medium,
     m_flow_nominal=m_flow_nominal,
     dpValve_nominal=3000,
-<<<<<<< HEAD
-    use_inputFilter=false) "Control valve at bottom"
-=======
     use_strokeTime=false) "Control valve at bottom"
->>>>>>> master
     annotation (Placement(transformation(extent={{150,-110},{170,-90}})));
 
   Modelica.Thermal.HeatTransfer.Sensors.TemperatureSensor TMid
@@ -132,19 +124,12 @@ equation
   connect(senTem.port_b,loa. ports[1])
     annotation (Line(points={{210,-60},{222,-60}},
                                                  color={0,127,255}));
-<<<<<<< HEAD
-  connect(valTop.port_a, tan.fluPorVol[1]) annotation (Line(points={{112,-20},{-112.6,
-          -20},{-112.6,-120}}, color={0,127,255}));
-  connect(valMid.port_a, tan.fluPorVol[3]) annotation (Line(points={{132,-60},{-112.6,
-          -60},{-112.6,-120}},color={0,127,255}));
-=======
   connect(valTop.port_a, tan.fluPorVol[1]) annotation (Line(points={{112,-20},{-116,
           -20},{-116,-118},{-115,-118},{-115,-119.6}},
                                color={0,127,255}));
   connect(valMid.port_a, tan.fluPorVol[3]) annotation (Line(points={{132,-60},{-116,
           -60},{-116,-118},{-115,-118}},
                               color={0,127,255}));
->>>>>>> master
   connect(valBot.port_a, tan.fluPorVol[5]) annotation (Line(points={{150,-100},{
           -116,-100},{-116,-118},{-115,-118},{-115,-116.4}},
                               color={0,127,255}));

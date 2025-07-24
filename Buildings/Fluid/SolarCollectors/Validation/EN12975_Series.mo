@@ -4,13 +4,8 @@ model EN12975_Series
   extends Modelica.Icons.Example;
   replaceable package Medium = Buildings.Media.Water "Medium in the system";
 
-<<<<<<< HEAD
-  parameter Modelica.Units.SI.MassFlowRate m_flow_nominal=solCol.datSolCol.A*
-      solCol.datSolCol.mperA_flow_nominal "Nominal mass flow rate";
-=======
   parameter Modelica.Units.SI.MassFlowRate m_flow_nominal=solCol.per.A*
       solCol.per.mperA_flow_nominal "Nominal mass flow rate";
->>>>>>> master
 
   model Collector
     extends Buildings.Fluid.SolarCollectors.EN12975(
@@ -137,15 +132,12 @@ cases must have the same outlet temperatures.
 </html>", revisions="<html>
 <ul>
 <li>
-<<<<<<< HEAD
-=======
 February 15, 2024, by Jelger Jansen:<br/>
 Refactor model.<br/>
 This is for
 <a href=\"https://github.com/lbl-srg/modelica-buildings/issues/3604\">Buildings, #3604</a>.
 </li>
 <li>
->>>>>>> master
 September 16, 2021, by Michael Wetter:<br/>
 Removed parameter assignment for <code>lat</code>.<br/>
 This is for

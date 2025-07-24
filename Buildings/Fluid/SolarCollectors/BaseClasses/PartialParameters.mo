@@ -2,12 +2,7 @@ within Buildings.Fluid.SolarCollectors.BaseClasses;
 block PartialParameters "Partial model for parameters"
 
   parameter Modelica.Units.SI.Area A_c "Area of the collector";
-<<<<<<< HEAD
-  parameter Integer nSeg(min=3)=3 "Number of segments";
-  parameter Real y_intercept "Y intercept (Maximum efficiency)";
-=======
   parameter Integer nSeg=3 "Number of segments";
->>>>>>> master
 
   annotation(Documentation(info="<html>
 <p>

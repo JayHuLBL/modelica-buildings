@@ -95,12 +95,8 @@ equation
       color={0,127,255},
       smooth=Smooth.None));
   connect(gaiNPan.y, bou1.m_flow_in)
-<<<<<<< HEAD
-    annotation (Line(points={{-31,-22},{-14,-22}}, color={0,0,127}));
-=======
     annotation (Line(points={{-29,-20},{-20,-20},{-20,-22},{-12,-22}},
                                                    color={0,0,127}));
->>>>>>> master
   connect(solCol.port_a, bou.ports[1])
     annotation (Line(points={{30,30},{10,30}},color={0,127,255}));
   connect(solCol.port_b, sou.ports[1])
@@ -109,18 +105,11 @@ equation
       points={{30,38},{20,38},{20,70},{-20,70}},
       color={255,204,51},
       thickness=0.5));
-<<<<<<< HEAD
-  connect(m_flow_nominal.y, bou.m_flow_in) annotation (Line(points={{-67,40},{-22,
-          40},{-22,38},{-14,38}}, color={0,0,127}));
-  connect(gaiNPan.u, m_flow_nominal.y) annotation (Line(points={{-54,-22},{-60,
-          -22},{-60,40},{-67,40}}, color={0,0,127}));
-=======
   connect(m_flow_nominal.y, bou.m_flow_in) annotation (Line(points={{-69,40},{
           -20,40},{-20,38},{-12,38}},
                                   color={0,0,127}));
   connect(gaiNPan.u, m_flow_nominal.y) annotation (Line(points={{-52,-20},{-60,
           -20},{-60,40},{-69,40}}, color={0,0,127}));
->>>>>>> master
   annotation (
     Documentation(info="<html>
 <p>

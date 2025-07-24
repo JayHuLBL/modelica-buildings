@@ -24,13 +24,8 @@ model PartialEffectivenessNTU
     annotation (Evaluate=true,
                 Dialog(group="Nominal thermal performance"));
 
-<<<<<<< HEAD
-  parameter Modelica.Units.SI.HeatFlowRate Q_flow_nominal(fixed=
-        use_Q_flow_nominal)
-=======
   parameter Modelica.Units.SI.HeatFlowRate Q_flow_nominal(
     fixed=use_Q_flow_nominal)
->>>>>>> master
     "Nominal heat flow rate (positive for heat transfer from 1 to 2)"
     annotation (Dialog(group="Nominal thermal performance", enable=
           use_Q_flow_nominal));

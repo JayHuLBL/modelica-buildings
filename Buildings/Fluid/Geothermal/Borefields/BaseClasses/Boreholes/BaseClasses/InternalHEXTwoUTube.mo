@@ -152,12 +152,8 @@ initial equation
       kMed=kMed,
       muMed=muMed,
       cpMed=cpMed,
-<<<<<<< HEAD
-      m_flow_nominal=m1_flow_nominal);
-=======
       m_flow_nominal=m1_flow_nominal,
       instanceName=getInstanceName());
->>>>>>> master
 
 equation
   assert(borFieDat.conDat.borCon == Buildings.Fluid.Geothermal.Borefields.Types.BoreholeConfiguration.DoubleUTubeParallel
@@ -257,8 +253,6 @@ International Journal Of Energy Research, 35:312-320, 2011.
 </html>", revisions="<html>
 <ul>
 <li>
-<<<<<<< HEAD
-=======
 May 17, 2024, by Michael Wetter:<br/>
 Updated model due to removal of parameter <code>dynFil</code>.<br/>
 This is for
@@ -272,7 +266,6 @@ This is for
 <a href=\"https://github.com/ibpsa/modelica-ibpsa/issues/1814\">IBPSA, #1814</a>.
 </li>
 <li>
->>>>>>> master
 March 7, 2022, by Michael Wetter:<br/>
 Removed <code>massDynamics</code>.<br/>
 This is for

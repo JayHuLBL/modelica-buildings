@@ -54,15 +54,9 @@ protected
   constant Modelica.Units.SI.TemperatureDifference dTMax=1
     "Safety temperature difference to prevent TFlu > Medium.T_max";
   final parameter Modelica.Units.SI.Temperature TMedMax=Medium.T_max - dTMax
-<<<<<<< HEAD
-    "Fluid temperature above which there will be no heat gain computed to prevent TFlu > Medium.T_max";
-  final parameter Modelica.Units.SI.Temperature TMedMax2=TMedMax - dTMax
-    "Fluid temperature below which there will be no heat loss computed to prevent TFlu < Medium.T_min";
-=======
     "Fluid temperature above which there will be no heat gain computed to prevent TFlu > Medium.T_max";
   final parameter Modelica.Units.SI.Temperature TMedMax2=TMedMax - dTMax
     "Fluid temperature above which there will be no heat gain computed to prevent TFlu > Medium.T_max";
->>>>>>> master
 
   final parameter Real iamSky(fixed=false)
     "Incident angle modifier for diffuse solar radiation from the sky";
@@ -73,11 +67,7 @@ protected
   final parameter Modelica.Units.SI.Angle incAngGro(fixed=false)
     "Incident angle of diffuse radiation from the ground";
   final parameter Real tilDeg(
-<<<<<<< HEAD
-    unit = "deg") = Modelica.Units.Conversions.to_deg(  til)
-=======
     unit = "deg") = Modelica.Units.Conversions.to_deg(til)
->>>>>>> master
     "Surface tilt angle in degrees";
   final parameter Modelica.Units.SI.HeatFlux HTotMin=1
     "Minimum HTot to avoid div/0";
@@ -99,15 +89,6 @@ initial algorithm
     ensureMonotonicity=false);
 
 initial equation
-<<<<<<< HEAD
-  // E+ Equ (557)
-  incAngSky =Modelica.Units.Conversions.from_deg(59.68 - 0.1388*(tilDeg) +
-    0.001497*(tilDeg)^2);
-  // Diffuse radiation from the sky
-  // E+ Equ (555)
-  iamSky = SolarCollectors.BaseClasses.IAM(incAngSky, B0, B1);
-  // E+ Equ (558)
-=======
   // EnergyPlus 23.2.0 Engineering Reference Eq 18.300
   incAngSky =Modelica.Units.Conversions.from_deg(59.68 - 0.1388*(tilDeg) +
     0.001497*(tilDeg)^2);
@@ -115,7 +96,6 @@ initial equation
   // EnergyPlus 23.2.0 Engineering Reference Eq 18.298
   iamSky = SolarCollectors.BaseClasses.IAM(incAngSky, incAngDat, incAngModDat, dMonotone);
   // EnergyPlus 23.2.0 Engineering Reference Eq 18.301
->>>>>>> master
   incAngGro =Modelica.Units.Conversions.from_deg(90 - 0.5788*(tilDeg) +
     0.002693*(tilDeg)^2);
   // Diffuse radiation from the ground

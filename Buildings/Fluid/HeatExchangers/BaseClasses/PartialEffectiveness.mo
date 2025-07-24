@@ -14,24 +14,16 @@ partial model PartialEffectiveness
     fra_a2 * Medium2.temperature(state_a2_inflow) + fra_b2 * Medium2.temperature(state_b2_inflow) else
     Medium2.temperature(state_a2_inflow)
     "Inlet temperature medium 2";
-<<<<<<< HEAD
-  Modelica.Units.SI.ThermalConductance C1_flow=abs(m1_flow)*(if
-=======
   Modelica.Units.SI.ThermalConductance C1_flow(
     min=0,
     nominal=m1_flow_nominal*cp1_default)=abs(m1_flow)*(if
->>>>>>> master
       allowFlowReversal1 then fra_a1*Medium1.specificHeatCapacityCp(
       state_a1_inflow) + fra_b1*Medium1.specificHeatCapacityCp(state_b1_inflow)
        else Medium1.specificHeatCapacityCp(state_a1_inflow))
     "Heat capacity flow rate medium 1";
-<<<<<<< HEAD
-  Modelica.Units.SI.ThermalConductance C2_flow=abs(m2_flow)*(if
-=======
   Modelica.Units.SI.ThermalConductance C2_flow(
     min=0,
     nominal=m2_flow_nominal*cp2_default)=abs(m2_flow)*(if
->>>>>>> master
       allowFlowReversal2 then fra_a2*Medium2.specificHeatCapacityCp(
       state_a2_inflow) + fra_b2*Medium2.specificHeatCapacityCp(state_b2_inflow)
        else Medium2.specificHeatCapacityCp(state_a2_inflow))
@@ -43,13 +35,6 @@ partial model PartialEffectiveness
 protected
   parameter Real delta=1E-3 "Parameter used for smoothing";
 
-<<<<<<< HEAD
-  parameter Modelica.Units.SI.SpecificHeatCapacity cp1_default(fixed=false)
-    "Specific heat capacity of medium 1 at default medium state";
-  parameter Modelica.Units.SI.SpecificHeatCapacity cp2_default(fixed=false)
-    "Specific heat capacity of medium 2 at default medium state";
-  parameter Modelica.Units.SI.ThermalConductance CMin_flow_small(fixed=false)
-=======
   parameter Modelica.Units.SI.SpecificHeatCapacity cp1_default =
     Medium1.specificHeatCapacityCp(Medium1.setState_pTX(
       Medium1.p_default,
@@ -64,7 +49,6 @@ protected
     "Specific heat capacity of medium 2 at default medium state";
   parameter Modelica.Units.SI.ThermalConductance CMin_flow_small =
     min(m1_flow_small*cp1_default, m2_flow_small*cp2_default)
->>>>>>> master
     "Small value for smoothing of minimum heat capacity flow rate";
   Real fra_a1(min=0, max=1) = if allowFlowReversal1
     then Modelica.Fluid.Utilities.regStep(

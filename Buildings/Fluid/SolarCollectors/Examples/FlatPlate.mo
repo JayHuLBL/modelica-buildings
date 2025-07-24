@@ -85,8 +85,6 @@ for a variable fluid flow rate and weather data from San Francisco, CA, USA.
 revisions="<html>
 <ul>
 <li>
-<<<<<<< HEAD
-=======
 February 4, 2025, by Jelger Jansen:<br/>
 Remove <code>nPanelsSer</code> as a model parameter.
 This is for
@@ -99,7 +97,6 @@ This is for
 <a href=\"https://github.com/lbl-srg/modelica-buildings/issues/3604\">Buildings, #3604</a>.
 </li>
 <li>
->>>>>>> master
 September 16, 2021, by Michael Wetter:<br/>
 Removed parameter assignment for <code>lat</code>.<br/>
 This is for

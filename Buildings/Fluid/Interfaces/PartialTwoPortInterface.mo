@@ -86,15 +86,12 @@ Buildings.Fluid.Interfaces.StaticTwoPortHeatMassExchanger</a>.
 </html>", revisions="<html>
 <ul>
 <li>
-<<<<<<< HEAD
-=======
 September 22, 2023, by Michael Wetter:<br/>
 Improved documentation.<br/>
 This is for
 <a href=\"https://github.com/ibpsa/modelica-ibpsa/issues/1796\">IBPSA, #1796</a>.
 </li>
 <li>
->>>>>>> master
 February 2, 2022, by Hongxiang Fu:<br/>
 If <code>allowFlowReversal==false</code>, replaced <code>actualStream()</code>
 with <code>inStream()</code> for <code>sta_a</code> and

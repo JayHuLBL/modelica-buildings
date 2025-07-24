@@ -25,11 +25,7 @@ model InternalResistancesOneUTube
     C=Co_fil/2,
     T(start=T_start, fixed=(energyDynamics == Modelica.Fluid.Types.Dynamics.FixedInitial)),
     der_T(fixed=(energyDynamics == Modelica.Fluid.Types.Dynamics.SteadyStateInitial)))
-<<<<<<< HEAD
-    if dynFil
-=======
     if not borFieDat.filDat.steadyState
->>>>>>> master
     "Heat capacity of the filling material" annotation (Placement(
         transformation(
         extent={{-10,-10},{10,10}},
@@ -39,11 +35,7 @@ model InternalResistancesOneUTube
     C=Co_fil/2,
     T(start=T_start, fixed=(energyDynamics == Modelica.Fluid.Types.Dynamics.FixedInitial)),
     der_T(fixed=(energyDynamics == Modelica.Fluid.Types.Dynamics.SteadyStateInitial)))
-<<<<<<< HEAD
-    if dynFil
-=======
     if not borFieDat.filDat.steadyState
->>>>>>> master
     "Heat capacity of the filling material" annotation (Placement(
         transformation(
         extent={{-10,10},{10,-10}},

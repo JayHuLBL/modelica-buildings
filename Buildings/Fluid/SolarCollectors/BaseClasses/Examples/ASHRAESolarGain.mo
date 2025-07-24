@@ -15,11 +15,7 @@ model ASHRAESolarGain "Example showing the use of ASHRAESolarGain"
     y_intercept=per.y_intercept,
     redeclare package Medium = Buildings.Media.Water,
     til=0.78539816339745) "Solar heat gain model using ASHRAE 93 calculations"
-<<<<<<< HEAD
-    annotation (Placement(transformation(extent={{72,0},{92,20}})));
-=======
     annotation (Placement(transformation(extent={{70,-10},{90,10}})));
->>>>>>> master
   Modelica.Blocks.Sources.Sine HGroDifTil(
     amplitude=50,
     f=4/86400,
@@ -32,11 +28,7 @@ model ASHRAESolarGain "Example showing the use of ASHRAESolarGain"
     offset=400,
     amplitude=300,
     f=2/86400) "Direct beam radiation, tilted surface"
-<<<<<<< HEAD
-    annotation (Placement(transformation(extent={{-90,18},{-70,38}})));
-=======
     annotation (Placement(transformation(extent={{-50,30},{-30,50}})));
->>>>>>> master
   Modelica.Blocks.Sources.Sine HSkyDifTil(
     f=1/86400,
     amplitude=100,

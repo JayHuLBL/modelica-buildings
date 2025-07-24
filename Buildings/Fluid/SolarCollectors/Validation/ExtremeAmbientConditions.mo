@@ -78,13 +78,6 @@ model ExtremeAmbientConditions
   Modelica.Blocks.Sources.Constant const(k=0) "Constant that outputs zero"
     annotation (Placement(transformation(extent={{-80,20},{-60,40}})));
   Modelica.Blocks.Sources.Constant solTim(k=12*3600) "Solar time"
-<<<<<<< HEAD
-    annotation (Placement(transformation(extent={{-80,-30},{-60,-10}})));
-  Modelica.Blocks.Sources.Constant lat(k=0.656593) "Location latitude"
-    annotation (Placement(transformation(extent={{-80,-60},{-60,-40}})));
-  Modelica.Blocks.Sources.Constant alt(k=2) "Location altitude"
-    annotation (Placement(transformation(extent={{-80,-90},{-60,-70}})));
-=======
     annotation (Placement(transformation(extent={{-80,-50},{-60,-30}})));
   Modelica.Blocks.Sources.Constant lat(k=0.656593) "Location latitude"
     annotation (Placement(transformation(extent={{-80,-80},{-60,-60}})));
@@ -93,25 +86,16 @@ model ExtremeAmbientConditions
   Modelica.Blocks.Sources.Constant const1(k=0)
                                               "Constant that outputs zero"
     annotation (Placement(transformation(extent={{-80,-20},{-60,0}})));
->>>>>>> master
 equation
   connect(sou.ports[1], solAsh.port_a)
     annotation (Line(points={{1.77636e-15,-40},{20,-40}}, color={0,127,255}));
   connect(sou2.ports[1], solEn.port_a)
     annotation (Line(points={{1.77636e-15,-80},{20,-80}}, color={0,127,255}));
   connect(solAsh.port_b, sou1.ports[1])
-<<<<<<< HEAD
-    annotation (Line(points={{40,-40},{70,-40},{70,-41}},
-                                                       color={0,127,255}));
-  connect(solEn.port_b, sou1.ports[2]) annotation (Line(points={{40,-80},{56,
-          -80},{56,-39},{70,-39}},
-                              color={0,127,255}));
-=======
     annotation (Line(points={{40,-40},{70,-40},{70,-61}},
                                                        color={0,127,255}));
   connect(solEn.port_b, sou1.ports[2]) annotation (Line(points={{40,-80},{70,
           -80},{70,-59}},     color={0,127,255}));
->>>>>>> master
   connect(weaBus, solAsh.weaBus) annotation (Line(
       points={{0,0},{16,0},{16,-32},{20,-32}},
       color={255,204,51},
@@ -162,22 +146,13 @@ equation
       textString="%second",
       index=1,
       extent={{6,3},{6,3}}));
-<<<<<<< HEAD
-  connect(lat.y, weaBus.lat) annotation (Line(points={{-59,-50},{-28,-50},{-28,
-          0},{0,0}}, color={0,0,127}), Text(
-=======
   connect(lat.y, weaBus.lat) annotation (Line(points={{-59,-70},{-28,-70},{-28,0.05},
           {0.05,0.05}},
                      color={0,0,127}), Text(
->>>>>>> master
       string="%second",
       index=1,
       extent={{6,3},{6,3}},
       horizontalAlignment=TextAlignment.Left));
-<<<<<<< HEAD
-  connect(alt.y, weaBus.alt) annotation (Line(points={{-59,-80},{-28,-80},{-28,
-          0},{0,0}}, color={0,0,127}), Text(
-=======
   connect(alt.y, weaBus.alt) annotation (Line(points={{-59,-100},{-28,-100},{-28,
           0.05},{0.05,0.05}},
                      color={0,0,127}), Text(
@@ -187,7 +162,6 @@ equation
       horizontalAlignment=TextAlignment.Left));
   connect(const1.y, weaBus.cloTim) annotation (Line(points={{-59,-10},{-28,-10},
           {-28,0.05},{0.05,0.05}}, color={0,0,127}), Text(
->>>>>>> master
       string="%second",
       index=1,
       extent={{6,3},{6,3}},
@@ -222,13 +196,10 @@ to set the two bounds for the water temperature.
 revisions="<html>
 <ul>
 <li>
-<<<<<<< HEAD
-=======
 September 25, 2023, by Michael Wetter:<br/>
 Corrected <code>connect</code> statement with wrong quantity.
 </li>
 <li>
->>>>>>> master
 September 16, 2021, by Michael Wetter:<br/>
 Removed parameter assignment for <code>lat</code>.<br/>
 This is for

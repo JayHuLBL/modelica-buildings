@@ -24,11 +24,7 @@ model EN12975SolarGain "Example showing the use of EN12975SolarGain"
     offset=400,
     amplitude=300,
     f=2/86400) "Direct beam radiation, tilted surface"
-<<<<<<< HEAD
-    annotation (Placement(transformation(extent={{-40,44},{-20,64}})));
-=======
     annotation (Placement(transformation(extent={{-50,30},{-30,50}})));
->>>>>>> master
   Modelica.Blocks.Sources.Sine HDifTil(
     amplitude=200,
     f=1/86400,

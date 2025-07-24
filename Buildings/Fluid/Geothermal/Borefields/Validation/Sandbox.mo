@@ -129,8 +129,6 @@ spectral method to simulate borehole heat exchanger</i>. Geothermics 51:
 </html>", revisions="<html>
 <ul>
 <li>
-<<<<<<< HEAD
-=======
 November 15, 2022, by Michael Wetter:<br/>
 Set proper head for pump.<br/>
 This is for
@@ -142,7 +140,6 @@ Added missing <code>parameter</code> keyword.<br/>
 For <a href=\"https://github.com/ibpsa/modelica-ibpsa/issues/1464\">IBPSA, issue 1464</a>.
 </li>
 <li>
->>>>>>> master
 July 18, 2018, by Massimo Cimmino:<br/>
 First implementation.
 </li>

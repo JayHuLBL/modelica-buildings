@@ -98,8 +98,6 @@ Buildings.Fluid.Geothermal.Borefields.BaseClasses.HeatTransfer.ThermalResponseFa
 </html>", revisions="<html>
 <ul>
 <li>
-<<<<<<< HEAD
-=======
 November 15, 2022, by Michael Wetter:<br/>
 Set proper head for pump.<br/>
 This is for
@@ -111,7 +109,6 @@ Added missing <code>parameter</code> keyword.<br/>
 For <a href=\"https://github.com/ibpsa/modelica-ibpsa/issues/1464\">IBPSA, issue 1464</a>.
 </li>
 <li>
->>>>>>> master
 June 24, 2019, by Michael Wetter:<br/>
 Changed <code>StopTime</code> from integer to floating point.<br/>
 This is for

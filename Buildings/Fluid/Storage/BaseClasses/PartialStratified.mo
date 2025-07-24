@@ -3,11 +3,6 @@ model PartialStratified
   "Partial model of a stratified tank for thermal energy storage"
   extends Buildings.Fluid.Storage.BaseClasses.PartialTwoPortInterface;
 
-<<<<<<< HEAD
-  import Modelica.Fluid.Types;
-  import Modelica.Fluid.Types.Dynamics;
-=======
->>>>>>> master
   parameter Modelica.Units.SI.Volume VTan "Tank volume";
   parameter Modelica.Units.SI.Length hTan "Height of tank (without insulation)";
   parameter Modelica.Units.SI.Length dIns "Thickness of insulation";

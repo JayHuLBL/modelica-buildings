@@ -77,11 +77,6 @@ Buildings.Fluid.HeatExchangers.DryCoilCounterFlow</a> instead of this model.
 </html>", revisions="<html>
 <ul>
 <li>
-<<<<<<< HEAD
-May 26, 2022, by Michael Wetter:<br/>
-Removed addition of heat to <code>mas.T</code> in
-<a href=\"Buildings.Fluid.HeatExchangers.BaseClasses.HexElementLatent\">
-=======
 July 5, 2022, by Antoine Gautier:<br/>
 Restored the addition of heat to <code>mas.T</code> in
 <a href=\"modelica://Buildings.Fluid.HeatExchangers.BaseClasses.HexElementLatent\">
@@ -92,7 +87,6 @@ This is for <a href=\"https://github.com/lbl-srg/modelica-buildings/issues/3065\
 May 26, 2022, by Michael Wetter:<br/>
 Removed addition of heat to <code>mas.T</code> in
 <a href=\"modelica://Buildings.Fluid.HeatExchangers.BaseClasses.HexElementLatent\">
->>>>>>> master
 Buildings.Fluid.HeatExchangers.BaseClasses.HexElementLatent</a>
 to correct latent heat exchange calculation.<br/>
 This is for <a href=\"https://github.com/lbl-srg/modelica-buildings/issues/3027\">#3027</a>.

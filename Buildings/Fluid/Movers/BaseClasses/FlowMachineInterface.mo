@@ -25,15 +25,11 @@ model FlowMachineInterface
   final parameter Boolean haveVMax = (abs(per.pressure.dp[nOri]) < Modelica.Constants.eps)
     "Flag, true if user specified data that contain V_flow_max";
 
-<<<<<<< HEAD
-  parameter Modelica.Units.SI.VolumeFlowRate V_flow_max
-=======
   final parameter Modelica.Units.SI.VolumeFlowRate V_flow_max=
     if per.V_flow_max>Modelica.Constants.eps
       then per.V_flow_max
     else
       V_flow_nominal
->>>>>>> master
     "Maximum volume flow rate, used for smoothing";
 
   parameter Integer nOri(min=1) "Number of data points for pressure curve"
