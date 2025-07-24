@@ -11,16 +11,7 @@ record FP_ThermaLiteHS20 =
     final incAngDat=Modelica.Units.Conversions.from_deg({0,10,20,30,40,50,60,70,80,90}),
     final incAngModDat={1.0,0.9989,0.9946,0.9836,0.9567,0.8882,0.6935,0.0,0.0,0.0},
     final y_intercept=0.762,
-<<<<<<< HEAD
-    final slope=-3.710,
-    final IAMDiff=0,
-    final C1=0,
-    final C2=0,
-    final G_nominal = 1000,
-    final dT_nominal = 10) "FP - Therma-Lite, HS-20"
-=======
     final slope=-3.710) "FP - Therma-Lite, HS-20"
->>>>>>> master
     annotation (
 defaultComponentPrefixes="parameter",
 defaultComponentName="datSolCol",

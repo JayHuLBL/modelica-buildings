@@ -11,16 +11,7 @@ record T_JiaxingDiyiC0130 =
     final incAngDat=Modelica.Units.Conversions.from_deg({0,10,20,30,40,50,60,70,80,90}),
     final incAngModDat={1.0,1.0222,1.0897,1.2034,1.3596,1.5272,1.5428,0.4206,0.0,0.0},
     final y_intercept=0.388,
-<<<<<<< HEAD
-    final slope=-1.453,
-    final IAMDiff=0,
-    final C1=0,
-    final C2=0,
-    final G_nominal=1000,
-    final dT_nominal=10) "T - Jiaxing Diyi New Energy Co., Ltd., DIYI-C01-30"
-=======
     final slope=-1.453) "T - Jiaxing Diyi New Energy Co., Ltd., DIYI-C01-30"
->>>>>>> master
     annotation (
 defaultComponentPrefixes="parameter",
 defaultComponentName="datSolCol",

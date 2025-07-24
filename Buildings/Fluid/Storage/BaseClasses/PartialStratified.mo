@@ -204,15 +204,12 @@ Buildings.Fluid.Storage.BaseClasses.ThirdOrderStratifier</a>.
 </html>", revisions="<html>
 <ul>
 <li>
-<<<<<<< HEAD
-=======
 February 7, 2025, by Jelger Jansen:<br/>
 Removed <code>import</code> statement.
 This is for
 <a href=\"https://github.com/ibpsa/modelica-ibpsa/issues/1961\">IBPSA, #1961</a>.
 </li>
 <li>
->>>>>>> master
 March 7, 2022, by Michael Wetter:<br/>
 Set <code>final massDynamics=energyDynamics</code>.<br/>
 This is for

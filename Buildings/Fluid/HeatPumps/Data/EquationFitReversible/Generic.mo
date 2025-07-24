@@ -8,11 +8,6 @@ record Generic
      mLoa_flow = hea.mLoa_flow,
      mSou_flow = hea.mSou_flow)
    "Performance data for cooling mode (set coo.P = 0 to disable operation in cooling mode)";
-<<<<<<< HEAD
-  parameter Modelica.Units.SI.PressureDifference dpHeaLoa_nominal(min=0) =
-    30000 "Nominal pressure drop at load heat exchanger side at hea.mLoa_flow";
-  parameter Modelica.Units.SI.PressureDifference dpHeaSou_nominal(min=0) =
-=======
   parameter Modelica.Units.SI.PressureDifference dpHeaLoa_nominal(
     min=0,
     displayUnit="Pa") =
@@ -20,7 +15,6 @@ record Generic
   parameter Modelica.Units.SI.PressureDifference dpHeaSou_nominal(
     min=0,
     displayUnit="Pa") =
->>>>>>> master
     30000 "Nominal pressure drop at load heat exchanger side at hea.mSou_flow";
 
   final parameter Boolean reverseCycle=coo.P > Modelica.Constants.eps
@@ -40,13 +34,10 @@ Buildings.Fluid.HeatPumps.EquationFitReversible</a>.
 </html>",  revisions="<html>
 <ul>
 <li>
-<<<<<<< HEAD
-=======
 April 1, 2024, by Michael Wetter:<br/>
 Added <code>displayUnit</code> for pressure drop.
 </li>
 <li>
->>>>>>> master
 May 16, 2022, by Michael Wetter:<br/>
 Removed <code>protected</code> keyword as the Modelica Language Specification only
 allows public sections in a record.<br/>

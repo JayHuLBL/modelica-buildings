@@ -134,17 +134,6 @@ protected
     "True if pressure head is a prescribed variable of this block";
 
   // Derivatives for cubic spline
-<<<<<<< HEAD
-  final parameter Real motDer[size(per.motorEfficiency.V_flow, 1)](each fixed=false)
-    "Coefficients for polynomial of motor efficiency vs. volume flow rate";
-  final parameter Real hydDer[size(per.hydraulicEfficiency.V_flow,1)](each fixed=false)
-    "Coefficients for polynomial of hydraulic efficiency vs. volume flow rate";
-
-  parameter Modelica.Units.SI.PressureDifference dpMax(displayUnit="Pa") = if
-    haveDPMax then per.pressure.dp[1] else per.pressure.dp[1] - ((per.pressure.dp[
-    2] - per.pressure.dp[1])/(per.pressure.V_flow[2] - per.pressure.V_flow[1]))
-    *per.pressure.V_flow[1] "Maximum head";
-=======
   final parameter Real etaDer[size(per.efficiency.V_flow,1)]=
     if not per.etaHydMet==Buildings.Fluid.Movers.BaseClasses.Types.HydraulicEfficiencyMethod.Efficiency_VolumeFlowRate
       then zeros(size(per.efficiency.V_flow,1))
@@ -201,7 +190,6 @@ protected
   final parameter Modelica.Units.SI.PressureDifference dpMax(
     displayUnit="Pa")=
     per.dpMax "Maximum head";
->>>>>>> master
 
   parameter Real delta = 0.05
     "Small value used to for regularization and to approximate an internal flow resistance of the fan";
@@ -599,58 +587,12 @@ equation
     // end of if/else choosing between exact/simplified power computation
   end if;
 
-<<<<<<< HEAD
-  // Flow work
-  WFlo = Buildings.Utilities.Math.Functions.smoothMax(
-           x1=dp_internal*V_flow,
-           x2=0,
-           deltaX=1E-4*dpMax*V_flow_max);
-
-  // Power consumption
-  if per.use_powerCharacteristic then
-    // For the homotopy, we want P/V_flow to be bounded as V_flow -> 0 to avoid a very high medium
-    // temperature near zero flow.
-    if homotopyInitialization then
-      PEle = homotopy(actual=cha.power(per=per.power, V_flow=V_flow, r_N=r_N, d=powDer, delta=delta),
-                      simplified=V_flow/V_flow_nominal*
-                            cha.power(per=per.power, V_flow=V_flow_nominal, r_N=1, d=powDer, delta=delta));
-    else
-      PEle = (rho/rho_default)*cha.power(per=per.power, V_flow=V_flow, r_N=r_N, d=powDer, delta=delta);
-    end if;
-    // To compute the efficiency, we set a lower bound on the electricity consumption.
-    // This is needed because WFlo can be close to zero when P is zero, thereby
-    // causing a division by zero.
-    // Earlier versions of the model computed WFlo = eta * P, but this caused
-    // a division by zero.
-    eta = WFlo / Buildings.Utilities.Math.Functions.smoothMax(x1=PEle, x2=1E-5, deltaX=1E-6);
-    // In this configuration, we only know the total power consumption.
-    // Because nothing is known about etaMot versus etaHyd, we set etaHyd=1. This will
-    // cause etaMot=eta, because eta=etaHyd*etaMot.
-    // Earlier versions used etaMot=sqrt(eta), but as eta->0, this function has
-    // and infinite derivative.
-    etaHyd = 1;
-    etaMot = eta;
-  else
-    if homotopyInitialization then
-      etaHyd = homotopy(actual=cha.efficiency(per=per.hydraulicEfficiency,     V_flow=V_flow, d=hydDer, r_N=r_N, delta=delta),
-                        simplified=cha.efficiency(per=per.hydraulicEfficiency, V_flow=V_flow_max,   d=hydDer, r_N=r_N, delta=delta));
-      etaMot = homotopy(actual=cha.efficiency(per=per.motorEfficiency,     V_flow=V_flow, d=motDer, r_N=r_N, delta=delta),
-                        simplified=cha.efficiency(per=per.motorEfficiency, V_flow=V_flow_max,   d=motDer, r_N=r_N, delta=delta));
-    else
-      etaHyd = cha.efficiency(per=per.hydraulicEfficiency, V_flow=V_flow, d=hydDer, r_N=r_N, delta=delta);
-      etaMot = cha.efficiency(per=per.motorEfficiency,     V_flow=V_flow, d=motDer, r_N=r_N, delta=delta);
-    end if;
-    // To compute the electrical power, we set a lower bound for eta to avoid
-    // a division by zero.
-    PEle = WFlo / Buildings.Utilities.Math.Functions.smoothMax(x1=eta, x2=1E-5, deltaX=1E-6);
-=======
   // Power and efficiency
   WFlo = Buildings.Utilities.Math.Functions.smoothMax(
            x1=dp_internal*V_flow,
            x2=0,
            deltaX=deltaP/2);
   if per.powerOrEfficiencyIsHydraulic then
->>>>>>> master
     eta = etaHyd * etaMot;
   else
     etaHyd = Buildings.Utilities.Math.Functions.smoothMin(
@@ -758,21 +700,6 @@ equation
   annotation (
     Icon(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,100}}),
                     graphics={
-<<<<<<< HEAD
-        Text(extent={{56,66},{106,52}},
-          textColor={0,0,127},
-          textString="dp"),
-        Text(extent={{56,8},{106,-6}},
-          textColor={0,0,127},
-          textString="PEle"),
-        Text(extent={{52,-22},{102,-36}},
-          textColor={0,0,127},
-          textString="eta"),
-        Text(extent={{50,-52},{100,-66}},
-          textColor={0,0,127},
-          textString="etaHyd"),
-        Text(extent={{50,-72},{100,-86}},
-=======
         Text(extent={{56,84},{106,70}},
           textColor={0,0,127},
           textString="dp"),
@@ -786,7 +713,6 @@ equation
           textColor={0,0,127},
           textString="etaHyd"),
         Text(extent={{50,-86},{100,-100}},
->>>>>>> master
           textColor={0,0,127},
           textString="etaMot"),
         Ellipse(
@@ -836,17 +762,10 @@ equation
           smooth=Smooth.Bezier,
           origin={-43,-31},
           rotation=90),
-<<<<<<< HEAD
-        Text(extent={{56,36},{106,22}},
-          textColor={0,0,127},
-          textString="WFlo"),
-        Text(extent={{56,94},{106,80}},
-=======
         Text(extent={{56,28},{106,14}},
           textColor={0,0,127},
           textString="WFlo"),
         Text(extent={{56,66},{106,52}},
->>>>>>> master
           textColor={0,0,127},
           textString="V_flow"),
         Line(
@@ -940,8 +859,6 @@ See discussions and an example of this situation in
 revisions="<html>
 <ul>
 <li>
-<<<<<<< HEAD
-=======
 February 7, 2025, by Jelger Jansen:<br/>
 Removed <code>import</code> statement.
 This is for
@@ -989,7 +906,6 @@ Now the flow work <code>WFlo</code> is bounded to be non-negative.
 </ul>
 These are for
 <a href=\"https://github.com/lbl-srg/modelica-buildings/issues/2668\">#2668</a>.
->>>>>>> master
 June 6, 2022, by Hongxiang Fu:<br/>
 Added a constraint that <i>W<sub>flo</sub> = V&#775; &Delta;p &ge; 0</i>.<br/>
 This is for
