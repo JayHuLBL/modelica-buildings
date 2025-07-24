@@ -172,15 +172,12 @@ annotation (Icon(graphics={
         fillPattern=FillPattern.Solid)}), Documentation(revisions="<html>
 <ul>
 <li>
-<<<<<<< HEAD
-=======
 April 18, 2023, by Michael Wetter:<br/>
 Set start value for <code>NTUAirSta</code>.<br/>
 This is for
 <a href=\"https://github.com/ibpsa/modelica-ibpsa/issues/1728\">IBPSA, #1728</a>.
 </li>
 <li>
->>>>>>> master
 Jan 21, 2021, by Donghun Kim:<br/>First implementation.
 </li>
 </ul>

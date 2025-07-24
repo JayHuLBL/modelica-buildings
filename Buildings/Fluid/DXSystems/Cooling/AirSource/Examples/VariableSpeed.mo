@@ -8,6 +8,7 @@ model VariableSpeed
 
   parameter Modelica.Units.SI.MassFlowRate m_flow_nominal=datCoi.sta[datCoi.nSta].nomVal.m_flow_nominal
     "Nominal mass flow rate";
+
   parameter Modelica.Units.SI.PressureDifference dp_nominal=1000
     "Pressure drop at m_flow_nominal";
 

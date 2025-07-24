@@ -15,6 +15,7 @@ partial model PartialInternalHEX
               "Propylene glycol water, 40% mass fraction")));
   constant Real mSenFac=1
     "Factor for scaling the sensible thermal mass of the volume";
+
   parameter Modelica.Units.SI.Length hSeg
     "Length of the internal heat exchanger";
   parameter Modelica.Units.SI.Volume VTubSeg=hSeg*Modelica.Constants.pi*(
