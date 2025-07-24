@@ -1,15 +1,5 @@
 within Buildings.Controls.OBC.CDL.Integers;
 block Subtract "Output the difference of the two inputs"
-<<<<<<< HEAD
-  Interfaces.IntegerInput u1
-    "Connector of Integer input signal 1"
-    annotation (Placement(transformation(extent={{-140,40},{-100,80}})));
-  Interfaces.IntegerInput u2
-    "Connector of Integer input signal 2"
-    annotation (Placement(transformation(extent={{-140,-80},{-100,-40}})));
-  Interfaces.IntegerOutput y
-    "Connector of Integer output signal"
-=======
   Buildings.Controls.OBC.CDL.Interfaces.IntegerInput u1
     "Input u1 for the minuend"
     annotation (Placement(transformation(extent={{-140,40},{-100,80}})));
@@ -18,7 +8,6 @@ block Subtract "Output the difference of the two inputs"
     annotation (Placement(transformation(extent={{-140,-80},{-100,-40}})));
   Buildings.Controls.OBC.CDL.Interfaces.IntegerOutput y
     "Output with the difference u1-u2"
->>>>>>> master
     annotation (Placement(transformation(extent={{100,-20},{140,20}}),
         iconTransformation(extent={{100,-20},{140,20}})));
 

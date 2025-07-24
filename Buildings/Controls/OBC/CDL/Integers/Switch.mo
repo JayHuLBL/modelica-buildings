@@ -15,14 +15,7 @@ block Switch
     annotation (Placement(transformation(extent={{100,-20},{140,20}})));
 
 equation
-<<<<<<< HEAD
-  y=if u2 then
-      u1
-    else
-      u3;
-=======
   y=if u2 then u1 else u3;
->>>>>>> master
   annotation (
     defaultComponentName="intSwi",
     Documentation(

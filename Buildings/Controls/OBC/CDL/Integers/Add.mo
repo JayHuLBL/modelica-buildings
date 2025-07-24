@@ -1,13 +1,8 @@
 within Buildings.Controls.OBC.CDL.Integers;
 block Add
   "Output the sum of the two inputs"
-<<<<<<< HEAD
-  Interfaces.IntegerInput u1
-    "Connector of Integer input signal 1"
-=======
   Buildings.Controls.OBC.CDL.Interfaces.IntegerInput u1
     "Input to be added"
->>>>>>> master
     annotation (Placement(transformation(extent={{-140,40},{-100,80}})));
   Buildings.Controls.OBC.CDL.Interfaces.IntegerInput u2
     "Input to be added"
@@ -34,11 +29,7 @@ revisions="<html>
 <li>
 January 27, 2022, by Jianjun Hu:<br/>
 Removed gain factors.<br/>
-<<<<<<< HEAD
-This is for <a href=\"https://github.com/lbl-srg/modelica-buildings/issues/2865\">issue 2865</a>.
-=======
 This is for <a href=\"https://github.com/lbl-srg/modelica-buildings/issues/2865\">Buildings, issue 2865</a>.
->>>>>>> master
 </li>
 <li>
 January 3, 2017, by Michael Wetter:<br/>

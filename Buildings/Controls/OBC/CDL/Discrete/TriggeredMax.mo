@@ -4,19 +4,11 @@ block TriggeredMax
   Buildings.Controls.OBC.CDL.Interfaces.RealInput u
     "Input signal to be sampled"
     annotation (Placement(transformation(extent={{-140,-20},{-100,20}})));
-<<<<<<< HEAD
-  Interfaces.BooleanInput trigger
-    "Connector for trigger"
-    annotation (Placement(transformation(origin={0,-120},extent={{-20,-20},{20,20}},rotation=90)));
-  Interfaces.RealOutput y
-    "Connector with a Real output signal"
-=======
   Buildings.Controls.OBC.CDL.Interfaces.BooleanInput trigger
     "Input for trigger that causes u to be sampled"
     annotation (Placement(transformation(origin={0,-120},extent={{-20,-20},{20,20}},rotation=90)));
   Buildings.Controls.OBC.CDL.Interfaces.RealOutput y
     "Maximum of input signal over all trigger instants"
->>>>>>> master
     annotation (Placement(transformation(extent={{100,-20},{140,20}})));
 
 initial equation

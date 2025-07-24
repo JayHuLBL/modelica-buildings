@@ -2,15 +2,9 @@ within Buildings.Controls.OBC.CDL.Integers;
 block Change
   "Output whether the Integer input changes values, increases or decreases"
   parameter Integer pre_u_start=0
-<<<<<<< HEAD
-    "Initial value of y";
-  Interfaces.IntegerInput u
-    "Connector of Integer input signal"
-=======
     "Start value of pre(u) at initial time";
   Buildings.Controls.OBC.CDL.Interfaces.IntegerInput u
     "Integer to be monitored for a change in value"
->>>>>>> master
     annotation (Placement(transformation(extent={{-140,-20},{-100,20}})));
   Buildings.Controls.OBC.CDL.Interfaces.BooleanOutput y
     "Output that is true when the input changes its value"
@@ -76,11 +70,7 @@ When the input <code>u</code> decreases, the output <code>down</code> will be
 May 3, 2022, by Michael Wetter:<br/>
 Renamed parameter <code>y_start</code> to <code>pre_u_start</code>.<br/>
 This is for
-<<<<<<< HEAD
-<a href=\"https://github.com/lbl-srg/modelica-buildings/issues/2990\">#2990</a>.
-=======
 <a href=\"https://github.com/lbl-srg/modelica-buildings/issues/2990\">Buildings, issue 2990</a>.
->>>>>>> master
 </li>
 <li>
 January 26, 2021, by Michael Wetter:<br/>

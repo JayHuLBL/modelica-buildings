@@ -8,13 +8,8 @@ block BooleanToReal
   Buildings.Controls.OBC.CDL.Interfaces.BooleanInput u
     "Boolean signal to be converted to a Real signal"
     annotation (Placement(transformation(extent={{-140,-20},{-100,20}})));
-<<<<<<< HEAD
-  Interfaces.RealOutput y
-    "Connector of Real output signal"
-=======
   Buildings.Controls.OBC.CDL.Interfaces.RealOutput y
     "Converted input signal as a Real"
->>>>>>> master
     annotation (Placement(transformation(extent={{100,-20},{140,20}})));
 
 equation
@@ -45,11 +40,7 @@ and <code>realTrue</code> and <code>realFalse</code> are parameters.
 May 17, 2022, by Hongxiang Fu:<br/>
 Corrected documentation texts where the variables were described with wrong types.<br/>
 This is for
-<<<<<<< HEAD
-<a href=\"https://github.com/lbl-srg/modelica-buildings/issues/3016\">#3016</a>.
-=======
 <a href=\"https://github.com/lbl-srg/modelica-buildings/issues/3016\">Buildings, issue 3016</a>.
->>>>>>> master
 </li>
 <li>
 April 10, 2017, by Jianjun Hu:<br/>

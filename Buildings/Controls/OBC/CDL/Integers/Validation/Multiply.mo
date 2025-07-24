@@ -58,11 +58,7 @@ revisions="<html>
 <li>
 January 27, 2022, by Jianjun Hu:<br/>
 Renamed the block name from Product to Multiply.<br/>
-<<<<<<< HEAD
-This is for <a href=\"https://github.com/lbl-srg/modelica-buildings/issues/2865\">issue 2865</a>.
-=======
 This is for <a href=\"https://github.com/lbl-srg/modelica-buildings/issues/2865\">Buildings, issue 2865</a>.
->>>>>>> master
 </li>
 <li>
 September 26, 2017, by Thierry S. Nouidui:<br/>

@@ -176,11 +176,7 @@ and produces this value at its output <code>y</code>.
 March 30, 2022, by Michael Wetter:<br/>
 Added <code>discrete</code> keyword to sampled variable.<br/>
 This is for
-<<<<<<< HEAD
-<a href=\"https://github.com/lbl-srg/modelica-buildings/issues/2942\">issue 2942</a>.
-=======
 <a href=\"https://github.com/lbl-srg/modelica-buildings/issues/2942\">Buildings, issue 2942</a>.
->>>>>>> master
 </li>
 <li>
 October 19, 2020, by Michael Wetter:<br/>

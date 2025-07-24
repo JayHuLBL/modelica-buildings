@@ -1,9 +1,5 @@
 within Buildings.Controls.OBC.CDL.Discrete;
-<<<<<<< HEAD:Buildings/Controls/OBC/CDL/Discrete/Examples/package.mo
-package Examples "Collection of models that illustrate model use and test models"
-=======
 package Validation "Collection of models that validate the discrete blocks of the CDL"
->>>>>>> master:Buildings/Controls/OBC/CDL/Discrete/Validation/package.mo
   annotation (
     preferredView="info",
     Documentation(

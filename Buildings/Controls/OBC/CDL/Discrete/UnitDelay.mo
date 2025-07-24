@@ -64,13 +64,8 @@ the output <code>y</code> is identical to parameter <code>y_start</code>.
       revisions="<html>
 <ul>
 <li>
-<<<<<<< HEAD
-November 12, 2020, by Michael Wetter:<br/>
-Reformulated to remove dependency to <code>Modelica.Units.SI</code>.<br/>
-=======
 August 8, 2024, by Jianjun Hu:<br/>
 Delayed the input.<br/>
->>>>>>> master
 This is for
 <a href=\"https://github.com/lbl-srg/modelica-buildings/issues/3953\">Buildings, issue 3953</a>.
 </li> 
