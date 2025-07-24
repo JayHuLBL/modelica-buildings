@@ -1,10 +1,6 @@
 old_flag = Advanced.StoreProtectedVariables;
 Advanced.StoreProtectedVariables = true;
-<<<<<<<< HEAD:Buildings/Resources/Scripts/Dymola/Experimental/DHC/Loads/BaseClasses/Controls/Validation/MixingValveControl.mos
-simulateModel("Buildings.Experimental.DHC.Loads.BaseClasses.Controls.Validation.MixingValveControl",
-========
 simulateModel("Buildings.DHC.Loads.BaseClasses.Controls.Validation.MixingValveControl",
->>>>>>>> master:Buildings/Resources/Scripts/Dymola/DHC/Loads/BaseClasses/Controls/Validation/MixingValveControl.mos
     method="cvode",
     tolerance=1e-6,
     numberOfIntervals=500,

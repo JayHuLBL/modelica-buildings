@@ -1,12 +1,9 @@
 #ifndef IBPSA_FILEWRITERStructure_c
 #define IBPSA_FILEWRITERStructure_c
 
-<<<<<<< HEAD
-=======
 #include <stdlib.h>
 #include <string.h>
 
->>>>>>> master
 #include "ModelicaUtilities.h"
 
 #include "fileWriterStructure.h"

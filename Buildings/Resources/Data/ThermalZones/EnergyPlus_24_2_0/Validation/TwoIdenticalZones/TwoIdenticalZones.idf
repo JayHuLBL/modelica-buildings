@@ -4,11 +4,7 @@
 !-      Use '!' comments if they need to be retained when using the IDFEditor.
 !-   ===========  ALL OBJECTS IN CLASS: VERSION ===========
 
-<<<<<<<< HEAD:Buildings/Resources/Data/ThermalZones/EnergyPlus_9_6_0/Validation/TwoIdenticalZones/TwoIdenticalZones.idf
-  Version,9.6;
-========
   Version,24.2;
->>>>>>>> master:Buildings/Resources/Data/ThermalZones/EnergyPlus_24_2_0/Validation/TwoIdenticalZones/TwoIdenticalZones.idf
 
 !-   ===========  ALL OBJECTS IN CLASS: SIMULATIONCONTROL ===========
 

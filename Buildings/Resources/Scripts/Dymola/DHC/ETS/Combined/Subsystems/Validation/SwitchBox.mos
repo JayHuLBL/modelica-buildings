@@ -1,9 +1,4 @@
-<<<<<<<< HEAD:Buildings/Resources/Scripts/Dymola/Experimental/DHC/EnergyTransferStations/Combined/Subsystems/Validation/SwitchBox.mos
-removePlots(false);
-simulateModel("Buildings.Experimental.DHC.EnergyTransferStations.Combined.Subsystems.Validation.SwitchBox",
-========
 simulateModel("Buildings.DHC.ETS.Combined.Subsystems.Validation.SwitchBox",
->>>>>>>> master:Buildings/Resources/Scripts/Dymola/DHC/ETS/Combined/Subsystems/Validation/SwitchBox.mos
     method="cvode",
     tolerance=1e-6,
     startTime=0,

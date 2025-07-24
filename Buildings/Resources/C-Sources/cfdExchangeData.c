@@ -37,15 +37,9 @@ int cfdExchangeData(double t0, double dt, const double *u, size_t nU, size_t nY,
   int writeData = 1;
 
   /*check if current modelica time equals to last time*/
-<<<<<<< HEAD
-  /*if yes, it means cfdExchangeData() was called multiple times at one synchronization point, then directly return*/
-  if(fabs(cosim->modelica->lt - t0) < 1E-6){
-    return 0;
-=======
   /*if yes, it means cfdExchangeData() was called multiple times at one synchronization point, then skip writing data to CFD (only copy result to outputs)*/
   if(fabs(cosim->modelica->lt - t0) < 1E-6){
     writeData = 0;
->>>>>>> master
   }
 
   /*--------------------------------------------------------------------------

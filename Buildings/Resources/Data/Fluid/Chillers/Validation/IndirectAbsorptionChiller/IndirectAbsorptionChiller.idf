@@ -103,11 +103,7 @@
 ! Environmental Emissions:        None
 ! Utility Tariffs:                None
 
-<<<<<<< HEAD
-  Version,9.6;
-=======
   Version,23.1;
->>>>>>> master
 
 !-   ===========  ALL OBJECTS IN CLASS: SIMULATIONCONTROL ===========
 

@@ -1,14 +1,5 @@
 compareVars :=
   {
-<<<<<<< HEAD
-    "vavBoxCon.TRooHeaSet",
-    "vavBoxCon.TRooCooSet",
-    "vavBoxCon.TRoo",
-    "vavBoxCon.conHea.y",
-    "vavBoxCon.conCoo.y",
-    "vavBoxCon.yDam",
-    "vavBoxCon.yVal"
-=======
     "boxWitExpDam.TRooHeaSet",
     "boxWitExpDam.TRooCooSet",
     "boxWitExpDam.TRoo",
@@ -25,5 +16,4 @@ compareVars :=
     "boxWitPreIndDam.conCoo.y",
     "boxWitPreIndDam.yDam",
     "boxWitPreIndDam.yVal"
->>>>>>> master
   };

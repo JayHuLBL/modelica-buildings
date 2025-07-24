@@ -1,8 +1,4 @@
-<<<<<<< HEAD:Buildings/Resources/Scripts/Dymola/Experimental/DHC/Loads/BaseClasses/Validation/SimpleRoomODE.mos
-simulateModel("Buildings.Experimental.DHC.Loads.BaseClasses.Validation.SimpleRoomODE",
-=======
 simulateModel("Buildings.DHC.Loads.BaseClasses.Validation.SimpleRoomODE",
->>>>>>> master:Buildings/Resources/Scripts/Dymola/DHC/Loads/BaseClasses/Validation/SimpleRoomODE.mos
     method="cvode",
     tolerance=1e-6,
     numberOfIntervals=500,

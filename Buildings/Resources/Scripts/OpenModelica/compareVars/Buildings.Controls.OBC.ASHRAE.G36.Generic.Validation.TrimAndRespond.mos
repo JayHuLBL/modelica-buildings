@@ -1,15 +1,10 @@
 compareVars :=
   {
     "trimRespondLogic.uDevSta",
-<<<<<<< HEAD
-    "trimRespondLogic.numOfReq",
-    "trimRespondLogic.y",
-=======
     "trimRespondLogicHold.uHol",
     "trimRespondLogic.numOfReq",
     "trimRespondLogic.y",
     "trimRespondLogicHold.y",
->>>>>>> master
     "trimRespondLogic1.uDevSta",
     "trimRespondLogic1.numOfReq",
     "trimRespondLogic1.y",

@@ -543,10 +543,6 @@ char* findSpawnExe(FMUBuilding* bui, const char* SEARCHPATH, const char* spawnEx
   return spawnFullPath;
 }
 
-<<<<<<< HEAD
-<<<<<<<< HEAD:Buildings/Resources/src/ThermalZones/EnergyPlus_9_6_0/C-Sources/BuildingInstantiate.c
-=======
->>>>>>> master
 
 void terminateIfSpacesInInstallation(FMUBuilding* bui){
   const char sep = '/';
@@ -575,22 +571,10 @@ void terminateIfSpacesInInstallation(FMUBuilding* bui){
   }
 }
 
-<<<<<<< HEAD
-========
->>>>>>>> master:Buildings/Resources/src/ThermalZones/EnergyPlus_24_2_0/C-Sources/BuildingInstantiate.c
-=======
->>>>>>> master
 void generateFMU(FMUBuilding* bui, const char* spawnFullPath, const char* modelicaBuildingsJsonFile){
   /* Generate the FMU */
   char* optionFlags;
   char* outputFlag;
-<<<<<<< HEAD
-<<<<<<<< HEAD:Buildings/Resources/src/ThermalZones/EnergyPlus_9_6_0/C-Sources/BuildingInstantiate.c
-  char* createFlag;
-========
->>>>>>>> master:Buildings/Resources/src/ThermalZones/EnergyPlus_24_2_0/C-Sources/BuildingInstantiate.c
-=======
->>>>>>> master
   char* fulCmd;
   int retVal;
   size_t len;
@@ -606,26 +590,11 @@ void generateFMU(FMUBuilding* bui, const char* spawnFullPath, const char* modeli
     SpawnFormatError("Requested to use json file '%s' which does not exist.", modelicaBuildingsJsonFile);
   }
 
-<<<<<<< HEAD
-<<<<<<<< HEAD:Buildings/Resources/src/ThermalZones/EnergyPlus_9_6_0/C-Sources/BuildingInstantiate.c
-  optionFlags = " --no-compress "; /* Flag for command */
-  outputFlag = " --output-path "; /* Flag for command */
-  createFlag = " --create "; /* Flag for command */
-  len = strlen("\"") + strlen(spawnFullPath) + strlen("\"") + strlen(optionFlags)
-    + strlen(outputFlag) + strlen("\"") + strlen(bui->fmuAbsPat) + strlen("\"")
-    + strlen(createFlag) + strlen("\"") + strlen(modelicaBuildingsJsonFile) + strlen("\"")
-========
-=======
->>>>>>> master
   optionFlags = " energyplus create-fmu "; /* Flag for command */
   outputFlag = " --output-path ";          /* Flag for command */
   len = strlen("\"") + strlen(spawnFullPath) + strlen("\"") + strlen(optionFlags)
     + strlen(outputFlag) + strlen("\"") + strlen(bui->fmuAbsPat) + strlen("\" ")
     + strlen("\"") + strlen(modelicaBuildingsJsonFile) + strlen("\"")
-<<<<<<< HEAD
->>>>>>>> master:Buildings/Resources/src/ThermalZones/EnergyPlus_24_2_0/C-Sources/BuildingInstantiate.c
-=======
->>>>>>> master
     + 1;
 #ifdef _WIN32 /* Win32 or Win64 */
   /* Windows needs double quotes in the system call, see https://stackoverflow.com/questions/2642551/windows-c-system-call-with-spaces-in-command */
@@ -993,15 +962,7 @@ void generateAndInstantiateBuilding(FMUBuilding* bui){
     if (spawnFullPath == NULL){
       SpawnFormatError("Failed to find spawn executable in Buildings Library installation, on SPAWNPATH and on PATH. See installation instructions at Buildings.ThermalZones.EnergyPlus_%s.UsersGuide.Installation", bui->idfVersion);
     }
-<<<<<<< HEAD
-<<<<<<<< HEAD:Buildings/Resources/src/ThermalZones/EnergyPlus_9_6_0/C-Sources/BuildingInstantiate.c
     terminateIfSpacesInInstallation(bui);
-========
-
->>>>>>>> master:Buildings/Resources/src/ThermalZones/EnergyPlus_24_2_0/C-Sources/BuildingInstantiate.c
-=======
-    terminateIfSpacesInInstallation(bui);
->>>>>>> master
     /* Generate FMU using spawnFullPath */
     generateFMU(bui, spawnFullPath, modelicaBuildingsJsonFile);
     free(spawnFullPath);

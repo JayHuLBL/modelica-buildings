@@ -1,8 +1,4 @@
-<<<<<<<< HEAD:Buildings/Resources/Scripts/Dymola/Experimental/DHC/EnergyTransferStations/Combined/Subsystems/Validation/HeatExchanger.mos
-simulateModel("Buildings.Experimental.DHC.EnergyTransferStations.Combined.Subsystems.Validation.HeatExchanger",
-========
 simulateModel("Buildings.DHC.ETS.Combined.Subsystems.Validation.HeatExchanger",
->>>>>>>> master:Buildings/Resources/Scripts/Dymola/DHC/ETS/Combined/Subsystems/Validation/HeatExchanger.mos
     method="Cvode",
     tolerance=1e-6,
     stopTime=5000,

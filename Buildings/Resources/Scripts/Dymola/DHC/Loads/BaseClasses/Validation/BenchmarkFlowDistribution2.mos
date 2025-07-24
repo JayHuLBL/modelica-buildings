@@ -1,8 +1,4 @@
-<<<<<<< HEAD:Buildings/Resources/Scripts/Dymola/Experimental/DHC/Loads/BaseClasses/Validation/BenchmarkFlowDistribution2.mos
-simulateModel("Buildings.Experimental.DHC.Loads.BaseClasses.Validation.BenchmarkFlowDistribution2",
-=======
 simulateModel("Buildings.DHC.Loads.BaseClasses.Validation.BenchmarkFlowDistribution2",
->>>>>>> master:Buildings/Resources/Scripts/Dymola/DHC/Loads/BaseClasses/Validation/BenchmarkFlowDistribution2.mos
     method="cvode",
     tolerance=1e-6,
     numberOfIntervals=500,

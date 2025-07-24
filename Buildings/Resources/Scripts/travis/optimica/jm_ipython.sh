@@ -11,11 +11,7 @@
 set -e
 
 IMG_NAME=${OPTIMICA_VERSION}
-<<<<<<< HEAD
-DOCKER_USERNAME=michaelwetter
-=======
 DOCKER_REPONAME=lbnlblum
->>>>>>> master
 
 NAME=${DOCKER_REPONAME}/${IMG_NAME}
 

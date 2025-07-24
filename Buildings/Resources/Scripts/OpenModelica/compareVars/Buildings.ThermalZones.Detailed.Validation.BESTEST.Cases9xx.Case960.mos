@@ -20,9 +20,6 @@ compareVars :=
     "TRooHou.y",
     "TRooAnn.y",
     "TSunSpaHou.y",
-<<<<<<< HEAD
-    "TSunSpaAnn.y"
-=======
     "TSunSpaAnn.y",
     "EHea.y",
     "ECoo.y",
@@ -30,5 +27,4 @@ compareVars :=
     "heaCri.upperLimit",
     "cooCri.lowerLimit",
     "cooCri.upperLimit"
->>>>>>> master
   };

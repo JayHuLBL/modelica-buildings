@@ -65,9 +65,6 @@ test-optimica-spawn-fmu:
 	@echo "*** Check if Spawn is portable to another location in the file system."
 	@(cd  $(ROOT) && \
 	  python3 Buildings/Resources/Scripts/travis/pyfmi/runSpawnFromOtherDirectory.py )
-<<<<<<< HEAD
-	@echo "    Success."
-=======
 	@echo "    Target $@ successful."
 
 test-openmodelica-cdl:
@@ -77,7 +74,6 @@ test-openmodelica-cdl:
 	  python3 ../bin/runUnitTests.py --batch --single-package Buildings.Controls.OBC.CDL --tool openmodelica)
 	@echo "    Target $@ successful."
 
->>>>>>> master
 
 test-openmodelica-spawn-spaces: test-openmodelica-spawn-spaces-success test-openmodelica-spawn-spaces-failure
 
@@ -87,11 +83,7 @@ test-openmodelica-spawn-spaces-success:
 	@mkdir -p $(TMP)
 	@chmod a+rwx $(TMP)
 	@cp -rp $(ROOT)/Buildings $(TMP)/
-<<<<<<< HEAD
-	@mv $(TMP)/Buildings $(TMP)/Buildings\ 9.0.0
-=======
 	@mv $(TMP)/Buildings $(TMP)/Buildings\ 12.0.0
->>>>>>> master
 	@cp $(ROOT)/Buildings/Resources/Scripts/travis/SpawnTest.mo $(TMP)
 	@(cd  $(TMP) && \
 	  echo "clearCommandLineOptions();\n" \
@@ -104,22 +96,14 @@ test-openmodelica-spawn-spaces-success:
 	"setMatchingAlgorithm(\"PFPlusExt\");\n" \
 	"setIndexReductionMethod(\"dynamicStateSelection\");\n" \
 	"loadModel(Modelica, {\"4.0.0\"});\n" \
-<<<<<<< HEAD
-	"loadFile(\"Buildings 9.0.0/package.mo\");\n" \
-=======
 	"loadFile(\"Buildings 12.0.0/package.mo\");\n" \
->>>>>>> master
 	"loadFile(\"SpawnTest.mo\");\n" \
 	"simulate(SpawnTest);\n" \
 	"getErrorString();" > openmod.mos )
 	@(cd $(TMP) && omc openmod.mos > /dev/null )
 	@cd $(TMP) && sudo grep -q "The simulation finished successfully." SpawnTest.log
 	@sudo rm -rf $(TMP)
-<<<<<<< HEAD
-	@echo "    Success."
-=======
 	@echo "    Target $@ successful."
->>>>>>> master
 
 test-openmodelica-spawn-spaces-failure:
 	@echo "*** Check if for OpenModelica, Spawn properly fails if the root folder contains a space."
@@ -129,11 +113,7 @@ test-openmodelica-spawn-spaces-failure:
 	@mkdir -p $(TMP)
 	@chmod a+rwx $(TMP)
 	@cp -rp $(ROOT)/Buildings $(TMP)/
-<<<<<<< HEAD
-	@mv $(TMP)/Buildings $(TMP)/Buildings\ 9.0.0
-=======
 	@mv $(TMP)/Buildings $(TMP)/Buildings\ 12.0.0
->>>>>>> master
 	@cp $(ROOT)/Buildings/Resources/Scripts/travis/SpawnTest.mo $(TMP)
 	@(cd  $(TMP) && \
 	  echo "clearCommandLineOptions();\n" \
@@ -146,35 +126,21 @@ test-openmodelica-spawn-spaces-failure:
 	"setMatchingAlgorithm(\"PFPlusExt\");\n" \
 	"setIndexReductionMethod(\"dynamicStateSelection\");\n" \
 	"loadModel(Modelica, {\"4.0.0\"});\n" \
-<<<<<<< HEAD
-	"loadFile(\"Buildings 9.0.0/package.mo\");\n" \
-=======
 	"loadFile(\"Buildings 12.0.0/package.mo\");\n" \
->>>>>>> master
 	"loadFile(\"SpawnTest.mo\");\n" \
 	"simulate(SpawnTest);\n" \
 	"getErrorString();" > openmod.mos )
 	@(cd $(TMP) && omc openmod.mos > /dev/null )
-<<<<<<< HEAD
-	@cd $(TMP) && sudo grep -q "To use EnergyPlus, the Modelica Buildings Library must be installed in a directory that has no spaces." SpawnTest.log
-	@sudo rm -rf $(TMP)
-	@echo "    Success."
-=======
 	@cd $(TMP) && sudo grep -q "To run a simulation with EnergyPlus coupling, the working directory must not have spaces." SpawnTest.log
 	@sudo rm -rf $(TMP)
 	@echo "    Target $@ successful."
->>>>>>> master
 
 test-dymola-spawn-spaces:
 	@echo "*** Check if for Dymola, Spawn works if the root folder is not Buildings."
 	@$(eval TMP := $(shell mktemp --suffix=-LBL-Buildings -d))
 	@mkdir -p $(TMP)
 	@cp -rp $(ROOT)/Buildings $(TMP)/
-<<<<<<< HEAD
-	@mv $(TMP)/Buildings $(TMP)/Buildings\ 9.0.0
-=======
 	@mv $(TMP)/Buildings $(TMP)/Buildings\ 12.0.0
->>>>>>> master
 	@cp $(ROOT)/Buildings/Resources/Scripts/travis/SpawnTest.mo $(TMP)
 	@(cd  $(TMP) && \
 	  echo "simulateModel(\"SpawnTest\", stopTime=432000, method=\"Cvode\", tolerance=1e-06);" > run.mos && \
@@ -183,32 +149,6 @@ test-dymola-spawn-spaces:
 	  dymola run.mos /nowindow)
 	@cd $(TMP) && grep -q "Integration terminated successfully" dslog.txt
 	@rm -rf $(TMP)
-<<<<<<< HEAD
-	@echo "    Success."
-
-# Skip verification of translation statistics of certain models, see
-# https://github.com/lbl-srg/BuildingsPy/issues/441
-define buiPyMod
-Buildings.Examples.VAVReheat.ASHRAE2006, \
-Buildings.Examples.VAVReheat.Validation.Guideline36SteadyState, \
-Buildings.Examples.VAVReheat.Validation.TraceSubstance, \
-Buildings.Examples.VAVReheat.Guideline36, \
-Buildings.ThermalZones.EnergyPlus.Examples.SmallOffice.ASHRAE2006Spring, \
-Buildings.ThermalZones.EnergyPlus.Examples.SmallOffice.Guideline36Winter, \
-Buildings.ThermalZones.EnergyPlus.Examples.SmallOffice.ASHRAE2006Winter, \
-Buildings.ThermalZones.EnergyPlus.Examples.SmallOffice.Guideline36Spring, \
-Buildings.ThermalZones.EnergyPlus.Examples.SmallOffice.Guideline36Summer, \
-Buildings.ThermalZones.EnergyPlus.Examples.SmallOffice.ASHRAE2006Summer
-
-endef
-
-test-dymola:
-	$(eval BUILDINGSPY_SKIP_STATISTICS_VERIFICATION := $(buiPyMod))
-	(cd $(ROOT)/Buildings && \
-	  export PYTHONPATH=$(TRAVIS_BUILD_DIR)/Buildings/Resources/Python-Sources && \
-	  export BUILDINGSPY_SKIP_STATISTICS_VERIFICATION='$(BUILDINGSPY_SKIP_STATISTICS_VERIFICATION)' && \
-	  python3 ../bin/runUnitTests.py --batch --single-package $(PACKAGE) --tool dymola)
-=======
 	@echo "    Target $@ successful."
 
 # Skip verification of translation statistics of certain models, see
@@ -241,19 +181,10 @@ test-openmodelica:
 	  export PYTHONPATH=$(TRAVIS_BUILD_DIR)/Buildings/Resources/Python-Sources && \
 	  python3 ../bin/runUnitTests.py --batch --single-package $(PACKAGE) --tool openmodelica --skip-verification -n $(NPROC))
 	@echo "    Target $@ successful."
->>>>>>> master
-
-test-openmodelica:
-	(cd $(ROOT)/Buildings && \
-	  export PYTHONPATH=$(TRAVIS_BUILD_DIR)/Buildings/Resources/Python-Sources && \
-	  python3 ../bin/runUnitTests.py --batch --single-package $(PACKAGE) --tool openmodelica --skip-verification)
 
 test-optimica:
 	(cd $(ROOT)/Buildings && \
 	  export PYTHONPATH=$(TRAVIS_BUILD_DIR)/Buildings/Resources/Python-Sources && \
-<<<<<<< HEAD
-	  python3 ../bin/runUnitTests.py --batch --single-package $(PACKAGE) --tool optimica --skip-verification)
-=======
 	  python3 ../bin/runUnitTests.py --batch --single-package $(PACKAGE) --tool optimica --skip-verification -n $(NPROC))
 	@echo "    Target $@ successful."
 
@@ -264,4 +195,3 @@ test-templates-dymola:
 test-templates-optimica:
 	(cd $(ROOT)/Buildings && ../Buildings/Resources/Scripts/travis/templates/checkandrun.sh --checksum --tool Optimica --cover 0.3)
 	@echo "    Target $@ successful."
->>>>>>> master

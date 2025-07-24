@@ -1,9 +1,4 @@
-<<<<<<<< HEAD:Buildings/Resources/Scripts/Dymola/Experimental/DHC/EnergyTransferStations/Combined/Examples/ChillerBorefield.mos
-removePlots(false);
-simulateModel("Buildings.Experimental.DHC.EnergyTransferStations.Combined.Examples.ChillerBorefield",
-========
 simulateModel("Buildings.DHC.ETS.Combined.Examples.ChillerBorefield",
->>>>>>>> master:Buildings/Resources/Scripts/Dymola/DHC/ETS/Combined/Examples/ChillerBorefield.mos
     method="Cvode",
     tolerance=1e-6,
     startTime=6.5E6,

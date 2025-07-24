@@ -2,13 +2,10 @@
  *
  * Michael Wetter, LBNL                     2018-05-12
  */
-<<<<<<< HEAD
-=======
 
 #ifndef IBPSA_FILEWRITERFree_c
 #define IBPSA_FILEWRITERFree_c
 
->>>>>>> master
 #include <stdlib.h>
 #include <stdio.h>
 #include "ModelicaUtilities.h"

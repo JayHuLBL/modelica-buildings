@@ -1,8 +1,4 @@
-<<<<<<<< HEAD:Buildings/Resources/Scripts/Dymola/Experimental/DHC/Loads/BaseClasses/Examples/CouplingTimeSeries.mos
-simulateModel("Buildings.Experimental.DHC.Loads.BaseClasses.Examples.CouplingTimeSeries",
-========
 simulateModel("Buildings.DHC.Loads.BaseClasses.Examples.CouplingTimeSeries",
->>>>>>>> master:Buildings/Resources/Scripts/Dymola/DHC/Loads/BaseClasses/Examples/CouplingTimeSeries.mos
     method="cvode",
     tolerance=1e-6,
     stopTime=604800.0,

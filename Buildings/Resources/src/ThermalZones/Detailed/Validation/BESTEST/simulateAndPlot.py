@@ -915,12 +915,9 @@ def _refactor_data_structure(dataList):
         col_5 = list()
         col_6 = list()
         col_7 = list()
-<<<<<<< HEAD
-=======
         lowerLimit = list()
         upperLimit = list()
         have_limits = False
->>>>>>> master
 
         col_1_hr = list()
         col_2_hr = list()
@@ -937,13 +934,10 @@ def _refactor_data_structure(dataList):
             col_5.append(row['value'][3])
             col_6.append(row['value'][4])
             col_7.append(row['value'][5])
-<<<<<<< HEAD
-=======
             if (len(row['value']) > 6):
                 have_limits = True
                 lowerLimit.append(row['value'][6])
                 upperLimit.append(row['value'][7])
->>>>>>> master
             if 'hour' in row:
                 haveHour = True
                 col_1_hr.append(row['hour'][0])
@@ -954,12 +948,9 @@ def _refactor_data_structure(dataList):
                 col_6_hr.append(row['hour'][5])
         ele['data'] = list()
         temp = {'firstCol': col_1}
-<<<<<<< HEAD
-=======
         if have_limits:
             temp['lowerLimits'] = lowerLimit
             temp['upperLimits'] = upperLimit
->>>>>>> master
         temp['BSIMAC'] = col_2
         temp['CSE'] = col_3
         temp['DeST'] = col_4
@@ -1278,12 +1269,12 @@ def _generate_load_tables(comDat, allTools, lessTools):
         if setName == 'peak_heating':
             peaHea = ele
     tableText = '''<table border = \\"1\\" summary=\\"Annual load\\">
-<tr><td colspan=\\"8\\"><b>Annual heating load (MWh)</b></td></tr>''' + allTools
+<tr><td colspan=\\"10\\"><b>Annual heating load (MWh)</b></td></tr>''' + allTools
     # add annual heating load data
     annHeaLoa = _write_table_content(annHea, True)
     tableText = tableText + annHeaLoa
     # add annual cooling load data
-    tableText = tableText + '''<tr><td colspan=\\"8\\"><b>Annual cooling load (MWh)</b></td></tr>'''
+    tableText = tableText + '''<tr><td colspan=\\"10\\"><b>Annual cooling load (MWh)</b></td></tr>'''
     tableText = tableText + allTools
     annCooLoa = _write_table_content(annCoo, True)
     tableText = tableText + annCooLoa + '''</table>

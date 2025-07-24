@@ -1,9 +1,5 @@
 removePlots();
-<<<<<<<< HEAD:Buildings/Resources/Scripts/Dymola/Experimental/DHC/Examples/Combined/SeriesConstantFlow.mos
-simulateModel("Buildings.Experimental.DHC.Examples.Combined.SeriesConstantFlow",
-========
 simulateModel("Buildings.DHC.Examples.Combined.SeriesConstantFlow",
->>>>>>>> master:Buildings/Resources/Scripts/Dymola/DHC/Examples/Combined/SeriesConstantFlow.mos
     method="cvode",
     tolerance=1e-6,
     startTime=0,

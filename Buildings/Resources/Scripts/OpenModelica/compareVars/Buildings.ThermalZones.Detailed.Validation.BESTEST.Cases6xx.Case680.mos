@@ -18,9 +18,6 @@ compareVars :=
     "staRes.annualCoo.Mean",
     "staRes.annualCoo.Max",
     "TRooHou.y",
-<<<<<<< HEAD
-    "TRooAnn.y"
-=======
     "TRooAnn.y",
     "EHea.y",
     "ECoo.y",
@@ -28,5 +25,4 @@ compareVars :=
     "heaCri.upperLimit",
     "cooCri.lowerLimit",
     "cooCri.upperLimit"
->>>>>>> master
   };

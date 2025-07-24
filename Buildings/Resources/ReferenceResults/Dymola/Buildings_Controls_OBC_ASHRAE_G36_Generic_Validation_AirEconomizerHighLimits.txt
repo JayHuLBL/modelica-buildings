@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-last-generated=2022-06-24
-=======
 last-generated=2024-07-02
->>>>>>> master
 statistics-simulation=
 {
   "linear": " ",

@@ -95,10 +95,7 @@ void* allocate_Spawn_EnergyPlus_9_6_0(
   const char* idfVersion,
   const char* idfName,
   const char* epwName,
-<<<<<<< HEAD
-=======
   const runPeriod* runPer,
->>>>>>> master
   double relativeSurfaceTolerance,
   const char* epName,
   int usePrecompiledFMU,
@@ -329,10 +326,7 @@ void* allocate_Spawn_EnergyPlus_9_6_0(
       idfVersion,
       idfName,
       epwName,
-<<<<<<< HEAD
-=======
       runPer,
->>>>>>> master
       relativeSurfaceTolerance,
       usePrecompiledFMU,
       fmuName,

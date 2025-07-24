@@ -1,8 +1,4 @@
-<<<<<<< HEAD:Buildings/Resources/Scripts/Dymola/Experimental/DHC/Loads/BaseClasses/Validation/FlowDistributionPumpControl.mos
-simulateModel("Buildings.Experimental.DHC.Loads.BaseClasses.Validation.FlowDistributionPumpControl",
-=======
 simulateModel("Buildings.DHC.Loads.BaseClasses.Validation.FlowDistributionPumpControl",
->>>>>>> master:Buildings/Resources/Scripts/Dymola/DHC/Loads/BaseClasses/Validation/FlowDistributionPumpControl.mos
     method="cvode",
     tolerance=1e-6,
     numberOfIntervals=500,

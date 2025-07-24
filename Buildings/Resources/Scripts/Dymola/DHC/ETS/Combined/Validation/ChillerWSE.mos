@@ -1,9 +1,4 @@
-<<<<<<<< HEAD:Buildings/Resources/Scripts/Dymola/Experimental/DHC/EnergyTransferStations/Combined/Validation/ChillerWSE.mos
-removePlots(false);
-simulateModel("Buildings.Experimental.DHC.EnergyTransferStations.Combined.Validation.ChillerWSE",
-========
 simulateModel("Buildings.DHC.ETS.Combined.Validation.ChillerWSE",
->>>>>>>> master:Buildings/Resources/Scripts/Dymola/DHC/ETS/Combined/Validation/ChillerWSE.mos
     method="Cvode",
     tolerance=1e-6,
     stopTime=360000,

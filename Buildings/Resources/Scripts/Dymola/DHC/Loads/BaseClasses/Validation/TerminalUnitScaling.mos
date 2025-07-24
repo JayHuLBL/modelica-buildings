@@ -1,8 +1,4 @@
-<<<<<<< HEAD:Buildings/Resources/Scripts/Dymola/Experimental/DHC/Loads/BaseClasses/Validation/TerminalUnitScaling.mos
-simulateModel("Buildings.Experimental.DHC.Loads.BaseClasses.Validation.TerminalUnitScaling",
-=======
 simulateModel("Buildings.DHC.Loads.BaseClasses.Validation.TerminalUnitScaling",
->>>>>>> master:Buildings/Resources/Scripts/Dymola/DHC/Loads/BaseClasses/Validation/TerminalUnitScaling.mos
     method="cvode",
     tolerance=1e-6,
     stopTime=1000.0,

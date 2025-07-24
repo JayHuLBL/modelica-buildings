@@ -29,8 +29,6 @@
 
 #include "ModelicaUtilities.h"
 
-<<<<<<< HEAD
-=======
 typedef struct {
   int startDayOfYear; /* Day of week from Buildings.ThermalZones.EnergyPlus_9_6_0.Types.WeekDays */
   int applyWeekEndHolidayRule;
@@ -40,7 +38,6 @@ typedef struct {
   int use_weatherFileSnowIndicators;
 } runPeriod;
 
->>>>>>> master
 /* ********************************************************* */
 /* Thermal zone */
 extern void* allocate_Spawn_EnergyPlus_9_6_0(
@@ -52,10 +49,7 @@ extern void* allocate_Spawn_EnergyPlus_9_6_0(
   const char* idfVersion,
   const char* idfName,
   const char* epwName,
-<<<<<<< HEAD
-=======
   const runPeriod* runPer,
->>>>>>> master
   double relativeSurfaceTolerance,
   const char* epName,
   int usePrecompiledFMU,

@@ -8,10 +8,7 @@ compareVars :=
     "ala.VCooMax_flow",
     "ala.VDis_flow",
     "ala.yFloSenAla",
-<<<<<<< HEAD
-=======
     "ala.uOpeMod",
->>>>>>> master
     "ala.uCooDam",
     "ala.uHeaDam",
     "ala.yLeaDamAla"

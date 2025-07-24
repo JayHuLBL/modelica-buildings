@@ -5,15 +5,12 @@
  * Filip Jorissen, KU Leuven
  */
 
-<<<<<<< HEAD
-=======
 #ifndef IBPSA_JSONWRITERINIT_c
 #define IBPSA_JSONWRITERINIT_c
 
 #include <stdlib.h>
 #include <string.h>
 
->>>>>>> master
 #include "fileWriterStructure.c"
 #include "ModelicaUtilities.h"
 

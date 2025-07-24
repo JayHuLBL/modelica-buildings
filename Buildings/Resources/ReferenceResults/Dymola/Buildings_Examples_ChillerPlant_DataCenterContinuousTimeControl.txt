@@ -1,16 +1,8 @@
-<<<<<<< HEAD
-last-generated=2021-12-06
-statistics-initialization=
-{
-  "linear": "2",
-  "nonlinear": "1, 2, 1",
-=======
 last-generated=2024-07-09
 statistics-initialization=
 {
   "linear": "2",
   "nonlinear": "1, 1, 2",
->>>>>>> master
   "numerical Jacobians": "0"
 }
 statistics-simulation=

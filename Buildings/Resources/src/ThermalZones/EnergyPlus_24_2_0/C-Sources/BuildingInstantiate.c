@@ -543,45 +543,10 @@ char* findSpawnExe(FMUBuilding* bui, const char* SEARCHPATH, const char* spawnEx
   return spawnFullPath;
 }
 
-<<<<<<<< HEAD:Buildings/Resources/src/ThermalZones/EnergyPlus_9_6_0/C-Sources/BuildingInstantiate.c
-
-void terminateIfSpacesInInstallation(FMUBuilding* bui){
-  const char sep = '/';
-  char* libBaseName;
-  void (*SpawnFormatError)(const char *string, ...) = bui->SpawnFormatError;
-  size_t lasPosInd;
-
-  const char* ptr = strrchr(bui->buildingsLibraryRoot, sep);
-
-  if (ptr == NULL){
-      SpawnFormatError("Error. Expected separator '%c' in '%s'.", sep, bui->buildingsLibraryRoot);
-  }
-
-  /* Index of last position of the separator */
-  lasPosInd = (size_t)(ptr - bui->buildingsLibraryRoot);
-
-  mallocString(lasPosInd + 1, "Failed to allocate memory in terminateIfSpacesInInstallation().", &libBaseName, SpawnFormatError);
-  /* Copy the path except for the last part of the path, which is Buildings or Buildings 8.0.0 */
-  memcpy(libBaseName, bui->buildingsLibraryRoot, lasPosInd);
-  libBaseName[lasPosInd] = '\0';
-
-
-  if ( strchr(libBaseName, ' ') != NULL){
-    SpawnFormatError("To use EnergyPlus, the Modelica Buildings Library must be installed in a directory that has no spaces. (The Buildings directory can however have spaces such as in 'Buildings 9.0.0'.) Installing in '%s' is not supported.",
-      libBaseName);
-  }
-}
-
-========
->>>>>>>> master:Buildings/Resources/src/ThermalZones/EnergyPlus_24_2_0/C-Sources/BuildingInstantiate.c
 void generateFMU(FMUBuilding* bui, const char* spawnFullPath, const char* modelicaBuildingsJsonFile){
   /* Generate the FMU */
   char* optionFlags;
   char* outputFlag;
-<<<<<<<< HEAD:Buildings/Resources/src/ThermalZones/EnergyPlus_9_6_0/C-Sources/BuildingInstantiate.c
-  char* createFlag;
-========
->>>>>>>> master:Buildings/Resources/src/ThermalZones/EnergyPlus_24_2_0/C-Sources/BuildingInstantiate.c
   char* fulCmd;
   int retVal;
   size_t len;
@@ -597,20 +562,11 @@ void generateFMU(FMUBuilding* bui, const char* spawnFullPath, const char* modeli
     SpawnFormatError("Requested to use json file '%s' which does not exist.", modelicaBuildingsJsonFile);
   }
 
-<<<<<<<< HEAD:Buildings/Resources/src/ThermalZones/EnergyPlus_9_6_0/C-Sources/BuildingInstantiate.c
-  optionFlags = " --no-compress "; /* Flag for command */
-  outputFlag = " --output-path "; /* Flag for command */
-  createFlag = " --create "; /* Flag for command */
-  len = strlen("\"") + strlen(spawnFullPath) + strlen("\"") + strlen(optionFlags)
-    + strlen(outputFlag) + strlen("\"") + strlen(bui->fmuAbsPat) + strlen("\"")
-    + strlen(createFlag) + strlen("\"") + strlen(modelicaBuildingsJsonFile) + strlen("\"")
-========
   optionFlags = " energyplus create-fmu "; /* Flag for command */
   outputFlag = " --output-path ";          /* Flag for command */
   len = strlen("\"") + strlen(spawnFullPath) + strlen("\"") + strlen(optionFlags)
     + strlen(outputFlag) + strlen("\"") + strlen(bui->fmuAbsPat) + strlen("\" ")
     + strlen("\"") + strlen(modelicaBuildingsJsonFile) + strlen("\"")
->>>>>>>> master:Buildings/Resources/src/ThermalZones/EnergyPlus_24_2_0/C-Sources/BuildingInstantiate.c
     + 1;
 #ifdef _WIN32 /* Win32 or Win64 */
   /* Windows needs double quotes in the system call, see https://stackoverflow.com/questions/2642551/windows-c-system-call-with-spaces-in-command */
@@ -978,11 +934,7 @@ void generateAndInstantiateBuilding(FMUBuilding* bui){
     if (spawnFullPath == NULL){
       SpawnFormatError("Failed to find spawn executable in Buildings Library installation, on SPAWNPATH and on PATH. See installation instructions at Buildings.ThermalZones.EnergyPlus_%s.UsersGuide.Installation", bui->idfVersion);
     }
-<<<<<<<< HEAD:Buildings/Resources/src/ThermalZones/EnergyPlus_9_6_0/C-Sources/BuildingInstantiate.c
-    terminateIfSpacesInInstallation(bui);
-========
 
->>>>>>>> master:Buildings/Resources/src/ThermalZones/EnergyPlus_24_2_0/C-Sources/BuildingInstantiate.c
     /* Generate FMU using spawnFullPath */
     generateFMU(bui, spawnFullPath, modelicaBuildingsJsonFile);
     free(spawnFullPath);

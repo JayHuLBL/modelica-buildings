@@ -7,10 +7,7 @@ compareVars :=
     "ala.u1FanCom",
     "ala.u1TerFan",
     "ala.yFanStaAla",
-<<<<<<< HEAD
-=======
     "ala.uOpeMod",
->>>>>>> master
     "ala.uDam",
     "ala.uVal",
     "ala.TSup",

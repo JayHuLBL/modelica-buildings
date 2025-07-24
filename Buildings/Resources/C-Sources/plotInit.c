@@ -7,10 +7,7 @@
 
 #include <stdlib.h>
 #include <stdio.h>
-<<<<<<< HEAD
-=======
 #include <string.h>
->>>>>>> master
 #include "ModelicaUtilities.h"
 
 #include "plotObjectStructure.h"
