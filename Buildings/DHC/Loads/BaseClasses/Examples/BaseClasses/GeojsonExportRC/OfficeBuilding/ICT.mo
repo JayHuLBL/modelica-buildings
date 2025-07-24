@@ -1,8 +1,4 @@
-<<<<<<< HEAD:Buildings/Experimental/DHC/Loads/BaseClasses/Examples/BaseClasses/GeojsonExportRC/OfficeBuilding/ICT.mo
-within Buildings.Experimental.DHC.Loads.BaseClasses.Examples.BaseClasses.GeojsonExportRC.OfficeBuilding;
-=======
 within Buildings.DHC.Loads.BaseClasses.Examples.BaseClasses.GeojsonExportRC.OfficeBuilding;
->>>>>>> master:Buildings/DHC/Loads/BaseClasses/Examples/BaseClasses/GeojsonExportRC/OfficeBuilding/ICT.mo
 model ICT
   "This is the simulation model of ICT within building OfficeBuilding"
   Buildings.BoundaryConditions.SolarIrradiation.DiffusePerez HDifTil[6](

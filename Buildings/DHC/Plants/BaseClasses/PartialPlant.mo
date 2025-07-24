@@ -1,12 +1,6 @@
-<<<<<<<< HEAD:Buildings/Experimental/DHC/Plants/BaseClasses/PartialPlant.mo
-within Buildings.Experimental.DHC.Plants.BaseClasses;
-partial model PartialPlant
-  "Partial class for modeling a central plant"
-========
 within Buildings.DHC.Plants.BaseClasses;
 partial model PartialPlant
   "Partial class for modeling a plant"
->>>>>>>> master:Buildings/DHC/Plants/BaseClasses/PartialPlant.mo
   replaceable package Medium=Buildings.Media.Water
     constrainedby Modelica.Media.Interfaces.PartialMedium
     "Service side medium";
@@ -14,17 +8,10 @@ partial model PartialPlant
     constrainedby Modelica.Media.Interfaces.PartialMedium
     "Service side medium at heating supply"
     annotation(Dialog(enable=
-<<<<<<<< HEAD:Buildings/Experimental/DHC/Plants/BaseClasses/PartialPlant.mo
-      typ == TypDisSys.CombinedGeneration1 or
-      typ == TypDisSys.HeatingGeneration1));
-  parameter Buildings.Experimental.DHC.Types.DistrictSystemType
-  typ=Buildings.Experimental.DHC.Types.DistrictSystemType.CombinedGeneration2to4
-========
       typ == Buildings.DHC.Types.DistrictSystemType.CombinedGeneration1 or
       typ == Buildings.DHC.Types.DistrictSystemType.HeatingGeneration1));
   parameter Buildings.DHC.Types.DistrictSystemType
   typ=Buildings.DHC.Types.DistrictSystemType.CombinedGeneration2to4
->>>>>>>> master:Buildings/DHC/Plants/BaseClasses/PartialPlant.mo
     "Type of district system"
     annotation (Evaluate=true, Dialog(group="Configuration"));
   parameter Boolean have_fan=false
@@ -36,8 +23,7 @@ partial model PartialPlant
   parameter Boolean have_eleHea=false
     "Set to true if the plant has electric heating system"
     annotation (Evaluate=true, Dialog(group="Configuration"));
-  // Placeholder parameter
-  final parameter Integer nFue=0
+  parameter Integer nFue=0
     "Number of fuel types (0 means no combustion system)"
     annotation (Evaluate=true, Dialog(group="Configuration"));
   final parameter Boolean have_fue=nFue>0
@@ -51,7 +37,7 @@ partial model PartialPlant
   parameter Boolean allowFlowReversal=false
     "Set to true to allow flow reversal in service lines"
     annotation (Dialog(tab="Assumptions"),Evaluate=true);
-  final parameter Buildings.Fluid.Data.Fuels.Generic fue[nFue]
+  parameter Buildings.Fluid.Data.Fuels.Generic fue[nFue]
     "Fuel type"
      annotation (choicesAllMatching = true, Dialog(enable=have_fue));
   // IO CONNECTORS
@@ -137,16 +123,6 @@ partial model PartialPlant
       Placement(transformation(extent={{380,100},{420,140}}),
         iconTransformation(extent={{300,80},{380,160}})));
 protected
-<<<<<<<< HEAD:Buildings/Experimental/DHC/Plants/BaseClasses/PartialPlant.mo
-  final parameter Boolean have_hea=typ <> Buildings.Experimental.DHC.Types.DistrictSystemType.Cooling and
-  typ <> Buildings.Experimental.DHC.Types.DistrictSystemType.CombinedGeneration5
-  "Boolean flag to enable fluid connectors for heating service line";
-  final parameter Boolean have_coo=typ == Buildings.Experimental.DHC.Types.DistrictSystemType.CombinedGeneration1 or
-  typ == Buildings.Experimental.DHC.Types.DistrictSystemType.CombinedGeneration2to4 or
-  typ == Buildings.Experimental.DHC.Types.DistrictSystemType.Cooling
-  "Boolean flag to enable fluid connectors for cooling service line";
-  final parameter Boolean have_serAmb=typ == Buildings.Experimental.DHC.Types.DistrictSystemType.CombinedGeneration5
-========
   final parameter Boolean have_hea=typ <> Buildings.DHC.Types.DistrictSystemType.Cooling and
   typ <> Buildings.DHC.Types.DistrictSystemType.CombinedGeneration5
   "Boolean flag to enable fluid connectors for heating service line";
@@ -155,7 +131,6 @@ protected
   typ == Buildings.DHC.Types.DistrictSystemType.Cooling
   "Boolean flag to enable fluid connectors for cooling service line";
   final parameter Boolean have_serAmb=typ == Buildings.DHC.Types.DistrictSystemType.CombinedGeneration5
->>>>>>>> master:Buildings/DHC/Plants/BaseClasses/PartialPlant.mo
   "Boolean flag to enable fluid connector for ambient water service line";
   annotation (
     defaultComponentName="pla",
@@ -178,10 +153,6 @@ return.
 revisions="<html>
 <ul>
 <li>
-<<<<<<<< HEAD:Buildings/Experimental/DHC/Plants/BaseClasses/PartialPlant.mo
-September 20, 2021, by Mingzhe Liu:<br/>
-Refactored <code>if</code> statement to correctly enable and disable the fluid connector under different system types.
-========
 June 20, 2024, by Michael Wetter:<br/>
 Corrected annotation.<br/>
 This is for
@@ -191,7 +162,6 @@ This is for
 September 20, 2021, by Mingzhe Liu:<br/>
 Refactored <code>if</code> statement to correctly enable and
 disable the fluid connector under different system types.
->>>>>>>> master:Buildings/DHC/Plants/BaseClasses/PartialPlant.mo
 </li>
 <li>
 December 21, 2020, by Antoine Gautier:<br/>
@@ -232,16 +202,6 @@ First implementation.
           pattern=LinePattern.None,
           fillColor={0,0,255},
           fillPattern=FillPattern.Solid,
-<<<<<<<< HEAD:Buildings/Experimental/DHC/Plants/BaseClasses/PartialPlant.mo
-          visible=have_hea),
-        Rectangle(
-          extent={{140,-48},{300,-32}},
-          lineColor={0,0,255},
-          pattern=LinePattern.None,
-          fillColor={0,0,255},
-          fillPattern=FillPattern.Solid,
-========
->>>>>>>> master:Buildings/DHC/Plants/BaseClasses/PartialPlant.mo
           visible=have_coo),
         Rectangle(
           extent={{-300,32},{-140,48}},
@@ -257,8 +217,6 @@ First implementation.
           fillColor={0,255,255},
           fillPattern=FillPattern.Solid,
           visible=have_serAmb),
-<<<<<<<< HEAD:Buildings/Experimental/DHC/Plants/BaseClasses/PartialPlant.mo
-========
         Rectangle(
           extent={{-300,-8},{300,8}},
           lineColor={0,0,255},
@@ -266,30 +224,11 @@ First implementation.
           fillColor={255,0,0},
           fillPattern=FillPattern.Solid,
           visible=have_hea),
->>>>>>>> master:Buildings/DHC/Plants/BaseClasses/PartialPlant.mo
         Rectangle(
           extent={{-140,140},{140,-142}},
           lineColor={27,0,55},
           fillColor={170,213,255},
-<<<<<<<< HEAD:Buildings/Experimental/DHC/Plants/BaseClasses/PartialPlant.mo
-          fillPattern=FillPattern.Solid),
-        Rectangle(
-          extent={{140,-8},{300,8}},
-          lineColor={0,0,255},
-          pattern=LinePattern.None,
-          fillColor={238,46,47},
-          fillPattern=FillPattern.Solid,
-          visible=have_hea),
-        Rectangle(
-          extent={{-300,-48},{-140,-32}},
-          lineColor={0,0,255},
-          pattern=LinePattern.None,
-          fillColor={238,46,47},
-          fillPattern=FillPattern.Solid,
-          visible=have_coo)}),
-========
           fillPattern=FillPattern.Solid)}),
->>>>>>>> master:Buildings/DHC/Plants/BaseClasses/PartialPlant.mo
     Diagram(
       coordinateSystem(
         preserveAspectRatio=false,

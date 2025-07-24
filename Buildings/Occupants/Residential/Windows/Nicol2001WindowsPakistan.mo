@@ -3,14 +3,10 @@ model Nicol2001WindowsPakistan "A model to predict occupants' window behavior wi
   extends Modelica.Blocks.Icons.DiscreteBlock;
   parameter Real A(final unit="1/K") = 0.118 "Slope of the logistic relation";
   parameter Real B(final unit="1") = -3.73 "Intercept of the logistic relation";
-<<<<<<< HEAD
-  parameter Integer seed = 5 "Seed for the random number generator";
-=======
   parameter Integer localSeed = 6001
     "Local seed to be used to generate the initial state of the random number generator";
   parameter Integer globalSeed = 30129
     "Global seed to be combined with the local seed";
->>>>>>> master
   parameter Modelica.Units.SI.Time samplePeriod=120 "Sample period";
 
   Modelica.Blocks.Interfaces.RealInput TOut(

@@ -1,8 +1,4 @@
-<<<<<<<< HEAD:Buildings/ThermalZones/EnergyPlus_9_6_0/Examples/SmallOffice/package.mo
-within Buildings.ThermalZones.EnergyPlus_9_6_0.Examples;
-========
 within Buildings.ThermalZones.EnergyPlus_24_2_0.Examples;
->>>>>>>> master:Buildings/ThermalZones/EnergyPlus_24_2_0/Examples/SmallOffice/package.mo
 package SmallOffice "Package with VAV models for a small office building"
   extends Modelica.Icons.ExamplesPackage;
 
@@ -17,19 +13,11 @@ for a office building.
 <h4>Note</h4>
 <p>
 The models
-<<<<<<<< HEAD:Buildings/ThermalZones/EnergyPlus_9_6_0/Examples/SmallOffice/package.mo
-<a href=\"modelica://Buildings.ThermalZones.EnergyPlus_9_6_0.Examples.SmallOffice.ASHRAE2006Winter\">
-Buildings.ThermalZones.EnergyPlus_9_6_0.Examples.SmallOffice.ASHRAE2006Winter</a>
-and
-<a href=\"modelica://Buildings.ThermalZones.EnergyPlus_9_6_0.Examples.SmallOffice.Guideline36Winter\">
-Buildings.ThermalZones.EnergyPlus_9_6_0.Examples.SmallOffice.Guideline36Winter</a>
-========
 <a href=\"modelica://Buildings.ThermalZones.EnergyPlus_24_2_0.Examples.SmallOffice.ASHRAE2006Winter\">
 Buildings.ThermalZones.EnergyPlus_24_2_0.Examples.SmallOffice.ASHRAE2006Winter</a>
 and
 <a href=\"modelica://Buildings.ThermalZones.EnergyPlus_24_2_0.Examples.SmallOffice.Guideline36Winter\">
 Buildings.ThermalZones.EnergyPlus_24_2_0.Examples.SmallOffice.Guideline36Winter</a>
->>>>>>>> master:Buildings/ThermalZones/EnergyPlus_24_2_0/Examples/SmallOffice/package.mo
 appear to be quite similar to
 <a href=\"modelica://Buildings.Examples.VAVReheat.ASHRAE2006\">
 Buildings.Examples.VAVReheat.ASHRAE2006</a>
@@ -39,13 +27,8 @@ Buildings.Examples.VAVReheat.Guideline36</a>,
 respectively, because they all have the same HVAC system, control sequences,
 and all have five thermal zones.
 However, the models in
-<<<<<<<< HEAD:Buildings/ThermalZones/EnergyPlus_9_6_0/Examples/SmallOffice/package.mo
-<a href=\"modelica://Buildings.ThermalZones.EnergyPlus_9_6_0.Examples.SmallOffice\">
-Buildings.ThermalZones.EnergyPlus_9_6_0.Examples.SmallOffice</a>
-========
 <a href=\"modelica://Buildings.ThermalZones.EnergyPlus_24_2_0.Examples.SmallOffice\">
 Buildings.ThermalZones.EnergyPlus_24_2_0.Examples.SmallOffice</a>
->>>>>>>> master:Buildings/ThermalZones/EnergyPlus_24_2_0/Examples/SmallOffice/package.mo
 are from the
 <i>DOE Commercial Reference Building,
 Small Office, new construction, ASHRAE 90.1-2004,
@@ -58,13 +41,8 @@ are from the
 Medium Office, new construction, ASHRAE 90.1-2004,
 version 1.2_4.0</i>.
 Therefore, the dimensions of the thermal zones in
-<<<<<<<< HEAD:Buildings/ThermalZones/EnergyPlus_9_6_0/Examples/SmallOffice/package.mo
-<a href=\"modelica://Buildings.ThermalZones.EnergyPlus_9_6_0.Examples.SmallOffice\">
-Buildings.ThermalZones.EnergyPlus_9_6_0.Examples.SmallOffice</a>
-========
 <a href=\"modelica://Buildings.ThermalZones.EnergyPlus_24_2_0.Examples.SmallOffice\">
 Buildings.ThermalZones.EnergyPlus_24_2_0.Examples.SmallOffice</a>
->>>>>>>> master:Buildings/ThermalZones/EnergyPlus_24_2_0/Examples/SmallOffice/package.mo
 are considerably smaller than in
 <a href=\"modelica://Buildings.Examples.VAVReheat\">
 Buildings.Examples.VAVReheat</a>.

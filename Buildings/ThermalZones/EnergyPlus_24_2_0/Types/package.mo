@@ -1,8 +1,4 @@
-<<<<<<<< HEAD:Buildings/ThermalZones/EnergyPlus_9_6_0/Types/package.mo
-within Buildings.ThermalZones.EnergyPlus_9_6_0;
-========
 within Buildings.ThermalZones.EnergyPlus_24_2_0;
->>>>>>>> master:Buildings/ThermalZones/EnergyPlus_24_2_0/Types/package.mo
 package Types "Package with type definitions"
   extends Modelica.Icons.TypesPackage;
 

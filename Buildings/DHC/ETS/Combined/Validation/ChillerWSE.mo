@@ -1,8 +1,4 @@
-<<<<<<< HEAD:Buildings/Experimental/DHC/EnergyTransferStations/Combined/Validation/ChillerWSE.mo
-within Buildings.Experimental.DHC.EnergyTransferStations.Combined.Validation;
-=======
 within Buildings.DHC.ETS.Combined.Validation;
->>>>>>> master:Buildings/DHC/ETS/Combined/Validation/ChillerWSE.mo
 model ChillerWSE
   "Validation of the ETS model with heat recovery chiller and waterside economizer"
   extends ChillerOnly(
@@ -29,11 +25,7 @@ equation
     annotation (Line(points={{-309,160},{280,160},{280,60},{272,60}},color={0,0,127}));
   annotation (
     __Dymola_Commands(
-<<<<<<< HEAD:Buildings/Experimental/DHC/EnergyTransferStations/Combined/Validation/ChillerWSE.mo
-      file="modelica://Buildings/Resources/Scripts/Dymola/Experimental/DHC/EnergyTransferStations/Combined/Validation/ChillerWSE.mos"
-=======
       file="modelica://Buildings/Resources/Scripts/Dymola/DHC/ETS/Combined/Validation/ChillerWSE.mos"
->>>>>>> master:Buildings/DHC/ETS/Combined/Validation/ChillerWSE.mo
       "Simulate and plot"),
     experiment(
       StopTime=360000,
@@ -54,13 +46,8 @@ First implementation.
       info="<html>
 <p>
 This model validates
-<<<<<<< HEAD:Buildings/Experimental/DHC/EnergyTransferStations/Combined/Validation/ChillerWSE.mo
-<a href=\"modelica://Buildings.Experimental.DHC.EnergyTransferStations.Combined.ChillerBorefield\">
-Buildings.Experimental.DHC.EnergyTransferStations.Combined.ChillerBorefield</a>
-=======
 <a href=\"modelica://Buildings.DHC.ETS.Combined.ChillerBorefield\">
 Buildings.DHC.ETS.Combined.ChillerBorefield</a>
->>>>>>> master:Buildings/DHC/ETS/Combined/Validation/ChillerWSE.mo
 in a system configuration with no geothermal borefield.
 </p>
 <ul>
@@ -75,13 +62,8 @@ temperature, corresponding to typical extreme values over a whole year
 </li>
 <li>
 The other modeling assumptions are described in
-<<<<<<< HEAD:Buildings/Experimental/DHC/EnergyTransferStations/Combined/Validation/ChillerWSE.mo
-<a href=\"modelica://Buildings.Experimental.DHC.EnergyTransferStations.Combined.Validation.BaseClasses.PartialChillerBorefield\">
-Buildings.Experimental.DHC.EnergyTransferStations.Combined.Validation.BaseClasses.PartialChillerBorefield</a>.
-=======
 <a href=\"modelica://Buildings.DHC.ETS.Combined.Validation.BaseClasses.PartialChillerBorefield\">
 Buildings.DHC.ETS.Combined.Validation.BaseClasses.PartialChillerBorefield</a>.
->>>>>>> master:Buildings/DHC/ETS/Combined/Validation/ChillerWSE.mo
 </li>
 </ul>
 </html>"));

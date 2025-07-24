@@ -126,11 +126,7 @@ model VAVReheatBox "Supply box of a VAV system with a hot water reheat coil"
     m_flow_nominal=mHeaWat_flow_nominal,
     from_dp=true,
     dpValve_nominal=3000,
-<<<<<<< HEAD
-    use_inputFilter=false,
-=======
     use_strokeTime=false,
->>>>>>> master
     dpFixed_nominal=3000) "Valve for terminal heater"
     annotation (Placement(transformation(extent={{-70,-10},{-50,10}})));
   Modelica.Blocks.Interfaces.RealInput yHea
@@ -301,15 +297,12 @@ Model for a VAV terminal box with a water reheat coil and exponential damper.
 </html>", revisions="<html>
 <ul>
 <li>
-<<<<<<< HEAD
-=======
 January 27, 2023, by Jianjun Hu:<br/>
 Changed the pressure independent damper to exponential damper.
 This is for
 <a href=\"https://github.com/lbl-srg/modelica-buildings/issues/3139\">issue #3139</a>.
 </li>
 <li>
->>>>>>> master
 December 20, 2021, by Michael Wetter:<br/>
 Changed parameter declarations for
 <a href=\"https://github.com/lbl-srg/modelica-buildings/issues/2829\">issue #2829</a>.

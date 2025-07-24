@@ -16,13 +16,9 @@ model Case930 "Case 920, but with added overhang and sidefins"
     annualHea(Min=3.524*3.6e9, Max=4.384*3.6e9, Mean=4.064*3.6e9),
     annualCoo(Min=-1.654*3.6e9, Max=-2.161*3.6e9, Mean=-1.898*3.6e9),
     peakHea(Min=2.537*1000, Max=2.968*1000, Mean=2.751*1000),
-<<<<<<< HEAD
-    peakCoo(Min=-2.335*1000, Max=-3.052*1000, Mean=-2.656*1000)));
-=======
     peakCoo(Min=-2.335*1000, Max=-3.052*1000, Mean=-2.656*1000)),
    heaCri(lowerLimit=2.75*3.6e9, upperLimit=5.35*3.6e9),
    cooCri(lowerLimit=-1.24*3.6e9, upperLimit=-2.64*3.6e9));
->>>>>>> master
 
   annotation (__Dymola_Commands(file="modelica://Buildings/Resources/Scripts/Dymola/ThermalZones/Detailed/Validation/BESTEST/Cases9xx/Case930.mos"
         "Simulate and plot"),
@@ -40,15 +36,12 @@ windows on the west and east walls have an overhang and side fins.
 revisions="<html>
 <ul>
 <li>
-<<<<<<< HEAD
-=======
 May 12, 2023, by Jianjun Hu:<br/>
 Added test acceptance criteria limits.
 This is for
 <a href=\"https://github.com/lbl-srg/modelica-buildings/issues/3396\">issue 3396</a>.
 </li> 
 <li>
->>>>>>> master
 May 18, 2022, by Jianjun Hu:<br/>
 First implementation.
 </li>

@@ -16,11 +16,7 @@ record ExteriorWallCase980 =
         k=0.040,
         c=1400,
         d=10,
-<<<<<<< HEAD
-        nStaRef=nStaRef),Buildings.HeatTransfer.Data.Solids.Generic(
-=======
         nStaRef=8*nStaRef),Buildings.HeatTransfer.Data.Solids.Generic(
->>>>>>> master
         x=0.100,
         k=0.510,
         c=1000,

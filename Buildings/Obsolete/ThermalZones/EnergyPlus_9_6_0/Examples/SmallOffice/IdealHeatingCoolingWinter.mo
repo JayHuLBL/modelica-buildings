@@ -1,16 +1,8 @@
-<<<<<<<< HEAD:Buildings/ThermalZones/EnergyPlus_9_6_0/Examples/SmallOffice/IdealHeatingCoolingWinter.mo
-within Buildings.ThermalZones.EnergyPlus_9_6_0.Examples.SmallOffice;
-model IdealHeatingCoolingWinter
-  "Building with constant fresh air and ideal heating/cooling that exactly meets set point"
-  extends Buildings.ThermalZones.EnergyPlus_9_6_0.Examples.SmallOffice.Unconditioned;
-  Controls.OBC.CDL.Continuous.Sources.Constant THeaSet[5](
-========
 within Buildings.Obsolete.ThermalZones.EnergyPlus_9_6_0.Examples.SmallOffice;
 model IdealHeatingCoolingWinter
   "Building with constant fresh air and ideal heating/cooling that exactly meets set point"
   extends Buildings.Obsolete.ThermalZones.EnergyPlus_9_6_0.Examples.SmallOffice.Unconditioned;
   Buildings.Controls.OBC.CDL.Reals.Sources.Constant THeaSet[5](
->>>>>>>> master:Buildings/Obsolete/ThermalZones/EnergyPlus_9_6_0/Examples/SmallOffice/IdealHeatingCoolingWinter.mo
     each k(
       final unit="K",
       displayUnit="degC")=293.15)
@@ -84,11 +76,7 @@ equation
     annotation (Line(points={{-32,160.8},{-46,160.8},{-46,146},{-58,146}},color={0,0,127}));
   annotation (
     __Dymola_Commands(
-<<<<<<<< HEAD:Buildings/ThermalZones/EnergyPlus_9_6_0/Examples/SmallOffice/IdealHeatingCoolingWinter.mo
-      file="modelica://Buildings/Resources/Scripts/Dymola/ThermalZones/EnergyPlus_9_6_0/Examples/SmallOffice/IdealHeatingCoolingWinter.mos" "Simulate and plot"),
-========
       file="modelica://Buildings/Resources/Scripts/Dymola/Obsolete/ThermalZones/EnergyPlus_9_6_0/Examples/SmallOffice/IdealHeatingCoolingWinter.mos" "Simulate and plot"),
->>>>>>>> master:Buildings/Obsolete/ThermalZones/EnergyPlus_9_6_0/Examples/SmallOffice/IdealHeatingCoolingWinter.mo
     experiment(
       StartTime=432000,
       StopTime=864000,

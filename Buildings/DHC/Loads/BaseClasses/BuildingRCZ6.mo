@@ -1,8 +1,4 @@
-<<<<<<<< HEAD:Buildings/DHC/Loads/BaseClasses/Examples/BaseClasses/BuildingRCZ6.mo
-within Buildings.Experimental.DHC.Loads.BaseClasses.Examples.BaseClasses;
-========
 within Buildings.DHC.Loads.BaseClasses;
->>>>>>>> master:Buildings/DHC/Loads/BaseClasses/BuildingRCZ6.mo
 model BuildingRCZ6
   "Six-zone RC building model based on URBANopt GeoJSON export, with distribution pumps"
   extends Buildings.DHC.Loads.BaseClasses.PartialBuilding(
@@ -47,19 +43,6 @@ model BuildingRCZ6
       each displayUnit="degC"))
     "Maximum temperature set point"
     annotation (Placement(transformation(extent={{-290,190},{-270,210}})));
-<<<<<<<< HEAD:Buildings/DHC/Loads/BaseClasses/Examples/BaseClasses/BuildingRCZ6.mo
-  Buildings.Experimental.DHC.Loads.BaseClasses.Examples.BaseClasses.GeojsonExportRC.OfficeBuilding.Office office
-    annotation (Placement(transformation(extent={{-100,-20},{-80,0}})));
-  Buildings.Experimental.DHC.Loads.BaseClasses.Examples.BaseClasses.GeojsonExportRC.OfficeBuilding.Floor floor
-    annotation (Placement(transformation(extent={{-60,-20},{-40,0}})));
-  Buildings.Experimental.DHC.Loads.BaseClasses.Examples.BaseClasses.GeojsonExportRC.OfficeBuilding.Storage storage
-    annotation (Placement(transformation(extent={{-20,-20},{0,0}})));
-  Buildings.Experimental.DHC.Loads.BaseClasses.Examples.BaseClasses.GeojsonExportRC.OfficeBuilding.Meeting meeting
-    annotation (Placement(transformation(extent={{20,-20},{40,0}})));
-  Buildings.Experimental.DHC.Loads.BaseClasses.Examples.BaseClasses.GeojsonExportRC.OfficeBuilding.Restroom restroom
-    annotation (Placement(transformation(extent={{60,-20},{80,0}})));
-  Buildings.Experimental.DHC.Loads.BaseClasses.Examples.BaseClasses.GeojsonExportRC.OfficeBuilding.ICT iCT
-========
   Buildings.DHC.Loads.BaseClasses.Examples.BaseClasses.GeojsonExportRC.OfficeBuilding.Office office
     annotation (Placement(transformation(extent={{-100,-20},{-80,0}})));
   Buildings.DHC.Loads.BaseClasses.Examples.BaseClasses.GeojsonExportRC.OfficeBuilding.Floor floor
@@ -71,16 +54,11 @@ model BuildingRCZ6
   Buildings.DHC.Loads.BaseClasses.Examples.BaseClasses.GeojsonExportRC.OfficeBuilding.Restroom restroom
     annotation (Placement(transformation(extent={{60,-20},{80,0}})));
   Buildings.DHC.Loads.BaseClasses.Examples.BaseClasses.GeojsonExportRC.OfficeBuilding.ICT iCT
->>>>>>>> master:Buildings/DHC/Loads/BaseClasses/BuildingRCZ6.mo
     annotation (Placement(transformation(extent={{100,-20},{120,0}})));
   Buildings.Controls.OBC.CDL.Reals.MultiSum mulSum(
     nin=2)
     annotation (Placement(transformation(extent={{240,70},{260,90}})));
-<<<<<<<< HEAD:Buildings/DHC/Loads/BaseClasses/Examples/BaseClasses/BuildingRCZ6.mo
-  Buildings.Experimental.DHC.Loads.BaseClasses.Examples.BaseClasses.FanCoil4PipeHeatPorts terUni[nZon](
-========
   Buildings.DHC.Loads.BaseClasses.FanCoil4PipeHeatPorts terUni[nZon](
->>>>>>>> master:Buildings/DHC/Loads/BaseClasses/BuildingRCZ6.mo
     redeclare each final package Medium1=Medium,
     redeclare each final package Medium2=Medium2,
     final facMul=facMulTerUni,
@@ -96,11 +74,7 @@ model BuildingRCZ6
     each mLoaCoo_flow_nominal=5)
     "Terminal unit"
     annotation (Placement(transformation(extent={{-200,-60},{-180,-40}})));
-<<<<<<<< HEAD:Buildings/DHC/Loads/BaseClasses/Examples/BaseClasses/BuildingRCZ6.mo
-  Buildings.Experimental.DHC.Loads.BaseClasses.FlowDistribution disFloHea(
-========
   Buildings.DHC.Loads.BaseClasses.FlowDistribution disFloHea(
->>>>>>>> master:Buildings/DHC/Loads/BaseClasses/BuildingRCZ6.mo
     redeclare package Medium=Medium,
     m_flow_nominal=sum(
       terUni.mHeaWat_flow_nominal .* terUni.facMul),
@@ -110,19 +84,11 @@ model BuildingRCZ6
     nPorts_b1=nZon)
     "Heating water distribution system"
     annotation (Placement(transformation(extent={{-140,-110},{-120,-90}})));
-<<<<<<<< HEAD:Buildings/DHC/Loads/BaseClasses/Examples/BaseClasses/BuildingRCZ6.mo
-  Buildings.Experimental.DHC.Loads.BaseClasses.FlowDistribution disFloCoo(
-    redeclare package Medium=Medium,
-    m_flow_nominal=sum(
-      terUni.mChiWat_flow_nominal .* terUni.facMul),
-    typDis=Buildings.Experimental.DHC.Loads.BaseClasses.Types.DistributionType.ChilledWater,
-========
   Buildings.DHC.Loads.BaseClasses.FlowDistribution disFloCoo(
     redeclare package Medium=Medium,
     m_flow_nominal=sum(
       terUni.mChiWat_flow_nominal .* terUni.facMul),
     typDis=Buildings.DHC.Loads.BaseClasses.Types.DistributionType.ChilledWater,
->>>>>>>> master:Buildings/DHC/Loads/BaseClasses/BuildingRCZ6.mo
     have_pum=true,
     dp_nominal=100000,
     nPorts_a1=nZon,

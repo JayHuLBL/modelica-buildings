@@ -535,11 +535,7 @@ block Controller
     final Td=TdCoo)
     "Zone cooling control signal"
     annotation (Placement(transformation(extent={{-40,150},{-20,170}})));
-<<<<<<< HEAD
-  Buildings.Controls.OBC.CDL.Continuous.PIDWithReset heaPI(
-=======
   Buildings.Controls.OBC.CDL.Reals.PIDWithReset heaPI(
->>>>>>> master
     final controllerType=controllerTypeHea,
     final k=kHea,
     final Ti=TiHea,

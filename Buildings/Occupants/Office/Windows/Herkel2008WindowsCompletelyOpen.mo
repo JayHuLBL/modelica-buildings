@@ -4,14 +4,10 @@ large windows"
   extends Modelica.Blocks.Icons.DiscreteBlock;
   parameter Real A = 0.08 "Slope of the logistic relation";
   parameter Real B = -4.05 "Intercept of the logistic relation";
-<<<<<<< HEAD
-  parameter Integer seed = 3 "Seed for the random number generator";
-=======
   parameter Integer localSeed = 3004
     "Local seed to be used to generate the initial state of the random number generator";
   parameter Integer globalSeed = 30129
     "Global seed to be combined with the local seed";
->>>>>>> master
   parameter Modelica.Units.SI.Time samplePeriod=120 "Sample period";
 
   Modelica.Blocks.Interfaces.RealInput TOut(

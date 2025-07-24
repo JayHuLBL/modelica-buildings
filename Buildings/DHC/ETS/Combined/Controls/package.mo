@@ -1,8 +1,4 @@
-<<<<<<< HEAD:Buildings/Experimental/DHC/EnergyTransferStations/Combined/Controls/package.mo
-within Buildings.Experimental.DHC.EnergyTransferStations.Combined;
-=======
 within Buildings.DHC.ETS.Combined;
->>>>>>> master:Buildings/DHC/ETS/Combined/Controls/package.mo
 package Controls "Package of control blocks for fifth generation DHC ETS"
   extends Modelica.Icons.VariantsPackage;
 

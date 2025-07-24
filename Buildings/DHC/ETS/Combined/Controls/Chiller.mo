@@ -1,12 +1,3 @@
-<<<<<<< HEAD:Buildings/Experimental/DHC/EnergyTransferStations/Combined/Controls/Chiller.mo
-within Buildings.Experimental.DHC.EnergyTransferStations.Combined.Controls;
-model Chiller
-  "Chiller controller"
-  extends Modelica.Blocks.Icons.Block;
-  parameter Modelica.Units.SI.Temperature TConWatEntMin(displayUnit="degC")
-    "Minimum value of condenser water entering temperature";
-  parameter Modelica.Units.SI.Temperature TEvaWatEntMax(displayUnit="degC")
-=======
 within Buildings.DHC.ETS.Combined.Controls;
 model Chiller
   "Chiller controller"
@@ -20,7 +11,6 @@ model Chiller
     final quantity="ThermodynamicTemperature",
     final unit="K",
     displayUnit="degC")
->>>>>>> master:Buildings/DHC/ETS/Combined/Controls/Chiller.mo
     "Maximum value of evaporator water entering temperature";
   Buildings.Controls.OBC.CDL.Interfaces.BooleanInput uCoo
     "Cooling enable signal"
@@ -79,21 +69,13 @@ model Chiller
     final reverseActing=false)
     "Condenser three-way valve control"
     annotation (Placement(transformation(extent={{50,-70},{70,-50}})));
-<<<<<<< HEAD:Buildings/Experimental/DHC/EnergyTransferStations/Combined/Controls/Chiller.mo
-  Buildings.Controls.OBC.CDL.Continuous.Sources.Constant maxTEvaWatEnt(
-=======
   Buildings.Controls.OBC.CDL.Reals.Sources.Constant maxTEvaWatEnt(
->>>>>>> master:Buildings/DHC/ETS/Combined/Controls/Chiller.mo
     y(final unit="K",
       displayUnit="degC"),
     final k=TEvaWatEntMax)
     "Maximum value of evaporator water entering temperature"
     annotation (Placement(transformation(extent={{-10,-10},{10,10}})));
-<<<<<<< HEAD:Buildings/Experimental/DHC/EnergyTransferStations/Combined/Controls/Chiller.mo
-  Buildings.Controls.OBC.CDL.Continuous.Sources.Constant minTConWatEnt(
-=======
   Buildings.Controls.OBC.CDL.Reals.Sources.Constant minTConWatEnt(
->>>>>>> master:Buildings/DHC/ETS/Combined/Controls/Chiller.mo
     y(final unit="K",
       displayUnit="degC"),
     final k=TConWatEntMin)

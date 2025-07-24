@@ -1,12 +1,3 @@
-<<<<<<< HEAD:Buildings/Experimental/DHC/EnergyTransferStations/Combined/ChillerBorefield.mo
-within Buildings.Experimental.DHC.EnergyTransferStations.Combined;
-model ChillerBorefield "ETS model for 5GDHC systems with heat recovery chiller and optional borefield"
-  extends Buildings.Experimental.DHC.EnergyTransferStations.Combined.BaseClasses.PartialParallel(
-    final have_eleCoo=true,
-    final have_fan=false,
-    redeclare replaceable Buildings.Experimental.DHC.EnergyTransferStations.Combined.Controls.Supervisory conSup
-      constrainedby Buildings.Experimental.DHC.EnergyTransferStations.Combined.Controls.Supervisory(
-=======
 within Buildings.DHC.ETS.Combined;
 model ChillerBorefield "ETS model for 5GDHC systems with heat recovery chiller and optional borefield"
   extends Buildings.DHC.ETS.Combined.BaseClasses.PartialParallel(
@@ -14,7 +5,6 @@ model ChillerBorefield "ETS model for 5GDHC systems with heat recovery chiller a
     final have_fan=false,
     redeclare replaceable Buildings.DHC.ETS.Combined.Controls.Supervisory conSup
       constrainedby Buildings.DHC.ETS.Combined.Controls.Supervisory(
->>>>>>> master:Buildings/DHC/ETS/Combined/ChillerBorefield.mo
         final controllerType=controllerType,
         final kHot=kHot,
         final kCol=kCol,
@@ -67,21 +57,6 @@ model ChillerBorefield "ETS model for 5GDHC systems with heat recovery chiller a
     "Chiller performance data"
     annotation (Dialog(group="Chiller"),choicesAllMatching=true,
     Placement(transformation(extent={{20,222},{40,242}})));
-<<<<<<< HEAD:Buildings/Experimental/DHC/EnergyTransferStations/Combined/ChillerBorefield.mo
-  replaceable parameter Buildings.Fluid.Movers.Data.Generic perPumCon(
-    motorCooledByFluid=false)
-    constrainedby Buildings.Fluid.Movers.Data.Generic
-    "Record with performance data for condenser pump"
-    annotation (Dialog(group="Chiller"),choicesAllMatching=true,
-    Placement(transformation(extent={{60,222},{80,242}})));
-  replaceable parameter Buildings.Fluid.Movers.Data.Generic perPumEva(
-    motorCooledByFluid=false)
-    constrainedby Buildings.Fluid.Movers.Data.Generic
-    "Record with performance data for evaporator pump"
-    annotation (Dialog(group="Chiller"),choicesAllMatching=true,
-    Placement(transformation(extent={{100,222},{120,242}})));
-=======
->>>>>>> master:Buildings/DHC/ETS/Combined/ChillerBorefield.mo
   parameter Modelica.Units.SI.PressureDifference dp1WSE_nominal(displayUnit=
         "Pa") = 40E3
     "Nominal pressure drop across heat exchanger on district side"
@@ -108,16 +83,6 @@ model ChillerBorefield "ETS model for 5GDHC systems with heat recovery chiller a
   parameter Real y1WSEMin(unit="1")=0.05
     "Minimum pump flow rate or valve opening for temperature measurement (fractional)"
     annotation (Dialog(group="Waterside economizer", enable=have_WSE));
-<<<<<<< HEAD:Buildings/Experimental/DHC/EnergyTransferStations/Combined/ChillerBorefield.mo
-  replaceable parameter Fluid.Movers.Data.Generic perPum1WSE(
-    motorCooledByFluid=false) constrainedby Fluid.Movers.Data.Generic
-    "Record with performance data for primary pump of waterside economizer"
-    annotation (
-      Dialog(group="Waterside economizer", enable=not have_val1Hex and have_WSE),
-      choicesAllMatching=true,
-      Placement(transformation(extent={{220,222},{240,242}})));
-=======
->>>>>>> master:Buildings/DHC/ETS/Combined/ChillerBorefield.mo
   final parameter Modelica.Units.SI.MassFlowRate m1WSE_flow_nominal=abs(
       QWSE_flow_nominal/4200/(T_b1WSE_nominal - T_a1WSE_nominal))
     "WSE primary mass flow rate"
@@ -162,22 +127,6 @@ model ChillerBorefield "ETS model for 5GDHC systems with heat recovery chiller a
     annotation (Dialog(group="Supervisory controller"));
   parameter Modelica.Units.SI.Temperature TChiWatSupSetMin(displayUnit="degC")
      = datChi.TEvaLvgMin
-<<<<<<< HEAD:Buildings/Experimental/DHC/EnergyTransferStations/Combined/ChillerBorefield.mo
-    "Minimum value of chilled water supply temperature set point"
-    annotation (Dialog(group="Supervisory controller"));
-
-  replaceable Buildings.Experimental.DHC.EnergyTransferStations.Combined.Subsystems.Chiller chi(
-    redeclare final package Medium=MediumBui,
-    final perPumCon=perPumCon,
-    final perPumEva=perPumEva,
-    final dpCon_nominal=dpCon_nominal,
-    final dpEva_nominal=dpEva_nominal,
-    final dat=datChi)
-    "Chiller"
-    annotation (Dialog(group="Chiller"),Placement(transformation(extent={{-10,-16},{10,4}})));
-  replaceable Buildings.Experimental.DHC.EnergyTransferStations.Combined.Subsystems.Borefield borFie(
-    redeclare final package Medium=MediumBui,
-=======
     "Minimum value of chilled water supply temperature set point"
     annotation (Dialog(group="Supervisory controller"));
   parameter Modelica.Units.SI.Temperature TChiWatSupSetMax(displayUnit="degC")
@@ -197,7 +146,6 @@ model ChillerBorefield "ETS model for 5GDHC systems with heat recovery chiller a
     Buildings.DHC.ETS.Combined.Subsystems.Borefield
     borFie(
     redeclare final package Medium = MediumBui,
->>>>>>> master:Buildings/DHC/ETS/Combined/ChillerBorefield.mo
     final datBorFie=datBorFie,
     final TBorWatEntMax=TBorWatEntMax,
     final spePumBorMin=spePumBorMin,
@@ -212,11 +160,7 @@ model ChillerBorefield "ETS model for 5GDHC systems with heat recovery chiller a
     final k=0)
     "Zero power"
     annotation (Placement(transformation(extent={{220,50},{240,70}})));
-<<<<<<< HEAD:Buildings/Experimental/DHC/EnergyTransferStations/Combined/ChillerBorefield.mo
-  Buildings.Experimental.DHC.Networks.BaseClasses.DifferenceEnthalpyFlowRate dHFloHeaWat(
-=======
   Buildings.DHC.Networks.BaseClasses.DifferenceEnthalpyFlowRate dHFloHeaWat(
->>>>>>> master:Buildings/DHC/ETS/Combined/ChillerBorefield.mo
     redeclare final package Medium1 = MediumBui,
     final m_flow_nominal=colHeaWat.mDis_flow_nominal)
     "Variation of enthalpy flow rate"
@@ -235,23 +179,15 @@ model ChillerBorefield "ETS model for 5GDHC systems with heat recovery chiller a
       iconTransformation(extent={{-40,-40},{40,40}},
         rotation=-90,
         origin={280,-340})));
-<<<<<<< HEAD:Buildings/Experimental/DHC/EnergyTransferStations/Combined/ChillerBorefield.mo
-  Buildings.Experimental.DHC.Networks.BaseClasses.DifferenceEnthalpyFlowRate dHFloChiWat(
-=======
   Buildings.DHC.Networks.BaseClasses.DifferenceEnthalpyFlowRate dHFloChiWat(
->>>>>>> master:Buildings/DHC/ETS/Combined/ChillerBorefield.mo
     redeclare final package Medium1 = MediumBui,
     final m_flow_nominal=colChiWat.mDis_flow_nominal)
     "Variation of enthalpy flow rate"
     annotation (Placement(transformation(extent={{-10,10},{10,-10}},
         rotation=90,
         origin={274,130})));
-<<<<<<< HEAD:Buildings/Experimental/DHC/EnergyTransferStations/Combined/ChillerBorefield.mo
-  Buildings.Experimental.DHC.EnergyTransferStations.Combined.Subsystems.WatersideEconomizer WSE(
-=======
   Buildings.DHC.ETS.Combined.Subsystems.WatersideEconomizer
     WSE(
->>>>>>> master:Buildings/DHC/ETS/Combined/ChillerBorefield.mo
     redeclare final package Medium1 = MediumSer,
     redeclare final package Medium2 = MediumBui,
     final allowFlowReversal1=allowFlowReversalSer,
@@ -422,13 +358,8 @@ below.
 <ul>
 <li>
 The heating and cooling functions are provided by a heat recovery chiller, see
-<<<<<<< HEAD:Buildings/Experimental/DHC/EnergyTransferStations/Combined/ChillerBorefield.mo
-<a href=\"modelica://Buildings.Experimental.DHC.EnergyTransferStations.Combined.Subsystems.Chiller\">
-Buildings.Experimental.DHC.EnergyTransferStations.Combined.Subsystems.Chiller</a>
-=======
 <a href=\"modelica://Buildings.DHC.ETS.Combined.Subsystems.Chiller\">
 Buildings.DHC.ETS.Combined.Subsystems.Chiller</a>
->>>>>>> master:Buildings/DHC/ETS/Combined/ChillerBorefield.mo
 for the operating principles and modeling assumptions.
 The condenser and evaporator loops are equipped with constant speed pumps.
 </li>
@@ -438,13 +369,8 @@ and the evaporator side of the chiller by controlling in sequence an optional
 geothermal borefield (priority system), the district heat exchanger (second
 priority system), and ultimately the chiller, by resetting down the chilled
 water supply temperature, see
-<<<<<<< HEAD:Buildings/Experimental/DHC/EnergyTransferStations/Combined/ChillerBorefield.mo
-<a href=\"modelica://Buildings.Experimental.DHC.EnergyTransferStations.Combined.Controls.Supervisory\">
-Buildings.Experimental.DHC.EnergyTransferStations.Combined.Controls.Supervisory</a>
-=======
 <a href=\"modelica://Buildings.DHC.ETS.Combined.Controls.Supervisory\">
 Buildings.DHC.ETS.Combined.Controls.Supervisory</a>
->>>>>>> master:Buildings/DHC/ETS/Combined/ChillerBorefield.mo
 for a detailed description.
 The borefield and district heat exchanger loops are equipped with
 variable speed pumps modulated by the supervisory controller.
@@ -457,22 +383,13 @@ building has no corresponding demand (e.g., based on the requests yielded by
 the terminal unit controllers, in conjunction with a schedule).
 This will significantly improve the system performance as it is a
 necessary condition for the chiller to be operated at a lower lift, see
-<<<<<<< HEAD:Buildings/Experimental/DHC/EnergyTransferStations/Combined/ChillerBorefield.mo
-<a href=\"modelica://Buildings.Experimental.DHC.EnergyTransferStations.Combined.Controls.Reset\">
-Buildings.Experimental.DHC.EnergyTransferStations.Combined.Controls.Reset</a>.
-=======
 <a href=\"modelica://Buildings.DHC.ETS.Combined.Controls.Reset\">
 Buildings.DHC.ETS.Combined.Controls.Reset</a>.
->>>>>>> master:Buildings/DHC/ETS/Combined/ChillerBorefield.mo
 <br/>
 </p>
 <p align=\"center\">
 <img alt=\"System schematics\"
-<<<<<<< HEAD:Buildings/Experimental/DHC/EnergyTransferStations/Combined/ChillerBorefield.mo
-src=\"modelica://Buildings/Resources/Images/Experimental/DHC/EnergyTransferStations/Combined/ChillerBorefield.png\"/>
-=======
 src=\"modelica://Buildings/Resources/Images/DHC/ETS/Combined/ChillerBorefield.png\"/>
->>>>>>> master:Buildings/DHC/ETS/Combined/ChillerBorefield.mo
 </p>
 </html>"),
     Icon(graphics={

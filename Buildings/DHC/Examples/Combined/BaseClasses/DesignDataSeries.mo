@@ -1,8 +1,4 @@
-<<<<<<< HEAD:Buildings/Experimental/DHC/Examples/Combined/BaseClasses/DesignDataSeries.mo
-within Buildings.Experimental.DHC.Examples.Combined.BaseClasses;
-=======
 within Buildings.DHC.Examples.Combined.BaseClasses;
->>>>>>> master:Buildings/DHC/Examples/Combined/BaseClasses/DesignDataSeries.mo
 record DesignDataSeries "Record with design data for series network"
   extends Modelica.Icons.Record;
   parameter Integer nBui = 3

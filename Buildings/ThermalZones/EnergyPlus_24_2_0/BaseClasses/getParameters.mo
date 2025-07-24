@@ -1,16 +1,8 @@
-<<<<<<<< HEAD:Buildings/ThermalZones/EnergyPlus_9_6_0/BaseClasses/getParameters.mo
-within Buildings.ThermalZones.EnergyPlus_9_6_0.BaseClasses;
-pure function getParameters
-  "Get parameters for an EnergyPlus object"
-  extends Modelica.Icons.Function;
-  input Buildings.ThermalZones.EnergyPlus_9_6_0.BaseClasses.SpawnExternalObject adapter
-========
 within Buildings.ThermalZones.EnergyPlus_24_2_0.BaseClasses;
 pure function getParameters
   "Get parameters for an EnergyPlus object"
   extends Modelica.Icons.Function;
   input Buildings.ThermalZones.EnergyPlus_24_2_0.BaseClasses.SpawnExternalObject adapter
->>>>>>>> master:Buildings/ThermalZones/EnergyPlus_24_2_0/BaseClasses/getParameters.mo
     "External object";
   input Integer nParOut
     "Number of elements in parOut";
@@ -18,21 +10,12 @@ pure function getParameters
     "Set to variable that is used to synchronize the objects";
   output Real parOut[nParOut]
     "Parameter values returned from EnergyPlus";
-<<<<<<<< HEAD:Buildings/ThermalZones/EnergyPlus_9_6_0/BaseClasses/getParameters.mo
-external "C" getParameters_Modelica_EnergyPlus_9_6_0(
-  adapter,isSynchronized,parOut)
-  annotation (
-      Include="#include <EnergyPlus_9_6_0_Wrapper.c>",
-      IncludeDirectory="modelica://Buildings/Resources/C-Sources",
-      Library={"ModelicaBuildingsEnergyPlus_9_6_0","fmilib_shared"});
-========
 external "C" getParameters_Modelica_EnergyPlus_24_2_0(
   adapter,isSynchronized,parOut)
   annotation (
       Include="#include <EnergyPlus_24_2_0_Wrapper.c>",
       IncludeDirectory="modelica://Buildings/Resources/C-Sources",
       Library={"ModelicaBuildingsEnergyPlus_24_2_0","fmilib_shared"});
->>>>>>>> master:Buildings/ThermalZones/EnergyPlus_24_2_0/BaseClasses/getParameters.mo
   annotation (
     Documentation(
       info="<html>

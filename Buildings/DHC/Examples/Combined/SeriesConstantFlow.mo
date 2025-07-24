@@ -1,18 +1,9 @@
-<<<<<<< HEAD:Buildings/Experimental/DHC/Examples/Combined/SeriesConstantFlow.mo
-within Buildings.Experimental.DHC.Examples.Combined;
-model SeriesConstantFlow
-  "Example of series connection with constant district water mass flow rate"
-  extends Buildings.Experimental.DHC.Examples.Combined.BaseClasses.PartialSeries(redeclare
-      Buildings.Experimental.DHC.Loads.Combined.BuildingTimeSeriesWithETS
-      bui[nBui](final filNam=filNam), datDes(
-=======
 within Buildings.DHC.Examples.Combined;
 model SeriesConstantFlow
   "Example of series connection with constant district water mass flow rate"
   extends Buildings.DHC.Examples.Combined.BaseClasses.PartialSeries(redeclare
       Buildings.DHC.Loads.Combined.BuildingTimeSeriesWithETS bui[nBui](final filNam=filNam),
       datDes(
->>>>>>> master:Buildings/DHC/Examples/Combined/SeriesConstantFlow.mo
       mPumDis_flow_nominal=95,
       mPipDis_flow_nominal=95,
       dp_length_nominal=69.3,
@@ -31,19 +22,11 @@ model SeriesConstantFlow
     k=datDes.mPla_flow_nominal)
     "District water flow rate to plant"
     annotation (Placement(transformation(extent={{-250,10},{-230,30}})));
-<<<<<<< HEAD:Buildings/Experimental/DHC/Examples/Combined/SeriesConstantFlow.mo
-  Buildings.Controls.OBC.CDL.Continuous.Sources.Constant THotWatSupSet[nBui](
-    k=fill(63 + 273.15, nBui))
-    "Hot water supply temperature set point"
-    annotation (Placement(transformation(extent={{-190,170},{-170,190}})));
-  Buildings.Controls.OBC.CDL.Continuous.Sources.Constant TColWat[nBui](
-=======
   Buildings.Controls.OBC.CDL.Reals.Sources.Constant THotWatSupSet[nBui](
     k=fill(63 + 273.15, nBui))
     "Hot water supply temperature set point"
     annotation (Placement(transformation(extent={{-336,172},{-316,192}})));
   Buildings.Controls.OBC.CDL.Reals.Sources.Constant TColWat[nBui](
->>>>>>> master:Buildings/DHC/Examples/Combined/SeriesConstantFlow.mo
     k=fill(15 + 273.15, nBui))
     "Cold water temperature"
     annotation (Placement(transformation(extent={{-298,150},{-278,170}})));
@@ -88,11 +71,7 @@ equation
   Diagram(
   coordinateSystem(preserveAspectRatio=false, extent={{-360,-260},{360,260}})),
     __Dymola_Commands(
-<<<<<<< HEAD:Buildings/Experimental/DHC/Examples/Combined/SeriesConstantFlow.mo
-  file="modelica://Buildings/Resources/Scripts/Dymola/Experimental/DHC/Examples/Combined/SeriesConstantFlow.mos"
-=======
   file="modelica://Buildings/Resources/Scripts/Dymola/DHC/Examples/Combined/SeriesConstantFlow.mos"
->>>>>>> master:Buildings/DHC/Examples/Combined/SeriesConstantFlow.mo
   "Simulate and plot"),
   experiment(
       StopTime=604800,

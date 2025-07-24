@@ -1,17 +1,3 @@
-<<<<<<< HEAD:Buildings/Experimental/DHC/Loads/BaseClasses/SimpleRoomODE.mo
-within Buildings.Experimental.DHC.Loads.BaseClasses;
-model SimpleRoomODE
-  "Simplified model for assessing room air temperature variations around a set point"
-  extends Modelica.Blocks.Icons.Block;
-  parameter Modelica.Units.SI.Temperature TOutHea_nominal(displayUnit="degC")
-    "Outdoor air temperature at heating nominal conditions"
-    annotation (Dialog(group="Nominal condition"));
-  parameter Modelica.Units.SI.Temperature TIndHea_nominal(displayUnit="degC")
-    "Indoor air temperature at heating nominal conditions"
-    annotation (Dialog(group="Nominal condition"));
-  parameter Modelica.Units.SI.HeatFlowRate QHea_flow_nominal(min=0) "Heating heat flow rate (for TInd=TIndHea_nominal, TOut=TOutHea_nominal,
-    with no internal gains, no solar radiation)"
-=======
 within Buildings.DHC.Loads.BaseClasses;
 model SimpleRoomODE
   "Simplified model for assessing room air temperature variations around a set point"
@@ -24,7 +10,6 @@ model SimpleRoomODE
     annotation (Dialog(group="Nominal condition"));
   parameter Modelica.Units.SI.HeatFlowRate QEnv_flow_nominal(min=0)
     "Envelope heat loss at temperature difference of dTEnv_nominal (with no internal gains, no solar radiation)"
->>>>>>> master:Buildings/DHC/Loads/BaseClasses/SimpleRoomODE.mo
     annotation (Dialog(group="Nominal condition"));
   parameter Boolean steadyStateInitial=false
     "true initializes T with dT(0)/dt=0, false initializes T with T(0)=TIndHea_nominal"
@@ -54,12 +39,7 @@ model SimpleRoomODE
     "Room air temperature"
     annotation (Placement(transformation(extent={{100,-20},{140,20}})));
 protected
-<<<<<<< HEAD:Buildings/Experimental/DHC/Loads/BaseClasses/SimpleRoomODE.mo
-  parameter Modelica.Units.SI.ThermalConductance G=-QHea_flow_nominal/(
-      TOutHea_nominal - TIndHea_nominal)
-=======
   parameter Modelica.Units.SI.ThermalConductance G=abs(QEnv_flow_nominal/dTEnv_nominal)
->>>>>>> master:Buildings/DHC/Loads/BaseClasses/SimpleRoomODE.mo
     "Lumped thermal conductance representing all temperature dependent heat transfer mechanisms";
 initial equation
   if steadyStateInitial then

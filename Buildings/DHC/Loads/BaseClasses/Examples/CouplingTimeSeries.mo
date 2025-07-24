@@ -1,8 +1,4 @@
-<<<<<<< HEAD:Buildings/Experimental/DHC/Loads/BaseClasses/Examples/CouplingTimeSeries.mo
-within Buildings.Experimental.DHC.Loads.BaseClasses.Examples;
-=======
 within Buildings.DHC.Loads.BaseClasses.Examples;
->>>>>>> master:Buildings/DHC/Loads/BaseClasses/Examples/CouplingTimeSeries.mo
 model CouplingTimeSeries
   "Example illustrating the coupling of a building model to heating water and chilled water loops"
   extends Modelica.Icons.Example;
@@ -10,15 +6,8 @@ model CouplingTimeSeries
     "Source side medium";
   parameter Modelica.Units.SI.Time perAve=600
     "Period for time averaged variables";
-<<<<<<< HEAD:Buildings/Experimental/DHC/Loads/BaseClasses/Examples/CouplingTimeSeries.mo
-  Buildings.Experimental.DHC.Loads.BaseClasses.Examples.BaseClasses.BuildingTimeSeries bui(
-    filNam="modelica://Buildings/Resources/Data/Experimental/DHC/Loads/Examples/SwissResidential_20190916.mos",
-    facMulHea=10,
-    facMulCoo=40,
-=======
   Buildings.DHC.Loads.BaseClasses.BuildingTimeSeries bui(
     filNam="modelica://Buildings/Resources/Data/DHC/Loads/Examples/SwissResidential_20190916.mos",
->>>>>>> master:Buildings/DHC/Loads/BaseClasses/Examples/CouplingTimeSeries.mo
     nPorts_aHeaWat=1,
     nPorts_aChiWat=1,
     nPorts_bHeaWat=1,
@@ -71,18 +60,6 @@ model CouplingTimeSeries
     y(unit="J"))
     "Actual energy used for cooling"
     annotation (Placement(transformation(extent={{100,-70},{120,-50}})));
-<<<<<<< HEAD:Buildings/Experimental/DHC/Loads/BaseClasses/Examples/CouplingTimeSeries.mo
-  Buildings.Controls.OBC.CDL.Continuous.MovingAverage QAveHeaReq_flow(y(unit=
-          "W"), final delta=perAve) "Time average of heating load"
-    annotation (Placement(transformation(extent={{60,110},{80,130}})));
-  Buildings.Controls.OBC.CDL.Continuous.MovingAverage QAveHeaAct_flow(y(unit=
-          "W"), final delta=perAve) "Time average of heating heat flow rate"
-    annotation (Placement(transformation(extent={{100,110},{120,130}})));
-  Buildings.Controls.OBC.CDL.Continuous.MovingAverage QAveCooReq_flow(y(unit=
-          "W"), final delta=perAve) "Time average of cooling load"
-    annotation (Placement(transformation(extent={{60,-110},{80,-90}})));
-  Buildings.Controls.OBC.CDL.Continuous.MovingAverage QAveCooAct_flow(y(unit=
-=======
   Buildings.Controls.OBC.CDL.Reals.MovingAverage QAveHeaReq_flow(y(unit=
           "W"), final delta=perAve) "Time average of heating load"
     annotation (Placement(transformation(extent={{60,110},{80,130}})));
@@ -93,7 +70,6 @@ model CouplingTimeSeries
           "W"), final delta=perAve) "Time average of cooling load"
     annotation (Placement(transformation(extent={{60,-110},{80,-90}})));
   Buildings.Controls.OBC.CDL.Reals.MovingAverage QAveCooAct_flow(y(unit=
->>>>>>> master:Buildings/DHC/Loads/BaseClasses/Examples/CouplingTimeSeries.mo
           "W"), final delta=perAve) "Time average of cooling heat flow rate"
     annotation (Placement(transformation(extent={{100,-110},{120,-90}})));
 equation
@@ -145,13 +121,8 @@ Buildings.DHC.Loads.BaseClasses.PartialBuilding</a>,
 <a href=\"modelica://Buildings.DHC.Loads.BaseClasses.PartialTerminalUnit\">
 Buildings.DHC.Loads.BaseClasses.PartialTerminalUnit</a>
 and
-<<<<<<< HEAD:Buildings/Experimental/DHC/Loads/BaseClasses/Examples/CouplingTimeSeries.mo
-<a href=\"modelica://Buildings.Experimental.DHC.Loads.BaseClasses.FlowDistribution\">
-Buildings.Experimental.DHC.Loads.BaseClasses.FlowDistribution</a>
-=======
 <a href=\"modelica://Buildings.DHC.Loads.BaseClasses.FlowDistribution\">
 Buildings.DHC.Loads.BaseClasses.FlowDistribution</a>
->>>>>>> master:Buildings/DHC/Loads/BaseClasses/Examples/CouplingTimeSeries.mo
 in a configuration with
 </p>
 <ul>
@@ -183,9 +154,5 @@ First implementation.
         preserveAspectRatio=false,
         extent={{-160,-140},{160,140}})),
     __Dymola_Commands(
-<<<<<<< HEAD:Buildings/Experimental/DHC/Loads/BaseClasses/Examples/CouplingTimeSeries.mo
-      file="modelica://Buildings/Resources/Scripts/Dymola/Experimental/DHC/Loads/BaseClasses/Examples/CouplingTimeSeries.mos" "Simulate and plot"));
-=======
       file="modelica://Buildings/Resources/Scripts/Dymola/DHC/Loads/BaseClasses/Examples/CouplingTimeSeries.mos" "Simulate and plot"));
->>>>>>> master:Buildings/DHC/Loads/BaseClasses/Examples/CouplingTimeSeries.mo
 end CouplingTimeSeries;

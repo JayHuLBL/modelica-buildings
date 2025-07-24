@@ -147,11 +147,7 @@ protected
     "Sum of the design breathing zone flow rate for area component"
     annotation (Placement(transformation(extent={{-10,50},{10,70}})));
 
-<<<<<<< HEAD
-  Buildings.Controls.OBC.CDL.Continuous.Subtract zonVenEff[numZon]
-=======
   Buildings.Controls.OBC.CDL.Reals.Subtract zonVenEff[numZon]
->>>>>>> master
     "Zone ventilation efficiency"
     annotation (Placement(transformation(extent={{-10,-10},{10,10}})));
 

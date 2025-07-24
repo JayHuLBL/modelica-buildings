@@ -2,11 +2,7 @@ within Buildings.Obsolete.Fluid.SolarCollectors.Examples;
 model Concentrating "Example showing the use of Concentrating"
   extends Modelica.Icons.Example;
   replaceable package Medium = Buildings.Media.Water "Medium in the system";
-<<<<<<< HEAD:Buildings/Fluid/SolarCollectors/Examples/Concentrating.mo
-  Buildings.Fluid.SolarCollectors.EN12975 solCol(
-=======
   Buildings.Obsolete.Fluid.SolarCollectors.EN12975 solCol(
->>>>>>> master:Buildings/Obsolete/Fluid/SolarCollectors/Examples/Concentrating.mo
     redeclare package Medium = Medium,
     shaCoe=0,
     energyDynamics=Modelica.Fluid.Types.Dynamics.FixedInitial,
@@ -93,14 +89,11 @@ equation
     revisions="<html>
 <ul>
 <li>
-<<<<<<< HEAD:Buildings/Fluid/SolarCollectors/Examples/Concentrating.mo
-=======
 December 13, 2023, by Michael Wetter.<br/>
 Moved to <code>Obsolete</code> package.<br/>
 This is for <a href=\"https://github.com/lbl-srg/modelica-buildings/issues/3604\">Buildings, #3604</a>.
 </li>
 <li>
->>>>>>> master:Buildings/Obsolete/Fluid/SolarCollectors/Examples/Concentrating.mo
 September 16, 2021, by Michael Wetter:<br/>
 Removed parameter assignment for <code>lat</code>.<br/>
 This is for

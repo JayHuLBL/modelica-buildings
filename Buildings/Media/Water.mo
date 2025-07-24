@@ -19,14 +19,9 @@ package Water "Package with model for liquid water with constant density"
     final parameter Boolean standardOrderComponents=true
       "If true, and reducedX = true, the last element of X will be computed from the other ones";
     Modelica.Units.SI.Density d=d_const "Density of medium";
-<<<<<<< HEAD
-    Temperature T(stateSelect=
-      if preferredMediumStates then StateSelect.prefer else StateSelect.default)
-=======
     Temperature T(
       start=293.15,
       stateSelect=if preferredMediumStates then StateSelect.prefer else StateSelect.default)
->>>>>>> master
       "Temperature of medium";
     InputAbsolutePressure p "Absolute pressure of medium";
     InputMassFraction[nXi] Xi=fill(0, 0)

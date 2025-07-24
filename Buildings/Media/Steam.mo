@@ -8,10 +8,7 @@ package Steam
     reducedX=true,
     fixedX=true,
     FluidConstants={Modelica.Media.IdealGases.Common.FluidData.H2O},
-<<<<<<< HEAD
-=======
     ThermoStates=Modelica.Media.Interfaces.Choices.IndependentVariables.pTX,
->>>>>>> master
     reference_T=273.15,
     reference_p=101325,
     reference_X={1},

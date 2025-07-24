@@ -1,10 +1,5 @@
-<<<<<<<< HEAD:Buildings/Experimental/DHC/Plants/Reservoir/BoreField.mo
-within Buildings.Experimental.DHC.Plants.Reservoir;
-model BoreField "Geothermal borefield model"
-========
 within Buildings.DHC.Examples.Combined.BaseClasses;
 model Borefield "Geothermal borefield model"
->>>>>>>> master:Buildings/DHC/Examples/Combined/BaseClasses/Borefield.mo
   extends Buildings.Fluid.Geothermal.Borefields.TwoUTubes(
     final energyDynamics=Modelica.Fluid.Types.Dynamics.FixedInitial,
     final tLoaAgg(displayUnit="h") = 3600,

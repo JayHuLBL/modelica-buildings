@@ -1,23 +1,3 @@
-<<<<<<<< HEAD:Buildings/Experimental/DHC/Loads/Combined/BaseClasses/PartialBuildingWithETS.mo
-within Buildings.Experimental.DHC.Loads.Combined.BaseClasses;
-model PartialBuildingWithETS
-  "Partial model with ETS model and partial building model"
-  extends Buildings.Experimental.DHC.Loads.BaseClasses.PartialBuildingWithPartialETS(
-    nPorts_heaWat=1,
-    nPorts_chiWat=1,
-    redeclare
-      Buildings.Experimental.DHC.EnergyTransferStations.Combined.HeatPumpHeatExchanger ets(
-      final dT_nominal=dT_nominal,
-      final TDisWatMin=datDes.TLooMin,
-      final TDisWatMax=datDes.TLooMax,
-      final TChiWatSup_nominal=TChiWatSup_nominal,
-      final THeaWatSup_nominal=THeaWatSup_nominal,
-      final dp_nominal=dp_nominal,
-      final COPHeaWat_nominal=COPHeaWat_nominal,
-      final COPHotWat_nominal=COPHotWat_nominal));
-  outer parameter Buildings.Experimental.DHC.Examples.Combined.BaseClasses.DesignDataSeries datDes "DHC system design data"
-    annotation (Placement(transformation(extent={{-250,262},{-230,282}})));
-========
 within Buildings.DHC.Loads.Combined.BaseClasses;
 model PartialBuildingWithETS
   "Partial model with ETS model and partial building model"
@@ -29,7 +9,6 @@ model PartialBuildingWithETS
     "District water minimum temperature" annotation (Dialog(group="ETS model parameters"));
   parameter Modelica.Units.SI.Temperature TDisWatMax=17 + 273.15
     "District water maximum temperature" annotation (Dialog(group="ETS model parameters"));
->>>>>>>> master:Buildings/DHC/Loads/Combined/BaseClasses/PartialBuildingWithETS.mo
   parameter Modelica.Units.SI.TemperatureDifference dT_nominal(min=0) = 4
     "Water temperature drop/increase accross load and source-side HX (always positive)"
     annotation (Dialog(group="ETS model parameters"));
@@ -39,9 +18,6 @@ model PartialBuildingWithETS
   parameter Modelica.Units.SI.Temperature THeaWatSup_nominal=38 + 273.15
     "Heating water supply temperature"
     annotation (Dialog(group="ETS model parameters"));
-<<<<<<<< HEAD:Buildings/Experimental/DHC/Loads/Combined/BaseClasses/PartialBuildingWithETS.mo
-  parameter Modelica.Units.SI.Pressure dp_nominal=50000
-========
   parameter Modelica.Units.SI.Temperature THotWatSup_nominal=63 + 273.15
     "Domestic hot water supply temperature to fixtures"
     annotation (Dialog(group="ETS model parameters", enable=have_hotWat));
@@ -49,7 +25,6 @@ model PartialBuildingWithETS
     "Cold water temperature (for hot water production)"
     annotation (Dialog(group="ETS model parameters", enable=have_hotWat));
   parameter Modelica.Units.SI.Pressure dp_nominal(displayUnit="Pa")=50000
->>>>>>>> master:Buildings/DHC/Loads/Combined/BaseClasses/PartialBuildingWithETS.mo
     "Pressure difference at nominal flow rate (for each flow leg)"
     annotation (Dialog(group="ETS model parameters"));
   parameter Real COPHeaWat_nominal(final unit="1") = 4.0
@@ -96,18 +71,6 @@ model PartialBuildingWithETS
         rotation=0,
         origin={-120,90})));
   // COMPONENTS
-<<<<<<<< HEAD:Buildings/Experimental/DHC/Loads/Combined/BaseClasses/PartialBuildingWithETS.mo
-  Buildings.Controls.OBC.CDL.Continuous.Line resTHeaWatSup
-    "HW supply temperature reset"
-    annotation (Placement(transformation(extent={{-110,-50},{-90,-30}})));
-  Buildings.Controls.OBC.CDL.Continuous.Sources.Constant zer(k=0)
-    "Zero"
-    annotation (Placement(transformation(extent={{-180,-30},{-160,-10}})));
-  Buildings.Controls.OBC.CDL.Continuous.Sources.Constant one(k=1)
-    "One"
-    annotation (Placement(transformation(extent={{-180,-70},{-160,-50}})));
-  Buildings.Controls.OBC.CDL.Continuous.MultiplyByParameter mulPPumETS(u(final
-========
   Buildings.Controls.OBC.CDL.Reals.Line resTHeaWatSup
     "HW supply temperature reset"
     annotation (Placement(transformation(extent={{-110,-50},{-90,-30}})));
@@ -118,7 +81,6 @@ model PartialBuildingWithETS
     "One"
     annotation (Placement(transformation(extent={{-180,-70},{-160,-50}})));
   Buildings.Controls.OBC.CDL.Reals.MultiplyByParameter mulPPumETS(u(final
->>>>>>>> master:Buildings/DHC/Loads/Combined/BaseClasses/PartialBuildingWithETS.mo
         unit="W"), final k=facMul) if have_pum "Scaling"
     annotation (Placement(transformation(extent={{270,-10},{290,10}})));
   Buildings.Controls.OBC.CDL.Interfaces.RealOutput PPumETS(
@@ -150,17 +112,10 @@ equation
         coordinateSystem(preserveAspectRatio=false)),
     Documentation(info="<html>
 <p>
-<<<<<<<< HEAD:Buildings/Experimental/DHC/Loads/Combined/BaseClasses/PartialBuildingWithETS.mo
-This model is composed of a heat pump based energy transfer station model 
-<a href=\"modelica://Buildings.Experimental.DHC.EnergyTransferStations.Combined.HeatPumpHeatExchanger\">
-Buildings.Experimental.DHC.EnergyTransferStations.Combined.HeatPumpHeatExchanger</a>
-connected to a repleacable building load model. 
-========
 This model is composed of a heat pump based energy transfer station model
 <a href=\"modelica://Buildings.DHC.ETS.Combined.HeatPumpHeatExchanger\">
 Buildings.DHC.ETS.Combined.HeatPumpHeatExchanger</a>
 connected to a repleacable building load model.
->>>>>>>> master:Buildings/DHC/Loads/Combined/BaseClasses/PartialBuildingWithETS.mo
 </p>
 </html>", revisions="<html>
 <ul>

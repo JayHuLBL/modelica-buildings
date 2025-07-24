@@ -5,14 +5,10 @@ model Gunay2016Light "A model to predict occupants' lighting behavior with illum
   parameter Real BArriv = 1.6 "Intercept of logistic regression arrival";
   parameter Real AInter = -0.002 "Slope of logistic regression intermediate";
   parameter Real BInter = -3.9 "Intercept of logistic regression intermediate";
-<<<<<<< HEAD
-  parameter Integer seed = 30 "Seed for the random number generator";
-=======
   parameter Integer localSeed = 2000
     "Local seed to be used to generate the initial state of the random number generator";
   parameter Integer globalSeed = 30129
     "Global seed to be combined with the local seed";
->>>>>>> master
   parameter Modelica.Units.SI.Time samplePeriod=120 "Sample period";
 
   Modelica.Blocks.Interfaces.RealInput ill

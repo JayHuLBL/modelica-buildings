@@ -1,8 +1,4 @@
-<<<<<<< HEAD:Buildings/Experimental/DHC/Loads/BaseClasses/Examples/BaseClasses/GeojsonExportRC/OfficeBuilding/Office.mo
-within Buildings.Experimental.DHC.Loads.BaseClasses.Examples.BaseClasses.GeojsonExportRC.OfficeBuilding;
-=======
 within Buildings.DHC.Loads.BaseClasses.Examples.BaseClasses.GeojsonExportRC.OfficeBuilding;
->>>>>>> master:Buildings/DHC/Loads/BaseClasses/Examples/BaseClasses/GeojsonExportRC/OfficeBuilding/Office.mo
 model Office
   "This is the simulation model of Office within building OfficeBuilding"
   Buildings.BoundaryConditions.SolarIrradiation.DiffusePerez HDifTil[6](

@@ -1,8 +1,4 @@
-<<<<<<< HEAD:Buildings/Experimental/DHC/Loads/BaseClasses/Validation/BaseClasses/FanCoil2PipeCooling.mo
-within Buildings.Experimental.DHC.Loads.BaseClasses.Validation.BaseClasses;
-=======
 within Buildings.DHC.Loads.BaseClasses.Validation.BaseClasses;
->>>>>>> master:Buildings/DHC/Loads/BaseClasses/Validation/BaseClasses/FanCoil2PipeCooling.mo
 model FanCoil2PipeCooling
   "Model of a sensible only two-pipe fan coil unit for cooling,
   computing a required chilled water mass flow rate"
@@ -39,19 +35,11 @@ model FanCoil2PipeCooling
   parameter Boolean have_speVar=true
     "Set to true for a variable speed fan (otherwise fan is always on)"
     annotation (Evaluate=true, Dialog(group="Configuration"));
-<<<<<<< HEAD:Buildings/Experimental/DHC/Loads/BaseClasses/Validation/BaseClasses/FanCoil2PipeCooling.mo
-  parameter Modelica.Units.SI.HeatFlowRate QRooHea_flow_nominal(min=0) = 0
-    "Nominal heating load (for room air temperature prediction)"
-    annotation (Dialog(group="Nominal condition"));
-  parameter Modelica.Units.SI.Temperature TRooHea_nominal=21.1 + 273.15
-    "Room temperature at heating nominal conditions (for room air temperature prediction)"
-=======
   parameter Modelica.Units.SI.HeatFlowRate QEnv_flow_nominal(min=0)
     "Nominal envelope heat loss (for room air temperature prediction)"
     annotation (Dialog(group="Nominal condition"));
   parameter Modelica.Units.SI.TemperatureDifference dTEnv_nominal = 15
     "Design temperature difference at which envelope heat loss is QEnv_flow_nominal"
->>>>>>> master:Buildings/DHC/Loads/BaseClasses/Validation/BaseClasses/FanCoil2PipeCooling.mo
     annotation (Dialog(group="Nominal condition"));
 
   Buildings.Controls.OBC.CDL.Reals.PIDWithReset con(
@@ -88,21 +76,13 @@ model FanCoil2PipeCooling
     final w_a2_nominal=w_aLoaCoo_nominal)
     "Cooling coil"
     annotation (Placement(transformation(extent={{-80,4},{-60,-16}})));
-<<<<<<< HEAD:Buildings/Experimental/DHC/Loads/BaseClasses/Validation/BaseClasses/FanCoil2PipeCooling.mo
-  Buildings.Controls.OBC.CDL.Continuous.MultiplyByParameter gaiMasFlo(k=
-=======
   Buildings.Controls.OBC.CDL.Reals.MultiplyByParameter gaiMasFlo(k=
->>>>>>> master:Buildings/DHC/Loads/BaseClasses/Validation/BaseClasses/FanCoil2PipeCooling.mo
         mChiWat_flow_nominal) "Scale water flow rate"
     annotation (Placement(transformation(extent={{40,210},{60,230}})));
   Modelica.Blocks.Sources.RealExpression Q_flowCoo(
     final y=hexWetNtu.Q2_flow)
     annotation (Placement(transformation(extent={{120,190},{140,210}})));
-<<<<<<< HEAD:Buildings/Experimental/DHC/Loads/BaseClasses/Validation/BaseClasses/FanCoil2PipeCooling.mo
-  Buildings.Controls.OBC.CDL.Continuous.MultiplyByParameter gaiFloNom2(k=
-=======
   Buildings.Controls.OBC.CDL.Reals.MultiplyByParameter gaiFloNom2(k=
->>>>>>> master:Buildings/DHC/Loads/BaseClasses/Validation/BaseClasses/FanCoil2PipeCooling.mo
         mLoaCoo_flow_nominal) "Scale air flow rate"
     annotation (Placement(transformation(extent={{52,170},{72,190}})));
   Fluid.Sources.Boundary_pT sinAir(
@@ -117,18 +97,6 @@ model FanCoil2PipeCooling
     nPorts=1)
     "Source for return air"
     annotation (Placement(transformation(extent={{10,-10},{-10,10}},rotation=0,origin={112,0})));
-<<<<<<< HEAD:Buildings/Experimental/DHC/Loads/BaseClasses/Validation/BaseClasses/FanCoil2PipeCooling.mo
-  Buildings.Experimental.DHC.Loads.BaseClasses.SimpleRoomODE TLoaODE(
-    TOutHea_nominal=273.15 - 5,
-    final TIndHea_nominal=TRooHea_nominal,
-    final QHea_flow_nominal=QRooHea_flow_nominal)
-    "Predicted room air temperature"
-    annotation (Placement(transformation(extent={{-10,30},{10,50}})));
-  Buildings.Controls.OBC.CDL.Continuous.MultiplyByParameter gaiHeaFlo(k=1/
-        QCoo_flow_nominal)
-    annotation (Placement(transformation(extent={{-88,210},{-68,230}})));
-  Buildings.Controls.OBC.CDL.Continuous.MultiplyByParameter gaiHeaFlo1(k=1/
-=======
   Buildings.DHC.Loads.BaseClasses.SimpleRoomODE TLoaODE(
     final dTEnv_nominal=dTEnv_nominal,
     TAir_start=297.15,
@@ -138,16 +106,11 @@ model FanCoil2PipeCooling
         QCoo_flow_nominal)
     annotation (Placement(transformation(extent={{-88,210},{-68,230}})));
   Buildings.Controls.OBC.CDL.Reals.MultiplyByParameter gaiHeaFlo1(k=1/
->>>>>>> master:Buildings/DHC/Loads/BaseClasses/Validation/BaseClasses/FanCoil2PipeCooling.mo
         QCoo_flow_nominal) annotation (Placement(transformation(
         extent={{-10,-10},{10,10}},
         rotation=90,
         origin={0,190})));
-<<<<<<< HEAD:Buildings/Experimental/DHC/Loads/BaseClasses/Validation/BaseClasses/FanCoil2PipeCooling.mo
-  Buildings.Controls.OBC.CDL.Continuous.GreaterThreshold greThr(
-=======
   Buildings.Controls.OBC.CDL.Reals.GreaterThreshold greThr(
->>>>>>> master:Buildings/DHC/Loads/BaseClasses/Validation/BaseClasses/FanCoil2PipeCooling.mo
     t=1E-4,
     h=0.5E-4)
     "Reset when demand rises from zero"
@@ -164,11 +127,7 @@ model FanCoil2PipeCooling
     annotation (Placement(transformation(extent={{-10,130},{10,150}})));
   Buildings.Controls.OBC.CDL.Logical.Sources.Constant con1(k=have_speVar)
     annotation (Placement(transformation(extent={{-50,150},{-30,170}})));
-<<<<<<< HEAD:Buildings/Experimental/DHC/Loads/BaseClasses/Validation/BaseClasses/FanCoil2PipeCooling.mo
-  Buildings.Controls.OBC.CDL.Continuous.Switch swi
-=======
   Buildings.Controls.OBC.CDL.Reals.Switch swi
->>>>>>> master:Buildings/DHC/Loads/BaseClasses/Validation/BaseClasses/FanCoil2PipeCooling.mo
     "Logical switch"
     annotation (Placement(transformation(extent={{26,170},{46,190}})));
 equation
@@ -237,13 +196,8 @@ takes the load as an input, and
 </li>
 <li>
 in conjunction with
-<<<<<<< HEAD:Buildings/Experimental/DHC/Loads/BaseClasses/Validation/BaseClasses/FanCoil2PipeCooling.mo
-<a href=\"modelica://Buildings.Experimental.DHC.Loads.BaseClasses.FlowDistribution\">
-Buildings.Experimental.DHC.Loads.BaseClasses.FlowDistribution</a>:
-=======
 <a href=\"modelica://Buildings.DHC.Loads.BaseClasses.FlowDistribution\">
 Buildings.DHC.Loads.BaseClasses.FlowDistribution</a>:
->>>>>>> master:Buildings/DHC/Loads/BaseClasses/Validation/BaseClasses/FanCoil2PipeCooling.mo
 it therefore computes the water mass flow rate required to meet the load.
 </li>
 </ul>
@@ -263,13 +217,8 @@ the air mass flow rate, from zero to its nominal value.
 <p>
 The controller tracks the load while the impact of an unmet load on the room
 air temperature is assessed with
-<<<<<<< HEAD:Buildings/Experimental/DHC/Loads/BaseClasses/Validation/BaseClasses/FanCoil2PipeCooling.mo
-<a href=\"modelica://Buildings.Experimental.DHC.Loads.BaseClasses.SimpleRoomODE\">
-Buildings.Experimental.DHC.Loads.BaseClasses.SimpleRoomODE</a>.
-=======
 <a href=\"modelica://Buildings.DHC.Loads.BaseClasses.SimpleRoomODE\">
 Buildings.DHC.Loads.BaseClasses.SimpleRoomODE</a>.
->>>>>>> master:Buildings/DHC/Loads/BaseClasses/Validation/BaseClasses/FanCoil2PipeCooling.mo
 </p>
 </html>",
       revisions="<html>

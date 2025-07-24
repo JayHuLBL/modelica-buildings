@@ -4,14 +4,10 @@ model Rijal2007WindowsTInTOutTComf "A model to predict occupants' window behavio
   parameter Real AIn = 0.171 "Slope of the indoor temperature in the logistic relation";
   parameter Real AOut = 0.166 "Slope of the outdoor temperature in the logistic relation";
   parameter Real B = -6.4 "Intercept of the logistic relation";
-<<<<<<< HEAD
-  parameter Integer seed = 3 "Seed for the random number generator";
-=======
   parameter Integer localSeed = 3007
     "Local seed to be used to generate the initial state of the random number generator";
   parameter Integer globalSeed = 30129
     "Global seed to be combined with the local seed";
->>>>>>> master
   parameter Modelica.Units.SI.Time samplePeriod=120 "Sample period";
 
   Modelica.Blocks.Interfaces.RealInput TIn(

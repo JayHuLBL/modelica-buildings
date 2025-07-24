@@ -1,8 +1,4 @@
-<<<<<<<< HEAD:Buildings/ThermalZones/EnergyPlus_9_6_0/BaseClasses/Synchronize/package.mo
-within Buildings.ThermalZones.EnergyPlus_9_6_0.BaseClasses;
-========
 within Buildings.Obsolete.ThermalZones.EnergyPlus_9_6_0.BaseClasses;
->>>>>>>> master:Buildings/Obsolete/ThermalZones/EnergyPlus_9_6_0/BaseClasses/Synchronize/package.mo
 package Synchronize "Package with classes to synchronize Spawn objects"
   annotation (
     Documentation(

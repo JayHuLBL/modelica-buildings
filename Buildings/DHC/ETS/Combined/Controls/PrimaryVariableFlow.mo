@@ -1,14 +1,3 @@
-<<<<<<< HEAD:Buildings/Experimental/DHC/EnergyTransferStations/Combined/Controls/PrimaryVariableFlow.mo
-within Buildings.Experimental.DHC.EnergyTransferStations.Combined.Controls;
-block PrimaryVariableFlow
-  "Ideal control of condenser or evaporator variable flow rate"
-  extends Modelica.Blocks.Icons.Block;
-  parameter Modelica.Units.SI.HeatFlowRate Q_flow_nominal
-    "Heat flow rate at nominal conditions (>0 for condenser)";
-  parameter Modelica.Units.SI.TemperatureDifference dT_nominal(min=if
-        Q_flow_nominal > 0 then Modelica.Constants.eps else -100, max=if
-        Q_flow_nominal < 0 then -Modelica.Constants.eps else 100)
-=======
 within Buildings.DHC.ETS.Combined.Controls;
 block PrimaryVariableFlow
   "Ideal control of condenser or evaporator variable flow rate"
@@ -26,19 +15,12 @@ block PrimaryVariableFlow
     final unit="K",
     min=if Q_flow_nominal > 0 then Buildings.Controls.OBC.CDL.Constants.eps else -100,
     max=if Q_flow_nominal < 0 then -Buildings.Controls.OBC.CDL.Constants.eps else 100)
->>>>>>> master:Buildings/DHC/ETS/Combined/Controls/PrimaryVariableFlow.mo
     "DeltaT at nominal conditions (>0 for condenser)";
   parameter Real ratFloMin(
     final unit="1",
     final min=0,
     final max=1)=0.3
     "Minimum mass flow rate (ratio to nominal)";
-<<<<<<< HEAD:Buildings/Experimental/DHC/EnergyTransferStations/Combined/Controls/PrimaryVariableFlow.mo
-  constant Modelica.Units.SI.SpecificHeatCapacity cp=Buildings.Utilities.Psychrometrics.Constants.cpWatLiq
-    "Specific heat capacity";
-  final parameter Modelica.Units.SI.MassFlowRate m_flow_nominal(min=0)=
-    Q_flow_nominal/cp/dT_nominal "Mass flow rate at nominal conditions";
-=======
 
   final parameter Real m_flow_nominal(
     final quantity="MassFlowRate",
@@ -46,7 +28,6 @@ block PrimaryVariableFlow
     final min=0)=
     Q_flow_nominal/cp/dT_nominal
     "Mass flow rate at nominal conditions";
->>>>>>> master:Buildings/DHC/ETS/Combined/Controls/PrimaryVariableFlow.mo
   Buildings.Controls.OBC.CDL.Interfaces.RealInput loa(final unit="W")
     "Signal approximating the load on condenser or evaporator"
     annotation (Placement(transformation(extent={{-140,-20},{-100,20}}),
@@ -59,14 +40,9 @@ block PrimaryVariableFlow
     final k=ratFloMin*m_flow_nominal)
     "Minimum mass flow rate"
     annotation (Placement(transformation(extent={{-10,30},{10,50}})));
-<<<<<<< HEAD:Buildings/Experimental/DHC/EnergyTransferStations/Combined/Controls/PrimaryVariableFlow.mo
-  Buildings.Controls.OBC.CDL.Continuous.MultiplyByParameter masFlo_dT(final k=1
-        /cp/dT_nominal) "Mass flow rate for constant DeltaT"
-=======
   Buildings.Controls.OBC.CDL.Reals.MultiplyByParameter masFlo_dT(
     final k=1/cp/dT_nominal)
     "Mass flow rate for constant DeltaT"
->>>>>>> master:Buildings/DHC/ETS/Combined/Controls/PrimaryVariableFlow.mo
     annotation (Placement(transformation(extent={{-60,-10},{-40,10}})));
   Buildings.Controls.OBC.CDL.Reals.Max masFlo "Mass flow rate"
     annotation (Placement(transformation(extent={{40,-10},{60,10}})));

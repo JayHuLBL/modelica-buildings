@@ -1,12 +1,6 @@
 within Buildings.Electrical;
 package PhaseSystems "Phase systems used in power connectors"
   extends Modelica.Icons.Package;
-<<<<<<< HEAD
-  import      Modelica.Units.SI;
-  import Modelica.Constants.pi;
-
-=======
->>>>>>> master
 
   annotation (Icon(graphics={Line(
           points={{-70,-52},{50,-52}},

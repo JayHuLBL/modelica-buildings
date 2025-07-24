@@ -1,8 +1,4 @@
-<<<<<<< HEAD:Buildings/Experimental/DHC/EnergyTransferStations/Combined/Subsystems/HeatExchanger.mo
-within Buildings.Experimental.DHC.EnergyTransferStations.Combined.Subsystems;
-=======
 within Buildings.DHC.ETS.Combined.Subsystems;
->>>>>>> master:Buildings/DHC/ETS/Combined/Subsystems/HeatExchanger.mo
 model HeatExchanger
   "Base subsystem with district heat exchanger"
   extends Buildings.Fluid.Interfaces.PartialFourPortInterface(
@@ -10,20 +6,6 @@ model HeatExchanger
     final m2_flow_nominal=abs(Q_flow_nominal/4200/(T_b2_nominal - T_a2_nominal)));
   parameter DHC.ETS.Types.ConnectionConfiguration conCon
     "District connection configuration" annotation (Evaluate=true);
-<<<<<<< HEAD:Buildings/Experimental/DHC/EnergyTransferStations/Combined/Subsystems/HeatExchanger.mo
-  replaceable parameter Buildings.Fluid.Movers.Data.Generic perPum1(
-    motorCooledByFluid=false)
-    constrainedby Buildings.Fluid.Movers.Data.Generic
-    "Record with performance data for primary pump"
-    annotation (Dialog(enable=not have_val1), choicesAllMatching=true,
-    Placement(transformation(extent={{-40,-140},{-20,-120}})));
-  replaceable parameter Buildings.Fluid.Movers.Data.Generic perPum2(
-    motorCooledByFluid=false)
-    constrainedby Buildings.Fluid.Movers.Data.Generic
-    "Record with performance data for secondary pump"
-    annotation (choicesAllMatching=true,Placement(transformation(extent={{20,-140},{40,-120}})));
-=======
->>>>>>> master:Buildings/DHC/ETS/Combined/Subsystems/HeatExchanger.mo
   parameter Modelica.Units.SI.PressureDifference dp1Hex_nominal(displayUnit=
         "Pa") "Nominal pressure drop across heat exchanger on district side"
     annotation (Dialog(group="Nominal condition"));
@@ -74,11 +56,7 @@ model HeatExchanger
     annotation (Placement(transformation(extent={{100,-20},{140,20}}),
     iconTransformation(extent={{100,-20},{140,20}})));
   // COMPONENTS
-<<<<<<< HEAD:Buildings/Experimental/DHC/EnergyTransferStations/Combined/Subsystems/HeatExchanger.mo
-  Buildings.Experimental.DHC.EnergyTransferStations.Combined.Controls.HeatExchanger con(
-=======
   Buildings.DHC.ETS.Combined.Controls.HeatExchanger con(
->>>>>>> master:Buildings/DHC/ETS/Combined/Subsystems/HeatExchanger.mo
     final conCon=conCon,
     final spePum1Min=spePum1Min,
     final spePum2Min=spePum2Min)
@@ -142,11 +120,7 @@ model HeatExchanger
         extent={{10,-10},{-10,10}},
         rotation=90,
         origin={-20,-20})));
-<<<<<<< HEAD:Buildings/Experimental/DHC/EnergyTransferStations/Combined/Subsystems/HeatExchanger.mo
-  Buildings.Controls.OBC.CDL.Continuous.MultiplyByParameter gai2(final k=
-=======
   Buildings.Controls.OBC.CDL.Reals.MultiplyByParameter gai2(final k=
->>>>>>> master:Buildings/DHC/ETS/Combined/Subsystems/HeatExchanger.mo
         m2_flow_nominal) "Scale to nominal mass flow rate" annotation (
       Placement(transformation(
         extent={{-10,-10},{10,10}},
@@ -161,11 +135,7 @@ model HeatExchanger
     final dpFixed_nominal=dp1Hex_nominal) if have_val1
     "Heat exchanger primary control valve"
     annotation (Placement(transformation(extent={{70,70},{90,90}})));
-<<<<<<< HEAD:Buildings/Experimental/DHC/EnergyTransferStations/Combined/Subsystems/HeatExchanger.mo
-  Buildings.Controls.OBC.CDL.Continuous.MultiplyByParameter gai1(final k=
-=======
   Buildings.Controls.OBC.CDL.Reals.MultiplyByParameter gai1(final k=
->>>>>>> master:Buildings/DHC/ETS/Combined/Subsystems/HeatExchanger.mo
         m1_flow_nominal) if not have_val1 "Scale to nominal mass flow rate"
     annotation (Placement(transformation(extent={{-12,110},{-32,130}})));
   Buildings.Controls.OBC.CDL.Reals.MultiSum totPPum(
@@ -406,13 +376,8 @@ on the primary side.
 </p>
 <p>
 The system is controlled based on the logic described in
-<<<<<<< HEAD:Buildings/Experimental/DHC/EnergyTransferStations/Combined/Subsystems/HeatExchanger.mo
-<a href=\"modelica://Buildings.Experimental.DHC.EnergyTransferStations.Combined.Controls.HeatExchanger\">
-Buildings.Experimental.DHC.EnergyTransferStations.Combined.Controls.HeatExchanger</a>.
-=======
 <a href=\"modelica://Buildings.DHC.ETS.Combined.Controls.HeatExchanger\">
 Buildings.DHC.ETS.Combined.Controls.HeatExchanger</a>.
->>>>>>> master:Buildings/DHC/ETS/Combined/Subsystems/HeatExchanger.mo
 The pump flow rate is considered proportional to the pump speed
 under the assumption of a constant flow resistance in both the primary and
 the secondary loops.

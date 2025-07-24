@@ -7,14 +7,10 @@ model Wang2005Occupancy
     "Mean occupancy duration";
   parameter Modelica.Units.SI.Time zero_mu(displayUnit="min") = 2556
     "Mean vacancy duration";
-<<<<<<< HEAD
-  parameter Integer seed = 10 "Seed for the random number generator";
-=======
   parameter Integer localSeed = 2005
     "Local seed to be used to generate the initial state of the random number generator";
   parameter Integer globalSeed = 30129
     "Global seed to be combined with the local seed";
->>>>>>> master
 
   Modelica.Blocks.Interfaces.BooleanOutput occ(start=true, fixed=true)
     "The State of occupancy, true for occupied"

@@ -1,11 +1,3 @@
-<<<<<<<< HEAD:Buildings/Experimental/DHC/Loads/Combined/BuildingTimeSeriesWithETS.mo
-within Buildings.Experimental.DHC.Loads.Combined;
-model BuildingTimeSeriesWithETS
-  "Model of a building with loads provided as time series, connected to an ETS"
-  extends Buildings.Experimental.DHC.Loads.Combined.BaseClasses.PartialBuildingWithETS(
-    redeclare Buildings.Experimental.DHC.Loads.BaseClasses.Examples.BaseClasses.BuildingTimeSeries bui(
-      final filNam=filNam,
-========
 within Buildings.DHC.Loads.Combined;
 model BuildingTimeSeriesWithETS
   "Model of a building with loads provided as time series, connected to an ETS"
@@ -13,7 +5,6 @@ model BuildingTimeSeriesWithETS
     Buildings.DHC.Loads.Combined.BaseClasses.PartialBuildingWithETS(
     redeclare Buildings.DHC.Loads.BaseClasses.BuildingTimeSeries bui(
       filNam=filNam,
->>>>>>>> master:Buildings/DHC/Loads/Combined/BuildingTimeSeriesWithETS.mo
       have_hotWat=true,
       T_aHeaWat_nominal=ets.THeaWatSup_nominal,
       T_bHeaWat_nominal=ets.THeaWatRet_nominal,
@@ -38,19 +29,6 @@ model BuildingTimeSeriesWithETS
       QHotWat_flow_nominal=QHot_flow_nominal));
   parameter String filNam
     "Library path of the file with thermal loads as time series";
-<<<<<<<< HEAD:Buildings/Experimental/DHC/Loads/Combined/BuildingTimeSeriesWithETS.mo
-  final parameter Modelica.Units.SI.HeatFlowRate QCoo_flow_nominal(max=-
-        Modelica.Constants.eps) = bui.facMul*bui.QCoo_flow_nominal
-    "Space cooling design load (<=0)"
-    annotation (Dialog(group="Design parameter"));
-  final parameter Modelica.Units.SI.HeatFlowRate QHea_flow_nominal(min=Modelica.Constants.eps)=
-       bui.facMul*bui.QHea_flow_nominal "Space heating design load (>=0)"
-    annotation (Dialog(group="Design parameter"));
-  final parameter Modelica.Units.SI.HeatFlowRate QHot_flow_nominal(min=Modelica.Constants.eps)=
-       bui.facMul*Buildings.Experimental.DHC.Loads.BaseClasses.getPeakLoad(string=
-    "#Peak water heating load", filNam=Modelica.Utilities.Files.loadResource(
-    filNam)) "Hot water design load (>=0)"
-========
   final parameter Modelica.Units.SI.HeatFlowRate QCoo_flow_nominal(
     max=-Modelica.Constants.eps)=
     bui.facMul * bui.QCoo_flow_nominal
@@ -67,7 +45,6 @@ model BuildingTimeSeriesWithETS
       string="#Peak water heating load",
       filNam=Modelica.Utilities.Files.loadResource(filNam))
     "Hot water design load (>=0)"
->>>>>>>> master:Buildings/DHC/Loads/Combined/BuildingTimeSeriesWithETS.mo
     annotation (Dialog(group="Design parameter"));
   Buildings.Controls.OBC.CDL.Interfaces.RealInput THotWatSupSet(
     final unit="K",
@@ -92,28 +69,17 @@ model BuildingTimeSeriesWithETS
         extent={{-20,-20},{20,20}},
         rotation=90,
         origin={-80,-120})));
-<<<<<<<< HEAD:Buildings/Experimental/DHC/Loads/Combined/BuildingTimeSeriesWithETS.mo
-  Buildings.Controls.OBC.CDL.Continuous.MultiplyByParameter loaHeaNor(k=1/
-        QHea_flow_nominal) "Normalized heating load"
-    annotation (Placement(transformation(extent={{-200,-110},{-180,-90}})));
-  Buildings.Controls.OBC.CDL.Continuous.GreaterThreshold enaHeaCoo[2](each t=1e-4)
-========
   Buildings.Controls.OBC.CDL.Reals.MultiplyByParameter loaHeaNor(
     k=1/QHea_flow_nominal) "Normalized heating load"
     annotation (Placement(transformation(extent={{-200,-110},{-180,-90}})));
   Buildings.Controls.OBC.CDL.Reals.GreaterThreshold enaHeaCoo[2](each t=1e-4)
->>>>>>>> master:Buildings/DHC/Loads/Combined/BuildingTimeSeriesWithETS.mo
     "Threshold comparison to enable heating and cooling"
     annotation (Placement(transformation(extent={{-110,-130},{-90,-110}})));
   Modelica.Blocks.Sources.BooleanConstant enaSHW(
     final k=true) if have_hotWat
     "SHW production enable signal"
     annotation (Placement(transformation(extent={{0,-130},{-20,-110}})));
-<<<<<<<< HEAD:Buildings/Experimental/DHC/Loads/Combined/BuildingTimeSeriesWithETS.mo
-  Buildings.Controls.OBC.CDL.Continuous.MultiplyByParameter loaCooNor(k=1/
-========
   Buildings.Controls.OBC.CDL.Reals.MultiplyByParameter loaCooNor(k=1/
->>>>>>>> master:Buildings/DHC/Loads/Combined/BuildingTimeSeriesWithETS.mo
         QCoo_flow_nominal) "Normalized cooling load"
     annotation (Placement(transformation(extent={{-200,-150},{-180,-130}})));
 equation
@@ -142,17 +108,10 @@ equation
   annotation (
     Documentation(info="<html>
 <p>
-<<<<<<<< HEAD:Buildings/Experimental/DHC/Loads/Combined/BuildingTimeSeriesWithETS.mo
-This model is composed of a heat pump based energy transfer station model 
-<a href=\"modelica://Buildings.Experimental.DHC.EnergyTransferStations.Combined.HeatPumpHeatExchanger\">
-Buildings.Experimental.DHC.EnergyTransferStations.Combined.HeatPumpHeatExchanger</a>
-connected to a simplified building model where the space heating, cooling 
-========
 This model is composed of a heat pump based energy transfer station model
 <a href=\"modelica://Buildings.DHC.ETS.Combined.HeatPumpHeatExchanger\">
 Buildings.DHC.ETS.Combined.HeatPumpHeatExchanger</a>
 connected to a simplified building model where the space heating, cooling
->>>>>>>> master:Buildings/DHC/Loads/Combined/BuildingTimeSeriesWithETS.mo
 and hot water loads are provided as time series.
 </p>
 <h4>Scaling</h4>

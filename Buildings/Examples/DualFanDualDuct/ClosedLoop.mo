@@ -272,13 +272,9 @@ model ClosedLoop "Closed loop model of a dual-fan dual-duct system"
     from_dp=true) "West-facing thermal zone"
     annotation (Placement(transformation(extent={{1102,46},{1170,114}})));
   Buildings.Examples.VAVReheat.BaseClasses.Controls.FanVFD conFanRet(
-<<<<<<< HEAD
-                        xSet_nominal(displayUnit="Pa") = 30,
-=======
     xSet_nominal(
       final unit="Pa",
       displayUnit="Pa") = 30,
->>>>>>> master
     initType=Modelica.Blocks.Types.Init.InitialState,
     y_start=yFan_start,
     r_N_min=0.2,
@@ -1249,8 +1245,6 @@ shading devices, Technical Report, Oct. 17, 2006.
 </html>", revisions="<html>
 <ul>
 <li>
-<<<<<<< HEAD
-=======
 March 4, 2024, by Michael Wetter:<br/>
 Corrected wrong use of <code>displayUnit</code> attribute.
 </li>
@@ -1262,7 +1256,6 @@ This is for
 <a href=\"https://github.com/lbl-srg/modelica-buildings/issues/2668\">issue #2668</a>.
 </li>
 <li>
->>>>>>> master
 September 16, 2021, by Michael Wetter:<br/>
 Removed assignment of parameter <code>lat</code> as this is now obtained from the weather data reader.<br/>
 This is for

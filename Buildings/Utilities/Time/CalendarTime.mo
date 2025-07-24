@@ -50,15 +50,6 @@ protected
   final constant Integer firstYear = 2010
     "First year that is supported, i.e. the first year in timeStampsNewYear[:]";
   final constant Integer lastYear = firstYear + size(timeStampsNewYear,1) - 1;
-<<<<<<< HEAD
-  constant Modelica.Units.SI.Time timeStampsNewYear[22]={1262304000.0,
-      1293840000.0,1325376000.0,1356998400.0,1388534400.0,1420070400.0,
-      1451606400.0,1483228800.0,1514764800.0,1546300800.0,1577836800.0,
-      1609459200.0,1640995200.0,1672531200.0,1704067200.0,1735689600.0,
-      1767225600.0,1798761600.0,1830297600.0,1861920000.0,1893456000.0,
-      1924992000.0} "Epoch time stamps for new years day 2010 to 2031";
-  constant Boolean isLeapYear[21] = {
-=======
   constant Modelica.Units.SI.Time timeStampsNewYear[42]={1262304000.0,
     1293840000.0,1325376000.0,1356998400.0,1388534400.0,1420070400.0,
     1451606400.0,1483228800.0,1514764800.0,1546300800.0,1577836800.0,
@@ -75,7 +66,6 @@ protected
     false, false, true, false,
     false, false, true, false,
     false, false, true, false,
->>>>>>> master
     false, false, true, false,
     false, false, true, false,
     false, false, true, false,

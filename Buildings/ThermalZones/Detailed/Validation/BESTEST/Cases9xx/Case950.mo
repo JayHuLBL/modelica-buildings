@@ -42,15 +42,12 @@ equation
     Documentation(revisions="<html>
 <ul>
 <li>
-<<<<<<< HEAD
-=======
 May 12, 2023, by Jianjun Hu:<br/>
 Added test acceptance criteria limits.
 This is for
 <a href=\"https://github.com/lbl-srg/modelica-buildings/issues/3396\">issue 3396</a>.
 </li> 
 <li>
->>>>>>> master
 May 12, 2022, by Jianjun Hu:<br/>
 Changed the ventilation fan capacity from 1703.16 m3/h to 1700 m3/h and consider the adjustment
 for the altitude, eventually to be 1409 m3/h.<br/>

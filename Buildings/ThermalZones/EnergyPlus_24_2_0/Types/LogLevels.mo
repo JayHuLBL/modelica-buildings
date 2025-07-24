@@ -1,8 +1,4 @@
-<<<<<<<< HEAD:Buildings/ThermalZones/EnergyPlus_9_6_0/Types/LogLevels.mo
-within Buildings.ThermalZones.EnergyPlus_9_6_0.Types;
-========
 within Buildings.ThermalZones.EnergyPlus_24_2_0.Types;
->>>>>>>> master:Buildings/ThermalZones/EnergyPlus_24_2_0/Types/LogLevels.mo
 type LogLevels = enumeration(
     Error
   "Errors",

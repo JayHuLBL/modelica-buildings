@@ -143,17 +143,10 @@ protected
     final k=false) if not use_enthalpy
     "Deactivates outdoor air enthalpy condition if there is no enthalpy sensor"
     annotation (Placement(transformation(extent={{-100,190},{-80,210}})));
-<<<<<<< HEAD
-  Buildings.Controls.OBC.CDL.Continuous.Subtract sub2
-    if use_enthalpy "Add block determines difference between hOut and hOutCut"
-    annotation (Placement(transformation(extent={{-140,160},{-120,180}})));
-  Buildings.Controls.OBC.CDL.Continuous.Subtract sub1
-=======
   Buildings.Controls.OBC.CDL.Reals.Subtract sub2
     if use_enthalpy "Add block determines difference between hOut and hOutCut"
     annotation (Placement(transformation(extent={{-140,160},{-120,180}})));
   Buildings.Controls.OBC.CDL.Reals.Subtract sub1
->>>>>>> master
     "Add block determines difference between TOut and TOutCut"
     annotation (Placement(transformation(extent={{-140,240},{-120,260}})));
   Buildings.Controls.OBC.CDL.Reals.Hysteresis hysOutTem(
@@ -166,17 +159,6 @@ protected
     final uHigh=hOutHigLimCutHig) if use_enthalpy
     "Outdoor air enthalpy hysteresis for both fixed and differential enthalpy cutoff conditions"
     annotation (Placement(transformation(extent={{-100,160},{-80,180}})));
-<<<<<<< HEAD
-  Buildings.Controls.OBC.CDL.Continuous.Switch outDamSwitch
-    "Set maximum OA damper position to minimum at disable (after a given time delay)"
-    annotation (Placement(transformation(extent={{62,-60},{82,-40}})));
-  Buildings.Controls.OBC.CDL.Continuous.Switch retDamSwitch "Set minimum RA damper position to maximum at disable"
-    annotation (Placement(transformation(extent={{-40,-162},{-20,-142}})));
-  Buildings.Controls.OBC.CDL.Continuous.Switch maxRetDamSwitch
-    "Keep maximum RA damper position at physical maximum for a short time period after disable signal"
-    annotation (Placement(transformation(extent={{40,-120},{60,-100}})));
-  Buildings.Controls.OBC.CDL.Continuous.Switch minRetDamSwitch
-=======
   Buildings.Controls.OBC.CDL.Reals.Switch outDamSwitch
     "Set maximum OA damper position to minimum at disable (after a given time delay)"
     annotation (Placement(transformation(extent={{62,-60},{82,-40}})));
@@ -186,7 +168,6 @@ protected
     "Keep maximum RA damper position at physical maximum for a short time period after disable signal"
     annotation (Placement(transformation(extent={{40,-120},{60,-100}})));
   Buildings.Controls.OBC.CDL.Reals.Switch minRetDamSwitch
->>>>>>> master
     "Keep minimum RA damper position at physical maximum for a short time period after disable"
     annotation (Placement(transformation(extent={{40,-160},{60,-140}})));
   Buildings.Controls.OBC.CDL.Logical.Nor nor1 "Logical nor"

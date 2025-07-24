@@ -1,8 +1,4 @@
-<<<<<<< HEAD:Buildings/Experimental/DHC/Examples/Combined/BaseClasses/PartialSeries.mo
-within Buildings.Experimental.DHC.Examples.Combined.BaseClasses;
-=======
 within Buildings.DHC.Examples.Combined.BaseClasses;
->>>>>>> master:Buildings/DHC/Examples/Combined/BaseClasses/PartialSeries.mo
 partial model PartialSeries "Partial model for series network"
   extends Modelica.Icons.Example;
   package Medium = Buildings.Media.Water "Medium model";
@@ -26,14 +22,6 @@ partial model PartialSeries "Partial model for series network"
     "Number of buildings connected to DHC system"
     annotation (Evaluate=true);
   inner parameter
-<<<<<<< HEAD:Buildings/Experimental/DHC/Examples/Combined/BaseClasses/PartialSeries.mo
-    Buildings.Experimental.DHC.Examples.Combined.BaseClasses.DesignDataSeries
-    datDes(final mCon_flow_nominal=bui.ets.mSerWat_flow_nominal) "Design data"
-    annotation (Placement(transformation(extent={{-340,220},{-320,240}})));
-  // COMPONENTS
-  Buildings.Experimental.DHC.Plants.Reservoir.BoreField
-    borFie(redeclare final package Medium = Medium) "Bore field" annotation (
-=======
     Buildings.DHC.Examples.Combined.BaseClasses.DesignDataSeries
     datDes(final mCon_flow_nominal=bui.ets.mSerWat_flow_nominal, lEnd=100)
                                                                  "Design data"
@@ -41,16 +29,11 @@ partial model PartialSeries "Partial model for series network"
   // COMPONENTS
   Buildings.DHC.Examples.Combined.BaseClasses.Borefield borFie(
       redeclare final package Medium = Medium) "Bore field" annotation (
->>>>>>> master:Buildings/DHC/Examples/Combined/BaseClasses/PartialSeries.mo
       Placement(transformation(
         extent={{-10,-10},{10,10}},
         rotation=0,
         origin={-130,-80})));
-<<<<<<< HEAD:Buildings/Experimental/DHC/Examples/Combined/BaseClasses/PartialSeries.mo
-  Buildings.Experimental.DHC.EnergyTransferStations.BaseClasses.Pump_m_flow pumDis(
-=======
   Buildings.DHC.ETS.BaseClasses.Pump_m_flow pumDis(
->>>>>>> master:Buildings/DHC/Examples/Combined/BaseClasses/PartialSeries.mo
     redeclare final package Medium = Medium,
     final m_flow_nominal=datDes.mPumDis_flow_nominal,
     final allowFlowReversal=allowFlowReversalSer,
@@ -66,13 +49,8 @@ partial model PartialSeries "Partial model for series network"
     annotation (Placement(transformation(
         extent={{-10,-10},{10,10}},
         rotation=180,
-<<<<<<< HEAD:Buildings/Experimental/DHC/Examples/Combined/BaseClasses/PartialSeries.mo
-        origin={112,-20})));
-  Buildings.Experimental.DHC.EnergyTransferStations.BaseClasses.Pump_m_flow pumSto(
-=======
         origin={112,-98})));
   Buildings.DHC.ETS.BaseClasses.Pump_m_flow pumSto(
->>>>>>> master:Buildings/DHC/Examples/Combined/BaseClasses/PartialSeries.mo
     redeclare final package Medium = Medium,
     m_flow_nominal=datDes.mSto_flow_nominal)
     "Bore field pump"
@@ -80,12 +58,7 @@ partial model PartialSeries "Partial model for series network"
       extent={{10,10},{-10,-10}},
       rotation=180,
       origin={-180,-80})));
-<<<<<<< HEAD:Buildings/Experimental/DHC/Examples/Combined/BaseClasses/PartialSeries.mo
-  Buildings.Experimental.DHC.Networks.Combined.BaseClasses.ConnectionSeriesStandard
-    conPla(
-=======
   Buildings.DHC.Networks.Connections.Connection1Pipe_R conPla(
->>>>>>> master:Buildings/DHC/Examples/Combined/BaseClasses/PartialSeries.mo
     redeclare final package Medium = Medium,
     final mDis_flow_nominal=datDes.mPipDis_flow_nominal,
     final mCon_flow_nominal=datDes.mPla_flow_nominal,
@@ -97,12 +70,7 @@ partial model PartialSeries "Partial model for series network"
         extent={{-10,-10},{10,10}},
         rotation=90,
         origin={-80,-10})));
-<<<<<<< HEAD:Buildings/Experimental/DHC/Examples/Combined/BaseClasses/PartialSeries.mo
-  Buildings.Experimental.DHC.Networks.Combined.BaseClasses.ConnectionSeriesStandard
-    conSto(
-=======
   Buildings.DHC.Networks.Connections.Connection1Pipe_R conSto(
->>>>>>> master:Buildings/DHC/Examples/Combined/BaseClasses/PartialSeries.mo
     redeclare final package Medium = Medium,
     final mDis_flow_nominal=datDes.mPipDis_flow_nominal,
     final mCon_flow_nominal=datDes.mSto_flow_nominal,
@@ -114,11 +82,7 @@ partial model PartialSeries "Partial model for series network"
         extent={{-10,-10},{10,10}},
         rotation=90,
         origin={-80,-90})));
-<<<<<<< HEAD:Buildings/Experimental/DHC/Examples/Combined/BaseClasses/PartialSeries.mo
-  Buildings.Experimental.DHC.Plants.Heating.SewageHeatRecovery
-=======
   Buildings.DHC.Plants.Heating.SewageHeatRecovery
->>>>>>> master:Buildings/DHC/Examples/Combined/BaseClasses/PartialSeries.mo
     pla(
     redeclare final package Medium = Medium,
     final mSew_flow_nominal=datDes.mPla_flow_nominal,
@@ -127,22 +91,6 @@ partial model PartialSeries "Partial model for series network"
     final dpDis_nominal=datDes.dpPla_nominal,
     final epsHex=datDes.epsPla) "Sewage heat recovery plant"
     annotation (Placement(transformation(extent={{-160,-10},{-140,10}})));
-<<<<<<< HEAD:Buildings/Experimental/DHC/Examples/Combined/BaseClasses/PartialSeries.mo
-  Buildings.Experimental.DHC.Networks.Combined.UnidirectionalSeries
-    dis(
-    redeclare final package Medium = Medium,
-    final nCon=nBui,
-    show_TOut=true,
-    final mDis_flow_nominal=datDes.mPipDis_flow_nominal,
-    final mCon_flow_nominal=datDes.mCon_flow_nominal,
-    final dp_length_nominal=datDes.dp_length_nominal,
-    final lDis=datDes.lDis,
-    final lCon=datDes.lCon,
-    final lEnd=datDes.lEnd,
-    final allowFlowReversal=allowFlowReversalSer) "Distribution network"
-    annotation (Placement(transformation(extent={{-20,130},{20,150}})));
-=======
->>>>>>> master:Buildings/DHC/Examples/Combined/BaseClasses/PartialSeries.mo
   Fluid.Sensors.TemperatureTwoPort TDisWatSup(
     redeclare final package Medium = Medium,
     final m_flow_nominal=datDes.mPumDis_flow_nominal)
@@ -168,15 +116,9 @@ partial model PartialSeries "Partial model for series network"
         rotation=90,
         origin={-80,-40})));
   replaceable
-<<<<<<< HEAD:Buildings/Experimental/DHC/Examples/Combined/BaseClasses/PartialSeries.mo
-    Buildings.Experimental.DHC.Loads.Combined.BaseClasses.PartialBuildingWithETS
-    bui[nBui] constrainedby
-    Buildings.Experimental.DHC.Loads.Combined.BaseClasses.PartialBuildingWithETS(
-=======
     Buildings.DHC.Loads.Combined.BaseClasses.PartialBuildingWithETS
     bui[nBui] constrainedby
     Buildings.DHC.Loads.Combined.BaseClasses.PartialBuildingWithETS(
->>>>>>> master:Buildings/DHC/Examples/Combined/BaseClasses/PartialSeries.mo
     bui(each final facMul=facMul),
     redeclare each final package MediumBui = Medium,
     redeclare each final package MediumSer = Medium,
@@ -185,24 +127,6 @@ partial model PartialSeries "Partial model for series network"
     each final TDisWatMin=datDes.TLooMin,
     each final TDisWatMax=datDes.TLooMax) "Building and ETS"
     annotation (Placement(transformation(extent={{-10,170},{10,190}})));
-<<<<<<< HEAD:Buildings/Experimental/DHC/Examples/Combined/BaseClasses/PartialSeries.mo
-  Modelica.Blocks.Sources.Constant TSewWat(k=273.15 + 17)
-    "Sewage water temperature"
-    annotation (Placement(transformation(extent={{-280,30},{-260,50}})));
- Buildings.Controls.OBC.CDL.Continuous.Sources.Constant THeaWatSupMaxSet[nBui](
-    k=bui.THeaWatSup_nominal)
-    "Heating water supply temperature set point - Maximum value"
-    annotation (Placement(transformation(extent={{-250,210},{-230,230}})));
- Buildings.Controls.OBC.CDL.Continuous.Sources.Constant TChiWatSupSet[nBui](
-    k=bui.TChiWatSup_nominal)
-    "Chilled water supply temperature set point"
-    annotation (Placement(transformation(extent={{-220,190},{-200,210}})));
- Buildings.Controls.OBC.CDL.Continuous.Sources.Constant THeaWatSupMinSet[nBui](
-    each k=28 + 273.15)
-    "Heating water supply temperature set point - Minimum value"
-    annotation (Placement(transformation(extent={{-280,230},{-260,250}})));
- Buildings.Controls.OBC.CDL.Continuous.MultiSum PPumETS(
-=======
  Buildings.Controls.OBC.CDL.Reals.Sources.Constant THeaWatSupMaxSet[nBui](
     k=bui.THeaWatSup_nominal)
     "Heating water supply temperature set point - Maximum value"
@@ -216,7 +140,6 @@ partial model PartialSeries "Partial model for series network"
     "Heating water supply temperature set point - Minimum value"
     annotation (Placement(transformation(extent={{-320,230},{-300,250}})));
  Buildings.Controls.OBC.CDL.Reals.MultiSum PPumETS(
->>>>>>> master:Buildings/DHC/Examples/Combined/BaseClasses/PartialSeries.mo
     final nin=nBui)
     "ETS pump power"
     annotation (Placement(transformation(extent={{140,190},{160,210}})));
@@ -235,17 +158,10 @@ partial model PartialSeries "Partial model for series network"
   Modelica.Blocks.Continuous.Integrator EPumPla(initType=Modelica.Blocks.Types.Init.InitialState)
     "Plant pump electric energy"
     annotation (Placement(transformation(extent={{220,30},{240,50}})));
-<<<<<<< HEAD:Buildings/Experimental/DHC/Examples/Combined/BaseClasses/PartialSeries.mo
- Buildings.Controls.OBC.CDL.Continuous.MultiSum EPum(nin=4)
-    "Total pump electric energy"
-    annotation (Placement(transformation(extent={{280,110},{300,130}})));
- Buildings.Controls.OBC.CDL.Continuous.MultiSum PHeaPump(
-=======
  Buildings.Controls.OBC.CDL.Reals.MultiSum EPum(nin=4)
     "Total pump electric energy"
     annotation (Placement(transformation(extent={{280,110},{300,130}})));
  Buildings.Controls.OBC.CDL.Reals.MultiSum PHeaPump(
->>>>>>> master:Buildings/DHC/Examples/Combined/BaseClasses/PartialSeries.mo
     final nin=nBui)
     "Heat pump power"
     annotation (Placement(transformation(extent={{140,150},{160,170}})));
@@ -253,11 +169,7 @@ partial model PartialSeries "Partial model for series network"
     initType=Modelica.Blocks.Types.Init.InitialState)
     "Heat pump electric energy"
     annotation (Placement(transformation(extent={{220,150},{240,170}})));
-<<<<<<< HEAD:Buildings/Experimental/DHC/Examples/Combined/BaseClasses/PartialSeries.mo
- Buildings.Controls.OBC.CDL.Continuous.MultiSum ETot(nin=2) "Total electric energy"
-=======
  Buildings.Controls.OBC.CDL.Reals.MultiSum ETot(nin=2) "Total electric energy"
->>>>>>> master:Buildings/DHC/Examples/Combined/BaseClasses/PartialSeries.mo
     annotation (Placement(transformation(extent={{320,150},{340,170}})));
   Buildings.DHC.Loads.BaseClasses.ConstraintViolation conVio(
     final uMin(final unit="K", displayUnit="degC")=datDes.TLooMin,

@@ -1060,15 +1060,12 @@ if <i>T=0</i> &deg;C and no water vapor is present.
 </html>", revisions="<html>
 <ul>
 <li>
-<<<<<<< HEAD
-=======
 June 18, 2024, by Michael Wetter:<br/>
 Added <code>start</code> and <code>nominal</code> attributes
 to avoid warnings in OpenModelica due to conflicting values.<br/>
 This is for <a href=\"https://github.com/ibpsa/modelica-ibpsa/issues/1890\">IBPSA, #1890</a>.
 </li>
 <li>
->>>>>>> master
 September 9, 2022, by Michael Wetter:<br/>
 Set nominal attribute for <code>BaseProperties.Xi</code>.<br/>
 This is for

@@ -1,28 +1,15 @@
-<<<<<<<< HEAD:Buildings/ThermalZones/EnergyPlus_9_6_0/Examples/SingleFamilyHouse/LightsControl.mo
-within Buildings.ThermalZones.EnergyPlus_9_6_0.Examples.SingleFamilyHouse;
-model LightsControl
-  "Example model with one actuator that controls the lights in EnergyPlus"
-  extends Buildings.ThermalZones.EnergyPlus_9_6_0.Examples.SingleFamilyHouse.Unconditioned;
-  Buildings.ThermalZones.EnergyPlus_9_6_0.Actuator actLig(
-    unit=Buildings.ThermalZones.EnergyPlus_9_6_0.Types.Units.Power,
-========
 within Buildings.ThermalZones.EnergyPlus_24_2_0.Examples.SingleFamilyHouse;
 model LightsControl
   "Example model with one actuator that controls the lights in EnergyPlus"
   extends Buildings.ThermalZones.EnergyPlus_24_2_0.Examples.SingleFamilyHouse.Unconditioned;
   Buildings.ThermalZones.EnergyPlus_24_2_0.Actuator actLig(
     unit=Buildings.ThermalZones.EnergyPlus_24_2_0.Types.Units.Power,
->>>>>>>> master:Buildings/ThermalZones/EnergyPlus_24_2_0/Examples/SingleFamilyHouse/LightsControl.mo
     variableName="LIVING ZONE Lights",
     componentType="Lights",
     controlType="Electricity Rate")
     "Actuator for lights"
     annotation (Placement(transformation(extent={{100,100},{120,120}})));
-<<<<<<<< HEAD:Buildings/ThermalZones/EnergyPlus_9_6_0/Examples/SingleFamilyHouse/LightsControl.mo
-  Buildings.ThermalZones.EnergyPlus_9_6_0.OutputVariable ligPow(
-========
   Buildings.ThermalZones.EnergyPlus_24_2_0.OutputVariable ligPow(
->>>>>>>> master:Buildings/ThermalZones/EnergyPlus_24_2_0/Examples/SingleFamilyHouse/LightsControl.mo
     name="Lights Electricity Rate",
     key="LIVING ZONE Lights",
     isDirectDependent=true,
@@ -49,11 +36,7 @@ model LightsControl
     t=22*3600)
     "Check whether time is earlier than 22:00"
     annotation (Placement(transformation(extent={{-60,60},{-40,80}})));
-<<<<<<<< HEAD:Buildings/ThermalZones/EnergyPlus_9_6_0/Examples/SingleFamilyHouse/LightsControl.mo
-  Controls.OBC.CDL.Continuous.Subtract timToSunSet
-========
   Buildings.Controls.OBC.CDL.Reals.Subtract timToSunSet
->>>>>>>> master:Buildings/ThermalZones/EnergyPlus_24_2_0/Examples/SingleFamilyHouse/LightsControl.mo
     "Time to next sunset"
     annotation (Placement(transformation(extent={{-100,130},{-80,150}})));
   Buildings.Controls.OBC.CDL.Reals.LessThreshold lesEquThr1(
@@ -118,11 +101,7 @@ equation
     annotation (Line(points={{122,110},{130,110},{130,90},{88,90},{88,70},{98,70}},color={0,0,127}));
   annotation (
     __Dymola_Commands(
-<<<<<<<< HEAD:Buildings/ThermalZones/EnergyPlus_9_6_0/Examples/SingleFamilyHouse/LightsControl.mo
-      file="modelica://Buildings/Resources/Scripts/Dymola/ThermalZones/EnergyPlus_9_6_0/Examples/SingleFamilyHouse/LightsControl.mos" "Simulate and plot"),
-========
       file="modelica://Buildings/Resources/Scripts/Dymola/ThermalZones/EnergyPlus_24_2_0/Examples/SingleFamilyHouse/LightsControl.mos" "Simulate and plot"),
->>>>>>>> master:Buildings/ThermalZones/EnergyPlus_24_2_0/Examples/SingleFamilyHouse/LightsControl.mo
     experiment(
       StopTime=172800,
       Tolerance=1e-06),

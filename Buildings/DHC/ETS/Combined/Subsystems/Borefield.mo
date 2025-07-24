@@ -1,8 +1,4 @@
-<<<<<<< HEAD:Buildings/Experimental/DHC/EnergyTransferStations/Combined/Subsystems/Borefield.mo
-within Buildings.Experimental.DHC.EnergyTransferStations.Combined.Subsystems;
-=======
 within Buildings.DHC.ETS.Combined.Subsystems;
->>>>>>> master:Buildings/DHC/ETS/Combined/Subsystems/Borefield.mo
 model Borefield
   "Base subsystem with geothermal borefield"
   extends Buildings.Fluid.Interfaces.PartialTwoPortInterface(
@@ -22,14 +18,6 @@ model Borefield
         dp_nominal=0))
     "Borefield parameters"
     annotation (choicesAllMatching=true,Placement(transformation(extent={{0,60},{20,80}})));
-<<<<<<< HEAD:Buildings/Experimental/DHC/EnergyTransferStations/Combined/Subsystems/Borefield.mo
-  replaceable parameter Buildings.Fluid.Movers.Data.Generic perPum(
-    motorCooledByFluid=false)
-    constrainedby Buildings.Fluid.Movers.Data.Generic
-    "Record with performance data for borefield pump"
-    annotation (choicesAllMatching=true,Placement(transformation(extent={{40,60},{60,80}})));
-=======
->>>>>>> master:Buildings/DHC/ETS/Combined/Subsystems/Borefield.mo
   parameter Modelica.Units.SI.Pressure dp_nominal(displayUnit="Pa")
     "Pressure losses for the entire borefield (control valve excluded)"
     annotation (Dialog(group="Nominal condition"));
@@ -93,11 +81,7 @@ model Borefield
     final m_flow_nominal=m_flow_nominal)
     "Leaving temperature"
     annotation (Placement(transformation(extent={{-10,-10},{10,10}},rotation=0,origin={50,0})));
-<<<<<<< HEAD:Buildings/Experimental/DHC/EnergyTransferStations/Combined/Subsystems/Borefield.mo
-  Buildings.Experimental.DHC.EnergyTransferStations.Combined.Controls.Borefield con(
-=======
   Buildings.DHC.ETS.Combined.Controls.Borefield con(
->>>>>>> master:Buildings/DHC/ETS/Combined/Subsystems/Borefield.mo
     final TBorWatEntMax=TBorWatEntMax,
     final spePumBorMin=spePumBorMin)
     "Controller"
@@ -106,11 +90,7 @@ model Borefield
     final unit="W")
     "Pump power"
     annotation (Placement(transformation(extent={{100,20},{140,60}}),iconTransformation(extent={{100,20},{140,60}})));
-<<<<<<< HEAD:Buildings/Experimental/DHC/EnergyTransferStations/Combined/Subsystems/Borefield.mo
-  Buildings.Controls.OBC.CDL.Continuous.MultiplyByParameter gai1(final k=
-=======
   Buildings.Controls.OBC.CDL.Reals.MultiplyByParameter gai1(final k=
->>>>>>> master:Buildings/DHC/ETS/Combined/Subsystems/Borefield.mo
         m_flow_nominal) "Scale to nominal mass flow rate" annotation (Placement(
         transformation(
         extent={{10,-10},{-10,10}},
@@ -239,13 +219,8 @@ and a mixing valve modulated to maintain a maximum inlet temperature.
 </p>
 <p>
 The system is controlled based on the logic described in
-<<<<<<< HEAD:Buildings/Experimental/DHC/EnergyTransferStations/Combined/Subsystems/Borefield.mo
-<a href=\"modelica://Buildings.Experimental.DHC.EnergyTransferStations.Combined.Controls.Borefield\">
-Buildings.Experimental.DHC.EnergyTransferStations.Combined.Controls.Borefield</a>.
-=======
 <a href=\"modelica://Buildings.DHC.ETS.Combined.Controls.Borefield\">
 Buildings.DHC.ETS.Combined.Controls.Borefield</a>.
->>>>>>> master:Buildings/DHC/ETS/Combined/Subsystems/Borefield.mo
 The pump flow rate is considered proportional to the pump speed
 under the assumption of a constant flow resistance in the borefield loop.
 This assumption is justified by the connection of the loop to the buffer tanks,

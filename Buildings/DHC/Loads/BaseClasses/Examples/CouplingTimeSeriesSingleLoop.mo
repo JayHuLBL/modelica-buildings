@@ -1,8 +1,4 @@
-<<<<<<< HEAD:Buildings/Experimental/DHC/Loads/BaseClasses/Examples/CouplingTimeSeriesSingleLoop.mo
-within Buildings.Experimental.DHC.Loads.BaseClasses.Examples;
-=======
 within Buildings.DHC.Loads.BaseClasses.Examples;
->>>>>>> master:Buildings/DHC/Loads/BaseClasses/Examples/CouplingTimeSeriesSingleLoop.mo
 model CouplingTimeSeriesSingleLoop
   "Example illustrating the coupling of a building model to heating water or chilled water loops"
   extends Modelica.Icons.Example;
@@ -10,11 +6,7 @@ model CouplingTimeSeriesSingleLoop
     "Source side medium";
   parameter Modelica.Units.SI.Time perAve=600
     "Period for time averaged variables";
-<<<<<<< HEAD:Buildings/Experimental/DHC/Loads/BaseClasses/Examples/CouplingTimeSeriesSingleLoop.mo
-  Buildings.Experimental.DHC.Loads.BaseClasses.Examples.BaseClasses.BuildingTimeSeries buiCoo(
-=======
   Buildings.DHC.Loads.BaseClasses.BuildingTimeSeries buiCoo(
->>>>>>> master:Buildings/DHC/Loads/BaseClasses/Examples/CouplingTimeSeriesSingleLoop.mo
     have_heaWat=false,
     filNam="modelica://Buildings/Resources/Data/DHC/Loads/Examples/SwissResidential_20190916.mos",
     nPorts_aChiWat=1,
@@ -40,28 +32,17 @@ model CouplingTimeSeriesSingleLoop
     y(unit="J"))
     "Time integral of cooling load"
     annotation (Placement(transformation(extent={{40,60},{60,80}})));
-<<<<<<< HEAD:Buildings/Experimental/DHC/Loads/BaseClasses/Examples/CouplingTimeSeriesSingleLoop.mo
-  Buildings.Controls.OBC.CDL.Continuous.MovingAverage QAveCooReq_flow(y(unit=
-          "W"), final delta=perAve) "Time average of cooling load"
-    annotation (Placement(transformation(extent={{40,20},{60,40}})));
-  Buildings.Controls.OBC.CDL.Continuous.MovingAverage QAveCooAct_flow(y(unit=
-=======
   Buildings.Controls.OBC.CDL.Reals.MovingAverage QAveCooReq_flow(y(unit=
           "W"), final delta=perAve) "Time average of cooling load"
     annotation (Placement(transformation(extent={{40,20},{60,40}})));
   Buildings.Controls.OBC.CDL.Reals.MovingAverage QAveCooAct_flow(y(unit=
->>>>>>> master:Buildings/DHC/Loads/BaseClasses/Examples/CouplingTimeSeriesSingleLoop.mo
           "W"), final delta=perAve) "Time average of cooling heat flow rate"
     annotation (Placement(transformation(extent={{80,20},{100,40}})));
   Modelica.Blocks.Continuous.Integrator ECooAct(
     y(unit="J"))
     "Actual energy used for cooling"
     annotation (Placement(transformation(extent={{80,60},{100,80}})));
-<<<<<<< HEAD:Buildings/Experimental/DHC/Loads/BaseClasses/Examples/CouplingTimeSeriesSingleLoop.mo
-  Buildings.Experimental.DHC.Loads.BaseClasses.Examples.BaseClasses.BuildingTimeSeries buiHea(
-=======
   Buildings.DHC.Loads.BaseClasses.BuildingTimeSeries buiHea(
->>>>>>> master:Buildings/DHC/Loads/BaseClasses/Examples/CouplingTimeSeriesSingleLoop.mo
     have_chiWat=false,
     filNam="modelica://Buildings/Resources/Data/DHC/Loads/Examples/SwissResidential_20190916.mos",
     nPorts_aChiWat=1,
@@ -85,11 +66,7 @@ model CouplingTimeSeriesSingleLoop
     nPorts=1)
     "Sink for heating water"
     annotation (Placement(transformation(extent={{10,-10},{-10,10}},rotation=0,origin={110,-12})));
-<<<<<<< HEAD:Buildings/Experimental/DHC/Loads/BaseClasses/Examples/CouplingTimeSeriesSingleLoop.mo
-  Buildings.Controls.OBC.CDL.Continuous.MovingAverage QAveHeaReq_flow(y(unit=
-=======
   Buildings.Controls.OBC.CDL.Reals.MovingAverage QAveHeaReq_flow(y(unit=
->>>>>>> master:Buildings/DHC/Loads/BaseClasses/Examples/CouplingTimeSeriesSingleLoop.mo
           "W"), final delta=perAve) "Time average of heating load"
     annotation (Placement(transformation(extent={{40,-110},{60,-90}})));
   Modelica.Blocks.Continuous.Integrator EHeaReq(
@@ -100,11 +77,7 @@ model CouplingTimeSeriesSingleLoop
     y(unit="J"))
     "Actual energy used for heating"
     annotation (Placement(transformation(extent={{80,-70},{100,-50}})));
-<<<<<<< HEAD:Buildings/Experimental/DHC/Loads/BaseClasses/Examples/CouplingTimeSeriesSingleLoop.mo
-  Buildings.Controls.OBC.CDL.Continuous.MovingAverage QAveHeaAct_flow(y(unit=
-=======
   Buildings.Controls.OBC.CDL.Reals.MovingAverage QAveHeaAct_flow(y(unit=
->>>>>>> master:Buildings/DHC/Loads/BaseClasses/Examples/CouplingTimeSeriesSingleLoop.mo
           "W"), final delta=perAve) "Time average of heating heat flow rate"
     annotation (Placement(transformation(extent={{80,-110},{100,-90}})));
 equation
@@ -150,13 +123,8 @@ Buildings.DHC.Loads.BaseClasses.PartialBuilding</a>,
 <a href=\"modelica://Buildings.DHC.Loads.BaseClasses.PartialTerminalUnit\">
 Buildings.DHC.Loads.BaseClasses.PartialTerminalUnit</a>
 and
-<<<<<<< HEAD:Buildings/Experimental/DHC/Loads/BaseClasses/Examples/CouplingTimeSeriesSingleLoop.mo
-<a href=\"modelica://Buildings.Experimental.DHC.Loads.BaseClasses.FlowDistribution\">
-Buildings.Experimental.DHC.Loads.BaseClasses.FlowDistribution</a>
-=======
 <a href=\"modelica://Buildings.DHC.Loads.BaseClasses.FlowDistribution\">
 Buildings.DHC.Loads.BaseClasses.FlowDistribution</a>
->>>>>>> master:Buildings/DHC/Loads/BaseClasses/Examples/CouplingTimeSeriesSingleLoop.mo
 in a configuration with
 </p>
 <ul>
@@ -193,9 +161,5 @@ First implementation.
         preserveAspectRatio=false,
         extent={{-160,-140},{160,140}})),
     __Dymola_Commands(
-<<<<<<< HEAD:Buildings/Experimental/DHC/Loads/BaseClasses/Examples/CouplingTimeSeriesSingleLoop.mo
-      file="modelica://Buildings/Resources/Scripts/Dymola/Experimental/DHC/Loads/BaseClasses/Examples/CouplingTimeSeriesSingleLoop.mos" "Simulate and plot"));
-=======
       file="modelica://Buildings/Resources/Scripts/Dymola/DHC/Loads/BaseClasses/Examples/CouplingTimeSeriesSingleLoop.mos" "Simulate and plot"));
->>>>>>> master:Buildings/DHC/Loads/BaseClasses/Examples/CouplingTimeSeriesSingleLoop.mo
 end CouplingTimeSeriesSingleLoop;

@@ -1,22 +1,12 @@
-<<<<<<<< HEAD:Buildings/ThermalZones/EnergyPlus_9_6_0/Examples/SingleFamilyHouse/Unconditioned.mo
-within Buildings.ThermalZones.EnergyPlus_9_6_0.Examples.SingleFamilyHouse;
-========
 within Buildings.ThermalZones.EnergyPlus_24_2_0.Examples.SingleFamilyHouse;
->>>>>>>> master:Buildings/ThermalZones/EnergyPlus_24_2_0/Examples/SingleFamilyHouse/Unconditioned.mo
 model Unconditioned
   "Example model with one unconditoned zone simulated in Modelica, and the other two unconditioned zones simulated in EnergyPlus"
   extends Modelica.Icons.Example;
   package Medium=Buildings.Media.Air
     "Medium model";
-<<<<<<<< HEAD:Buildings/ThermalZones/EnergyPlus_9_6_0/Examples/SingleFamilyHouse/Unconditioned.mo
-  inner Buildings.ThermalZones.EnergyPlus_9_6_0.Building building(
-    idfName=Modelica.Utilities.Files.loadResource(
-      "modelica://Buildings/Resources/Data/ThermalZones/EnergyPlus_9_6_0/Examples/SingleFamilyHouse_TwoSpeed_ZoneAirBalance/SingleFamilyHouse_TwoSpeed_ZoneAirBalance.idf"),
-========
   inner Buildings.ThermalZones.EnergyPlus_24_2_0.Building building(
     idfName=Modelica.Utilities.Files.loadResource(
       "modelica://Buildings/Resources/Data/ThermalZones/EnergyPlus_24_2_0/Examples/SingleFamilyHouse_TwoSpeed_ZoneAirBalance/SingleFamilyHouse_TwoSpeed_ZoneAirBalance.idf"),
->>>>>>>> master:Buildings/ThermalZones/EnergyPlus_24_2_0/Examples/SingleFamilyHouse/Unconditioned.mo
     epwName=Modelica.Utilities.Files.loadResource(
       "modelica://Buildings/Resources/weatherdata/USA_IL_Chicago-OHare.Intl.AP.725300_TMY3.epw"),
     weaName=Modelica.Utilities.Files.loadResource(
@@ -28,11 +18,7 @@ model Unconditioned
   parameter Modelica.Units.SI.Volume VRoo=453.1 "Room volume";
   parameter Modelica.Units.SI.MassFlowRate m_flow_nominal=VRoo*1.2*0.3/3600
     "Nominal mass flow rate";
-<<<<<<<< HEAD:Buildings/ThermalZones/EnergyPlus_9_6_0/Examples/SingleFamilyHouse/Unconditioned.mo
-  Buildings.ThermalZones.EnergyPlus_9_6_0.ThermalZone zon(
-========
   Buildings.ThermalZones.EnergyPlus_24_2_0.ThermalZone zon(
->>>>>>>> master:Buildings/ThermalZones/EnergyPlus_24_2_0/Examples/SingleFamilyHouse/Unconditioned.mo
     redeclare package Medium=Medium,
     zoneName="LIVING ZONE",
     nPorts=2)
@@ -93,11 +79,7 @@ First implementation.
 </ul>
 </html>"),
     __Dymola_Commands(
-<<<<<<<< HEAD:Buildings/ThermalZones/EnergyPlus_9_6_0/Examples/SingleFamilyHouse/Unconditioned.mo
-      file="modelica://Buildings/Resources/Scripts/Dymola/ThermalZones/EnergyPlus_9_6_0/Examples/SingleFamilyHouse/Unconditioned.mos" "Simulate and plot"),
-========
       file="modelica://Buildings/Resources/Scripts/Dymola/ThermalZones/EnergyPlus_24_2_0/Examples/SingleFamilyHouse/Unconditioned.mos" "Simulate and plot"),
->>>>>>>> master:Buildings/ThermalZones/EnergyPlus_24_2_0/Examples/SingleFamilyHouse/Unconditioned.mo
     experiment(
       StopTime=432000,
       Tolerance=1e-06));

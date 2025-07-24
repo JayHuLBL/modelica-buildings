@@ -3,14 +3,10 @@ model Nicol2001HeatingUK "A model to predict occupants' heating behavior with ou
   extends Modelica.Blocks.Icons.DiscreteBlock;
   parameter Real A(final unit="1/K") = -0.514 "Slope of the logistic relation";
   parameter Real B(final unit="1") = 5.28 "Intercept of the logistic relation";
-<<<<<<< HEAD
-  parameter Integer seed = 10 "Seed for the random number generator";
-=======
   parameter Integer localSeed = 5002
     "Local seed to be used to generate the initial state of the random number generator";
   parameter Integer globalSeed = 30129
     "Global seed to be combined with the local seed";
->>>>>>> master
   parameter Modelica.Units.SI.Time samplePeriod=120 "Sample period";
 
   Modelica.Blocks.Interfaces.RealInput TOut(

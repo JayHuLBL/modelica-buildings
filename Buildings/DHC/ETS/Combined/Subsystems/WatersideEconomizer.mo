@@ -1,8 +1,4 @@
-<<<<<<< HEAD:Buildings/Experimental/DHC/EnergyTransferStations/Combined/Subsystems/WatersideEconomizer.mo
-within Buildings.Experimental.DHC.EnergyTransferStations.Combined.Subsystems;
-=======
 within Buildings.DHC.ETS.Combined.Subsystems;
->>>>>>> master:Buildings/DHC/ETS/Combined/Subsystems/WatersideEconomizer.mo
 model WatersideEconomizer
   "Base subsystem with waterside economizer"
   extends Buildings.Fluid.Interfaces.PartialFourPortInterface(
@@ -10,15 +6,6 @@ model WatersideEconomizer
     final m2_flow_nominal=abs(Q_flow_nominal/4200/(T_b2_nominal - T_a2_nominal)));
   parameter DHC.ETS.Types.ConnectionConfiguration conCon
     "District connection configuration" annotation (Evaluate=true);
-<<<<<<< HEAD:Buildings/Experimental/DHC/EnergyTransferStations/Combined/Subsystems/WatersideEconomizer.mo
-  replaceable parameter Buildings.Fluid.Movers.Data.Generic perPum1(
-    motorCooledByFluid=false)
-    constrainedby Buildings.Fluid.Movers.Data.Generic
-    "Record with performance data for primary pump"
-    annotation (Dialog(enable=not have_val1),choicesAllMatching=true,
-    Placement(transformation(extent={{-40,-140},{-20,-120}})));
-=======
->>>>>>> master:Buildings/DHC/ETS/Combined/Subsystems/WatersideEconomizer.mo
   parameter Modelica.Units.SI.PressureDifference dp1Hex_nominal(displayUnit=
         "Pa") "Nominal pressure drop across heat exchanger on district side"
     annotation (Dialog(group="Nominal condition"));
@@ -71,11 +58,7 @@ model WatersideEconomizer
     annotation (Placement(transformation(extent={{100,-20},{140,20}}),
     iconTransformation(extent={{100,-20},{140,20}})));
   // COMPONENTS
-<<<<<<< HEAD:Buildings/Experimental/DHC/EnergyTransferStations/Combined/Subsystems/WatersideEconomizer.mo
-  Buildings.Experimental.DHC.EnergyTransferStations.Combined.Controls.WatersideEconomizer conWSE(
-=======
   Buildings.DHC.ETS.Combined.Controls.WatersideEconomizer conWSE(
->>>>>>> master:Buildings/DHC/ETS/Combined/Subsystems/WatersideEconomizer.mo
     final m2_flow_nominal=m2_flow_nominal,
     final y1Min=y1Min,
     final T_a1_nominal=T_a1_nominal,
@@ -136,11 +119,7 @@ model WatersideEconomizer
     final dpFixed_nominal=dp1Hex_nominal,
     use_strokeTime=false) if have_val1 "Heat exchanger primary control valve"
     annotation (Placement(transformation(extent={{70,70},{90,90}})));
-<<<<<<< HEAD:Buildings/Experimental/DHC/EnergyTransferStations/Combined/Subsystems/WatersideEconomizer.mo
-  Buildings.Controls.OBC.CDL.Continuous.MultiplyByParameter gai1(final k=
-=======
   Buildings.Controls.OBC.CDL.Reals.MultiplyByParameter gai1(final k=
->>>>>>> master:Buildings/DHC/ETS/Combined/Subsystems/WatersideEconomizer.mo
         m1_flow_nominal) if not have_val1 "Scale to nominal mass flow rate"
     annotation (Placement(transformation(extent={{10,100},{-10,120}})));
   Buildings.Fluid.Actuators.Valves.ThreeWayLinear val2(
@@ -181,11 +160,7 @@ model WatersideEconomizer
         origin={-80,-60})));
 protected
   parameter Boolean have_val1=
-<<<<<<< HEAD:Buildings/Experimental/DHC/EnergyTransferStations/Combined/Subsystems/WatersideEconomizer.mo
-    conCon ==Buildings.Experimental.DHC.EnergyTransferStations.Types.ConnectionConfiguration.TwoWayValve
-=======
     conCon ==Buildings.DHC.ETS.Types.ConnectionConfiguration.TwoWayValve
->>>>>>> master:Buildings/DHC/ETS/Combined/Subsystems/WatersideEconomizer.mo
     "True in case of control valve on district side, false in case of a pump";
 equation
   if not have_val1 then
@@ -389,13 +364,8 @@ using a three-port two-position directional control valve.
 </p>
 <p>
 The system is controlled based on the logic described in
-<<<<<<< HEAD:Buildings/Experimental/DHC/EnergyTransferStations/Combined/Subsystems/WatersideEconomizer.mo
-<a href=\"modelica://Buildings.Experimental.DHC.EnergyTransferStations.Combined.Controls.WatersideEconomizer\">
-Buildings.Experimental.DHC.EnergyTransferStations.Combined.Controls.WatersideEconomizer</a>.
-=======
 <a href=\"modelica://Buildings.DHC.ETS.Combined.Controls.WatersideEconomizer\">
 Buildings.DHC.ETS.Combined.Controls.WatersideEconomizer</a>.
->>>>>>> master:Buildings/DHC/ETS/Combined/Subsystems/WatersideEconomizer.mo
 </p>
 </html>"));
 end WatersideEconomizer;

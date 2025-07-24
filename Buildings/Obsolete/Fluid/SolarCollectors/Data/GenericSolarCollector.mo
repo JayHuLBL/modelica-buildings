@@ -32,13 +32,8 @@ defaultComponentName="datSolCol",
 Documentation(info="<html>
   <p>
     Generic data file which is used for the
-<<<<<<< HEAD:Buildings/Fluid/SolarCollectors/Data/GenericSolarCollector.mo
-    <a href=\"modelica://Buildings.Fluid.SolarCollectors.BaseClasses.PartialSolarCollector\">
-    Buildings.Fluid.SolarCollectors.BaseClasses.PartialSolarCollector</a> model. It establishes
-=======
     <a href=\"modelica://Buildings.Obsolete.Fluid.SolarCollectors.BaseClasses.PartialSolarCollector\">
     Buildings.Obsolete.Fluid.SolarCollectors.BaseClasses.PartialSolarCollector</a> model. It establishes
->>>>>>> master:Buildings/Obsolete/Fluid/SolarCollectors/Data/GenericSolarCollector.mo
     the base inputs needed to create model-specific data packages.
   </p>
 </html>"));

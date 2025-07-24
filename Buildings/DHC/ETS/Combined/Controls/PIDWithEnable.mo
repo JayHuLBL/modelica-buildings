@@ -1,8 +1,4 @@
-<<<<<<< HEAD:Buildings/Experimental/DHC/EnergyTransferStations/Combined/Controls/PIDWithEnable.mo
-within Buildings.Experimental.DHC.EnergyTransferStations.Combined.Controls;
-=======
 within Buildings.DHC.ETS.Combined.Controls;
->>>>>>> master:Buildings/DHC/ETS/Combined/Controls/PIDWithEnable.mo
 block PIDWithEnable
   "PID controller with enable signal"
 
@@ -11,16 +7,6 @@ block PIDWithEnable
   parameter Real k(
     min=0)=1
     "Gain of controller";
-<<<<<<< HEAD:Buildings/Experimental/DHC/EnergyTransferStations/Combined/Controls/PIDWithEnable.mo
-  parameter Modelica.Units.SI.Time Ti(min=Buildings.Controls.OBC.CDL.Constants.small)
-     = 0.5 "Time constant of integrator block" annotation (Dialog(enable=
-          controllerType == Buildings.Controls.OBC.CDL.Types.SimpleController.PI
-           or controllerType == Buildings.Controls.OBC.CDL.Types.SimpleController.PID));
-  parameter Modelica.Units.SI.Time Td(min=0) = 0.1
-    "Time constant of derivative block" annotation (Dialog(enable=
-          controllerType == Buildings.Controls.OBC.CDL.Types.SimpleController.PD
-           or controllerType == Buildings.Controls.OBC.CDL.Types.SimpleController.PID));
-=======
   parameter Real Ti(
     final min=Buildings.Controls.OBC.CDL.Constants.small,
     final quantity="Time",
@@ -35,7 +21,6 @@ block PIDWithEnable
     "Time constant of derivative block"
     annotation (Dialog(enable=controllerType == Buildings.Controls.OBC.CDL.Types.SimpleController.PD
                               or controllerType == Buildings.Controls.OBC.CDL.Types.SimpleController.PID));
->>>>>>> master:Buildings/DHC/ETS/Combined/Controls/PIDWithEnable.mo
   parameter Real r(
     min=100*Buildings.Controls.OBC.CDL.Constants.eps)=1
     "Typical range of control error, used for scaling the control error";
@@ -79,17 +64,11 @@ block PIDWithEnable
     final y_reset=y_reset)
     "PID controller with reset"
     annotation (Placement(transformation(extent={{-10,-10},{10,10}})));
-<<<<<<< HEAD:Buildings/Experimental/DHC/EnergyTransferStations/Combined/Controls/PIDWithEnable.mo
-  Buildings.Controls.OBC.CDL.Continuous.Switch swi
-    annotation (Placement(transformation(extent={{-40,-10},{-20,10}})));
-  Buildings.Controls.OBC.CDL.Continuous.Switch swi1
-=======
   Buildings.Controls.OBC.CDL.Reals.Switch swi
     "Enable the control when the enable input is true"
     annotation (Placement(transformation(extent={{-40,-10},{-20,10}})));
   Buildings.Controls.OBC.CDL.Reals.Switch swi1
     "Switch between the neutral value and the adjusted value"
->>>>>>> master:Buildings/DHC/ETS/Combined/Controls/PIDWithEnable.mo
     annotation (Placement(transformation(extent={{72,-10},{92,10}})));
   Buildings.Controls.OBC.CDL.Reals.Sources.Constant valDis(
     final k=y_neutral)

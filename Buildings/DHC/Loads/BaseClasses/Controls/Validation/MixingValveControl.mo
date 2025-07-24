@@ -1,21 +1,9 @@
-<<<<<<< HEAD:Buildings/Experimental/DHC/Loads/BaseClasses/Controls/Validation/MixingValveControl.mo
-within Buildings.Experimental.DHC.Loads.BaseClasses.Controls.Validation;
-=======
 within Buildings.DHC.Loads.BaseClasses.Controls.Validation;
->>>>>>> master:Buildings/DHC/Loads/BaseClasses/Controls/Validation/MixingValveControl.mo
 model MixingValveControl
   "Validation of mixing valve control in change-over mode"
   extends Modelica.Icons.Example;
   package Medium=Buildings.Media.Water
     "Source side medium";
-<<<<<<< HEAD:Buildings/Experimental/DHC/Loads/BaseClasses/Controls/Validation/MixingValveControl.mo
-  parameter Modelica.Units.SI.MassFlowRate m_flow_nominal=1
-    "Mass flow rate at nominal conditions";
-  Buildings.Experimental.DHC.Loads.BaseClasses.FlowDistribution disFlo(
-    redeclare package Medium=Medium,
-    m_flow_nominal=m_flow_nominal,
-    typDis=Buildings.Experimental.DHC.Loads.BaseClasses.Types.DistributionType.ChangeOver,
-=======
   parameter Real m_flow_nominal(
     quantity="MassFlowRate",
     unit="kg/s")=1
@@ -24,7 +12,6 @@ model MixingValveControl
     redeclare package Medium=Medium,
     m_flow_nominal=m_flow_nominal,
     typDis=Buildings.DHC.Loads.BaseClasses.Types.DistributionType.ChangeOver,
->>>>>>> master:Buildings/DHC/Loads/BaseClasses/Controls/Validation/MixingValveControl.mo
     have_pum=true,
     have_val=true,
     dp_nominal=100000,
@@ -50,11 +37,7 @@ model MixingValveControl
       displayUnit="degC"))
     "Chilled water primary supply temperature"
     annotation (Placement(transformation(extent={{-140,70},{-120,90}})));
-<<<<<<< HEAD:Buildings/Experimental/DHC/Loads/BaseClasses/Controls/Validation/MixingValveControl.mo
-  Buildings.Controls.OBC.CDL.Continuous.Switch TPri(
-=======
   Buildings.Controls.OBC.CDL.Reals.Switch TPri(
->>>>>>> master:Buildings/DHC/Loads/BaseClasses/Controls/Validation/MixingValveControl.mo
     y(final unit="K",
       displayUnit="degC"))
     "Actual primary supply temperature"
@@ -69,11 +52,7 @@ model MixingValveControl
     k=291.15)
     "Chilled water secondary supply temperature set point"
     annotation (Placement(transformation(extent={{-140,-110},{-120,-90}})));
-<<<<<<< HEAD:Buildings/Experimental/DHC/Loads/BaseClasses/Controls/Validation/MixingValveControl.mo
-  Buildings.Controls.OBC.CDL.Continuous.Switch TSetSecAct(
-=======
   Buildings.Controls.OBC.CDL.Reals.Switch TSetSecAct(
->>>>>>> master:Buildings/DHC/Loads/BaseClasses/Controls/Validation/MixingValveControl.mo
     y(final unit="K",
       displayUnit="degC"))
     "Actual secondary supply temperature set point"
@@ -123,11 +102,7 @@ model MixingValveControl
     m_flow_nominal=m_flow_nominal)
     "Primary supply temperature (measured)"
     annotation (Placement(transformation(extent={{8,10},{28,30}})));
-<<<<<<< HEAD:Buildings/Experimental/DHC/Loads/BaseClasses/Controls/Validation/MixingValveControl.mo
-  Buildings.Controls.OBC.CDL.Continuous.Switch dTSec(
-=======
   Buildings.Controls.OBC.CDL.Reals.Switch dTSec(
->>>>>>> master:Buildings/DHC/Loads/BaseClasses/Controls/Validation/MixingValveControl.mo
     y(final unit="K",
       displayUnit="degC"))
     "Actual secondary delta T"
@@ -206,19 +181,11 @@ equation
       info="<html>
 <p>
 This model validates
-<<<<<<< HEAD:Buildings/Experimental/DHC/Loads/BaseClasses/Controls/Validation/MixingValveControl.mo
-<a href=\"modelica://Buildings.Experimental.DHC.Loads.BaseClasses.Controls.MixingValveControl\">
-Buildings.Experimental.DHC.Loads.BaseClasses.Controls.MixingValveControl</a>
-(as part of
-<a href=\"modelica://Buildings.Experimental.DHC.Loads.BaseClasses.FlowDistribution\">
-Buildings.Experimental.DHC.Loads.BaseClasses.FlowDistribution</a>)
-=======
 <a href=\"modelica://Buildings.DHC.Loads.BaseClasses.Controls.MixingValveControl\">
 Buildings.DHC.Loads.BaseClasses.Controls.MixingValveControl</a>
 (as part of
 <a href=\"modelica://Buildings.DHC.Loads.BaseClasses.FlowDistribution\">
 Buildings.DHC.Loads.BaseClasses.FlowDistribution</a>)
->>>>>>> master:Buildings/DHC/Loads/BaseClasses/Controls/Validation/MixingValveControl.mo
 in change-over mode.
 </p>
 </html>",
@@ -238,9 +205,5 @@ First implementation.
       StopTime=1000,
       Tolerance=1e-06),
     __Dymola_Commands(
-<<<<<<< HEAD:Buildings/Experimental/DHC/Loads/BaseClasses/Controls/Validation/MixingValveControl.mo
-      file="modelica://Buildings/Resources/Scripts/Dymola/Experimental/DHC/Loads/BaseClasses/Controls/Validation/MixingValveControl.mos" "Simulate and plot"));
-=======
       file="modelica://Buildings/Resources/Scripts/Dymola/DHC/Loads/BaseClasses/Controls/Validation/MixingValveControl.mos" "Simulate and plot"));
->>>>>>> master:Buildings/DHC/Loads/BaseClasses/Controls/Validation/MixingValveControl.mo
 end MixingValveControl;

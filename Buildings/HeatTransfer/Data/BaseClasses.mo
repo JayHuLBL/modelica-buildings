@@ -6,11 +6,7 @@ package BaseClasses "Base classes for package Data"
     parameter Modelica.Units.SI.Length x "Material thickness";
     parameter Modelica.Units.SI.ThermalConductivity k "Thermal conductivity";
     parameter Modelica.Units.SI.SpecificHeatCapacity c "Specific heat capacity";
-<<<<<<< HEAD
-    parameter Modelica.Units.SI.Density d "Mass density";
-=======
     parameter Modelica.Units.SI.Density d(displayUnit="kg/m3") "Mass density";
->>>>>>> master
     parameter Real R(unit="m2.K/W")
       "Thermal resistance of a unit area of material";
     parameter Integer nStaRef(min=0) = 3
@@ -105,21 +101,6 @@ First implementation.
 </ul>
 </html>"),   Icon(graphics={
           Text(
-<<<<<<< HEAD
-            extent={{-94,44},{-16,12}},
-            textColor={0,0,0},
-            textString="x=%x"),
-          Text(
-            extent={{8,40},{86,8}},
-            textColor={0,0,0},
-            textString="k=%k"),
-          Text(
-            extent={{-90,-58},{-12,-90}},
-            textColor={0,0,0},
-            textString="R=%R"),
-          Text(
-            extent={{-92,-10},{-14,-42}},
-=======
             extent={{-98,44},{-2,12}},
             textColor={0,0,0},
             textString="x=%x"),
@@ -133,7 +114,6 @@ First implementation.
             textString="R=%R"),
           Text(
             extent={{-98,-10},{-4,-42}},
->>>>>>> master
             textColor={0,0,0},
             textString="U=%U"),
           Rectangle(
@@ -159,11 +139,7 @@ First implementation.
     extends Modelica.Icons.Record;
     parameter Modelica.Units.SI.ThermalConductivity k "Thermal conductivity";
     parameter Modelica.Units.SI.SpecificHeatCapacity c "Specific heat capacity";
-<<<<<<< HEAD
-    parameter Modelica.Units.SI.Density d "Mass density";
-=======
     parameter Modelica.Units.SI.Density d(displayUnit="kg/m3") "Mass density";
->>>>>>> master
     parameter Boolean steadyState= (c < Modelica.Constants.eps or d < Modelica.Constants.eps)
       "Flag, if true, then material is computed using steady-state heat conduction"
       annotation(Evaluate=true);
@@ -210,11 +186,7 @@ First implementation.
             textColor={0,0,0},
             textString="c=%c"),
           Text(
-<<<<<<< HEAD
-            extent={{-74,-12},{-14,-36}},
-=======
             extent={{-98,38},{-2,14}},
->>>>>>> master
             textColor={0,0,0},
             textString="k=%k"),
           Line(points={{-100,0},{100,0}},     color={0,0,0})}));

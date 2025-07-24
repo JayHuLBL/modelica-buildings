@@ -1,12 +1,3 @@
-<<<<<<<< HEAD:Buildings/ThermalZones/EnergyPlus_9_6_0/Examples/SmallOffice/IdealHeatingCoolingSpring.mo
-within Buildings.ThermalZones.EnergyPlus_9_6_0.Examples.SmallOffice;
-model IdealHeatingCoolingSpring
-  "Building with constant fresh air and ideal heating/cooling that exactly meets set point"
-  extends Buildings.ThermalZones.EnergyPlus_9_6_0.Examples.SmallOffice.IdealHeatingCoolingWinter;
-  annotation (
-    __Dymola_Commands(
-      file="modelica://Buildings/Resources/Scripts/Dymola/ThermalZones/EnergyPlus_9_6_0/Examples/SmallOffice/IdealHeatingCoolingSpring.mos" "Simulate and plot"),
-========
 within Buildings.ThermalZones.EnergyPlus_24_2_0.Examples.SmallOffice;
 model IdealHeatingCoolingSpring
   "Building with constant fresh air and ideal heating/cooling that exactly meets set point"
@@ -14,7 +5,6 @@ model IdealHeatingCoolingSpring
   annotation (
     __Dymola_Commands(
       file="modelica://Buildings/Resources/Scripts/Dymola/ThermalZones/EnergyPlus_24_2_0/Examples/SmallOffice/IdealHeatingCoolingSpring.mos" "Simulate and plot"),
->>>>>>>> master:Buildings/ThermalZones/EnergyPlus_24_2_0/Examples/SmallOffice/IdealHeatingCoolingSpring.mo
     experiment(
       StartTime=7344000,
       StopTime=7776000,
@@ -27,13 +17,8 @@ model IdealHeatingCoolingSpring
       info="<html>
 <p>
 This is the same model as
-<<<<<<<< HEAD:Buildings/ThermalZones/EnergyPlus_9_6_0/Examples/SmallOffice/IdealHeatingCoolingSpring.mo
-<a href=\"modelica://Buildings.ThermalZones.EnergyPlus_9_6_0.Examples.SmallOffice.IdealHeatingCoolingWinter\">
-Buildings.ThermalZones.EnergyPlus_9_6_0.Examples.SmallOffice.IdealHeatingCoolingWinter</a>
-========
 <a href=\"modelica://Buildings.ThermalZones.EnergyPlus_24_2_0.Examples.SmallOffice.IdealHeatingCoolingWinter\">
 Buildings.ThermalZones.EnergyPlus_24_2_0.Examples.SmallOffice.IdealHeatingCoolingWinter</a>
->>>>>>>> master:Buildings/ThermalZones/EnergyPlus_24_2_0/Examples/SmallOffice/IdealHeatingCoolingSpring.mo
 but configured for simulation of a few days in summer.
 </p>
 </html>",

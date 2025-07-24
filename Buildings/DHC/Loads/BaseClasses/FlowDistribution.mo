@@ -1,22 +1,12 @@
-<<<<<<< HEAD:Buildings/Experimental/DHC/Loads/BaseClasses/FlowDistribution.mo
-within Buildings.Experimental.DHC.Loads.BaseClasses;
-=======
 within Buildings.DHC.Loads.BaseClasses;
->>>>>>> master:Buildings/DHC/Loads/BaseClasses/FlowDistribution.mo
 model FlowDistribution
   "Model of a building hydraulic distribution system"
   extends Buildings.Fluid.Interfaces.PartialTwoPortInterface(
     redeclare replaceable package Medium=Buildings.Media.Water,
     allowFlowReversal=false);
-<<<<<<< HEAD:Buildings/Experimental/DHC/Loads/BaseClasses/FlowDistribution.mo
-  import Type_dis=Buildings.Experimental.DHC.Loads.BaseClasses.Types.DistributionType
-    "Types of distribution system";
-  import Type_ctr=Buildings.Experimental.DHC.Loads.BaseClasses.Types.PumpControlType
-=======
   import Type_dis=Buildings.DHC.Loads.BaseClasses.Types.DistributionType
     "Types of distribution system";
   import Type_ctr=Buildings.DHC.Loads.BaseClasses.Types.PumpControlType
->>>>>>> master:Buildings/DHC/Loads/BaseClasses/FlowDistribution.mo
     "Types of distribution pump control";
   parameter Integer nPorts_a1=0
     "Number of terminal units return ports"
@@ -257,11 +247,7 @@ model FlowDistribution
     final nout=nUni)
     "Repeat input to output an array"
     annotation (Placement(transformation(extent={{20,150},{40,170}})));
-<<<<<<< HEAD:Buildings/Experimental/DHC/Loads/BaseClasses/FlowDistribution.mo
-  Buildings.Experimental.DHC.Loads.BaseClasses.Controls.MixingValveControl conVal(
-=======
   Buildings.DHC.Loads.BaseClasses.Controls.MixingValveControl conVal(
->>>>>>> master:Buildings/DHC/Loads/BaseClasses/FlowDistribution.mo
     final typDis=typDis) if have_val
     "Mixing valve controller"
     annotation (Placement(transformation(extent={{-48,-106},{-28,-86}})));
@@ -282,21 +268,6 @@ model FlowDistribution
     annotation (Placement(transformation(extent={{10,10},{-10,-10}},rotation=180,origin={-80,80})));
   Buildings.Fluid.Movers.Preconfigured.FlowControlled_m_flow pumFlo(
     redeclare final package Medium=Medium,
-<<<<<<< HEAD:Buildings/Experimental/DHC/Loads/BaseClasses/FlowDistribution.mo
-    per(
-      pressure(
-        final V_flow = per.pressure.V_flow,
-        final dp = per.pressure.dp),
-      final hydraulicEfficiency=per.hydraulicEfficiency,
-      final motorEfficiency=per.motorEfficiency,
-      final motorCooledByFluid=per.motorCooledByFluid,
-      final speed_nominal=per.speed_nominal,
-      final constantSpeed=per.constantSpeed,
-      final speeds=per.speeds,
-      final power=per.power),
-    final allowFlowReversal=allowFlowReversal,
-=======
->>>>>>> master:Buildings/DHC/Loads/BaseClasses/FlowDistribution.mo
     final m_flow_nominal=m_flow_nominal,
     final dp_nominal=dp_nominal,
     final allowFlowReversal=allowFlowReversal,
@@ -514,13 +485,8 @@ The impact on the computational performance is illustrated
 <h4>Pump head computation</h4>
 <p>
 The pump head is computed as follows (see also
-<<<<<<< HEAD:Buildings/Experimental/DHC/Loads/BaseClasses/FlowDistribution.mo
-<a href=\"modelica://Buildings.Experimental.DHC.Loads.BaseClasses.Validation.FlowDistributionPumpControl\">
-Buildings.Experimental.DHC.Loads.BaseClasses.Validation.FlowDistributionPumpControl</a>
-=======
 <a href=\"modelica://Buildings.DHC.Loads.BaseClasses.Validation.FlowDistributionPumpControl\">
 Buildings.DHC.Loads.BaseClasses.Validation.FlowDistributionPumpControl</a>
->>>>>>> master:Buildings/DHC/Loads/BaseClasses/FlowDistribution.mo
 for a comparison with an explicit modeling of the piping network).
 </p>
 <ul>
@@ -637,21 +603,12 @@ turn out to be detrimental to computational performance.
 <p>
 The figure below compares the computational performance of this model
 (labelled <code>simple</code>, see model
-<<<<<<< HEAD:Buildings/Experimental/DHC/Loads/BaseClasses/FlowDistribution.mo
-<a href=\"modelica://Buildings.Experimental.DHC.Loads.BaseClasses.Validation.BenchmarkFlowDistribution1\">
-Buildings.Experimental.DHC.Loads.BaseClasses.Validation.BenchmarkFlowDistribution1</a>)
-with an explicit modeling of the distribution network and
-the terminal unit actuators (labelled <code>detailed</code>, see model
-<a href=\"modelica://Buildings.Experimental.DHC.Loads.BaseClasses.Validation.BenchmarkFlowDistribution2\">
-Buildings.Experimental.DHC.Loads.BaseClasses.Validation.BenchmarkFlowDistribution2</a>).
-=======
 <a href=\"modelica://Buildings.DHC.Loads.BaseClasses.Validation.BenchmarkFlowDistribution1\">
 Buildings.DHC.Loads.BaseClasses.Validation.BenchmarkFlowDistribution1</a>)
 with an explicit modeling of the distribution network and
 the terminal unit actuators (labelled <code>detailed</code>, see model
 <a href=\"modelica://Buildings.DHC.Loads.BaseClasses.Validation.BenchmarkFlowDistribution2\">
 Buildings.DHC.Loads.BaseClasses.Validation.BenchmarkFlowDistribution2</a>).
->>>>>>> master:Buildings/DHC/Loads/BaseClasses/FlowDistribution.mo
 The models are simulated with the solver CVODE from Sundials.
 The impact of a varying number of connected loads, <code>nLoa</code>, is
 assessed on
@@ -679,8 +636,6 @@ src=\"modelica://Buildings/Resources/Images/DHC/Loads/FlowDistribution2.png\"/>
       revisions="<html>
 <ul>
 <li>
-<<<<<<< HEAD:Buildings/Experimental/DHC/Loads/BaseClasses/FlowDistribution.mo
-=======
 August 30, 2022, by Hongxiang Fu:<br/>
 Swapped the pump models for preconfigured versions and removed the pump curve
 record <code>per</code>.
@@ -688,7 +643,6 @@ This is for
 <a href=\"https://github.com/lbl-srg/modelica-buildings/issues/3099\">#3099</a>.
 </li>
 <li>
->>>>>>> master:Buildings/DHC/Loads/BaseClasses/FlowDistribution.mo
 December 12, 2021, by Michael Wetter:<br/>
 Added parameter assignment for <code>pumFlo.per.V_flow</code> and <code>pumFlo.per.pressure</code>.
 This avoids in OPTIMICA a compiler error \"Could not evaluate binding expression for structural parameter 'disFloHea.pumFlo.eff.per.pressure.V_flow'\".

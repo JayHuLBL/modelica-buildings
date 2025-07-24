@@ -1,8 +1,4 @@
-<<<<<<< HEAD:Buildings/Experimental/DHC/EnergyTransferStations/Combined/Subsystems/Validation/Borefield.mo
-within Buildings.Experimental.DHC.EnergyTransferStations.Combined.Subsystems.Validation;
-=======
 within Buildings.DHC.ETS.Combined.Subsystems.Validation;
->>>>>>> master:Buildings/DHC/ETS/Combined/Subsystems/Validation/Borefield.mo
 model Borefield
   "Validation of the base subsystem model with geothermal borefield"
   extends Modelica.Icons.Example;
@@ -13,15 +9,9 @@ model Borefield
   parameter Modelica.Units.SI.Distance dxy=6
     "Distance in x-axis (and y-axis) between borehole axes";
   final parameter Modelica.Units.SI.Distance cooBor[nBorHol,2]=
-<<<<<<< HEAD:Buildings/Experimental/DHC/EnergyTransferStations/Combined/Subsystems/Validation/Borefield.mo
-      Buildings.Experimental.DHC.EnergyTransferStations.BaseClasses.computeCoordinates(
-      nBorHol, dxy) "Coordinates of boreholes";
-  Buildings.Experimental.DHC.EnergyTransferStations.Combined.Subsystems.Borefield borFie(
-=======
       Buildings.DHC.ETS.BaseClasses.computeCoordinates(
       nBorHol, dxy) "Coordinates of boreholes";
   Buildings.DHC.ETS.Combined.Subsystems.Borefield borFie(
->>>>>>> master:Buildings/DHC/ETS/Combined/Subsystems/Validation/Borefield.mo
     redeclare final package Medium=Medium,
     final datBorFie=datBorFie,
     dp_nominal=5E4,
@@ -98,11 +88,7 @@ equation
         preserveAspectRatio=false,
         extent={{-120,-100},{100,100}})),
     __Dymola_Commands(
-<<<<<<< HEAD:Buildings/Experimental/DHC/EnergyTransferStations/Combined/Subsystems/Validation/Borefield.mo
-      file="modelica://Buildings/Resources/Scripts/Dymola/Experimental/DHC/EnergyTransferStations/Combined/Subsystems/Validation/Borefield.mos" "Simulate and plot"),
-=======
       file="modelica://Buildings/Resources/Scripts/Dymola/DHC/ETS/Combined/Subsystems/Validation/Borefield.mos" "Simulate and plot"),
->>>>>>> master:Buildings/DHC/ETS/Combined/Subsystems/Validation/Borefield.mo
     experiment(
       StopTime=20000,
       Tolerance=1e-06),
@@ -118,13 +104,8 @@ First implementation.
       info="<html>
 <p>
 This model validates
-<<<<<<< HEAD:Buildings/Experimental/DHC/EnergyTransferStations/Combined/Subsystems/Validation/Borefield.mo
-<a href=\"modelica://Buildings.Experimental.DHC.EnergyTransferStations.Combined.Subsystems.Borefield\">
-Buildings.Experimental.DHC.EnergyTransferStations.Combined.Subsystems.Borefield</a>.
-=======
 <a href=\"modelica://Buildings.DHC.ETS.Combined.Subsystems.Borefield\">
 Buildings.DHC.ETS.Combined.Subsystems.Borefield</a>.
->>>>>>> master:Buildings/DHC/ETS/Combined/Subsystems/Validation/Borefield.mo
 </p>
 </html>"));
 end Borefield;

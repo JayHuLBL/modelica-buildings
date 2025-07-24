@@ -1,15 +1,8 @@
-<<<<<<< HEAD:Buildings/Experimental/DHC/EnergyTransferStations/Combined/Controls/Supervisory.mo
-within Buildings.Experimental.DHC.EnergyTransferStations.Combined.Controls;
-model Supervisory
-  "Supervisory controller"
-  extends Buildings.Experimental.DHC.EnergyTransferStations.Combined.Controls.BaseClasses.PartialSupervisory;
-=======
 within Buildings.DHC.ETS.Combined.Controls;
 model Supervisory
   "Supervisory controller"
   extends Buildings.DHC.ETS.Combined.Controls.BaseClasses.PartialSupervisory;
 
->>>>>>> master:Buildings/DHC/ETS/Combined/Controls/Supervisory.mo
   parameter Buildings.Controls.OBC.CDL.Types.SimpleController
     controllerType=Buildings.Controls.OBC.CDL.Types.SimpleController.PI
     "Type of controller"
@@ -21,19 +14,6 @@ model Supervisory
   parameter Real kCol(
     min=0)=0.1
     "Gain of controller on cold side";
-<<<<<<< HEAD:Buildings/Experimental/DHC/EnergyTransferStations/Combined/Controls/Supervisory.mo
-  parameter Modelica.Units.SI.Time TiHot(min=Buildings.Controls.OBC.CDL.Constants.small)
-     = 300 "Time constant of integrator block on hot side" annotation (Dialog(
-        enable=controllerType == Buildings.Controls.OBC.CDL.Types.SimpleController.PI
-           or controllerType == Buildings.Controls.OBC.CDL.Types.SimpleController.PID));
-  parameter Modelica.Units.SI.Time TiCol(min=Buildings.Controls.OBC.CDL.Constants.small)
-     = 120 "Time constant of integrator block on cold side" annotation (Dialog(
-        enable=controllerType == Buildings.Controls.OBC.CDL.Types.SimpleController.PI
-           or controllerType == Buildings.Controls.OBC.CDL.Types.SimpleController.PID));
-  parameter Modelica.Units.SI.Temperature THeaWatSupSetMin(displayUnit="degC")
-    "Minimum value of heating water supply temperature set point";
-  parameter Modelica.Units.SI.Temperature TChiWatSupSetMin(displayUnit="degC")
-=======
   parameter Real TiHot(
     final min=Buildings.Controls.OBC.CDL.Constants.small,
     final quantity="Time",
@@ -57,7 +37,6 @@ model Supervisory
     final quantity="ThermodynamicTemperature",
     final unit="K",
     displayUnit="degC")
->>>>>>> master:Buildings/DHC/ETS/Combined/Controls/Supervisory.mo
     "Minimum value of chilled water supply temperature set point";
   parameter Real TChiWatSupSetMax(
     final quantity="ThermodynamicTemperature",
@@ -74,13 +53,8 @@ model Supervisory
     final unit="1")
     "Return position of evaporator to ambient loop isolation valve"
     annotation (Placement(transformation(extent={{-160,-120},{-120,-80}}),
-<<<<<<< HEAD:Buildings/Experimental/DHC/EnergyTransferStations/Combined/Controls/Supervisory.mo
-    iconTransformation(extent={{-140,-110},{-100,-70}})));
-  Combined.Controls.SideHot conHot(
-=======
         iconTransformation(extent={{-140,-110},{-100,-70}})));
   Buildings.DHC.ETS.Combined.Controls.SideHot conHot(
->>>>>>> master:Buildings/DHC/ETS/Combined/Controls/Supervisory.mo
     final k=kHot,
     final Ti=TiHot,
     final nSouAmb=nSouAmb,
@@ -188,13 +162,8 @@ First implementation.
       info="<html>
 <p>
 This block implements the supervisory control functions of the ETS model
-<<<<<<< HEAD:Buildings/Experimental/DHC/EnergyTransferStations/Combined/Controls/Supervisory.mo
-<a href=\"modelica://Buildings.Experimental.DHC.EnergyTransferStations.Combined.ChillerBorefield\">
-Buildings.Experimental.DHC.EnergyTransferStations.Combined.ChillerBorefield</a>.
-=======
 <a href=\"modelica://Buildings.DHC.ETS.Combined.ChillerBorefield\">
 Buildings.DHC.ETS.Combined.ChillerBorefield</a>.
->>>>>>> master:Buildings/DHC/ETS/Combined/Controls/Supervisory.mo
 </p>
 <ul>
 <li>
@@ -212,21 +181,12 @@ case the system performance is improved due to a lower chiller lift.
 </li>
 <li>
 The controller resets the heating water supply temperature based on the logic described in
-<<<<<<< HEAD:Buildings/Experimental/DHC/EnergyTransferStations/Combined/Controls/Supervisory.mo
-<a href=\"modelica://Buildings.Experimental.DHC.EnergyTransferStations.Combined.Controls.Reset\">
-Buildings.Experimental.DHC.EnergyTransferStations.Combined.Controls.Reset</a>.
-Note that this resetting logic is meant to operate the chiller at low lift.
-The chilled water supply temperature may be also reset down by
-<a href=\"modelica://Buildings.Experimental.DHC.EnergyTransferStations.Combined.Controls.SideCold\">
-Buildings.Experimental.DHC.EnergyTransferStations.Combined.Controls.SideCold</a>
-=======
 <a href=\"modelica://Buildings.DHC.ETS.Combined.Controls.Reset\">
 Buildings.DHC.ETS.Combined.Controls.Reset</a>.
 Note that this resetting logic is meant to operate the chiller at low lift.
 The chilled water supply temperature may be also reset down by
 <a href=\"modelica://Buildings.DHC.ETS.Combined.Controls.SideCold\">
 Buildings.DHC.ETS.Combined.Controls.SideCold</a>
->>>>>>> master:Buildings/DHC/ETS/Combined/Controls/Supervisory.mo
 to maintain the heating water supply temperature set point.
 This second resetting logic is required for the heating function of the unit,
 but it has a negative impact on the lift.
@@ -234,19 +194,11 @@ but it has a negative impact on the lift.
 <li>
 Eventually the systems serving as ambient sources are controlled based on the
 maximum of the control signals <code>yAmb</code> yielded by
-<<<<<<< HEAD:Buildings/Experimental/DHC/EnergyTransferStations/Combined/Controls/Supervisory.mo
-<a href=\"modelica://Buildings.Experimental.DHC.EnergyTransferStations.Combined.Controls.SideHot\">
-Buildings.Experimental.DHC.EnergyTransferStations.Combined.Controls.SideHot</a>
-and
-<a href=\"modelica://Buildings.Experimental.DHC.EnergyTransferStations.Combined.Controls.SideCold\">
-Buildings.Experimental.DHC.EnergyTransferStations.Combined.Controls.SideCold</a>.
-=======
 <a href=\"modelica://Buildings.DHC.ETS.Combined.Controls.SideHot\">
 Buildings.DHC.ETS.Combined.Controls.SideHot</a>
 and
 <a href=\"modelica://Buildings.DHC.ETS.Combined.Controls.SideCold\">
 Buildings.DHC.ETS.Combined.Controls.SideCold</a>.
->>>>>>> master:Buildings/DHC/ETS/Combined/Controls/Supervisory.mo
 </li>
 </ul>
 </html>"));

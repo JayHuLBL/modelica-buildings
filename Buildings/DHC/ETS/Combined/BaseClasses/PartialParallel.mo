@@ -1,16 +1,8 @@
-<<<<<<< HEAD:Buildings/Experimental/DHC/EnergyTransferStations/Combined/BaseClasses/PartialParallel.mo
-within Buildings.Experimental.DHC.EnergyTransferStations.Combined.BaseClasses;
-model PartialParallel
-  "Partial ETS model with district heat exchanger and parallel connection of production systems"
-  extends Buildings.Experimental.DHC.EnergyTransferStations.BaseClasses.PartialETS(
-    final typ=Buildings.Experimental.DHC.Types.DistrictSystemType.CombinedGeneration5,
-=======
 within Buildings.DHC.ETS.Combined.BaseClasses;
 model PartialParallel
   "Partial ETS model with district heat exchanger and parallel connection of production systems"
   extends Buildings.DHC.ETS.BaseClasses.PartialETS(
     final typ=Buildings.DHC.Types.DistrictSystemType.CombinedGeneration5,
->>>>>>> master:Buildings/DHC/ETS/Combined/BaseClasses/PartialParallel.mo
     final have_heaWat=true,
     final have_chiWat=true,
     final have_pum=true,
@@ -18,13 +10,8 @@ model PartialParallel
     have_eleHea=false,
     have_weaBus=false);
 
-<<<<<<< HEAD:Buildings/Experimental/DHC/EnergyTransferStations/Combined/BaseClasses/PartialParallel.mo
-  parameter Buildings.Experimental.DHC.EnergyTransferStations.Types.ConnectionConfiguration conCon=
-      Buildings.Experimental.DHC.EnergyTransferStations.Types.ConnectionConfiguration.Pump
-=======
   parameter Buildings.DHC.ETS.Types.ConnectionConfiguration conCon=
       Buildings.DHC.ETS.Types.ConnectionConfiguration.Pump
->>>>>>> master:Buildings/DHC/ETS/Combined/BaseClasses/PartialParallel.mo
     "District connection configuration" annotation (Evaluate=true);
   parameter Integer nSysHea
     "Number of heating systems"
@@ -69,21 +56,6 @@ model PartialParallel
     min=0.01)=0.1
     "Heat exchanger secondary pump minimum speed (fractional)"
     annotation (Dialog(group="District heat exchanger"));
-<<<<<<< HEAD:Buildings/Experimental/DHC/EnergyTransferStations/Combined/BaseClasses/PartialParallel.mo
-  replaceable parameter Buildings.Fluid.Movers.Data.Generic perPum1Hex(
-    motorCooledByFluid=false)
-    constrainedby Buildings.Fluid.Movers.Data.Generic
-    "Record with performance data for primary pump"
-    annotation (Dialog(group="District heat exchanger", enable=not have_val1Hex),
-      choicesAllMatching=true,Placement(transformation(extent={{-80,222},{-60,242}})));
-  replaceable parameter Buildings.Fluid.Movers.Data.Generic perPum2Hex(
-    motorCooledByFluid=false)
-    constrainedby Buildings.Fluid.Movers.Data.Generic
-    "Record with performance data for secondary pump"
-    annotation (Dialog(group="District heat exchanger"),
-      choicesAllMatching=true,Placement(transformation(extent={{-40,222},{-20,242}})));
-=======
->>>>>>> master:Buildings/DHC/ETS/Combined/BaseClasses/PartialParallel.mo
   parameter Modelica.Units.SI.Volume VTanHeaWat "Heating water tank volume"
     annotation (Dialog(group="Buffer Tank"));
   parameter Modelica.Units.SI.Length hTanHeaWat=(VTanHeaWat*16/Modelica.Constants.pi)
@@ -121,13 +93,8 @@ model PartialParallel
     "Chilled water supply temperature set point"
     annotation (Placement(transformation(extent={{-340,-80},{-300,-40}}),iconTransformation(extent={{-380,-140},{-300,-60}})));
   // COMPONENTS
-<<<<<<< HEAD:Buildings/Experimental/DHC/EnergyTransferStations/Combined/BaseClasses/PartialParallel.mo
-  replaceable Buildings.Experimental.DHC.EnergyTransferStations.Combined.Controls.BaseClasses.PartialSupervisory conSup
-    constrainedby Buildings.Experimental.DHC.EnergyTransferStations.Combined.Controls.BaseClasses.PartialSupervisory(
-=======
   replaceable Buildings.DHC.ETS.Combined.Controls.BaseClasses.PartialSupervisory conSup
     constrainedby Buildings.DHC.ETS.Combined.Controls.BaseClasses.PartialSupervisory(
->>>>>>> master:Buildings/DHC/ETS/Combined/BaseClasses/PartialParallel.mo
       final nSouAmb=nSouAmb)
     "Supervisory controller"
     annotation (Placement(transformation(extent={{-260,12},{-240,32}})));
@@ -143,11 +110,7 @@ model PartialParallel
     final m_flow_nominal=colAmbWat.mDis_flow_nominal,
     use_strokeTime=false) "Condenser to ambient loop isolation valve"
     annotation (Placement(transformation(extent={{-70,-130},{-50,-110}})));
-<<<<<<< HEAD:Buildings/Experimental/DHC/EnergyTransferStations/Combined/BaseClasses/PartialParallel.mo
-  Buildings.Experimental.DHC.EnergyTransferStations.Combined.Subsystems.HeatExchanger hex(
-=======
   Buildings.DHC.ETS.Combined.Subsystems.HeatExchanger hex(
->>>>>>> master:Buildings/DHC/ETS/Combined/BaseClasses/PartialParallel.mo
     redeclare final package Medium1=MediumSer,
     redeclare final package Medium2=MediumBui,
     final allowFlowReversal1=allowFlowReversalSer,
@@ -163,11 +126,7 @@ model PartialParallel
     final spePum1Min=spePum1HexMin,
     final spePum2Min=spePum2HexMin) "District heat exchanger"
     annotation (Placement(transformation(extent={{-10,-244},{10,-264}})));
-<<<<<<< HEAD:Buildings/Experimental/DHC/EnergyTransferStations/Combined/BaseClasses/PartialParallel.mo
-  Buildings.Experimental.DHC.EnergyTransferStations.BaseClasses.StratifiedTank tanChiWat(
-=======
   Buildings.DHC.ETS.BaseClasses.StratifiedTank tanChiWat(
->>>>>>> master:Buildings/DHC/ETS/Combined/BaseClasses/PartialParallel.mo
     redeclare final package Medium = MediumBui,
     final m_flow_nominal=colChiWat.mDis_flow_nominal,
     final VTan=VTanChiWat,
@@ -175,11 +134,7 @@ model PartialParallel
     final dIns=dInsTanChiWat,
     final nSeg=nSegTan) "Chilled water tank"
     annotation (Placement(transformation(extent={{180,96},{200,116}})));
-<<<<<<< HEAD:Buildings/Experimental/DHC/EnergyTransferStations/Combined/BaseClasses/PartialParallel.mo
-  Buildings.Experimental.DHC.EnergyTransferStations.BaseClasses.StratifiedTank tanHeaWat(
-=======
   Buildings.DHC.ETS.BaseClasses.StratifiedTank tanHeaWat(
->>>>>>> master:Buildings/DHC/ETS/Combined/BaseClasses/PartialParallel.mo
     redeclare final package Medium = MediumBui,
     final m_flow_nominal=colHeaWat.mDis_flow_nominal,
     final VTan=VTanHeaWat,
@@ -187,11 +142,7 @@ model PartialParallel
     final dIns=dInsTanHeaWat,
     final nSeg=nSegTan) "Heating water tank"
     annotation (Placement(transformation(extent={{-220,96},{-200,116}})));
-<<<<<<< HEAD:Buildings/Experimental/DHC/EnergyTransferStations/Combined/BaseClasses/PartialParallel.mo
-  Buildings.Experimental.DHC.EnergyTransferStations.BaseClasses.CollectorDistributor colChiWat(
-=======
   Buildings.DHC.ETS.BaseClasses.CollectorDistributor colChiWat(
->>>>>>> master:Buildings/DHC/ETS/Combined/BaseClasses/PartialParallel.mo
     redeclare final package Medium = MediumBui,
     final nCon=1 + nSysCoo,
     mCon_flow_nominal={colAmbWat.mDis_flow_nominal})
@@ -200,11 +151,7 @@ model PartialParallel
         extent={{-20,10},{20,-10}},
         rotation=180,
         origin={120,-34})));
-<<<<<<< HEAD:Buildings/Experimental/DHC/EnergyTransferStations/Combined/BaseClasses/PartialParallel.mo
-  Buildings.Experimental.DHC.EnergyTransferStations.BaseClasses.CollectorDistributor colHeaWat(
-=======
   Buildings.DHC.ETS.BaseClasses.CollectorDistributor colHeaWat(
->>>>>>> master:Buildings/DHC/ETS/Combined/BaseClasses/PartialParallel.mo
     redeclare final package Medium = MediumBui,
     final nCon=1 + nSysHea,
     mCon_flow_nominal={colAmbWat.mDis_flow_nominal})
@@ -213,11 +160,7 @@ model PartialParallel
         extent={{20,10},{-20,-10}},
         rotation=180,
         origin={-120,-34})));
-<<<<<<< HEAD:Buildings/Experimental/DHC/EnergyTransferStations/Combined/BaseClasses/PartialParallel.mo
-  Buildings.Experimental.DHC.EnergyTransferStations.BaseClasses.CollectorDistributor colAmbWat(
-=======
   Buildings.DHC.ETS.BaseClasses.CollectorDistributor colAmbWat(
->>>>>>> master:Buildings/DHC/ETS/Combined/BaseClasses/PartialParallel.mo
     redeclare final package Medium = MediumBui,
     final nCon=nSouAmb,
     mCon_flow_nominal={hex.m2_flow_nominal})
@@ -343,13 +286,8 @@ of systems serving as ambient sources (including the district heat exchanger).
 <li>
 The connection to the district loop is realized with a heat exchanger, according
 to the operating principles described in
-<<<<<<< HEAD:Buildings/Experimental/DHC/EnergyTransferStations/Combined/BaseClasses/PartialParallel.mo
-<a href=\"modelica://Buildings.Experimental.DHC.EnergyTransferStations.Combined.Subsystems.HeatExchanger\">
-Buildings.Experimental.DHC.EnergyTransferStations.Combined.Subsystems.HeatExchanger</a>.
-=======
 <a href=\"modelica://Buildings.DHC.ETS.Combined.Subsystems.HeatExchanger\">
 Buildings.DHC.ETS.Combined.Subsystems.HeatExchanger</a>.
->>>>>>> master:Buildings/DHC/ETS/Combined/BaseClasses/PartialParallel.mo
 </li>
 <li>
 The connection of the heating water and chilled water production systems
@@ -359,13 +297,8 @@ to the systems serving as ambient sources is realized in parallel.
 A replaceable partial class is used to represent a supervisory controller, which
 must be replaced by a control block providing at least the control signals
 listed in
-<<<<<<< HEAD:Buildings/Experimental/DHC/EnergyTransferStations/Combined/BaseClasses/PartialParallel.mo
-<a href=\"modelica://Buildings.Experimental.DHC.EnergyTransferStations.Combined.Controls.BaseClasses.PartialSupervisory\">
-Buildings.Experimental.DHC.EnergyTransferStations.Combined.Controls.BaseClasses.PartialSupervisory</a>.
-=======
 <a href=\"modelica://Buildings.DHC.ETS.Combined.Controls.BaseClasses.PartialSupervisory\">
 Buildings.DHC.ETS.Combined.Controls.BaseClasses.PartialSupervisory</a>.
->>>>>>> master:Buildings/DHC/ETS/Combined/BaseClasses/PartialParallel.mo
 </li>
 </ul>
 <p>
@@ -402,11 +335,7 @@ being hydronically connected.
 </p>
 <p>
 <img alt=\"Sequence chart\"
-<<<<<<< HEAD:Buildings/Experimental/DHC/EnergyTransferStations/Combined/BaseClasses/PartialParallel.mo
-src=\"modelica://Buildings/Resources/Images/Experimental/DHC/EnergyTransferStations/Combined/BaseClasses/PartialParallel.png\"/>
-=======
 src=\"modelica://Buildings/Resources/Images/DHC/ETS/Combined/BaseClasses/PartialParallel.png\"/>
->>>>>>> master:Buildings/DHC/ETS/Combined/BaseClasses/PartialParallel.mo
 </p>
 </html>",
 revisions="<html>

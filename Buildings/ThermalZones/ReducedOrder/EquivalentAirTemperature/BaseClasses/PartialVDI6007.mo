@@ -10,14 +10,10 @@ partial model PartialVDI6007
   parameter Real wfGro(unit="1")
     "Weight factor of the ground (0 if not considered)";
   parameter Modelica.Units.SI.Temperature TGro
-<<<<<<< HEAD
-    "Temperature of the ground in contact with floor plate";
-=======
     "Constant temperature of the ground in contact with floor plate"
     annotation (
       HideResult=TGroundFromInput,
       Dialog(enable=not TGroundFromInput));
->>>>>>> master
   parameter Modelica.Units.SI.CoefficientOfHeatTransfer hConWallOut
     "Exterior walls convective coefficient of heat transfer (outdoor)";
   parameter Modelica.Units.SI.CoefficientOfHeatTransfer hRad

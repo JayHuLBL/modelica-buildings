@@ -34,103 +34,6 @@ model TrimAndRespond "Model validates the trim and respond block"
     final triAmo=-10,
     final resAmo=15,
     final maxRes=37) "Block implementing trim and respond logic"
-<<<<<<< HEAD
-    annotation (Placement(transformation(extent={{70,-40},{90,-20}})));
-  Buildings.Controls.OBC.CDL.Logical.Sources.Constant con(
-    final k=true) "Logic true indicating device ON"
-    annotation (Placement(transformation(extent={{20,80},{40,100}})));
-  Buildings.Controls.OBC.CDL.Reals.Sources.Sin sine(
-    final amplitude=6,
-    final freqHz=1/5400) "Block generates sine signal"
-    annotation (Placement(transformation(extent={{-80,40},{-60,60}})));
-  Buildings.Controls.OBC.CDL.Reals.Abs abs
-    "Block generates absolute value of input"
-    annotation (Placement(transformation(extent={{-52,40},{-32,60}})));
-  Buildings.Controls.OBC.CDL.Reals.Sources.Sin sine1(
-    final amplitude=6,
-    freqHz=1/5400) "Block generates sine signal"
-    annotation (Placement(transformation(extent={{-88,-90},{-68,-70}})));
-  Buildings.Controls.OBC.CDL.Reals.Abs abs1
-    "Block generates absolute value of input"
-    annotation (Placement(transformation(extent={{-10,-90},{10,-70}})));
-  Buildings.Controls.OBC.CDL.Logical.Sources.Pulse booPul(
-    final period=3600,
-    final width=0.18333333) "Generate pulse signal of type Boolean"
-    annotation (Placement(transformation(extent={{-88,-20},{-68,0}})));
-  Buildings.Controls.OBC.CDL.Logical.Not not1 "Logical not"
-    annotation (Placement(transformation(extent={{20,-20},{40,0}})));
-<<<<<<<< HEAD:Buildings/Controls/OBC/ASHRAE/G36/Generic/Validation/TrimAndRespond.mo
-  Buildings.Controls.OBC.CDL.Continuous.Switch swi "Switch between two Real signals"
-========
-  Buildings.Controls.OBC.CDL.Reals.Switch swi "Switch between two Real signals"
->>>>>>>> master:Buildings/Obsolete/Controls/OBC/ASHRAE/G36_PR1/Generic/SetPoints/Validation/TrimAndRespond.mo
-    annotation (Placement(transformation(extent={{-48,-50},{-28,-30}})));
-  Buildings.Controls.OBC.CDL.Reals.Sources.Constant con1(final k=0)
-    "Zero request when device is OFF"
-    annotation (Placement(transformation(extent={{-88,-50},{-68,-30}})));
-  Buildings.Controls.OBC.CDL.Reals.Round round2(final n=0)
-    "Round real number to given digits"
-    annotation (Placement(transformation(extent={{-20,40},{0,60}})));
-  Buildings.Controls.OBC.CDL.Conversions.RealToInteger reaToInt1
-    "Convert real to integer"
-    annotation (Placement(transformation(extent={{20,40},{40,60}})));
-  Buildings.Controls.OBC.CDL.Reals.Round round1(final n=0)
-    "Round real number to given digits"
-    annotation (Placement(transformation(extent={{20,-90},{40,-70}})));
-  Buildings.Controls.OBC.CDL.Conversions.RealToInteger reaToInt2
-    "Convert real to integer"
-    annotation (Placement(transformation(extent={{20,-50},{40,-30}})));
-
-equation
-  connect(con.y, trimRespondLogic.uDevSta)
-    annotation (Line(points={{42,90},{50,90},{50,78},{68,78}},
-      color={255,0,255}));
-  connect(sine.y, abs.u)
-    annotation (Line(points={{-58,50},{-54,50}}, color={0,0,127}));
-  connect(not1.y,trimRespondLogic2. uDevSta)
-    annotation (Line(points={{42,-10},{60,-10},{60,-22},{68,-22}},
-      color={255,0,255}));
-  connect(con1.y, swi.u1)
-    annotation (Line(points={{-66,-40},{-62,-40},{-62,-32},{-50,-32}},
-      color={0,0,127}));
-  connect(sine1.y, swi.u3)
-    annotation (Line(points={{-66,-80},{-58,-80},{-58,-48},{-50,-48}},
-      color={0,0,127}));
-  connect(swi.y, abs1.u)
-    annotation (Line(points={{-26,-40},{-20,-40},{-20,-80},{-12,-80}},
-      color={0,0,127}));
-  connect(booPul.y, swi.u2)
-    annotation (Line(points={{-66,-10},{-58,-10},{-58,-40},{-50,-40}},
-      color={255,0,255}));
-  connect(booPul.y, not1.u)
-    annotation (Line(points={{-66,-10},{18,-10}}, color={255,0,255}));
-  connect(abs.y, round2.u)
-    annotation (Line(points={{-30,50},{-22,50}}, color={0,0,127}));
-  connect(round2.y, reaToInt1.u)
-    annotation (Line(points={{2,50},{18,50}}, color={0,0,127}));
-  connect(reaToInt1.y, trimRespondLogic.numOfReq)
-    annotation (Line(points={{42,50},{60,50},{60,62},{68,62}},
-      color={255,127,0}));
-  connect(abs1.y, round1.u)
-    annotation (Line(points={{12,-80},{18,-80}},color={0,0,127}));
-  connect(round1.y, reaToInt2.u)
-    annotation (Line(points={{42,-80},{50,-80},{50,-60},{8,-60},{8,-40},
-      {18,-40}}, color={0,0,127}));
-  connect(reaToInt2.y,trimRespondLogic2. numOfReq)
-    annotation (Line(points={{42,-40},{60,-40},{60,-38},{68,-38}},
-      color={255,127,0}));
-  connect(con.y,trimRespondLogic1. uDevSta)
-    annotation (Line(points={{42,90},{50,90},{50,28},{68,28}}, color={255,0,255}));
-  connect(reaToInt1.y,trimRespondLogic1. numOfReq)
-    annotation (Line(points={{42,50},{60,50},{60,12},{68,12}}, color={255,127,0}));
-
-annotation (experiment(StopTime=7200.0, Tolerance=1e-06),
-<<<<<<<< HEAD:Buildings/Controls/OBC/ASHRAE/G36/Generic/Validation/TrimAndRespond.mo
-  __Dymola_Commands(file="modelica://Buildings/Resources/Scripts/Dymola/Controls/OBC/ASHRAE/G36/Generic/Validation/TrimAndRespond.mos"
-========
-  __Dymola_Commands(file="modelica://Buildings/Resources/Scripts/Dymola/Obsolete/Controls/OBC/ASHRAE/G36_PR1/Generic/SetPoints/Validation/TrimAndRespond.mos"
->>>>>>>> master:Buildings/Obsolete/Controls/OBC/ASHRAE/G36_PR1/Generic/SetPoints/Validation/TrimAndRespond.mo
-=======
     annotation (Placement(transformation(extent={{70,-60},{90,-40}})));
   Buildings.Controls.OBC.CDL.Logical.Sources.Constant con(
     final k=true) "Logic true indicating device ON"
@@ -246,35 +149,21 @@ equation
     annotation (Line(points={{-68,100},{68,100}}, color={255,0,255}));
 annotation (experiment(StopTime=7200.0, Tolerance=1e-06),
   __Dymola_Commands(file="modelica://Buildings/Resources/Scripts/Dymola/Controls/OBC/ASHRAE/G36/Generic/Validation/TrimAndRespond.mos"
->>>>>>> master
     "Simulate and plot"),
     Documentation(info="<html>
 <p>
 This example validates
-<<<<<<< HEAD
-<<<<<<<< HEAD:Buildings/Controls/OBC/ASHRAE/G36/Generic/Validation/TrimAndRespond.mo
 <a href=\"modelica://Buildings.Controls.OBC.ASHRAE.G36.Generic.TrimAndRespond\">
 Buildings.Controls.OBC.ASHRAE.G36.Generic.TrimAndRespond</a>.
-========
-<a href=\"modelica://Buildings.Obsolete.Controls.OBC.ASHRAE.G36_PR1.Generic.SetPoints.TrimAndRespond\">
-Buildings.Obsolete.Controls.OBC.ASHRAE.G36_PR1.Generic.SetPoints.TrimAndRespond</a>.
->>>>>>>> master:Buildings/Obsolete/Controls/OBC/ASHRAE/G36_PR1/Generic/SetPoints/Validation/TrimAndRespond.mo
-=======
-<a href=\"modelica://Buildings.Controls.OBC.ASHRAE.G36.Generic.TrimAndRespond\">
-Buildings.Controls.OBC.ASHRAE.G36.Generic.TrimAndRespond</a>.
->>>>>>> master
 </p>
 </html>", revisions="<html>
 <ul>
 <li>
-<<<<<<< HEAD
-=======
 June 6, 2024, by Antoine Gautier:<br/>
 Added test with hold of trim and respond loop output.
 This is for <a href=\"https://github.com/lbl-srg/modelica-buildings/issues/3761\">#3761</a>.
 </li>
 <li>
->>>>>>> master
 August 28, 2019, by Jianjun Hu:<br/>
 Added more validation of negative response amount.
 This is for <a href=\"https://github.com/lbl-srg/modelica-buildings/issues/1530\">#1503</a>.

@@ -166,24 +166,6 @@ partial model PartialBuilding
     each final allowFlowReversal=allowFlowReversal) if have_chiWat
     "Mass flow rate multiplier"
     annotation (Placement(transformation(extent={{260,-270},{280,-250}})));
-<<<<<<< HEAD:Buildings/Experimental/DHC/Loads/BaseClasses/PartialBuilding.mo
-  Buildings.Controls.OBC.CDL.Continuous.MultiplyByParameter mulQHea_flow(u(
-        final unit="W"), final k=facMul) if have_heaLoa "Scaling"
-    annotation (Placement(transformation(extent={{270,270},{290,290}})));
-  Buildings.Controls.OBC.CDL.Continuous.MultiplyByParameter mulQCoo_flow(u(
-        final unit="W"), final k=facMul) if have_cooLoa "Scaling"
-    annotation (Placement(transformation(extent={{270,230},{290,250}})));
-  Buildings.Controls.OBC.CDL.Continuous.MultiplyByParameter mulPHea(u(final
-        unit="W"), final k=facMul) if have_eleHea "Scaling"
-    annotation (Placement(transformation(extent={{270,190},{290,210}})));
-  Buildings.Controls.OBC.CDL.Continuous.MultiplyByParameter mulPCoo(u(final
-        unit="W"), final k=facMul) if have_eleCoo "Scaling"
-    annotation (Placement(transformation(extent={{270,150},{290,170}})));
-  Buildings.Controls.OBC.CDL.Continuous.MultiplyByParameter mulPFan(u(final
-        unit="W"), final k=facMul) if have_fan "Scaling"
-    annotation (Placement(transformation(extent={{270,110},{290,130}})));
-  Buildings.Controls.OBC.CDL.Continuous.MultiplyByParameter mulPPum(u(final
-=======
   Buildings.Controls.OBC.CDL.Reals.MultiplyByParameter mulQHea_flow(u(
         final unit="W"), final k=facMul) if have_heaLoa "Scaling"
     annotation (Placement(transformation(extent={{270,270},{290,290}})));
@@ -200,7 +182,6 @@ partial model PartialBuilding
         unit="W"), final k=facMul) if have_fan "Scaling"
     annotation (Placement(transformation(extent={{270,110},{290,130}})));
   Buildings.Controls.OBC.CDL.Reals.MultiplyByParameter mulPPum(u(final
->>>>>>> master:Buildings/DHC/Loads/BaseClasses/PartialBuilding.mo
         unit="W"), final k=facMul) if have_pum "Scaling"
     annotation (Placement(transformation(extent={{270,70},{290,90}})));
 protected
@@ -249,13 +230,8 @@ equation
 Partial model to be used for modeling the thermal loads on an energy
 transfer station or a dedicated plant.
 Models extending this class are typically used in conjunction with
-<<<<<<< HEAD:Buildings/Experimental/DHC/Loads/BaseClasses/PartialBuilding.mo
-<a href=\"modelica://Buildings.Experimental.DHC.Loads.BaseClasses.FlowDistribution\">
-Buildings.Experimental.DHC.Loads.BaseClasses.FlowDistribution</a>
-=======
 <a href=\"modelica://Buildings.DHC.Loads.BaseClasses.FlowDistribution\">
 Buildings.DHC.Loads.BaseClasses.FlowDistribution</a>
->>>>>>> master:Buildings/DHC/Loads/BaseClasses/PartialBuilding.mo
 and models extending
 <a href=\"modelica://Buildings.DHC.Loads.BaseClasses.PartialTerminalUnit\">
 Buildings.DHC.Loads.BaseClasses.PartialTerminalUnit</a>
@@ -278,13 +254,8 @@ multiple identical buildings served by the same energy transfer station.
 <h4>Examples</h4>
 <p>
 See various use cases in
-<<<<<<< HEAD:Buildings/Experimental/DHC/Loads/BaseClasses/PartialBuilding.mo
-<a href=\"modelica://Buildings.Experimental.DHC.Loads.BaseClasses.Examples\">
-Buildings.Experimental.DHC.Loads.BaseClasses.Examples</a>.
-=======
 <a href=\"modelica://Buildings.DHC.Loads.BaseClasses.Examples\">
 Buildings.DHC.Loads.BaseClasses.Examples</a>.
->>>>>>> master:Buildings/DHC/Loads/BaseClasses/PartialBuilding.mo
 </p>
 <p>
 <br/>

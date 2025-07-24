@@ -1,15 +1,8 @@
-<<<<<<<< HEAD:Buildings/ThermalZones/EnergyPlus_9_6_0/ThermalZone.mo
-within Buildings.ThermalZones.EnergyPlus_9_6_0;
-model ThermalZone
-  "Model to connect to an EnergyPlus thermal zone"
-  extends Buildings.ThermalZones.EnergyPlus_9_6_0.BaseClasses.PartialEnergyPlusObject;
-========
 within Buildings.ThermalZones.EnergyPlus_24_2_0;
 model ThermalZone
   "Model to connect to an EnergyPlus thermal zone"
   extends
     Buildings.ThermalZones.EnergyPlus_24_2_0.BaseClasses.PartialEnergyPlusObject;
->>>>>>>> master:Buildings/ThermalZones/EnergyPlus_24_2_0/ThermalZone.mo
   parameter String zoneName
     "Name of the thermal zone as specified in the EnergyPlus input";
   parameter Integer nPorts=0
@@ -96,26 +89,19 @@ protected
       273.15 + 37) "Latent heat of water vapor";
   final parameter Modelica.Units.SI.MassFlowRate m_flow_nominal=V*3/3600
     "Nominal mass flow rate (used for regularization)";
-<<<<<<<< HEAD:Buildings/ThermalZones/EnergyPlus_9_6_0/ThermalZone.mo
-  Buildings.ThermalZones.EnergyPlus_9_6_0.BaseClasses.ThermalZoneAdapter fmuZon(
-========
 
   final parameter Boolean setInitialRadiativeHeatGainToZero = building.setInitialRadiativeHeatGainToZero
     "If true, then the radiative heat gain sent from Modelica to EnergyPlus is zero during the model initialization"
     annotation (Dialog(tab="Advanced"), Evaluate=true);
 
   Buildings.ThermalZones.EnergyPlus_24_2_0.BaseClasses.ThermalZoneAdapter fmuZon(
->>>>>>>> master:Buildings/ThermalZones/EnergyPlus_24_2_0/ThermalZone.mo
     final modelicaNameBuilding=modelicaNameBuilding,
     final modelicaInstanceName=modelicaInstanceName,
     final spawnExe=spawnExe,
     final idfVersion=idfVersion,
     final idfName=idfName,
     final epwName=epwName,
-<<<<<<<< HEAD:Buildings/ThermalZones/EnergyPlus_9_6_0/ThermalZone.mo
-========
     final runPeriod=runPeriod,
->>>>>>>> master:Buildings/ThermalZones/EnergyPlus_24_2_0/ThermalZone.mo
     final relativeSurfaceTolerance=relativeSurfaceTolerance,
     final setInitialRadiativeHeatGainToZero=setInitialRadiativeHeatGainToZero,
     final zoneName=zoneName,
@@ -151,11 +137,7 @@ protected
     u(final unit="W"),
     y(final unit="kg/s"))
     "Water flow rate due to latent heat gain"
-<<<<<<<< HEAD:Buildings/ThermalZones/EnergyPlus_9_6_0/ThermalZone.mo
-    annotation (Placement(transformation(extent={{-82,-64},{-62,-44}})));
-========
     annotation (Placement(transformation(extent={{-80,-50},{-60,-30}})));
->>>>>>>> master:Buildings/ThermalZones/EnergyPlus_24_2_0/ThermalZone.mo
   Modelica.Blocks.Math.Add QLat_flow(final k1=1, final k2=1)
     "Total latent heat gains of the zone"
     annotation (Placement(transformation(extent={{-120,20},{-100,40}})));
@@ -163,11 +145,7 @@ protected
     final k1=1,
     final k2=1)
     "Sensible and latent heat gains of the zone"
-<<<<<<<< HEAD:Buildings/ThermalZones/EnergyPlus_9_6_0/ThermalZone.mo
-    annotation (Placement(transformation(extent={{-80,30},{-60,50}})));
-========
     annotation (Placement(transformation(extent={{-80,20},{-60,40}})));
->>>>>>>> master:Buildings/ThermalZones/EnergyPlus_24_2_0/ThermalZone.mo
   Modelica.Blocks.Math.Add QConSen_flow(
     final k1=1,
     final k2=1)
@@ -231,13 +209,8 @@ protected
     annotation (Placement(transformation(extent={{122,2},{142,22}})));
   Buildings.Utilities.Psychrometrics.Phi_pTX relHum
     "Relative humidity"
-<<<<<<<< HEAD:Buildings/ThermalZones/EnergyPlus_9_6_0/ThermalZone.mo
-    annotation (Placement(transformation(extent={{156,12},{176,32}})));
-  Controls.OBC.CDL.Continuous.Divide X_w
-========
     annotation (Placement(transformation(extent={{160,12},{180,32}})));
   Buildings.Controls.OBC.CDL.Reals.Divide X_w
->>>>>>>> master:Buildings/ThermalZones/EnergyPlus_24_2_0/ThermalZone.mo
     "Water vapor mass fraction per kg total air"
     annotation (Placement(transformation(extent={{40,-32},{60,-12}})));
 
@@ -268,33 +241,17 @@ equation
   connect(heaGai.qGai_flow,qGai_flow)
     annotation (Line(points={{-182,100},{-220,100}},color={0,0,127}));
   connect(fmuZon.TRad,TRad)
-<<<<<<<< HEAD:Buildings/ThermalZones/EnergyPlus_9_6_0/ThermalZone.mo
-    annotation (Line(points={{103,-44},{180,-44},{180,-40},{210,-40}},color={0,0,127}));
-  connect(heaGai.QRad_flow,fmuZon.QGaiRad_flow)
-    annotation (Line(points={{-158,106},{74,106},{74,-58},{80,-58}},color={0,0,127}));
-  connect(QGaiSenLat_flow.u1,QConSen_flow.y)
-    annotation (Line(points={{-82,46},{-90,46},{-90,62},{-99,62}},color={0,0,127}));
-  connect(QGaiSenLat_flow.u2, QLat_flow.y) annotation (Line(points={{-82,34},{-90,
-          34},{-90,30},{-99,30}}, color={0,0,127}));
-========
     annotation (Line(points={{101,-44},{180,-44},{180,-40},{210,-40}},color={0,0,127}));
   connect(QGaiSenLat_flow.u1,QConSen_flow.y)
     annotation (Line(points={{-82,36},{-90,36},{-90,62},{-99,62}},color={0,0,127}));
   connect(QGaiSenLat_flow.u2, QLat_flow.y) annotation (Line(points={{-82,24},{-90,
           24},{-90,30},{-99,30}}, color={0,0,127}));
->>>>>>>> master:Buildings/ThermalZones/EnergyPlus_24_2_0/ThermalZone.mo
   connect(QGaiSenLat_flow.y,conQCon_flow.Q_flow)
     annotation (Line(points={{-59,30},{-40,30}},color={0,0,127}));
   connect(conQCon_flow.port,heaPorAir)
-<<<<<<<< HEAD:Buildings/ThermalZones/EnergyPlus_9_6_0/ThermalZone.mo
-    annotation (Line(points={{-20,40},{0,40},{0,0}},color={191,0,0}));
-  connect(QLat_flow.y, mWat_flow.u) annotation (Line(points={{-99,30},{-96,30},{
-          -96,-54},{-84,-54}}, color={0,0,127}));
-========
     annotation (Line(points={{-20,30},{0,30},{0,0}},color={191,0,0}));
   connect(QLat_flow.y, mWat_flow.u) annotation (Line(points={{-99,30},{-96,30},{
           -96,-40},{-82,-40}}, color={0,0,127}));
->>>>>>>> master:Buildings/ThermalZones/EnergyPlus_24_2_0/ThermalZone.mo
   connect(mWat_flow.y,vol.mWat_flow)
     annotation (Line(points={{-59,-40},{-36,-40},{-36,-68},{-12,-68}},color={0,0,127}));
   connect(CTot_flow.y,vol.C_flow)
@@ -322,11 +279,7 @@ equation
   connect(TFlu.y,TAir)
     annotation (Line(points={{61,0},{210,0}},color={0,0,127}));
   connect(heaFloSen.Q_flow,vol.Q_flow)
-<<<<<<<< HEAD:Buildings/ThermalZones/EnergyPlus_9_6_0/ThermalZone.mo
-    annotation (Line(points={{-30,-21},{-30,-36},{-12,-36}},color={0,0,127}));
-========
     annotation (Line(points={{-30,-11},{-30,-64},{-12,-64}},color={0,0,127}));
->>>>>>>> master:Buildings/ThermalZones/EnergyPlus_24_2_0/ThermalZone.mo
   connect(vol.XiOut[1],fmuZon.X_w)
     annotation (Line(points={{0,-59},{0,-46},{78,-46}},                  color={0,0,127}));
   connect(X_w.y,relHum.X_w)
@@ -344,17 +297,6 @@ equation
   connect(QPeaRep.y,CTot_flow.u2)
     annotation (Line(points={{-99,-110},{-90,-110},{-90,-96},{-82,-96}},color={0,0,127}));
   connect(QPeaRep.u,fmuZon.QPeo_flow)
-<<<<<<<< HEAD:Buildings/ThermalZones/EnergyPlus_9_6_0/ThermalZone.mo
-    annotation (Line(points={{-122,-110},{-132,-110},{-132,-130},{110,-130},{110,-56},{103,-56}},color={0,0,127}));
-  connect(QConSen_flow.u2,heaGai.QCon_flow)
-    annotation (Line(points={{-122,56},{-134,56},{-134,100},{-158,100}},color={0,0,127}));
-  connect(fmuZon.QCon_flow,QConSen_flow.u1)
-    annotation (Line(points={{103,-48},{110,-48},{110,80},{-130,80},{-130,68},{-122,68}},color={0,0,127}));
-  connect(fmuZon.QLat_flow, QLat_flow.u1) annotation (Line(points={{103,-52},{114,
-          -52},{114,84},{-140,84},{-140,36},{-122,36}}, color={0,0,127}));
-  connect(heaGai.QLat_flow, QLat_flow.u2) annotation (Line(points={{-158,94},{-144,
-          94},{-144,24},{-122,24}}, color={0,0,127}));
-========
     annotation (Line(points={{-122,-110},{-132,-110},{-132,-130},{110,-130},{110,
           -56},{101,-56}},                                                                       color={0,0,127}));
   connect(QConSen_flow.u2,heaGai.QCon_flow)
@@ -380,7 +322,6 @@ equation
           116},{-140,106},{-158,106}}, color={0,0,127}));
   connect(QRad_flow.u2, radHeaFloSen.Q_flow) annotation (Line(points={{38,104},
           {26,104},{26,40},{0,40},{0,49}},  color={0,0,127}));
->>>>>>>> master:Buildings/ThermalZones/EnergyPlus_24_2_0/ThermalZone.mo
   annotation (
     defaultComponentName="zon",
     Icon(
@@ -454,7 +395,7 @@ equation
         Bitmap(
           visible=false,
           extent={{134,-176},{174,-146}},
-          fileName="modelica://Buildings/Resources/Images/ThermalZones/EnergyPlus_9_6_0/EnergyPlusLogo.png"),
+          fileName="modelica://Buildings/Resources/Images/ThermalZones/EnergyPlus/EnergyPlusLogo.png"),
         Text(
           fillColor={61,61,61},
           fillPattern=FillPattern.Solid,
@@ -479,38 +420,23 @@ Model for a thermal zone that is implemented in EnergyPlus.
 This model instantiates the FMU with the name <code>idfName</code> and
 connects to the thermal zone with name <code>zoneName</code>.
 The <code>idfName</code> needs to be specified in an instance of
-<<<<<<<< HEAD:Buildings/ThermalZones/EnergyPlus_9_6_0/ThermalZone.mo
-<a href=\"Buildings.ThermalZones.EnergyPlus_9_6_0.Building\">
-Buildings.ThermalZones.EnergyPlus_9_6_0.Building</a>
-========
 <a href=\"modelica://Buildings.ThermalZones.EnergyPlus_24_2_0.Building\">
 Buildings.ThermalZones.EnergyPlus_24_2_0.Building</a>
->>>>>>>> master:Buildings/ThermalZones/EnergyPlus_24_2_0/ThermalZone.mo
 that is named <code>building</code>, and that is placed at this
 or at a higher hierarchy-level of the model.
 If the FMU is already instantiated by another instance of this model,
 it will use the already instantiated FMU. Hence, for each thermal zone
 in an EnergyPlus FMU, one instance of this model needs to be used.
-<<<<<<<< HEAD:Buildings/ThermalZones/EnergyPlus_9_6_0/ThermalZone.mo
-See <a href=\"modelica://Buildings.ThermalZones.EnergyPlus_9_6_0.UsersGuide\">
-Buildings.ThermalZones.EnergyPlus_9_6_0.UsersGuide</a>
-========
 See <a href=\"modelica://Buildings.ThermalZones.EnergyPlus_24_2_0.UsersGuide\">
 Buildings.ThermalZones.EnergyPlus_24_2_0.UsersGuide</a>
->>>>>>>> master:Buildings/ThermalZones/EnergyPlus_24_2_0/ThermalZone.mo
 for how zones are simulated that are declared in the EnergyPlus input data file
 but not in Modelica.
 </p>
 <p>
 If there are two instances that declare the same <code>zoneName</code>
 and have in the model hierarchy the same instance of
-<<<<<<<< HEAD:Buildings/ThermalZones/EnergyPlus_9_6_0/ThermalZone.mo
-<a href=\"modelica://Buildings.ThermalZones.EnergyPlus_9_6_0.Building\">
-Buildings.ThermalZones.EnergyPlus_9_6_0.Building</a>,
-========
 <a href=\"modelica://Buildings.ThermalZones.EnergyPlus_24_2_0.Building\">
 Buildings.ThermalZones.EnergyPlus_24_2_0.Building</a>,
->>>>>>>> master:Buildings/ThermalZones/EnergyPlus_24_2_0/ThermalZone.mo
 then the simulation will stop with an error.
 </p>
 <h4>Main Equations</h4>
@@ -526,8 +452,6 @@ the long-wave and the short-wave radiation are computed by EnergyPlus.
 The zone uses a volume of air that is fully mixed. The size of this volume,
 and its floor area, which is used to scale the heat gains <code>q_flow</code>,
 are obtained from the EnergyPlus model.
-<<<<<<<< HEAD:Buildings/ThermalZones/EnergyPlus_9_6_0/ThermalZone.mo
-========
 </p>
 <p>
 The zone has a fluid port <code>fluPor</code> that can be used to connect one or several
@@ -546,7 +470,6 @@ be used to connect a radiator. Note, however, that such a coupling is an approxi
 as the surface temperature of the radiator will not be reflected in the radiative temperature
 of the room.
 Also, read to section <i>Notes about modeling components that are connected to the radiative heat port</i> below.
->>>>>>>> master:Buildings/ThermalZones/EnergyPlus_24_2_0/ThermalZone.mo
 </p>
 
 <h5>Contaminant balance</h5>
@@ -588,8 +511,6 @@ needs to be added manually to the input connector <code>C_flow</code>.
 (This manual addition is needed because <code>qGai_flow</code> can also contain heat gains not caused
 by people.)
 </p>
-<<<<<<<< HEAD:Buildings/ThermalZones/EnergyPlus_9_6_0/ThermalZone.mo
-========
 <h5>Notes about modeling components that are connected to the radiative heat port</h5>
 <p>
 Models in which a component is connected to the radiative heat port <code>heaPorRad</code> may cause
@@ -627,7 +548,6 @@ Because a Modelica model does not have knowledge of the solver tolerance, automa
 <code>building.relativeSurfaceTolerance</code> as a function of the Modelica solver tolerance
 is not possible.
 </p>
->>>>>>>> master:Buildings/ThermalZones/EnergyPlus_24_2_0/ThermalZone.mo
 </html>",
       revisions="<html>
 <ul>

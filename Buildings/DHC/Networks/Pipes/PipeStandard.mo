@@ -1,8 +1,4 @@
-<<<<<<<< HEAD:Buildings/DHC/Networks/Combined/BaseClasses/PipeStandard.mo
-within Buildings.Experimental.DHC.Networks.Combined.BaseClasses;
-========
 within Buildings.DHC.Networks.Pipes;
->>>>>>>> master:Buildings/DHC/Networks/Pipes/PipeStandard.mo
 model PipeStandard "Pipe model parameterized with hydraulic diameter"
   extends Buildings.Fluid.FixedResistances.HydraulicDiameter(
     dp(nominal = 1E5),

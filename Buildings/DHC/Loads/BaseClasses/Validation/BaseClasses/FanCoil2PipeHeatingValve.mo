@@ -1,8 +1,4 @@
-<<<<<<< HEAD:Buildings/Experimental/DHC/Loads/BaseClasses/Validation/BaseClasses/FanCoil2PipeHeatingValve.mo
-within Buildings.Experimental.DHC.Loads.BaseClasses.Validation.BaseClasses;
-=======
 within Buildings.DHC.Loads.BaseClasses.Validation.BaseClasses;
->>>>>>> master:Buildings/DHC/Loads/BaseClasses/Validation/BaseClasses/FanCoil2PipeHeatingValve.mo
 model FanCoil2PipeHeatingValve
   "Model of a two-pipe fan coil unit for heating, with a two-way control valve"
   extends Buildings.DHC.Loads.BaseClasses.PartialTerminalUnit(
@@ -71,11 +67,7 @@ model FanCoil2PipeHeatingValve
   Modelica.Blocks.Sources.RealExpression Q_flowHea(
     y=hex.Q2_flow)
     annotation (Placement(transformation(extent={{120,210},{140,230}})));
-<<<<<<< HEAD:Buildings/Experimental/DHC/Loads/BaseClasses/Validation/BaseClasses/FanCoil2PipeHeatingValve.mo
-  Buildings.Controls.OBC.CDL.Continuous.MultiplyByParameter gaiFloNom2(k=
-=======
   Buildings.Controls.OBC.CDL.Reals.MultiplyByParameter gaiFloNom2(k=
->>>>>>> master:Buildings/DHC/Loads/BaseClasses/Validation/BaseClasses/FanCoil2PipeHeatingValve.mo
         mLoaHea_flow_nominal)
     annotation (Placement(transformation(extent={{56,170},{76,190}})));
   Fluid.Sources.Boundary_pT sinAir(
@@ -90,17 +82,10 @@ model FanCoil2PipeHeatingValve
     nPorts=1)
     "Source for return air"
     annotation (Placement(transformation(extent={{10,-10},{-10,10}},rotation=0,origin={110,0})));
-<<<<<<< HEAD:Buildings/Experimental/DHC/Loads/BaseClasses/Validation/BaseClasses/FanCoil2PipeHeatingValve.mo
-  Buildings.Experimental.DHC.Loads.BaseClasses.SimpleRoomODE TLoaODE(
-    TOutHea_nominal=273.15 - 5,
-    TIndHea_nominal=T_aLoaHea_nominal,
-    QHea_flow_nominal=QHea_flow_nominal) "Predicted room air temperature"
-=======
   Buildings.DHC.Loads.BaseClasses.SimpleRoomODE TLoaODE(
     dTEnv_nominal=25,
     TAir_start=293.15,
     QEnv_flow_nominal=QHea_flow_nominal) "Predicted room air temperature"
->>>>>>> master:Buildings/DHC/Loads/BaseClasses/Validation/BaseClasses/FanCoil2PipeHeatingValve.mo
     annotation (Placement(transformation(extent={{-10,30},{10,50}})));
   Fluid.Actuators.Valves.TwoWayEqualPercentage val(
     redeclare final package Medium=Medium1,
@@ -114,37 +99,22 @@ model FanCoil2PipeHeatingValve
     redeclare final package Medium=Medium1,
     final allowFlowReversal=allowFlowReversal)
     annotation (Placement(transformation(extent={{-10,-10},{10,10}},rotation=-90,origin={-40,-120})));
-<<<<<<< HEAD:Buildings/Experimental/DHC/Loads/BaseClasses/Validation/BaseClasses/FanCoil2PipeHeatingValve.mo
-  Buildings.Controls.OBC.CDL.Continuous.MultiplyByParameter gaiHeaFlo(k=1/
-        QHea_flow_nominal)
-    annotation (Placement(transformation(extent={{-40,210},{-20,230}})));
-  Buildings.Controls.OBC.CDL.Continuous.MultiplyByParameter gaiHeaFlo1(k=1/
-=======
   Buildings.Controls.OBC.CDL.Reals.MultiplyByParameter gaiHeaFlo(k=1/
         QHea_flow_nominal)
     annotation (Placement(transformation(extent={{-40,210},{-20,230}})));
   Buildings.Controls.OBC.CDL.Reals.MultiplyByParameter gaiHeaFlo1(k=1/
->>>>>>> master:Buildings/DHC/Loads/BaseClasses/Validation/BaseClasses/FanCoil2PipeHeatingValve.mo
         QHea_flow_nominal) annotation (Placement(transformation(
         extent={{-10,-10},{10,10}},
         rotation=90,
         origin={0,190})));
-<<<<<<< HEAD:Buildings/Experimental/DHC/Loads/BaseClasses/Validation/BaseClasses/FanCoil2PipeHeatingValve.mo
-  Buildings.Controls.OBC.CDL.Continuous.Sources.Constant one(
-=======
   Buildings.Controls.OBC.CDL.Reals.Sources.Constant one(
->>>>>>> master:Buildings/DHC/Loads/BaseClasses/Validation/BaseClasses/FanCoil2PipeHeatingValve.mo
     k=1)
     "One constant"
     annotation (Placement(transformation(extent={{-10,130},{10,150}})));
   Buildings.Controls.OBC.CDL.Logical.Sources.Constant con1(
     k=have_speVar)
     annotation (Placement(transformation(extent={{-60,160},{-40,180}})));
-<<<<<<< HEAD:Buildings/Experimental/DHC/Loads/BaseClasses/Validation/BaseClasses/FanCoil2PipeHeatingValve.mo
-  Buildings.Controls.OBC.CDL.Continuous.Switch swi
-=======
   Buildings.Controls.OBC.CDL.Reals.Switch swi
->>>>>>> master:Buildings/DHC/Loads/BaseClasses/Validation/BaseClasses/FanCoil2PipeHeatingValve.mo
     "Logical switch"
     annotation (Placement(transformation(extent={{30,170},{50,190}})));
   Fluid.FixedResistances.PressureDrop resLoa(
@@ -227,13 +197,8 @@ the air mass flow rate, from zero to its nominal value.
 </ul>
 <p>
 The impact of an unmet load on the room air temperature is assessed with
-<<<<<<< HEAD:Buildings/Experimental/DHC/Loads/BaseClasses/Validation/BaseClasses/FanCoil2PipeHeatingValve.mo
-<a href=\"modelica://Buildings.Experimental.DHC.Loads.BaseClasses.SimpleRoomODE\">
-Buildings.Experimental.DHC.Loads.BaseClasses.SimpleRoomODE</a>.
-=======
 <a href=\"modelica://Buildings.DHC.Loads.BaseClasses.SimpleRoomODE\">
 Buildings.DHC.Loads.BaseClasses.SimpleRoomODE</a>.
->>>>>>> master:Buildings/DHC/Loads/BaseClasses/Validation/BaseClasses/FanCoil2PipeHeatingValve.mo
 </p>
 </html>",
       revisions="<html>

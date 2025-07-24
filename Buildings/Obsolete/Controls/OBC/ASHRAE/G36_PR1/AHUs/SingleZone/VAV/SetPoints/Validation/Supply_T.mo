@@ -29,11 +29,7 @@ model Supply_T
   Buildings.Controls.OBC.CDL.Reals.Sources.Constant TZon(
     k=273.15 + 22) "Zone temperature"
     annotation (Placement(transformation(extent={{-80,-20},{-60,0}})));
-<<<<<<< HEAD
-  Buildings.Controls.OBC.CDL.Continuous.Subtract dT
-=======
   Buildings.Controls.OBC.CDL.Reals.Subtract dT
->>>>>>> master
     "Difference zone minus outdoor temperature"
     annotation (Placement(transformation(extent={{0,-50},{20,-30}})));
   Buildings.Controls.OBC.CDL.Reals.Sources.Constant TZonSet(

@@ -17,11 +17,7 @@ record BaseCable "Record that contains the properties of a generic cable"
       "Frequency considered in the definition of cables properties";
     output Modelica.Units.SI.Resistance R "Resistance of the cable";
   protected
-<<<<<<< HEAD
-    parameter Modelica.Units.SI.AngularVelocity omega=2*Modelica.Constants.pi*f;
-=======
     Modelica.Units.SI.AngularVelocity omega=2*Modelica.Constants.pi*f;
->>>>>>> master
     annotation (Documentation(revisions="<html>
 <ul>
 <li>
@@ -46,11 +42,7 @@ Added function and documentation
       "Frequency considered in the definition of cables properties";
     output Modelica.Units.SI.Inductance L "Inductance of the cable";
   protected
-<<<<<<< HEAD
-    parameter Modelica.Units.SI.AngularVelocity omega=2*Modelica.Constants.pi*f;
-=======
     Modelica.Units.SI.AngularVelocity omega=2*Modelica.Constants.pi*f;
->>>>>>> master
     annotation (Documentation(revisions="<html>
 <ul>
 <li>
@@ -75,11 +67,7 @@ Added function and documentation
       "Frequency considered in the definition of cables properties";
     output Modelica.Units.SI.Capacitance C "Capacitance of the cable";
   protected
-<<<<<<< HEAD
-    parameter Modelica.Units.SI.AngularVelocity omega=2*Modelica.Constants.pi*f;
-=======
     Modelica.Units.SI.AngularVelocity omega=2*Modelica.Constants.pi*f;
->>>>>>> master
     annotation (Documentation(revisions="<html>
 <ul>
 <li>

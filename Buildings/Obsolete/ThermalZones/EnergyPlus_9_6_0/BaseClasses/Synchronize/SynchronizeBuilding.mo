@@ -1,14 +1,7 @@
-<<<<<<<< HEAD:Buildings/ThermalZones/EnergyPlus_9_6_0/BaseClasses/Synchronize/SynchronizeBuilding.mo
-within Buildings.ThermalZones.EnergyPlus_9_6_0.BaseClasses.Synchronize;
-model SynchronizeBuilding
-  "Model to synchronize the Spawn objects that belong to a building"
-  Buildings.ThermalZones.EnergyPlus_9_6_0.BaseClasses.Synchronize.SynchronizeConnector synchronize
-========
 within Buildings.Obsolete.ThermalZones.EnergyPlus_9_6_0.BaseClasses.Synchronize;
 model SynchronizeBuilding
   "Model to synchronize the Spawn objects that belong to a building"
   Buildings.Obsolete.ThermalZones.EnergyPlus_9_6_0.BaseClasses.Synchronize.SynchronizeConnector synchronize
->>>>>>>> master:Buildings/Obsolete/ThermalZones/EnergyPlus_9_6_0/BaseClasses/Synchronize/SynchronizeBuilding.mo
     "Connector that is used to synchronize objects";
   annotation (
     Icon(

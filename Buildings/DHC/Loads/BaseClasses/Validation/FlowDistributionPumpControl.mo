@@ -1,8 +1,4 @@
-<<<<<<< HEAD:Buildings/Experimental/DHC/Loads/BaseClasses/Validation/FlowDistributionPumpControl.mo
-within Buildings.Experimental.DHC.Loads.BaseClasses.Validation;
-=======
 within Buildings.DHC.Loads.BaseClasses.Validation;
->>>>>>> master:Buildings/DHC/Loads/BaseClasses/Validation/FlowDistributionPumpControl.mo
 model FlowDistributionPumpControl
   "Validation of the pump head computation in FlowDistribution"
   extends Modelica.Icons.Example;
@@ -35,16 +31,6 @@ model FlowDistributionPumpControl
   parameter Modelica.Units.SI.Time tau=120
     "Time constant of fluid temperature variation at nominal flow rate"
     annotation (Dialog(tab="Dynamics", group="Nominal condition"));
-<<<<<<< HEAD:Buildings/Experimental/DHC/Loads/BaseClasses/Validation/FlowDistributionPumpControl.mo
-  parameter Modelica.Units.SI.PressureDifference dpDis_nominal[nLoa](
-    each min=0,
-    each displayUnit="Pa") = 1/2 .* cat(
-    1,
-    {dp_nominal*0.2},
-    fill(dp_nominal*0.8/(nLoa - 1), nLoa - 1))
-    "Pressure drop between each connected unit at nominal conditions (supply line)";
-=======
->>>>>>> master:Buildings/DHC/Loads/BaseClasses/Validation/FlowDistributionPumpControl.mo
   parameter Modelica.Units.SI.PressureDifference dpSet=max(terUniHea.dpSou_nominal)
     "Pressure difference set point";
   final parameter Modelica.Units.SI.MassFlowRate mCon_flow_nominal[nLoa]=
@@ -55,19 +41,11 @@ model FlowDistributionPumpControl
   final parameter Modelica.Units.SI.PressureDifference dp_nominal=max(terUniHea.dpSou_nominal)
        + 2*nLoa*5000 "Nominal pressure drop in the distribution line";
   final parameter Modelica.Units.SI.HeatFlowRate QHea_flow_nominal=
-<<<<<<< HEAD:Buildings/Experimental/DHC/Loads/BaseClasses/Validation/FlowDistributionPumpControl.mo
-      Buildings.Experimental.DHC.Loads.BaseClasses.getPeakLoad(string="#Peak space heating load", filNam=
-      Modelica.Utilities.Files.loadResource(filNam))/facMul
-    "Design heating heat flow rate (>=0)"
-    annotation (Dialog(group="Nominal condition"));
-  Buildings.Experimental.DHC.Loads.BaseClasses.Validation.BaseClasses.FanCoil2PipeHeatingValve terUniHea[nLoa](
-=======
       Buildings.DHC.Loads.BaseClasses.getPeakLoad(string="#Peak space heating load", filNam=
       Modelica.Utilities.Files.loadResource(filNam))/facMul
     "Design heating heat flow rate (>=0)"
     annotation (Dialog(group="Nominal condition"));
   Buildings.DHC.Loads.BaseClasses.Validation.BaseClasses.FanCoil2PipeHeatingValve terUniHea[nLoa](
->>>>>>> master:Buildings/DHC/Loads/BaseClasses/Validation/FlowDistributionPumpControl.mo
     redeclare each final package Medium1=Medium1,
     redeclare each final package Medium2=Medium2,
     each final facMul=facMul,
@@ -105,13 +83,8 @@ model FlowDistributionPumpControl
     nout=nLoa)
     "Repeat input to output an array"
     annotation (Placement(transformation(extent={{-128,20},{-108,40}})));
-<<<<<<< HEAD:Buildings/Experimental/DHC/Loads/BaseClasses/Validation/FlowDistributionPumpControl.mo
-  Buildings.Experimental.DHC.Networks.Distribution2Pipe dis(
-    redeclare final package Medium=Medium1,
-=======
   Buildings.DHC.Networks.Distribution2Pipe_R dis(
     redeclare final package Medium = Medium1,
->>>>>>> master:Buildings/DHC/Loads/BaseClasses/Validation/FlowDistributionPumpControl.mo
     final nCon=nLoa,
     final allowFlowReversal=false,
     final iConDpSen=nLoa,
@@ -143,19 +116,11 @@ model FlowDistributionPumpControl
     nPorts=3)
     "Heating water source"
     annotation (Placement(transformation(extent={{-10,-10},{10,10}},rotation=0,origin={-130,0})));
-<<<<<<< HEAD:Buildings/Experimental/DHC/Loads/BaseClasses/Validation/FlowDistributionPumpControl.mo
-  Buildings.Experimental.DHC.Loads.BaseClasses.FlowDistribution disCstDp(
-    redeclare package Medium=Medium1,
-    m_flow_nominal=m_flow_nominal,
-    have_pum=true,
-    typCtr=Buildings.Experimental.DHC.Loads.BaseClasses.Types.PumpControlType.ConstantDp,
-=======
   Buildings.DHC.Loads.BaseClasses.FlowDistribution disCstDp(
     redeclare package Medium=Medium1,
     m_flow_nominal=m_flow_nominal,
     have_pum=true,
     typCtr=Buildings.DHC.Loads.BaseClasses.Types.PumpControlType.ConstantDp,
->>>>>>> master:Buildings/DHC/Loads/BaseClasses/Validation/FlowDistributionPumpControl.mo
     dp_nominal=dp_nominal,
     dpMin=dpSet,
     mUni_flow_nominal=mCon_flow_nominal,
@@ -169,11 +134,7 @@ model FlowDistributionPumpControl
     nPorts=3)
     "Sink for heating water"
     annotation (Placement(transformation(extent={{10,-10},{-10,10}},rotation=0,origin={150,0})));
-<<<<<<< HEAD:Buildings/Experimental/DHC/Loads/BaseClasses/Validation/FlowDistributionPumpControl.mo
-  Buildings.Experimental.DHC.Loads.BaseClasses.Validation.BaseClasses.FanCoil2PipeHeating terUniHea1[nLoa](
-=======
   Buildings.DHC.Loads.BaseClasses.Validation.BaseClasses.FanCoil2PipeHeating terUniHea1[nLoa](
->>>>>>> master:Buildings/DHC/Loads/BaseClasses/Validation/FlowDistributionPumpControl.mo
     redeclare each final package Medium1=Medium1,
     redeclare each final package Medium2=Medium2,
     each final facMul=facMul,
@@ -206,11 +167,7 @@ model FlowDistributionPumpControl
     k=1)
     "Constant one"
     annotation (Placement(transformation(extent={{-180,190},{-160,210}})));
-<<<<<<< HEAD:Buildings/Experimental/DHC/Loads/BaseClasses/Validation/FlowDistributionPumpControl.mo
-  Buildings.Experimental.DHC.Loads.BaseClasses.Validation.BaseClasses.FanCoil2PipeHeating terUniHea2[nLoa](
-=======
   Buildings.DHC.Loads.BaseClasses.Validation.BaseClasses.FanCoil2PipeHeating terUniHea2[nLoa](
->>>>>>> master:Buildings/DHC/Loads/BaseClasses/Validation/FlowDistributionPumpControl.mo
     redeclare each final package Medium1=Medium1,
     redeclare each final package Medium2=Medium2,
     each final facMul=facMul,
@@ -222,19 +179,11 @@ model FlowDistributionPumpControl
     each final have_speVar=false)
     "Heating terminal unit"
     annotation (Placement(transformation(extent={{-10,118},{10,138}})));
-<<<<<<< HEAD:Buildings/Experimental/DHC/Loads/BaseClasses/Validation/FlowDistributionPumpControl.mo
-  Buildings.Experimental.DHC.Loads.BaseClasses.FlowDistribution disCstSpe(
-    redeclare package Medium=Medium1,
-    m_flow_nominal=m_flow_nominal,
-    have_pum=true,
-    typCtr=Buildings.Experimental.DHC.Loads.BaseClasses.Types.PumpControlType.ConstantSpeed,
-=======
   Buildings.DHC.Loads.BaseClasses.FlowDistribution disCstSpe(
     redeclare package Medium=Medium1,
     m_flow_nominal=m_flow_nominal,
     have_pum=true,
     typCtr=Buildings.DHC.Loads.BaseClasses.Types.PumpControlType.ConstantSpeed,
->>>>>>> master:Buildings/DHC/Loads/BaseClasses/Validation/FlowDistributionPumpControl.mo
     dp_nominal=dp_nominal,
     dpMin=dpSet,
     mUni_flow_nominal=mCon_flow_nominal,
@@ -350,13 +299,8 @@ equation
       info="<html>
 <p>
 This model validates the pump head computation algorithm implemented in
-<<<<<<< HEAD:Buildings/Experimental/DHC/Loads/BaseClasses/Validation/FlowDistributionPumpControl.mo
-<a href=\"modelica://Buildings.Experimental.DHC.Loads.BaseClasses.FlowDistribution\">
-Buildings.Experimental.DHC.Loads.BaseClasses.FlowDistribution</a>.
-=======
 <a href=\"modelica://Buildings.DHC.Loads.BaseClasses.FlowDistribution\">
 Buildings.DHC.Loads.BaseClasses.FlowDistribution</a>.
->>>>>>> master:Buildings/DHC/Loads/BaseClasses/Validation/FlowDistributionPumpControl.mo
 </p>
 </html>",
       revisions="<html>
@@ -385,9 +329,5 @@ First implementation.
         preserveAspectRatio=false,
         extent={{-220,-240},{200,240}})),
     __Dymola_Commands(
-<<<<<<< HEAD:Buildings/Experimental/DHC/Loads/BaseClasses/Validation/FlowDistributionPumpControl.mo
-      file="modelica://Buildings/Resources/Scripts/Dymola/Experimental/DHC/Loads/BaseClasses/Validation/FlowDistributionPumpControl.mos" "Simulate and plot"));
-=======
       file="modelica://Buildings/Resources/Scripts/Dymola/DHC/Loads/BaseClasses/Validation/FlowDistributionPumpControl.mos" "Simulate and plot"));
->>>>>>> master:Buildings/DHC/Loads/BaseClasses/Validation/FlowDistributionPumpControl.mo
 end FlowDistributionPumpControl;

@@ -12,13 +12,8 @@ model OneFloor_OneZone "Closed-loop model with 1 zone in 1 floor"
     "Prescribed pressure difference";
   parameter Modelica.Units.SI.Volume VRoo[nZon,nFlo]={{6*8*2.7 for j in 1:nFlo}
       for i in 1:nZon} "Room volume";
-<<<<<<< HEAD
-  parameter Modelica.Units.SI.MassFlowRate m_flow_nominal_each[nZon,nFlo]={{7*
-      conv*VRoo[i, j] for j in 1:nFlo} for i in 1:nZon}
-=======
   parameter Modelica.Units.SI.MassFlowRate m_flow_nominal_each[nZon,nFlo]=
     7*conv*VRoo[:,:]
->>>>>>> master
     "Nominal flow rate to each zone";
   parameter Modelica.Units.SI.MassFlowRate m_flow_nominal=nZon*(7*conv)*6*8*2.7
     "Nominal system flow rate";
@@ -208,11 +203,7 @@ model OneFloor_OneZone "Closed-loop model with 1 zone in 1 floor"
     "Computes lowest room temperature"
     annotation (Placement(transformation(extent={{108,94},{120,106}})));
   Buildings.Examples.VAVReheat.BaseClasses.Controls.FanVFD conFanRet[nFlo](
-<<<<<<< HEAD
-    each xSet_nominal(displayUnit="m3/s") = m_flow_nominal/1.2,
-=======
     each xSet_nominal(final unit="m3/s") = m_flow_nominal/1.2,
->>>>>>> master
     each r_N_min=0.2) "Controller for fan"
     annotation (Placement(transformation(extent={{14,152},{28,166}})));
   Buildings.Examples.ScalableBenchmarks.BuildingVAV.BaseClasses.ControlBus controlBus[nFlo]
@@ -521,8 +512,6 @@ shading devices, Technical Report, Oct. 17, 2006.
 </html>", revisions="<html>
 <ul>
 <li>
-<<<<<<< HEAD
-=======
 March 4, 2024, by Michael Wetter:<br/>
 Corrected wrong use of <code>displayUnit</code> attribute.
 </li>
@@ -540,7 +529,6 @@ This is for
 <a href=\"https://github.com/lbl-srg/modelica-buildings/issues/2668\">issue #2668</a>.
 </li>
 <li>
->>>>>>> master
 June 17, 2022, by Hongxiang Fu:<br/>
 Changed <code>fan[].m_flow_nominal</code> from 10 to 0.1.<br/>
 This is for

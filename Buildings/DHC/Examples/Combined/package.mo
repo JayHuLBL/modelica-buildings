@@ -1,8 +1,4 @@
-<<<<<<< HEAD:Buildings/Experimental/DHC/Examples/Combined/package.mo
-within Buildings.Experimental.DHC.Examples;
-=======
 within Buildings.DHC.Examples;
->>>>>>> master:Buildings/DHC/Examples/Combined/package.mo
 package Combined "Package of example models for DHC systems"
   extends Modelica.Icons.VariantsPackage;
 

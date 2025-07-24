@@ -1,10 +1,5 @@
-<<<<<<< HEAD:Buildings/Experimental/DHC/EnergyTransferStations/package.mo
-within Buildings.Experimental.DHC;
-package EnergyTransferStations "Package of models for energy transfer stations"
-=======
 within Buildings.DHC;
 package ETS "Package of models for energy transfer stations"
->>>>>>> master:Buildings/DHC/ETS/package.mo
   extends Modelica.Icons.VariantsPackage;
 
   annotation (

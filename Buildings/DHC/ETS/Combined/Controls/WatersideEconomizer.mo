@@ -1,20 +1,7 @@
-<<<<<<< HEAD:Buildings/Experimental/DHC/EnergyTransferStations/Combined/Controls/WatersideEconomizer.mo
-within Buildings.Experimental.DHC.EnergyTransferStations.Combined.Controls;
-=======
 within Buildings.DHC.ETS.Combined.Controls;
->>>>>>> master:Buildings/DHC/ETS/Combined/Controls/WatersideEconomizer.mo
 model WatersideEconomizer
   "Waterside economizer controller"
 
-<<<<<<< HEAD:Buildings/Experimental/DHC/EnergyTransferStations/Combined/Controls/WatersideEconomizer.mo
-  parameter Modelica.Units.SI.MassFlowRate m2_flow_nominal
-    "Heat exchanger secondary mass flow rate"
-    annotation (Dialog(group="Nominal condition"));
-  parameter Modelica.Units.SI.Temperature T_a1_nominal
-    "Nominal water inlet temperature on district side"
-    annotation (Dialog(group="Nominal condition"));
-  parameter Modelica.Units.SI.Temperature T_b2_nominal
-=======
   parameter Real m2_flow_nominal(
     final quantity="MassFlowRate",
     final unit="kg/s")
@@ -30,18 +17,11 @@ model WatersideEconomizer
     final unit="K",
     displayUnit="degC",
     final quantity="ThermodynamicTemperature")
->>>>>>> master:Buildings/DHC/ETS/Combined/Controls/WatersideEconomizer.mo
     "Nominal water outlet temperature on building side"
     annotation (Dialog(group="Nominal condition"));
   parameter Real y1Min(final unit="1")=0.05
     "Minimum pump flow rate or valve opening for temperature measurement (fractional)"
     annotation (Dialog(group="Controls"));
-<<<<<<< HEAD:Buildings/Experimental/DHC/EnergyTransferStations/Combined/Controls/WatersideEconomizer.mo
-  parameter Modelica.Units.SI.TemperatureDifference dTEna=1
-    "Minimum delta-T above predicted heat exchanger leaving water temperature to enable WSE"
-    annotation (Dialog(group="Controls"));
-  parameter Modelica.Units.SI.TemperatureDifference dTDis=0.5
-=======
   parameter Real dTEna(
     final quantity="TemperatureDifference",
     final unit="K")=1
@@ -50,7 +30,6 @@ model WatersideEconomizer
   parameter Real dTDis(
     final quantity="TemperatureDifference",
     final unit="K")=0.5
->>>>>>> master:Buildings/DHC/ETS/Combined/Controls/WatersideEconomizer.mo
     "Minimum delta-T across heat exchanger before disabling WSE"
     annotation (Dialog(group="Controls"));
 
@@ -96,40 +75,24 @@ model WatersideEconomizer
     "Secondary valve control signal"
     annotation (Placement(transformation(extent={{180,-60},{220,-20}}),
       iconTransformation(extent={{100,-70},{140,-30}})));
-<<<<<<< HEAD:Buildings/Experimental/DHC/EnergyTransferStations/Combined/Controls/WatersideEconomizer.mo
-  Buildings.Controls.OBC.CDL.Continuous.AddParameter addDelTem(
-=======
 
   Buildings.Controls.OBC.CDL.Reals.AddParameter addDelTem(
->>>>>>> master:Buildings/DHC/ETS/Combined/Controls/WatersideEconomizer.mo
     final p=dTEna)
     "Add threshold for enabling WSE"
     annotation (Placement(transformation(extent={{-90,-50},{-70,-30}})));
   Modelica.StateGraph.InitialStepWithSignal iniSta(nIn=1, nOut=1)
-<<<<<<< HEAD:Buildings/Experimental/DHC/EnergyTransferStations/Combined/Controls/WatersideEconomizer.mo
-                                                   "Initial state "
-=======
     "Initial state "
->>>>>>> master:Buildings/DHC/ETS/Combined/Controls/WatersideEconomizer.mo
     annotation (Placement(transformation(extent={{-30,30},{-10,50}})));
   Modelica.StateGraph.TransitionWithSignal ena "Transition to enabled state"
     annotation (Placement(transformation(extent={{10,30},{30,50}})));
   Modelica.StateGraph.StepWithSignal actSta(nIn=1, nOut=1)
-<<<<<<< HEAD:Buildings/Experimental/DHC/EnergyTransferStations/Combined/Controls/WatersideEconomizer.mo
-                                            "Active WSE"
-=======
     "Active WSE"
->>>>>>> master:Buildings/DHC/ETS/Combined/Controls/WatersideEconomizer.mo
     annotation (Placement(transformation(extent={{50,30},{70,50}})));
   Modelica.StateGraph.TransitionWithSignal dis
     "Transition to disabled state"
     annotation (Placement(transformation(extent={{90,30},{110,50}})));
-<<<<<<< HEAD:Buildings/Experimental/DHC/EnergyTransferStations/Combined/Controls/WatersideEconomizer.mo
-  Buildings.Controls.OBC.CDL.Continuous.Subtract delT1 "Add delta-T"
-=======
   Buildings.Controls.OBC.CDL.Reals.Subtract delT1
     "Add delta-T"
->>>>>>> master:Buildings/DHC/ETS/Combined/Controls/WatersideEconomizer.mo
     annotation (Placement(transformation(extent={{-140,-110},{-120,-90}})));
   Buildings.Controls.OBC.CDL.Reals.LessThreshold delTemDis(
     final t = dTDis,
@@ -159,11 +122,7 @@ model WatersideEconomizer
   Buildings.Controls.OBC.CDL.Reals.Line lin
     "Linear variation bounded by minimum and 1"
     annotation (Placement(transformation(extent={{60,90},{80,110}})));
-<<<<<<< HEAD:Buildings/Experimental/DHC/EnergyTransferStations/Combined/Controls/WatersideEconomizer.mo
-  Buildings.Controls.OBC.CDL.Continuous.Switch swiOff1
-=======
   Buildings.Controls.OBC.CDL.Reals.Switch swiOff1
->>>>>>> master:Buildings/DHC/ETS/Combined/Controls/WatersideEconomizer.mo
     "Output zero if cooling not enabled or isolation valve open (cold rejection)"
     annotation (Placement(transformation(extent={{100,150},{120,170}})));
   Buildings.Controls.OBC.CDL.Reals.Sources.Constant zer(final k=0) "Zero"
@@ -197,17 +156,10 @@ model WatersideEconomizer
   Buildings.Controls.OBC.CDL.Logical.And and1
     "Cooling disabled or temperature criterion verified"
     annotation (Placement(transformation(extent={{-90,150},{-70,170}})));
-<<<<<<< HEAD:Buildings/Experimental/DHC/EnergyTransferStations/Combined/Controls/WatersideEconomizer.mo
-  Buildings.Controls.OBC.CDL.Continuous.MultiplyByParameter nor2(
-    k=1/m2_flow_nominal) "Normalize"
-    annotation (Placement(transformation(extent={{-140,90},{-120,110}})));
-  Buildings.Controls.OBC.CDL.Continuous.Switch swiOff2
-=======
   Buildings.Controls.OBC.CDL.Reals.MultiplyByParameter nor2(
     final k=1/m2_flow_nominal) "Normalize"
     annotation (Placement(transformation(extent={{-140,90},{-120,110}})));
   Buildings.Controls.OBC.CDL.Reals.Switch swiOff2
->>>>>>> master:Buildings/DHC/ETS/Combined/Controls/WatersideEconomizer.mo
     "Switch between enabled and disabled mode"
     annotation (Placement(transformation(extent={{140,90},{160,110}})));
   Buildings.Controls.OBC.CDL.Reals.Sources.Constant one(final k=1) "One"
@@ -238,24 +190,13 @@ equation
   connect(uCoo, not2.u) annotation (Line(points={{-200,160},{-170,160},{-170,-70},{-52,-70}},   color={255,0,255}));
   connect(actSta.active, booToRea.u) annotation (Line(points={{60,29},{60,-40},{138,-40}}, color={255,0,255}));
   connect(delTemDis1.y, mulAnd.u[1])
-<<<<<<< HEAD:Buildings/Experimental/DHC/EnergyTransferStations/Combined/Controls/WatersideEconomizer.mo
-    annotation (Line(points={{-28,-40},{-2,-40},{-2,-42.625}},                   color={255,0,255}));
-=======
     annotation (Line(points={{-28,-40},{-2,-40},{-2,-42.625}}, color={255,0,255}));
->>>>>>> master:Buildings/DHC/ETS/Combined/Controls/WatersideEconomizer.mo
   connect(iniSta.active, tim1.u) annotation (Line(points={{-20,29},{-20,20},{
           2.22045e-15,20},{2.22045e-15,12}}, color={255,0,255}));
   connect(tim1.passed, mulAnd.u[2])
-<<<<<<< HEAD:Buildings/Experimental/DHC/EnergyTransferStations/Combined/Controls/WatersideEconomizer.mo
-    annotation (Line(points={{-8,-12},{-8,-36},{-2,-36},{-2,-38.25}},  color={255,0,255}));
-  connect(uCoo, mulAnd.u[3]) annotation (Line(points={{-200,160},{-170,160},{-170,
-          0},{-20,0},{-20,-38},{-2,-38},{-2,-41.75}},
-                          color={255,0,255}));
-=======
     annotation (Line(points={{-8,-12},{-8,-36},{-2,-36},{-2,-40.875}}, color={255,0,255}));
   connect(uCoo, mulAnd.u[3]) annotation (Line(points={{-200,160},{-170,160},{-170,
           0},{-20,0},{-20,-38},{-2,-38},{-2,-39.125}}, color={255,0,255}));
->>>>>>> master:Buildings/DHC/ETS/Combined/Controls/WatersideEconomizer.mo
   connect(actSta.active, tim.u) annotation (Line(points={{60,29},{60,-40},{50,-40},{50,-58}},
           color={255,0,255}));
   connect(tim.passed, and2.u1) annotation (Line(points={{42,-82},{42,-92},{68,-92}}, color={255,0,255}));
@@ -267,28 +208,16 @@ equation
     annotation (Line(points={{-200,-160},{-142,-160}},color={0,0,127}));
   connect(isValIsoEvaClo.y, mulAnd.u[4])
     annotation (Line(points={{-118,-160},{-100,-160},{-100,-20},{-24,-20},{-24,-42},
-<<<<<<< HEAD:Buildings/Experimental/DHC/EnergyTransferStations/Combined/Controls/WatersideEconomizer.mo
-          {-2,-42},{-2,-45.25}}, color={255,0,255}));
-  connect(isValIsoEvaClo.y, not1.u)
-    annotation (Line(points={{-118,-160},{-60,-160},{-60,-140},{-52,-140}}, color={255,0,255}));
-  connect(delTemDis.y, or1.u[1])
-    annotation (Line(points={{-28,-100},{-2,-100},{-2,-102.333}},                 color={255,0,255}));
-=======
           {-2,-42},{-2,-37.375}},color={255,0,255}));
   connect(isValIsoEvaClo.y, not1.u)
     annotation (Line(points={{-118,-160},{-60,-160},{-60,-140},{-52,-140}}, color={255,0,255}));
   connect(delTemDis.y, or1.u[1])
     annotation (Line(points={{-28,-100},{-2,-100},{-2,-102.333}}, color={255,0,255}));
->>>>>>> master:Buildings/DHC/ETS/Combined/Controls/WatersideEconomizer.mo
   connect(not2.y, or1.u[2]) annotation (Line(points={{-28,-70},{-20,-70},{-20,
           -96},{-2,-96},{-2,-100}}, color={255,0,255}));
   connect(not1.y, or1.u[3])
     annotation (Line(points={{-28,-140},{-20,-140},{-20,-104},{-2,-104},{-2,
-<<<<<<< HEAD:Buildings/Experimental/DHC/EnergyTransferStations/Combined/Controls/WatersideEconomizer.mo
-          -97.6667}},                                                             color={255,0,255}));
-=======
           -97.6667}},                                                                   color={255,0,255}));
->>>>>>> master:Buildings/DHC/ETS/Combined/Controls/WatersideEconomizer.mo
   connect(uCoo, and1.u1) annotation (Line(points={{-200,160},{-92,160}}, color={255,0,255}));
   connect(and1.y, swiOff1.u2) annotation (Line(points={{-68,160},{98,160}}, color={255,0,255}));
   connect(isValIsoEvaClo.y, and1.u2)

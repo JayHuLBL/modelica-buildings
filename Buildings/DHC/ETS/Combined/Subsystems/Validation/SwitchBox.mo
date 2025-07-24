@@ -1,8 +1,4 @@
-<<<<<<< HEAD:Buildings/Experimental/DHC/EnergyTransferStations/Combined/Subsystems/Validation/SwitchBox.mo
-within Buildings.Experimental.DHC.EnergyTransferStations.Combined.Subsystems.Validation;
-=======
 within Buildings.DHC.ETS.Combined.Subsystems.Validation;
->>>>>>> master:Buildings/DHC/ETS/Combined/Subsystems/Validation/SwitchBox.mo
 model SwitchBox "Validation of flow switch box"
   extends Modelica.Icons.Example;
 
@@ -28,29 +24,17 @@ model SwitchBox "Validation of flow switch box"
         extent={{-10,10},{10,-10}},
         rotation=90,
         origin={70,0})));
-<<<<<<< HEAD:Buildings/Experimental/DHC/EnergyTransferStations/Combined/Subsystems/Validation/SwitchBox.mo
-  Buildings.Experimental.DHC.EnergyTransferStations.BaseClasses.Pump_m_flow pum1(
-=======
   Buildings.DHC.ETS.BaseClasses.Pump_m_flow pum1(
->>>>>>> master:Buildings/DHC/ETS/Combined/Subsystems/Validation/SwitchBox.mo
     redeclare package Medium = Medium,
     final m_flow_nominal=m_flow_nominal)
     "Chilled water HX secondary pump"
     annotation (Placement(transformation(extent={{10,-10},{-10,10}})));
-<<<<<<< HEAD:Buildings/Experimental/DHC/EnergyTransferStations/Combined/Subsystems/Validation/SwitchBox.mo
-  Buildings.Experimental.DHC.EnergyTransferStations.BaseClasses.Pump_m_flow pum2(
-=======
   Buildings.DHC.ETS.BaseClasses.Pump_m_flow pum2(
->>>>>>> master:Buildings/DHC/ETS/Combined/Subsystems/Validation/SwitchBox.mo
     redeclare package Medium = Medium,
     final m_flow_nominal=m_flow_nominal)
     "Chilled water HX secondary pump"
     annotation (Placement(transformation(extent={{-10,50},{10,70}})));
-<<<<<<< HEAD:Buildings/Experimental/DHC/EnergyTransferStations/Combined/Subsystems/Validation/SwitchBox.mo
-  Buildings.Experimental.DHC.EnergyTransferStations.Combined.Subsystems.SwitchBox
-=======
   Buildings.DHC.ETS.Combined.Subsystems.SwitchBox
->>>>>>> master:Buildings/DHC/ETS/Combined/Subsystems/Validation/SwitchBox.mo
     floSwiBox(final m_flow_nominal=m_flow_nominal, redeclare final package
       Medium = Medium,
     trueHoldDuration=300)
@@ -75,17 +59,10 @@ model SwitchBox "Validation of flow switch box"
     columns={2},
     timeScale=1000) "Set point for mass flow rate (normalized)"
     annotation (Placement(transformation(extent={{-90,70},{-70,90}})));
-<<<<<<< HEAD:Buildings/Experimental/DHC/EnergyTransferStations/Combined/Subsystems/Validation/SwitchBox.mo
-  Buildings.Controls.OBC.CDL.Continuous.MultiplyByParameter gai2(final k=
-        m_flow_nominal) "Scale with nominal mass flow rate"
-    annotation (Placement(transformation(extent={{-46,70},{-26,90}})));
-  Buildings.Controls.OBC.CDL.Continuous.MultiplyByParameter gai1(final k=
-=======
   Buildings.Controls.OBC.CDL.Reals.MultiplyByParameter gai2(final k=
         m_flow_nominal) "Scale with nominal mass flow rate"
     annotation (Placement(transformation(extent={{-46,70},{-26,90}})));
   Buildings.Controls.OBC.CDL.Reals.MultiplyByParameter gai1(final k=
->>>>>>> master:Buildings/DHC/ETS/Combined/Subsystems/Validation/SwitchBox.mo
         m_flow_nominal) "Scale with nominal mass flow rate"
     annotation (Placement(transformation(extent={{-46,30},{-26,50}})));
 equation
@@ -127,13 +104,8 @@ equation
     Documentation(info="<html>
 <p>
 This model validates that
-<<<<<<< HEAD:Buildings/Experimental/DHC/EnergyTransferStations/Combined/Subsystems/Validation/SwitchBox.mo
-<a href=\"modelica://Buildings.Experimental.DHC.EnergyTransferStations.Combined.Subsystems.SwitchBox\">
-Buildings.Experimental.DHC.EnergyTransferStations.Combined.Subsystems.SwitchBox</a>
-=======
 <a href=\"modelica://Buildings.DHC.ETS.Combined.Subsystems.SwitchBox\">
 Buildings.DHC.ETS.Combined.Subsystems.SwitchBox</a>
->>>>>>> master:Buildings/DHC/ETS/Combined/Subsystems/Validation/SwitchBox.mo
 maintains a positive flow rate in the district line outside of the temporization
 period set by the controller.
 </p>
@@ -142,10 +114,6 @@ period set by the controller.
       StopTime=1000,
       Tolerance=1e-06),
     __Dymola_Commands(
-<<<<<<< HEAD:Buildings/Experimental/DHC/EnergyTransferStations/Combined/Subsystems/Validation/SwitchBox.mo
-    file="modelica://Buildings/Resources/Scripts/Dymola/Experimental/DHC/EnergyTransferStations/Combined/Subsystems/Validation/SwitchBox.mos"
-=======
     file="modelica://Buildings/Resources/Scripts/Dymola/DHC/ETS/Combined/Subsystems/Validation/SwitchBox.mos"
->>>>>>> master:Buildings/DHC/ETS/Combined/Subsystems/Validation/SwitchBox.mo
     "Simulate and plot"));
 end SwitchBox;

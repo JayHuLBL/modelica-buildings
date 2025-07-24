@@ -47,11 +47,7 @@ block ReturnFanDirectPressure
     annotation (Placement(transformation(extent={{120,0},{160,40}}),
         iconTransformation(extent={{100,40},{140,80}})));
 
-<<<<<<< HEAD
-  Buildings.Controls.OBC.CDL.Continuous.MovingAverage movMea(delta=300)
-=======
   Buildings.Controls.OBC.CDL.Reals.MovingAverage movMea(delta=300)
->>>>>>> master
     "Average building static pressure measurement"
     annotation (Placement(transformation(extent={{-130,70},{-110,90}})));
 
@@ -67,17 +63,10 @@ block ReturnFanDirectPressure
   Buildings.Controls.OBC.CDL.Reals.Line linRetFanStaPre
     "Return fan static pressure setpoint"
     annotation (Placement(transformation(extent={{60,-50},{80,-30}})));
-<<<<<<< HEAD
-  Buildings.Controls.OBC.CDL.Continuous.Switch swi1
-    "Exhaust air damper position"
-    annotation (Placement(transformation(extent={{80,10},{100,30}})));
-  Buildings.Controls.OBC.CDL.Continuous.Switch swi
-=======
   Buildings.Controls.OBC.CDL.Reals.Switch swi1
     "Exhaust air damper position"
     annotation (Placement(transformation(extent={{80,10},{100,30}})));
   Buildings.Controls.OBC.CDL.Reals.Switch swi
->>>>>>> master
     "Return fan discharge static pressure setpoint"
     annotation (Placement(transformation(extent={{80,-100},{100,-80}})));
 

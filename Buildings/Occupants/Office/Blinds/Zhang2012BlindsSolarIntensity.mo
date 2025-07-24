@@ -6,14 +6,10 @@ model Zhang2012BlindsSolarIntensity
     parameter Real ADown = 0.002 "Slope of solar intensity for blinds down";
     parameter Real BUp = -3.33 "Intercept for blinds up";
     parameter Real BDown = -3.17 "Intercept for blinds down";
-<<<<<<< HEAD
-    parameter Integer seed = 10 "Seed for the random number generator";
-=======
     parameter Integer localSeed = 1004
     "Local seed to be used to generate the initial state of the random number generator";
   parameter Integer globalSeed = 30129
     "Global seed to be combined with the local seed";
->>>>>>> master
   parameter Modelica.Units.SI.Time samplePeriod=120 "Sample period";
 
     Modelica.Blocks.Interfaces.RealInput H(

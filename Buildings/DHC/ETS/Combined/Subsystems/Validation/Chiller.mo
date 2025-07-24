@@ -1,8 +1,4 @@
-<<<<<<< HEAD:Buildings/Experimental/DHC/EnergyTransferStations/Combined/Subsystems/Validation/Chiller.mo
-within Buildings.Experimental.DHC.EnergyTransferStations.Combined.Subsystems.Validation;
-=======
 within Buildings.DHC.ETS.Combined.Subsystems.Validation;
->>>>>>> master:Buildings/DHC/ETS/Combined/Subsystems/Validation/Chiller.mo
 model Chiller
   "Validation of the base subsystem model with heat recovery chiller"
   extends Modelica.Icons.Example;
@@ -28,11 +24,7 @@ model Chiller
     TConEntMax=333.15)
     "Chiller performance data"
     annotation (Placement(transformation(extent={{20,100},{40,120}})));
-<<<<<<< HEAD:Buildings/Experimental/DHC/EnergyTransferStations/Combined/Subsystems/Validation/Chiller.mo
-  Buildings.Experimental.DHC.EnergyTransferStations.Combined.Subsystems.Chiller chi(
-=======
   Buildings.DHC.ETS.Combined.Subsystems.Chiller chi(
->>>>>>> master:Buildings/DHC/ETS/Combined/Subsystems/Validation/Chiller.mo
     redeclare final package Medium=Medium,
     final dat=datChi,
     dpCon_nominal=15E3,
@@ -146,11 +138,7 @@ equation
         preserveAspectRatio=false,
         extent={{-200,-140},{200,140}})),
     __Dymola_Commands(
-<<<<<<< HEAD:Buildings/Experimental/DHC/EnergyTransferStations/Combined/Subsystems/Validation/Chiller.mo
-      file="modelica://Buildings/Resources/Scripts/Dymola/Experimental/DHC/EnergyTransferStations/Combined/Subsystems/Validation/Chiller.mos" "Simulate and plot"),
-=======
       file="modelica://Buildings/Resources/Scripts/Dymola/DHC/ETS/Combined/Subsystems/Validation/Chiller.mos" "Simulate and plot"),
->>>>>>> master:Buildings/DHC/ETS/Combined/Subsystems/Validation/Chiller.mo
     experiment(
       StopTime=5000,
       Tolerance=1e-06),
@@ -166,13 +154,8 @@ First implementation.
       info="<html>
 <p>
 This model validates
-<<<<<<< HEAD:Buildings/Experimental/DHC/EnergyTransferStations/Combined/Subsystems/Validation/Chiller.mo
-<a href=\"modelica://Buildings.Experimental.DHC.EnergyTransferStations.Combined.Subsystems.Chiller\">
-Buildings.Experimental.DHC.EnergyTransferStations.Combined.Subsystems.Chiller</a>.
-=======
 <a href=\"modelica://Buildings.DHC.ETS.Combined.Subsystems.Chiller\">
 Buildings.DHC.ETS.Combined.Subsystems.Chiller</a>.
->>>>>>> master:Buildings/DHC/ETS/Combined/Subsystems/Validation/Chiller.mo
 </p>
 </html>"));
 end Chiller;

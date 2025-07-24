@@ -1,25 +1,14 @@
-<<<<<<<< HEAD:Buildings/ThermalZones/EnergyPlus_9_6_0/Validation/OutputVariable/OneZoneOutputVariable.mo
-within Buildings.ThermalZones.EnergyPlus_9_6_0.Validation.OutputVariable;
-model OneZoneOutputVariable
-  "Validation model that has only one output variable from a zone reported to Modelica"
-  extends Buildings.ThermalZones.EnergyPlus_9_6_0.Validation.OutputVariable.OneEnvironmentOutputVariable(TEnePlu(
-========
 within Buildings.ThermalZones.EnergyPlus_24_2_0.Validation.OutputVariable;
 model OneZoneOutputVariable
   "Validation model that has only one output variable from a zone reported to Modelica"
   extends Buildings.ThermalZones.EnergyPlus_24_2_0.Validation.OutputVariable.OneEnvironmentOutputVariable(TEnePlu(
->>>>>>>> master:Buildings/ThermalZones/EnergyPlus_24_2_0/Validation/OutputVariable/OneZoneOutputVariable.mo
         name="Zone Mean Air Temperature",
         key="LIVING ZONE"));
 
   annotation (Icon(coordinateSystem(preserveAspectRatio=false)), Diagram(
         coordinateSystem(preserveAspectRatio=false)),
     __Dymola_Commands(
-<<<<<<<< HEAD:Buildings/ThermalZones/EnergyPlus_9_6_0/Validation/OutputVariable/OneZoneOutputVariable.mo
-      file="modelica://Buildings/Resources/Scripts/Dymola/ThermalZones/EnergyPlus_9_6_0/Validation/OutputVariable/OneZoneOutputVariable.mos" "Simulate and plot"),
-========
       file="modelica://Buildings/Resources/Scripts/Dymola/ThermalZones/EnergyPlus_24_2_0/Validation/OutputVariable/OneZoneOutputVariable.mos" "Simulate and plot"),
->>>>>>>> master:Buildings/ThermalZones/EnergyPlus_24_2_0/Validation/OutputVariable/OneZoneOutputVariable.mo
     experiment(
       StartTime=864000,
       StopTime=950400,

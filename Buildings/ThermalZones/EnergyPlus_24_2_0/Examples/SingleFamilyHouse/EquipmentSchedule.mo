@@ -1,12 +1,3 @@
-<<<<<<<< HEAD:Buildings/ThermalZones/EnergyPlus_9_6_0/Examples/SingleFamilyHouse/EquipmentSchedule.mo
-within Buildings.ThermalZones.EnergyPlus_9_6_0.Examples.SingleFamilyHouse;
-model EquipmentSchedule
-  "Example model with a schedule that overrides a schedule in EnergyPlus"
-  extends Buildings.ThermalZones.EnergyPlus_9_6_0.Examples.SingleFamilyHouse.Unconditioned;
-  Buildings.ThermalZones.EnergyPlus_9_6_0.Schedule schInt(
-    name="INTERMITTENT",
-    unit=Buildings.ThermalZones.EnergyPlus_9_6_0.Types.Units.Normalized)
-========
 within Buildings.ThermalZones.EnergyPlus_24_2_0.Examples.SingleFamilyHouse;
 model EquipmentSchedule
   "Example model with a schedule that overrides a schedule in EnergyPlus"
@@ -14,7 +5,6 @@ model EquipmentSchedule
   Buildings.ThermalZones.EnergyPlus_24_2_0.Schedule schInt(
     name="INTERMITTENT",
     unit=Buildings.ThermalZones.EnergyPlus_24_2_0.Types.Units.Normalized)
->>>>>>>> master:Buildings/ThermalZones/EnergyPlus_24_2_0/Examples/SingleFamilyHouse/EquipmentSchedule.mo
     "Block that writes to the EnergyPlus schedule INTERMITTENT"
     annotation (Placement(transformation(extent={{-40,70},{-20,90}})));
   Buildings.Controls.OBC.CDL.Reals.Sources.Pulse intLoaFra(
@@ -45,11 +35,7 @@ First implementation.
 </ul>
 </html>"),
     __Dymola_Commands(
-<<<<<<<< HEAD:Buildings/ThermalZones/EnergyPlus_9_6_0/Examples/SingleFamilyHouse/EquipmentSchedule.mo
-      file="modelica://Buildings/Resources/Scripts/Dymola/ThermalZones/EnergyPlus_9_6_0/Examples/SingleFamilyHouse/EquipmentSchedule.mos" "Simulate and plot"),
-========
       file="modelica://Buildings/Resources/Scripts/Dymola/ThermalZones/EnergyPlus_24_2_0/Examples/SingleFamilyHouse/EquipmentSchedule.mos" "Simulate and plot"),
->>>>>>>> master:Buildings/ThermalZones/EnergyPlus_24_2_0/Examples/SingleFamilyHouse/EquipmentSchedule.mo
     experiment(
       StopTime=172800,
       Tolerance=1e-06));

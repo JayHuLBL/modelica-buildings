@@ -1,18 +1,10 @@
-<<<<<<<< HEAD:Buildings/ThermalZones/EnergyPlus_9_6_0/Validation/ThermalZone/TwoIdenticalZones.mo
-within Buildings.ThermalZones.EnergyPlus_9_6_0.Validation.ThermalZone;
-========
 within Buildings.ThermalZones.EnergyPlus_24_2_0.Validation.ThermalZone;
->>>>>>>> master:Buildings/ThermalZones/EnergyPlus_24_2_0/Validation/ThermalZone/TwoIdenticalZones.mo
 model TwoIdenticalZones
   "Validation model with two identical zones"
   extends Modelica.Icons.Example;
   inner Building building(
     idfName=Modelica.Utilities.Files.loadResource(
-<<<<<<<< HEAD:Buildings/ThermalZones/EnergyPlus_9_6_0/Validation/ThermalZone/TwoIdenticalZones.mo
-      "modelica://Buildings/Resources/Data/ThermalZones/EnergyPlus_9_6_0/Validation/TwoIdenticalZones/TwoIdenticalZones.idf"),
-========
       "modelica://Buildings/Resources/Data/ThermalZones/EnergyPlus_24_2_0/Validation/TwoIdenticalZones/TwoIdenticalZones.idf"),
->>>>>>>> master:Buildings/ThermalZones/EnergyPlus_24_2_0/Validation/ThermalZone/TwoIdenticalZones.mo
     epwName=Modelica.Utilities.Files.loadResource(
       "modelica://Buildings/Resources/weatherdata/USA_IL_Chicago-OHare.Intl.AP.725300_TMY3.epw"),
     weaName=Modelica.Utilities.Files.loadResource(
@@ -31,11 +23,7 @@ model TwoIdenticalZones
   Modelica.Blocks.Sources.CombiTimeTable datRea(
     tableOnFile=true,
     fileName=Modelica.Utilities.Files.loadResource(
-<<<<<<<< HEAD:Buildings/ThermalZones/EnergyPlus_9_6_0/Validation/ThermalZone/TwoIdenticalZones.mo
-      "modelica://Buildings/Resources/Data/ThermalZones/EnergyPlus_9_6_0/Validation/TwoIdenticalZones/TwoIdenticalZones.dat"),
-========
       "modelica://Buildings/Resources/Data/ThermalZones/EnergyPlus_24_2_0/Validation/TwoIdenticalZones/TwoIdenticalZones.dat"),
->>>>>>>> master:Buildings/ThermalZones/EnergyPlus_24_2_0/Validation/ThermalZone/TwoIdenticalZones.mo
     smoothness=Modelica.Blocks.Types.Smoothness.ConstantSegments,
     tableName="EnergyPlus",
     columns=2:5,
@@ -47,19 +35,11 @@ model TwoIdenticalZones
   Buildings.Controls.OBC.UnitConversions.From_degC TAirEnePlu
     "Room air temperature computed by EnergyPlus"
     annotation (Placement(transformation(extent={{0,60},{20,80}})));
-<<<<<<<< HEAD:Buildings/ThermalZones/EnergyPlus_9_6_0/Validation/ThermalZone/TwoIdenticalZones.mo
-  Controls.OBC.CDL.Continuous.MultiplyByParameter relHumEnePlu(k=0.01)
-    "Relative humidity in the room computed by EnergyPlus"
-    annotation (Placement(transformation(extent={{0,20},{20,40}})));
-
-  Buildings.ThermalZones.EnergyPlus_9_6_0.OutputVariable inf1(
-========
   Buildings.Controls.OBC.CDL.Reals.MultiplyByParameter relHumEnePlu(k=0.01)
     "Relative humidity in the room computed by EnergyPlus"
     annotation (Placement(transformation(extent={{0,20},{20,40}})));
 
   Buildings.ThermalZones.EnergyPlus_24_2_0.OutputVariable inf1(
->>>>>>>> master:Buildings/ThermalZones/EnergyPlus_24_2_0/Validation/ThermalZone/TwoIdenticalZones.mo
     name="Zone Infiltration Current Density Volume Flow Rate",
     key="Thermal Zone 1")
     annotation (Placement(transformation(extent={{40,-40},{60,-20}})));
@@ -84,11 +64,7 @@ model TwoIdenticalZones
     Modelica.Blocks.Routing.Multiplex3 multiplex3_1
       "Multiplex to combine signals into a vector"
       annotation (Placement(transformation(extent={{-50,30},{-30,50}})));
-<<<<<<<< HEAD:Buildings/ThermalZones/EnergyPlus_9_6_0/Validation/ThermalZone/TwoIdenticalZones.mo
-    Buildings.ThermalZones.EnergyPlus_9_6_0.ThermalZone zon(
-========
     Buildings.ThermalZones.EnergyPlus_24_2_0.ThermalZone zon(
->>>>>>>> master:Buildings/ThermalZones/EnergyPlus_24_2_0/Validation/ThermalZone/TwoIdenticalZones.mo
       redeclare package Medium=Medium,
       zoneName=zoneName,
       nPorts=3)
@@ -200,11 +176,7 @@ First implementation.
 </ul>
 </html>"),
     __Dymola_Commands(
-<<<<<<<< HEAD:Buildings/ThermalZones/EnergyPlus_9_6_0/Validation/ThermalZone/TwoIdenticalZones.mo
-      file="modelica://Buildings/Resources/Scripts/Dymola/ThermalZones/EnergyPlus_9_6_0/Validation/ThermalZone/TwoIdenticalZones.mos" "Simulate and plot"),
-========
       file="modelica://Buildings/Resources/Scripts/Dymola/ThermalZones/EnergyPlus_24_2_0/Validation/ThermalZone/TwoIdenticalZones.mos" "Simulate and plot"),
->>>>>>>> master:Buildings/ThermalZones/EnergyPlus_24_2_0/Validation/ThermalZone/TwoIdenticalZones.mo
     experiment(
       StopTime=604800,
       Tolerance=1e-06),

@@ -1,8 +1,4 @@
-<<<<<<<< HEAD:Buildings/DHC/Loads/BaseClasses/Examples/BaseClasses/BuildingSpawnZ6.mo
-within Buildings.Experimental.DHC.Loads.BaseClasses.Examples.BaseClasses;
-========
 within Buildings.DHC.Loads.BaseClasses;
->>>>>>>> master:Buildings/DHC/Loads/BaseClasses/BuildingSpawnZ6.mo
 model BuildingSpawnZ6
   "Six-zone EnergyPlus building model based on URBANopt GeoJSON export, with distribution pumps"
   extends Buildings.DHC.Loads.BaseClasses.PartialBuilding(
@@ -30,11 +26,7 @@ model BuildingSpawnZ6
       nZon) ./ facMulTerUni
     "Design cooling heat flow rate (single terminal unit)"
     annotation (Dialog(group="Nominal condition"));
-<<<<<<<< HEAD:Buildings/DHC/Loads/BaseClasses/Examples/BaseClasses/BuildingSpawnZ6.mo
-  parameter String idfName="modelica://Buildings/Resources/Data/ThermalZones/EnergyPlus_9_6_0/Examples/RefBldgSmallOffice/RefBldgSmallOfficeNew2004_Chicago.idf"
-========
   parameter String idfName="modelica://Buildings/Resources/Data/ThermalZones/EnergyPlus_24_2_0/Examples/RefBldgSmallOffice/RefBldgSmallOfficeNew2004_Chicago.idf"
->>>>>>>> master:Buildings/DHC/Loads/BaseClasses/BuildingSpawnZ6.mo
     "Name of the IDF file";
   parameter String epwName="modelica://Buildings/Resources/weatherdata/USA_IL_Chicago-OHare.Intl.AP.725300_TMY3.epw"
     "Name of the weather file";
@@ -70,70 +62,42 @@ model BuildingSpawnZ6
     k=0)
     "Latent heat gain"
     annotation (Placement(transformation(extent={{-60,64},{-40,84}})));
-<<<<<<<< HEAD:Buildings/DHC/Loads/BaseClasses/Examples/BaseClasses/BuildingSpawnZ6.mo
-  Buildings.ThermalZones.EnergyPlus_9_6_0.ThermalZone znAttic(
-========
   Buildings.ThermalZones.EnergyPlus_24_2_0.ThermalZone znAttic(
->>>>>>>> master:Buildings/DHC/Loads/BaseClasses/BuildingSpawnZ6.mo
     redeclare package Medium=Medium2,
     zoneName="Attic")
     "Thermal zone"
     annotation (Placement(transformation(extent={{24,84},{64,124}})));
-<<<<<<<< HEAD:Buildings/DHC/Loads/BaseClasses/Examples/BaseClasses/BuildingSpawnZ6.mo
-  Buildings.ThermalZones.EnergyPlus_9_6_0.ThermalZone znCore_ZN(
-========
   Buildings.ThermalZones.EnergyPlus_24_2_0.ThermalZone znCore_ZN(
->>>>>>>> master:Buildings/DHC/Loads/BaseClasses/BuildingSpawnZ6.mo
     redeclare package Medium=Medium2,
     zoneName="Core_ZN",
     nPorts=2)
     "Thermal zone"
     annotation (Placement(transformation(extent={{24,42},{64,82}})));
-<<<<<<<< HEAD:Buildings/DHC/Loads/BaseClasses/Examples/BaseClasses/BuildingSpawnZ6.mo
-  Buildings.ThermalZones.EnergyPlus_9_6_0.ThermalZone znPerimeter_ZN_1(
-========
   Buildings.ThermalZones.EnergyPlus_24_2_0.ThermalZone znPerimeter_ZN_1(
->>>>>>>> master:Buildings/DHC/Loads/BaseClasses/BuildingSpawnZ6.mo
     redeclare package Medium=Medium2,
     zoneName="Perimeter_ZN_1",
     nPorts=2)
     "Thermal zone"
     annotation (Placement(transformation(extent={{24,0},{64,40}})));
-<<<<<<<< HEAD:Buildings/DHC/Loads/BaseClasses/Examples/BaseClasses/BuildingSpawnZ6.mo
-  Buildings.ThermalZones.EnergyPlus_9_6_0.ThermalZone znPerimeter_ZN_2(
-========
   Buildings.ThermalZones.EnergyPlus_24_2_0.ThermalZone znPerimeter_ZN_2(
->>>>>>>> master:Buildings/DHC/Loads/BaseClasses/BuildingSpawnZ6.mo
     redeclare package Medium=Medium2,
     zoneName="Perimeter_ZN_2",
     nPorts=2)
     "Thermal zone"
     annotation (Placement(transformation(extent={{24,-40},{64,0}})));
-<<<<<<<< HEAD:Buildings/DHC/Loads/BaseClasses/Examples/BaseClasses/BuildingSpawnZ6.mo
-  Buildings.ThermalZones.EnergyPlus_9_6_0.ThermalZone znPerimeter_ZN_3(
-========
   Buildings.ThermalZones.EnergyPlus_24_2_0.ThermalZone znPerimeter_ZN_3(
->>>>>>>> master:Buildings/DHC/Loads/BaseClasses/BuildingSpawnZ6.mo
     redeclare package Medium=Medium2,
     zoneName="Perimeter_ZN_3",
     nPorts=2)
     "Thermal zone"
     annotation (Placement(transformation(extent={{24,-80},{64,-40}})));
-<<<<<<<< HEAD:Buildings/DHC/Loads/BaseClasses/Examples/BaseClasses/BuildingSpawnZ6.mo
-  Buildings.ThermalZones.EnergyPlus_9_6_0.ThermalZone znPerimeter_ZN_4(
-========
   Buildings.ThermalZones.EnergyPlus_24_2_0.ThermalZone znPerimeter_ZN_4(
->>>>>>>> master:Buildings/DHC/Loads/BaseClasses/BuildingSpawnZ6.mo
     redeclare package Medium=Medium2,
     zoneName="Perimeter_ZN_4",
     nPorts=2)
     "Thermal zone"
     annotation (Placement(transformation(extent={{24,-120},{64,-80}})));
-<<<<<<<< HEAD:Buildings/DHC/Loads/BaseClasses/Examples/BaseClasses/BuildingSpawnZ6.mo
-  inner Buildings.ThermalZones.EnergyPlus_9_6_0.Building building(
-========
   inner Buildings.ThermalZones.EnergyPlus_24_2_0.Building building(
->>>>>>>> master:Buildings/DHC/Loads/BaseClasses/BuildingSpawnZ6.mo
     idfName=Modelica.Utilities.Files.loadResource(
       idfName),
     epwName=Modelica.Utilities.Files.loadResource(
@@ -148,11 +112,7 @@ model BuildingSpawnZ6
   Buildings.Controls.OBC.CDL.Reals.MultiSum mulSum3(
     nin=2)
     annotation (Placement(transformation(extent={{230,70},{250,90}})));
-<<<<<<<< HEAD:Buildings/DHC/Loads/BaseClasses/Examples/BaseClasses/BuildingSpawnZ6.mo
-  Buildings.Experimental.DHC.Loads.BaseClasses.Examples.BaseClasses.FanCoil4Pipe terUni[nZon](
-========
   Buildings.DHC.Loads.BaseClasses.FanCoil4Pipe terUni[nZon](
->>>>>>>> master:Buildings/DHC/Loads/BaseClasses/BuildingSpawnZ6.mo
     redeclare each final package Medium1=Medium,
     redeclare each final package Medium2=Medium2,
     final facMul=facMulTerUni,
@@ -168,11 +128,7 @@ model BuildingSpawnZ6
     final mLoaCoo_flow_nominal=mLoa_flow_nominal)
     "Terminal unit"
     annotation (Placement(transformation(extent={{-140,-2},{-116,22}})));
-<<<<<<<< HEAD:Buildings/DHC/Loads/BaseClasses/Examples/BaseClasses/BuildingSpawnZ6.mo
-  Buildings.Experimental.DHC.Loads.BaseClasses.FlowDistribution disFloHea(
-========
   Buildings.DHC.Loads.BaseClasses.FlowDistribution disFloHea(
->>>>>>>> master:Buildings/DHC/Loads/BaseClasses/BuildingSpawnZ6.mo
     redeclare package Medium=Medium,
     m_flow_nominal=sum(
       terUni.mHeaWat_flow_nominal .* terUni.facMul),
@@ -182,19 +138,11 @@ model BuildingSpawnZ6
     nPorts_b1=nZon)
     "Heating water distribution system"
     annotation (Placement(transformation(extent={{-200,-190},{-180,-170}})));
-<<<<<<<< HEAD:Buildings/DHC/Loads/BaseClasses/Examples/BaseClasses/BuildingSpawnZ6.mo
-  Buildings.Experimental.DHC.Loads.BaseClasses.FlowDistribution disFloCoo(
-    redeclare package Medium=Medium,
-    m_flow_nominal=sum(
-      terUni.mChiWat_flow_nominal .* terUni.facMul),
-    typDis=Buildings.Experimental.DHC.Loads.BaseClasses.Types.DistributionType.ChilledWater,
-========
   Buildings.DHC.Loads.BaseClasses.FlowDistribution disFloCoo(
     redeclare package Medium=Medium,
     m_flow_nominal=sum(
       terUni.mChiWat_flow_nominal .* terUni.facMul),
     typDis=Buildings.DHC.Loads.BaseClasses.Types.DistributionType.ChilledWater,
->>>>>>>> master:Buildings/DHC/Loads/BaseClasses/BuildingSpawnZ6.mo
     have_pum=true,
     dp_nominal=100000,
     nPorts_a1=nZon,
@@ -332,5 +280,5 @@ First implementation.
       graphics={
         Bitmap(
           extent={{-108,-100},{92,100}},
-          fileName="modelica://Buildings/Resources/Images/ThermalZones/EnergyPlus_9_6_0/EnergyPlusLogo.png")}));
+          fileName="modelica://Buildings/Resources/Images/ThermalZones/EnergyPlus/EnergyPlusLogo.png")}));
 end BuildingSpawnZ6;

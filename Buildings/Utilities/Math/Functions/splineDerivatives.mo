@@ -76,13 +76,8 @@ that can be used as input for evaluating a cubic hermite spline.
 </p>
 <p>
 If <code>ensureMonotonicity=true</code>, then the support points <i>y<sub>i</sub></i>
-<<<<<<< HEAD
-need to be monotonically increasing (or increasing), and the computed derivatives
-<i>d<sub>i</sub></i> are such that the cubic hermite is monotonically increasing (or decreasing).
-=======
 need to be monotone increasing (or decreasing), and the computed derivatives
 <i>d<sub>i</sub></i> are such that the cubic hermite is monotone increasing (or decreasing).
->>>>>>> master
 The algorithm to ensure monotonicity is based on the method described in Fritsch and Carlson (1980) for
 <i>&rho; = &rho;<sub>2</sub></i>.
 </p>

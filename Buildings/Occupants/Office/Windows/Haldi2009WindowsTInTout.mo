@@ -7,14 +7,10 @@ model Haldi2009WindowsTInTout "A model to predict occupants' window behavior wit
   parameter Real ACloseIn = 0.026 "Slope of indoor temp of the logistic relation for the closing probability";
   parameter Real ACloseOut = -0.065 "Slope of outdoor temp of the logistic relation for the closing probability";
   parameter Real BClose = -4.14 "Intercept of the logistic relation for the closing probability";
-<<<<<<< HEAD
-  parameter Integer seed = 10 "Seed for the random number generator";
-=======
   parameter Integer localSeed = 3003
     "Local seed to be used to generate the initial state of the random number generator";
   parameter Integer globalSeed = 30129
     "Global seed to be combined with the local seed";
->>>>>>> master
   parameter Modelica.Units.SI.Time samplePeriod=120 "Sample period";
 
   Modelica.Blocks.Interfaces.RealInput TIn(

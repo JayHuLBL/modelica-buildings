@@ -665,8 +665,6 @@ response shown below should be seen.
 </html>", revisions="<html>
 <ul>
 <li>
-<<<<<<< HEAD
-=======
 April 9, 2024, by Hongxiang Fu:<br/>
 Specified <code>nominalValuesDefineDefaultPressureCurve=true</code>
 in the mover component to suppress a warning.
@@ -674,7 +672,6 @@ This is for
 <a href=\"https://github.com/lbl-srg/modelica-buildings/issues/3819\">#3819</a>.
 </li>
 <li>
->>>>>>> master
 February 15, 2022, by Michael Wetter:<br/>
 Changed block downstream of <code>greThrTRoo</code> from <code>and</code> to <code>or</code> block.
 This ensures that the system is off when the outdoor air or room air is sufficiently warm.

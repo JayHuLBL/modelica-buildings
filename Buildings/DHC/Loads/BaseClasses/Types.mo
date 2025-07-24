@@ -1,8 +1,4 @@
-<<<<<<< HEAD:Buildings/Experimental/DHC/Loads/BaseClasses/Types.mo
-within Buildings.Experimental.DHC.Loads.BaseClasses;
-=======
 within Buildings.DHC.Loads.BaseClasses;
->>>>>>> master:Buildings/DHC/Loads/BaseClasses/Types.mo
 package Types
   "Package with type definitions"
   extends Modelica.Icons.TypesPackage;

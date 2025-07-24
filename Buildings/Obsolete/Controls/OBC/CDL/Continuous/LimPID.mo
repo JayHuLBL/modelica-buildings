@@ -143,30 +143,6 @@ protected
     annotation(Evaluate=true, HideResult=true,
                Placement(transformation(extent={{-40,20},{-20,41}})));
 
-<<<<<<< HEAD
-  Buildings.Controls.OBC.CDL.Continuous.MultiplyByParameter uS_revAct(final k=
-        revAct) "Set point multiplied by reverse action sign"
-    annotation (Placement(transformation(extent={{-200,30},{-180,50}})));
-  Buildings.Controls.OBC.CDL.Continuous.MultiplyByParameter uSetWp(final k=wp)
-    "Set point multiplied by weight for proportional gain"
-    annotation (Placement(transformation(extent={{-160,110},{-140,130}})));
-  Buildings.Controls.OBC.CDL.Continuous.MultiplyByParameter uMea_revAct(final k=
-       revAct) "Set point multiplied by reverse action sign"
-    annotation (Placement(transformation(extent={{-180,-50},{-160,-30}})));
-  Buildings.Controls.OBC.CDL.Continuous.MultiplyByParameter uSetWd(final k=wd)
-    if with_D "Set point multiplied by weight for derivative gain"
-    annotation (Placement(transformation(extent={{-160,60},{-140,80}})));
-
-  Buildings.Controls.OBC.CDL.Continuous.Add addPD
-    "Outputs P and D gains added"
-    annotation (Placement(transformation(extent={{0,104},{20,124}})));
-
-  Buildings.Controls.OBC.CDL.Continuous.MultiplyByParameter gainPID(final k=k)
-    "Multiplier for control gain"
-    annotation (Placement(transformation(extent={{80,80},{100,100}})));
-
-  Buildings.Controls.OBC.CDL.Continuous.Add addPID
-=======
   Buildings.Controls.OBC.CDL.Reals.MultiplyByParameter uS_revAct(final k=
         revAct) "Set point multiplied by reverse action sign"
     annotation (Placement(transformation(extent={{-200,30},{-180,50}})));
@@ -189,24 +165,12 @@ protected
     annotation (Placement(transformation(extent={{80,80},{100,100}})));
 
   Buildings.Controls.OBC.CDL.Reals.Add addPID
->>>>>>> master
     "Outputs P, I and D gains added"
     annotation (Placement(transformation(extent={{40,80},{60,100}})));
 
   Buildings.Obsolete.Controls.OBC.CDL.Continuous.Feedback antWinErr
     if with_I "Error for anti-windup compensation"
     annotation (Placement(transformation(extent={{162,50},{182,70}})));
-<<<<<<< HEAD
-  Buildings.Controls.OBC.CDL.Continuous.MultiplyByParameter antWinGai(k=1/(k*Ni))
-    if with_I "Gain for anti-windup compensation"
-    annotation (Placement(transformation(extent={{180,-30},{160,-10}})));
-
-  Buildings.Controls.OBC.CDL.Continuous.Sources.Constant yResSig(final k=y_reset)
-   if reset == Buildings.Obsolete.Controls.OBC.CDL.Types.Reset.Parameter
-    "Signal for y_reset"
-    annotation (Placement(transformation(extent={{-180,-80},{-160,-60}})));
-  Buildings.Controls.OBC.CDL.Continuous.MultiplyByParameter divK(final k=1/k)
-=======
   Buildings.Controls.OBC.CDL.Reals.MultiplyByParameter antWinGai(k=1/(k*Ni))
     if with_I "Gain for anti-windup compensation"
     annotation (Placement(transformation(extent={{180,-30},{160,-10}})));
@@ -216,7 +180,6 @@ protected
     "Signal for y_reset"
     annotation (Placement(transformation(extent={{-180,-80},{-160,-60}})));
   Buildings.Controls.OBC.CDL.Reals.MultiplyByParameter divK(final k=1/k)
->>>>>>> master
     if reset <> Buildings.Obsolete.Controls.OBC.CDL.Types.Reset.Disabled
     "Division by k for integrator reset"
     annotation (Placement(transformation(extent={{-120,-80},{-100,-60}})));
@@ -237,11 +200,7 @@ protected
     if reset == Buildings.Obsolete.Controls.OBC.CDL.Types.Reset.Disabled
     "No trigger when reset is disabled"
     annotation (Placement(transformation(extent={{-120,-130},{-100,-110}})));
-<<<<<<< HEAD
-  Buildings.Controls.OBC.CDL.Continuous.Sources.Constant zer(final k=0)
-=======
   Buildings.Controls.OBC.CDL.Reals.Sources.Constant zer(final k=0)
->>>>>>> master
  if reset == Buildings.Obsolete.Controls.OBC.CDL.Types.Reset.Disabled
     "Reset input to integrator when the reset is disabled"
     annotation (Placement(transformation(extent={{-100,-50},{-80,-30}})));

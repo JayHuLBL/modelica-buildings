@@ -1,8 +1,4 @@
-<<<<<<< HEAD:Buildings/Experimental/DHC/Loads/BaseClasses/Validation/SimpleRoomODE.mo
-within Buildings.Experimental.DHC.Loads.BaseClasses.Validation;
-=======
 within Buildings.DHC.Loads.BaseClasses.Validation;
->>>>>>> master:Buildings/DHC/Loads/BaseClasses/Validation/SimpleRoomODE.mo
 model SimpleRoomODE
   "Validation of the model SimpleRoomODE"
   extends Modelica.Icons.Example;
@@ -18,11 +14,7 @@ model SimpleRoomODE
     annotation (Dialog(group="Nominal condition"));
   parameter Modelica.Units.SI.Time tau=1800
     "Time constant of the indoor temperature";
-<<<<<<< HEAD:Buildings/Experimental/DHC/Loads/BaseClasses/Validation/SimpleRoomODE.mo
-  Buildings.Experimental.DHC.Loads.BaseClasses.Examples.BaseClasses.GeojsonExportRC.OfficeBuilding.Office romHeaMet
-=======
   Buildings.DHC.Loads.BaseClasses.Examples.BaseClasses.GeojsonExportRC.OfficeBuilding.Office romHeaMet
->>>>>>> master:Buildings/DHC/Loads/BaseClasses/Validation/SimpleRoomODE.mo
     "ROM where the heating load is always met"
     annotation (Placement(transformation(extent={{-10,90},{10,110}})));
   BoundaryConditions.WeatherData.ReaderTMY3 weaDat(
@@ -44,43 +36,25 @@ model SimpleRoomODE
       displayUnit="degC"))
     "Minimum temperature set point"
     annotation (Placement(transformation(extent={{-140,150},{-120,170}})));
-<<<<<<< HEAD:Buildings/Experimental/DHC/Loads/BaseClasses/Validation/SimpleRoomODE.mo
-  Buildings.Controls.OBC.CDL.Continuous.MultiplyByParameter gai(k=
-=======
   Buildings.Controls.OBC.CDL.Reals.MultiplyByParameter gai(k=
->>>>>>> master:Buildings/DHC/Loads/BaseClasses/Validation/SimpleRoomODE.mo
         QHea_flow_nominal) "Scaling"
     annotation (Placement(transformation(extent={{60,110},{80,130}})));
   HeatTransfer.Sources.PrescribedHeatFlow prescribedHeatFlow
     "Prescribed heat flow rate"
     annotation (Placement(transformation(extent={{82,130},{62,150}})));
-<<<<<<< HEAD:Buildings/Experimental/DHC/Loads/BaseClasses/Validation/SimpleRoomODE.mo
-  Buildings.Experimental.DHC.Loads.BaseClasses.Examples.BaseClasses.GeojsonExportRC.OfficeBuilding.Office romHeaUnm
-    "ROM where the heating load is not met"
-    annotation (Placement(transformation(extent={{-10,50},{10,70}})));
-  Buildings.Controls.OBC.CDL.Continuous.MultiplyByParameter gai1(k=0.7)
-=======
   Buildings.DHC.Loads.BaseClasses.Examples.BaseClasses.GeojsonExportRC.OfficeBuilding.Office romHeaUnm
     "ROM where the heating load is not met"
     annotation (Placement(transformation(extent={{-10,50},{10,70}})));
   Buildings.Controls.OBC.CDL.Reals.MultiplyByParameter gai1(k=0.7)
->>>>>>> master:Buildings/DHC/Loads/BaseClasses/Validation/SimpleRoomODE.mo
     "Scaling "
     annotation (Placement(transformation(extent={{92,90},{112,110}})));
   HeatTransfer.Sources.PrescribedHeatFlow prescribedHeatFlow1
     "Prescribed heat flow rate"
     annotation (Placement(transformation(extent={{82,70},{62,90}})));
-<<<<<<< HEAD:Buildings/Experimental/DHC/Loads/BaseClasses/Validation/SimpleRoomODE.mo
-  Buildings.Experimental.DHC.Loads.BaseClasses.SimpleRoomODE rooOdeHea(
-    TOutHea_nominal=273.15,
-    TIndHea_nominal=293.15,
-    QHea_flow_nominal=QHea_flow_nominal,
-=======
   Buildings.DHC.Loads.BaseClasses.SimpleRoomODE rooOdeHea(
     dTEnv_nominal=20,
     TAir_start=293.15,
     QEnv_flow_nominal=QHea_flow_nominal,
->>>>>>> master:Buildings/DHC/Loads/BaseClasses/Validation/SimpleRoomODE.mo
     tau=tau)
     "ODE heated room model"
     annotation (Placement(transformation(extent={{-10,10},{10,30}})));
@@ -96,19 +70,6 @@ model SimpleRoomODE
     reverseActing=false)
     "PI controller tracking the room maximum temperature"
     annotation (Placement(transformation(extent={{30,-110},{50,-90}})));
-<<<<<<< HEAD:Buildings/Experimental/DHC/Loads/BaseClasses/Validation/SimpleRoomODE.mo
-  Buildings.Controls.OBC.CDL.Continuous.MultiplyByParameter gai2(k=
-        QCoo_flow_nominal) "Scaling"
-    annotation (Placement(transformation(extent={{60,-110},{80,-90}})));
-  Buildings.Experimental.DHC.Loads.BaseClasses.SimpleRoomODE rooOdeCoo(
-    TOutHea_nominal=273.15,
-    TIndHea_nominal=293.15,
-    QHea_flow_nominal=QHea_flow_nominal,
-    tau=tau)
-    "ODE cooled room model"
-    annotation (Placement(transformation(extent={{-10,-30},{10,-10}})));
-  Buildings.Controls.OBC.CDL.Continuous.MultiplyByParameter gai3(k=0.8)
-=======
   Buildings.Controls.OBC.CDL.Reals.MultiplyByParameter gai2(k=
         QCoo_flow_nominal) "Scaling"
     annotation (Placement(transformation(extent={{60,-110},{80,-90}})));
@@ -120,7 +81,6 @@ model SimpleRoomODE
     "ODE cooled room model"
     annotation (Placement(transformation(extent={{-10,-30},{10,-10}})));
   Buildings.Controls.OBC.CDL.Reals.MultiplyByParameter gai3(k=0.8)
->>>>>>> master:Buildings/DHC/Loads/BaseClasses/Validation/SimpleRoomODE.mo
     "Scaling"
     annotation (Placement(transformation(extent={{92,-90},{112,-70}})));
   BoundaryConditions.WeatherData.ReaderTMY3 weaDat1(
@@ -132,17 +92,10 @@ model SimpleRoomODE
       "modelica://Buildings/Resources/weatherdata/USA_CA_San.Francisco.Intl.AP.724940_TMY3.mos"))
     "Weather data reader"
     annotation (Placement(transformation(extent={{-140,-110},{-120,-90}})));
-<<<<<<< HEAD:Buildings/Experimental/DHC/Loads/BaseClasses/Validation/SimpleRoomODE.mo
-  Buildings.Experimental.DHC.Loads.BaseClasses.Examples.BaseClasses.GeojsonExportRC.OfficeBuilding.Office romCooMet
-    "ROM where the cooling load is always met"
-    annotation (Placement(transformation(extent={{-10,-130},{10,-110}})));
-  Buildings.Experimental.DHC.Loads.BaseClasses.Examples.BaseClasses.GeojsonExportRC.OfficeBuilding.Office romCooUnm
-=======
   Buildings.DHC.Loads.BaseClasses.Examples.BaseClasses.GeojsonExportRC.OfficeBuilding.Office romCooMet
     "ROM where the cooling load is always met"
     annotation (Placement(transformation(extent={{-10,-130},{10,-110}})));
   Buildings.DHC.Loads.BaseClasses.Examples.BaseClasses.GeojsonExportRC.OfficeBuilding.Office romCooUnm
->>>>>>> master:Buildings/DHC/Loads/BaseClasses/Validation/SimpleRoomODE.mo
     "ROM where the cooling load is not met"
     annotation (Placement(transformation(extent={{-10,-90},{10,-70}})));
   HeatTransfer.Sources.PrescribedHeatFlow prescribedHeatFlow2
@@ -213,15 +166,9 @@ equation
 <html>
 <p>
 This example validates
-<<<<<<< HEAD:Buildings/Experimental/DHC/Loads/BaseClasses/Validation/SimpleRoomODE.mo
-<a href=\"Buildings.Experimental.DHC.Loads.BaseClasses.SimpleRoomODE\">
-Buildings.Experimental.DHC.Loads.BaseClasses.SimpleRoomODE</a> by comparison with
-<a href=\"Buildings.ThermalZones.ReducedOrder.RC.TwoElements\">
-=======
 <a href=\"modelica://Buildings.DHC.Loads.BaseClasses.SimpleRoomODE\">
 Buildings.DHC.Loads.BaseClasses.SimpleRoomODE</a> by comparison with
 <a href=\"modelica://Buildings.ThermalZones.ReducedOrder.RC.TwoElements\">
->>>>>>> master:Buildings/DHC/Loads/BaseClasses/Validation/SimpleRoomODE.mo
 Buildings.ThermalZones.ReducedOrder.RC.TwoElements</a>.
 <p>
 A first instance of the reduced order model is used to assess the heating and
@@ -247,11 +194,7 @@ First implementation.
 </ul>
 </html>"),
     __Dymola_Commands(
-<<<<<<< HEAD:Buildings/Experimental/DHC/Loads/BaseClasses/Validation/SimpleRoomODE.mo
-      file="modelica://Buildings/Resources/Scripts/Dymola/Experimental/DHC/Loads/BaseClasses/Validation/SimpleRoomODE.mos" "Simulate and plot"),
-=======
       file="modelica://Buildings/Resources/Scripts/Dymola/DHC/Loads/BaseClasses/Validation/SimpleRoomODE.mos" "Simulate and plot"),
->>>>>>> master:Buildings/DHC/Loads/BaseClasses/Validation/SimpleRoomODE.mo
     Diagram(
       coordinateSystem(
         extent={{-180,-200},{180,200}})));

@@ -19,11 +19,7 @@ partial model BaseUnbalancedWindTurbine
     tableName=tableName,
     fileName=fileName,
     V_nominal=V_nominal/sqrt(3))
-<<<<<<< HEAD
-             if plugPhase2 "Wind turbine phase 2"
-=======
       if plugPhase2 "Wind turbine phase 2"
->>>>>>> master
     annotation (Placement(transformation(extent={{-20,-10},{-40,10}})));
 
   replaceable OnePhase.Sources.WindTurbine wt_phase3(
@@ -38,11 +34,7 @@ partial model BaseUnbalancedWindTurbine
     tableName=tableName,
     fileName=fileName,
     V_nominal=V_nominal/sqrt(3))
-<<<<<<< HEAD
-             if plugPhase3 "Wind turbine phase 3"
-=======
       if plugPhase3 "Wind turbine phase 3"
->>>>>>> master
     annotation (Placement(transformation(extent={{-20,-60},{-40,-40}})));
 
   replaceable OnePhase.Sources.WindTurbine wt_phase1(
@@ -57,11 +49,7 @@ partial model BaseUnbalancedWindTurbine
     tableName=tableName,
     fileName=fileName,
     V_nominal=V_nominal/sqrt(3))
-<<<<<<< HEAD
-             if plugPhase1 "Wind turbine phase 1"
-=======
       if plugPhase1 "Wind turbine phase 1"
->>>>>>> master
     annotation (Placement(transformation(extent={{-18,40},{-38,60}})));
   Modelica.Blocks.Math.Add3 sumBlock "Sum of th epower generated on each phase"
     annotation (Placement(transformation(extent={{32,50},{52,70}})));

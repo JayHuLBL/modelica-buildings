@@ -1,16 +1,8 @@
-<<<<<<<< HEAD:Buildings/ThermalZones/EnergyPlus_9_6_0/BaseClasses/getUnitAsString.mo
-within Buildings.ThermalZones.EnergyPlus_9_6_0.BaseClasses;
-pure function getUnitAsString
-  "Return the unit enumeration as a string"
-  extends Modelica.Icons.Function;
-  input Buildings.ThermalZones.EnergyPlus_9_6_0.Types.Units unit
-========
 within Buildings.ThermalZones.EnergyPlus_24_2_0.BaseClasses;
 pure function getUnitAsString
   "Return the unit enumeration as a string"
   extends Modelica.Icons.Function;
   input Buildings.ThermalZones.EnergyPlus_24_2_0.Types.Units unit
->>>>>>>> master:Buildings/ThermalZones/EnergyPlus_24_2_0/BaseClasses/getUnitAsString.mo
     "Unit as enumeration value";
   output String unitAsString
     "String representation of the unit";
@@ -54,11 +46,7 @@ algorithm
       info="<html>
 <p>
 Function that returns the string representation of a unit enumeration from
-<<<<<<<< HEAD:Buildings/ThermalZones/EnergyPlus_9_6_0/BaseClasses/getUnitAsString.mo
-<a href=\"modelica://Buildings.ThermalZones.EnergyPlus_9_6_0.Types.Units\">Buildings.ThermalZones.EnergyPlus_9_6_0.Types.Units</a>.
-========
 <a href=\"modelica://Buildings.ThermalZones.EnergyPlus_24_2_0.Types.Units\">Buildings.ThermalZones.EnergyPlus_24_2_0.Types.Units</a>.
->>>>>>>> master:Buildings/ThermalZones/EnergyPlus_24_2_0/BaseClasses/getUnitAsString.mo
 </p>
 </html>",
       revisions="<html>

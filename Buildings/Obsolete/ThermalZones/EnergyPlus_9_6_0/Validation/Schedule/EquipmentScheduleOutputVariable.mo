@@ -1,16 +1,8 @@
-<<<<<<<< HEAD:Buildings/ThermalZones/EnergyPlus_9_6_0/Validation/Schedule/EquipmentScheduleOutputVariable.mo
-within Buildings.ThermalZones.EnergyPlus_9_6_0.Validation.Schedule;
-model EquipmentScheduleOutputVariable
-  "Validation case with a schedule that is not sampled, and output reader of the energy affected by the scheduled value"
-  extends Buildings.ThermalZones.EnergyPlus_9_6_0.Examples.SingleFamilyHouse.EquipmentSchedule;
-  Buildings.ThermalZones.EnergyPlus_9_6_0.OutputVariable equEle(
-========
 within Buildings.Obsolete.ThermalZones.EnergyPlus_9_6_0.Validation.Schedule;
 model EquipmentScheduleOutputVariable
   "Validation case with a schedule that is not sampled, and output reader of the energy affected by the scheduled value"
   extends Buildings.Obsolete.ThermalZones.EnergyPlus_9_6_0.Examples.SingleFamilyHouse.EquipmentSchedule;
   Buildings.Obsolete.ThermalZones.EnergyPlus_9_6_0.OutputVariable equEle(
->>>>>>>> master:Buildings/Obsolete/ThermalZones/EnergyPlus_9_6_0/Validation/Schedule/EquipmentScheduleOutputVariable.mo
     name="Zone Electric Equipment Electricity Rate",
     key="LIVING ZONE",
     isDirectDependent=true,
@@ -22,11 +14,7 @@ model EquipmentScheduleOutputVariable
     message="EnergyPlus did not synchronize the output variable correctly")
     "Assertion to test whether the schedule and the EnergyPlus output variable are correctly synchronized"
     annotation (Placement(transformation(extent={{30,40},{50,60}})));
-<<<<<<<< HEAD:Buildings/ThermalZones/EnergyPlus_9_6_0/Validation/Schedule/EquipmentScheduleOutputVariable.mo
-  Controls.OBC.CDL.Continuous.MultiplyByParameter gai(k=500)
-========
   Buildings.Controls.OBC.CDL.Reals.MultiplyByParameter gai(k=500)
->>>>>>>> master:Buildings/Obsolete/ThermalZones/EnergyPlus_9_6_0/Validation/Schedule/EquipmentScheduleOutputVariable.mo
     "Gain for internal heat gain"
     annotation (Placement(transformation(extent={{-40,34},{-20,54}})));
 
@@ -61,11 +49,7 @@ First implementation.
 </ul>
 </html>"),
     __Dymola_Commands(
-<<<<<<<< HEAD:Buildings/ThermalZones/EnergyPlus_9_6_0/Validation/Schedule/EquipmentScheduleOutputVariable.mo
-      file="modelica://Buildings/Resources/Scripts/Dymola/ThermalZones/EnergyPlus_9_6_0/Validation/Schedule/EquipmentScheduleOutputVariable.mos" "Simulate and plot"),
-========
       file="modelica://Buildings/Resources/Scripts/Dymola/Obsolete/ThermalZones/EnergyPlus_9_6_0/Validation/Schedule/EquipmentScheduleOutputVariable.mos" "Simulate and plot"),
->>>>>>>> master:Buildings/Obsolete/ThermalZones/EnergyPlus_9_6_0/Validation/Schedule/EquipmentScheduleOutputVariable.mo
     experiment(
       StopTime=172800,
       Tolerance=1e-06));

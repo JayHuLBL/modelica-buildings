@@ -34,12 +34,9 @@ block TWetBul_TDryBulPhi
   // Modelica.Math.atan returns a value with unit set to "rad".
   // The following constant is used to satisfy the unit check.
 protected
-<<<<<<< HEAD
-=======
   constant Real uniCon1(final unit="1/rad") = 1 "Constant to satisfy unit check";
   constant Real uniConK(final unit="K/rad") = 1 "Constant to satisfy unit check";
 
->>>>>>> master
   Modelica.Units.NonSI.Temperature_degC TDryBul_degC
     "Dry bulb temperature in degree Celsius";
   Real rh_per(min=0) "Relative humidity in percentage";

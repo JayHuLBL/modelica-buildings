@@ -1,19 +1,10 @@
-<<<<<<< HEAD:Buildings/Experimental/DHC/EnergyTransferStations/Combined/Controls/SideHot.mo
-within Buildings.Experimental.DHC.EnergyTransferStations.Combined.Controls;
-=======
 within Buildings.DHC.ETS.Combined.Controls;
->>>>>>> master:Buildings/DHC/ETS/Combined/Controls/SideHot.mo
 block SideHot
   "Control block for hot side"
 
   parameter Integer nSouAmb=1
     "Number of ambient sources to control"
     annotation (Evaluate=true);
-<<<<<<< HEAD:Buildings/Experimental/DHC/EnergyTransferStations/Combined/Controls/SideHot.mo
-  parameter Modelica.Units.SI.TemperatureDifference dTDea(min=0) = 1
-    "Temperature difference band between set point tracking and heat rejection (absolute value)";
-  parameter Modelica.Units.SI.TemperatureDifference dTLoc(min=0) = dTDea + 2
-=======
   parameter Real dTDea(
     final min=0,
     final quantity="TemperatureDifference",
@@ -23,7 +14,6 @@ block SideHot
     final min=0,
     final quantity="TemperatureDifference",
     final unit="K") = dTDea + 2
->>>>>>> master:Buildings/DHC/ETS/Combined/Controls/SideHot.mo
     "Temperature difference between set point tracking and cold rejection lockout (absolute value)";
   parameter Buildings.Controls.OBC.CDL.Types.SimpleController controllerType=Buildings.Controls.OBC.CDL.Types.SimpleController.PI
     "Type of controller"
@@ -32,13 +22,6 @@ block SideHot
   parameter Real k(
     min=0)=0.1
     "Gain of controller";
-<<<<<<< HEAD:Buildings/Experimental/DHC/EnergyTransferStations/Combined/Controls/SideHot.mo
-  parameter Modelica.Units.SI.Time Ti(min=Buildings.Controls.OBC.CDL.Constants.small)=
-       120 "Time constant of integrator block" annotation (Dialog(enable=
-          controllerType == Buildings.Controls.OBC.CDL.Types.SimpleController.PI
-           or controllerType == Buildings.Controls.OBC.CDL.Types.SimpleController.PID));
-  PIDWithEnable conColRej(
-=======
   parameter Real Ti(
     final min=Buildings.Controls.OBC.CDL.Constants.small,
     final quantity="Time",
@@ -94,7 +77,6 @@ block SideHot
         iconTransformation(extent={{100,-60},{140,-20}})));
 
   Buildings.DHC.ETS.Combined.Controls.PIDWithEnable conColRej(
->>>>>>> master:Buildings/DHC/ETS/Combined/Controls/SideHot.mo
     final k=k,
     final Ti=Ti,
     final controllerType=Buildings.Controls.OBC.CDL.Types.SimpleController.PI,
@@ -156,22 +138,11 @@ block SideHot
   Buildings.Controls.OBC.CDL.Logical.MultiAnd mulAnd(
     nin=3)
     annotation (Placement(transformation(extent={{-40,-90},{-20,-70}})));
-<<<<<<< HEAD:Buildings/Experimental/DHC/EnergyTransferStations/Combined/Controls/SideHot.mo
-  Buildings.Controls.OBC.CDL.Continuous.AddParameter addDea(
-    p=dTDea)
-    "Add dead band"
-    annotation (Placement(transformation(extent={{-130,-10},{-110,10}})));
-  Modelica.Blocks.Discrete.ZeroOrderHold zeroOrderHold(
-    samplePeriod=60)
-    annotation (Placement(transformation(extent={{120,-10},{140,10}})));
-  Buildings.Controls.OBC.CDL.Continuous.AddParameter addLoc(
-=======
   Buildings.Controls.OBC.CDL.Reals.AddParameter addDea(
     p=dTDea)
     "Add dead band"
     annotation (Placement(transformation(extent={{-130,-10},{-110,10}})));
   Buildings.Controls.OBC.CDL.Reals.AddParameter addLoc(
->>>>>>> master:Buildings/DHC/ETS/Combined/Controls/SideHot.mo
     p=dTLoc)
     "Add temperature difference for lockout"
     annotation (Placement(transformation(extent={{-130,30},{-110,50}})));
@@ -282,13 +253,8 @@ First implementation.
       info="<html>
 <p>
 This block serves as the controller for the hot side of the ETS in
-<<<<<<< HEAD:Buildings/Experimental/DHC/EnergyTransferStations/Combined/Controls/SideHot.mo
-<a href=\"modelica://Buildings.Experimental.DHC.EnergyTransferStations.Combined.Controls.Supervisory\">
-Buildings.Experimental.DHC.EnergyTransferStations.Combined.Controls.Supervisory</a>.
-=======
 <a href=\"modelica://Buildings.DHC.ETS.Combined.Controls.Supervisory\">
 Buildings.DHC.ETS.Combined.Controls.Supervisory</a>.
->>>>>>> master:Buildings/DHC/ETS/Combined/Controls/SideHot.mo
 It computes the following control signals.
 </p>
 <ul>
@@ -331,13 +297,8 @@ When enabled, the controller maintains the temperature at the top of the
 heating water tank at the heating water supply temperature set point.
 The controller yields a signal between <code>0</code> and <code>nSouAmb+1</code>
 which is connected to
-<<<<<<< HEAD:Buildings/Experimental/DHC/EnergyTransferStations/Combined/Controls/SideHot.mo
-<a href=\"modelica://Buildings.Experimental.DHC.EnergyTransferStations.Combined.Controls.SideCold\">
-Buildings.Experimental.DHC.EnergyTransferStations.Combined.Controls.SideCold</a>
-=======
 <a href=\"modelica://Buildings.DHC.ETS.Combined.Controls.SideCold\">
 Buildings.DHC.ETS.Combined.Controls.SideCold</a>
->>>>>>> master:Buildings/DHC/ETS/Combined/Controls/SideHot.mo
 where it is used to control in sequence the systems serving as ambient sources
 and ultimately to reset down the chilled water supply temperature.
 </li>

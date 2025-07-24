@@ -13,15 +13,6 @@ model OperationMode "Validate block for selecting operation mode"
   Buildings.Controls.OBC.CDL.Reals.Sin sin1
     "Block that outputs the sine of the input"
     annotation (Placement(transformation(extent={{-110,40},{-90,60}})));
-<<<<<<< HEAD
-  Buildings.Controls.OBC.CDL.Continuous.AddParameter zonTem(
-    final p=295.65) "Zone temperarure"
-    annotation (Placement(transformation(extent={{-50,40},{-30,60}})));
-  Buildings.Controls.OBC.CDL.Continuous.MultiplyByParameter gai(
-    final k=14.5) "Gain factor"
-    annotation (Placement(transformation(extent={{-80,40},{-60,60}})));
-  Buildings.Controls.OBC.CDL.Continuous.Sources.Constant TZonHeaSetUno(
-=======
   Buildings.Controls.OBC.CDL.Reals.AddParameter zonTem(
     final p=295.65) "Zone temperarure"
     annotation (Placement(transformation(extent={{-50,40},{-30,60}})));
@@ -29,7 +20,6 @@ model OperationMode "Validate block for selecting operation mode"
     final k=14.5) "Gain factor"
     annotation (Placement(transformation(extent={{-80,40},{-60,60}})));
   Buildings.Controls.OBC.CDL.Reals.Sources.Constant TZonHeaSetUno(
->>>>>>> master
     final k=285.15)  "Unoccupied heating setpoint"
     annotation (Placement(transformation(extent={{-100,-40},{-80,-20}})));
   Buildings.Controls.OBC.CDL.Reals.Sources.Constant TZonCooSetUno(
@@ -68,11 +58,7 @@ model OperationMode "Validate block for selecting operation mode"
     annotation (Placement(transformation(extent={{40,-110},{60,-90}})));
   Buildings.Controls.SetPoints.OccupancySchedule occSch "Occupancy schedule"
     annotation (Placement(transformation(extent={{-100,140},{-80,160}})));
-<<<<<<< HEAD
-  Buildings.Controls.OBC.CDL.Continuous.Subtract sub3
-=======
   Buildings.Controls.OBC.CDL.Reals.Subtract sub3
->>>>>>> master
     "Calculate zone temperature difference to unoccupied heating setpoint"
     annotation (Placement(transformation(extent={{0,-70},{20,-50}})));
   Buildings.Controls.OBC.CDL.Reals.Hysteresis hys3(
@@ -80,11 +66,7 @@ model OperationMode "Validate block for selecting operation mode"
     final uHigh=0.5)
     "Hysteresis that outputs if the zone temperature is higher than its unoccupied heating setpoint by a given limit"
     annotation (Placement(transformation(extent={{40,-70},{60,-50}})));
-<<<<<<< HEAD
-  Buildings.Controls.OBC.CDL.Continuous.Subtract sub1
-=======
   Buildings.Controls.OBC.CDL.Reals.Subtract sub1
->>>>>>> master
     "Calculate zone temperature difference to unoccupied cooling setpoint"
     annotation (Placement(transformation(extent={{0,-150},{20,-130}})));
   Buildings.Controls.OBC.CDL.Reals.Hysteresis hys1(

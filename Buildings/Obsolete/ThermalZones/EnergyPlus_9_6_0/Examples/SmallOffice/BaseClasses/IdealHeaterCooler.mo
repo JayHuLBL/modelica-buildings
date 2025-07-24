@@ -1,8 +1,4 @@
-<<<<<<<< HEAD:Buildings/ThermalZones/EnergyPlus_9_6_0/Examples/SmallOffice/BaseClasses/IdealHeaterCooler.mo
-within Buildings.ThermalZones.EnergyPlus_9_6_0.Examples.SmallOffice.BaseClasses;
-========
 within Buildings.Obsolete.ThermalZones.EnergyPlus_9_6_0.Examples.SmallOffice.BaseClasses;
->>>>>>>> master:Buildings/Obsolete/ThermalZones/EnergyPlus_9_6_0/Examples/SmallOffice/BaseClasses/IdealHeaterCooler.mo
 model IdealHeaterCooler
   "Model of ideal heater or cooler"
   extends Modelica.Blocks.Icons.Block;
@@ -52,11 +48,7 @@ model IdealHeaterCooler
     annotation (Placement(transformation(extent={{-10,-10},{10,10}})));
 
 protected
-<<<<<<<< HEAD:Buildings/ThermalZones/EnergyPlus_9_6_0/Examples/SmallOffice/BaseClasses/IdealHeaterCooler.mo
-  Buildings.Controls.OBC.CDL.Continuous.MultiplyByParameter gai(
-========
   Buildings.Controls.OBC.CDL.Reals.MultiplyByParameter gai(
->>>>>>>> master:Buildings/Obsolete/ThermalZones/EnergyPlus_9_6_0/Examples/SmallOffice/BaseClasses/IdealHeaterCooler.mo
     final k=Q_flow_nominal) "Gain for heat flow rate"
     annotation (Placement(transformation(extent={{20,-10},{40,10}})));
 
@@ -84,13 +76,8 @@ The heater or cooler has a PID controller that regulates the heat added or remov
 <p>
 To use this model, connect its heat port to the heat port of an air volume, for example,
 the heat port <code>heaPorAir</code> of
-<<<<<<<< HEAD:Buildings/ThermalZones/EnergyPlus_9_6_0/Examples/SmallOffice/BaseClasses/IdealHeaterCooler.mo
-<a href=\"modelica://Buildings.ThermalZones.EnergyPlus_9_6_0.ThermalZone\">
-Buildings.ThermalZones.EnergyPlus_9_6_0.ThermalZone</a>.
-========
 <a href=\"modelica://Buildings.Obsolete.ThermalZones.EnergyPlus_9_6_0.ThermalZone\">
 Buildings.Obsolete.ThermalZones.EnergyPlus_9_6_0.ThermalZone</a>.
->>>>>>>> master:Buildings/Obsolete/ThermalZones/EnergyPlus_9_6_0/Examples/SmallOffice/BaseClasses/IdealHeaterCooler.mo
 </p>
 <p>
 Note that this model can only provide sensible cooling, but no latent cooling.

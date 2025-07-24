@@ -1,18 +1,10 @@
-<<<<<<< HEAD:Buildings/Experimental/DHC/Loads/BaseClasses/Examples/CouplingSpawnZ1.mo
-within Buildings.Experimental.DHC.Loads.BaseClasses.Examples;
-=======
 within Buildings.DHC.Loads.BaseClasses.Examples;
->>>>>>> master:Buildings/DHC/Loads/BaseClasses/Examples/CouplingSpawnZ1.mo
 model CouplingSpawnZ1
   "Example illustrating the coupling of a building model to heating water and chilled water loops"
   extends Modelica.Icons.Example;
   package Medium1=Buildings.Media.Water
     "Source side medium";
-<<<<<<< HEAD:Buildings/Experimental/DHC/Loads/BaseClasses/Examples/CouplingSpawnZ1.mo
-  Buildings.Experimental.DHC.Loads.BaseClasses.Examples.BaseClasses.BuildingSpawnZ1 bui(
-=======
   Buildings.DHC.Loads.BaseClasses.BuildingSpawnZ1 bui(
->>>>>>> master:Buildings/DHC/Loads/BaseClasses/Examples/CouplingSpawnZ1.mo
     nPorts_aHeaWat=1,
     nPorts_aChiWat=1,
     nPorts_bHeaWat=1,
@@ -89,13 +81,8 @@ Buildings.DHC.Loads.BaseClasses.PartialBuilding</a>,
 <a href=\"modelica://Buildings.DHC.Loads.BaseClasses.PartialTerminalUnit\">
 Buildings.DHC.Loads.BaseClasses.PartialTerminalUnit</a>
 and
-<<<<<<< HEAD:Buildings/Experimental/DHC/Loads/BaseClasses/Examples/CouplingSpawnZ1.mo
-<a href=\"modelica://Buildings.Experimental.DHC.Loads.BaseClasses.FlowDistribution\">
-Buildings.Experimental.DHC.Loads.BaseClasses.FlowDistribution</a>
-=======
 <a href=\"modelica://Buildings.DHC.Loads.BaseClasses.FlowDistribution\">
 Buildings.DHC.Loads.BaseClasses.FlowDistribution</a>
->>>>>>> master:Buildings/DHC/Loads/BaseClasses/Examples/CouplingSpawnZ1.mo
 in a configuration with
 </p>
 <ul>
@@ -120,9 +107,5 @@ First implementation.
         preserveAspectRatio=false,
         extent={{-100,-140},{160,80}})),
     __Dymola_Commands(
-<<<<<<< HEAD:Buildings/Experimental/DHC/Loads/BaseClasses/Examples/CouplingSpawnZ1.mo
-      file="modelica://Buildings/Resources/Scripts/Dymola/Experimental/DHC/Loads/BaseClasses/Examples/CouplingSpawnZ1.mos" "Simulate and plot"));
-=======
       file="modelica://Buildings/Resources/Scripts/Dymola/DHC/Loads/BaseClasses/Examples/CouplingSpawnZ1.mos" "Simulate and plot"));
->>>>>>> master:Buildings/DHC/Loads/BaseClasses/Examples/CouplingSpawnZ1.mo
 end CouplingSpawnZ1;

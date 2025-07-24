@@ -1,8 +1,4 @@
-<<<<<<< HEAD:Buildings/Experimental/DHC/Loads/BaseClasses/Examples/CouplingRCZ6.mo
-within Buildings.Experimental.DHC.Loads.BaseClasses.Examples;
-=======
 within Buildings.DHC.Loads.BaseClasses.Examples;
->>>>>>> master:Buildings/DHC/Loads/BaseClasses/Examples/CouplingRCZ6.mo
 model CouplingRCZ6
   "Example illustrating the coupling of a building model to heating water and chilled water loops"
   extends Modelica.Icons.Example;
@@ -15,11 +11,7 @@ model CouplingRCZ6
       "modelica://Buildings/Resources/weatherdata/USA_CA_San.Francisco.Intl.AP.724940_TMY3.mos"))
     "Weather data reader"
     annotation (Placement(transformation(extent={{60,20},{40,40}})));
-<<<<<<< HEAD:Buildings/Experimental/DHC/Loads/BaseClasses/Examples/CouplingRCZ6.mo
-  Buildings.Experimental.DHC.Loads.BaseClasses.Examples.BaseClasses.BuildingRCZ6 bui(
-=======
   Buildings.DHC.Loads.BaseClasses.BuildingRCZ6 bui(
->>>>>>> master:Buildings/DHC/Loads/BaseClasses/Examples/CouplingRCZ6.mo
     nPorts_aHeaWat=1,
     nPorts_aChiWat=1,
     nPorts_bHeaWat=1,
@@ -83,13 +75,8 @@ Buildings.DHC.Loads.BaseClasses.PartialBuilding</a>,
 <a href=\"modelica://Buildings.DHC.Loads.BaseClasses.PartialTerminalUnit\">
 Buildings.DHC.Loads.BaseClasses.PartialTerminalUnit</a>
 and
-<<<<<<< HEAD:Buildings/Experimental/DHC/Loads/BaseClasses/Examples/CouplingRCZ6.mo
-<a href=\"modelica://Buildings.Experimental.DHC.Loads.BaseClasses.FlowDistribution\">
-Buildings.Experimental.DHC.Loads.BaseClasses.FlowDistribution</a>
-=======
 <a href=\"modelica://Buildings.DHC.Loads.BaseClasses.FlowDistribution\">
 Buildings.DHC.Loads.BaseClasses.FlowDistribution</a>
->>>>>>> master:Buildings/DHC/Loads/BaseClasses/Examples/CouplingRCZ6.mo
 in a configuration with
 </p>
 <ul>
@@ -115,11 +102,7 @@ First implementation.
         preserveAspectRatio=false,
         extent={{-120,-100},{160,60}})),
     __Dymola_Commands(
-<<<<<<< HEAD:Buildings/Experimental/DHC/Loads/BaseClasses/Examples/CouplingRCZ6.mo
-      file="modelica://Buildings/Resources/Scripts/Dymola/Experimental/DHC/Loads/BaseClasses/Examples/CouplingRCZ6.mos" "Simulate and plot"),
-=======
       file="modelica://Buildings/Resources/Scripts/Dymola/DHC/Loads/BaseClasses/Examples/CouplingRCZ6.mos" "Simulate and plot"),
->>>>>>> master:Buildings/DHC/Loads/BaseClasses/Examples/CouplingRCZ6.mo
     experiment(
       StopTime=604800,
       Tolerance=1e-06));

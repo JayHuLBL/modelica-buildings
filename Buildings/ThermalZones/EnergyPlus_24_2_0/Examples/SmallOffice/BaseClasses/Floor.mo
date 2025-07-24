@@ -1,8 +1,4 @@
-<<<<<<<< HEAD:Buildings/ThermalZones/EnergyPlus_9_6_0/Examples/SmallOffice/BaseClasses/Floor.mo
-within Buildings.ThermalZones.EnergyPlus_9_6_0.Examples.SmallOffice.BaseClasses;
-========
 within Buildings.ThermalZones.EnergyPlus_24_2_0.Examples.SmallOffice.BaseClasses;
->>>>>>>> master:Buildings/ThermalZones/EnergyPlus_24_2_0/Examples/SmallOffice/BaseClasses/Floor.mo
 model Floor
   "Model of a floor of the building"
   extends Buildings.Examples.VAVReheat.BaseClasses.PartialFloor(
@@ -55,61 +51,37 @@ model Floor
   Modelica.Units.SI.Temperature TAirNor=nor.TAir "Air temperature north zone";
   Modelica.Units.SI.Temperature TAirEas=eas.TAir "Air temperature east zone";
   Modelica.Units.SI.Temperature TAirWes=wes.TAir "Air temperature west zone";
-<<<<<<<< HEAD:Buildings/ThermalZones/EnergyPlus_9_6_0/Examples/SmallOffice/BaseClasses/Floor.mo
-  Buildings.ThermalZones.EnergyPlus_9_6_0.ThermalZone sou(
-========
   Buildings.ThermalZones.EnergyPlus_24_2_0.ThermalZone sou(
->>>>>>>> master:Buildings/ThermalZones/EnergyPlus_24_2_0/Examples/SmallOffice/BaseClasses/Floor.mo
     redeclare package Medium=Medium,
     nPorts=5,
     zoneName="Perimeter_ZN_1")
     "South zone"
     annotation (Placement(transformation(extent={{144,-44},{184,-4}})));
-<<<<<<<< HEAD:Buildings/ThermalZones/EnergyPlus_9_6_0/Examples/SmallOffice/BaseClasses/Floor.mo
-  Buildings.ThermalZones.EnergyPlus_9_6_0.ThermalZone eas(
-========
   Buildings.ThermalZones.EnergyPlus_24_2_0.ThermalZone eas(
->>>>>>>> master:Buildings/ThermalZones/EnergyPlus_24_2_0/Examples/SmallOffice/BaseClasses/Floor.mo
     redeclare package Medium=Medium,
     nPorts=5,
     zoneName="Perimeter_ZN_2")
     "East zone"
     annotation (Placement(transformation(extent={{300,68},{340,108}})));
-<<<<<<<< HEAD:Buildings/ThermalZones/EnergyPlus_9_6_0/Examples/SmallOffice/BaseClasses/Floor.mo
-  Buildings.ThermalZones.EnergyPlus_9_6_0.ThermalZone nor(
-========
   Buildings.ThermalZones.EnergyPlus_24_2_0.ThermalZone nor(
->>>>>>>> master:Buildings/ThermalZones/EnergyPlus_24_2_0/Examples/SmallOffice/BaseClasses/Floor.mo
     redeclare package Medium=Medium,
     nPorts=5,
     zoneName="Perimeter_ZN_3")
     "North zone"
     annotation (Placement(transformation(extent={{144,116},{184,156}})));
-<<<<<<<< HEAD:Buildings/ThermalZones/EnergyPlus_9_6_0/Examples/SmallOffice/BaseClasses/Floor.mo
-  Buildings.ThermalZones.EnergyPlus_9_6_0.ThermalZone wes(
-========
   Buildings.ThermalZones.EnergyPlus_24_2_0.ThermalZone wes(
->>>>>>>> master:Buildings/ThermalZones/EnergyPlus_24_2_0/Examples/SmallOffice/BaseClasses/Floor.mo
     redeclare package Medium=Medium,
     nPorts=5,
     zoneName="Perimeter_ZN_4")
     "West zone"
     annotation (Placement(transformation(extent={{12,58},{52,98}})));
-<<<<<<<< HEAD:Buildings/ThermalZones/EnergyPlus_9_6_0/Examples/SmallOffice/BaseClasses/Floor.mo
-  Buildings.ThermalZones.EnergyPlus_9_6_0.ThermalZone cor(
-========
   Buildings.ThermalZones.EnergyPlus_24_2_0.ThermalZone cor(
->>>>>>>> master:Buildings/ThermalZones/EnergyPlus_24_2_0/Examples/SmallOffice/BaseClasses/Floor.mo
     redeclare package Medium=Medium,
     nPorts=11,
     zoneName="Core_ZN")
     "Core zone"
     annotation (Placement(transformation(extent={{144,60},{184,100}})));
-<<<<<<<< HEAD:Buildings/ThermalZones/EnergyPlus_9_6_0/Examples/SmallOffice/BaseClasses/Floor.mo
-  Buildings.ThermalZones.EnergyPlus_9_6_0.ThermalZone att(
-========
   Buildings.ThermalZones.EnergyPlus_24_2_0.ThermalZone att(
->>>>>>>> master:Buildings/ThermalZones/EnergyPlus_24_2_0/Examples/SmallOffice/BaseClasses/Floor.mo
     redeclare package Medium=Medium,
     zoneName="Attic",
     T_start=275.15)
@@ -117,11 +89,7 @@ model Floor
     annotation (Placement(transformation(extent={{300,-60},{340,-20}})));
 
   parameter String idfName=Modelica.Utilities.Files.loadResource(
-<<<<<<<< HEAD:Buildings/ThermalZones/EnergyPlus_9_6_0/Examples/SmallOffice/BaseClasses/Floor.mo
-    "modelica://Buildings/Resources/Data/ThermalZones/EnergyPlus_9_6_0/Examples/RefBldgSmallOffice/RefBldgSmallOfficeNew2004_Chicago.idf")
-========
     "modelica://Buildings/Resources/Data/ThermalZones/EnergyPlus_24_2_0/Examples/RefBldgSmallOffice/RefBldgSmallOfficeNew2004_Chicago.idf")
->>>>>>>> master:Buildings/ThermalZones/EnergyPlus_24_2_0/Examples/SmallOffice/BaseClasses/Floor.mo
     "Name of the IDF file";
   parameter String epwName=Modelica.Utilities.Files.loadResource(
     "modelica://Buildings/Resources/weatherdata/USA_IL_Chicago-OHare.Intl.AP.725300_TMY3.epw")
@@ -131,11 +99,7 @@ model Floor
     "Name of the weather file";
 
 protected
-<<<<<<<< HEAD:Buildings/ThermalZones/EnergyPlus_9_6_0/Examples/SmallOffice/BaseClasses/Floor.mo
-  inner Buildings.ThermalZones.EnergyPlus_9_6_0.Building building(
-========
   inner Buildings.ThermalZones.EnergyPlus_24_2_0.Building building(
->>>>>>>> master:Buildings/ThermalZones/EnergyPlus_24_2_0/Examples/SmallOffice/BaseClasses/Floor.mo
     idfName=idfName,
     epwName=epwName,
     weaName=weaName,
@@ -438,13 +402,8 @@ the instances of
 Buildings.Airflow.Multizone.DoorOpen</a> are made smaller.
 Their length has been reduced proportionally
 to the difference in length of the walls of the core zone of the two buildings.
-<<<<<<<< HEAD:Buildings/ThermalZones/EnergyPlus_9_6_0/Examples/SmallOffice/BaseClasses/Floor.mo
-See also <a href=\"modelica://Buildings.ThermalZones.EnergyPlus_9_6_0.Examples.SmallOffice\">
-Buildings.ThermalZones.EnergyPlus_9_6_0.Examples.SmallOffice</a>
-========
 See also <a href=\"modelica://Buildings.ThermalZones.EnergyPlus_24_2_0.Examples.SmallOffice\">
 Buildings.ThermalZones.EnergyPlus_24_2_0.Examples.SmallOffice</a>
->>>>>>>> master:Buildings/ThermalZones/EnergyPlus_24_2_0/Examples/SmallOffice/BaseClasses/Floor.mo
 for a description of the differences in these buildings.
 </p>
 <h4>References</h4>
@@ -459,13 +418,10 @@ Renewable Energy, Office of Building Technologies, Washington, DC, 2009.
       revisions="<html>
 <ul>
 <li>
-<<<<<<<< HEAD:Buildings/ThermalZones/EnergyPlus_9_6_0/Examples/SmallOffice/BaseClasses/Floor.mo
-========
 March 23, 2024, by Michael Wetter:<br/>
 Corrected wrong annotation.
 </li>
 <li>
->>>>>>>> master:Buildings/ThermalZones/EnergyPlus_24_2_0/Examples/SmallOffice/BaseClasses/Floor.mo
 February 16, 2022, by Michael Wetter:<br/>
 Removed assertion on <code>opeWesCor.wOpe</code> as there is no need to enforce this width.
 </li>

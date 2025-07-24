@@ -3,21 +3,6 @@ model GetPeakLoad
   "Model that validates the getPeakLoad function"
   extends Modelica.Icons.Example;
   parameter Modelica.Units.SI.HeatFlowRate QCoo_flow=
-<<<<<<< HEAD:Buildings/Experimental/DHC/Loads/BaseClasses/Validation/GetPeakLoad.mo
-      Buildings.Experimental.DHC.Loads.BaseClasses.getPeakLoad(string=
-      "#Peak space cooling load", filNam=Modelica.Utilities.Files.loadResource(
-      "modelica://Buildings/Resources/Data/Experimental/DHC/Loads/BaseClasses/Validation/RefBldgLargeOfficeNew2004_7.1_5.0_3C_USA_CA_SAN_FRANCISCO.mos"))
-    "Peak heat flow rate";
-  parameter Modelica.Units.SI.HeatFlowRate QHea_flow=
-      Buildings.Experimental.DHC.Loads.BaseClasses.getPeakLoad(string=
-      "#Peak space heating load", filNam=Modelica.Utilities.Files.loadResource(
-      "modelica://Buildings/Resources/Data/Experimental/DHC/Loads/BaseClasses/Validation/RefBldgLargeOfficeNew2004_7.1_5.0_3C_USA_CA_SAN_FRANCISCO.mos"))
-    "Peak heat flow rate";
-  parameter Modelica.Units.SI.HeatFlowRate QWatHea_flow=
-      Buildings.Experimental.DHC.Loads.BaseClasses.getPeakLoad(string=
-      "#Peak water heating load", filNam=Modelica.Utilities.Files.loadResource(
-      "modelica://Buildings/Resources/Data/Experimental/DHC/Loads/BaseClasses/Validation/RefBldgLargeOfficeNew2004_7.1_5.0_3C_USA_CA_SAN_FRANCISCO.mos"))
-=======
       Buildings.DHC.Loads.BaseClasses.getPeakLoad(string=
       "#Peak space cooling load", filNam=Modelica.Utilities.Files.loadResource(
       "modelica://Buildings/Resources/Data/DHC/Loads/BaseClasses/Validation/RefBldgLargeOfficeNew2004_7.1_5.0_3C_USA_CA_SAN_FRANCISCO.mos"))
@@ -31,7 +16,6 @@ model GetPeakLoad
       Buildings.DHC.Loads.BaseClasses.getPeakLoad(string=
       "#Peak water heating load", filNam=Modelica.Utilities.Files.loadResource(
       "modelica://Buildings/Resources/Data/DHC/Loads/BaseClasses/Validation/RefBldgLargeOfficeNew2004_7.1_5.0_3C_USA_CA_SAN_FRANCISCO.mos"))
->>>>>>> master:Buildings/DHC/Loads/BaseClasses/Validation/GetPeakLoad.mo
     "Peak water heating flow rate";
 equation
   assert(

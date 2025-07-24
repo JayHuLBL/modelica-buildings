@@ -645,6 +645,7 @@ equation
           {-20,-228},{-20,-248},{-2,-248}}, color={255,0,255}));
 
     annotation (__cdl(ValueInReference=false),
+                __cdl(ValueInReference=false),
             defaultComponentName="relFanGroCon",
  Icon(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,100}}),
                          graphics={

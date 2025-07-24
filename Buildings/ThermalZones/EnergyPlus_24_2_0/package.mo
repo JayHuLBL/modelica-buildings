@@ -1,9 +1,5 @@
 within Buildings.ThermalZones;
-<<<<<<<< HEAD:Buildings/ThermalZones/EnergyPlus_9_6_0/package.mo
-package EnergyPlus_9_6_0 "Package with models to connect to EnergyPlus"
-========
 package EnergyPlus_24_2_0 "Package with models to connect to EnergyPlus"
->>>>>>>> master:Buildings/ThermalZones/EnergyPlus_24_2_0/package.mo
   extends Modelica.Icons.Package;
 
   annotation (
@@ -30,18 +26,9 @@ models, and the coupling and co-simulation is done automatically based on these 
 Models are provided to connect to EnergyPlus thermal zones, actuators, output variables and schedules.
 </p>
 <p>
-<<<<<<<< HEAD:Buildings/ThermalZones/EnergyPlus_9_6_0/package.mo
-See <a href=\"modelica://Buildings.ThermalZones.EnergyPlus_9_6_0.UsersGuide\">
-Buildings.ThermalZones.EnergyPlus_9_6_0.UsersGuide</a>
-for more information.
-</p>
-</html>"));
-end EnergyPlus_9_6_0;
-========
 See <a href=\"modelica://Buildings.ThermalZones.EnergyPlus_24_2_0.UsersGuide\">
 Buildings.ThermalZones.EnergyPlus_24_2_0.UsersGuide</a>
 for more information.
 </p>
 </html>"));
 end EnergyPlus_24_2_0;
->>>>>>>> master:Buildings/ThermalZones/EnergyPlus_24_2_0/package.mo

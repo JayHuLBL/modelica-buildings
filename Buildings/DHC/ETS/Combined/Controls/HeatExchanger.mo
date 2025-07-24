@@ -1,8 +1,4 @@
-<<<<<<< HEAD:Buildings/Experimental/DHC/EnergyTransferStations/Combined/Controls/HeatExchanger.mo
-within Buildings.Experimental.DHC.EnergyTransferStations.Combined.Controls;
-=======
 within Buildings.DHC.ETS.Combined.Controls;
->>>>>>> master:Buildings/DHC/ETS/Combined/Controls/HeatExchanger.mo
 model HeatExchanger
   "District heat exchanger controller"
 
@@ -40,11 +36,7 @@ model HeatExchanger
   Buildings.Controls.OBC.CDL.Reals.Max max1
     "Maximum between control signal and minimum speed or opening"
     annotation (Placement(transformation(extent={{90,-70},{110,-50}})));
-<<<<<<< HEAD:Buildings/Experimental/DHC/EnergyTransferStations/Combined/Controls/HeatExchanger.mo
-  Buildings.Controls.OBC.CDL.Continuous.Switch swiOff1
-=======
   Buildings.Controls.OBC.CDL.Reals.Switch swiOff1
->>>>>>> master:Buildings/DHC/ETS/Combined/Controls/HeatExchanger.mo
     "Output zero if not enabled"
     annotation (Placement(transformation(extent={{160,-70},{180,-50}})));
   Buildings.Controls.OBC.CDL.Reals.Sources.Constant min1(
@@ -80,11 +72,7 @@ model HeatExchanger
     final k=spePum2Min)
     "Minimum pump speed"
     annotation (Placement(transformation(extent={{-10,70},{10,90}})));
-<<<<<<< HEAD:Buildings/Experimental/DHC/EnergyTransferStations/Combined/Controls/HeatExchanger.mo
-  Buildings.Controls.OBC.CDL.Continuous.Switch swiOff2
-=======
   Buildings.Controls.OBC.CDL.Reals.Switch swiOff2
->>>>>>> master:Buildings/DHC/ETS/Combined/Controls/HeatExchanger.mo
     "Output zero if not enabled"
     annotation (Placement(transformation(extent={{160,50},{180,70}})));
   Buildings.Controls.OBC.CDL.Reals.Line mapSpe
@@ -199,13 +187,8 @@ which realizes the interface between the building system and the district system
 </p>
 <p>
 The input signal <code>u</code> is yielded by the supervisory controller, see
-<<<<<<< HEAD:Buildings/Experimental/DHC/EnergyTransferStations/Combined/Controls/HeatExchanger.mo
-<a href=\"modelica://Buildings.Experimental.DHC.EnergyTransferStations.Combined.Controls.Supervisory\">
-Buildings.Experimental.DHC.EnergyTransferStations.Combined.Controls.Supervisory</a>.
-=======
 <a href=\"modelica://Buildings.DHC.ETS.Combined.Controls.Supervisory\">
 Buildings.DHC.ETS.Combined.Controls.Supervisory</a>.
->>>>>>> master:Buildings/DHC/ETS/Combined/Controls/HeatExchanger.mo
 The primary and secondary circuits are enabled to operate if this input signal
 is greater than zero and the return position of at least one isolation valve
 is greater than 90%.

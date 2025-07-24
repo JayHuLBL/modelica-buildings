@@ -1,14 +1,7 @@
-<<<<<<< HEAD:Buildings/Experimental/DHC/EnergyTransferStations/Combined/Examples/ChillerOnly.mo
-within Buildings.Experimental.DHC.EnergyTransferStations.Combined.Examples;
-model ChillerOnly
-  "Example of the ETS model with heat recovery chiller"
-  extends Buildings.Experimental.DHC.EnergyTransferStations.Combined.Validation.BaseClasses.PartialChillerBorefield(
-=======
 within Buildings.DHC.ETS.Combined.Examples;
 model ChillerOnly
   "Example of the ETS model with heat recovery chiller"
   extends Buildings.DHC.ETS.Combined.Validation.BaseClasses.PartialChillerBorefield(
->>>>>>> master:Buildings/DHC/ETS/Combined/Examples/ChillerOnly.mo
     TDisWatSup(
       table=[
         0,11;
@@ -38,22 +31,14 @@ model ChillerOnly
       filNam=Modelica.Utilities.Files.loadResource(filNam)));
   parameter String filNam="modelica://Buildings/Resources/Data/DHC/Loads/Examples/MediumOffice-90.1-2010-5A.mos"
     "File name with thermal loads as time series";
-<<<<<<< HEAD:Buildings/Experimental/DHC/EnergyTransferStations/Combined/Examples/ChillerOnly.mo
-  Buildings.Controls.OBC.CDL.Continuous.MultiplyByParameter loaNorHea(
-=======
   Buildings.Controls.OBC.CDL.Reals.MultiplyByParameter loaNorHea(
->>>>>>> master:Buildings/DHC/ETS/Combined/Examples/ChillerOnly.mo
     final k=1/ets.QHeaWat_flow_nominal)
     "Normalize by nominal" annotation (Placement(
         transformation(
         extent={{-10,-10},{10,10}},
         rotation=0,
         origin={-278,60})));
-<<<<<<< HEAD:Buildings/Experimental/DHC/EnergyTransferStations/Combined/Examples/ChillerOnly.mo
-  Buildings.Controls.OBC.CDL.Continuous.MultiplyByParameter loaNorCoo(
-=======
   Buildings.Controls.OBC.CDL.Reals.MultiplyByParameter loaNorCoo(
->>>>>>> master:Buildings/DHC/ETS/Combined/Examples/ChillerOnly.mo
     final k=1/ets.QChiWat_flow_nominal) "Normalize by nominal" annotation (Placement(
         transformation(
         extent={{10,-10},{-10,10}},
@@ -70,11 +55,7 @@ equation
     annotation (Line(points={{286,60},{272,60}},color={0,0,127}));
   annotation (
     __Dymola_Commands(
-<<<<<<< HEAD:Buildings/Experimental/DHC/EnergyTransferStations/Combined/Examples/ChillerOnly.mo
-      file="modelica://Buildings/Resources/Scripts/Dymola/Experimental/DHC/EnergyTransferStations/Combined/Examples/ChillerOnly.mos" "Simulate and plot"),
-=======
       file="modelica://Buildings/Resources/Scripts/Dymola/DHC/ETS/Combined/Examples/ChillerOnly.mos" "Simulate and plot"),
->>>>>>> master:Buildings/DHC/ETS/Combined/Examples/ChillerOnly.mo
     experiment(
       StartTime=6.5E6,
       StopTime=7E6,
@@ -95,13 +76,8 @@ First implementation.
       info="<html>
 <p>
 This model validates
-<<<<<<< HEAD:Buildings/Experimental/DHC/EnergyTransferStations/Combined/Examples/ChillerOnly.mo
-<a href=\"modelica://Buildings.Experimental.DHC.EnergyTransferStations.Combined.ChillerBorefield\">
-Buildings.Experimental.DHC.EnergyTransferStations.Combined.ChillerBorefield</a>
-=======
 <a href=\"modelica://Buildings.DHC.ETS.Combined.ChillerBorefield\">
 Buildings.DHC.ETS.Combined.ChillerBorefield</a>
->>>>>>> master:Buildings/DHC/ETS/Combined/Examples/ChillerOnly.mo
 in a system configuration with no geothermal borefield.
 </p>
 <ul>
@@ -115,13 +91,8 @@ a minimum in January and a maximum in August.
 </li>
 <li>
 The other modeling assumptions are described in
-<<<<<<< HEAD:Buildings/Experimental/DHC/EnergyTransferStations/Combined/Examples/ChillerOnly.mo
-<a href=\"modelica://Buildings.Experimental.DHC.EnergyTransferStations.Combined.Validation.BaseClasses.PartialChillerBorefield\">
-Buildings.Experimental.DHC.EnergyTransferStations.Combined.Validation.BaseClasses.PartialChillerBorefield</a>.
-=======
 <a href=\"modelica://Buildings.DHC.ETS.Combined.Validation.BaseClasses.PartialChillerBorefield\">
 Buildings.DHC.ETS.Combined.Validation.BaseClasses.PartialChillerBorefield</a>.
->>>>>>> master:Buildings/DHC/ETS/Combined/Examples/ChillerOnly.mo
 </li>
 </ul>
 </html>"));

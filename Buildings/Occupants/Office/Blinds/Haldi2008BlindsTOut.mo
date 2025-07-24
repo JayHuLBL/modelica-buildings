@@ -4,14 +4,10 @@ model Haldi2008BlindsTOut
   extends Modelica.Blocks.Icons.DiscreteBlock;
   parameter Real A(final unit="1/K") = 0.139 "Slope of outdoor temperature";
   parameter Real B(final unit="1") = -3.54 "Intercept";
-<<<<<<< HEAD
-  parameter Integer seed = 20 "Seed for the random number generator";
-=======
   parameter Integer localSeed = 1001
     "Local seed to be used to generate the initial state of the random number generator";
   parameter Integer globalSeed = 30129
     "Global seed to be combined with the local seed";
->>>>>>> master
   parameter Modelica.Units.SI.Time samplePeriod=120 "Sample period";
 
   Modelica.Blocks.Interfaces.RealInput TOut(

@@ -35,11 +35,7 @@ model Enable_TOut_hOut
   Enable enaDis4(use_enthalpy=false, use_fixed_plus_differential_drybulb=true)
     "Test fixed and differential dry bulb"
     annotation (Placement(transformation(extent={{120,100},{140,120}})));
-<<<<<<< HEAD
-  Buildings.Controls.OBC.CDL.Logical.TriggeredTrapezoid TRet(
-=======
   Buildings.Obsolete.Controls.OBC.CDL.Logical.TriggeredTrapezoid TRet(
->>>>>>> master
     final rising=1000,
     final falling=800,
     final amplitude=4,

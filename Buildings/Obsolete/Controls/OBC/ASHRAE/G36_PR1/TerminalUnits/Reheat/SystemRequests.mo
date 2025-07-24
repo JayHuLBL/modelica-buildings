@@ -209,37 +209,6 @@ protected
   Buildings.Controls.OBC.CDL.Reals.Sources.CivilTime modTim
     "Civil time"
     annotation (Placement(transformation(extent={{-140,400},{-120,420}})));
-<<<<<<< HEAD
-  Buildings.Controls.OBC.CDL.Continuous.MultiplyByParameter gai(final k=540)
-    "Convert change of degC to change of degF and find out suppression time (5 min/degF))"
-    annotation (Placement(transformation(extent={{-80,270},{-60,290}})));
-  Buildings.Controls.OBC.CDL.Continuous.MultiplyByParameter gai1(final k=0.5)
-    "50% of setpoint"
-    annotation (Placement(transformation(extent={{-100,-50},{-80,-30}})));
-  Buildings.Controls.OBC.CDL.Continuous.MultiplyByParameter gai2(final k=0.7)
-    "70% of setpoint"
-    annotation (Placement(transformation(extent={{-100,-98},{-80,-78}})));
-  Buildings.Controls.OBC.CDL.Continuous.Subtract sub1
-    "Calculate difference of previous and current setpoints"
-    annotation (Placement(transformation(extent={{-20,424},{0,444}})));
-  Buildings.Controls.OBC.CDL.Continuous.Subtract sub2
-    "Calculate difference between zone temperature and cooling setpoint"
-    annotation (Placement(transformation(extent={{-100,190},{-80,210}})));
-  Buildings.Controls.OBC.CDL.Continuous.Subtract sub3
-    "Calculate difference between zone temperature and cooling setpoint"
-    annotation (Placement(transformation(extent={{-100,130},{-80,150}})));
-  Buildings.Controls.OBC.CDL.Continuous.Subtract sub6 if have_heaWatCoi
-    "Calculate difference of discharge temperature (plus errTDis_1) and its setpoint"
-    annotation (Placement(transformation(extent={{-80,-250},{-60,-230}})));
-  Buildings.Controls.OBC.CDL.Continuous.Subtract sub7 if have_heaWatCoi
-    "Calculate difference of discharge temperature (plus errTDis_2) and its setpoint"
-    annotation (Placement(transformation(extent={{-80,-310},{-60,-290}})));
-  Buildings.Controls.OBC.CDL.Continuous.AddParameter addPar(
-    final p=errTDis_1) if have_heaWatCoi
-    "Discharge temperature plus errTDis_1"
-    annotation (Placement(transformation(extent={{-140,-272},{-120,-252}})));
-  Buildings.Controls.OBC.CDL.Continuous.AddParameter addPar1(
-=======
   Buildings.Controls.OBC.CDL.Reals.MultiplyByParameter gai(final k=540)
     "Convert change of degC to change of degF and find out suppression time (5 min/degF))"
     annotation (Placement(transformation(extent={{-80,270},{-60,290}})));
@@ -269,7 +238,6 @@ protected
     "Discharge temperature plus errTDis_1"
     annotation (Placement(transformation(extent={{-140,-272},{-120,-252}})));
   Buildings.Controls.OBC.CDL.Reals.AddParameter addPar1(
->>>>>>> master
     final p=errTDis_2) if have_heaWatCoi
     "Discharge temperature plus errTDis_2"
     annotation (Placement(transformation(extent={{-140,-330},{-120,-310}})));
@@ -352,33 +320,6 @@ protected
     annotation (Placement(transformation(extent={{-80,240},{-60,260}})));
   Buildings.Controls.OBC.CDL.Logical.Sources.Constant con5(k=true) "Constant true"
     annotation (Placement(transformation(extent={{60,290},{80,310}})));
-<<<<<<< HEAD
-  Buildings.Controls.OBC.CDL.Continuous.Switch swi
-    "Use setpoint different value when half sample period time has passed"
-    annotation (Placement(transformation(extent={{40,400},{60,420}})));
-  Buildings.Controls.OBC.CDL.Continuous.Switch swi1 "Output 3 or other request "
-    annotation (Placement(transformation(extent={{100,190},{120,210}})));
-  Buildings.Controls.OBC.CDL.Continuous.Switch swi2 "Output 2 or other request "
-    annotation (Placement(transformation(extent={{100,130},{120,150}})));
-  Buildings.Controls.OBC.CDL.Continuous.Switch swi3 "Output 0 or 1 request "
-    annotation (Placement(transformation(extent={{100,80},{120,100}})));
-  Buildings.Controls.OBC.CDL.Continuous.Switch swi4 "Output 3 or other request "
-    annotation (Placement(transformation(extent={{100,-50},{120,-30}})));
-  Buildings.Controls.OBC.CDL.Continuous.Switch swi5 "Output 2 or other request "
-    annotation (Placement(transformation(extent={{100,-110},{120,-90}})));
-  Buildings.Controls.OBC.CDL.Continuous.Switch swi6 "Output 0 or 1 request "
-    annotation (Placement(transformation(extent={{100,-160},{120,-140}})));
-  Buildings.Controls.OBC.CDL.Continuous.Switch swi7 if have_heaWatCoi
-    "Output 3 or other request "
-    annotation (Placement(transformation(extent={{100,-250},{120,-230}})));
-  Buildings.Controls.OBC.CDL.Continuous.Switch swi8 if have_heaWatCoi
-    "Output 2 or other request "
-    annotation (Placement(transformation(extent={{100,-310},{120,-290}})));
-  Buildings.Controls.OBC.CDL.Continuous.Switch swi9 if have_heaWatCoi
-    "Output 0 or 1 request "
-    annotation (Placement(transformation(extent={{100,-360},{120,-340}})));
-  Buildings.Controls.OBC.CDL.Continuous.Switch swi10 if (have_heaWatCoi and
-=======
   Buildings.Controls.OBC.CDL.Reals.Switch swi
     "Use setpoint different value when half sample period time has passed"
     annotation (Placement(transformation(extent={{40,400},{60,420}})));
@@ -404,7 +345,6 @@ protected
     "Output 0 or 1 request "
     annotation (Placement(transformation(extent={{100,-360},{120,-340}})));
   Buildings.Controls.OBC.CDL.Reals.Switch swi10 if (have_heaWatCoi and
->>>>>>> master
     have_heaPla)
     "Output 0 or 1 request "
     annotation (Placement(transformation(extent={{100,-440},{120,-420}})));
@@ -450,11 +390,7 @@ protected
   Buildings.Controls.OBC.CDL.Reals.Greater greVDis70
     "Check if discharge airflow is less than 70% of setpoint"
     annotation (Placement(transformation(extent={{-60,-110},{-40,-90}})));
-<<<<<<< HEAD
-  Buildings.Controls.OBC.CDL.Continuous.Less les
-=======
   Buildings.Controls.OBC.CDL.Reals.Less les
->>>>>>> master
     "Check if the suppression time has not yet passed"
     annotation (Placement(transformation(extent={{38,330},{58,350}})));
   Buildings.Controls.OBC.CDL.Logical.Not notLes

@@ -1,8 +1,4 @@
-<<<<<<< HEAD:Buildings/Experimental/DHC/Examples/package.mo
-within Buildings.Experimental.DHC;
-=======
 within Buildings.DHC;
->>>>>>> master:Buildings/DHC/Examples/package.mo
 package Examples "Collection of cases study"
   extends Modelica.Icons.ExamplesPackage;
 

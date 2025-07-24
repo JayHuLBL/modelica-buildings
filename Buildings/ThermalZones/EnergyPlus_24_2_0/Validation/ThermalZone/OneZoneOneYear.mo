@@ -1,16 +1,8 @@
-<<<<<<<< HEAD:Buildings/ThermalZones/EnergyPlus_9_6_0/Validation/ThermalZone/OneZoneOneYear.mo
-within Buildings.ThermalZones.EnergyPlus_9_6_0.Validation.ThermalZone;
-model OneZoneOneYear
-  "Validation model for one zone"
-  extends Buildings.ThermalZones.EnergyPlus_9_6_0.Examples.SingleFamilyHouse.Unconditioned;
-  Controls.OBC.CDL.Continuous.MovingAverage TAirMea(
-========
 within Buildings.ThermalZones.EnergyPlus_24_2_0.Validation.ThermalZone;
 model OneZoneOneYear
   "Validation model for one zone"
   extends Buildings.ThermalZones.EnergyPlus_24_2_0.Examples.SingleFamilyHouse.Unconditioned;
   Buildings.Controls.OBC.CDL.Reals.MovingAverage TAirMea(
->>>>>>>> master:Buildings/ThermalZones/EnergyPlus_24_2_0/Validation/ThermalZone/OneZoneOneYear.mo
     delta(displayUnit="d")= 86400,
     y(final unit="K",
       displayUnit="degC"))
@@ -37,11 +29,7 @@ First implementation.
 </ul>
 </html>"),
     __Dymola_Commands(
-<<<<<<<< HEAD:Buildings/ThermalZones/EnergyPlus_9_6_0/Validation/ThermalZone/OneZoneOneYear.mo
-      file="modelica://Buildings/Resources/Scripts/Dymola/ThermalZones/EnergyPlus_9_6_0/Validation/ThermalZone/OneZoneOneYear.mos" "Simulate and plot"),
-========
       file="modelica://Buildings/Resources/Scripts/Dymola/ThermalZones/EnergyPlus_24_2_0/Validation/ThermalZone/OneZoneOneYear.mos" "Simulate and plot"),
->>>>>>>> master:Buildings/ThermalZones/EnergyPlus_24_2_0/Validation/ThermalZone/OneZoneOneYear.mo
     experiment(
       StopTime=31536000,
       Tolerance=1e-06));

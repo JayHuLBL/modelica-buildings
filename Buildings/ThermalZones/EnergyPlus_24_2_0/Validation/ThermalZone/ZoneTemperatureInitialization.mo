@@ -1,12 +1,3 @@
-<<<<<<<< HEAD:Buildings/ThermalZones/EnergyPlus_9_6_0/Validation/ThermalZone/ZoneTemperatureInitialization.mo
-within Buildings.ThermalZones.EnergyPlus_9_6_0.Validation.ThermalZone;
-model ZoneTemperatureInitialization
-  "This example tests whether the zone mean air temperature is initialized correctly in EnergyPlus"
-  extends Buildings.ThermalZones.EnergyPlus_9_6_0.Examples.SingleFamilyHouse.Unconditioned(
-    zon(
-      T_start=303.15));
-  Buildings.ThermalZones.EnergyPlus_9_6_0.OutputVariable TRad(
-========
 within Buildings.ThermalZones.EnergyPlus_24_2_0.Validation.ThermalZone;
 model ZoneTemperatureInitialization
   "This example tests whether the zone mean air temperature is initialized correctly in EnergyPlus"
@@ -14,7 +5,6 @@ model ZoneTemperatureInitialization
     zon(
       T_start=303.15));
   Buildings.ThermalZones.EnergyPlus_24_2_0.OutputVariable TRad(
->>>>>>>> master:Buildings/ThermalZones/EnergyPlus_24_2_0/Validation/ThermalZone/ZoneTemperatureInitialization.mo
     key="LIVING ZONE",
     name="Zone Mean Radiant Temperature",
     y(final unit="K"))
@@ -37,11 +27,7 @@ First implementation.
 </ul>
 </html>"),
     __Dymola_Commands(
-<<<<<<<< HEAD:Buildings/ThermalZones/EnergyPlus_9_6_0/Validation/ThermalZone/ZoneTemperatureInitialization.mo
-      file="modelica://Buildings/Resources/Scripts/Dymola/ThermalZones/EnergyPlus_9_6_0/Validation/ThermalZone/ZoneTemperatureInitialization.mos" "Simulate and plot"),
-========
       file="modelica://Buildings/Resources/Scripts/Dymola/ThermalZones/EnergyPlus_24_2_0/Validation/ThermalZone/ZoneTemperatureInitialization.mos" "Simulate and plot"),
->>>>>>>> master:Buildings/ThermalZones/EnergyPlus_24_2_0/Validation/ThermalZone/ZoneTemperatureInitialization.mo
     experiment(
       StopTime=86400,
       Tolerance=1e-06));

@@ -39,25 +39,12 @@ block TrimAndRespond "Block to inplement trim and respond logic"
   Buildings.Controls.OBC.CDL.Reals.GreaterThreshold greThr
     "Check if the real requests is more than ignored requests setting"
     annotation (Placement(transformation(extent={{20,-60},{40,-40}})));
-<<<<<<< HEAD
-  Buildings.Controls.OBC.CDL.Continuous.Switch netRes "Net setpoint reset value"
-=======
   Buildings.Controls.OBC.CDL.Reals.Switch netRes "Net setpoint reset value"
->>>>>>> master
     annotation (Placement(transformation(extent={{160,-20},{180,-40}})));
   Buildings.Controls.OBC.CDL.Reals.Sources.Constant resAmoCon(
     final k=resAmo)
     "Respond amount constant"
     annotation (Placement(transformation(extent={{-200,-140},{-180,-120}})));
-<<<<<<< HEAD
-  Buildings.Controls.OBC.CDL.Continuous.Multiply pro
-    "Products of net requests and respond amount value"
-    annotation (Placement(transformation(extent={{-20,-110},{0,-90}})));
-  Buildings.Controls.OBC.CDL.Continuous.Multiply pro1
-    "Product of trim and respond amount"
-    annotation (Placement(transformation(extent={{-160,-110},{-140,-90}})));
-  Buildings.Controls.OBC.CDL.Continuous.Multiply pro2
-=======
   Buildings.Controls.OBC.CDL.Reals.Multiply pro
     "Products of net requests and respond amount value"
     annotation (Placement(transformation(extent={{-20,-110},{0,-90}})));
@@ -65,7 +52,6 @@ block TrimAndRespond "Block to inplement trim and respond logic"
     "Product of trim and respond amount"
     annotation (Placement(transformation(extent={{-160,-110},{-140,-90}})));
   Buildings.Controls.OBC.CDL.Reals.Multiply pro2
->>>>>>> master
     "Product of respond and maximum amount"
     annotation (Placement(transformation(extent={{-160,-180},{-140,-160}})));
   Buildings.Controls.OBC.CDL.Discrete.UnitDelay uniDel(
@@ -73,18 +59,6 @@ block TrimAndRespond "Block to inplement trim and respond logic"
     final y_start=iniSet)
     "Output the input signal with a unit delay"
     annotation (Placement(transformation(extent={{-100,96},{-80,116}})));
-<<<<<<< HEAD
-  Buildings.Controls.OBC.CDL.Continuous.Switch swi
-    "Switch between initial setpoint and reseted setpoint"
-    annotation (Placement(transformation(extent={{160,180},{180,160}})));
-  Buildings.Controls.OBC.CDL.Continuous.Switch swi1
-    "Before instant (device ON + delTim + samplePeriod), the setpoint should not be trimmed"
-    annotation (Placement(transformation(extent={{120,0},{140,20}})));
-  Buildings.Controls.OBC.CDL.Continuous.Switch swi2
-    "Reinitialize setpoint to initial setting when device become OFF"
-    annotation (Placement(transformation(extent={{100,130},{120,150}})));
-  Buildings.Controls.OBC.CDL.Continuous.Switch swi3 "Logical switch"
-=======
   Buildings.Controls.OBC.CDL.Reals.Switch swi
     "Switch between initial setpoint and reseted setpoint"
     annotation (Placement(transformation(extent={{160,180},{180,160}})));
@@ -95,17 +69,12 @@ block TrimAndRespond "Block to inplement trim and respond logic"
     "Reinitialize setpoint to initial setting when device become OFF"
     annotation (Placement(transformation(extent={{100,130},{120,150}})));
   Buildings.Controls.OBC.CDL.Reals.Switch swi3 "Logical switch"
->>>>>>> master
     annotation (Placement(transformation(extent={{120,-160},{140,-140}})));
   Buildings.Controls.OBC.CDL.Discrete.Sampler sampler(
     final samplePeriod=samplePeriod)
     "Sample number of requests"
     annotation (Placement(transformation(extent={{-160,-20},{-140,0}})));
-<<<<<<< HEAD
-  Buildings.Controls.OBC.CDL.Continuous.LessThreshold lesThr1
-=======
   Buildings.Controls.OBC.CDL.Reals.LessThreshold lesThr1
->>>>>>> master
     "Check if trim and response amount have same sign"
     annotation (Placement(transformation(extent={{-120,-110},{-100,-90}})));
   Buildings.Controls.OBC.CDL.Reals.GreaterThreshold greThr2
@@ -114,11 +83,7 @@ block TrimAndRespond "Block to inplement trim and respond logic"
   Buildings.Controls.OBC.CDL.Reals.GreaterThreshold greThr1
     "Check if response amount have positive sign"
     annotation (Placement(transformation(extent={{20,-160},{40,-140}})));
-<<<<<<< HEAD
-  Buildings.Controls.OBC.CDL.Continuous.MultiplyByParameter gai(final k=-1)
-=======
   Buildings.Controls.OBC.CDL.Reals.MultiplyByParameter gai(final k=-1)
->>>>>>> master
     "Convert results back to negative"
     annotation (Placement(transformation(extent={{80,-190},{100,-170}})));
 
@@ -129,11 +94,7 @@ protected
   Buildings.Controls.OBC.CDL.Reals.Sources.Constant numIgnReqCon(k=numIgnReq)
     "Number of ignored requests"
     annotation (Placement(transformation(extent={{-160,-60},{-140,-40}})));
-<<<<<<< HEAD
-  Buildings.Controls.OBC.CDL.Continuous.Sources.Constant triAmoCon(k=triAmo)
-=======
   Buildings.Controls.OBC.CDL.Reals.Sources.Constant triAmoCon(k=triAmo)
->>>>>>> master
     "Trim amount constant"
     annotation (Placement(transformation(extent={{-200,-90},{-180,-70}})));
   Buildings.Controls.OBC.CDL.Reals.Sources.Constant maxResCon(k=maxRes)
@@ -148,11 +109,7 @@ protected
   Buildings.Controls.OBC.CDL.Conversions.IntegerToReal intToRea
     "Convert integer input to real output"
     annotation (Placement(transformation(extent={{-200,-20},{-180,0}})));
-<<<<<<< HEAD
-  Buildings.Controls.OBC.CDL.Continuous.Subtract difReqIgnReq
-=======
   Buildings.Controls.OBC.CDL.Reals.Subtract difReqIgnReq
->>>>>>> master
     "Difference between ignored request number and the real request number"
     annotation (Placement(transformation(extent={{-100,-40},{-80,-20}})));
   Buildings.Controls.OBC.CDL.Reals.Add add1

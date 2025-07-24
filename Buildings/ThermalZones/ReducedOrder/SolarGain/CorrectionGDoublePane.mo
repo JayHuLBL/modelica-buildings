@@ -2,10 +2,6 @@ within Buildings.ThermalZones.ReducedOrder.SolarGain;
 model CorrectionGDoublePane
   "Double pane window solar correction"
   extends BaseClasses.PartialCorrectionG;
-<<<<<<< HEAD
-  import con = Modelica.Units.Conversions;
-=======
->>>>>>> master
 
   // Parameters for the transmission correction factor based on VDI 6007 Part 3
   // A0 to A6 are experimental constants VDI 6007 Part 3 page 20
@@ -45,21 +41,11 @@ protected
       XN2_diff "Energetic dregree of transmission for second pane";
   parameter Modelica.Units.SI.Emissivity a1_diff=1 - Ta1_diff - rho_1_diff
     "Degree of absorption for single pane window";
-<<<<<<< HEAD
-  parameter Modelica.Units.SI.CoefficientOfHeatTransfer UWin_dimless=1
-    "Auxiliary parameter for dimensionless UWin";
-  parameter Real Q21_diff=a1_diff*(1 + (
-      Ta1_diff*rho_1_diff/XN2_diff))*UWin/UWin_dimless/25
-    "Auxiliary parameter for heat transfer of exterior pane of double pane window";
-  parameter Real Q22_diff=a1_diff*(
-      Ta1_diff/XN2_diff)*(1 - (UWin/UWin_dimless/7.7))
-=======
   parameter Real Q21_diff=a1_diff*(1 + (
       Ta1_diff*rho_1_diff/XN2_diff))*UWin/25
     "Auxiliary parameter for heat transfer of exterior pane of double pane window";
   parameter Real Q22_diff=a1_diff*(
       Ta1_diff/XN2_diff)*(1 - (UWin/7.7))
->>>>>>> master
     "Auxiliary parameter for heat transfer of interior pane of double pane window";
   parameter Real Qsek2_diff=Q21_diff + Q22_diff
     "Overall auxiliary parameter for heat transfer of double pane window";

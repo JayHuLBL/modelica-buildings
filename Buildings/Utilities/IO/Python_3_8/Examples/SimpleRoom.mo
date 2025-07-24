@@ -40,19 +40,11 @@ equation
   connect(modTim.y, mul.u4[1]) annotation (Line(points={{-59,0},{-50,0},{-50,1},
           {-22,1}}, color={0,0,127}));
   connect(mul.y, pyt.uR)
-<<<<<<< HEAD
-    annotation (Line(points={{-19,10},{-12,10}}, color={0,0,127}));
-  connect(pyt.yR[1], onOffCon.u) annotation (Line(points={{11,9.75},{18,9.75},{18,
-          14},{28,14}}, color={0,0,127}));
-  connect(onOffCon.reference, T0.y) annotation (Line(points={{28,26},{0,26},{0,80},
-          {-59,80}}, color={0,0,127}));
-=======
     annotation (Line(points={{1,10},{18,10}},    color={0,0,127}));
   connect(onOff.y, mul.u3[1]) annotation (Line(points={{82,50},{90,50},{90,-10},
           {-40,-10},{-40,7},{-22,7}}, color={0,0,127}));
   connect(TAmb.y, mul.u2[1]) annotation (Line(points={{-59,40},{-46,40},{-46,13},
           {-22,13}}, color={0,0,127}));
->>>>>>> master
   connect(onOffCon.y, onOff.u)
     annotation (Line(points={{42,50},{58,50}}, color={255,0,255}));
   connect(pyt.yR[1], sub1.u2) annotation (Line(points={{41,9.75},{50,9.75},{50,30},
@@ -86,15 +78,12 @@ would be much simpler and computationally more efficient.
 </html>", revisions="<html>
 <ul>
 <li>
-<<<<<<< HEAD
-=======
 December 11, 2023, by Jianjun Hu:<br/>
 Reimplemented on-off control to avoid using the obsolete <code>OnOffController</code>.
 This is for
 <a href=\"https://github.com/lbl-srg/modelica-buildings/issues/3595\">#3595</a>.
 </li>
 <li>
->>>>>>> master
 August 27, 2021, by Michael Wetter:<br/>
 Updated to Python 3.8.
 </li>

@@ -22,13 +22,9 @@ model Case620 "Case 600, but with windows on East and West side walls"
     annualHea(Min=4.094*3.6e9, Max=4.719*3.6e9, Mean=4.413*3.6e9),
     annualCoo(Min=-3.841*3.6e9, Max=-4.404*3.6e9, Mean=-4.090*3.6e9),
     peakHea(Min=3.038*1000, Max=3.385*1000, Mean=3.186*1000),
-<<<<<<< HEAD
-    peakCoo(Min=-3.955*1000, Max=-4.797*1000, Mean=-4.527*1000)));
-=======
     peakCoo(Min=-3.955*1000, Max=-4.797*1000, Mean=-4.527*1000)),
    heaCri(lowerLimit=3.67*3.6e9, upperLimit=5.38*3.6e9),
    cooCri(lowerLimit=-2.76*3.6e9, upperLimit=-5.19*3.6e9));
->>>>>>> master
 
   Modelica.Blocks.Continuous.Integrator gloEas(
     k=1,

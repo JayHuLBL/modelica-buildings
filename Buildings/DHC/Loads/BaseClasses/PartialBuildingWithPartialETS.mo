@@ -101,11 +101,7 @@ partial model PartialBuildingWithPartialETS
     redeclare package Medium = MediumSer,
     m_flow(min=if allowFlowReversalSer then -Modelica.Constants.inf else 0),
     h_outflow(start=MediumSer.h_default, nominal=MediumSer.h_default))
-<<<<<<< HEAD:Buildings/Experimental/DHC/Loads/BaseClasses/PartialBuildingWithPartialETS.mo
- if typ == TypDisSys.CombinedGeneration5
-=======
  if typ == Buildings.DHC.Types.DistrictSystemType.CombinedGeneration5
->>>>>>> master:Buildings/DHC/Loads/BaseClasses/PartialBuildingWithPartialETS.mo
     "Fluid connector for ambient water service supply line"
     annotation (
       Placement(transformation(extent={{-310,-210},{-290,-190}}),
@@ -114,11 +110,7 @@ partial model PartialBuildingWithPartialETS
     redeclare package Medium = MediumSer,
     m_flow(max=if allowFlowReversalSer then +Modelica.Constants.inf else 0),
     h_outflow(start=MediumSer.h_default, nominal=MediumSer.h_default))
-<<<<<<< HEAD:Buildings/Experimental/DHC/Loads/BaseClasses/PartialBuildingWithPartialETS.mo
- if typ == TypDisSys.CombinedGeneration5
-=======
  if typ == Buildings.DHC.Types.DistrictSystemType.CombinedGeneration5
->>>>>>> master:Buildings/DHC/Loads/BaseClasses/PartialBuildingWithPartialETS.mo
     "Fluid connector for ambient water service return line"
     annotation (
       Placement(transformation(extent={{290,-210},{310,-190}}),
@@ -127,13 +119,8 @@ partial model PartialBuildingWithPartialETS
     redeclare package Medium = MediumSerHea_a,
     m_flow(min=if allowFlowReversalSer then -Modelica.Constants.inf else 0),
     h_outflow(start=MediumSerHea_a.h_default, nominal=MediumSerHea_a.h_default))
-<<<<<<< HEAD:Buildings/Experimental/DHC/Loads/BaseClasses/PartialBuildingWithPartialETS.mo
- if typ <> TypDisSys.Cooling and
-    typ <> TypDisSys.CombinedGeneration5
-=======
  if typ <> Buildings.DHC.Types.DistrictSystemType.Cooling and
     typ <> Buildings.DHC.Types.DistrictSystemType.CombinedGeneration5
->>>>>>> master:Buildings/DHC/Loads/BaseClasses/PartialBuildingWithPartialETS.mo
     "Fluid connector for heating service supply line"
     annotation (Placement(
       transformation(extent={{-310,-250},{-290,-230}}), iconTransformation(
@@ -142,13 +129,8 @@ partial model PartialBuildingWithPartialETS
     redeclare package Medium = MediumSer,
     m_flow(max=if allowFlowReversalSer then +Modelica.Constants.inf else 0),
     h_outflow(start=MediumSer.h_default, nominal=MediumSer.h_default))
-<<<<<<< HEAD:Buildings/Experimental/DHC/Loads/BaseClasses/PartialBuildingWithPartialETS.mo
- if typ <> TypDisSys.Cooling and
-    typ <> TypDisSys.CombinedGeneration5
-=======
  if typ <> Buildings.DHC.Types.DistrictSystemType.Cooling and
     typ <> Buildings.DHC.Types.DistrictSystemType.CombinedGeneration5
->>>>>>> master:Buildings/DHC/Loads/BaseClasses/PartialBuildingWithPartialETS.mo
     "Fluid connector for heating service return line"
     annotation (Placement(
         transformation(extent={{290,-250},{310,-230}}), iconTransformation(
@@ -157,15 +139,9 @@ partial model PartialBuildingWithPartialETS
     redeclare package Medium = MediumSer,
     m_flow(min=if allowFlowReversalSer then -Modelica.Constants.inf else 0),
     h_outflow(start=MediumSer.h_default, nominal=MediumSer.h_default))
-<<<<<<< HEAD:Buildings/Experimental/DHC/Loads/BaseClasses/PartialBuildingWithPartialETS.mo
- if typ == TypDisSys.CombinedGeneration1 or
-    typ == TypDisSys.CombinedGeneration2to4 or
-    typ == TypDisSys.Cooling
-=======
  if typ == Buildings.DHC.Types.DistrictSystemType.CombinedGeneration1 or
     typ == Buildings.DHC.Types.DistrictSystemType.CombinedGeneration2to4 or
     typ == Buildings.DHC.Types.DistrictSystemType.Cooling
->>>>>>> master:Buildings/DHC/Loads/BaseClasses/PartialBuildingWithPartialETS.mo
     "Fluid connector for cooling service supply line"
     annotation (Placement(transformation(extent={{-310,-290},{-290,-270}}),
        iconTransformation(extent={{-110,-90},{-90,-70}})));
@@ -173,15 +149,9 @@ partial model PartialBuildingWithPartialETS
     redeclare package Medium = MediumSer,
     m_flow(max=if allowFlowReversalSer then +Modelica.Constants.inf else 0),
     h_outflow(start=MediumSer.h_default, nominal=MediumSer.h_default))
-<<<<<<< HEAD:Buildings/Experimental/DHC/Loads/BaseClasses/PartialBuildingWithPartialETS.mo
- if typ == TypDisSys.CombinedGeneration1 or
-    typ == TypDisSys.CombinedGeneration2to4 or
-    typ == TypDisSys.Cooling
-=======
  if typ == Buildings.DHC.Types.DistrictSystemType.CombinedGeneration1 or
     typ == Buildings.DHC.Types.DistrictSystemType.CombinedGeneration2to4 or
     typ == Buildings.DHC.Types.DistrictSystemType.Cooling
->>>>>>> master:Buildings/DHC/Loads/BaseClasses/PartialBuildingWithPartialETS.mo
     "Fluid connector for cooling service return line"
     annotation (Placement(
       transformation(extent={{290,-290},{310,-270}}), iconTransformation(
@@ -229,11 +199,7 @@ partial model PartialBuildingWithPartialETS
         rotation=90,
         origin={90,120})));
   // COMPONENTS
-<<<<<<< HEAD:Buildings/Experimental/DHC/Loads/BaseClasses/PartialBuildingWithPartialETS.mo
-  replaceable Buildings.Experimental.DHC.Loads.BaseClasses.PartialBuilding bui(
-=======
   replaceable Buildings.DHC.Loads.BaseClasses.PartialBuilding bui(
->>>>>>> master:Buildings/DHC/Loads/BaseClasses/PartialBuildingWithPartialETS.mo
     redeclare final package Medium=MediumBui,
     final nPorts_aHeaWat=nPorts_heaWat,
     final nPorts_bHeaWat=nPorts_heaWat,
@@ -242,11 +208,7 @@ partial model PartialBuildingWithPartialETS
     final allowFlowReversal=allowFlowReversalBui)
     "Building model "
     annotation (Placement(transformation(extent={{-30,8},{30,68}})));
-<<<<<<< HEAD:Buildings/Experimental/DHC/Loads/BaseClasses/PartialBuildingWithPartialETS.mo
-  replaceable Buildings.Experimental.DHC.EnergyTransferStations.BaseClasses.PartialETS ets(
-=======
   replaceable Buildings.DHC.ETS.BaseClasses.PartialETS ets(
->>>>>>> master:Buildings/DHC/Loads/BaseClasses/PartialBuildingWithPartialETS.mo
     redeclare final package MediumBui=MediumBui,
     redeclare final package MediumSer=MediumSer,
     redeclare final package MediumSerHea_a=MediumSerHea_a,
@@ -278,24 +240,6 @@ partial model PartialBuildingWithPartialETS
       {bui.have_pum,ets.have_pum})) if have_pum
     "Total power drawn by pump motors"
     annotation (Placement(transformation(extent={{240,70},{260,90}})));
-<<<<<<< HEAD:Buildings/Experimental/DHC/Loads/BaseClasses/PartialBuildingWithPartialETS.mo
-  Buildings.Controls.OBC.CDL.Continuous.MultiplyByParameter mulQHea_flow(u(
-        final unit="W"), final k=facMul) if bui.have_heaLoa "Scaling"
-    annotation (Placement(transformation(extent={{270,270},{290,290}})));
-  Buildings.Controls.OBC.CDL.Continuous.MultiplyByParameter mulQCoo_flow(u(
-        final unit="W"), final k=facMul) if bui.have_cooLoa "Scaling"
-    annotation (Placement(transformation(extent={{270,230},{290,250}})));
-  Buildings.Controls.OBC.CDL.Continuous.MultiplyByParameter mulPHea(u(final
-        unit="W"), final k=facMul) if have_eleHea "Scaling"
-    annotation (Placement(transformation(extent={{270,192},{290,212}})));
-  Buildings.Controls.OBC.CDL.Continuous.MultiplyByParameter mulPCoo(u(final
-        unit="W"), final k=facMul) if have_eleCoo "Scaling"
-    annotation (Placement(transformation(extent={{270,150},{290,170}})));
-  Buildings.Controls.OBC.CDL.Continuous.MultiplyByParameter mulPFan(u(final
-        unit="W"), final k=facMul) if have_fan "Scaling"
-    annotation (Placement(transformation(extent={{270,110},{290,130}})));
-  Buildings.Controls.OBC.CDL.Continuous.MultiplyByParameter mulPPum(u(final
-=======
   Buildings.Controls.OBC.CDL.Reals.MultiplyByParameter mulQHea_flow(u(
         final unit="W"), final k=facMul) if bui.have_heaLoa "Scaling"
     annotation (Placement(transformation(extent={{270,270},{290,290}})));
@@ -312,84 +256,51 @@ partial model PartialBuildingWithPartialETS
         unit="W"), final k=facMul) if have_fan "Scaling"
     annotation (Placement(transformation(extent={{270,110},{290,130}})));
   Buildings.Controls.OBC.CDL.Reals.MultiplyByParameter mulPPum(u(final
->>>>>>> master:Buildings/DHC/Loads/BaseClasses/PartialBuildingWithPartialETS.mo
         unit="W"), final k=facMul) if have_pum "Scaling"
     annotation (Placement(transformation(extent={{270,70},{290,90}})));
   Fluid.BaseClasses.MassFlowRateMultiplier mulSerAmbInl(
     redeclare final package Medium = MediumSer,
     final k=1/facMul,
     final allowFlowReversal=allowFlowReversalSer)
-<<<<<<< HEAD:Buildings/Experimental/DHC/Loads/BaseClasses/PartialBuildingWithPartialETS.mo
- if typ == TypDisSys.CombinedGeneration5 "Mass flow rate multiplier"
-=======
  if typ == Buildings.DHC.Types.DistrictSystemType.CombinedGeneration5 "Mass flow rate multiplier"
->>>>>>> master:Buildings/DHC/Loads/BaseClasses/PartialBuildingWithPartialETS.mo
     annotation (Placement(transformation(extent={{-280,-210},{-260,-190}})));
   Fluid.BaseClasses.MassFlowRateMultiplier mulSerAmbOut(
     redeclare final package Medium = MediumSer,
     final k=facMul,
     final allowFlowReversal=allowFlowReversalSer)
-<<<<<<< HEAD:Buildings/Experimental/DHC/Loads/BaseClasses/PartialBuildingWithPartialETS.mo
- if typ == TypDisSys.CombinedGeneration5 "Mass flow rate multiplier"
-=======
  if typ == Buildings.DHC.Types.DistrictSystemType.CombinedGeneration5 "Mass flow rate multiplier"
->>>>>>> master:Buildings/DHC/Loads/BaseClasses/PartialBuildingWithPartialETS.mo
     annotation (Placement(transformation(extent={{260,-210},{280,-190}})));
   Fluid.BaseClasses.MassFlowRateMultiplier mulSerHeaInl(
     redeclare final package Medium = MediumSerHea_a,
     final k=1/facMul,
     final allowFlowReversal=allowFlowReversalSer)
-<<<<<<< HEAD:Buildings/Experimental/DHC/Loads/BaseClasses/PartialBuildingWithPartialETS.mo
- if typ <> TypDisSys.Cooling and
-    typ <> TypDisSys.CombinedGeneration5 "Mass flow rate multiplier"
-=======
  if typ <> Buildings.DHC.Types.DistrictSystemType.Cooling and
     typ <> Buildings.DHC.Types.DistrictSystemType.CombinedGeneration5 "Mass flow rate multiplier"
->>>>>>> master:Buildings/DHC/Loads/BaseClasses/PartialBuildingWithPartialETS.mo
     annotation (Placement(transformation(extent={{-280,-250},{-260,-230}})));
   Fluid.BaseClasses.MassFlowRateMultiplier mulSerHeaOut(
     redeclare final package Medium = MediumSer,
     final k=facMul,
     final allowFlowReversal=allowFlowReversalSer)
-<<<<<<< HEAD:Buildings/Experimental/DHC/Loads/BaseClasses/PartialBuildingWithPartialETS.mo
- if typ <> TypDisSys.Cooling and
-    typ <> TypDisSys.CombinedGeneration5 "Mass flow rate multiplier"
-=======
  if typ <> Buildings.DHC.Types.DistrictSystemType.Cooling and
     typ <> Buildings.DHC.Types.DistrictSystemType.CombinedGeneration5 "Mass flow rate multiplier"
->>>>>>> master:Buildings/DHC/Loads/BaseClasses/PartialBuildingWithPartialETS.mo
     annotation (Placement(transformation(extent={{260,-250},{280,-230}})));
   Fluid.BaseClasses.MassFlowRateMultiplier mulSerCooInl(
     redeclare final package Medium = MediumSer,
     final k=1/facMul,
     final allowFlowReversal=allowFlowReversalSer)
-<<<<<<< HEAD:Buildings/Experimental/DHC/Loads/BaseClasses/PartialBuildingWithPartialETS.mo
- if typ == TypDisSys.CombinedGeneration1 or
-    typ == TypDisSys.CombinedGeneration2to4 or
-    typ == TypDisSys.Cooling "Mass flow rate multiplier"
-=======
  if typ == Buildings.DHC.Types.DistrictSystemType.CombinedGeneration1 or
     typ == Buildings.DHC.Types.DistrictSystemType.CombinedGeneration2to4 or
     typ == Buildings.DHC.Types.DistrictSystemType.Cooling "Mass flow rate multiplier"
->>>>>>> master:Buildings/DHC/Loads/BaseClasses/PartialBuildingWithPartialETS.mo
     annotation (Placement(transformation(extent={{-280,-290},{-260,-270}})));
   Fluid.BaseClasses.MassFlowRateMultiplier mulSerCooOut(
     redeclare final package Medium = MediumSer,
     final k=facMul,
     final allowFlowReversal=allowFlowReversalSer)
-<<<<<<< HEAD:Buildings/Experimental/DHC/Loads/BaseClasses/PartialBuildingWithPartialETS.mo
- if typ == TypDisSys.CombinedGeneration1 or
-    typ == TypDisSys.CombinedGeneration2to4 or
-    typ == TypDisSys.Cooling "Mass flow rate multiplier"
-    annotation (Placement(transformation(extent={{260,-290},{280,-270}})));
-  Buildings.Controls.OBC.CDL.Continuous.MultiplyByParameter mulQFue_flow[nFue](
-=======
  if typ == Buildings.DHC.Types.DistrictSystemType.CombinedGeneration1 or
     typ == Buildings.DHC.Types.DistrictSystemType.CombinedGeneration2to4 or
     typ == Buildings.DHC.Types.DistrictSystemType.Cooling "Mass flow rate multiplier"
     annotation (Placement(transformation(extent={{260,-290},{280,-270}})));
   Buildings.Controls.OBC.CDL.Reals.MultiplyByParameter mulQFue_flow[nFue](
->>>>>>> master:Buildings/DHC/Loads/BaseClasses/PartialBuildingWithPartialETS.mo
       u(each final unit="W"), each final k=facMul) if nFue > 0 "Scaling"
     annotation (Placement(transformation(extent={{270,30},{290,50}})));
 initial equation

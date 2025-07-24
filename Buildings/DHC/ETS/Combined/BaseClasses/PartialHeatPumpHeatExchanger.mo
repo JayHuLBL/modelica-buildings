@@ -1,17 +1,9 @@
-<<<<<<<< HEAD:Buildings/DHC/ETS/Combined/HeatPumpHeatExchanger.mo
-within Buildings.Experimental.DHC.EnergyTransferStations.Combined;
-model HeatPumpHeatExchanger
-  "Model of a substation with heat pump and compressor-less cooling"
-  extends Buildings.Experimental.DHC.EnergyTransferStations.BaseClasses.PartialETS(
-    final typ=Buildings.Experimental.DHC.Types.DistrictSystemType.CombinedGeneration5,
-========
 within Buildings.DHC.ETS.Combined.BaseClasses;
 model PartialHeatPumpHeatExchanger
   "Partial model of a substation with heat pump and compressor-less cooling"
   extends
     Buildings.DHC.ETS.BaseClasses.PartialETS(
     final typ=Buildings.DHC.Types.DistrictSystemType.CombinedGeneration5,
->>>>>>>> master:Buildings/DHC/ETS/Combined/BaseClasses/PartialHeatPumpHeatExchanger.mo
     final have_weaBus=false,
     final have_chiWat=true,
     final have_heaWat=true,
@@ -56,11 +48,7 @@ model PartialHeatPumpHeatExchanger
       THeaWatSup_nominal - dT_nominal "Heating water return temperature"
     annotation (Dialog(group="Nominal condition"));
   parameter Modelica.Units.SI.Temperature THotWatSup_nominal=336.15
-<<<<<<<< HEAD:Buildings/DHC/ETS/Combined/HeatPumpHeatExchanger.mo
-    "Hot water supply temperature"
-========
     "Domestic hot water supply temperature to fixtures"
->>>>>>>> master:Buildings/DHC/ETS/Combined/BaseClasses/PartialHeatPumpHeatExchanger.mo
     annotation (Dialog(group="Nominal condition", enable=have_hotWat));
   parameter Modelica.Units.SI.Temperature TColWat_nominal=288.15
     "Cold water temperature (for hot water production)"
@@ -69,29 +57,6 @@ model PartialHeatPumpHeatExchanger
     "Pressure difference at nominal flow rate (for each flow leg)"
     annotation (Dialog(group="Nominal condition"));
   final parameter Modelica.Units.SI.MassFlowRate mHeaWat_flow_nominal(min=0)=
-<<<<<<<< HEAD:Buildings/DHC/ETS/Combined/HeatPumpHeatExchanger.mo
-    abs(QHeaWat_flow_nominal/cpBui_default/(THeaWatSup_nominal -
-    THeaWatRet_nominal)) "Heating water mass flow rate"
-    annotation (Dialog(group="Nominal condition"));
-  final parameter Modelica.Units.SI.MassFlowRate mChiWat_flow_nominal(min=0)=
-    abs(QChiWat_flow_nominal/cpBui_default/(TChiWatSup_nominal -
-    TChiWatRet_nominal)) "Chilled water mass flow rate"
-    annotation (Dialog(group="Nominal conditions"));
-  final parameter Modelica.Units.SI.MassFlowRate mEvaHotWat_flow_nominal(min=0)=
-       QHotWat_flow_nominal*(COPHotWat_nominal - 1)/COPHotWat_nominal/
-    cpSer_default/dT_nominal
-    "Evaporator water mass flow rate of heat pump for hot water production"
-    annotation (Dialog(group="Nominal condition", enable=have_hotWat));
-  final parameter Modelica.Units.SI.MassFlowRate mSerWat_flow_nominal(min=0)=
-    max(proHeaWat.m2_flow_nominal + mEvaHotWat_flow_nominal, hexChi.m1_flow_nominal)
-    "Service water mass flow rate"
-    annotation (Dialog(group="Nominal condition"));
-  constant Modelica.Units.SI.SpecificHeatCapacity cpBui_default=
-      MediumBui.specificHeatCapacityCp(MediumBui.setState_pTX(p=MediumBui.p_default,
-      T=MediumBui.T_default)) "Specific heat capacity of the fluid";
-  constant Modelica.Units.SI.SpecificHeatCapacity cpSer_default=
-      MediumBui.specificHeatCapacityCp(MediumSer.setState_pTX(p=MediumSer.p_default,
-========
     abs(QHeaWat_flow_nominal/cpBui_default/(THeaWatSup_nominal - THeaWatRet_nominal))
     "Heating water mass flow rate"
     annotation (Dialog(group="Nominal condition"));
@@ -114,7 +79,6 @@ model PartialHeatPumpHeatExchanger
   constant Modelica.Units.SI.SpecificHeatCapacity cpSer_default=
     MediumBui.specificHeatCapacityCp(MediumSer.setState_pTX(
       p=MediumSer.p_default,
->>>>>>>> master:Buildings/DHC/ETS/Combined/BaseClasses/PartialHeatPumpHeatExchanger.mo
       T=MediumSer.T_default)) "Specific heat capacity of the fluid";
   // Heat pump for heating water production
   parameter Real COPHeaWat_nominal(final unit="1")
@@ -223,11 +187,7 @@ model PartialHeatPumpHeatExchanger
     final energyDynamics=mixingVolumeEnergyDynamics)
     "Mixing volume to break algebraic loops and to emulate the delay of the substation"
     annotation (Placement(transformation(extent={{250,-360},{270,-380}})));
-<<<<<<<< HEAD:Buildings/DHC/ETS/Combined/HeatPumpHeatExchanger.mo
-  Buildings.Experimental.DHC.EnergyTransferStations.BaseClasses.Pump_m_flow pum1HexChi(
-========
   Buildings.DHC.ETS.BaseClasses.Pump_m_flow pum1HexChi(
->>>>>>>> master:Buildings/DHC/ETS/Combined/BaseClasses/PartialHeatPumpHeatExchanger.mo
     redeclare final package Medium = MediumSer,
     final m_flow_nominal=m1HexChi_flow_nominal,
     final allowFlowReversal=allowFlowReversalSer,
@@ -278,17 +238,10 @@ model PartialHeatPumpHeatExchanger
     final allowFlowReversal=allowFlowReversalBui)
     "Chilled water mass flow rate"
     annotation (Placement(transformation(extent={{-250,-130},{-230,-110}})));
-<<<<<<<< HEAD:Buildings/DHC/ETS/Combined/HeatPumpHeatExchanger.mo
-  Buildings.Controls.OBC.CDL.Continuous.MultiplyByParameter gai2(final k=
-        m1HexChi_flow_nominal)
-    annotation (Placement(transformation(extent={{-108,-210},{-88,-190}})));
-  Buildings.Experimental.DHC.EnergyTransferStations.Combined.Controls.PIDWithEnable conTChiWat(
-========
   Buildings.Controls.OBC.CDL.Reals.MultiplyByParameter gai2(final k=
         m1HexChi_flow_nominal)
     annotation (Placement(transformation(extent={{-108,-210},{-88,-190}})));
   Buildings.DHC.ETS.Combined.Controls.PIDWithEnable conTChiWat(
->>>>>>>> master:Buildings/DHC/ETS/Combined/BaseClasses/PartialHeatPumpHeatExchanger.mo
     k=0.05,
     Ti=120,
     yMax=1,
@@ -337,38 +290,22 @@ model PartialHeatPumpHeatExchanger
         extent={{-10,-10},{10,10}},
         rotation=0,
         origin={140,-280})));
-<<<<<<<< HEAD:Buildings/DHC/ETS/Combined/HeatPumpHeatExchanger.mo
-  Buildings.Experimental.DHC.EnergyTransferStations.Combined.Subsystems.SwitchBox
-========
   Buildings.DHC.ETS.Combined.Subsystems.SwitchBox
->>>>>>>> master:Buildings/DHC/ETS/Combined/BaseClasses/PartialHeatPumpHeatExchanger.mo
     swiFlo(
     redeclare final package Medium = MediumSer,
     final m_flow_nominal=mSerWat_flow_nominal,
     dpValve_nominal=1e-4)                      "Flow switch box"
     annotation (Placement(transformation(extent={{-10,-390},{10,-370}})));
-<<<<<<<< HEAD:Buildings/DHC/ETS/Combined/HeatPumpHeatExchanger.mo
-  Buildings.Experimental.DHC.EnergyTransferStations.BaseClasses.Junction bypHeaWatSup(redeclare
-      final package
-              Medium = MediumBui, final m_flow_nominal=proHeaWat.m1_flow_nominal
-========
   Buildings.DHC.ETS.BaseClasses.Junction bypHeaWatSup(
     redeclare final package Medium = MediumBui, final m_flow_nominal=proHeaWat.mCon_flow_nominal
->>>>>>>> master:Buildings/DHC/ETS/Combined/BaseClasses/PartialHeatPumpHeatExchanger.mo
         *{1,-1,-1}) "Bypass heating water (supply)" annotation (Placement(
         transformation(
         extent={{-10,-10},{10,10}},
         rotation=0,
         origin={100,260})));
-<<<<<<<< HEAD:Buildings/DHC/ETS/Combined/HeatPumpHeatExchanger.mo
-  Buildings.Experimental.DHC.EnergyTransferStations.BaseClasses.Junction bypHeaWatRet(
-    redeclare final package Medium = MediumBui,
-    final m_flow_nominal=proHeaWat.m1_flow_nominal*{1,-1,1})
-========
   Buildings.DHC.ETS.BaseClasses.Junction bypHeaWatRet(
     redeclare final package Medium = MediumBui, final m_flow_nominal=proHeaWat.mCon_flow_nominal
         *{1,-1,1})
->>>>>>>> master:Buildings/DHC/ETS/Combined/BaseClasses/PartialHeatPumpHeatExchanger.mo
     "Bypass heating water (return)"
     annotation (Placement(
         transformation(
@@ -378,11 +315,7 @@ model PartialHeatPumpHeatExchanger
   Buildings.Controls.OBC.CDL.Logical.TrueFalseHold enaHea(
     trueHoldDuration=15*60) "Enable heating"
     annotation (Placement(transformation(extent={{-140,150},{-120,170}})));
-<<<<<<<< HEAD:Buildings/DHC/ETS/Combined/HeatPumpHeatExchanger.mo
-  Buildings.Experimental.DHC.EnergyTransferStations.Combined.Subsystems.HeatPump proHeaWat(
-========
   Buildings.DHC.ETS.Combined.Subsystems.HeatPump proHeaWat(
->>>>>>>> master:Buildings/DHC/ETS/Combined/BaseClasses/PartialHeatPumpHeatExchanger.mo
     redeclare final package Medium1 = MediumBui,
     redeclare final package Medium2 = MediumSer,
     dT_nominal=dT_nominal,
@@ -396,49 +329,7 @@ model PartialHeatPumpHeatExchanger
     final dp1_nominal=dp_nominal,
     final dp2_nominal=dp_nominal) "Subsystem for heating water production"
     annotation (Placement(transformation(extent={{-10,204},{10,224}})));
-<<<<<<<< HEAD:Buildings/DHC/ETS/Combined/HeatPumpHeatExchanger.mo
-  Buildings.Experimental.DHC.EnergyTransferStations.Combined.Subsystems.HeatPump proHotWat(
-    redeclare final package Medium1 = MediumBui,
-    redeclare final package Medium2 = MediumSer,
-    final have_pumCon=false,
-    final have_varFloEva=have_varFloEva,
-    final COP_nominal=COPHotWat_nominal,
-    final TCon_nominal=THotWatSup_nominal,
-    final TEva_nominal=TDisWatMin-dT_nominal,
-    final Q1_flow_nominal=QHotWat_flow_nominal,
-    final allowFlowReversal1=allowFlowReversalBui,
-    final allowFlowReversal2=allowFlowReversalSer,
-    final dT1_nominal=THotWatSup_nominal - TColWat_nominal,
-    final dT2_nominal=-dT_nominal,
-    final dp1_nominal=dp_nominal,
-    final dp2_nominal=dp_nominal) if have_hotWat
-    "Subsystem for hot water production"
-    annotation (Placement(transformation(extent={{-10,24},{10,44}})));
-  Fluid.Sources.Boundary_pT sinSHW(
-    redeclare final package Medium = MediumBui,
-    nPorts=1)  if have_hotWat
-    "Sink for service hot water" annotation (Placement(
-      transformation(
-      extent={{10,-10},{-10,10}},
-      rotation=180,
-      origin={-60,60})));
-  Fluid.Sources.MassFlowSource_T souColWat(
-    redeclare final package Medium = MediumBui,
-    use_m_flow_in=true,
-    use_T_in=true,
-    nPorts=1) if have_hotWat
-    "Source for cold water"
-    annotation (Placement(transformation(extent={{-48,-50},{-28,-30}})));
-  Buildings.Controls.OBC.CDL.Continuous.Divide div1 if have_hotWat
-    "Compute mass flow rate from load"
-    annotation (Placement(transformation(extent={{-100,-50},{-80,-30}})));
-  Buildings.Controls.OBC.CDL.Continuous.MultiplyByParameter gai(final k=
-        cpBui_default) if have_hotWat "Times Cp"
-    annotation (Placement(transformation(extent={{-120,-10},{-100,10}})));
-  Buildings.Controls.OBC.CDL.Continuous.MultiSum masFloHeaTot(final nin=2)
-========
   Buildings.Controls.OBC.CDL.Reals.MultiSum masFloHeaTot(nin=2)
->>>>>>>> master:Buildings/DHC/ETS/Combined/BaseClasses/PartialHeatPumpHeatExchanger.mo
     "Compute district water mass flow rate used for heating service"
     annotation (Placement(transformation(extent={{270,-150},{290,-130}})));
   Modelica.Blocks.Sources.Constant zer(final k=0) if not have_hotWat
@@ -460,15 +351,8 @@ model PartialHeatPumpHeatExchanger
         extent={{-10,-10},{10,10}},
         rotation=0,
         origin={40,-120})));
-<<<<<<<< HEAD:Buildings/DHC/ETS/Combined/HeatPumpHeatExchanger.mo
-  Buildings.Controls.OBC.CDL.Continuous.Subtract delT if have_hotWat
-    "Compute DeltaT needed on condenser side"
-    annotation (Placement(transformation(extent={{-150,-10},{-130,10}})));
-  Fluid.Sensors.MassFlowRate senMasFloHeaWatPri(redeclare final package Medium =
-========
   Buildings.Fluid.Sensors.MassFlowRate senMasFloHeaWatPri(redeclare final
       package                                                                     Medium =
->>>>>>>> master:Buildings/DHC/ETS/Combined/BaseClasses/PartialHeatPumpHeatExchanger.mo
         MediumBui, final allowFlowReversal=allowFlowReversalBui)
     "Primary heating water mass flow rate"
     annotation (Placement(transformation(extent={{30,270},{50,250}})));
@@ -488,28 +372,6 @@ model PartialHeatPumpHeatExchanger
   Buildings.Controls.OBC.CDL.Reals.MultiSum PHeaTot(nin=2)
     "Total power used for heating and hot water production"
     annotation (Placement(transformation(extent={{270,70},{290,90}})));
-<<<<<<<< HEAD:Buildings/DHC/ETS/Combined/HeatPumpHeatExchanger.mo
-  Buildings.Controls.OBC.CDL.Continuous.Add heaFloEvaSHW if have_hotWat and have_varFloEva
-    "Heat flow rate at evaporator"
-    annotation (Placement(transformation(extent={{-100,90},{-80,110}})));
-  Buildings.Controls.OBC.CDL.Continuous.Subtract dTHHW
-    "Heating hot water DeltaT"
-    annotation (Placement(transformation(extent={{0,310},{-20,330}})));
-  Buildings.Controls.OBC.CDL.Continuous.MultiplyByParameter capFloHHW(
-    final k=cpBui_default) if have_varFloEva or have_varFloCon "Capacity flow rate"
-    annotation (Placement(transformation(extent={{-220,310},{-200,330}})));
-  Buildings.Controls.OBC.CDL.Continuous.Add heaFloEvaHHW if have_varFloEva
-    "Heat flow rate at evaporator"
-    annotation (Placement(transformation(extent={{-100,230},{-80,250}})));
-  Buildings.Experimental.DHC.EnergyTransferStations.Combined.Controls.PrimaryVariableFlow conFloEvaSHW(
-    final Q_flow_nominal=-QHotWat_flow_nominal*(1 + 1/COPHotWat_nominal),
-    final dT_nominal=-dT_nominal,
-    final ratFloMin=ratFloMin,
-    final cp=cpSer_default) if have_hotWat and have_varFloEva
-    "Mass flow rate control"
-    annotation (Placement(transformation(extent={{-60,90},{-40,110}})));
-  Buildings.Experimental.DHC.EnergyTransferStations.Combined.Controls.PrimaryVariableFlow conFloConHHW(
-========
   Buildings.Controls.OBC.CDL.Reals.Subtract dTHHW
     "Heating hot water DeltaT"
     annotation (Placement(transformation(extent={{0,310},{-20,330}})));
@@ -517,29 +379,12 @@ model PartialHeatPumpHeatExchanger
     final k=cpBui_default) if have_varFloEva or have_varFloCon "Capacity flow rate"
     annotation (Placement(transformation(extent={{-220,310},{-200,330}})));
   Buildings.DHC.ETS.Combined.Controls.PrimaryVariableFlow conFloConHHW(
->>>>>>>> master:Buildings/DHC/ETS/Combined/BaseClasses/PartialHeatPumpHeatExchanger.mo
     final Q_flow_nominal=QHeaWat_flow_nominal,
     final dT_nominal=dT_nominal,
     final ratFloMin=ratFloMin,
     final cp=cpBui_default) if have_varFloCon
     "Mass flow rate control"
     annotation (Placement(transformation(extent={{-100,270},{-80,290}})));
-<<<<<<<< HEAD:Buildings/DHC/ETS/Combined/HeatPumpHeatExchanger.mo
-  Buildings.Experimental.DHC.EnergyTransferStations.Combined.Controls.PrimaryVariableFlow conFloEvaHHW(
-    final Q_flow_nominal=-QHeaWat_flow_nominal*(1 + 1/COPHeaWat_nominal),
-    final dT_nominal=-dT_nominal,
-    final ratFloMin=ratFloMin,
-    final cp=cpSer_default) if have_varFloEva
-    "Mass flow rate control"
-    annotation (Placement(transformation(extent={{-60,230},{-40,250}})));
-  Buildings.Controls.OBC.CDL.Continuous.Max priOve if have_varFloCon
-    "Ensure primary overflow"
-    annotation (Placement(transformation(extent={{-60,270},{-40,290}})));
-  Buildings.Controls.OBC.CDL.Continuous.Multiply loaHHW
-    if have_varFloEva or have_varFloCon "Heating load"
-    annotation (Placement(transformation(extent={{-140,270},{-120,290}})));
-
-========
   Buildings.Controls.OBC.CDL.Reals.Max priOve if have_varFloCon
     "Ensure primary overflow"
     annotation (Placement(transformation(extent={{-60,270},{-40,290}})));
@@ -550,7 +395,6 @@ model PartialHeatPumpHeatExchanger
   Fluid.Sensors.MassFlowRate senMasFlo1HexChi(redeclare package Medium =
         MediumSer) "Chilled water HX primary mass flow rate"
     annotation (Placement(transformation(extent={{50,-330},{30,-350}})));
->>>>>>>> master:Buildings/DHC/ETS/Combined/BaseClasses/PartialHeatPumpHeatExchanger.mo
 equation
   connect(TChiWatSupSet, conTChiWat.u_s) annotation (Line(points={{-320,0},{-200,
           0},{-200,-200},{-152,-200}},  color={0,0,127}));
@@ -737,15 +581,9 @@ Buildings.DHC.ETS.Combined.Subsystems.HeatPump</a>.
 Evaporator water is supplied by mixing flow directly from the district line with
 flow leaving the district side of the cooling heat exchanger.
 The hydronic arrangement modeled in
-<<<<<<<< HEAD:Buildings/DHC/ETS/Combined/HeatPumpHeatExchanger.mo
-<a href=\"modelica://Buildings.Experimental.DHC.EnergyTransferStations.Combined.Subsystems.SwitchBox\">
-Buildings.Experimental.DHC.EnergyTransferStations.Combined.Subsystems.SwitchBox</a>
-ensures that the resulting fluid stream in the service line always flows
-========
 <a href=\"modelica://Buildings.DHC.ETS.Combined.Subsystems.SwitchBox\">
 Buildings.DHC.ETS.Combined.Subsystems.SwitchBox</a>
 ensures that the resulting fluid stream in the district line always flows
->>>>>>>> master:Buildings/DHC/ETS/Combined/BaseClasses/PartialHeatPumpHeatExchanger.mo
 in the same direction.
 </li>
 <li>
@@ -764,29 +602,6 @@ on a schedule (to lock out the system during off-hours), ideally in conjunction
 with the number of requests yielded by the terminal unit controllers, or any
 other signal representative of the load.
 </p>
-<<<<<<<< HEAD:Buildings/DHC/ETS/Combined/HeatPumpHeatExchanger.mo
-<p>
-When enabled,
-</p>
-<ul>
-<li>
-the heat pumps and the evaporator and condenser water pumps are controlled
-based on the principles described in
-<a href=\"modelica://Buildings.Experimental.DHC.EnergyTransferStations.Combined.Subsystems.HeatPump\">
-Buildings.Experimental.DHC.EnergyTransferStations.Combined.Subsystems.HeatPump</a>.
-The evaporator and condenser water mass flow rates are computed based on the
-logic described in
-<a href=\"modelica://Buildings.Experimental.DHC.EnergyTransferStations.Combined.Controls.PrimaryVariableFlow\">
-Buildings.Experimental.DHC.EnergyTransferStations.Combined.Controls.PrimaryVariableFlow</a>.
-</li>
-<li>
-the cooling heat exchanger primary pump is modulated based on a PI control
-loop tracking the chilled water supply temperature at the outlet of the heat exchanger
-secondary side.
-</li>
-</ul>
-========
->>>>>>>> master:Buildings/DHC/ETS/Combined/BaseClasses/PartialHeatPumpHeatExchanger.mo
 <h4>Modeling considerations</h4>
 <p>
 There is a control volume at each of the two fluid ports that serve as inlet and outlet

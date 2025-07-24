@@ -112,34 +112,15 @@ block AHU "Output outdoor airflow related calculations at the AHU level"
         iconTransformation(extent={{100,-100},{140,-60}})));
 
 protected
-<<<<<<< HEAD
-  Buildings.Controls.OBC.CDL.Continuous.Divide outAirFra
-    "System outdoor air fraction"
-    annotation (Placement(transformation(extent={{-120,-20},{-100,0}})));
-
-  Buildings.Controls.OBC.CDL.Continuous.AddParameter addPar(
-=======
   Buildings.Controls.OBC.CDL.Reals.Divide outAirFra
     "System outdoor air fraction"
     annotation (Placement(transformation(extent={{-120,-20},{-100,0}})));
 
   Buildings.Controls.OBC.CDL.Reals.AddParameter addPar(
->>>>>>> master
     final p=1)
     "System outdoor air flow fraction plus 1"
     annotation (Placement(transformation(extent={{-80,-20},{-60,0}})));
 
-<<<<<<< HEAD
-  Buildings.Controls.OBC.CDL.Continuous.Subtract sysVenEff
-    "Current system ventilation efficiency"
-    annotation (Placement(transformation(extent={{-40,-20},{-20,0}})));
-
-  Buildings.Controls.OBC.CDL.Continuous.Divide effMinOutAirInt
-    "Effective minimum outdoor air setpoint"
-    annotation (Placement(transformation(extent={{100,10},{120,30}})));
-
-  Buildings.Controls.OBC.CDL.Continuous.Divide occDivFra
-=======
   Buildings.Controls.OBC.CDL.Reals.Subtract sysVenEff
     "Current system ventilation efficiency"
     annotation (Placement(transformation(extent={{-40,-20},{-20,0}})));
@@ -149,7 +130,6 @@ protected
     annotation (Placement(transformation(extent={{100,10},{120,30}})));
 
   Buildings.Controls.OBC.CDL.Reals.Divide occDivFra
->>>>>>> master
     "Occupant diversity fraction"
     annotation (Placement(transformation(extent={{-120,180},{-100,200}})));
 
@@ -157,16 +137,6 @@ protected
     "Uncorrected outdoor air intake"
     annotation (Placement(transformation(extent={{0,140},{20,160}})));
 
-<<<<<<< HEAD
-  Buildings.Controls.OBC.CDL.Continuous.Multiply pro "Product of inputs"
-    annotation (Placement(transformation(extent={{-60,160},{-40,180}})));
-
-  Buildings.Controls.OBC.CDL.Continuous.MultiplyByParameter aveOutAirFra(
-    final k=1/VPriSysMax_flow) "Average outdoor air fraction"
-    annotation (Placement(transformation(extent={{60,120},{80,140}})));
-
-  Buildings.Controls.OBC.CDL.Continuous.AddParameter addPar1(
-=======
   Buildings.Controls.OBC.CDL.Reals.Multiply pro "Product of inputs"
     annotation (Placement(transformation(extent={{-60,160},{-40,180}})));
 
@@ -175,16 +145,11 @@ protected
     annotation (Placement(transformation(extent={{60,120},{80,140}})));
 
   Buildings.Controls.OBC.CDL.Reals.AddParameter addPar1(
->>>>>>> master
     final p=1)
     "Average outdoor air flow fraction plus 1"
     annotation (Placement(transformation(extent={{120,120},{140,140}})));
 
-<<<<<<< HEAD
-  Buildings.Controls.OBC.CDL.Continuous.Divide desOutAirInt
-=======
   Buildings.Controls.OBC.CDL.Reals.Divide desOutAirInt
->>>>>>> master
     "Design system outdoor air intake"
     annotation (Placement(transformation(extent={{60,70},{80,90}})));
 
@@ -213,28 +178,16 @@ protected
   Buildings.Controls.OBC.CDL.Logical.And and1 "Logical and"
     annotation (Placement(transformation(extent={{120,-150},{140,-130}})));
 
-<<<<<<< HEAD
-  Buildings.Controls.OBC.CDL.Continuous.Sources.Constant smaSysEff(
-=======
   Buildings.Controls.OBC.CDL.Reals.Sources.Constant smaSysEff(
->>>>>>> master
     final k=1E-4)
     "Set system ventilation efficiency to small value to avoid division by zero"
     annotation (Placement(transformation(extent={{-40,-60},{-20,-40}})));
 
-<<<<<<< HEAD
-  Buildings.Controls.OBC.CDL.Continuous.Divide norVOutMin
-    "Normalization for minimum outdoor air flow rate"
-    annotation (Placement(transformation(extent={{180,-60},{200,-40}})));
-
-  Buildings.Controls.OBC.CDL.Continuous.Max sysVenEffNonZero
-=======
   Buildings.Controls.OBC.CDL.Reals.Divide norVOutMin
     "Normalization for minimum outdoor air flow rate"
     annotation (Placement(transformation(extent={{180,-60},{200,-40}})));
 
   Buildings.Controls.OBC.CDL.Reals.Max sysVenEffNonZero
->>>>>>> master
     "Current system ventilation efficiency, bounded away from zero"
     annotation (Placement(transformation(extent={{0,-20},{20,0}})));
 

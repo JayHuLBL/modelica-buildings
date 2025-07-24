@@ -1,11 +1,7 @@
 within Buildings.DHC.Loads.BaseClasses.Validation.BaseClasses;
 model Building
   "Dummy building model for validation purposes"
-<<<<<<< HEAD:Buildings/Experimental/DHC/Loads/BaseClasses/Validation/BaseClasses/Building.mo
-  extends Buildings.Experimental.DHC.Loads.BaseClasses.PartialBuilding;
-=======
   extends Buildings.DHC.Loads.BaseClasses.PartialBuilding;
->>>>>>> master:Buildings/DHC/Loads/BaseClasses/Validation/BaseClasses/Building.mo
   parameter Modelica.Units.SI.HeatFlowRate QChiWat_flow_nominal
     "Design heat flow rate for chilled water production (<0)"
     annotation (Dialog(group="Nominal condition", enable=have_chiWat));
@@ -44,19 +40,11 @@ model Building
     annotation (Placement(transformation(extent={{-10,-270},{10,-250}})));
   Buildings.Controls.OBC.CDL.Reals.Sources.Constant one(k=1) "One"
     annotation (Placement(transformation(extent={{-80,-170},{-60,-150}})));
-<<<<<<< HEAD:Buildings/Experimental/DHC/Loads/BaseClasses/Validation/BaseClasses/Building.mo
-  Buildings.Controls.OBC.CDL.Continuous.MultiplyByParameter gai(
-    k=-1)  if have_heaWat
-    "Opposite"
-    annotation (Placement(transformation(extent={{30,-50},{50,-30}})));
-  Buildings.Controls.OBC.CDL.Continuous.MultiplyByParameter gai1(
-=======
   Buildings.Controls.OBC.CDL.Reals.MultiplyByParameter gai(
     k=-1)  if have_heaWat
     "Opposite"
     annotation (Placement(transformation(extent={{30,-50},{50,-30}})));
   Buildings.Controls.OBC.CDL.Reals.MultiplyByParameter gai1(
->>>>>>> master:Buildings/DHC/Loads/BaseClasses/Validation/BaseClasses/Building.mo
     k=-1)  if have_chiWat
     "Opposite"
     annotation (Placement(transformation(extent={{30,-250},{50,-230}})));

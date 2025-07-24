@@ -31,17 +31,10 @@ model TWetBul_TDryBulPhi
     annotation (Placement(transformation(extent={{-32,-30},{-20,-18}})));
   // ===================================================================
 
-<<<<<<< HEAD
-  Buildings.Controls.OBC.CDL.Continuous.Subtract sub
-    "Wet bulb temperature difference"
-    annotation (Placement(transformation(extent={{40,6},{60,26}})));
-  Buildings.Controls.OBC.CDL.Continuous.Subtract sub1
-=======
   Buildings.Controls.OBC.CDL.Reals.Subtract sub
     "Wet bulb temperature difference"
     annotation (Placement(transformation(extent={{40,6},{60,26}})));
   Buildings.Controls.OBC.CDL.Reals.Subtract sub1
->>>>>>> master
     "Wet bulb temperature difference"
     annotation (Placement(transformation(extent={{40,-34},{60,-14}})));
 equation

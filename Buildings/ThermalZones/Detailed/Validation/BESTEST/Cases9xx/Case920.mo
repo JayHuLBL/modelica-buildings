@@ -22,13 +22,9 @@ model Case920 "Case 900, but with windows on East and West side walls"
     annualHea(Min=2.956*3.6e9, Max=3.607*3.6e9, Mean=3.326*3.6e9),
     annualCoo(Min=-2.549*3.6e9, Max=-3.128*3.6e9, Mean=-2.786*3.6e9),
     peakHea(Min=2.512*1000, Max=2.895*1000, Mean=2.710*1000),
-<<<<<<< HEAD
-    peakCoo(Min=-2.710*1000, Max=-3.481*1000, Mean=-3.127*1000)));
-=======
     peakCoo(Min=-2.710*1000, Max=-3.481*1000, Mean=-3.127*1000)),
    heaCri(lowerLimit=2.55*3.6e9, upperLimit=4.2*3.6e9),
    cooCri(lowerLimit=-2.43*3.6e9, upperLimit=-3.08*3.6e9));
->>>>>>> master
 
   annotation (__Dymola_Commands(file="modelica://Buildings/Resources/Scripts/Dymola/ThermalZones/Detailed/Validation/BESTEST/Cases9xx/Case920.mos"
         "Simulate and plot"),

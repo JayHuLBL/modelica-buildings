@@ -1,22 +1,14 @@
-<<<<<<< HEAD:Buildings/Experimental/DHC/EnergyTransferStations/Combined/Controls/SideCold.mo
-within Buildings.Experimental.DHC.EnergyTransferStations.Combined.Controls;
-=======
 within Buildings.DHC.ETS.Combined.Controls;
->>>>>>> master:Buildings/DHC/ETS/Combined/Controls/SideCold.mo
 model SideCold
   "Control block for cold side"
 
   parameter Integer nSouAmb=1
     "Number of ambient sources to control"
     annotation (Evaluate=true);
-<<<<<<< HEAD:Buildings/Experimental/DHC/EnergyTransferStations/Combined/Controls/SideCold.mo
-  parameter Modelica.Units.SI.Temperature TChiWatSupSetMin(displayUnit="degC")
-=======
   parameter Real TChiWatSupSetMin(
     final quantity="ThermodynamicTemperature",
     final unit="K",
     displayUnit="degC")
->>>>>>> master:Buildings/DHC/ETS/Combined/Controls/SideCold.mo
     "Minimum value of chilled water supply temperature set point";
   parameter Buildings.Controls.OBC.CDL.Types.SimpleController controllerType=Buildings.Controls.OBC.CDL.Types.SimpleController.PI
     "Type of controller"
@@ -25,13 +17,6 @@ model SideCold
   parameter Real k(
     min=0)=0.1
     "Gain of controller";
-<<<<<<< HEAD:Buildings/Experimental/DHC/EnergyTransferStations/Combined/Controls/SideCold.mo
-  parameter Modelica.Units.SI.Time Ti(
-    min=Buildings.Controls.OBC.CDL.Constants.small)=120
-    "Time constant of integrator block"
-    annotation (Dialog(enable=controllerType == Buildings.Controls.OBC.CDL.Types.SimpleController.PI
-                           or controllerType == Buildings.Controls.OBC.CDL.Types.SimpleController.PID));
-=======
   parameter Real Ti(
     min=Buildings.Controls.OBC.CDL.Constants.small,
     final quantity="Time",
@@ -50,7 +35,6 @@ model SideCold
     "Supply temperature set point (heating or chilled water)"
     annotation (Placement(transformation(extent={{-220,20},{-180,60}}),
         iconTransformation(extent={{-140,-62},{-100,-22}})));
->>>>>>> master:Buildings/DHC/ETS/Combined/Controls/SideCold.mo
   Buildings.Controls.OBC.CDL.Interfaces.RealInput uCol
     "Cold rejection control signal"
     annotation (Placement(transformation(extent={{-220,-20},{-180,20}}),
@@ -89,19 +73,11 @@ model SideCold
     final nout=nSouAmb)
     "Replicate control signal"
     annotation (Placement(transformation(extent={{-10,-10},{10,10}},rotation=0)));
-<<<<<<< HEAD:Buildings/Experimental/DHC/EnergyTransferStations/Combined/Controls/SideCold.mo
-  Buildings.Controls.OBC.CDL.Continuous.Sources.Constant f1[nSouAmb](
-    each final k=0)
-    "f1"
-    annotation (Placement(transformation(extent={{40,-40},{60,-20}})));
-  Buildings.Controls.OBC.CDL.Continuous.Sources.Constant f2[nSouAmb](
-=======
   Buildings.Controls.OBC.CDL.Reals.Sources.Constant f1[nSouAmb](
     each final k=0)
     "f1"
     annotation (Placement(transformation(extent={{40,-40},{60,-20}})));
   Buildings.Controls.OBC.CDL.Reals.Sources.Constant f2[nSouAmb](
->>>>>>> master:Buildings/DHC/ETS/Combined/Controls/SideCold.mo
     each final k=1)
     "f2"
     annotation (Placement(transformation(extent={{-10,110},{10,130}})));
@@ -109,11 +85,7 @@ model SideCold
     final k={(i) for i in 1:nSouAmb})
     "x2"
     annotation (Placement(transformation(extent={{40,-70},{60,-50}})));
-<<<<<<< HEAD:Buildings/Experimental/DHC/EnergyTransferStations/Combined/Controls/SideCold.mo
-  Combined.Controls.PIDWithEnable conTChiWatSup(
-=======
   Buildings.DHC.ETS.Combined.Controls.PIDWithEnable conTChiWatSup(
->>>>>>> master:Buildings/DHC/ETS/Combined/Controls/SideCold.mo
     final k=k,
     final Ti=Ti,
     final controllerType=Buildings.Controls.OBC.CDL.Types.SimpleController.PI,
@@ -122,11 +94,7 @@ model SideCold
     final reverseActing=false)
     "Controller for CHWST"
     annotation (Placement(transformation(extent={{-150,-30},{-130,-10}})));
-<<<<<<< HEAD:Buildings/Experimental/DHC/EnergyTransferStations/Combined/Controls/SideCold.mo
-  Buildings.Controls.OBC.CDL.Continuous.Line mapFunTChiSupSet
-=======
   Buildings.Controls.OBC.CDL.Reals.Line mapFunTChiSupSet
->>>>>>> master:Buildings/DHC/ETS/Combined/Controls/SideCold.mo
     "Mapping function for CHWST reset"
     annotation (Placement(transformation(extent={{100,70},{120,90}})));
   Buildings.Controls.OBC.CDL.Reals.Sources.Constant minTChiWatSup(
@@ -135,17 +103,6 @@ model SideCold
     final k=TChiWatSupSetMin)
     "Minimum value of chilled water supply temperature"
     annotation (Placement(transformation(extent={{62,50},{82,70}})));
-<<<<<<< HEAD:Buildings/Experimental/DHC/EnergyTransferStations/Combined/Controls/SideCold.mo
-  Buildings.Controls.OBC.CDL.Continuous.AddParameter addPar(
-    p=nSouAmb)
-    "One minus control loop output"
-    annotation (Placement(transformation(extent={{-80,-30},{-60,-10}})));
-  Buildings.Controls.OBC.CDL.Continuous.MultiplyByParameter gai(
-    k=-nSouAmb)
-    "Gain factor"
-    annotation (Placement(transformation(extent={{-120,-30},{-100,-10}})));
-  Buildings.Controls.OBC.CDL.Continuous.Max max1
-=======
   Buildings.Controls.OBC.CDL.Reals.AddParameter addPar(
     p=nSouAmb)
     "One minus control loop output"
@@ -155,29 +112,20 @@ model SideCold
     "Gain factor"
     annotation (Placement(transformation(extent={{-120,-30},{-100,-10}})));
   Buildings.Controls.OBC.CDL.Reals.Max max1
->>>>>>> master:Buildings/DHC/ETS/Combined/Controls/SideCold.mo
     "CHWST reset signal"
     annotation (Placement(transformation(extent={{-30,70},{-10,90}})));
   Buildings.Controls.OBC.CDL.Reals.Sources.Constant zer(
     k=0)
     "Zero"
     annotation (Placement(transformation(extent={{-80,50},{-60,70}})));
-<<<<<<< HEAD:Buildings/Experimental/DHC/EnergyTransferStations/Combined/Controls/SideCold.mo
-  Buildings.Controls.OBC.CDL.Continuous.AddParameter subNumSou(
-=======
   Buildings.Controls.OBC.CDL.Reals.AddParameter subNumSou(
->>>>>>> master:Buildings/DHC/ETS/Combined/Controls/SideCold.mo
     p=-nSouAmb)
     "Control signal minus nSouAmb"
     annotation (Placement(transformation(extent={{-80,90},{-60,110}})));
   Buildings.Controls.OBC.CDL.Reals.Min min1
     "Ambient source control signal"
     annotation (Placement(transformation(extent={{-40,-10},{-20,10}})));
-<<<<<<< HEAD:Buildings/Experimental/DHC/EnergyTransferStations/Combined/Controls/SideCold.mo
-  Buildings.Controls.OBC.CDL.Continuous.LimitSlewRate ramLimHea(
-=======
   Buildings.Controls.OBC.CDL.Reals.LimitSlewRate ramLimHea(
->>>>>>> master:Buildings/DHC/ETS/Combined/Controls/SideCold.mo
     raisingSlewRate=0.1) "Limit the rate of change"
     annotation (Placement(transformation(extent={{140,70},{160,90}})));
   Buildings.Controls.OBC.CDL.Conversions.BooleanToReal booToRea
@@ -246,8 +194,6 @@ equation
     annotation (Line(points={{-128,-20},{-122,-20}}, color={0,0,127}));
   connect(gai.y, addPar.u)
     annotation (Line(points={{-98,-20},{-82,-20}}, color={0,0,127}));
-<<<<<<< HEAD:Buildings/Experimental/DHC/EnergyTransferStations/Combined/Controls/SideCold.mo
-=======
   connect(truFalHol.y, booToRea.u)
     annotation (Line(points={{102,-100},{118,-100}}, color={255,0,255}));
   connect(booToRea.y, yValIso) annotation (Line(points={{142,-100},{160,-100},{
@@ -256,7 +202,6 @@ equation
     Line(points = {{22, -100}, {38, -100}}, color = {255, 0, 255}));
   connect(pre.y, truFalHol.u) annotation(
     Line(points = {{62, -100}, {78, -100}}, color = {255, 0, 255}));
->>>>>>> master:Buildings/DHC/ETS/Combined/Controls/SideCold.mo
   annotation (
     defaultComponentName="conCol",
     Documentation(
@@ -282,13 +227,8 @@ First implementation.
       info="<html>
 <p>
 This block serves as the controller for the cold side of the ETS in
-<<<<<<< HEAD:Buildings/Experimental/DHC/EnergyTransferStations/Combined/Controls/SideCold.mo
-<a href=\"modelica://Buildings.Experimental.DHC.EnergyTransferStations.Combined.Controls.Supervisory\">
-Buildings.Experimental.DHC.EnergyTransferStations.Combined.Controls.Supervisory</a>.
-=======
 <a href=\"modelica://Buildings.DHC.ETS.Combined.Controls.Supervisory\">
 Buildings.DHC.ETS.Combined.Controls.Supervisory</a>.
->>>>>>> master:Buildings/DHC/ETS/Combined/Controls/SideCold.mo
 It computes the following control signals.
 </p>
 <ul>

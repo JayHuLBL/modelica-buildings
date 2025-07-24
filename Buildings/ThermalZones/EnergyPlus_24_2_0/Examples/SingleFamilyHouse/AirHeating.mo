@@ -1,8 +1,4 @@
-<<<<<<<< HEAD:Buildings/ThermalZones/EnergyPlus_9_6_0/Examples/SingleFamilyHouse/AirHeating.mo
-within Buildings.ThermalZones.EnergyPlus_9_6_0.Examples.SingleFamilyHouse;
-========
 within Buildings.ThermalZones.EnergyPlus_24_2_0.Examples.SingleFamilyHouse;
->>>>>>>> master:Buildings/ThermalZones/EnergyPlus_24_2_0/Examples/SingleFamilyHouse/AirHeating.mo
 model AirHeating
   "Example model with an air-based heating system that conditions a thermal zone in EnergyPlus"
   extends Modelica.Icons.Example;
@@ -10,11 +6,7 @@ model AirHeating
     "Medium model";
   inner Building building(
     idfName=Modelica.Utilities.Files.loadResource(
-<<<<<<<< HEAD:Buildings/ThermalZones/EnergyPlus_9_6_0/Examples/SingleFamilyHouse/AirHeating.mo
-      "modelica://Buildings/Resources/Data/ThermalZones/EnergyPlus_9_6_0/Examples/SingleFamilyHouse_TwoSpeed_ZoneAirBalance/SingleFamilyHouse_TwoSpeed_ZoneAirBalance.idf"),
-========
       "modelica://Buildings/Resources/Data/ThermalZones/EnergyPlus_24_2_0/Examples/SingleFamilyHouse_TwoSpeed_ZoneAirBalance/SingleFamilyHouse_TwoSpeed_ZoneAirBalance.idf"),
->>>>>>>> master:Buildings/ThermalZones/EnergyPlus_24_2_0/Examples/SingleFamilyHouse/AirHeating.mo
     weaName=Modelica.Utilities.Files.loadResource(
       "modelica://Buildings/Resources/weatherdata/USA_IL_Chicago-OHare.Intl.AP.725300_TMY3.mos"),
     epwName=Modelica.Utilities.Files.loadResource(
@@ -29,11 +21,7 @@ model AirHeating
     "Outdoor air mass flow rate, assuming constant infiltration air flow rate";
   parameter Modelica.Units.SI.MassFlowRate mRec_flow_nominal=8*VRoo*1.2/3600
     "Nominal mass flow rate for recirculated air";
-<<<<<<<< HEAD:Buildings/ThermalZones/EnergyPlus_9_6_0/Examples/SingleFamilyHouse/AirHeating.mo
-  Buildings.ThermalZones.EnergyPlus_9_6_0.ThermalZone zon(
-========
   Buildings.ThermalZones.EnergyPlus_24_2_0.ThermalZone zon(
->>>>>>>> master:Buildings/ThermalZones/EnergyPlus_24_2_0/Examples/SingleFamilyHouse/AirHeating.mo
     redeclare package Medium=Medium,
     zoneName="LIVING ZONE",
     nPorts=4)
@@ -81,11 +69,7 @@ model AirHeating
     QMax_flow=4000)
     "Ideal heater"
     annotation (Placement(transformation(extent={{80,-30},{100,-10}})));
-<<<<<<<< HEAD:Buildings/ThermalZones/EnergyPlus_9_6_0/Examples/SingleFamilyHouse/AirHeating.mo
-  Fluid.Sources.Boundary_pT pAtm(
-========
   Buildings.Fluid.Sources.Boundary_pT pAtm(
->>>>>>>> master:Buildings/ThermalZones/EnergyPlus_24_2_0/Examples/SingleFamilyHouse/AirHeating.mo
     redeclare package Medium=Medium,
     nPorts=1)
     "Boundary condition"
@@ -126,17 +110,10 @@ model AirHeating
   Buildings.Controls.OBC.CDL.Reals.Add m_fan_set
     "Mass flow rate for fan"
     annotation (Placement(transformation(extent={{8,-66},{28,-46}})));
-<<<<<<<< HEAD:Buildings/ThermalZones/EnergyPlus_9_6_0/Examples/SingleFamilyHouse/AirHeating.mo
-  Controls.OBC.CDL.Continuous.Add TAirLvgSet
-    "Set point temperature for air leaving the heater"
-    annotation (Placement(transformation(extent={{40,-90},{60,-70}})));
-  Controls.OBC.CDL.Continuous.AddParameter TSupMin(
-========
   Buildings.Controls.OBC.CDL.Reals.Add TAirLvgSet
     "Set point temperature for air leaving the heater"
     annotation (Placement(transformation(extent={{40,-90},{60,-70}})));
   Buildings.Controls.OBC.CDL.Reals.AddParameter TSupMin(
->>>>>>>> master:Buildings/ThermalZones/EnergyPlus_24_2_0/Examples/SingleFamilyHouse/AirHeating.mo
     p=2)
     "Minimum supply air temperature"
     annotation (Placement(transformation(extent={{8,-110},{28,-90}})));
@@ -144,11 +121,7 @@ model AirHeating
   Modelica.Blocks.Sources.Constant qIntGai[3](each k=0)
     "Internal heat gains, set to zero because these are modeled in EnergyPlus"
     annotation (Placement(transformation(extent={{-40,100},{-20,120}})));
-<<<<<<<< HEAD:Buildings/ThermalZones/EnergyPlus_9_6_0/Examples/SingleFamilyHouse/AirHeating.mo
-  Controls.OBC.CDL.Continuous.MultiplyByParameter gai(final k=8) "Gain factor"
-========
   Buildings.Controls.OBC.CDL.Reals.MultiplyByParameter gai(final k=8) "Gain factor"
->>>>>>>> master:Buildings/ThermalZones/EnergyPlus_24_2_0/Examples/SingleFamilyHouse/AirHeating.mo
     annotation (Placement(transformation(extent={{-6,-90},{14,-70}})));
 initial equation
   // Stop simulation if the hard-coded values differ from the ones computed by EnergyPlus.
@@ -243,11 +216,7 @@ First implementation.
 </ul>
 </html>"),
     __Dymola_Commands(
-<<<<<<<< HEAD:Buildings/ThermalZones/EnergyPlus_9_6_0/Examples/SingleFamilyHouse/AirHeating.mo
-      file="modelica://Buildings/Resources/Scripts/Dymola/ThermalZones/EnergyPlus_9_6_0/Examples/SingleFamilyHouse/AirHeating.mos" "Simulate and plot"),
-========
       file="modelica://Buildings/Resources/Scripts/Dymola/ThermalZones/EnergyPlus_24_2_0/Examples/SingleFamilyHouse/AirHeating.mos" "Simulate and plot"),
->>>>>>>> master:Buildings/ThermalZones/EnergyPlus_24_2_0/Examples/SingleFamilyHouse/AirHeating.mo
     experiment(
       StopTime=86400,
       Tolerance=1e-06),

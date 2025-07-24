@@ -1,8 +1,4 @@
-<<<<<<<< HEAD:Buildings/ThermalZones/EnergyPlus_9_6_0/Validation/MultipleBuildings/ThreeZonesTwoBuildings.mo
-within Buildings.ThermalZones.EnergyPlus_9_6_0.Validation.MultipleBuildings;
-========
 within Buildings.ThermalZones.EnergyPlus_24_2_0.Validation.MultipleBuildings;
->>>>>>>> master:Buildings/ThermalZones/EnergyPlus_24_2_0/Validation/MultipleBuildings/ThreeZonesTwoBuildings.mo
 model ThreeZonesTwoBuildings
   "Validation model for three zones that are in two buildings"
   extends Modelica.Icons.Example;
@@ -10,11 +6,7 @@ model ThreeZonesTwoBuildings
     "Medium model";
   model OneZoneBuilding
     "Model with a building with one zone"
-<<<<<<<< HEAD:Buildings/ThermalZones/EnergyPlus_9_6_0/Validation/MultipleBuildings/ThreeZonesTwoBuildings.mo
-    extends Buildings.ThermalZones.EnergyPlus_9_6_0.Examples.SingleFamilyHouse.Unconditioned;
-========
     extends Buildings.ThermalZones.EnergyPlus_24_2_0.Examples.SingleFamilyHouse.Unconditioned;
->>>>>>>> master:Buildings/ThermalZones/EnergyPlus_24_2_0/Validation/MultipleBuildings/ThreeZonesTwoBuildings.mo
     extends Modelica.Blocks.Icons.Block;
     annotation (
       Icon(
@@ -27,11 +19,7 @@ model ThreeZonesTwoBuildings
 
   model TwoZoneBuilding
     "Model with a building with two zones"
-<<<<<<<< HEAD:Buildings/ThermalZones/EnergyPlus_9_6_0/Validation/MultipleBuildings/ThreeZonesTwoBuildings.mo
-    extends Buildings.ThermalZones.EnergyPlus_9_6_0.Validation.ThermalZone.TwoIdenticalZones;
-========
     extends Buildings.ThermalZones.EnergyPlus_24_2_0.Validation.ThermalZone.TwoIdenticalZones;
->>>>>>>> master:Buildings/ThermalZones/EnergyPlus_24_2_0/Validation/MultipleBuildings/ThreeZonesTwoBuildings.mo
     extends Modelica.Blocks.Icons.Block;
     annotation (
       Icon(
@@ -63,11 +51,7 @@ First implementation.
 </ul>
 </html>"),
     __Dymola_Commands(
-<<<<<<<< HEAD:Buildings/ThermalZones/EnergyPlus_9_6_0/Validation/MultipleBuildings/ThreeZonesTwoBuildings.mo
-      file="modelica://Buildings/Resources/Scripts/Dymola/ThermalZones/EnergyPlus_9_6_0/Validation/MultipleBuildings/ThreeZonesTwoBuildings.mos" "Simulate and plot"),
-========
       file="modelica://Buildings/Resources/Scripts/Dymola/ThermalZones/EnergyPlus_24_2_0/Validation/MultipleBuildings/ThreeZonesTwoBuildings.mos" "Simulate and plot"),
->>>>>>>> master:Buildings/ThermalZones/EnergyPlus_24_2_0/Validation/MultipleBuildings/ThreeZonesTwoBuildings.mo
     experiment(
       StopTime=86400,
       Tolerance=1e-06));

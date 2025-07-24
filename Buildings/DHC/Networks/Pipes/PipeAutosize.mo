@@ -1,8 +1,4 @@
-<<<<<<<< HEAD:Buildings/DHC/Networks/Combined/BaseClasses/PipeAutosize.mo
-within Buildings.Experimental.DHC.Networks.Combined.BaseClasses;
-========
 within Buildings.DHC.Networks.Pipes;
->>>>>>>> master:Buildings/DHC/Networks/Pipes/PipeAutosize.mo
 model PipeAutosize "Pipe model parameterized with pressure drop per pipe length"
   extends Buildings.Fluid.FixedResistances.PressureDrop(
     final deltaM = eta_default*dh/4*Modelica.Constants.pi*ReC/m_flow_nominal_pos,
@@ -10,32 +6,16 @@ model PipeAutosize "Pipe model parameterized with pressure drop per pipe length"
 
   parameter Modelica.Units.SI.Length dh(
     fixed=false,
-<<<<<<<< HEAD:Buildings/DHC/Networks/Combined/BaseClasses/PipeAutosize.mo
-    start=0.05,
-    min=0.01) "Hydraulic diameter (assuming a round cross section area)";
-========
     start=0.01,
     min=0.001) "Hydraulic diameter (assuming a round cross section area)";
->>>>>>>> master:Buildings/DHC/Networks/Pipes/PipeAutosize.mo
 
   parameter Real dp_length_nominal(final unit="Pa/m") = 250
     "Pressure drop per pipe length at nominal flow rate";
 
   parameter Modelica.Units.SI.Length length "Length of the pipe";
 
-<<<<<<<< HEAD:Buildings/DHC/Networks/Combined/BaseClasses/PipeAutosize.mo
-  parameter Real ReC(min=0)=4000
-    "Reynolds number where transition to turbulence starts";
-
-  parameter Modelica.Units.SI.Velocity v_nominal=m_flow_nominal/(rho_default*
-      ARound)
-    "Velocity at m_flow_nominal (used to compute default value for hydraulic diameter dh)"
-    annotation (Dialog(group="Nominal condition"));
-
-========
   parameter Real ReC(min=0) = 4000
     "Reynolds number where transition to turbulence starts";
->>>>>>>> master:Buildings/DHC/Networks/Pipes/PipeAutosize.mo
   parameter Modelica.Units.SI.Length roughness(min=0) = 2.5e-5
     "Absolute roughness of pipe, with a default for a smooth steel pipe (PE100: 7E-6)";
 
@@ -43,12 +23,7 @@ model PipeAutosize "Pipe model parameterized with pressure drop per pipe length"
     "Factor to take into account resistance of bends etc., fac=dp_nominal/dpStraightPipe_nominal";
 
   final parameter Modelica.Units.SI.PressureDifference dpStraightPipe_nominal(
-<<<<<<<< HEAD:Buildings/DHC/Networks/Combined/BaseClasses/PipeAutosize.mo
-      displayUnit="Pa") =
-    Modelica.Fluid.Pipes.BaseClasses.WallFriction.Detailed.pressureLoss_m_flow(
-========
       displayUnit="Pa")=Modelica.Fluid.Pipes.BaseClasses.WallFriction.Detailed.pressureLoss_m_flow(
->>>>>>>> master:Buildings/DHC/Networks/Pipes/PipeAutosize.mo
     m_flow=m_flow_nominal,
     rho_a=rho_default,
     rho_b=rho_default,
@@ -60,19 +35,11 @@ model PipeAutosize "Pipe model parameterized with pressure drop per pipe length"
     m_flow_small=m_flow_small)
     "Pressure loss of a straight pipe at m_flow_nominal";
 
-<<<<<<<< HEAD:Buildings/DHC/Networks/Combined/BaseClasses/PipeAutosize.mo
-  Modelica.Units.SI.Velocity v=m_flow/(rho_default*ARound)
-    "Flow velocity (assuming a round cross section area)";
-
-protected
-  parameter Modelica.Units.SI.Area ARound=dh^2*Modelica.Constants.pi/4
-========
   Modelica.Units.SI.Velocity v = m_flow/(rho_default*ARound)
     "Flow velocity (assuming a round cross section area)";
 
 protected
   parameter Modelica.Units.SI.Area ARound = dh^2*Modelica.Constants.pi/4
->>>>>>>> master:Buildings/DHC/Networks/Pipes/PipeAutosize.mo
     "Cross sectional area (assuming a round cross section area)";
 
   parameter Modelica.Units.SI.Velocity v_nominal = m_flow_nominal/(rho_default*
@@ -87,12 +54,7 @@ protected
   parameter Modelica.Units.SI.Density rho_default=Medium.density(state_default)
     "Density at nominal condition";
 
-<<<<<<<< HEAD:Buildings/DHC/Networks/Combined/BaseClasses/PipeAutosize.mo
-  parameter Modelica.Units.SI.DynamicViscosity mu_default=
-      Medium.dynamicViscosity(state_default)
-========
   parameter Modelica.Units.SI.DynamicViscosity mu_default = Medium.dynamicViscosity(state_default)
->>>>>>>> master:Buildings/DHC/Networks/Pipes/PipeAutosize.mo
     "Dynamic viscosity at nominal condition";
 initial equation
   dp_nominal = fac*dpStraightPipe_nominal;

@@ -1,8 +1,4 @@
-<<<<<<< HEAD:Buildings/Experimental/DHC/Loads/BaseClasses/Examples/CouplingRCZ1Valve.mo
-within Buildings.Experimental.DHC.Loads.BaseClasses.Examples;
-=======
 within Buildings.DHC.Loads.BaseClasses.Examples;
->>>>>>> master:Buildings/DHC/Loads/BaseClasses/Examples/CouplingRCZ1Valve.mo
 model CouplingRCZ1Valve
   "Example illustrating the coupling of a building model to heating water and chilled water loops"
   extends Modelica.Icons.Example;
@@ -15,11 +11,7 @@ model CouplingRCZ1Valve
     annotation (Placement(transformation(extent={{60,100},{40,120}})));
   package Medium1=Buildings.Media.Water
     "Source side medium";
-<<<<<<< HEAD:Buildings/Experimental/DHC/Loads/BaseClasses/Examples/CouplingRCZ1Valve.mo
-  Buildings.Experimental.DHC.Loads.BaseClasses.Examples.BaseClasses.BuildingRCZ1Valve bui(
-=======
   Buildings.DHC.Loads.BaseClasses.BuildingRCZ1Valve bui(
->>>>>>> master:Buildings/DHC/Loads/BaseClasses/Examples/CouplingRCZ1Valve.mo
     nPorts_aHeaWat=1,
     nPorts_aChiWat=1,
     nPorts_bHeaWat=1,
@@ -84,13 +76,8 @@ Buildings.DHC.Loads.BaseClasses.PartialBuilding</a>,
 <a href=\"modelica://Buildings.DHC.Loads.BaseClasses.PartialTerminalUnit\">
 Buildings.DHC.Loads.BaseClasses.PartialTerminalUnit</a>
 and
-<<<<<<< HEAD:Buildings/Experimental/DHC/Loads/BaseClasses/Examples/CouplingRCZ1Valve.mo
-<a href=\"modelica://Buildings.Experimental.DHC.Loads.BaseClasses.FlowDistribution\">
-Buildings.Experimental.DHC.Loads.BaseClasses.FlowDistribution</a>
-=======
 <a href=\"modelica://Buildings.DHC.Loads.BaseClasses.FlowDistribution\">
 Buildings.DHC.Loads.BaseClasses.FlowDistribution</a>
->>>>>>> master:Buildings/DHC/Loads/BaseClasses/Examples/CouplingRCZ1Valve.mo
 in a configuration with
 </p>
 <ul>
@@ -116,9 +103,5 @@ First implementation.
         preserveAspectRatio=false,
         extent={{-140,-20},{160,140}})),
     __Dymola_Commands(
-<<<<<<< HEAD:Buildings/Experimental/DHC/Loads/BaseClasses/Examples/CouplingRCZ1Valve.mo
-      file="modelica://Buildings/Resources/Scripts/Dymola/Experimental/DHC/Loads/BaseClasses/Examples/CouplingRCZ1Valve.mos" "Simulate and plot"));
-=======
       file="modelica://Buildings/Resources/Scripts/Dymola/DHC/Loads/BaseClasses/Examples/CouplingRCZ1Valve.mos" "Simulate and plot"));
->>>>>>> master:Buildings/DHC/Loads/BaseClasses/Examples/CouplingRCZ1Valve.mo
 end CouplingRCZ1Valve;

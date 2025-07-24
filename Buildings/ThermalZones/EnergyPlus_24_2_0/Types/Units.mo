@@ -1,8 +1,4 @@
-<<<<<<<< HEAD:Buildings/ThermalZones/EnergyPlus_9_6_0/Types/Units.mo
-within Buildings.ThermalZones.EnergyPlus_9_6_0.Types;
-========
 within Buildings.ThermalZones.EnergyPlus_24_2_0.Types;
->>>>>>>> master:Buildings/ThermalZones/EnergyPlus_24_2_0/Types/Units.mo
 type Units = enumeration(
     Normalized
   "Normalized, such as a control signal between 0 and 1 or status 0, 1, 2, ... (1)",
@@ -38,11 +34,7 @@ type Units = enumeration(
   annotation (Documentation(info="<html>
 <p>
 Enumeration for the units used as inputs to the block
-<<<<<<<< HEAD:Buildings/ThermalZones/EnergyPlus_9_6_0/Types/Units.mo
-<a href=\"modelica://Buildings.ThermalZones.EnergyPlus_9_6_0.Schedule\">Buildings.ThermalZones.EnergyPlus_9_6_0.Schedule</a>.
-========
 <a href=\"modelica://Buildings.ThermalZones.EnergyPlus_24_2_0.Schedule\">Buildings.ThermalZones.EnergyPlus_24_2_0.Schedule</a>.
->>>>>>>> master:Buildings/ThermalZones/EnergyPlus_24_2_0/Types/Units.mo
 </p>
 <p>
 The units are converted between Modelica and EnergyPlus as shown in the table below.

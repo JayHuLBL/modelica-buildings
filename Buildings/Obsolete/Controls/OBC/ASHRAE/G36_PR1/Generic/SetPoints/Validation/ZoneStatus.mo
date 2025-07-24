@@ -29,19 +29,11 @@ model ZoneStatus
   Buildings.Controls.OBC.CDL.Reals.Sin sin2
     "Block that outputs the sine of the input"
     annotation (Placement(transformation(extent={{-70,-50},{-50,-30}})));
-<<<<<<< HEAD
-  Buildings.Controls.OBC.CDL.Continuous.MultiplyByParameter gai(
-    final k=12.5)
-    "Gain factor"
-    annotation (Placement(transformation(extent={{-40,-50},{-20,-30}})));
-  Buildings.Controls.OBC.CDL.Continuous.AddParameter zonTem(
-=======
   Buildings.Controls.OBC.CDL.Reals.MultiplyByParameter gai(
     final k=12.5)
     "Gain factor"
     annotation (Placement(transformation(extent={{-40,-50},{-20,-30}})));
   Buildings.Controls.OBC.CDL.Reals.AddParameter zonTem(
->>>>>>> master
     final p=273.15 + 22.5)
     "Current zone temperature"
     annotation (Placement(transformation(extent={{-10,-50},{10,-30}})));

@@ -1,8 +1,4 @@
-<<<<<<<< HEAD:Buildings/ThermalZones/EnergyPlus_9_6_0/Examples/SmallOffice/ASHRAE2006Winter.mo
-within Buildings.ThermalZones.EnergyPlus_9_6_0.Examples.SmallOffice;
-========
 within Buildings.ThermalZones.EnergyPlus_24_2_0.Examples.SmallOffice;
->>>>>>>> master:Buildings/ThermalZones/EnergyPlus_24_2_0/Examples/SmallOffice/ASHRAE2006Winter.mo
 model ASHRAE2006Winter
   "Variable air volume flow system with terminal reheat and five thermal zones using a control sequence published by ASHRAE in 2006"
   extends Modelica.Icons.Example;
@@ -13,11 +9,7 @@ model ASHRAE2006Winter
     mNor_flow_nominal=ACHNor*VRooNor*conv,
     mWes_flow_nominal=ACHWes*VRooWes*conv,
     redeclare Buildings.Examples.VAVReheat.BaseClasses.ASHRAE2006 hvac,
-<<<<<<<< HEAD:Buildings/ThermalZones/EnergyPlus_9_6_0/Examples/SmallOffice/ASHRAE2006Winter.mo
-    redeclare Buildings.ThermalZones.EnergyPlus_9_6_0.Examples.SmallOffice.BaseClasses.Floor flo);
-========
     redeclare Buildings.ThermalZones.EnergyPlus_24_2_0.Examples.SmallOffice.BaseClasses.Floor flo);
->>>>>>>> master:Buildings/ThermalZones/EnergyPlus_24_2_0/Examples/SmallOffice/ASHRAE2006Winter.mo
 
   parameter Real ACHCor(final unit="1/h")=4
     "Design air change per hour core";
@@ -32,11 +24,7 @@ model ASHRAE2006Winter
 
   annotation (
     __Dymola_Commands(
-<<<<<<<< HEAD:Buildings/ThermalZones/EnergyPlus_9_6_0/Examples/SmallOffice/ASHRAE2006Winter.mo
-      file="modelica://Buildings/Resources/Scripts/Dymola/ThermalZones/EnergyPlus_9_6_0/Examples/SmallOffice/ASHRAE2006Winter.mos" "Simulate and plot"),
-========
       file="modelica://Buildings/Resources/Scripts/Dymola/ThermalZones/EnergyPlus_24_2_0/Examples/SmallOffice/ASHRAE2006Winter.mos" "Simulate and plot"),
->>>>>>>> master:Buildings/ThermalZones/EnergyPlus_24_2_0/Examples/SmallOffice/ASHRAE2006Winter.mo
     experiment(
       StartTime=432000,
       StopTime=864000,
@@ -66,13 +54,8 @@ See the model
 Buildings.Examples.VAVReheat.BaseClasses.PartialHVAC</a>
 for a description of the HVAC system,
 and see the model
-<<<<<<<< HEAD:Buildings/ThermalZones/EnergyPlus_9_6_0/Examples/SmallOffice/ASHRAE2006Winter.mo
-<a href=\"modelica://Buildings.ThermalZones.EnergyPlus_9_6_0.Examples.SmallOffice.BaseClasses.Floor\">
-Buildings.ThermalZones.EnergyPlus_9_6_0.Examples.SmallOffice.BaseClasses.Floor</a>
-========
 <a href=\"modelica://Buildings.ThermalZones.EnergyPlus_24_2_0.Examples.SmallOffice.BaseClasses.Floor\">
 Buildings.ThermalZones.EnergyPlus_24_2_0.Examples.SmallOffice.BaseClasses.Floor</a>
->>>>>>>> master:Buildings/ThermalZones/EnergyPlus_24_2_0/Examples/SmallOffice/ASHRAE2006Winter.mo
 for a description of the building envelope.
 </p>
 <p>
@@ -101,13 +84,8 @@ using a finite state machine.
 </p>
 <p>
 A similar model but with a different control sequence can be found in
-<<<<<<<< HEAD:Buildings/ThermalZones/EnergyPlus_9_6_0/Examples/SmallOffice/ASHRAE2006Winter.mo
-<a href=\"modelica://Buildings.ThermalZones.EnergyPlus_9_6_0.Examples.SmallOffice.Guideline36Winter\">
-Buildings.ThermalZones.EnergyPlus_9_6_0.Examples.SmallOffice.Guideline36Winter</a>.
-========
 <a href=\"modelica://Buildings.ThermalZones.EnergyPlus_24_2_0.Examples.SmallOffice.Guideline36Winter\">
 Buildings.ThermalZones.EnergyPlus_24_2_0.Examples.SmallOffice.Guideline36Winter</a>.
->>>>>>>> master:Buildings/ThermalZones/EnergyPlus_24_2_0/Examples/SmallOffice/ASHRAE2006Winter.mo
 </p>
 <h4>References</h4>
 <p>

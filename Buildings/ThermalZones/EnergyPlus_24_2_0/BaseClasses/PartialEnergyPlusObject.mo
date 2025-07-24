@@ -1,16 +1,8 @@
-<<<<<<<< HEAD:Buildings/ThermalZones/EnergyPlus_9_6_0/BaseClasses/PartialEnergyPlusObject.mo
-within Buildings.ThermalZones.EnergyPlus_9_6_0.BaseClasses;
-partial block PartialEnergyPlusObject
-  "Partial definitions of an EnergyPlus object"
-  extends Modelica.Blocks.Icons.Block;
-  outer Buildings.ThermalZones.EnergyPlus_9_6_0.Building building
-========
 within Buildings.ThermalZones.EnergyPlus_24_2_0.BaseClasses;
 partial block PartialEnergyPlusObject
   "Partial definitions of an EnergyPlus object"
   extends Modelica.Blocks.Icons.Block;
   outer Buildings.ThermalZones.EnergyPlus_24_2_0.Building building
->>>>>>>> master:Buildings/ThermalZones/EnergyPlus_24_2_0/BaseClasses/PartialEnergyPlusObject.mo
     "Building-level declarations";
 
 protected
@@ -43,11 +35,7 @@ protected
   final parameter String fmuName=building.fmuName
     "Specify if a pre-compiled FMU should be used instead of EnergyPlus (mainly for development)"
     annotation (Dialog(tab="Debug"));
-<<<<<<<< HEAD:Buildings/ThermalZones/EnergyPlus_9_6_0/BaseClasses/PartialEnergyPlusObject.mo
-  final parameter Buildings.ThermalZones.EnergyPlus_9_6_0.Types.LogLevels logLevel=building.logLevel
-========
   final parameter Buildings.ThermalZones.EnergyPlus_24_2_0.Types.LogLevels logLevel=building.logLevel
->>>>>>>> master:Buildings/ThermalZones/EnergyPlus_24_2_0/BaseClasses/PartialEnergyPlusObject.mo
     "LogLevels of EnergyPlus output"
     annotation (Dialog(tab="Debug"));
   parameter Modelica.Units.SI.Time startTime(fixed=false)
@@ -75,7 +63,7 @@ initial equation
       graphics={
         Bitmap(
           extent={{58,-98},{98,-68}},
-          fileName="modelica://Buildings/Resources/Images/ThermalZones/EnergyPlus_9_6_0/EnergyPlusLogo.png",
+          fileName="modelica://Buildings/Resources/Images/ThermalZones/EnergyPlus/EnergyPlusLogo.png",
           visible=not usePrecompiledFMU)}),
     Documentation(
       info="<html>

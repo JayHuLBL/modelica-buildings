@@ -1,8 +1,4 @@
-<<<<<<< HEAD:Buildings/Experimental/DHC/EnergyTransferStations/Combined/Subsystems/Validation/HeatExchanger.mo
-within Buildings.Experimental.DHC.EnergyTransferStations.Combined.Subsystems.Validation;
-=======
 within Buildings.DHC.ETS.Combined.Subsystems.Validation;
->>>>>>> master:Buildings/DHC/ETS/Combined/Subsystems/Validation/HeatExchanger.mo
 model HeatExchanger
   "Validation of the base subsystem model with district heat exchanger"
   extends Modelica.Icons.Example;
@@ -31,19 +27,11 @@ model HeatExchanger
     y=time >= 1000 and time < 3000)
     "Cold rejection enable signal"
     annotation (Placement(transformation(extent={{-190,70},{-170,90}})));
-<<<<<<< HEAD:Buildings/Experimental/DHC/EnergyTransferStations/Combined/Subsystems/Validation/HeatExchanger.mo
-  Buildings.Experimental.DHC.EnergyTransferStations.Combined.Subsystems.HeatExchanger hexPum(
-    redeclare final package Medium1 = Medium,
-    redeclare final package Medium2 = Medium,
-    show_T=true,
-    conCon=Buildings.Experimental.DHC.EnergyTransferStations.Types.ConnectionConfiguration.Pump,
-=======
   Buildings.DHC.ETS.Combined.Subsystems.HeatExchanger hexPum(
     redeclare final package Medium1 = Medium,
     redeclare final package Medium2 = Medium,
     show_T=true,
     conCon=Buildings.DHC.ETS.Types.ConnectionConfiguration.Pump,
->>>>>>> master:Buildings/DHC/ETS/Combined/Subsystems/Validation/HeatExchanger.mo
     dp1Hex_nominal=20E3,
     dp2Hex_nominal=20E3,
     Q_flow_nominal=1E6,
@@ -53,11 +41,7 @@ model HeatExchanger
     T_b2_nominal=279.15)
     "Heat exchanger with primary pump"
     annotation (Placement(transformation(extent={{30,-90},{50,-70}})));
-<<<<<<< HEAD:Buildings/Experimental/DHC/EnergyTransferStations/Combined/Subsystems/Validation/HeatExchanger.mo
-  Buildings.Controls.OBC.CDL.Continuous.Switch swi
-=======
   Buildings.Controls.OBC.CDL.Reals.Switch swi
->>>>>>> master:Buildings/DHC/ETS/Combined/Subsystems/Validation/HeatExchanger.mo
     "Switch secondary temperature value depending on heat/cold rejection mode"
     annotation (Placement(transformation(extent={{-120,-90},{-100,-70}})));
   Buildings.Fluid.Sensors.TemperatureTwoPort senT1OutPum(redeclare final
@@ -84,19 +68,11 @@ model HeatExchanger
         extent={{-10,-10},{10,10}},
         rotation=0,
         origin={-30,-100})));
-<<<<<<< HEAD:Buildings/Experimental/DHC/EnergyTransferStations/Combined/Subsystems/Validation/HeatExchanger.mo
-  Buildings.Experimental.DHC.EnergyTransferStations.Combined.Subsystems.HeatExchanger hexVal(
-    redeclare final package Medium1 = Medium,
-    redeclare final package Medium2 = Medium,
-    show_T=true,
-    conCon=Buildings.Experimental.DHC.EnergyTransferStations.Types.ConnectionConfiguration.TwoWayValve,
-=======
   Buildings.DHC.ETS.Combined.Subsystems.HeatExchanger hexVal(
     redeclare final package Medium1 = Medium,
     redeclare final package Medium2 = Medium,
     show_T=true,
     conCon=Buildings.DHC.ETS.Types.ConnectionConfiguration.TwoWayValve,
->>>>>>> master:Buildings/DHC/ETS/Combined/Subsystems/Validation/HeatExchanger.mo
     dp1Hex_nominal=20E3,
     dp2Hex_nominal=20E3,
     Q_flow_nominal=1E6,
@@ -169,11 +145,7 @@ model HeatExchanger
     offset=0.5)
     "Control signal"
     annotation (Placement(transformation(extent={{-80,130},{-60,150}})));
-<<<<<<< HEAD:Buildings/Experimental/DHC/EnergyTransferStations/Combined/Subsystems/Validation/HeatExchanger.mo
-  Buildings.Controls.OBC.CDL.Continuous.Switch swi1 "Activate heat/cold rejection"
-=======
   Buildings.Controls.OBC.CDL.Reals.Switch swi1 "Activate heat/cold rejection"
->>>>>>> master:Buildings/DHC/ETS/Combined/Subsystems/Validation/HeatExchanger.mo
     annotation (Placement(transformation(extent={{-20,70},{0,90}})));
   Buildings.Controls.OBC.CDL.Reals.Sources.Constant zer(
     k=0) "Zero"
@@ -302,11 +274,7 @@ equation
         preserveAspectRatio=false,
         extent={{-220,-160},{220,160}})),
     __Dymola_Commands(
-<<<<<<< HEAD:Buildings/Experimental/DHC/EnergyTransferStations/Combined/Subsystems/Validation/HeatExchanger.mo
-      file="modelica://Buildings/Resources/Scripts/Dymola/Experimental/DHC/EnergyTransferStations/Combined/Subsystems/Validation/HeatExchanger.mos" "Simulate and plot"),
-=======
       file="modelica://Buildings/Resources/Scripts/Dymola/DHC/ETS/Combined/Subsystems/Validation/HeatExchanger.mos" "Simulate and plot"),
->>>>>>> master:Buildings/DHC/ETS/Combined/Subsystems/Validation/HeatExchanger.mo
     experiment(
       StopTime=5000,
       Tolerance=1e-06),
@@ -322,13 +290,8 @@ First implementation.
       info="<html>
 <p>
 This model validates
-<<<<<<< HEAD:Buildings/Experimental/DHC/EnergyTransferStations/Combined/Subsystems/Validation/HeatExchanger.mo
-<a href=\"modelica://Buildings.Experimental.DHC.EnergyTransferStations.Combined.Subsystems.HeatExchanger\">
-Buildings.Experimental.DHC.EnergyTransferStations.Combined.Subsystems.HeatExchanger</a>
-=======
 <a href=\"modelica://Buildings.DHC.ETS.Combined.Subsystems.HeatExchanger\">
 Buildings.DHC.ETS.Combined.Subsystems.HeatExchanger</a>
->>>>>>> master:Buildings/DHC/ETS/Combined/Subsystems/Validation/HeatExchanger.mo
 in a configuration where the primary flow rate is modulated by means of a
 two-way valve (see <code>hexVal</code>), and in a configuration where the
 primary flow rate is modulated by means of a variable speed pump

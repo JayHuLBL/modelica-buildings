@@ -1,12 +1,3 @@
-<<<<<<< HEAD:Buildings/Experimental/DHC/Loads/BaseClasses/Controls/MixingValveControl.mo
-within Buildings.Experimental.DHC.Loads.BaseClasses.Controls;
-block MixingValveControl
-  "Mixing valve controller"
-  extends Modelica.Blocks.Icons.Block;
-  import Type_dis=Buildings.Experimental.DHC.Loads.BaseClasses.Types.DistributionType
-    "Types of distribution system";
-  parameter Type_dis typDis=Type_dis.HeatingWater
-=======
 within Buildings.DHC.Loads.BaseClasses.Controls;
 block MixingValveControl
   "Mixing valve controller"
@@ -14,21 +5,16 @@ block MixingValveControl
 
   parameter Buildings.DHC.Loads.BaseClasses.Types.DistributionType typDis=
     Buildings.DHC.Loads.BaseClasses.Types.DistributionType.HeatingWater
->>>>>>> master:Buildings/DHC/Loads/BaseClasses/Controls/MixingValveControl.mo
     "Type of distribution system"
     annotation (Evaluate=true);
   parameter Real k(
     final min=0,
     final unit="1")=0.1
     "Gain of controller";
-<<<<<<< HEAD:Buildings/Experimental/DHC/Loads/BaseClasses/Controls/MixingValveControl.mo
-  parameter Modelica.Units.SI.Time Ti(final min=Modelica.Constants.small) = 10
-=======
   parameter Real Ti(
     final min=Buildings.Controls.OBC.CDL.Constants.small,
     final quantity="Time",
     final unit="s") = 10
->>>>>>> master:Buildings/DHC/Loads/BaseClasses/Controls/MixingValveControl.mo
     "Time constant of integrator block";
 
   // IO CONNECTORS
@@ -91,17 +77,10 @@ block MixingValveControl
   Buildings.Controls.OBC.CDL.Reals.Max posPar
     "Positive part of control signal"
     annotation (Placement(transformation(extent={{-10,-90},{10,-70}})));
-<<<<<<< HEAD:Buildings/Experimental/DHC/Loads/BaseClasses/Controls/MixingValveControl.mo
-  Buildings.Controls.OBC.CDL.Continuous.MultiplyByParameter opp(k=-1)
-    "Opposite value"
-    annotation (Placement(transformation(extent={{20,-50},{40,-30}})));
-  Buildings.Controls.OBC.CDL.Continuous.Switch swi
-=======
   Buildings.Controls.OBC.CDL.Reals.MultiplyByParameter opp(k=-1)
     "Opposite value"
     annotation (Placement(transformation(extent={{20,-50},{40,-30}})));
   Buildings.Controls.OBC.CDL.Reals.Switch swi
->>>>>>> master:Buildings/DHC/Loads/BaseClasses/Controls/MixingValveControl.mo
     "Logical switch"
     annotation (Placement(transformation(extent={{70,-10},{90,10}})));
   Buildings.Controls.OBC.CDL.Logical.Sources.Constant fixMod(
@@ -182,13 +161,8 @@ integral part is reset whenever the change-over mode is switched.
 </ul>
 <p>
 See
-<<<<<<< HEAD:Buildings/Experimental/DHC/Loads/BaseClasses/Controls/MixingValveControl.mo
-<a href=\"modelica://Buildings.Experimental.DHC.Loads.BaseClasses.Controls.Validation.MixingValveControl\">
-Buildings.Experimental.DHC.Loads.BaseClasses.Controls.Validation.MixingValveControl</a>
-=======
 <a href=\"modelica://Buildings.DHC.Loads.BaseClasses.Controls.Validation.MixingValveControl\">
 Buildings.DHC.Loads.BaseClasses.Controls.Validation.MixingValveControl</a>
->>>>>>> master:Buildings/DHC/Loads/BaseClasses/Controls/MixingValveControl.mo
 for a simulation with change-over.
 </p>
 </html>",

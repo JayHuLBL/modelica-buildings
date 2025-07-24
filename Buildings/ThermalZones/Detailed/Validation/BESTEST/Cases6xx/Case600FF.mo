@@ -142,10 +142,6 @@ model Case600FF
     roughness_a=Buildings.HeatTransfer.Types.SurfaceRoughness.Rough) "Roof"
     annotation (Placement(transformation(extent={{60,84},{74,98}})));
   replaceable parameter Buildings.ThermalZones.Detailed.Validation.BESTEST.Data.Win600 window600(
-<<<<<<< HEAD
-    UFra=3,
-=======
->>>>>>> master
     haveExteriorShade=false,
     haveInteriorShade=false) "Window"
     annotation (Placement(transformation(extent={{40,84},{54,98}})));
@@ -185,29 +181,17 @@ model Case600FF
         meanT(Min=24.3+273.15,  Max=26.1+273.15,  Mean=25.2+273.15))
           constrainedby Modelica.Icons.Record
     "Reference results from ASHRAE/ANSI Standard 140"
-<<<<<<< HEAD
-    annotation (Placement(transformation(extent={{82,42},{96,56}})));
-  Modelica.Blocks.Math.MultiSum multiSum(nu=1)
-    "Multi sum for infiltration air flow rate"
-    annotation (Placement(transformation(extent={{-78,-80},{-66,-68}})));
-  Controls.OBC.CDL.Continuous.MovingAverage TRooHou(
-=======
     annotation (Placement(transformation(extent={{42,44},{56,58}})));
   Modelica.Blocks.Math.MultiSum multiSum(nu=1)
     "Multi sum for infiltration air flow rate"
     annotation (Placement(transformation(extent={{-78,-80},{-66,-68}})));
   Controls.OBC.CDL.Reals.MovingAverage TRooHou(
->>>>>>> master
     delta=3600,
     y(final unit="K",
       displayUnit="degC"))
     "Hourly averaged room air temperature"
     annotation (Placement(transformation(extent={{-68,-28},{-60,-20}})));
-<<<<<<< HEAD
-  Controls.OBC.CDL.Continuous.MovingAverage TRooAnn(
-=======
   Controls.OBC.CDL.Reals.MovingAverage TRooAnn(
->>>>>>> master
     delta=86400*365,
     y(final unit="K",
       displayUnit="degC"))
@@ -216,10 +200,6 @@ model Case600FF
 
   HeatTransfer.Convection.Exterior conOpa(
     A=48,
-<<<<<<< HEAD
-    hFixed=0.8,
-=======
->>>>>>> master
     roughness=Buildings.HeatTransfer.Types.SurfaceRoughness.Rough,
     final til=Buildings.Types.Tilt.Floor,
     final azi=0,
@@ -322,11 +302,7 @@ equation
   connect(conOpa.fluid, TAirConExt.port)
     annotation (Line(points={{54,-75},{64,-75}}, color={191,0,0}));
   connect(weaBus.TDryBul, TAirConExt.T) annotation (Line(
-<<<<<<< HEAD
-      points={{4,-92},{4,-96},{78,-96},{78,-75},{75,-75}},
-=======
       points={{4.04,-91.96},{4.04,-96},{78,-96},{78,-75},{75,-75}},
->>>>>>> master
       color={255,204,51},
       thickness=0.5));
   connect(conOpa.solid, roo.surf_conBou[1]) annotation (Line(points={{44,-75},{
@@ -339,13 +315,8 @@ equation
           {-56,-58},{-51,-58}}, color={0,0,127}));
   connect(souInf.ports[1], res.port_a)
     annotation (Line(points={{-12,-28},{0,-28}}, color={0,127,255}));
-<<<<<<< HEAD
-  connect(res.port_b, roo.ports[3]) annotation (Line(points={{20,-28},{28,-28},{
-          28,-20.5},{39.75,-20.5}}, color={0,127,255}));
-=======
   connect(res.port_b, roo.ports[3]) annotation (Line(points={{20,-28},{28,-28},
           {28,-21.5},{39.75,-21.5}},color={0,127,255}));
->>>>>>> master
   annotation (
 experiment(Tolerance=1e-06, StopTime=3.1536e+07),
 __Dymola_Commands(file="modelica://Buildings/Resources/Scripts/Dymola/ThermalZones/Detailed/Validation/BESTEST/Cases6xx/Case600FF.mos"

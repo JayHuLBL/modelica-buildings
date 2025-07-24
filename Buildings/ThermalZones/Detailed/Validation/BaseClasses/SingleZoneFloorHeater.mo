@@ -33,19 +33,11 @@ model SingleZoneFloorHeater
     u_s(unit="K", displayUnit="degC"),
     u_m(unit="K", displayUnit="degC")) "Controller for heater"
     annotation (Placement(transformation(extent={{-80,-70},{-60,-50}})));
-<<<<<<< HEAD
-  Buildings.Controls.OBC.CDL.Continuous.MultiplyByParameter gai(
-    k=20)
-    "Gain factor"
-    annotation (Placement(transformation(extent={{-48,-70},{-28,-50}})));
-  Buildings.Controls.OBC.CDL.Continuous.AddParameter addPar(
-=======
   Buildings.Controls.OBC.CDL.Reals.MultiplyByParameter gai(
     k=20)
     "Gain factor"
     annotation (Placement(transformation(extent={{-48,-70},{-28,-50}})));
   Buildings.Controls.OBC.CDL.Reals.AddParameter addPar(
->>>>>>> master
     p=273.15 + 10,
     y(unit="K", displayUnit="degC"))
     "Compute the leaving water setpoint temperature"

@@ -13,14 +13,10 @@ model Ren2014ACLivingroom
   parameter Real k1 = 1.30 "Shape factor for turning off the AC of the Weibull Distribution";
   parameter Real k2 = 2.22 "Shape factor for turning on the AC of the Weibull Distribution";
   parameter Modelica.Units.SI.Time samplePeriod=120 "Sample period";
-<<<<<<< HEAD
-  parameter Integer seed = 10 "Seed for random number generator";
-=======
   parameter Integer localSeed = 4001
     "Local seed to be used to generate the initial state of the random number generator";
   parameter Integer globalSeed = 30129
     "Global seed to be combined with the local seed";
->>>>>>> master
 
   Modelica.Blocks.Interfaces.RealInput TIn(
     final unit="K",

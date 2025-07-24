@@ -160,17 +160,6 @@ protected
     final uHigh=hOutHigLimCutHig) if use_enthalpy
     "Outdoor air enthalpy hysteresis for fixed or differential enthalpy cutoff conditions"
     annotation (Placement(transformation(extent={{-98,150},{-78,170}})));
-<<<<<<< HEAD
-  Buildings.Controls.OBC.CDL.Continuous.Subtract sub2 if use_enthalpy
-    "Add block that determines the difference between hOut and hOutCut"
-    annotation (Placement(transformation(extent={{-140,150},{-120,170}})));
-  Buildings.Controls.OBC.CDL.Continuous.Subtract sub1
-    "Add block that determines difference the between TOut and TOutCut"
-    annotation (Placement(transformation(extent={{-140,244},{-120,264}})));
-  Buildings.Controls.OBC.CDL.Continuous.Switch outDamSwitch "Set maximum OA damper position to minimum at disable (after time delay)"
-    annotation (Placement(transformation(extent={{40,-150},{60,-130}})));
-  Buildings.Controls.OBC.CDL.Continuous.Switch minRetDamSwitch
-=======
   Buildings.Controls.OBC.CDL.Reals.Subtract sub2 if use_enthalpy
     "Add block that determines the difference between hOut and hOutCut"
     annotation (Placement(transformation(extent={{-140,150},{-120,170}})));
@@ -180,7 +169,6 @@ protected
   Buildings.Controls.OBC.CDL.Reals.Switch outDamSwitch "Set maximum OA damper position to minimum at disable (after time delay)"
     annotation (Placement(transformation(extent={{40,-150},{60,-130}})));
   Buildings.Controls.OBC.CDL.Reals.Switch minRetDamSwitch
->>>>>>> master
     "Keep minimum RA damper position at physical maximum for a short time period after disable"
     annotation (Placement(transformation(extent={{40,-250},{60,-230}})));
   Buildings.Controls.OBC.CDL.Logical.Nor nor1 "Logical nor"
@@ -206,11 +194,7 @@ protected
     annotation (Placement(transformation(extent={{-80,-10},{-60,10}})));
   Buildings.Controls.OBC.CDL.Logical.Not not3 "Negation for check of freeze protection status"
     annotation (Placement(transformation(extent={{-44,-10},{-24,10}})));
-<<<<<<< HEAD
-  Buildings.Controls.OBC.CDL.Continuous.Subtract sub3
-=======
   Buildings.Controls.OBC.CDL.Reals.Subtract sub3
->>>>>>> master
      if use_fixed_plus_differential_drybulb
     "Add block that determines difference the between TOut and TOutCut"
     annotation (Placement(transformation(extent={{-140,200},{-120,220}})));

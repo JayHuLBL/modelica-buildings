@@ -24,15 +24,11 @@ protected
     "Magnetic flux";
   Modelica.Units.SI.Impedance Z[2] "Impedance of the load";
   Modelica.Units.SI.AngularVelocity omega "Angular frequency";
-<<<<<<< HEAD
-  Modelica.Units.SI.Power Q=P*tan(acos(pf_internal))
-=======
   Modelica.Units.SI.Power Q=P*tan(acos(
     Buildings.Utilities.Math.Functions.smoothMin(
       x1=pf_internal,
       x2=0.99999,
       deltaX=0.0000025)))
->>>>>>> master
     "Reactive power (positive because inductive load)";
 equation
   connect(pf_in, pf_internal);

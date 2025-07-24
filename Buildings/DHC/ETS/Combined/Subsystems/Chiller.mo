@@ -1,8 +1,4 @@
-<<<<<<< HEAD:Buildings/Experimental/DHC/EnergyTransferStations/Combined/Subsystems/Chiller.mo
-within Buildings.Experimental.DHC.EnergyTransferStations.Combined.Subsystems;
-=======
 within Buildings.DHC.ETS.Combined.Subsystems;
->>>>>>> master:Buildings/DHC/ETS/Combined/Subsystems/Chiller.mo
 model Chiller
   "Base subsystem with heat recovery chiller"
   replaceable package Medium=Modelica.Media.Interfaces.PartialMedium
@@ -17,19 +13,6 @@ model Chiller
   replaceable parameter Buildings.Fluid.Chillers.Data.ElectricEIR.Generic dat
     "Chiller performance data"
     annotation (choicesAllMatching=true,Placement(transformation(extent={{60,160},{80,180}})));
-<<<<<<< HEAD:Buildings/Experimental/DHC/EnergyTransferStations/Combined/Subsystems/Chiller.mo
-  replaceable parameter Buildings.Fluid.Movers.Data.Generic perPumCon(
-    motorCooledByFluid=false)
-    constrainedby Buildings.Fluid.Movers.Data.Generic
-    "Record with performance data for condenser pump"
-    annotation (choicesAllMatching=true,Placement(transformation(extent={{100,160},{120,180}})));
-  replaceable parameter Buildings.Fluid.Movers.Data.Generic perPumEva(
-    motorCooledByFluid=false)
-    constrainedby Buildings.Fluid.Movers.Data.Generic
-    "Record with performance data for evaporator pump"
-    annotation (choicesAllMatching=true,Placement(transformation(extent={{140,160},{160,180}})));
-=======
->>>>>>> master:Buildings/DHC/ETS/Combined/Subsystems/Chiller.mo
   parameter Modelica.Units.SI.PressureDifference dpCon_nominal(displayUnit="Pa")
     "Nominal pressure drop accross condenser"
     annotation (Dialog(group="Nominal condition"));
@@ -156,11 +139,7 @@ model Chiller
     final dp_nominal=dpEva_nominal+dpValEva_nominal)
     "Evaporator pump"
     annotation (Placement(transformation(extent={{10,-10},{-10,10}},rotation=0,origin={-100,-60})));
-<<<<<<< HEAD:Buildings/Experimental/DHC/EnergyTransferStations/Combined/Subsystems/Chiller.mo
-  Buildings.Experimental.DHC.EnergyTransferStations.Combined.Controls.Chiller con(
-=======
   Buildings.DHC.ETS.Combined.Controls.Chiller con(
->>>>>>> master:Buildings/DHC/ETS/Combined/Subsystems/Chiller.mo
     final TConWatEntMin=TConWatEntMin,
     final TEvaWatEntMax=TEvaWatEntMax)
     "Controller"
@@ -230,20 +209,12 @@ model Chiller
     annotation (Placement(transformation(extent={{-60,170},{-80,190}})));
   Buildings.Controls.OBC.CDL.Reals.Add add2
     annotation (Placement(transformation(extent={{160,-150},{180,-130}})));
-<<<<<<< HEAD:Buildings/Experimental/DHC/EnergyTransferStations/Combined/Subsystems/Chiller.mo
-  Buildings.Controls.OBC.CDL.Continuous.MultiplyByParameter gai1(final k=dat.mCon_flow_nominal)
-=======
   Buildings.Controls.OBC.CDL.Reals.MultiplyByParameter gai1(final k=dat.mCon_flow_nominal)
->>>>>>> master:Buildings/DHC/ETS/Combined/Subsystems/Chiller.mo
     "Scale to nominal mass flow rate" annotation (Placement(transformation(
         extent={{10,-10},{-10,10}},
         rotation=90,
         origin={-100,114})));
-<<<<<<< HEAD:Buildings/Experimental/DHC/EnergyTransferStations/Combined/Subsystems/Chiller.mo
-  Buildings.Controls.OBC.CDL.Continuous.MultiplyByParameter gai2(final k=dat.mEva_flow_nominal)
-=======
   Buildings.Controls.OBC.CDL.Reals.MultiplyByParameter gai2(final k=dat.mEva_flow_nominal)
->>>>>>> master:Buildings/DHC/ETS/Combined/Subsystems/Chiller.mo
     "Scale to nominal mass flow rate" annotation (Placement(transformation(
         extent={{-10,-10},{10,10}},
         rotation=-90,
@@ -267,17 +238,9 @@ equation
   connect(splEva.port_3,valEva.port_3)
     annotation (Line(points={{-140,-70},{-140,-80},{120,-80},{120,-70}},color={0,127,255}));
   connect(con.yValEva,valEva.y)
-<<<<<<< HEAD:Buildings/Experimental/DHC/EnergyTransferStations/Combined/Subsystems/Chiller.mo
-    annotation (Line(points={{-48,137},{-32,137},{-32,120},{160,120},{160,-40},{
-          120,-40},{120,-48}},                                                                      color={0,0,127}));
-  connect(con.yValCon,valCon.y)
-    annotation (Line(points={{-48,133},{-44,133},{-44,90},{-160,90},{-160,40},{-140,
-          40},{-140,48}},                                                                          color={0,0,127}));
-=======
     annotation (Line(points={{-48,137},{-32,137},{-32,120},{160,120},{160,-40},{120,-40},{120,-48}},color={0,0,127}));
   connect(con.yValCon,valCon.y)
     annotation (Line(points={{-48,133},{-44,133},{-44,90},{-160,90},{-160,40},{-140,40},{-140,48}},color={0,0,127}));
->>>>>>> master:Buildings/DHC/ETS/Combined/Subsystems/Chiller.mo
   connect(con.yChi,chi.on)
     annotation (Line(points={{-48,146},{-36,146},{-36,3},{-12,3}},color={255,0,255}));
   connect(uHea,con.uHea)
@@ -344,9 +307,6 @@ equation
         Text(
           extent={{-149,-110},{151,-150}},
           textColor={0,0,255},
-<<<<<<< HEAD:Buildings/Experimental/DHC/EnergyTransferStations/Combined/Subsystems/Chiller.mo
-          textString="%name")}),
-=======
           textString="%name"),
         Rectangle(
           extent={{-34,38},{38,-40}},
@@ -454,7 +414,6 @@ equation
           pattern=LinePattern.None,
           fillColor={255,0,0},
           fillPattern=FillPattern.Solid)}),
->>>>>>> master:Buildings/DHC/ETS/Combined/Subsystems/Chiller.mo
     Diagram(
       coordinateSystem(
         extent={{-200,-200},{200,200}})),
@@ -480,13 +439,8 @@ condenser inlet temperature (resp. maximum evaporator inlet temperature).
 </p>
 <p>
 The system is controlled based on the logic described in
-<<<<<<< HEAD:Buildings/Experimental/DHC/EnergyTransferStations/Combined/Subsystems/Chiller.mo
-<a href=\"modelica://Buildings.Experimental.DHC.EnergyTransferStations.Combined.Controls.Chiller\">
-Buildings.Experimental.DHC.EnergyTransferStations.Combined.Controls.Chiller</a>.
-=======
 <a href=\"modelica://Buildings.DHC.ETS.Combined.Controls.Chiller\">
 Buildings.DHC.ETS.Combined.Controls.Chiller</a>.
->>>>>>> master:Buildings/DHC/ETS/Combined/Subsystems/Chiller.mo
 The pump flow rate is considered proportional to the pump speed
 under the assumption of a constant flow resistance for both the condenser
 and the evaporator loops. This assumption is justified

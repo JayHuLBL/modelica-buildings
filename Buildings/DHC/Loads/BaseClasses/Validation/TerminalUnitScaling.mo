@@ -1,8 +1,4 @@
-<<<<<<< HEAD:Buildings/Experimental/DHC/Loads/BaseClasses/Validation/TerminalUnitScaling.mo
-within Buildings.Experimental.DHC.Loads.BaseClasses.Validation;
-=======
 within Buildings.DHC.Loads.BaseClasses.Validation;
->>>>>>> master:Buildings/DHC/Loads/BaseClasses/Validation/TerminalUnitScaling.mo
 model TerminalUnitScaling
   "Validation of the scaling factor of the terminal unit model"
   extends Modelica.Icons.Example;
@@ -62,11 +58,7 @@ model TerminalUnitScaling
     nPorts=3)
     "Sink for heating water"
     annotation (Placement(transformation(extent={{10,-10},{-10,10}},rotation=0,origin={90,0})));
-<<<<<<< HEAD:Buildings/Experimental/DHC/Loads/BaseClasses/Validation/TerminalUnitScaling.mo
-  Buildings.Experimental.DHC.Loads.BaseClasses.Validation.BaseClasses.FanCoil2PipeHeating ter(
-=======
   Buildings.DHC.Loads.BaseClasses.Validation.BaseClasses.FanCoil2PipeHeating ter(
->>>>>>> master:Buildings/DHC/Loads/BaseClasses/Validation/TerminalUnitScaling.mo
     have_speVar=false,
     redeclare package Medium1 = Medium1,
     redeclare package Medium2 = Medium2,
@@ -80,11 +72,7 @@ model TerminalUnitScaling
   Buildings.Controls.OBC.CDL.Reals.Sources.Constant TSet(k=293.15, y(
         final unit="K", displayUnit="degC")) "Temperature set point"
     annotation (Placement(transformation(extent={{-100,50},{-80,70}})));
-<<<<<<< HEAD:Buildings/Experimental/DHC/Loads/BaseClasses/Validation/TerminalUnitScaling.mo
- Buildings.Experimental.DHC.Loads.BaseClasses.Validation.BaseClasses.FanCoil2PipeHeating terUniMul(
-=======
  Buildings.DHC.Loads.BaseClasses.Validation.BaseClasses.FanCoil2PipeHeating terUniMul(
->>>>>>> master:Buildings/DHC/Loads/BaseClasses/Validation/TerminalUnitScaling.mo
     have_speVar=false,
     redeclare package Medium1=Medium1,
     redeclare package Medium2=Medium2,
@@ -109,11 +97,7 @@ model TerminalUnitScaling
     duration=500)
     "Required heat flow rate"
     annotation (Placement(transformation(extent={{-100,10},{-80,30}})));
-<<<<<<< HEAD:Buildings/Experimental/DHC/Loads/BaseClasses/Validation/TerminalUnitScaling.mo
- Buildings.Experimental.DHC.Loads.BaseClasses.Validation.BaseClasses.FanCoil2PipeHeating terUniMulZonMul(
-=======
  Buildings.DHC.Loads.BaseClasses.Validation.BaseClasses.FanCoil2PipeHeating terUniMulZonMul(
->>>>>>> master:Buildings/DHC/Loads/BaseClasses/Validation/TerminalUnitScaling.mo
     facMulZon=facMul,
     have_speVar=false,
     redeclare package Medium1 = Medium1,
@@ -195,9 +179,5 @@ First implementation.
         preserveAspectRatio=false,
         extent={{-120,-120},{120,120}})),
     __Dymola_Commands(
-<<<<<<< HEAD:Buildings/Experimental/DHC/Loads/BaseClasses/Validation/TerminalUnitScaling.mo
-      file="modelica://Buildings/Resources/Scripts/Dymola/Experimental/DHC/Loads/BaseClasses/Validation/TerminalUnitScaling.mos" "Simulate and plot"));
-=======
       file="modelica://Buildings/Resources/Scripts/Dymola/DHC/Loads/BaseClasses/Validation/TerminalUnitScaling.mos" "Simulate and plot"));
->>>>>>> master:Buildings/DHC/Loads/BaseClasses/Validation/TerminalUnitScaling.mo
 end TerminalUnitScaling;

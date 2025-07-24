@@ -14,12 +14,8 @@ model WeibullVariableGeneration "Test model for real variable generation functio
 protected
   parameter Modelica.Units.SI.Time t0(final fixed=false)
     "First sample time instant";
-<<<<<<< HEAD
-  Real curSeed "Current value for seed as a real-valued variable";
-=======
   Integer state[Modelica.Math.Random.Generators.Xorshift1024star.nState]
     "State of the random number generator";
->>>>>>> master
 
 initial equation
   y = 0;

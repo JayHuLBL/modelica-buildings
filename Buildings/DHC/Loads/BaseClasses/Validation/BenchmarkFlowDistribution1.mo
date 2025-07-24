@@ -1,8 +1,4 @@
-<<<<<<< HEAD:Buildings/Experimental/DHC/Loads/BaseClasses/Validation/BenchmarkFlowDistribution1.mo
-within Buildings.Experimental.DHC.Loads.BaseClasses.Validation;
-=======
 within Buildings.DHC.Loads.BaseClasses.Validation;
->>>>>>> master:Buildings/DHC/Loads/BaseClasses/Validation/BenchmarkFlowDistribution1.mo
 model BenchmarkFlowDistribution1
   "Performance benchmark of building heating water flow distribution modeling"
   extends Modelica.Icons.Example;
@@ -41,19 +37,11 @@ model BenchmarkFlowDistribution1
   final parameter Modelica.Units.SI.MassFlowRate m_flow_nominal=sum(ter.mHeaWat_flow_nominal)
       *facMul "Nominal mass flow rate in the distribution line";
   final parameter Modelica.Units.SI.HeatFlowRate QHea_flow_nominal(min=Modelica.Constants.eps)
-<<<<<<< HEAD:Buildings/Experimental/DHC/Loads/BaseClasses/Validation/BenchmarkFlowDistribution1.mo
-     = Buildings.Experimental.DHC.Loads.BaseClasses.getPeakLoad(string=
-    "#Peak space heating load", filNam=Modelica.Utilities.Files.loadResource(
-    filNam))/facMul "Design heating heat flow rate (>=0)"
-    annotation (Dialog(group="Design parameter"));
-  Buildings.Experimental.DHC.Loads.BaseClasses.FlowDistribution disFloHea(
-=======
      = Buildings.DHC.Loads.BaseClasses.getPeakLoad(string=
     "#Peak space heating load", filNam=Modelica.Utilities.Files.loadResource(
     filNam))/facMul "Design heating heat flow rate (>=0)"
     annotation (Dialog(group="Design parameter"));
   Buildings.DHC.Loads.BaseClasses.FlowDistribution disFloHea(
->>>>>>> master:Buildings/DHC/Loads/BaseClasses/Validation/BenchmarkFlowDistribution1.mo
     redeclare package Medium=Medium1,
     m_flow_nominal=m_flow_nominal,
     have_pum=true,
@@ -62,11 +50,7 @@ model BenchmarkFlowDistribution1
     nPorts_b1=nLoa)
     "Heating water distribution system"
     annotation (Placement(transformation(extent={{40,-90},{60,-70}})));
-<<<<<<< HEAD:Buildings/Experimental/DHC/Loads/BaseClasses/Validation/BenchmarkFlowDistribution1.mo
-  Buildings.Experimental.DHC.Loads.BaseClasses.Validation.BaseClasses.FanCoil2PipeHeating ter[nLoa](
-=======
   Buildings.DHC.Loads.BaseClasses.Validation.BaseClasses.FanCoil2PipeHeating ter[nLoa](
->>>>>>> master:Buildings/DHC/Loads/BaseClasses/Validation/BenchmarkFlowDistribution1.mo
     each final facMul=facMul,
     redeclare each final package Medium1=Medium1,
     redeclare each final package Medium2=Medium2,
@@ -151,18 +135,6 @@ This model is part of a computational performance benchmark between
 <ul>
 <li>
 a simplified modeling of the piping network as implemented in
-<<<<<<< HEAD:Buildings/Experimental/DHC/Loads/BaseClasses/Validation/BenchmarkFlowDistribution1.mo
-<a href=\"Buildings.Experimental.DHC.Loads.BaseClasses.FlowDistribution\">
-Buildings.Experimental.DHC.Loads.BaseClasses.FlowDistribution</a>
-(see the corresponding example
-<a href=\"modelica://Buildings.Experimental.DHC.Loads.BaseClasses.Validation.BenchmarkFlowDistribution1\">
-Buildings.Experimental.DHC.Loads.BaseClasses.Validation.BenchmarkFlowDistribution1</a>), and
-</li>
-<li>
-an explicit modeling of the piping network (see the corresponding example
-<a href=\"modelica://Buildings.Experimental.DHC.Loads.BaseClasses.Validation.BenchmarkFlowDistribution2\">
-Buildings.Experimental.DHC.Loads.BaseClasses.Validation.BenchmarkFlowDistribution2</a>).
-=======
 <a href=\"modelica://Buildings.DHC.Loads.BaseClasses.FlowDistribution\">
 Buildings.DHC.Loads.BaseClasses.FlowDistribution</a>
 (see the corresponding example
@@ -173,7 +145,6 @@ Buildings.DHC.Loads.BaseClasses.Validation.BenchmarkFlowDistribution1</a>), and
 an explicit modeling of the piping network (see the corresponding example
 <a href=\"modelica://Buildings.DHC.Loads.BaseClasses.Validation.BenchmarkFlowDistribution2\">
 Buildings.DHC.Loads.BaseClasses.Validation.BenchmarkFlowDistribution2</a>).
->>>>>>> master:Buildings/DHC/Loads/BaseClasses/Validation/BenchmarkFlowDistribution1.mo
 </li>
 </ul>
 </html>",
@@ -196,9 +167,5 @@ First implementation.
       StopTime=2000000,
       Tolerance=1e-06),
     __Dymola_Commands(
-<<<<<<< HEAD:Buildings/Experimental/DHC/Loads/BaseClasses/Validation/BenchmarkFlowDistribution1.mo
-      file="modelica://Buildings/Resources/Scripts/Dymola/Experimental/DHC/Loads/BaseClasses/Validation/BenchmarkFlowDistribution1.mos" "Simulate and plot"));
-=======
       file="modelica://Buildings/Resources/Scripts/Dymola/DHC/Loads/BaseClasses/Validation/BenchmarkFlowDistribution1.mos" "Simulate and plot"));
->>>>>>> master:Buildings/DHC/Loads/BaseClasses/Validation/BenchmarkFlowDistribution1.mo
 end BenchmarkFlowDistribution1;

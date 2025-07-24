@@ -1,8 +1,4 @@
-<<<<<<< HEAD:Buildings/Experimental/DHC/EnergyTransferStations/Combined/Subsystems/SwitchBox.mo
-within Buildings.Experimental.DHC.EnergyTransferStations.Combined.Subsystems;
-=======
 within Buildings.DHC.ETS.Combined.Subsystems;
->>>>>>> master:Buildings/DHC/ETS/Combined/Subsystems/SwitchBox.mo
 model SwitchBox
   "Model for mass flow rate redirection with three-port two-position directional valves"
   replaceable package Medium = Modelica.Media.Interfaces.PartialMedium
@@ -56,11 +52,7 @@ model SwitchBox
     iconTransformation(extent=
            {{-140,20},{-100,60}})));
   // COMPONENTS
-<<<<<<< HEAD:Buildings/Experimental/DHC/EnergyTransferStations/Combined/Subsystems/SwitchBox.mo
-  Buildings.Experimental.DHC.EnergyTransferStations.BaseClasses.Junction splSup(
-=======
   Buildings.DHC.ETS.BaseClasses.Junction splSup(
->>>>>>> master:Buildings/DHC/ETS/Combined/Subsystems/SwitchBox.mo
     redeclare final package Medium = Medium,
     m_flow_nominal={1,1,1}*m_flow_nominal)
     "Flow splitter"
@@ -68,11 +60,7 @@ model SwitchBox
         extent={{10,10},{-10,-10}},
         rotation=-90,
         origin={-20,40})));
-<<<<<<< HEAD:Buildings/Experimental/DHC/EnergyTransferStations/Combined/Subsystems/SwitchBox.mo
-  Buildings.Experimental.DHC.EnergyTransferStations.BaseClasses.Junction splRet(
-=======
   Buildings.DHC.ETS.BaseClasses.Junction splRet(
->>>>>>> master:Buildings/DHC/ETS/Combined/Subsystems/SwitchBox.mo
     redeclare final package Medium = Medium,
     m_flow_nominal={1,1,1}*m_flow_nominal)
     "Flow splitter"
@@ -80,12 +68,8 @@ model SwitchBox
         extent={{10,10},{-10,-10}},
         rotation=90,
         origin={20,0})));
-<<<<<<< HEAD:Buildings/Experimental/DHC/EnergyTransferStations/Combined/Subsystems/SwitchBox.mo
-  Buildings.Experimental.DHC.EnergyTransferStations.Combined.Controls.SwitchBox con(
-=======
   Buildings.DHC.ETS.Combined.Controls.SwitchBox con(
     final m_flow_nominal=m_flow_nominal,
->>>>>>> master:Buildings/DHC/ETS/Combined/Subsystems/SwitchBox.mo
     final trueHoldDuration=trueHoldDuration,
     final falseHoldDuration=falseHoldDuration)
     "Switch box controller"
@@ -271,21 +255,12 @@ equation
 <p>
 This model represents a hydronic arrangement avoid flow reversal in the service line,
 for instance when connecting an energy transfer station such as the one modeled in
-<<<<<<< HEAD:Buildings/Experimental/DHC/EnergyTransferStations/Combined/Subsystems/SwitchBox.mo
-<a href=\"modelica://Buildings.Experimental.DHC.EnergyTransferStations.Combined.HeatPumpHeatExchanger\">
-Buildings.Experimental.DHC.EnergyTransferStations.Combined.HeatPumpHeatExchanger</a>.
-For that intent, two three-port two-position directional valves are used. The valves are
-actuated based on the logic described in
-<a href=\"modelica://Buildings.Experimental.DHC.EnergyTransferStations.Combined.Controls.SwitchBox\">
-Buildings.Experimental.DHC.EnergyTransferStations.Combined.Controls.SwitchBox</a>.
-=======
 <a href=\"modelica://Buildings.DHC.ETS.Combined.HeatPumpHeatExchanger\">
 Buildings.DHC.ETS.Combined.HeatPumpHeatExchanger</a>.
 For that intent, two three-port two-position directional valves are used. The valves are
 actuated based on the logic described in
 <a href=\"modelica://Buildings.DHC.ETS.Combined.Controls.SwitchBox\">
 Buildings.DHC.ETS.Combined.Controls.SwitchBox</a>.
->>>>>>> master:Buildings/DHC/ETS/Combined/Subsystems/SwitchBox.mo
 </p>
 </html>", revisions="<html>
 <ul>

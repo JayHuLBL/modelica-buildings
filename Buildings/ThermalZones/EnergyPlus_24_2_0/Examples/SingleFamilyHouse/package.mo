@@ -1,8 +1,4 @@
-<<<<<<<< HEAD:Buildings/ThermalZones/EnergyPlus_9_6_0/Examples/SingleFamilyHouse/package.mo
-within Buildings.ThermalZones.EnergyPlus_9_6_0.Examples;
-========
 within Buildings.ThermalZones.EnergyPlus_24_2_0.Examples;
->>>>>>>> master:Buildings/ThermalZones/EnergyPlus_24_2_0/Examples/SingleFamilyHouse/package.mo
 package SingleFamilyHouse "Package with examples that illustrate the use of the EnergyPlus objects"
   extends Modelica.Icons.ExamplesPackage;
 

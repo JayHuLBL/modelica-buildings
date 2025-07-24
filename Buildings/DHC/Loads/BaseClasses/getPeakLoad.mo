@@ -1,8 +1,4 @@
-<<<<<<< HEAD:Buildings/Experimental/DHC/Loads/BaseClasses/getPeakLoad.mo
-within Buildings.Experimental.DHC.Loads.BaseClasses;
-=======
 within Buildings.DHC.Loads.BaseClasses;
->>>>>>> master:Buildings/DHC/Loads/BaseClasses/getPeakLoad.mo
 pure function getPeakLoad
   "Function that reads the peak load from the load profile"
   extends Modelica.Icons.Function;

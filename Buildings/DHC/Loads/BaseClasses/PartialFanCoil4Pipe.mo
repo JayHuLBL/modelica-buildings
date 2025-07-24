@@ -1,8 +1,4 @@
-<<<<<<<< HEAD:Buildings/DHC/Loads/BaseClasses/Examples/BaseClasses/PartialFanCoil4Pipe.mo
-within Buildings.Experimental.DHC.Loads.BaseClasses.Examples.BaseClasses;
-========
 within Buildings.DHC.Loads.BaseClasses;
->>>>>>>> master:Buildings/DHC/Loads/BaseClasses/PartialFanCoil4Pipe.mo
 partial model PartialFanCoil4Pipe
   "Partial model of a sensible only four-pipe fan coil unit computing a required water mass flow rate"
   extends Buildings.DHC.Loads.BaseClasses.PartialTerminalUnit(
@@ -60,11 +56,7 @@ partial model PartialFanCoil4Pipe
     final allowFlowReversal1=allowFlowReversal,
     final allowFlowReversal2=allowFlowReversalLoa)
     annotation (Placement(transformation(extent={{-80,4},{-60,-16}})));
-<<<<<<<< HEAD:Buildings/DHC/Loads/BaseClasses/Examples/BaseClasses/PartialFanCoil4Pipe.mo
-  Buildings.Controls.OBC.CDL.Continuous.MultiplyByParameter gaiHeaFloNom(k=
-========
   Buildings.Controls.OBC.CDL.Reals.MultiplyByParameter gaiHeaFloNom(k=
->>>>>>>> master:Buildings/DHC/Loads/BaseClasses/PartialFanCoil4Pipe.mo
         mHeaWat_flow_nominal)
     annotation (Placement(transformation(extent={{40,210},{60,230}})));
   Modelica.Blocks.Sources.RealExpression Q_flowHea(
@@ -88,11 +80,7 @@ partial model PartialFanCoil4Pipe
     annotation (Placement(transformation(extent={{0,4},{20,-16}})));
   Modelica.Blocks.Sources.RealExpression Q_flowCoo(y=hexWetNtu.Q2_flow)
     annotation (Placement(transformation(extent={{-80,30},{-60,50}})));
-<<<<<<<< HEAD:Buildings/DHC/Loads/BaseClasses/Examples/BaseClasses/PartialFanCoil4Pipe.mo
-  Buildings.Controls.OBC.CDL.Continuous.MultiplyByParameter gaiFloNom2(k=max({
-========
   Buildings.Controls.OBC.CDL.Reals.MultiplyByParameter gaiFloNom2(k=max({
->>>>>>>> master:Buildings/DHC/Loads/BaseClasses/PartialFanCoil4Pipe.mo
         mLoaHea_flow_nominal,mLoaCoo_flow_nominal}))
     annotation (Placement(transformation(extent={{40,130},{60,150}})));
   Buildings.Controls.OBC.CDL.Reals.PID conCoo(
@@ -103,11 +91,7 @@ partial model PartialFanCoil4Pipe
     yMin=0)
     "PI controller for cooling"
     annotation (Placement(transformation(extent={{-10,170},{10,190}})));
-<<<<<<<< HEAD:Buildings/DHC/Loads/BaseClasses/Examples/BaseClasses/PartialFanCoil4Pipe.mo
-  Buildings.Controls.OBC.CDL.Continuous.MultiplyByParameter gaiCooFloNom(k=
-========
   Buildings.Controls.OBC.CDL.Reals.MultiplyByParameter gaiCooFloNom(k=
->>>>>>>> master:Buildings/DHC/Loads/BaseClasses/PartialFanCoil4Pipe.mo
         mChiWat_flow_nominal) "Scaling"
     annotation (Placement(transformation(extent={{40,170},{60,190}})));
   Utilities.Math.SmoothMax smoothMax(
@@ -160,13 +144,8 @@ equation
 This is a simplified partial model of a sensible only four-pipe fan coil unit
 for heating and cooling.
 It is intended to be used in conjunction with
-<<<<<<<< HEAD:Buildings/DHC/Loads/BaseClasses/Examples/BaseClasses/PartialFanCoil4Pipe.mo
-<a href=\"modelica://Buildings.Experimental.DHC.Loads.BaseClasses.FlowDistribution\">
-Buildings.Experimental.DHC.Loads.BaseClasses.FlowDistribution</a>,
-========
 <a href=\"modelica://Buildings.DHC.Loads.BaseClasses.FlowDistribution\">
 Buildings.DHC.Loads.BaseClasses.FlowDistribution</a>,
->>>>>>>> master:Buildings/DHC/Loads/BaseClasses/PartialFanCoil4Pipe.mo
 and hence it computes the water mass flow rate required to meet the temperature
 set point.
 </p>

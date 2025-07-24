@@ -1,14 +1,7 @@
-<<<<<<< HEAD:Buildings/Experimental/DHC/EnergyTransferStations/Combined/Validation/ChillerOnly.mo
-within Buildings.Experimental.DHC.EnergyTransferStations.Combined.Validation;
-model ChillerOnly
-  "Validation of the ETS model with heat recovery chiller"
-  extends Buildings.Experimental.DHC.EnergyTransferStations.Combined.Validation.BaseClasses.PartialChillerBorefield;
-=======
 within Buildings.DHC.ETS.Combined.Validation;
 model ChillerOnly
   "Validation of the ETS model with heat recovery chiller"
   extends Buildings.DHC.ETS.Combined.Validation.BaseClasses.PartialChillerBorefield;
->>>>>>> master:Buildings/DHC/ETS/Combined/Validation/ChillerOnly.mo
   Modelica.Blocks.Sources.CombiTimeTable TDisWatSup(
     tableName="tab1",
     table=[
@@ -30,11 +23,7 @@ equation
     annotation (Line(points={{-309,160},{280,160},{280,60},{272,60}},color={0,0,127}));
   annotation (
     __Dymola_Commands(
-<<<<<<< HEAD:Buildings/Experimental/DHC/EnergyTransferStations/Combined/Validation/ChillerOnly.mo
-      file="modelica://Buildings/Resources/Scripts/Dymola/Experimental/DHC/EnergyTransferStations/Combined/Validation/ChillerOnly.mos" "Simulate and plot"),
-=======
       file="modelica://Buildings/Resources/Scripts/Dymola/DHC/ETS/Combined/Validation/ChillerOnly.mos" "Simulate and plot"),
->>>>>>> master:Buildings/DHC/ETS/Combined/Validation/ChillerOnly.mo
     experiment(
       StopTime=360000,
       Tolerance=1e-06),
@@ -54,13 +43,8 @@ First implementation.
       info="<html>
 <p>
 This model validates
-<<<<<<< HEAD:Buildings/Experimental/DHC/EnergyTransferStations/Combined/Validation/ChillerOnly.mo
-<a href=\"modelica://Buildings.Experimental.DHC.EnergyTransferStations.Combined.ChillerBorefield\">
-Buildings.Experimental.DHC.EnergyTransferStations.Combined.ChillerBorefield</a>
-=======
 <a href=\"modelica://Buildings.DHC.ETS.Combined.ChillerBorefield\">
 Buildings.DHC.ETS.Combined.ChillerBorefield</a>
->>>>>>> master:Buildings/DHC/ETS/Combined/Validation/ChillerOnly.mo
 in a system configuration with no geothermal borefield.
 </p>
 <ul>
@@ -75,13 +59,8 @@ temperature, corresponding to typical extreme values over a whole year
 </li>
 <li>
 The other modeling assumptions are described in
-<<<<<<< HEAD:Buildings/Experimental/DHC/EnergyTransferStations/Combined/Validation/ChillerOnly.mo
-<a href=\"modelica://Buildings.Experimental.DHC.EnergyTransferStations.Combined.Validation.BaseClasses.PartialChillerBorefield\">
-Buildings.Experimental.DHC.EnergyTransferStations.Combined.Validation.BaseClasses.PartialChillerBorefield</a>.
-=======
 <a href=\"modelica://Buildings.DHC.ETS.Combined.Validation.BaseClasses.PartialChillerBorefield\">
 Buildings.DHC.ETS.Combined.Validation.BaseClasses.PartialChillerBorefield</a>.
->>>>>>> master:Buildings/DHC/ETS/Combined/Validation/ChillerOnly.mo
 </li>
 </ul>
 </html>"));

@@ -2,11 +2,7 @@ within Buildings.DHC.Loads.BaseClasses.Validation.BaseClasses;
 model ETS
   "Dummy ETS model for validation purposes"
   extends
-<<<<<<< HEAD:Buildings/Experimental/DHC/Loads/BaseClasses/Validation/BaseClasses/ETS.mo
-    Buildings.Experimental.DHC.EnergyTransferStations.BaseClasses.PartialETS;
-=======
     Buildings.DHC.ETS.BaseClasses.PartialETS;
->>>>>>> master:Buildings/DHC/Loads/BaseClasses/Validation/BaseClasses/ETS.mo
   parameter Modelica.Units.SI.MassFlowRate m_flow_nominal
     "Nominal mass flow rate";
   Buildings.Controls.OBC.CDL.Reals.Sources.Constant souPHea(
@@ -23,44 +19,26 @@ model ETS
     annotation (Placement(transformation(extent={{260,-70},{280,-50}})));
   Fluid.Sources.Boundary_pT sinSerAmbSup(
     redeclare final package Medium = MediumSer,
-<<<<<<< HEAD:Buildings/Experimental/DHC/Loads/BaseClasses/Validation/BaseClasses/ETS.mo
-    nPorts=1) if typ == Buildings.Experimental.DHC.Types.DistrictSystemType.CombinedGeneration5
-=======
     nPorts=1) if typ == Buildings.DHC.Types.DistrictSystemType.CombinedGeneration5
->>>>>>> master:Buildings/DHC/Loads/BaseClasses/Validation/BaseClasses/ETS.mo
     "Sink for service supply"
     annotation (Placement(transformation(extent={{-260,-210},{-280,-190}})));
   Fluid.Sources.MassFlowSource_T souSerAmbRet(
     redeclare final package Medium = MediumSer,
     m_flow=m_flow_nominal,
-<<<<<<< HEAD:Buildings/Experimental/DHC/Loads/BaseClasses/Validation/BaseClasses/ETS.mo
-    nPorts=1) if typ == Buildings.Experimental.DHC.Types.DistrictSystemType.CombinedGeneration5
-=======
     nPorts=1) if typ == Buildings.DHC.Types.DistrictSystemType.CombinedGeneration5
->>>>>>> master:Buildings/DHC/Loads/BaseClasses/Validation/BaseClasses/ETS.mo
     "Source for service return"
     annotation (Placement(transformation(extent={{260,-210},{280,-190}})));
   Fluid.Sources.Boundary_pT sinSerHeaSup(
     redeclare final package Medium = MediumSerHea_a,
-<<<<<<< HEAD:Buildings/Experimental/DHC/Loads/BaseClasses/Validation/BaseClasses/ETS.mo
-    nPorts=1) if typ <> Buildings.Experimental.DHC.Types.DistrictSystemType.Cooling and
-    typ <> Buildings.Experimental.DHC.Types.DistrictSystemType.CombinedGeneration5
-=======
     nPorts=1) if typ <> Buildings.DHC.Types.DistrictSystemType.Cooling and
     typ <> Buildings.DHC.Types.DistrictSystemType.CombinedGeneration5
->>>>>>> master:Buildings/DHC/Loads/BaseClasses/Validation/BaseClasses/ETS.mo
     "Sink for service supply"
     annotation (Placement(transformation(extent={{-260,-250},{-280,-230}})));
   Fluid.Sources.MassFlowSource_T souSerHeaReat(
     redeclare final package Medium = MediumSer,
     m_flow=m_flow_nominal,
-<<<<<<< HEAD:Buildings/Experimental/DHC/Loads/BaseClasses/Validation/BaseClasses/ETS.mo
-    nPorts=1) if typ <> Buildings.Experimental.DHC.Types.DistrictSystemType.Cooling and
-    typ <> Buildings.Experimental.DHC.Types.DistrictSystemType.CombinedGeneration5
-=======
     nPorts=1) if typ <> Buildings.DHC.Types.DistrictSystemType.Cooling and
     typ <> Buildings.DHC.Types.DistrictSystemType.CombinedGeneration5
->>>>>>> master:Buildings/DHC/Loads/BaseClasses/Validation/BaseClasses/ETS.mo
     "Source for service return"
     annotation (Placement(transformation(extent={{260,-250},{280,-230}})));
   Fluid.Sources.Boundary_pT sinHeaWat(

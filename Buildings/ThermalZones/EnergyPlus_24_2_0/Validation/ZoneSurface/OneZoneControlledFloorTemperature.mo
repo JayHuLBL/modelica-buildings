@@ -1,15 +1,3 @@
-<<<<<<<< HEAD:Buildings/ThermalZones/EnergyPlus_9_6_0/Validation/ZoneSurface/OneZoneControlledFloorTemperature.mo
-within Buildings.ThermalZones.EnergyPlus_9_6_0.Validation.ZoneSurface;
-model OneZoneControlledFloorTemperature
-  "Validation model with one thermal zone with controlled floor temperature"
-  extends
-    Buildings.ThermalZones.EnergyPlus_9_6_0.Examples.SingleFamilyHouse.Unconditioned;
-  Buildings.ThermalZones.EnergyPlus_9_6_0.ZoneSurface flo(
-    surfaceName="Living:Floor")
-    "Floor surface of living room"
-    annotation (Placement(transformation(extent={{70,40},{90,60}})));
-  Controls.OBC.CDL.Continuous.Sources.Constant TSetRooHea(
-========
 within Buildings.ThermalZones.EnergyPlus_24_2_0.Validation.ZoneSurface;
 model OneZoneControlledFloorTemperature
   "Validation model with one thermal zone with controlled floor temperature"
@@ -20,40 +8,27 @@ model OneZoneControlledFloorTemperature
     "Floor surface of living room"
     annotation (Placement(transformation(extent={{70,40},{90,60}})));
   Buildings.Controls.OBC.CDL.Reals.Sources.Constant TSetRooHea(
->>>>>>>> master:Buildings/ThermalZones/EnergyPlus_24_2_0/Validation/ZoneSurface/OneZoneControlledFloorTemperature.mo
     k(final unit="K",
       displayUnit="degC")=293.15,
     y(final unit="K",
       displayUnit="degC"))
     "Room temperture set point for heating"
     annotation (Placement(transformation(extent={{-96,40},{-76,60}})));
-<<<<<<<< HEAD:Buildings/ThermalZones/EnergyPlus_9_6_0/Validation/ZoneSurface/OneZoneControlledFloorTemperature.mo
-  Controls.OBC.CDL.Continuous.PID conHea(
-========
   Buildings.Controls.OBC.CDL.Reals.PID conHea(
->>>>>>>> master:Buildings/ThermalZones/EnergyPlus_24_2_0/Validation/ZoneSurface/OneZoneControlledFloorTemperature.mo
     controllerType=Buildings.Controls.OBC.CDL.Types.SimpleController.PI,
     k=0.25,
     Ti(
       displayUnit="min")=1800)
     "Controller for heating"
     annotation (Placement(transformation(extent={{-60,40},{-40,60}})));
-<<<<<<<< HEAD:Buildings/ThermalZones/EnergyPlus_9_6_0/Validation/ZoneSurface/OneZoneControlledFloorTemperature.mo
-  Controls.OBC.CDL.Continuous.Sources.Constant TSetRooCoo(
-========
   Buildings.Controls.OBC.CDL.Reals.Sources.Constant TSetRooCoo(
->>>>>>>> master:Buildings/ThermalZones/EnergyPlus_24_2_0/Validation/ZoneSurface/OneZoneControlledFloorTemperature.mo
     k(final unit="K",
       displayUnit="degC")=297.15,
     y(final unit="K",
       displayUnit="degC"))
     "Room temperture set point for cooling"
     annotation (Placement(transformation(extent={{-96,70},{-76,90}})));
-<<<<<<<< HEAD:Buildings/ThermalZones/EnergyPlus_9_6_0/Validation/ZoneSurface/OneZoneControlledFloorTemperature.mo
-  Controls.OBC.CDL.Continuous.PID conCoo(
-========
   Buildings.Controls.OBC.CDL.Reals.PID conCoo(
->>>>>>>> master:Buildings/ThermalZones/EnergyPlus_24_2_0/Validation/ZoneSurface/OneZoneControlledFloorTemperature.mo
     controllerType=Buildings.Controls.OBC.CDL.Types.SimpleController.PI,
     k=0.25,
     Ti(
@@ -61,32 +36,18 @@ model OneZoneControlledFloorTemperature
     reverseActing=false)
     "Controller for cooling"
     annotation (Placement(transformation(extent={{-60,70},{-40,90}})));
-<<<<<<<< HEAD:Buildings/ThermalZones/EnergyPlus_9_6_0/Validation/ZoneSurface/OneZoneControlledFloorTemperature.mo
-  Controls.OBC.CDL.Continuous.Add dTSetFlo
-    "Change in floor temperature compared to room air temperature"
-    annotation (Placement(transformation(extent={{0,60},{20,80}})));
-  Controls.OBC.CDL.Continuous.Add TFlo(
-========
   Buildings.Controls.OBC.CDL.Reals.Add dTSetFlo
     "Change in floor temperature compared to room air temperature"
     annotation (Placement(transformation(extent={{0,60},{20,80}})));
   Buildings.Controls.OBC.CDL.Reals.Add TFlo(
->>>>>>>> master:Buildings/ThermalZones/EnergyPlus_24_2_0/Validation/ZoneSurface/OneZoneControlledFloorTemperature.mo
     y(final unit="K",
       displayUnit="degC"))
     "Floor temperature"
     annotation (Placement(transformation(extent={{30,40},{50,60}})));
-<<<<<<<< HEAD:Buildings/ThermalZones/EnergyPlus_9_6_0/Validation/ZoneSurface/OneZoneControlledFloorTemperature.mo
-  Controls.OBC.CDL.Continuous.MultiplyByParameter gai(
-    final k=-5) "Gain factor"
-    annotation (Placement(transformation(extent={{-32,70},{-12,90}})));
-  Controls.OBC.CDL.Continuous.MultiplyByParameter gai1(
-========
   Buildings.Controls.OBC.CDL.Reals.MultiplyByParameter gai(
     final k=-5) "Gain factor"
     annotation (Placement(transformation(extent={{-32,70},{-12,90}})));
   Buildings.Controls.OBC.CDL.Reals.MultiplyByParameter gai1(
->>>>>>>> master:Buildings/ThermalZones/EnergyPlus_24_2_0/Validation/ZoneSurface/OneZoneControlledFloorTemperature.mo
     final k=5) "Gain factor"
     annotation (Placement(transformation(extent={{-32,40},{-12,60}})));
 
@@ -116,11 +77,7 @@ equation
           {-2,76}},color={0,0,127}));
   annotation (
     __Dymola_Commands(
-<<<<<<<< HEAD:Buildings/ThermalZones/EnergyPlus_9_6_0/Validation/ZoneSurface/OneZoneControlledFloorTemperature.mo
-      file="modelica://Buildings/Resources/Scripts/Dymola/ThermalZones/EnergyPlus_9_6_0/Validation/ZoneSurface/OneZoneControlledFloorTemperature.mos" "Simulate and plot"),
-========
       file="modelica://Buildings/Resources/Scripts/Dymola/ThermalZones/EnergyPlus_24_2_0/Validation/ZoneSurface/OneZoneControlledFloorTemperature.mos" "Simulate and plot"),
->>>>>>>> master:Buildings/ThermalZones/EnergyPlus_24_2_0/Validation/ZoneSurface/OneZoneControlledFloorTemperature.mo
     experiment(
       StartTime=10800000,
       StopTime=11232000,

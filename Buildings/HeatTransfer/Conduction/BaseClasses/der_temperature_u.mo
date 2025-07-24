@@ -20,17 +20,10 @@ function der_temperature_u
     each unit="kg.K2/J")
     "Derivatives dT/du at the support points";
 protected
-<<<<<<< HEAD
-  parameter Real scale=0.999 "Used to place points on the phase transition";
-  parameter Modelica.Units.SI.Temperature Tm1=TSol + (1 - scale)*(TLiq - TSol)
-    "Support point";
-  parameter Modelica.Units.SI.Temperature Tm2=TSol + scale*(TLiq - TSol)
-=======
   constant Real scale=0.999 "Used to place points on the phase transition";
   Modelica.Units.SI.Temperature Tm1
     "Support point";
   Modelica.Units.SI.Temperature Tm2
->>>>>>> master
     "Support point";
 algorithm
   assert(Buildings.HeatTransfer.Conduction.nSupPCM == 6,

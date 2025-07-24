@@ -12,13 +12,9 @@ model Case610 "Case 600 with south shading"
     annualHea(Min=4.066*3.6e9, Max=4.592*3.6e9, Mean=4.311*3.6e9),
     annualCoo(Min=-4.117*3.6e9, Max=-4.382*3.6e9, Mean=-4.256*3.6e9),
     peakHea(Min=3.021*1000, Max=3.360*1000, Mean=3.168*1000),
-<<<<<<< HEAD
-    peakCoo(Min=-5.331*1000, Max=-6.432*1000, Mean=-5.861*1000)));
-=======
     peakCoo(Min=-5.331*1000, Max=-6.432*1000, Mean=-5.861*1000)),
    heaCri(lowerLimit=3.61*3.6e9, upperLimit=5.27*3.6e9),
    cooCri(lowerLimit=-2.74*3.6e9, upperLimit=-6.03*3.6e9));
->>>>>>> master
 
   annotation (__Dymola_Commands(file="modelica://Buildings/Resources/Scripts/Dymola/ThermalZones/Detailed/Validation/BESTEST/Cases6xx/Case610.mos"
         "Simulate and plot"),

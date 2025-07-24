@@ -230,19 +230,6 @@ block DamperValves
     final y_reset=0) if not have_pressureIndependentDamper
     "Damper position controller"
     annotation (Placement(transformation(extent={{280,220},{300,240}})));
-<<<<<<< HEAD
-  Buildings.Controls.OBC.CDL.Continuous.Switch swi
-    "Output active cooling airflow according to cooling control signal"
-    annotation (Placement(transformation(extent={{140,260},{160,280}})));
-  Buildings.Controls.OBC.CDL.Continuous.Switch swi1 "Output active airflow when it is in deadband state"
-    annotation (Placement(transformation(extent={{132,40},{152,60}})));
-  Buildings.Controls.OBC.CDL.Continuous.Switch swi2 "Acitive heating airflow rate"
-    annotation (Placement(transformation(extent={{80,-260},{100,-240}})));
-  Buildings.Controls.OBC.CDL.Continuous.Switch swi4
-    "Output active heating airflow according to heating control signal"
-    annotation (Placement(transformation(extent={{140,-260},{160,-240}})));
-  Buildings.Controls.OBC.CDL.Continuous.Switch swi5 "Output active cooling airflow "
-=======
   Buildings.Controls.OBC.CDL.Reals.Switch swi
     "Output active cooling airflow according to cooling control signal"
     annotation (Placement(transformation(extent={{140,260},{160,280}})));
@@ -254,7 +241,6 @@ block DamperValves
     "Output active heating airflow according to heating control signal"
     annotation (Placement(transformation(extent={{140,-260},{160,-240}})));
   Buildings.Controls.OBC.CDL.Reals.Switch swi5 "Output active cooling airflow "
->>>>>>> master
     annotation (Placement(transformation(extent={{60,200},{80,220}})));
 
 protected
@@ -285,19 +271,11 @@ protected
   Buildings.Controls.OBC.CDL.Reals.Sources.Constant conHal1(
     final k=0.5) "Constant real value"
     annotation (Placement(transformation(extent={{-260,-340},{-240,-320}})));
-<<<<<<< HEAD
-  Buildings.Controls.OBC.CDL.Continuous.AddParameter addPar(
-    final p=dTDisZonSetMax)
-    "Maximum heating discharge temperature"
-    annotation (Placement(transformation(extent={{-260,-70},{-240,-50}})));
-  Buildings.Controls.OBC.CDL.Continuous.AddParameter addPar1(
-=======
   Buildings.Controls.OBC.CDL.Reals.AddParameter addPar(
     final p=dTDisZonSetMax)
     "Maximum heating discharge temperature"
     annotation (Placement(transformation(extent={{-260,-70},{-240,-50}})));
   Buildings.Controls.OBC.CDL.Reals.AddParameter addPar1(
->>>>>>> master
     final p=2.8)
     "Zone temperature pluTZonSets 2.8 degC"
     annotation (Placement(transformation(extent={{-260,-260},{-240,-240}})));
@@ -326,17 +304,10 @@ protected
     final uHigh=0.1)
     "Check if discharge air temperature is greater than room temperature plus 2.8 degC"
     annotation (Placement(transformation(extent={{-80,-260},{-60,-240}})));
-<<<<<<< HEAD
-  Buildings.Controls.OBC.CDL.Continuous.Subtract sub1
-    "Calculate temperature difference between discharge air and room plus 2.8 degC"
-    annotation (Placement(transformation(extent={{-120,-260},{-100,-240}})));
-  Buildings.Controls.OBC.CDL.Continuous.Subtract sub2
-=======
   Buildings.Controls.OBC.CDL.Reals.Subtract sub1
     "Calculate temperature difference between discharge air and room plus 2.8 degC"
     annotation (Placement(transformation(extent={{-120,-260},{-100,-240}})));
   Buildings.Controls.OBC.CDL.Reals.Subtract sub2
->>>>>>> master
     "Calculate temperature difference between AHU supply air and room "
     annotation (Placement(transformation(extent={{-160,190},{-140,210}})));
   Buildings.Controls.OBC.CDL.Logical.TrueFalseHold truHol2(
@@ -355,15 +326,9 @@ protected
     final k=Buildings.Obsolete.Controls.OBC.ASHRAE.G36_PR1.Types.OperationModes.unoccupied)
     "Constant signal for unoccupied mode"
     annotation (Placement(transformation(extent={{170,-322},{190,-302}})));
-<<<<<<< HEAD
-  Buildings.Controls.OBC.CDL.Continuous.Switch watValPosUno "Output hot water valve position"
-    annotation (Placement(transformation(extent={{280,-30},{300,-10}})));
-  Buildings.Controls.OBC.CDL.Continuous.Switch damPosUno "Output damper position"
-=======
   Buildings.Controls.OBC.CDL.Reals.Switch watValPosUno "Output hot water valve position"
     annotation (Placement(transformation(extent={{280,-30},{300,-10}})));
   Buildings.Controls.OBC.CDL.Reals.Switch damPosUno "Output damper position"
->>>>>>> master
     annotation (Placement(transformation(extent={{280,60},{300,80}})));
   Buildings.Controls.OBC.CDL.Logical.Not not5 "Negation of input signal"
     annotation (Placement(transformation(extent={{200,-260},{220,-240}})));
@@ -371,22 +336,14 @@ protected
     final k=TDisMin)
     "Lowest allowed discharge air temperature"
     annotation (Placement(transformation(extent={{-68,-108},{-48,-88}})));
-<<<<<<< HEAD
-  Buildings.Controls.OBC.CDL.Continuous.Switch swi6
-=======
   Buildings.Controls.OBC.CDL.Reals.Switch swi6
->>>>>>> master
     "Output hot water valve position in case of low discharge air temperature"
     annotation (Placement(transformation(extent={{-30,-90},{-10,-70}})));
   Buildings.Controls.OBC.CDL.Logical.Or or2 "Logical not"
     annotation (Placement(transformation(extent={{-68,-64},{-48,-44}})));
   Buildings.Controls.OBC.CDL.Logical.Not not3 "Logical not"
     annotation (Placement(transformation(extent={{-120,120},{-100,140}})));
-<<<<<<< HEAD
-  Buildings.Controls.OBC.CDL.Continuous.Switch swi3
-=======
   Buildings.Controls.OBC.CDL.Reals.Switch swi3
->>>>>>> master
     "Output hot water valve position in case of low discharge air temperature"
     annotation (Placement(transformation(extent={{104,-82},{124,-62}})));
   Buildings.Controls.OBC.CDL.Logical.Not not6 "Negation of input signal"
@@ -398,11 +355,7 @@ protected
     annotation (Placement(transformation(extent={{200,250},{220,270}})));
   Buildings.Controls.OBC.CDL.Reals.Add add4 "Active airflow set point"
     annotation (Placement(transformation(extent={{180,40},{200,60}})));
-<<<<<<< HEAD
-  Buildings.Controls.OBC.CDL.Continuous.Divide VDis_flowNor
-=======
   Buildings.Controls.OBC.CDL.Reals.Divide VDis_flowNor
->>>>>>> master
     if not have_pressureIndependentDamper
     "Normalized discharge volume flow rate"
     annotation (Placement(transformation(extent={{240,150},{260,170}})));
@@ -410,17 +363,10 @@ protected
     final k=V_flow_nominal)
     "Nominal volume flow rate"
     annotation (Placement(transformation(extent={{200,200},{220,220}})));
-<<<<<<< HEAD
-  Buildings.Controls.OBC.CDL.Continuous.Divide VDisSet_flowNor
-    "Normalized setpoint for discharge volume flow rate"
-    annotation (Placement(transformation(extent={{240,220},{260,240}})));
-  Buildings.Controls.OBC.CDL.Continuous.MultiplyByParameter gai(final k=1)
-=======
   Buildings.Controls.OBC.CDL.Reals.Divide VDisSet_flowNor
     "Normalized setpoint for discharge volume flow rate"
     annotation (Placement(transformation(extent={{240,220},{260,240}})));
   Buildings.Controls.OBC.CDL.Reals.MultiplyByParameter gai(final k=1)
->>>>>>> master
     if have_pressureIndependentDamper
     "Block that can be disabled so remove the connection"
     annotation (Placement(transformation(extent={{240,120},{260,140}})));

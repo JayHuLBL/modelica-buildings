@@ -5,8 +5,5 @@ HeatPump
 HeatPumpDHWTank
 SwitchBox
 WatersideEconomizer
-<<<<<<< HEAD:Buildings/Experimental/DHC/EnergyTransferStations/Combined/Subsystems/package.order
-=======
 Validation
 BaseClasses
->>>>>>> master:Buildings/DHC/ETS/Combined/Subsystems/package.order

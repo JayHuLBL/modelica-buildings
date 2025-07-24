@@ -1,8 +1,4 @@
-<<<<<<<< HEAD:Buildings/ThermalZones/EnergyPlus_9_6_0/BaseClasses/Synchronize/SynchronizeConnector.mo
-within Buildings.ThermalZones.EnergyPlus_9_6_0.BaseClasses.Synchronize;
-========
 within Buildings.Obsolete.ThermalZones.EnergyPlus_9_6_0.BaseClasses.Synchronize;
->>>>>>>> master:Buildings/Obsolete/ThermalZones/EnergyPlus_9_6_0/BaseClasses/Synchronize/SynchronizeConnector.mo
 connector SynchronizeConnector
   "Connector to synchronize Spawn objects"
   Real do

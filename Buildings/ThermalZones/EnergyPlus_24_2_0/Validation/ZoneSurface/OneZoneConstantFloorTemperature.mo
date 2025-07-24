@@ -1,14 +1,3 @@
-<<<<<<<< HEAD:Buildings/ThermalZones/EnergyPlus_9_6_0/Validation/ZoneSurface/OneZoneConstantFloorTemperature.mo
-within Buildings.ThermalZones.EnergyPlus_9_6_0.Validation.ZoneSurface;
-model OneZoneConstantFloorTemperature
-  "Validation model with one thermal zone with constant floor temperature"
-  extends Buildings.ThermalZones.EnergyPlus_9_6_0.Examples.SingleFamilyHouse.Unconditioned;
-  Buildings.ThermalZones.EnergyPlus_9_6_0.ZoneSurface flo(
-    surfaceName="Living:Floor")
-    "Floor surface of living room"
-    annotation (Placement(transformation(extent={{0,60},{20,80}})));
-  Controls.OBC.CDL.Continuous.Sources.Constant TFlo(
-========
 within Buildings.ThermalZones.EnergyPlus_24_2_0.Validation.ZoneSurface;
 model OneZoneConstantFloorTemperature
   "Validation model with one thermal zone with constant floor temperature"
@@ -18,7 +7,6 @@ model OneZoneConstantFloorTemperature
     "Floor surface of living room"
     annotation (Placement(transformation(extent={{0,60},{20,80}})));
   Buildings.Controls.OBC.CDL.Reals.Sources.Constant TFlo(
->>>>>>>> master:Buildings/ThermalZones/EnergyPlus_24_2_0/Validation/ZoneSurface/OneZoneConstantFloorTemperature.mo
     k(final unit="K",
       displayUnit="degC")=298.15)
     "Floor temperature"
@@ -29,11 +17,7 @@ equation
     annotation (Line(points={{-18,70},{-2,70}},color={0,0,127}));
   annotation (
     __Dymola_Commands(
-<<<<<<<< HEAD:Buildings/ThermalZones/EnergyPlus_9_6_0/Validation/ZoneSurface/OneZoneConstantFloorTemperature.mo
-      file="modelica://Buildings/Resources/Scripts/Dymola/ThermalZones/EnergyPlus_9_6_0/Validation/ZoneSurface/OneZoneConstantFloorTemperature.mos" "Simulate and plot"),
-========
       file="modelica://Buildings/Resources/Scripts/Dymola/ThermalZones/EnergyPlus_24_2_0/Validation/ZoneSurface/OneZoneConstantFloorTemperature.mos" "Simulate and plot"),
->>>>>>>> master:Buildings/ThermalZones/EnergyPlus_24_2_0/Validation/ZoneSurface/OneZoneConstantFloorTemperature.mo
     experiment(
       StopTime=432000,
       Tolerance=1e-06),

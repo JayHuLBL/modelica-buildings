@@ -90,15 +90,6 @@ block SupplyAirTemperature
     annotation (Placement(transformation(extent={{-100,50},{-80,70}})));
   Buildings.Controls.OBC.CDL.Reals.Sources.Constant one(k=1) "one"
     annotation (Placement(transformation(extent={{-100,-70},{-80,-50}})));
-<<<<<<< HEAD
-  Buildings.Controls.OBC.CDL.Continuous.Switch swiHea if have_heating
-    "Switch to close heating coil valve"
-    annotation (Placement(transformation(extent={{70,70},{90,90}})));
-  Buildings.Controls.OBC.CDL.Continuous.Switch swiCoo
-    "Switch to close cooling coil valve"
-    annotation (Placement(transformation(extent={{70,-90},{90,-70}})));
-  Buildings.Controls.OBC.CDL.Continuous.Switch swiOA
-=======
   Buildings.Controls.OBC.CDL.Reals.Switch swiHea if have_heating
     "Switch to close heating coil valve"
     annotation (Placement(transformation(extent={{70,70},{90,90}})));
@@ -106,7 +97,6 @@ block SupplyAirTemperature
     "Switch to close cooling coil valve"
     annotation (Placement(transformation(extent={{70,-90},{90,-70}})));
   Buildings.Controls.OBC.CDL.Reals.Switch swiOA
->>>>>>> master
     "Switch to close outdoor air damper"
     annotation (Placement(transformation(extent={{70,-10},{90,10}})));
   Buildings.Controls.OBC.CDL.Reals.Sources.Constant limInfCoo(

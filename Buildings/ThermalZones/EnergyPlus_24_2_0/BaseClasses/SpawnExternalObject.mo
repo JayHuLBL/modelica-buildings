@@ -1,8 +1,4 @@
-<<<<<<<< HEAD:Buildings/ThermalZones/EnergyPlus_9_6_0/BaseClasses/SpawnExternalObject.mo
-within Buildings.ThermalZones.EnergyPlus_9_6_0.BaseClasses;
-========
 within Buildings.ThermalZones.EnergyPlus_24_2_0.BaseClasses;
->>>>>>>> master:Buildings/ThermalZones/EnergyPlus_24_2_0/BaseClasses/SpawnExternalObject.mo
 class SpawnExternalObject
   "Class used to couple the FMU to interact with a thermal zone"
   extends ExternalObject;
@@ -19,11 +15,7 @@ class SpawnExternalObject
     input String spawnExe
       "Name of the spawn executable, without extension, such as spawn-0.2.0-d7f1e095f3";
     input String idfVersion
-<<<<<<<< HEAD:Buildings/ThermalZones/EnergyPlus_9_6_0/BaseClasses/SpawnExternalObject.mo
-      "IDF version with underscores, such as 9_6_0";
-========
       "IDF version with underscores, such as 24_2_0";
->>>>>>>> master:Buildings/ThermalZones/EnergyPlus_24_2_0/BaseClasses/SpawnExternalObject.mo
     input String idfName
       "Name of the IDF";
     input String epwName
@@ -40,11 +32,7 @@ class SpawnExternalObject
       "Specify if a pre-compiled FMU should be used instead of EnergyPlus (mainly for development)";
     input String buildingsRootFileLocation
       "Name of top-level legal.html file of the Buildings library (used to find the spawn executable)";
-<<<<<<<< HEAD:Buildings/ThermalZones/EnergyPlus_9_6_0/BaseClasses/SpawnExternalObject.mo
-    input Buildings.ThermalZones.EnergyPlus_9_6_0.Types.LogLevels logLevel
-========
     input Buildings.ThermalZones.EnergyPlus_24_2_0.Types.LogLevels logLevel
->>>>>>>> master:Buildings/ThermalZones/EnergyPlus_24_2_0/BaseClasses/SpawnExternalObject.mo
       "LogLevels of EnergyPlus output";
     input Boolean printUnit
       "Set to true to print units for OutputVariable object. Must be false for all other objects";
@@ -77,11 +65,7 @@ class SpawnExternalObject
     input Real derivatives_delta[nDer]
       "Increments for derivative calculation";
     output SpawnExternalObject adapter;
-<<<<<<<< HEAD:Buildings/ThermalZones/EnergyPlus_9_6_0/BaseClasses/SpawnExternalObject.mo
-  external "C" adapter=allocate_Modelica_EnergyPlus_9_6_0(
-========
   external "C" adapter=allocate_Modelica_EnergyPlus_24_2_0(
->>>>>>>> master:Buildings/ThermalZones/EnergyPlus_24_2_0/BaseClasses/SpawnExternalObject.mo
     objectType,
     startTime,
     modelicaNameBuilding,
@@ -90,15 +74,12 @@ class SpawnExternalObject
     idfVersion,
     idfName,
     epwName,
-<<<<<<<< HEAD:Buildings/ThermalZones/EnergyPlus_9_6_0/BaseClasses/SpawnExternalObject.mo
-========
     runPeriod.startDayOfYear,
     runPeriod.applyWeekEndHolidayRule,
     runPeriod.use_weatherFileDaylightSavingPeriod,
     runPeriod.use_weatherFileHolidaysAndSpecialDays,
     runPeriod.use_weatherFileRainIndicators,
     runPeriod.use_weatherFileSnowIndicators,
->>>>>>>> master:Buildings/ThermalZones/EnergyPlus_24_2_0/BaseClasses/SpawnExternalObject.mo
     relativeSurfaceTolerance,
     epName,
     usePrecompiledFMU,
@@ -126,15 +107,9 @@ class SpawnExternalObject
     derivatives_delta,
     nDer)
     annotation (
-<<<<<<<< HEAD:Buildings/ThermalZones/EnergyPlus_9_6_0/BaseClasses/SpawnExternalObject.mo
-      Include="#include <EnergyPlus_9_6_0_Wrapper.c>",
-      IncludeDirectory="modelica://Buildings/Resources/C-Sources",
-      Library={"ModelicaBuildingsEnergyPlus_9_6_0","fmilib_shared"});
-========
       Include="#include <EnergyPlus_24_2_0_Wrapper.c>",
       IncludeDirectory="modelica://Buildings/Resources/C-Sources",
       Library={"ModelicaBuildingsEnergyPlus_24_2_0","fmilib_shared"});
->>>>>>>> master:Buildings/ThermalZones/EnergyPlus_24_2_0/BaseClasses/SpawnExternalObject.mo
     annotation (
       Documentation(
         info="<html>
@@ -146,24 +121,6 @@ class SpawnExternalObject
   </p>
   </html>",
         revisions="<html>
-<<<<<<<< HEAD:Buildings/ThermalZones/EnergyPlus_9_6_0/BaseClasses/SpawnExternalObject.mo
-<ul>
-<li>
-December 11, 2021, by Michael Wetter:<br/>
-Declared function as <code>impure</code> for MSL 4.0.0.
-</li>
-<li>
-February 18, 2021, by Michael Wetter:<br/>
-Refactor synchronization of constructors.<br/>
-This is for <a href=\"https://github.com/lbl-srg/modelica-buildings/issues/2360\">#2360</a>.
-</li>
-<li>
-February 14, 2018, by Michael Wetter:<br/>
-First implementation.
-</li>
-</ul>
-</html>"));
-========
   <ul>
   <li>
   April 21, 2022, by Michael Wetter:<br/>
@@ -185,26 +142,17 @@ First implementation.
   </li>
   </ul>
   </html>"));
->>>>>>>> master:Buildings/ThermalZones/EnergyPlus_24_2_0/BaseClasses/SpawnExternalObject.mo
   end constructor;
 
   pure function destructor
     "Release storage"
     extends Modelica.Icons.Function;
     input SpawnExternalObject adapter;
-<<<<<<<< HEAD:Buildings/ThermalZones/EnergyPlus_9_6_0/BaseClasses/SpawnExternalObject.mo
-  external "C" free_Modelica_EnergyPlus_9_6_0(adapter)
-    annotation (
-      Include="#include <EnergyPlus_9_6_0_Wrapper.c>",
-      IncludeDirectory="modelica://Buildings/Resources/C-Sources",
-      Library={"ModelicaBuildingsEnergyPlus_9_6_0","fmilib_shared"});
-========
   external "C" free_Modelica_EnergyPlus_24_2_0(adapter)
     annotation (
       Include="#include <EnergyPlus_24_2_0_Wrapper.c>",
       IncludeDirectory="modelica://Buildings/Resources/C-Sources",
       Library={"ModelicaBuildingsEnergyPlus_24_2_0","fmilib_shared"});
->>>>>>>> master:Buildings/ThermalZones/EnergyPlus_24_2_0/BaseClasses/SpawnExternalObject.mo
     annotation (
       Documentation(
         info="<html>

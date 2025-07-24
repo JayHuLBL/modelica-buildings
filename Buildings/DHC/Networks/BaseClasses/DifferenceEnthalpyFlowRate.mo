@@ -68,11 +68,7 @@ model DifferenceEnthalpyFlowRate
     final h_out_start=h2_out_start)
     "Enthalpy flow rate of fluid stream 2"
     annotation (Placement(transformation(extent={{10,-70},{-10,-50}})));
-<<<<<<< HEAD:Buildings/Experimental/DHC/Networks/BaseClasses/DifferenceEnthalpyFlowRate.mo
-  Buildings.Controls.OBC.CDL.Continuous.Subtract dif
-=======
   Buildings.Controls.OBC.CDL.Reals.Subtract dif
->>>>>>> master:Buildings/DHC/Networks/BaseClasses/DifferenceEnthalpyFlowRate.mo
     "Compute the difference"
     annotation (Placement(transformation(extent={{40,10},{60,30}})));
   Modelica.Blocks.Continuous.Integrator int(

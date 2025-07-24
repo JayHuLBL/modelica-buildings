@@ -1,12 +1,1 @@
-<<<<<<< HEAD:Buildings/Experimental/DHC/Loads/BaseClasses/Examples/BaseClasses/package.order
-BuildingRCZ1Valve
-BuildingRCZ6
-BuildingSpawnZ1
-BuildingSpawnZ6
-BuildingTimeSeries
-FanCoil4Pipe
-FanCoil4PipeHeatPorts
-PartialFanCoil4Pipe
-=======
->>>>>>> master:Buildings/DHC/Loads/BaseClasses/Examples/BaseClasses/package.order
 GeojsonExportRC

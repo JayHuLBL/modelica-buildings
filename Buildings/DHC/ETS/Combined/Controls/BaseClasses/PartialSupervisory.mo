@@ -1,8 +1,4 @@
-<<<<<<< HEAD:Buildings/Experimental/DHC/EnergyTransferStations/Combined/Controls/BaseClasses/PartialSupervisory.mo
-within Buildings.Experimental.DHC.EnergyTransferStations.Combined.Controls.BaseClasses;
-=======
 within Buildings.DHC.ETS.Combined.Controls.BaseClasses;
->>>>>>> master:Buildings/DHC/ETS/Combined/Controls/BaseClasses/PartialSupervisory.mo
 partial block PartialSupervisory
   "Partial model for supervisory controller"
 

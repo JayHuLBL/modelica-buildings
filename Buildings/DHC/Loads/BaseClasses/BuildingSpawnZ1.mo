@@ -1,8 +1,4 @@
-<<<<<<<< HEAD:Buildings/DHC/Loads/BaseClasses/Examples/BaseClasses/BuildingSpawnZ1.mo
-within Buildings.Experimental.DHC.Loads.BaseClasses.Examples.BaseClasses;
-========
 within Buildings.DHC.Loads.BaseClasses;
->>>>>>>> master:Buildings/DHC/Loads/BaseClasses/BuildingSpawnZ1.mo
 model BuildingSpawnZ1
   "One-zone EnergyPlus building model"
   extends Buildings.DHC.Loads.BaseClasses.PartialBuilding(
@@ -16,11 +12,7 @@ model BuildingSpawnZ1
     "Load side medium";
   parameter Integer nZon=1
     "Number of thermal zones";
-<<<<<<<< HEAD:Buildings/DHC/Loads/BaseClasses/Examples/BaseClasses/BuildingSpawnZ1.mo
-  parameter String idfName="modelica://Buildings/Resources/Data/ThermalZones/EnergyPlus_9_6_0/Examples/RefBldgSmallOffice/RefBldgSmallOfficeNew2004_Chicago.idf"
-========
   parameter String idfName="modelica://Buildings/Resources/Data/ThermalZones/EnergyPlus_24_2_0/Examples/RefBldgSmallOffice/RefBldgSmallOfficeNew2004_Chicago.idf"
->>>>>>>> master:Buildings/DHC/Loads/BaseClasses/BuildingSpawnZ1.mo
     "Name of the IDF file";
   parameter String epwName="modelica://Buildings/Resources/weatherdata/USA_IL_Chicago-OHare.Intl.AP.725300_TMY3.epw"
     "Name of the weather file";
@@ -40,21 +32,13 @@ model BuildingSpawnZ1
     k=0)
     "Latent heat gain"
     annotation (Placement(transformation(extent={{-80,-10},{-60,10}})));
-<<<<<<<< HEAD:Buildings/DHC/Loads/BaseClasses/Examples/BaseClasses/BuildingSpawnZ1.mo
-  Buildings.ThermalZones.EnergyPlus_9_6_0.ThermalZone zon(
-========
   Buildings.ThermalZones.EnergyPlus_24_2_0.ThermalZone zon(
->>>>>>>> master:Buildings/DHC/Loads/BaseClasses/BuildingSpawnZ1.mo
     redeclare package Medium=Medium2,
     zoneName="Core_ZN",
     nPorts=2)
     "Thermal zone"
     annotation (Placement(transformation(extent={{40,-20},{80,20}})));
-<<<<<<<< HEAD:Buildings/DHC/Loads/BaseClasses/Examples/BaseClasses/BuildingSpawnZ1.mo
-  inner Buildings.ThermalZones.EnergyPlus_9_6_0.Building building(
-========
   inner Buildings.ThermalZones.EnergyPlus_24_2_0.Building building(
->>>>>>>> master:Buildings/DHC/Loads/BaseClasses/BuildingSpawnZ1.mo
     idfName=Modelica.Utilities.Files.loadResource(
       idfName),
     epwName=Modelica.Utilities.Files.loadResource(
@@ -75,11 +59,7 @@ model BuildingSpawnZ1
       displayUnit="degC"))
     "Maximum temperature set point"
     annotation (Placement(transformation(extent={{-280,210},{-260,230}})));
-<<<<<<<< HEAD:Buildings/DHC/Loads/BaseClasses/Examples/BaseClasses/BuildingSpawnZ1.mo
-  Buildings.Experimental.DHC.Loads.BaseClasses.Examples.BaseClasses.FanCoil4Pipe terUni(
-========
   Buildings.DHC.Loads.BaseClasses.FanCoil4Pipe terUni(
->>>>>>>> master:Buildings/DHC/Loads/BaseClasses/BuildingSpawnZ1.mo
     redeclare package Medium1=Medium,
     redeclare package Medium2=Medium2,
     QHea_flow_nominal=2000,
@@ -94,11 +74,7 @@ model BuildingSpawnZ1
     mLoaCoo_flow_nominal=1)
     "Terminal unit"
     annotation (Placement(transformation(extent={{-160,-60},{-140,-40}})));
-<<<<<<<< HEAD:Buildings/DHC/Loads/BaseClasses/Examples/BaseClasses/BuildingSpawnZ1.mo
-  Buildings.Experimental.DHC.Loads.BaseClasses.FlowDistribution disFloHea(
-========
   Buildings.DHC.Loads.BaseClasses.FlowDistribution disFloHea(
->>>>>>>> master:Buildings/DHC/Loads/BaseClasses/BuildingSpawnZ1.mo
     redeclare package Medium=Medium,
     m_flow_nominal=terUni.mHeaWat_flow_nominal,
     dp_nominal=100000,
@@ -106,17 +82,10 @@ model BuildingSpawnZ1
     nPorts_b1=nZon)
     "Heating water distribution system"
     annotation (Placement(transformation(extent={{-120,-130},{-100,-110}})));
-<<<<<<<< HEAD:Buildings/DHC/Loads/BaseClasses/Examples/BaseClasses/BuildingSpawnZ1.mo
-  Buildings.Experimental.DHC.Loads.BaseClasses.FlowDistribution disFloCoo(
-    redeclare package Medium=Medium,
-    m_flow_nominal=terUni.mChiWat_flow_nominal,
-    typDis=Buildings.Experimental.DHC.Loads.BaseClasses.Types.DistributionType.ChilledWater,
-========
   Buildings.DHC.Loads.BaseClasses.FlowDistribution disFloCoo(
     redeclare package Medium=Medium,
     m_flow_nominal=terUni.mChiWat_flow_nominal,
     typDis=Buildings.DHC.Loads.BaseClasses.Types.DistributionType.ChilledWater,
->>>>>>>> master:Buildings/DHC/Loads/BaseClasses/BuildingSpawnZ1.mo
     dp_nominal=100000,
     nPorts_a1=nZon,
     nPorts_b1=nZon)
@@ -207,5 +176,5 @@ First implementation.
       graphics={
         Bitmap(
           extent={{-108,-100},{92,100}},
-          fileName="modelica://Buildings/Resources/Images/ThermalZones/EnergyPlus_9_6_0/EnergyPlusLogo.png")}));
+          fileName="modelica://Buildings/Resources/Images/ThermalZones/EnergyPlus/EnergyPlusLogo.png")}));
 end BuildingSpawnZ1;

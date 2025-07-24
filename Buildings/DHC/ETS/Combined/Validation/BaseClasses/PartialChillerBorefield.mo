@@ -1,8 +1,4 @@
-<<<<<<< HEAD:Buildings/Experimental/DHC/EnergyTransferStations/Combined/Validation/BaseClasses/PartialChillerBorefield.mo
-within Buildings.Experimental.DHC.EnergyTransferStations.Combined.Validation.BaseClasses;
-=======
 within Buildings.DHC.ETS.Combined.Validation.BaseClasses;
->>>>>>> master:Buildings/DHC/ETS/Combined/Validation/BaseClasses/PartialChillerBorefield.mo
 partial model PartialChillerBorefield
   "Partial validation of the ETS model with heat recovery chiller and optional borefield"
   extends Modelica.Icons.Example;
@@ -62,11 +58,7 @@ partial model PartialChillerBorefield
         extent={{-10,-10},{10,10}},
         rotation=0,
         origin={90,40})));
-<<<<<<< HEAD:Buildings/Experimental/DHC/EnergyTransferStations/Combined/Validation/BaseClasses/PartialChillerBorefield.mo
-  Buildings.Experimental.DHC.EnergyTransferStations.Combined.ChillerBorefield ets(
-=======
   Buildings.DHC.ETS.Combined.ChillerBorefield ets(
->>>>>>> master:Buildings/DHC/ETS/Combined/Validation/BaseClasses/PartialChillerBorefield.mo
     redeclare package MediumSer = Medium,
     redeclare package MediumBui = Medium,
     QChiWat_flow_nominal=QCoo_flow_nominal,
@@ -113,17 +105,10 @@ partial model PartialChillerBorefield
     final m_flow_nominal=mChiWat_flow_nominal,
     dp_nominal=100E3) "Chilled water distribution pump"
     annotation (Placement(transformation(extent={{110,30},{130,50}})));
-<<<<<<< HEAD:Buildings/Experimental/DHC/EnergyTransferStations/Combined/Validation/BaseClasses/PartialChillerBorefield.mo
-  Buildings.Controls.OBC.CDL.Continuous.MultiplyByParameter gai2(final k=
-        mChiWat_flow_nominal) "Scale to nominal mass flow rate"
-    annotation (Placement(transformation(extent={{90,90},{110,110}})));
-  Buildings.Controls.OBC.CDL.Continuous.MultiplyByParameter gai1(final k=
-=======
   Buildings.Controls.OBC.CDL.Reals.MultiplyByParameter gai2(final k=
         mChiWat_flow_nominal) "Scale to nominal mass flow rate"
     annotation (Placement(transformation(extent={{90,90},{110,110}})));
   Buildings.Controls.OBC.CDL.Reals.MultiplyByParameter gai1(final k=
->>>>>>> master:Buildings/DHC/ETS/Combined/Validation/BaseClasses/PartialChillerBorefield.mo
         mHeaWat_flow_nominal) "Scale to nominal mass flow rate"
     annotation (Placement(transformation(extent={{40,90},{20,110}})));
   DHC.ETS.BaseClasses.Pump_m_flow pumHeaWat(
@@ -144,11 +129,7 @@ partial model PartialChillerBorefield
         extent={{-10,10},{10,-10}},
         rotation=-90,
         origin={-111,0})));
-<<<<<<< HEAD:Buildings/Experimental/DHC/EnergyTransferStations/Combined/Validation/BaseClasses/PartialChillerBorefield.mo
-  Buildings.Controls.OBC.CDL.Continuous.MultiplyByParameter gai3(final k=-ets.QHeaWat_flow_nominal)
-=======
   Buildings.Controls.OBC.CDL.Reals.MultiplyByParameter gai3(final k=-ets.QHeaWat_flow_nominal)
->>>>>>> master:Buildings/DHC/ETS/Combined/Validation/BaseClasses/PartialChillerBorefield.mo
     "Scale to nominal heat flow rate"
     annotation (Placement(transformation(extent={{-180,50},{-160,70}})));
   Buildings.HeatTransfer.Sources.PrescribedHeatFlow loaHea
@@ -167,11 +148,7 @@ partial model PartialChillerBorefield
         extent={{-10,-10},{10,10}},
         rotation=-90,
         origin={149,0})));
-<<<<<<< HEAD:Buildings/Experimental/DHC/EnergyTransferStations/Combined/Validation/BaseClasses/PartialChillerBorefield.mo
-  Buildings.Controls.OBC.CDL.Continuous.MultiplyByParameter gai4(final k=-ets.QChiWat_flow_nominal)
-=======
   Buildings.Controls.OBC.CDL.Reals.MultiplyByParameter gai4(final k=-ets.QChiWat_flow_nominal)
->>>>>>> master:Buildings/DHC/ETS/Combined/Validation/BaseClasses/PartialChillerBorefield.mo
     "Scale to nominal heat flow rate"
     annotation (Placement(transformation(extent={{220,50},{200,70}})));
   Buildings.HeatTransfer.Sources.PrescribedHeatFlow loaCoo

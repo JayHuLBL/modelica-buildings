@@ -8,11 +8,7 @@ block SortWithIndices
     annotation (Dialog(connectorSizing=true),HideResult=true);
   parameter Boolean ascending=true
     "Set to true if ascending order, otherwise order is descending";
-<<<<<<< HEAD:Buildings/Controls/OBC/CDL/Continuous/Sort.mo
-  Interfaces.RealInput u[nin]
-=======
   Buildings.Controls.OBC.CDL.Interfaces.RealInput u[nin]
->>>>>>> master:Buildings/Obsolete/Templates/Plants/Controls/Utilities/SortWithIndices.mo
     "Connector of Real input signals"
     annotation (Placement(transformation(extent={{-140,-20},{-100,20}})));
   Buildings.Controls.OBC.CDL.Interfaces.RealOutput y[nin]
@@ -56,17 +52,6 @@ Otherwise, it satisfies
 <i>y<sub>i</sub> &gt;= y<sub>i+1</sub></i> for all <i>i &isin; {1, ..., n-1}</i>.
 The output signal <i>yIdx</i> contains the indices of the sorted elements,
 with respect to the input vector <i>u</i>.
-</p>
-<h4>Usage</h4>
-<p>
-Note that this block shall only be used for input signals <code>u</code> that are
-time sampled.<br/>
-Otherwise, in simulation, numerical noise from a nonlinear solver or from an
-implicit time integration algorithm may cause the simulation to stall.
-Numerical noise can be present if an input depends
-on a state variable or a quantity that requires an iterative solution,
-such as a temperature or a mass flow rate of an HVAC system.<br/>
-In real controllers, measurement noise may cause the output to change frequently.
 </p>
 <h4>Usage</h4>
 <p>

@@ -1,8 +1,4 @@
-<<<<<<<< HEAD:Buildings/DHC/Loads/BaseClasses/Examples/BaseClasses/BuildingRCZ1Valve.mo
-within Buildings.Experimental.DHC.Loads.BaseClasses.Examples.BaseClasses;
-========
 within Buildings.DHC.Loads.BaseClasses;
->>>>>>>> master:Buildings/DHC/Loads/BaseClasses/BuildingRCZ1Valve.mo
 model BuildingRCZ1Valve
   "One-zone RC building model with distribution pumps and mixing valves"
   extends Buildings.DHC.Loads.BaseClasses.PartialBuilding(
@@ -155,11 +151,7 @@ model BuildingRCZ1Valve
   Buildings.Controls.OBC.CDL.Reals.MultiSum mulSum(
     nin=2)
     annotation (Placement(transformation(extent={{240,70},{260,90}})));
-<<<<<<<< HEAD:Buildings/DHC/Loads/BaseClasses/Examples/BaseClasses/BuildingRCZ1Valve.mo
-  Buildings.Experimental.DHC.Loads.BaseClasses.Examples.BaseClasses.FanCoil4Pipe terUni(
-========
   Buildings.DHC.Loads.BaseClasses.FanCoil4Pipe terUni(
->>>>>>>> master:Buildings/DHC/Loads/BaseClasses/BuildingRCZ1Valve.mo
     redeclare package Medium1=Medium,
     redeclare package Medium2=Medium2,
     QHea_flow_nominal=1000,
@@ -174,11 +166,7 @@ model BuildingRCZ1Valve
     mLoaCoo_flow_nominal=1)
     "Terminal unit"
     annotation (Placement(transformation(extent={{-160,-58},{-140,-38}})));
-<<<<<<<< HEAD:Buildings/DHC/Loads/BaseClasses/Examples/BaseClasses/BuildingRCZ1Valve.mo
-  Buildings.Experimental.DHC.Loads.BaseClasses.FlowDistribution disFloHea(
-========
   Buildings.DHC.Loads.BaseClasses.FlowDistribution disFloHea(
->>>>>>>> master:Buildings/DHC/Loads/BaseClasses/BuildingRCZ1Valve.mo
     redeclare package Medium=Medium,
     m_flow_nominal=terUni.mHeaWat_flow_nominal,
     have_pum=true,
@@ -188,17 +176,10 @@ model BuildingRCZ1Valve
     nPorts_b1=1)
     "Heating water distribution system"
     annotation (Placement(transformation(extent={{-100,-110},{-80,-90}})));
-<<<<<<<< HEAD:Buildings/DHC/Loads/BaseClasses/Examples/BaseClasses/BuildingRCZ1Valve.mo
-  Buildings.Experimental.DHC.Loads.BaseClasses.FlowDistribution disFloCoo(
-    redeclare package Medium=Medium,
-    m_flow_nominal=terUni.mChiWat_flow_nominal,
-    typDis=Buildings.Experimental.DHC.Loads.BaseClasses.Types.DistributionType.ChilledWater,
-========
   Buildings.DHC.Loads.BaseClasses.FlowDistribution disFloCoo(
     redeclare package Medium=Medium,
     m_flow_nominal=terUni.mChiWat_flow_nominal,
     typDis=Buildings.DHC.Loads.BaseClasses.Types.DistributionType.ChilledWater,
->>>>>>>> master:Buildings/DHC/Loads/BaseClasses/BuildingRCZ1Valve.mo
     have_pum=true,
     have_val=true,
     dp_nominal=100000,
@@ -348,13 +329,8 @@ and connected to the room model by means of fluid ports.
 <p>
 The heating and chilled water distribution to the terminal units is modeled
 with an instance of
-<<<<<<<< HEAD:Buildings/DHC/Loads/BaseClasses/Examples/BaseClasses/BuildingRCZ1Valve.mo
-<a href=\"modelica://Buildings.Experimental.DHC.Loads.BaseClasses.FlowDistribution\">
-Buildings.Experimental.DHC.Loads.BaseClasses.FlowDistribution</a>
-========
 <a href=\"modelica://Buildings.DHC.Loads.BaseClasses.FlowDistribution\">
 Buildings.DHC.Loads.BaseClasses.FlowDistribution</a>
->>>>>>>> master:Buildings/DHC/Loads/BaseClasses/BuildingRCZ1Valve.mo
 including a mixing valve to control the supply temperature.
 </p>
 </html>",

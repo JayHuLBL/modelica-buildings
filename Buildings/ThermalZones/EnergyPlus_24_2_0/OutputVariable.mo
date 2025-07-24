@@ -1,16 +1,8 @@
-<<<<<<<< HEAD:Buildings/ThermalZones/EnergyPlus_9_6_0/OutputVariable.mo
-within Buildings.ThermalZones.EnergyPlus_9_6_0;
-model OutputVariable
-  "Block to read an EnergyPlus output variable"
-  extends Buildings.ThermalZones.EnergyPlus_9_6_0.BaseClasses.PartialEnergyPlusObject;
-  extends Buildings.ThermalZones.EnergyPlus_9_6_0.BaseClasses.Synchronize.ObjectSynchronizer;
-========
 within Buildings.ThermalZones.EnergyPlus_24_2_0;
 model OutputVariable
   "Block to read an EnergyPlus output variable"
   extends Buildings.ThermalZones.EnergyPlus_24_2_0.BaseClasses.PartialEnergyPlusObject;
   extends Buildings.ThermalZones.EnergyPlus_24_2_0.BaseClasses.Synchronize.ObjectSynchronizer;
->>>>>>>> master:Buildings/ThermalZones/EnergyPlus_24_2_0/OutputVariable.mo
   parameter String name
     "EnergyPlus name of the output variable as in the EnergyPlus .rdd or .mdd file";
   parameter String key
@@ -44,11 +36,7 @@ protected
     fixed=false,
     start=0)
     "Total number of Spawn objects in building";
-<<<<<<<< HEAD:Buildings/ThermalZones/EnergyPlus_9_6_0/OutputVariable.mo
-  Buildings.ThermalZones.EnergyPlus_9_6_0.BaseClasses.SpawnExternalObject adapter=Buildings.ThermalZones.EnergyPlus_9_6_0.BaseClasses.SpawnExternalObject(
-========
   Buildings.ThermalZones.EnergyPlus_24_2_0.BaseClasses.SpawnExternalObject adapter=Buildings.ThermalZones.EnergyPlus_24_2_0.BaseClasses.SpawnExternalObject(
->>>>>>>> master:Buildings/ThermalZones/EnergyPlus_24_2_0/OutputVariable.mo
     objectType=4,
     startTime=startTime,
     modelicaNameBuilding=modelicaNameBuilding,
@@ -57,19 +45,12 @@ protected
     idfVersion=idfVersion,
     idfName=idfName,
     epwName=epwName,
-<<<<<<<< HEAD:Buildings/ThermalZones/EnergyPlus_9_6_0/OutputVariable.mo
-========
     runPeriod=runPeriod,
->>>>>>>> master:Buildings/ThermalZones/EnergyPlus_24_2_0/OutputVariable.mo
     relativeSurfaceTolerance=relativeSurfaceTolerance,
     epName=name,
     usePrecompiledFMU=usePrecompiledFMU,
     fmuName=fmuName,
-<<<<<<<< HEAD:Buildings/ThermalZones/EnergyPlus_9_6_0/OutputVariable.mo
-    buildingsRootFileLocation=Buildings.ThermalZones.EnergyPlus_9_6_0.BaseClasses.buildingsRootFileLocation,
-========
     buildingsRootFileLocation=Buildings.ThermalZones.EnergyPlus_24_2_0.BaseClasses.buildingsRootFileLocation,
->>>>>>>> master:Buildings/ThermalZones/EnergyPlus_24_2_0/OutputVariable.mo
     logLevel=logLevel,
     printUnit=printUnit,
     jsonName="outputVariables",
@@ -98,11 +79,7 @@ initial equation
   assert(
     not usePrecompiledFMU,
     "Use of pre-compiled FMU is not supported for block OutputVariable.");
-<<<<<<<< HEAD:Buildings/ThermalZones/EnergyPlus_9_6_0/OutputVariable.mo
-  nObj=Buildings.ThermalZones.EnergyPlus_9_6_0.BaseClasses.initialize(
-========
   nObj=Buildings.ThermalZones.EnergyPlus_24_2_0.BaseClasses.initialize(
->>>>>>>> master:Buildings/ThermalZones/EnergyPlus_24_2_0/OutputVariable.mo
     adapter=adapter,
     isSynchronized=building.isSynchronized);
 
@@ -113,11 +90,7 @@ equation
     directDependency_in_internal=0;
   end if;
   when {initial(),time >= pre(tNext)} then
-<<<<<<<< HEAD:Buildings/ThermalZones/EnergyPlus_9_6_0/OutputVariable.mo
-    yEP=Buildings.ThermalZones.EnergyPlus_9_6_0.BaseClasses.exchange(
-========
     yEP=Buildings.ThermalZones.EnergyPlus_24_2_0.BaseClasses.exchange(
->>>>>>>> master:Buildings/ThermalZones/EnergyPlus_24_2_0/OutputVariable.mo
       adapter=adapter,
       nY=nY,
       u={round(time,1E-3),directDependency_in_internal},
@@ -186,11 +159,7 @@ for the zone <code>LIVING ZONE</code>,
 the Modelica instantiation would be
 </p>
 <pre>
-<<<<<<<< HEAD:Buildings/ThermalZones/EnergyPlus_9_6_0/OutputVariable.mo
-Buildings.ThermalZones.EnergyPlus_9_6_0.OutputVariable equEle(
-========
 Buildings.ThermalZones.EnergyPlus_24_2_0.OutputVariable equEle(
->>>>>>>> master:Buildings/ThermalZones/EnergyPlus_24_2_0/OutputVariable.mo
   name=\"Zone Electric Equipment Electricity Rate\",
   key=\"LIVING ZONE\")
   \"Block that reads output from EnergyPlus\";
@@ -201,11 +170,7 @@ To obtain the value of
 the Modelica instantiation would be
 </p>
 <pre>
-<<<<<<<< HEAD:Buildings/ThermalZones/EnergyPlus_9_6_0/OutputVariable.mo
-Buildings.ThermalZones.EnergyPlus_9_6_0.OutputVariable TOut(
-========
 Buildings.ThermalZones.EnergyPlus_24_2_0.OutputVariable TOut(
->>>>>>>> master:Buildings/ThermalZones/EnergyPlus_24_2_0/OutputVariable.mo
   name=\"Site Outdoor Air Drybulb Temperature\",
   key=\"Environment\")
   \"Block that reads output from EnergyPlus\";
@@ -213,13 +178,8 @@ Buildings.ThermalZones.EnergyPlus_24_2_0.OutputVariable TOut(
 <p>
 (Note that this variable could be read directly from the Modelica weather data bus,
 which can be accessed from
-<<<<<<<< HEAD:Buildings/ThermalZones/EnergyPlus_9_6_0/OutputVariable.mo
-<a href=\"Buildings.ThermalZones.EnergyPlus_9_6_0.Building\">
-Buildings.ThermalZones.EnergyPlus_9_6_0.Building</a>.)
-========
 <a href=\"modelica://Buildings.ThermalZones.EnergyPlus_24_2_0.Building\">
 Buildings.ThermalZones.EnergyPlus_24_2_0.Building</a>.)
->>>>>>>> master:Buildings/ThermalZones/EnergyPlus_24_2_0/OutputVariable.mo
 </p>
 <p>
 By default, the Modelica log file will display the unit in the form
@@ -243,13 +203,8 @@ the illuminance in a room that changes instantaneously when the window blind is 
 the output variable <code>Zone Electric Equipment Electricity Rate</code> which changes instantaneously
 when a schedule value switches it on
 (see
-<<<<<<<< HEAD:Buildings/ThermalZones/EnergyPlus_9_6_0/OutputVariable.mo
-<a href=\"modelica://Buildings.ThermalZones.EnergyPlus_9_6_0.Validation.Schedule.EquipmentScheduleOutputVariable\">
-Buildings.ThermalZones.EnergyPlus_9_6_0.Validation.Schedule.EquipmentScheduleOutputVariable</a>).
-========
 <a href=\"modelica://Buildings.ThermalZones.EnergyPlus_24_2_0.Validation.Schedule.EquipmentScheduleOutputVariable\">
 Buildings.ThermalZones.EnergyPlus_24_2_0.Validation.Schedule.EquipmentScheduleOutputVariable</a>).
->>>>>>>> master:Buildings/ThermalZones/EnergyPlus_24_2_0/OutputVariable.mo
 For such variables, users should set <code>isDirectDependent=true</code>.
 Output variables that do not depend directly on an input variable include
 continuous time states such as the inside temperature of a wall
@@ -260,17 +215,6 @@ For these variables, users should leave <code>isDirectDependent=false</code>.
 If a user sets <code>isDirectDependent=true</code>, then the model enables
 the input connector <code>directDependency</code>.
 Users then need to connect this input to the output(s) of these instance of
-<<<<<<<< HEAD:Buildings/ThermalZones/EnergyPlus_9_6_0/OutputVariable.mo
-<a href=\"modelica://Buildings.ThermalZones.EnergyPlus_9_6_0.Actuator\">
-Buildings.ThermalZones.EnergyPlus_9_6_0.Actuator</a>
-or
-<a href=\"modelica://Buildings.ThermalZones.EnergyPlus_9_6_0.Schedule\">
-Buildings.ThermalZones.EnergyPlus_9_6_0.Schedule</a>
-on which this output directly depends on.
-See for example
-<a href=\"modelica://Buildings.ThermalZones.EnergyPlus_9_6_0.Validation.Schedule.EquipmentScheduleOutputVariable\">
-Buildings.ThermalZones.EnergyPlus_9_6_0.Validation.Schedule.EquipmentScheduleOutputVariable</a>.
-========
 <a href=\"modelica://Buildings.ThermalZones.EnergyPlus_24_2_0.Actuator\">
 Buildings.ThermalZones.EnergyPlus_24_2_0.Actuator</a>
 or
@@ -280,7 +224,6 @@ on which this output directly depends on.
 See for example
 <a href=\"modelica://Buildings.ThermalZones.EnergyPlus_24_2_0.Validation.Schedule.EquipmentScheduleOutputVariable\">
 Buildings.ThermalZones.EnergyPlus_24_2_0.Validation.Schedule.EquipmentScheduleOutputVariable</a>.
->>>>>>>> master:Buildings/ThermalZones/EnergyPlus_24_2_0/OutputVariable.mo
 If the output depends on multiple inputs, just multiply these inputs and connect their product
 to the connector <code>directDependency</code>. What the value is is irrelevant,
 but a Modelica code generator will then understand that first the input needs to be sent
@@ -302,13 +245,8 @@ to the EnergyPlus idf-file. This will produce an EnergyPlus result data dictiona
 In the table below, the name in the first column
 must be used as the value for the parameter <code>name</code>
 in instances of
-<<<<<<<< HEAD:Buildings/ThermalZones/EnergyPlus_9_6_0/OutputVariable.mo
-<a href=\"Buildings.ThermalZones.EnergyPlus_9_6_0.OutputVariable\">
-Buildings.ThermalZones.EnergyPlus_9_6_0.OutputVariable</a>.
-========
 <a href=\"modelica://Buildings.ThermalZones.EnergyPlus_24_2_0.OutputVariable\">
 Buildings.ThermalZones.EnergyPlus_24_2_0.OutputVariable</a>.
->>>>>>>> master:Buildings/ThermalZones/EnergyPlus_24_2_0/OutputVariable.mo
 </p>
 <!-- Start of table of output variables generated by install.py. Do not edit. -->
 <table summary=\"Supported output variables\" border=\"1\" cellspacing=\"0\" cellpadding=\"2\" style=\"border-collapse:collapse;\">

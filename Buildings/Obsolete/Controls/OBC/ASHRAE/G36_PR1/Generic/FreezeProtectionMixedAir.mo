@@ -56,17 +56,10 @@ protected
   Buildings.Controls.OBC.CDL.Reals.Sources.Constant setPoi(final k=TFreSet)
     "Set point for freeze protection"
     annotation (Placement(transformation(extent={{-60,20},{-40,40}})));
-<<<<<<< HEAD
-  Buildings.Controls.OBC.CDL.Continuous.Subtract yOut
-    "Freeze protection control signal inverter"
-    annotation (Placement(transformation(extent={{60,20},{80,40}})));
-  Buildings.Controls.OBC.CDL.Continuous.Sources.Constant one(
-=======
   Buildings.Controls.OBC.CDL.Reals.Subtract yOut
     "Freeze protection control signal inverter"
     annotation (Placement(transformation(extent={{60,20},{80,40}})));
   Buildings.Controls.OBC.CDL.Reals.Sources.Constant one(
->>>>>>> master
     final k=1) "Constant 1"
     annotation (Placement(transformation(extent={{20,60},{40,80}})));
 

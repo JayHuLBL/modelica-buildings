@@ -1,8 +1,4 @@
-<<<<<<< HEAD:Buildings/Experimental/DHC/EnergyTransferStations/Combined/Subsystems/Validation/WatersideEconomizer.mo
-within Buildings.Experimental.DHC.EnergyTransferStations.Combined.Subsystems.Validation;
-=======
 within Buildings.DHC.ETS.Combined.Subsystems.Validation;
->>>>>>> master:Buildings/DHC/ETS/Combined/Subsystems/Validation/WatersideEconomizer.mo
 model WatersideEconomizer
   "Validation of the base subsystem model with waterside economizer"
   extends Modelica.Icons.Example;
@@ -29,19 +25,11 @@ model WatersideEconomizer
   Modelica.Blocks.Sources.BooleanExpression uCoo(y=time >= 1000)
     "Cooling enable signal"
     annotation (Placement(transformation(extent={{-200,70},{-180,90}})));
-<<<<<<< HEAD:Buildings/Experimental/DHC/EnergyTransferStations/Combined/Subsystems/Validation/WatersideEconomizer.mo
-  Buildings.Experimental.DHC.EnergyTransferStations.Combined.Subsystems.WatersideEconomizer hexPum(
-    redeclare final package Medium1=Medium,
-    redeclare final package Medium2=Medium,
-    show_T=true,
-    conCon=Buildings.Experimental.DHC.EnergyTransferStations.Types.ConnectionConfiguration.Pump,
-=======
   Buildings.DHC.ETS.Combined.Subsystems.WatersideEconomizer hexPum(
     redeclare final package Medium1=Medium,
     redeclare final package Medium2=Medium,
     show_T=true,
     conCon=Buildings.DHC.ETS.Types.ConnectionConfiguration.Pump,
->>>>>>> master:Buildings/DHC/ETS/Combined/Subsystems/Validation/WatersideEconomizer.mo
     dp1Hex_nominal=3E4,
     dp2Hex_nominal=3E4,
     Q_flow_nominal=-1E6,
@@ -75,19 +63,11 @@ model WatersideEconomizer
         extent={{-10,-10},{10,10}},
         rotation=0,
         origin={-40,-80})));
-<<<<<<< HEAD:Buildings/Experimental/DHC/EnergyTransferStations/Combined/Subsystems/Validation/WatersideEconomizer.mo
-  Buildings.Experimental.DHC.EnergyTransferStations.Combined.Subsystems.WatersideEconomizer hexVal(
-    redeclare final package Medium1=Medium,
-    redeclare final package Medium2=Medium,
-    show_T=true,
-    conCon=Buildings.Experimental.DHC.EnergyTransferStations.Types.ConnectionConfiguration.TwoWayValve,
-=======
   Buildings.DHC.ETS.Combined.Subsystems.WatersideEconomizer hexVal(
     redeclare final package Medium1=Medium,
     redeclare final package Medium2=Medium,
     show_T=true,
     conCon=Buildings.DHC.ETS.Types.ConnectionConfiguration.TwoWayValve,
->>>>>>> master:Buildings/DHC/ETS/Combined/Subsystems/Validation/WatersideEconomizer.mo
     dp1Hex_nominal=3E4,
     dp2Hex_nominal=3E4,
     Q_flow_nominal=-1E6,
@@ -266,11 +246,7 @@ equation
         preserveAspectRatio=false,
         extent={{-220,-120},{220,120}})),
     __Dymola_Commands(
-<<<<<<< HEAD:Buildings/Experimental/DHC/EnergyTransferStations/Combined/Subsystems/Validation/WatersideEconomizer.mo
-      file="modelica://Buildings/Resources/Scripts/Dymola/Experimental/DHC/EnergyTransferStations/Combined/Subsystems/Validation/WatersideEconomizer.mos"
-=======
       file="modelica://Buildings/Resources/Scripts/Dymola/DHC/ETS/Combined/Subsystems/Validation/WatersideEconomizer.mos"
->>>>>>> master:Buildings/DHC/ETS/Combined/Subsystems/Validation/WatersideEconomizer.mo
       "Simulate and plot"),
     experiment(
       StopTime=5000,
@@ -287,13 +263,8 @@ First implementation.
       info="<html>
 <p>
 This model validates
-<<<<<<< HEAD:Buildings/Experimental/DHC/EnergyTransferStations/Combined/Subsystems/Validation/WatersideEconomizer.mo
-<a href=\"modelica://Buildings.Experimental.DHC.EnergyTransferStations.Combined.Subsystems.WatersideEconomizer\">
-Buildings.Experimental.DHC.EnergyTransferStations.Combined.Subsystems.WatersideEconomizer</a>
-=======
 <a href=\"modelica://Buildings.DHC.ETS.Combined.Subsystems.WatersideEconomizer\">
 Buildings.DHC.ETS.Combined.Subsystems.WatersideEconomizer</a>
->>>>>>> master:Buildings/DHC/ETS/Combined/Subsystems/Validation/WatersideEconomizer.mo
 in a configuration where the primary flow rate is modulated by means of a
 two-way valve (see <code>hexVal</code>), and in a configuration where the
 primary flow rate is modulated by means of a variable speed pump
